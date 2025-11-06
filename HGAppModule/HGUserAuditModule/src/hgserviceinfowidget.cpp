@@ -13,12 +13,12 @@ m_lang(lang)
     m_serviceProviderLabel=new QLabel();
     m_serviceProviderLabel->setText(QString::fromStdString(loadTranslation(m_lang,"Provider")));//"服务商");
     m_serviceProviderEdit=new QLineEdit();
-    m_serviceProviderEdit->setText("上海禾工科学仪器有限公司");
+    m_serviceProviderEdit->setText("XXXXXX");
 
     m_customerServiceLabel=new QLabel();
     m_customerServiceLabel->setText(QString::fromStdString(loadTranslation(m_lang,"AccountSpecialist")));//"客服专员");
     m_customerServiceEdit=new QLineEdit();
-    m_customerServiceEdit->setText("12号售后专员：13564488762");
+    m_customerServiceEdit->setText("XXXXXXX");
 
     m_layout=new QGridLayout();
 

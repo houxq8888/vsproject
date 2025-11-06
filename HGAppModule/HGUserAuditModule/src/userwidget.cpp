@@ -352,7 +352,7 @@ void UserWidget::fnFillUserList()
     for (int i = 0; i < int(fillContent.size()); i++)
     {
         if (fillContent[i]["Authority"].find("所有权限")!=std::string::npos 
-            && fillContent[i]["UserAccount"].find("禾工售后")!=std::string::npos)
+            && fillContent[i]["UserAccount"].find("XXXXX")!=std::string::npos)
             continue;
         m_userManageTableW->insertRow(m_userManageTableW->rowCount());
         for (auto content : fillContent[i])
