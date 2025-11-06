@@ -13,6 +13,7 @@ class HGDeviceInfoWidget : public QWidget
     Q_OBJECT
 public:
     explicit HGDeviceInfoWidget(std::string,QWidget *parent = nullptr);
+    ~HGDeviceInfoWidget();
     bool closeWindow();
     
 signals:

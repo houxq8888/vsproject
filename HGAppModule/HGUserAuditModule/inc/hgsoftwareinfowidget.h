@@ -17,6 +17,7 @@ class HGSoftwareInfoWidget : public QWidget
     Q_OBJECT
 public:
     explicit HGSoftwareInfoWidget(std::string,QWidget *parent = nullptr);
+    ~HGSoftwareInfoWidget();
     bool closeWindow();
 signals:
 

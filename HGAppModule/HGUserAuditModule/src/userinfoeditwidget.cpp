@@ -277,6 +277,56 @@ void UserInfoEditWidget::fnInit()
         &UserInfoEditWidget::onAccountComboBoxChanged);
 
     m_okBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Ok")));
+}
+
+UserInfoEditWidget::~UserInfoEditWidget()
+{
+    SAFE_DELETE(m_layout);
+    SAFE_DELETE(m_userInfoLayout);
+    SAFE_DELETE(m_groupBox);
+    SAFE_DELETE(m_backBtn);
+    SAFE_DELETE(m_accountStateLabel);
+    SAFE_DELETE(m_accountCreaterLabel);
+    SAFE_DELETE(m_accountCreateTimeLabel);
+    SAFE_DELETE(m_lastRectifyLabel);
+    SAFE_DELETE(m_lastRectifyTimeLabel);
+    SAFE_DELETE(m_loginLogLabel);
+    SAFE_DELETE(m_loginLogTableW);
+    SAFE_DELETE(m_userAccountLabel);
+    SAFE_DELETE(m_passwdInputLimitCountLabel);
+    SAFE_DELETE(m_userNoLabel);
+    SAFE_DELETE(m_passwdLabel);
+    SAFE_DELETE(m_eyeLabel);
+    SAFE_DELETE(m_passwdCycleLabel);
+    SAFE_DELETE(m_userNameLabel);
+    SAFE_DELETE(m_jobLabel);
+    SAFE_DELETE(m_departmentLabel);
+    SAFE_DELETE(m_authorityLabel);
+    SAFE_DELETE(m_accountManageLabel);
+    SAFE_DELETE(m_userDescriptionLabel);
+    SAFE_DELETE(m_markLabel);
+    SAFE_DELETE(m_markLabel1);
+    SAFE_DELETE(m_markLabel2);
+    SAFE_DELETE(m_markLabel3);
+    SAFE_DELETE(m_markLabel4);
+    SAFE_DELETE(m_markLabel5);
+    SAFE_DELETE(m_markLabel6);
+    SAFE_DELETE(m_markLabel7);
+    SAFE_DELETE(m_markLabel8);
+    SAFE_DELETE(m_userAccountEdit);
+    SAFE_DELETE(m_passwdInputLimitCountEdit);
+    SAFE_DELETE(m_userNoEdit);
+    SAFE_DELETE(m_passwdEdit);
+    SAFE_DELETE(m_passwdCycleEdit);
+    SAFE_DELETE(m_userNameEdit);
+    SAFE_DELETE(m_jobEdit);
+    SAFE_DELETE(m_departmentEdit);
+    SAFE_DELETE(m_userDescriptionEdit);
+    SAFE_DELETE(m_passwdStandardLabel);
+    SAFE_DELETE(m_authorityEdit);
+    SAFE_DELETE(m_accountManageCombo);
+    SAFE_DELETE(m_okBtn);
+}
     connect(m_okBtn,&QPushButton::clicked,this,&UserInfoEditWidget::slotOk);
 
     m_userInfoLayout->addWidget(m_userNoLabel,0,0);

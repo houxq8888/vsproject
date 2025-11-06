@@ -385,3 +385,15 @@ void UserWidget::fnWriteDB()
     GlobalSingleton::instance().saveSystemInfo();
     GlobalSingleton::instance().saveUsersInfo();
 }
+
+UserWidget::~UserWidget()
+{
+    SAFE_DELETE(m_userLayout);
+    SAFE_DELETE(m_userManageLabel);
+    SAFE_DELETE(m_userManageTableW);
+    SAFE_DELETE(m_newUserLabel);
+    SAFE_DELETE(m_deleteUserLabel);
+    SAFE_DELETE(m_editUserLabel);
+    SAFE_DELETE(m_scanUserLabel);
+    SAFE_DELETE(m_userInfoEditWidget);
+}

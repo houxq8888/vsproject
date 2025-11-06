@@ -21,6 +21,7 @@ class UserWidget : public QWidget
     Q_OBJECT
 public:
     explicit UserWidget(std::string,QWidget *parent = nullptr);
+    ~UserWidget();
     bool closeWindow();
     void fnReadDB();
 

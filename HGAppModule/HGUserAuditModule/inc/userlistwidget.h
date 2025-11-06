@@ -22,6 +22,7 @@ class UserListWidget : public QWidget
     Q_OBJECT
 public:
     explicit UserListWidget(std::string,const std::vector<std::string> &authority,QWidget *parent = nullptr);
+    ~UserListWidget();
     bool closeWindow();
 
 signals:

@@ -26,6 +26,7 @@ class AuthorityWidget : public QWidget
     Q_OBJECT
 public:
     explicit AuthorityWidget(std::string,const std::vector<std::string>&,QWidget *parent = nullptr);
+    ~AuthorityWidget();
     bool closeWindow();
     void fnReadDB();
 

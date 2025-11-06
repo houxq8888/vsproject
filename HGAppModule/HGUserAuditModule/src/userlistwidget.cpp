@@ -55,3 +55,12 @@ void UserListWidget::clickBack()
 {
     emit signalBack();
 }
+
+UserListWidget::~UserListWidget()
+{
+    SAFE_DELETE(m_tabWidget);
+    SAFE_DELETE(m_layout);
+    SAFE_DELETE(m_backBtn);
+    SAFE_DELETE(m_userW);
+    SAFE_DELETE(m_authorityW);
+}

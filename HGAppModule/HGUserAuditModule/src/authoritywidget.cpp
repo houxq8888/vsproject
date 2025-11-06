@@ -200,6 +200,24 @@ bool AuthorityWidget::fnHasUsersManageAuthority()
     }
     return true;
 }
+
+AuthorityWidget::~AuthorityWidget()
+{
+    SAFE_DELETE(m_usersLayout);
+    SAFE_DELETE(m_usersAuthorityInfoW);
+    SAFE_DELETE(m_selfDefineBtn);
+    SAFE_DELETE(m_moreInfoBtn);
+    SAFE_DELETE(m_usersLabel);
+    SAFE_DELETE(m_usersComboBox);
+    SAFE_DELETE(m_userLabel);
+    SAFE_DELETE(m_addUserBtn);
+    SAFE_DELETE(m_removeUserBtn);
+    SAFE_DELETE(m_usersAuthorityTableW);
+    SAFE_DELETE(m_userTableW);
+    SAFE_DELETE(m_setAuthorityBtn);
+    SAFE_DELETE(m_backBtn);
+    SAFE_DELETE(m_scanAuthorityInfoBtn);
+}
 void AuthorityWidget::slotScanAuthorityInfo()
 {
     if (!fnHasUsersManageAuthority()) return;

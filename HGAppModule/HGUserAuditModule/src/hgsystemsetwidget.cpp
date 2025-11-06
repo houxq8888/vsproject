@@ -157,7 +157,17 @@ bool HGSystemSetWidget::closeWindow()
 }
 HGSystemSetWidget::~HGSystemSetWidget()
 {
-
+    SAFE_DELETE(m_deviceInfoW);
+    SAFE_DELETE(m_softwareInfoW);
+    SAFE_DELETE(m_toolBox);
+    SAFE_DELETE(m_userRegisterW);
+    SAFE_DELETE(m_userListW);
+    SAFE_DELETE(m_networkW);
+    SAFE_DELETE(m_warningW);
+    SAFE_DELETE(m_languageW);
+    SAFE_DELETE(m_displayAndLightW);
+    SAFE_DELETE(m_dateAndTimeW);
+    SAFE_DELETE(m_serviceInfoW);
 }
 void HGSystemSetWidget::slotClickDeviceInfo(){
     closeWindow();

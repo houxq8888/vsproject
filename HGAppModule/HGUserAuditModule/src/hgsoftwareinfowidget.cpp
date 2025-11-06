@@ -53,6 +53,20 @@ void HGSoftwareInfoWidget::fnInit()
     m_widgetLayout->addWidget(m_groupBox,1,0,1,7);
 
 }
+HGSoftwareInfoWidget::~HGSoftwareInfoWidget()
+{
+    SAFE_DELETE(m_layout);
+    SAFE_DELETE(m_widgetLayout);
+    SAFE_DELETE(m_groupBox);
+    SAFE_DELETE(m_productIDQLabel);
+    SAFE_DELETE(m_productIDEdit);
+    SAFE_DELETE(m_productKeyQLabel);
+    SAFE_DELETE(m_productKeyEdit);
+    SAFE_DELETE(m_enableBtn);
+    SAFE_DELETE(m_enableStatusLabel);
+    SAFE_DELETE(m_authorityDeadLineCtrl);
+}
+
 bool HGSoftwareInfoWidget::closeWindow()
 {
     return true;

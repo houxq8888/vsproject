@@ -23,6 +23,7 @@ class UserInfoEditWidget : public QWidget
     Q_OBJECT
 public:
     explicit UserInfoEditWidget(int type,std::string,const std::map<std::string,std::string>&,QWidget *parent = nullptr);
+    ~UserInfoEditWidget();
     bool closeWindow();
     void hasUserNo(bool);
     void passwdStrength(const std::string &level);

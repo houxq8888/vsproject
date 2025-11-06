@@ -88,12 +88,35 @@ bool HGDeviceInfoWidget::closeWindow()
     fnWriteDB();
     return true;
 }
+HGDeviceInfoWidget::~HGDeviceInfoWidget()
+{
+    SAFE_DELETE(m_layout);
+    SAFE_DELETE(m_widgetLayout);
+    SAFE_DELETE(m_groupBox);
+    SAFE_DELETE(m_deviceNameQLabel);
+    SAFE_DELETE(m_deviceNameEdit);
+    SAFE_DELETE(m_deviceTypeQLabel);
+    SAFE_DELETE(m_deviceTypeEdit);
+    SAFE_DELETE(m_deviceNumberQLabel);
+    SAFE_DELETE(m_deviceNumberEdit);
+    SAFE_DELETE(m_curVersionQLabel);
+    SAFE_DELETE(m_curVersionEdit);
+    SAFE_DELETE(m_initDateQLabel);
+    SAFE_DELETE(m_initDateEdit);
+    SAFE_DELETE(m_firmwareLabel);
+    SAFE_DELETE(m_firmwareEdit);
+    SAFE_DELETE(m_updateVersionBtn);
+    SAFE_DELETE(m_machineTimeCtrl);
+    SAFE_DELETE(m_deviceNumberCtrl);
+}
+
 bool HGDeviceInfoWidget::eventFilter(QObject* obj,QEvent* event)
 {
     if (event->type()==QEvent::MouseButtonPress){
         QMouseEvent* mouseEvent=static_cast<QMouseEvent*>(event);
         if (mouseEvent->button() == Qt::LeftButton){
             if (obj==m_initDateEdit){
+                SAFE_DELETE(m_machineTimeCtrl);
                 m_machineTimeCtrl=new KBTimeEdit(false);
                 int passPosX = m_initDateEdit->mapToGlobal(QPoint(0,0)).x();
                 int passPosY = m_initDateEdit->mapToGlobal(QPoint(0,0)).y() + m_initDateEdit->height();
