@@ -1,0 +1,1 @@
+#include "hgv6ThreadManage.h"

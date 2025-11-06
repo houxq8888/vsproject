@@ -1,0 +1,35 @@
+set(LIBRARY_VERSION_MAJOR 1)
+set(LIBRARY_VERSION_MINOR 0)
+set(LIBRARY_VERSION_PATCH 0)
+
+
+HG_CMAKE_ADD_MODELU(ImageAlgorithmService inc src)
+
+if (PLATFORM STREQUAL "x64")
+HG_CMAKE_MODULE_DEPEND_PUB( 
+    ${OpenCV_LIBRARIES}
+    ${ONNX_LIBRARY}
+)
+
+HG_CMAKE_ADD_SHARED(HGImageAlgorithmService inc src)
+
+HG_CMAKE_MODULE_DEPEND(
+    ${OpenCV_LIBRARIES}
+    ${ONNX_LIBRARY}
+)
+
+elseif (PLATFORM STREQUAL "win32")
+HG_CMAKE_MODULE_DEPEND_PUB( 
+    ${OpenCV_LIBRARIES}
+)
+HG_CMAKE_ADD_STATIC(HGImageAlgorithmService inc src)
+
+INCLUDE_DIRECTORIES(${HG_PROJECT_ROOT_FS}/include/opencv4)
+target_link_libraries(HGImageAlgorithmService
+    lwinpthread)
+endif()
+
+set_target_properties(HGImageAlgorithmService PROPERTIES 
+    VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}
+    SOVERSION ${LIBRARY_VERSION_MAJOR}
+)

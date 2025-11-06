@@ -1,0 +1,82 @@
+/******************************************
+Scope:Class NavigationBar and it's children
+*/
+.NavigateToolBar{
+    background-color:#404244;
+}
+.BookmarkBar{
+    background-color:#404244;
+}
+
+/******************************************
+Scope:Class AddressBar and it's children
+*/
+.AddressBar{
+border:none;
+border-radius:6px;
+background-color: #242424;
+}
+.AddressBar:hover{
+    border:1px solid #DCDCDC;
+}
+.AddressBar:focus{
+    border:2px solid #DCDCDC;
+}
+.AddressBar > QLineEdit{
+color:white;
+border:none;
+background: #242424;
+}
+.AddressBar > QLineEdit:focus{
+border:none;
+background-color:transparent;
+}
+
+.SearchBar{
+border:none;
+border-radius:6px;
+background-color: #242424;
+}
+.SearchBar:hover{
+    border:1px solid #DCDCDC;
+}
+.SearchBar:focus{
+    border:2px solid #DCDCDC;
+}
+.SearchBar > QLineEdit{
+color:white;
+border:none;
+background: #242424;
+}
+.SearchBar > QLineEdit:focus{
+border:none;
+background-color:transparent;
+}
+
+QPushButton#NaviBarInprivateBtn{
+border:none;
+border-radius:8px;
+background-color:#006CBE;
+color:white;
+padding:3px;
+}
+QPushButton#NaviBarInprivateBtn:hover{
+background-color:rgba(0,108,190, 70%);
+}
+
+.TabBar::close-button{
+    image: url(:/icons/resources/imgs/dark/delete_64px.png);
+}
+
+.TabBar::close-button:hover {
+background-color:rgba(169,169,169, 30%);
+    border-radius:4px;
+}
+
+BookmarkToolBar > QToolButton{
+color:white;
+}
+
+BookmarkBar > QPushButton{
+color:white;
+}

@@ -1,0 +1,3 @@
+/mnt/extra/projects/Git/HGPro/services/HGAtomService/CommonProtocolService/build/CMakeFiles/CommonProtocolService.dir
+/mnt/extra/projects/Git/HGPro/services/HGAtomService/CommonProtocolService/build/CMakeFiles/edit_cache.dir
+/mnt/extra/projects/Git/HGPro/services/HGAtomService/CommonProtocolService/build/CMakeFiles/rebuild_cache.dir
