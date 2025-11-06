@@ -238,7 +238,7 @@ void MyGraphicsView::showImageGray(int x,int y,int gray)
 QRectF MyGraphicsView::getSelectROI()
 {
     if (currentRectItem){
-        m_selectROI=currentRectItem->boundingRect();
+        m_selectROI=currentRectItem->mapToScene(currentRectItem->boundingRect()).boundingRect();
     }
     return m_selectROI; 
 }
