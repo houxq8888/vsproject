@@ -280,6 +280,10 @@ void UserWidget::deleteUser(){
     }
 }
 void UserWidget::returnToList(){
+    if (m_userInfoEditWidget) {
+        disconnect(m_userInfoEditWidget, nullptr, this, nullptr);
+        SAFE_DELETE(m_userInfoEditWidget);
+    }
     removeWidgetsFromLayout(m_userLayout);
     fnAddUserListW();
 }

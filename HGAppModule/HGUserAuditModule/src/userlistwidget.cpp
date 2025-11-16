@@ -39,17 +39,14 @@ void UserListWidget::slotUpdateAuthority()
 }
 bool UserListWidget::closeWindow()
 {
+    bool result = true;
     if (m_userW){
-        if (m_userW->closeWindow()){
-            SAFE_DELETE(m_userW);
-        }
+        result &= m_userW->closeWindow();
     }
     if (m_authorityW){
-        if (m_authorityW->closeWindow()){
-            SAFE_DELETE(m_authorityW);
-        }
+        result &= m_authorityW->closeWindow();
     }
-    return true;
+    return result;
 }
 void UserListWidget::clickBack()
 {

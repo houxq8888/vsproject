@@ -277,6 +277,47 @@ void UserInfoEditWidget::fnInit()
         &UserInfoEditWidget::onAccountComboBoxChanged);
 
     m_okBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Ok")));
+
+    connect(m_okBtn,&QPushButton::clicked,this,&UserInfoEditWidget::slotOk);
+
+    m_userInfoLayout->addWidget(m_userNoLabel,0,0);
+    m_userInfoLayout->addWidget(m_userNoEdit,0,1);
+    m_userInfoLayout->addWidget(m_markLabel,0,2);
+    m_userInfoLayout->addWidget(m_userAccountLabel,m_userInfoLayout->rowCount(),0);
+    m_userInfoLayout->addWidget(m_userAccountEdit,m_userInfoLayout->rowCount()-1,1);
+    m_userInfoLayout->addWidget(m_markLabel7,m_userInfoLayout->rowCount()-1,2);
+    m_userInfoLayout->addWidget(m_passwdLabel,m_userInfoLayout->rowCount(),0);
+    m_userInfoLayout->addWidget(m_passwdEdit,m_userInfoLayout->rowCount()-1,1);
+    m_userInfoLayout->addWidget(m_markLabel1,m_userInfoLayout->rowCount()-1,2);
+    m_userInfoLayout->addWidget(m_eyeLabel,m_userInfoLayout->rowCount()-1,3);
+    m_userInfoLayout->addWidget(m_passwdInputLimitCountLabel,m_userInfoLayout->rowCount(),0);
+    m_userInfoLayout->addWidget(m_passwdInputLimitCountEdit,m_userInfoLayout->rowCount()-1,1);
+    m_userInfoLayout->addWidget(m_markLabel8,m_userInfoLayout->rowCount()-1,2);
+    m_userInfoLayout->addWidget(m_passwdCycleLabel,m_userInfoLayout->rowCount(),0);
+    m_userInfoLayout->addWidget(m_passwdCycleEdit,m_userInfoLayout->rowCount()-1,1);
+    m_userInfoLayout->addWidget(m_markLabel2,m_userInfoLayout->rowCount()-1,2);
+    m_userInfoLayout->addWidget(m_userNameLabel,m_userInfoLayout->rowCount(),0);
+    m_userInfoLayout->addWidget(m_userNameEdit,m_userInfoLayout->rowCount()-1,1);
+    m_userInfoLayout->addWidget(m_markLabel3,m_userInfoLayout->rowCount()-1,2);
+    m_userInfoLayout->addWidget(m_jobLabel,m_userInfoLayout->rowCount(),0);
+    m_userInfoLayout->addWidget(m_jobEdit,m_userInfoLayout->rowCount()-1,1);
+    m_userInfoLayout->addWidget(m_markLabel5,m_userInfoLayout->rowCount()-1,2);
+    m_userInfoLayout->addWidget(m_departmentLabel,m_userInfoLayout->rowCount(),0);
+    m_userInfoLayout->addWidget(m_departmentEdit,m_userInfoLayout->rowCount()-1,1);
+    m_userInfoLayout->addWidget(m_markLabel4,m_userInfoLayout->rowCount()-1,2);
+    m_userInfoLayout->addWidget(m_authorityLabel,m_userInfoLayout->rowCount(),0);
+    m_userInfoLayout->addWidget(m_authorityEdit,m_userInfoLayout->rowCount()-1,1);
+    // m_userInfoLayout->addWidget(m_markLabel5,m_userInfoLayout->rowCount()-1,2);
+    m_userInfoLayout->addWidget(m_accountManageLabel,m_userInfoLayout->rowCount(),0);
+    m_userInfoLayout->addWidget(m_accountManageCombo,m_userInfoLayout->rowCount()-1,1);
+    m_userInfoLayout->addWidget(m_markLabel6,m_userInfoLayout->rowCount()-1,2);
+    m_userInfoLayout->addWidget(m_userDescriptionLabel,m_userInfoLayout->rowCount(),0);
+    m_userInfoLayout->addWidget(m_userDescriptionEdit,m_userInfoLayout->rowCount()-1,1,2,1);
+    m_userInfoLayout->addWidget(m_passwdStandardLabel,m_userInfoLayout->rowCount(),1,2,1);
+    m_userInfoLayout->addWidget(m_okBtn,m_userInfoLayout->rowCount()-1,3);
+
+    m_layout->addWidget(m_backBtn,0,6,1,1);
+    m_layout->addWidget(m_groupBox,1,0,1,8);
 }
 
 UserInfoEditWidget::~UserInfoEditWidget()
@@ -326,47 +367,6 @@ UserInfoEditWidget::~UserInfoEditWidget()
     SAFE_DELETE(m_authorityEdit);
     SAFE_DELETE(m_accountManageCombo);
     SAFE_DELETE(m_okBtn);
-}
-    connect(m_okBtn,&QPushButton::clicked,this,&UserInfoEditWidget::slotOk);
-
-    m_userInfoLayout->addWidget(m_userNoLabel,0,0);
-    m_userInfoLayout->addWidget(m_userNoEdit,0,1);
-    m_userInfoLayout->addWidget(m_markLabel,0,2);
-    m_userInfoLayout->addWidget(m_userAccountLabel,m_userInfoLayout->rowCount(),0);
-    m_userInfoLayout->addWidget(m_userAccountEdit,m_userInfoLayout->rowCount()-1,1);
-    m_userInfoLayout->addWidget(m_markLabel7,m_userInfoLayout->rowCount()-1,2);
-    m_userInfoLayout->addWidget(m_passwdLabel,m_userInfoLayout->rowCount(),0);
-    m_userInfoLayout->addWidget(m_passwdEdit,m_userInfoLayout->rowCount()-1,1);
-    m_userInfoLayout->addWidget(m_markLabel1,m_userInfoLayout->rowCount()-1,2);
-    m_userInfoLayout->addWidget(m_eyeLabel,m_userInfoLayout->rowCount()-1,3);
-    m_userInfoLayout->addWidget(m_passwdInputLimitCountLabel,m_userInfoLayout->rowCount(),0);
-    m_userInfoLayout->addWidget(m_passwdInputLimitCountEdit,m_userInfoLayout->rowCount()-1,1);
-    m_userInfoLayout->addWidget(m_markLabel8,m_userInfoLayout->rowCount()-1,2);
-    m_userInfoLayout->addWidget(m_passwdCycleLabel,m_userInfoLayout->rowCount(),0);
-    m_userInfoLayout->addWidget(m_passwdCycleEdit,m_userInfoLayout->rowCount()-1,1);
-    m_userInfoLayout->addWidget(m_markLabel2,m_userInfoLayout->rowCount()-1,2);
-    m_userInfoLayout->addWidget(m_userNameLabel,m_userInfoLayout->rowCount(),0);
-    m_userInfoLayout->addWidget(m_userNameEdit,m_userInfoLayout->rowCount()-1,1);
-    m_userInfoLayout->addWidget(m_markLabel3,m_userInfoLayout->rowCount()-1,2);
-    m_userInfoLayout->addWidget(m_jobLabel,m_userInfoLayout->rowCount(),0);
-    m_userInfoLayout->addWidget(m_jobEdit,m_userInfoLayout->rowCount()-1,1);
-    m_userInfoLayout->addWidget(m_markLabel5,m_userInfoLayout->rowCount()-1,2);
-    m_userInfoLayout->addWidget(m_departmentLabel,m_userInfoLayout->rowCount(),0);
-    m_userInfoLayout->addWidget(m_departmentEdit,m_userInfoLayout->rowCount()-1,1);
-    m_userInfoLayout->addWidget(m_markLabel4,m_userInfoLayout->rowCount()-1,2);
-    m_userInfoLayout->addWidget(m_authorityLabel,m_userInfoLayout->rowCount(),0);
-    m_userInfoLayout->addWidget(m_authorityEdit,m_userInfoLayout->rowCount()-1,1);
-    // m_userInfoLayout->addWidget(m_markLabel5,m_userInfoLayout->rowCount()-1,2);
-    m_userInfoLayout->addWidget(m_accountManageLabel,m_userInfoLayout->rowCount(),0);
-    m_userInfoLayout->addWidget(m_accountManageCombo,m_userInfoLayout->rowCount()-1,1);
-    m_userInfoLayout->addWidget(m_markLabel6,m_userInfoLayout->rowCount()-1,2);
-    m_userInfoLayout->addWidget(m_userDescriptionLabel,m_userInfoLayout->rowCount(),0);
-    m_userInfoLayout->addWidget(m_userDescriptionEdit,m_userInfoLayout->rowCount()-1,1,2,1);
-    m_userInfoLayout->addWidget(m_passwdStandardLabel,m_userInfoLayout->rowCount(),1,2,1);
-    m_userInfoLayout->addWidget(m_okBtn,m_userInfoLayout->rowCount()-1,3);
-
-    m_layout->addWidget(m_backBtn,0,6,1,1);
-    m_layout->addWidget(m_groupBox,1,0,1,8);
 }
 bool UserInfoEditWidget::closeWindow()
 {
