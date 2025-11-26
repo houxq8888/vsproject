@@ -1,3 +1,23 @@
+# Define Qt libraries based on OS
+if(WIN32)
+    set(QT_LIBRARIES
+        Qt5::Gui
+        Qt5::Core
+        Qt5::Widgets
+        Qt5::Charts
+        Qt5::PrintSupport
+    )
+else()
+    set(QT_LIBRARIES
+        Qt5::Gui
+        Qt5::Core
+        Qt5::Widgets
+        Qt5::Charts
+        Qt5::PrintSupport
+    )
+endif()
+
+
 set(LIBRARY_VERSION_MAJOR 1)
 set(LIBRARY_VERSION_MINOR 0)
 set(LIBRARY_VERSION_PATCH 0)
@@ -8,7 +28,8 @@ set(CMAKE_AUTORCC ON) # rc
 
 file(GLOB MOC_HEADERS "inc/*.h")
 
-qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+# 根据Qt版本选择对应的MOC命令
+
 
 HG_CMAKE_ADD_MODELU(BaseAppModule inc src ${MOC_SRCS})
 
@@ -31,14 +52,16 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     ${XLSXIO_READ_LIBRARY}
     ${XLSXIO_WRITE_LIBRARY}
     ${ZXING_LIBRARY}
-    Qt5::Gui
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::Charts
-    Qt5::PrintSupport
+    
+    
 )
 if (PLATFORM STREQUAL "x64")
 HG_CMAKE_ADD_SHARED(HGBaseAppModule inc src ${MOC_SRCS})
+
+    set_target_properties(HGBaseAppModule PROPERTIES 
+        VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}
+        SOVERSION ${LIBRARY_VERSION_MAJOR}
+    )
 
 HG_CMAKE_MODULE_DEPEND(
     HGCommon
@@ -58,11 +81,10 @@ HG_CMAKE_MODULE_DEPEND(
     ${CUPS_LIBRARY}
     ${XLSXIO_READ_LIBRARY}
     ${XLSXIO_WRITE_LIBRARY}
-    Qt5::Gui
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::Charts
-    Qt5::PrintSupport
+    
+    
+
+    ${QT_LIBRARIES}
 )
 elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_ADD_STATIC(HGBaseAppModule inc src 
@@ -79,11 +101,12 @@ target_link_libraries(HGBaseAppModule
     ${HG_PROJECT_ROOT_FS}/lib/libcserialport.a
     ${HG_PROJECT_ROOT_FS}/lib/libssl.a
     ${HG_PROJECT_ROOT_FS}/lib/libcrypto.a
+    ${QT_LIBRARIES}
     ws2_32 iphlpapi)
 
-endif()
+    set_target_properties(HGBaseAppModule PROPERTIES 
+        VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}
+        SOVERSION ${LIBRARY_VERSION_MAJOR}
+    )
 
-set_target_properties(HGBaseAppModule PROPERTIES 
-    VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}
-    SOVERSION ${LIBRARY_VERSION_MAJOR}
-)
+endif()

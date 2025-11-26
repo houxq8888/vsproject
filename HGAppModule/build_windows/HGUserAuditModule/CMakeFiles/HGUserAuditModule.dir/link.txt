@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HGUserAuditModule.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HGUserAuditModule.dir/objects.a @CMakeFiles\HGUserAuditModule.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\g++.exe -O3 -DNDEBUG -shared -o libHGUserAuditModule.dll -Wl,--out-implib,libHGUserAuditModule.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\HGUserAuditModule.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\HGUserAuditModule.dir\linkLibs.rsp

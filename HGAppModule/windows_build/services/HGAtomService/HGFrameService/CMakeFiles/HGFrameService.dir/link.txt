@@ -1,0 +1,2 @@
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGFrameService.a CMakeFiles/HGFrameService.dir/src/config.cpp.obj CMakeFiles/HGFrameService.dir/src/flow.cpp.obj CMakeFiles/HGFrameService.dir/src/rwDb.cpp.obj CMakeFiles/HGFrameService.dir/src/style.cpp.obj CMakeFiles/HGFrameService.dir/src/task.cpp.obj
+D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGFrameService.a

@@ -4,9 +4,16 @@
 cmake_minimum_required(VERSION 3.16)
 project(HGAppModule)
 
+# Define Qt libraries based on OS
+
+
+
 # 设置C++标准
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 包含项目宏定义
+include(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/project_macro.cmake)
 
 # 设置编译选项
 if(MSVC)
@@ -15,8 +22,8 @@ else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# 查找Qt6
-find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui)
+# 根据操作系统查找对应的Qt版本
+
 
 # 设置自动处理MOC、UIC、RCC
 set(CMAKE_AUTOMOC ON)

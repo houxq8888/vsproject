@@ -1,0 +1,2 @@
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGImageAlgorithmService.a CMakeFiles/HGImageAlgorithmService.dir/src/dimentionVux.cpp.obj CMakeFiles/HGImageAlgorithmService.dir/src/hgabsensedetect.cpp.obj CMakeFiles/HGImageAlgorithmService.dir/src/hgdetectcircle.cpp.obj CMakeFiles/HGImageAlgorithmService.dir/src/hgplasticcupabsensedetect.cpp.obj CMakeFiles/HGImageAlgorithmService.dir/src/putZhText.cpp.obj
+D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGImageAlgorithmService.a

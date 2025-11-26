@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HGAnalysisRecordModule.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HGAnalysisRecordModule.dir/objects.a @CMakeFiles\HGAnalysisRecordModule.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\g++.exe -O3 -DNDEBUG -shared -o libHGAnalysisRecordModule.dll -Wl,--out-implib,libHGAnalysisRecordModule.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\HGAnalysisRecordModule.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\HGAnalysisRecordModule.dir\linkLibs.rsp

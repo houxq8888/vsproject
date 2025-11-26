@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/FlowModule.dir/src/flowplugindetector.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/flowplugindetector.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgaddmedicationwidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgaddmedicationwidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgbalancewidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgbalancewidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgblankwidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgblankwidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgdetectwidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgdetectwidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgfloweditwidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgfloweditwidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgflowinfowidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgflowinfowidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgflowmodulelistwidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgflowmodulelistwidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgflowwidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgflowwidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hggetsamplewidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hggetsamplewidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgholdsamplewidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgholdsamplewidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hginjectreagentwidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hginjectreagentwidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hginjectsamplewidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hginjectsamplewidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgjudgewidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgjudgewidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgloopwidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgloopwidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgswirlstepwidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgswirlstepwidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgwaitwidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgwaitwidget.cpp.obj.d"
+  "CMakeFiles/FlowModule.dir/src/hgwashwidget.cpp.obj"
+  "CMakeFiles/FlowModule.dir/src/hgwashwidget.cpp.obj.d"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/FlowModule.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

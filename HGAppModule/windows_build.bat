@@ -28,7 +28,6 @@ echo Debug: Running CMake configuration for Windows HGAppModule build...
   -DHG_PROJECT_ROOT_FS="d:\virtualMachine\github\vsproject" ^
   -DPLATFORM="win32" ^
   -DBUILD_HGAPPMODULE_ONLY=ON ^
-  -DCMAKE_DISABLE_FIND_PACKAGE_PkgConfig=TRUE ^
   ..\..
 
 if %errorlevel% neq 0 (

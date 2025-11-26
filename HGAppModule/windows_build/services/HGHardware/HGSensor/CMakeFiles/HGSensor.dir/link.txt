@@ -1,0 +1,2 @@
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGSensor.a CMakeFiles/HGSensor.dir/src/hgcapture2d.cpp.obj CMakeFiles/HGSensor.dir/src/hgcapture2dfromip.cpp.obj CMakeFiles/HGSensor.dir/src/hgcapture2dfromlocaldisk.cpp.obj CMakeFiles/HGSensor.dir/src/hgcapture2dfromusb.cpp.obj CMakeFiles/HGSensor.dir/src/ipcameramanager.cpp.obj CMakeFiles/HGSensor.dir/src/usbcameramanager.cpp.obj
+D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGSensor.a

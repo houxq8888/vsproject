@@ -1,0 +1,992 @@
+[
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGCommon",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Common.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Common.dir\\src\\HGExactTime.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\HGExactTime.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/HGExactTime.cpp",
+  "output": "services/HGCommon/CMakeFiles/Common.dir/src/HGExactTime.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGCommon",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Common.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Common.dir\\src\\decodecodeutility.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\decodecodeutility.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/decodecodeutility.cpp",
+  "output": "services/HGCommon/CMakeFiles/Common.dir/src/decodecodeutility.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGCommon",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Common.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Common.dir\\src\\hgcommonutility.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\hgcommonutility.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/hgcommonutility.cpp",
+  "output": "services/HGCommon/CMakeFiles/Common.dir/src/hgcommonutility.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGCommon",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Common.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Common.dir\\src\\hglog4cplus.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\hglog4cplus.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/hglog4cplus.cpp",
+  "output": "services/HGCommon/CMakeFiles/Common.dir/src/hglog4cplus.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGCommon",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Common.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Common.dir\\src\\libpinyinHelp.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\libpinyinHelp.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/libpinyinHelp.cpp",
+  "output": "services/HGCommon/CMakeFiles/Common.dir/src/libpinyinHelp.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGCommon",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Common.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Common.dir\\src\\systemusage.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\systemusage.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/systemusage.cpp",
+  "output": "services/HGCommon/CMakeFiles/Common.dir/src/systemusage.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGCommon",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DHGCOMMON_LIBRARY @CMakeFiles/HGCommon.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCommon.dir\\src\\HGExactTime.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\HGExactTime.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/HGExactTime.cpp",
+  "output": "services/HGCommon/CMakeFiles/HGCommon.dir/src/HGExactTime.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGCommon",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DHGCOMMON_LIBRARY @CMakeFiles/HGCommon.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCommon.dir\\src\\decodecodeutility.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\decodecodeutility.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/decodecodeutility.cpp",
+  "output": "services/HGCommon/CMakeFiles/HGCommon.dir/src/decodecodeutility.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGCommon",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DHGCOMMON_LIBRARY @CMakeFiles/HGCommon.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCommon.dir\\src\\hgcommonutility.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\hgcommonutility.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/hgcommonutility.cpp",
+  "output": "services/HGCommon/CMakeFiles/HGCommon.dir/src/hgcommonutility.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGCommon",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DHGCOMMON_LIBRARY @CMakeFiles/HGCommon.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCommon.dir\\src\\hglog4cplus.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\hglog4cplus.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/hglog4cplus.cpp",
+  "output": "services/HGCommon/CMakeFiles/HGCommon.dir/src/hglog4cplus.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGCommon",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DHGCOMMON_LIBRARY @CMakeFiles/HGCommon.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCommon.dir\\src\\libpinyinHelp.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\libpinyinHelp.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/libpinyinHelp.cpp",
+  "output": "services/HGCommon/CMakeFiles/HGCommon.dir/src/libpinyinHelp.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGCommon",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DHGCOMMON_LIBRARY @CMakeFiles/HGCommon.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCommon.dir\\src\\systemusage.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\systemusage.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/systemusage.cpp",
+  "output": "services/HGCommon/CMakeFiles/HGCommon.dir/src/systemusage.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Config.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Config.dir\\src\\hgcsv.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgcsv.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgcsv.cpp",
+  "output": "services/HGConfig/CMakeFiles/Config.dir/src/hgcsv.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Config.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Config.dir\\src\\hgjson.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgjson.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgjson.cpp",
+  "output": "services/HGConfig/CMakeFiles/Config.dir/src/hgjson.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Config.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Config.dir\\src\\hgpdf.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgpdf.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgpdf.cpp",
+  "output": "services/HGConfig/CMakeFiles/Config.dir/src/hgpdf.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Config.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Config.dir\\src\\hgtxt.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgtxt.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgtxt.cpp",
+  "output": "services/HGConfig/CMakeFiles/Config.dir/src/hgtxt.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Config.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Config.dir\\src\\hgxlsx.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgxlsx.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgxlsx.cpp",
+  "output": "services/HGConfig/CMakeFiles/Config.dir/src/hgxlsx.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Config.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Config.dir\\src\\hgxml.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgxml.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgxml.cpp",
+  "output": "services/HGConfig/CMakeFiles/Config.dir/src/hgxml.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Config.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Config.dir\\src\\tinyxml2.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\tinyxml2.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/tinyxml2.cpp",
+  "output": "services/HGConfig/CMakeFiles/Config.dir/src/tinyxml2.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGConfig.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGConfig.dir\\src\\hgcsv.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgcsv.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgcsv.cpp",
+  "output": "services/HGConfig/CMakeFiles/HGConfig.dir/src/hgcsv.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGConfig.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGConfig.dir\\src\\hgjson.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgjson.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgjson.cpp",
+  "output": "services/HGConfig/CMakeFiles/HGConfig.dir/src/hgjson.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGConfig.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGConfig.dir\\src\\hgpdf.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgpdf.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgpdf.cpp",
+  "output": "services/HGConfig/CMakeFiles/HGConfig.dir/src/hgpdf.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGConfig.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGConfig.dir\\src\\hgtxt.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgtxt.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgtxt.cpp",
+  "output": "services/HGConfig/CMakeFiles/HGConfig.dir/src/hgtxt.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGConfig.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGConfig.dir\\src\\hgxlsx.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgxlsx.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgxlsx.cpp",
+  "output": "services/HGConfig/CMakeFiles/HGConfig.dir/src/hgxlsx.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGConfig.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGConfig.dir\\src\\hgxml.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgxml.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgxml.cpp",
+  "output": "services/HGConfig/CMakeFiles/HGConfig.dir/src/hgxml.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGConfig",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGConfig.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGConfig.dir\\src\\tinyxml2.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\tinyxml2.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/tinyxml2.cpp",
+  "output": "services/HGConfig/CMakeFiles/HGConfig.dir/src/tinyxml2.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGLowerPC",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/LowerPC.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\LowerPC.dir\\src\\hgprinter.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGLowerPC\\src\\hgprinter.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/src/hgprinter.cpp",
+  "output": "services/HGHardware/HGLowerPC/CMakeFiles/LowerPC.dir/src/hgprinter.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGLowerPC",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/LowerPC.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\LowerPC.dir\\src\\hgserial.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGLowerPC\\src\\hgserial.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/src/hgserial.cpp",
+  "output": "services/HGHardware/HGLowerPC/CMakeFiles/LowerPC.dir/src/hgserial.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGLowerPC",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGLowerPC.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGLowerPC.dir\\src\\hgprinter.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGLowerPC\\src\\hgprinter.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/src/hgprinter.cpp",
+  "output": "services/HGHardware/HGLowerPC/CMakeFiles/HGLowerPC.dir/src/hgprinter.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGLowerPC",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGLowerPC.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGLowerPC.dir\\src\\hgserial.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGLowerPC\\src\\hgserial.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/src/hgserial.cpp",
+  "output": "services/HGHardware/HGLowerPC/CMakeFiles/HGLowerPC.dir/src/hgserial.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGSensor",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Sensor.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Sensor.dir\\src\\hgcapture2d.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2d.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2d.cpp",
+  "output": "services/HGHardware/HGSensor/CMakeFiles/Sensor.dir/src/hgcapture2d.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGSensor",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Sensor.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Sensor.dir\\src\\hgcapture2dfromip.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromip.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2dfromip.cpp",
+  "output": "services/HGHardware/HGSensor/CMakeFiles/Sensor.dir/src/hgcapture2dfromip.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGSensor",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Sensor.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Sensor.dir\\src\\hgcapture2dfromlocaldisk.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromlocaldisk.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2dfromlocaldisk.cpp",
+  "output": "services/HGHardware/HGSensor/CMakeFiles/Sensor.dir/src/hgcapture2dfromlocaldisk.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGSensor",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Sensor.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Sensor.dir\\src\\hgcapture2dfromusb.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromusb.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2dfromusb.cpp",
+  "output": "services/HGHardware/HGSensor/CMakeFiles/Sensor.dir/src/hgcapture2dfromusb.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGSensor",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Sensor.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Sensor.dir\\src\\ipcameramanager.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\ipcameramanager.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/ipcameramanager.cpp",
+  "output": "services/HGHardware/HGSensor/CMakeFiles/Sensor.dir/src/ipcameramanager.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGSensor",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/Sensor.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\Sensor.dir\\src\\usbcameramanager.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\usbcameramanager.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/usbcameramanager.cpp",
+  "output": "services/HGHardware/HGSensor/CMakeFiles/Sensor.dir/src/usbcameramanager.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGSensor",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGSensor.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGSensor.dir\\src\\hgcapture2d.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2d.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2d.cpp",
+  "output": "services/HGHardware/HGSensor/CMakeFiles/HGSensor.dir/src/hgcapture2d.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGSensor",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGSensor.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGSensor.dir\\src\\hgcapture2dfromip.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromip.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2dfromip.cpp",
+  "output": "services/HGHardware/HGSensor/CMakeFiles/HGSensor.dir/src/hgcapture2dfromip.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGSensor",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGSensor.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGSensor.dir\\src\\hgcapture2dfromlocaldisk.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromlocaldisk.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2dfromlocaldisk.cpp",
+  "output": "services/HGHardware/HGSensor/CMakeFiles/HGSensor.dir/src/hgcapture2dfromlocaldisk.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGSensor",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGSensor.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGSensor.dir\\src\\hgcapture2dfromusb.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromusb.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2dfromusb.cpp",
+  "output": "services/HGHardware/HGSensor/CMakeFiles/HGSensor.dir/src/hgcapture2dfromusb.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGSensor",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGSensor.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGSensor.dir\\src\\ipcameramanager.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\ipcameramanager.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/ipcameramanager.cpp",
+  "output": "services/HGHardware/HGSensor/CMakeFiles/HGSensor.dir/src/ipcameramanager.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGHardware/HGSensor",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGSensor.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGSensor.dir\\src\\usbcameramanager.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\usbcameramanager.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/usbcameramanager.cpp",
+  "output": "services/HGHardware/HGSensor/CMakeFiles/HGSensor.dir/src/usbcameramanager.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGImageAlgorithmService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/ImageAlgorithmService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\ImageAlgorithmService.dir\\src\\dimentionVux.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\dimentionVux.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/dimentionVux.cpp",
+  "output": "services/HGAtomService/HGImageAlgorithmService/CMakeFiles/ImageAlgorithmService.dir/src/dimentionVux.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGImageAlgorithmService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/ImageAlgorithmService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\ImageAlgorithmService.dir\\src\\hgabsensedetect.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\hgabsensedetect.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/hgabsensedetect.cpp",
+  "output": "services/HGAtomService/HGImageAlgorithmService/CMakeFiles/ImageAlgorithmService.dir/src/hgabsensedetect.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGImageAlgorithmService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/ImageAlgorithmService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\ImageAlgorithmService.dir\\src\\hgdetectcircle.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\hgdetectcircle.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/hgdetectcircle.cpp",
+  "output": "services/HGAtomService/HGImageAlgorithmService/CMakeFiles/ImageAlgorithmService.dir/src/hgdetectcircle.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGImageAlgorithmService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/ImageAlgorithmService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\ImageAlgorithmService.dir\\src\\hgplasticcupabsensedetect.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\hgplasticcupabsensedetect.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/hgplasticcupabsensedetect.cpp",
+  "output": "services/HGAtomService/HGImageAlgorithmService/CMakeFiles/ImageAlgorithmService.dir/src/hgplasticcupabsensedetect.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGImageAlgorithmService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/ImageAlgorithmService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\ImageAlgorithmService.dir\\src\\putZhText.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\putZhText.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/putZhText.cpp",
+  "output": "services/HGAtomService/HGImageAlgorithmService/CMakeFiles/ImageAlgorithmService.dir/src/putZhText.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGImageAlgorithmService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGImageAlgorithmService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGImageAlgorithmService.dir\\src\\dimentionVux.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\dimentionVux.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/dimentionVux.cpp",
+  "output": "services/HGAtomService/HGImageAlgorithmService/CMakeFiles/HGImageAlgorithmService.dir/src/dimentionVux.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGImageAlgorithmService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGImageAlgorithmService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGImageAlgorithmService.dir\\src\\hgabsensedetect.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\hgabsensedetect.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/hgabsensedetect.cpp",
+  "output": "services/HGAtomService/HGImageAlgorithmService/CMakeFiles/HGImageAlgorithmService.dir/src/hgabsensedetect.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGImageAlgorithmService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGImageAlgorithmService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGImageAlgorithmService.dir\\src\\hgdetectcircle.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\hgdetectcircle.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/hgdetectcircle.cpp",
+  "output": "services/HGAtomService/HGImageAlgorithmService/CMakeFiles/HGImageAlgorithmService.dir/src/hgdetectcircle.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGImageAlgorithmService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGImageAlgorithmService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGImageAlgorithmService.dir\\src\\hgplasticcupabsensedetect.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\hgplasticcupabsensedetect.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/hgplasticcupabsensedetect.cpp",
+  "output": "services/HGAtomService/HGImageAlgorithmService/CMakeFiles/HGImageAlgorithmService.dir/src/hgplasticcupabsensedetect.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGImageAlgorithmService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGImageAlgorithmService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGImageAlgorithmService.dir\\src\\putZhText.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\putZhText.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/putZhText.cpp",
+  "output": "services/HGAtomService/HGImageAlgorithmService/CMakeFiles/HGImageAlgorithmService.dir/src/putZhText.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGSaveService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/SaveService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\SaveService.dir\\src\\SQLite.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGSaveService\\src\\SQLite.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/src/SQLite.cpp",
+  "output": "services/HGAtomService/HGSaveService/CMakeFiles/SaveService.dir/src/SQLite.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGSaveService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/SaveService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\SaveService.dir\\src\\hgsavedatatodb.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGSaveService\\src\\hgsavedatatodb.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/src/hgsavedatatodb.cpp",
+  "output": "services/HGAtomService/HGSaveService/CMakeFiles/SaveService.dir/src/hgsavedatatodb.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGSaveService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/SaveService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\SaveService.dir\\src\\hgsaveimgtolocaldisk.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGSaveService\\src\\hgsaveimgtolocaldisk.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/src/hgsaveimgtolocaldisk.cpp",
+  "output": "services/HGAtomService/HGSaveService/CMakeFiles/SaveService.dir/src/hgsaveimgtolocaldisk.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGSaveService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGSaveService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGSaveService.dir\\src\\SQLite.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGSaveService\\src\\SQLite.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/src/SQLite.cpp",
+  "output": "services/HGAtomService/HGSaveService/CMakeFiles/HGSaveService.dir/src/SQLite.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGSaveService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGSaveService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGSaveService.dir\\src\\hgsavedatatodb.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGSaveService\\src\\hgsavedatatodb.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/src/hgsavedatatodb.cpp",
+  "output": "services/HGAtomService/HGSaveService/CMakeFiles/HGSaveService.dir/src/hgsavedatatodb.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGSaveService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGSaveService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGSaveService.dir\\src\\hgsaveimgtolocaldisk.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGSaveService\\src\\hgsaveimgtolocaldisk.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/src/hgsaveimgtolocaldisk.cpp",
+  "output": "services/HGAtomService/HGSaveService/CMakeFiles/HGSaveService.dir/src/hgsaveimgtolocaldisk.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGFrameService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/FrameService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\FrameService.dir\\src\\config.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\config.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/config.cpp",
+  "output": "services/HGAtomService/HGFrameService/CMakeFiles/FrameService.dir/src/config.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGFrameService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/FrameService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\FrameService.dir\\src\\flow.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\flow.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/flow.cpp",
+  "output": "services/HGAtomService/HGFrameService/CMakeFiles/FrameService.dir/src/flow.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGFrameService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/FrameService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\FrameService.dir\\src\\rwDb.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\rwDb.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/rwDb.cpp",
+  "output": "services/HGAtomService/HGFrameService/CMakeFiles/FrameService.dir/src/rwDb.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGFrameService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/FrameService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\FrameService.dir\\src\\style.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\style.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/style.cpp",
+  "output": "services/HGAtomService/HGFrameService/CMakeFiles/FrameService.dir/src/style.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGFrameService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/FrameService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\FrameService.dir\\src\\task.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\task.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/task.cpp",
+  "output": "services/HGAtomService/HGFrameService/CMakeFiles/FrameService.dir/src/task.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGFrameService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGFrameService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGFrameService.dir\\src\\config.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\config.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/config.cpp",
+  "output": "services/HGAtomService/HGFrameService/CMakeFiles/HGFrameService.dir/src/config.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGFrameService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGFrameService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGFrameService.dir\\src\\flow.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\flow.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/flow.cpp",
+  "output": "services/HGAtomService/HGFrameService/CMakeFiles/HGFrameService.dir/src/flow.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGFrameService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGFrameService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGFrameService.dir\\src\\rwDb.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\rwDb.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/rwDb.cpp",
+  "output": "services/HGAtomService/HGFrameService/CMakeFiles/HGFrameService.dir/src/rwDb.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGFrameService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGFrameService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGFrameService.dir\\src\\style.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\style.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/style.cpp",
+  "output": "services/HGAtomService/HGFrameService/CMakeFiles/HGFrameService.dir/src/style.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/services/HGAtomService/HGFrameService",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGFrameService.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGFrameService.dir\\src\\task.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\task.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/task.cpp",
+  "output": "services/HGAtomService/HGFrameService/CMakeFiles/HGFrameService.dir/src/task.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/modules/HGV6Module",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/V6Module.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\V6Module.dir\\src\\hgv6ThreadManage.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\modules\\HGV6Module\\src\\hgv6ThreadManage.cpp",
+  "file": "D:/virtualMachine/github/vsproject/modules/HGV6Module/src/hgv6ThreadManage.cpp",
+  "output": "modules/HGV6Module/CMakeFiles/V6Module.dir/src/hgv6ThreadManage.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/modules/HGV6Module",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/V6Module.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\V6Module.dir\\src\\hgv6rwDB.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\modules\\HGV6Module\\src\\hgv6rwDB.cpp",
+  "file": "D:/virtualMachine/github/vsproject/modules/HGV6Module/src/hgv6rwDB.cpp",
+  "output": "modules/HGV6Module/CMakeFiles/V6Module.dir/src/hgv6rwDB.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/modules/HGV6Module",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGV6Module.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Module.dir\\src\\hgv6ThreadManage.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\modules\\HGV6Module\\src\\hgv6ThreadManage.cpp",
+  "file": "D:/virtualMachine/github/vsproject/modules/HGV6Module/src/hgv6ThreadManage.cpp",
+  "output": "modules/HGV6Module/CMakeFiles/HGV6Module.dir/src/hgv6ThreadManage.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/modules/HGV6Module",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGV6Module.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Module.dir\\src\\hgv6rwDB.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\modules\\HGV6Module\\src\\hgv6rwDB.cpp",
+  "file": "D:/virtualMachine/github/vsproject/modules/HGV6Module/src/hgv6rwDB.cpp",
+  "output": "modules/HGV6Module/CMakeFiles/HGV6Module.dir/src/hgv6rwDB.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/modules/HGV6Module",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGV6Module.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Module.dir\\__\\__\\services\\HGAtomService\\HGFrameService\\src\\config.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\config.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/config.cpp",
+  "output": "modules/HGV6Module/CMakeFiles/HGV6Module.dir/__/__/services/HGAtomService/HGFrameService/src/config.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/modules/HGV6Module",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGV6Module.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Module.dir\\__\\__\\services\\HGAtomService\\HGFrameService\\src\\flow.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\flow.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/flow.cpp",
+  "output": "modules/HGV6Module/CMakeFiles/HGV6Module.dir/__/__/services/HGAtomService/HGFrameService/src/flow.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/modules/HGV6Module",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGV6Module.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Module.dir\\__\\__\\services\\HGAtomService\\HGFrameService\\src\\rwDb.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\rwDb.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/rwDb.cpp",
+  "output": "modules/HGV6Module/CMakeFiles/HGV6Module.dir/__/__/services/HGAtomService/HGFrameService/src/rwDb.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/modules/HGV6Module",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGV6Module.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Module.dir\\__\\__\\services\\HGAtomService\\HGFrameService\\src\\style.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\style.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/style.cpp",
+  "output": "modules/HGV6Module/CMakeFiles/HGV6Module.dir/__/__/services/HGAtomService/HGFrameService/src/style.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/modules/HGV6Module",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGV6Module.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Module.dir\\__\\__\\services\\HGAtomService\\HGFrameService\\src\\task.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\task.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/task.cpp",
+  "output": "modules/HGV6Module/CMakeFiles/HGV6Module.dir/__/__/services/HGAtomService/HGFrameService/src/task.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/modules/HGCupDetModule",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CupDetModule.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CupDetModule.dir\\src\\hgcupdet.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\modules\\HGCupDetModule\\src\\hgcupdet.cpp",
+  "file": "D:/virtualMachine/github/vsproject/modules/HGCupDetModule/src/hgcupdet.cpp",
+  "output": "modules/HGCupDetModule/CMakeFiles/CupDetModule.dir/src/hgcupdet.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/modules/HGCupDetModule",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetModule.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetModule.dir\\src\\hgcupdet.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\modules\\HGCupDetModule\\src\\hgcupdet.cpp",
+  "file": "D:/virtualMachine/github/vsproject/modules/HGCupDetModule/src/hgcupdet.cpp",
+  "output": "modules/HGCupDetModule/CMakeFiles/HGCupDetModule.dir/src/hgcupdet.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/V6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\V6Interface.dir\\src\\HGV6Interface.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\interfaces\\HGV6Interface\\src\\HGV6Interface.cpp",
+  "file": "D:/virtualMachine/github/vsproject/interfaces/HGV6Interface/src/HGV6Interface.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/V6Interface.dir/src/HGV6Interface.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\src\\HGV6Interface.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\interfaces\\HGV6Interface\\src\\HGV6Interface.cpp",
+  "file": "D:/virtualMachine/github/vsproject/interfaces/HGV6Interface/src/HGV6Interface.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/src/HGV6Interface.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGCommon\\src\\HGExactTime.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\HGExactTime.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/HGExactTime.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGCommon/src/HGExactTime.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGCommon\\src\\decodecodeutility.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\decodecodeutility.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/decodecodeutility.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGCommon/src/decodecodeutility.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGCommon\\src\\hgcommonutility.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\hgcommonutility.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/hgcommonutility.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGCommon/src/hgcommonutility.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGCommon\\src\\hglog4cplus.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\hglog4cplus.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/hglog4cplus.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGCommon/src/hglog4cplus.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGCommon\\src\\libpinyinHelp.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\libpinyinHelp.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/libpinyinHelp.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGCommon/src/libpinyinHelp.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGCommon\\src\\systemusage.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\systemusage.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/systemusage.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGCommon/src/systemusage.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGConfig\\src\\hgcsv.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgcsv.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgcsv.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGConfig/src/hgcsv.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGConfig\\src\\hgjson.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgjson.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgjson.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGConfig/src/hgjson.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGConfig\\src\\hgpdf.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgpdf.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgpdf.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGConfig/src/hgpdf.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGConfig\\src\\hgtxt.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgtxt.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgtxt.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGConfig/src/hgtxt.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGConfig\\src\\hgxlsx.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgxlsx.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgxlsx.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGConfig/src/hgxlsx.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGConfig\\src\\hgxml.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgxml.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgxml.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGConfig/src/hgxml.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGConfig\\src\\tinyxml2.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\tinyxml2.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/tinyxml2.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGConfig/src/tinyxml2.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGSaveService\\src\\SQLite.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGSaveService\\src\\SQLite.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/src/SQLite.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGSaveService/src/SQLite.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGSaveService\\src\\hgsavedatatodb.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGSaveService\\src\\hgsavedatatodb.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/src/hgsavedatatodb.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGSaveService/src/hgsavedatatodb.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGSaveService\\src\\hgsaveimgtolocaldisk.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGSaveService\\src\\hgsaveimgtolocaldisk.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/src/hgsaveimgtolocaldisk.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGSaveService/src/hgsaveimgtolocaldisk.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGFrameService\\src\\config.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\config.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/config.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGFrameService/src/config.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGFrameService\\src\\flow.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\flow.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/flow.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGFrameService/src/flow.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGFrameService\\src\\rwDb.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\rwDb.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/rwDb.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGFrameService/src/rwDb.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGFrameService\\src\\style.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\style.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/style.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGFrameService/src/style.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGFrameService\\src\\task.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGFrameService\\src\\task.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/src/task.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGFrameService/src/task.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\modules\\HGV6Module\\src\\hgv6ThreadManage.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\modules\\HGV6Module\\src\\hgv6ThreadManage.cpp",
+  "file": "D:/virtualMachine/github/vsproject/modules/HGV6Module/src/hgv6ThreadManage.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/modules/HGV6Module/src/hgv6ThreadManage.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\modules\\HGV6Module\\src\\hgv6rwDB.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\modules\\HGV6Module\\src\\hgv6rwDB.cpp",
+  "file": "D:/virtualMachine/github/vsproject/modules/HGV6Module/src/hgv6rwDB.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/modules/HGV6Module/src/hgv6rwDB.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGCommunicateService\\src\\hgbasecom.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGCommunicateService\\src\\hgbasecom.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/src/hgbasecom.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGCommunicateService/src/hgbasecom.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGCommunicateService\\src\\hgcomwithbluetooth.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGCommunicateService\\src\\hgcomwithbluetooth.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/src/hgcomwithbluetooth.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGCommunicateService/src/hgcomwithbluetooth.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGCommunicateService\\src\\hgcomwithmqtt.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGCommunicateService\\src\\hgcomwithmqtt.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/src/hgcomwithmqtt.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGCommunicateService/src/hgcomwithmqtt.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGCommunicateService\\src\\hgcomwithsocket.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGCommunicateService\\src\\hgcomwithsocket.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/src/hgcomwithsocket.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGCommunicateService/src/hgcomwithsocket.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGCommunicateService\\src\\hgcomwithsomeip.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGCommunicateService\\src\\hgcomwithsomeip.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/src/hgcomwithsomeip.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGCommunicateService/src/hgcomwithsomeip.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGCommunicateService\\src\\hgcomwithssh.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGCommunicateService\\src\\hgcomwithssh.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/src/hgcomwithssh.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGCommunicateService/src/hgcomwithssh.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGCommunicateService\\src\\hgcomwithzmq.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGCommunicateService\\src\\hgcomwithzmq.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/src/hgcomwithzmq.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGCommunicateService/src/hgcomwithzmq.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGCommunicateService\\src\\tcpvideoreceiver.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGCommunicateService\\src\\tcpvideoreceiver.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/src/tcpvideoreceiver.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGCommunicateService/src/tcpvideoreceiver.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGV6Interface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe -DLIBSSH_STATIC @CMakeFiles/HGV6Interface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGV6Interface.dir\\__\\__\\services\\HGAtomService\\HGCommunicateService\\src\\tcpvideosender.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGCommunicateService\\src\\tcpvideosender.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/src/tcpvideosender.cpp",
+  "output": "interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/__/__/services/HGAtomService/HGCommunicateService/src/tcpvideosender.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CupDetInterface.dir\\src\\HGCupDetInterface.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\interfaces\\HGCupDetInterface\\src\\HGCupDetInterface.cpp",
+  "file": "D:/virtualMachine/github/vsproject/interfaces/HGCupDetInterface/src/HGCupDetInterface.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/CupDetInterface.dir/src/HGCupDetInterface.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\src\\HGCupDetInterface.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\interfaces\\HGCupDetInterface\\src\\HGCupDetInterface.cpp",
+  "file": "D:/virtualMachine/github/vsproject/interfaces/HGCupDetInterface/src/HGCupDetInterface.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/src/HGCupDetInterface.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGCommon\\src\\HGExactTime.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\HGExactTime.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/HGExactTime.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGCommon/src/HGExactTime.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGCommon\\src\\decodecodeutility.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\decodecodeutility.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/decodecodeutility.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGCommon/src/decodecodeutility.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGCommon\\src\\hgcommonutility.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\hgcommonutility.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/hgcommonutility.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGCommon/src/hgcommonutility.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGCommon\\src\\hglog4cplus.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\hglog4cplus.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/hglog4cplus.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGCommon/src/hglog4cplus.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGCommon\\src\\libpinyinHelp.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\libpinyinHelp.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/libpinyinHelp.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGCommon/src/libpinyinHelp.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGCommon\\src\\systemusage.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\systemusage.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/systemusage.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGCommon/src/systemusage.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGConfig\\src\\hgcsv.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgcsv.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgcsv.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGConfig/src/hgcsv.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGConfig\\src\\hgjson.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgjson.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgjson.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGConfig/src/hgjson.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGConfig\\src\\hgpdf.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgpdf.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgpdf.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGConfig/src/hgpdf.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGConfig\\src\\hgtxt.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgtxt.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgtxt.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGConfig/src/hgtxt.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGConfig\\src\\hgxlsx.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgxlsx.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgxlsx.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGConfig/src/hgxlsx.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGConfig\\src\\hgxml.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgxml.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgxml.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGConfig/src/hgxml.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGConfig\\src\\tinyxml2.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\tinyxml2.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/tinyxml2.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGConfig/src/tinyxml2.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGHardware\\HGSensor\\src\\hgcapture2d.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2d.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2d.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGHardware/HGSensor/src/hgcapture2d.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromip.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromip.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2dfromip.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGHardware/HGSensor/src/hgcapture2dfromip.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromlocaldisk.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromlocaldisk.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2dfromlocaldisk.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGHardware/HGSensor/src/hgcapture2dfromlocaldisk.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromusb.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromusb.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2dfromusb.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGHardware/HGSensor/src/hgcapture2dfromusb.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGHardware\\HGSensor\\src\\ipcameramanager.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\ipcameramanager.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/ipcameramanager.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGHardware/HGSensor/src/ipcameramanager.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGHardware\\HGSensor\\src\\usbcameramanager.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\usbcameramanager.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/usbcameramanager.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGHardware/HGSensor/src/usbcameramanager.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGAtomService\\HGImageAlgorithmService\\src\\dimentionVux.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\dimentionVux.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/dimentionVux.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGAtomService/HGImageAlgorithmService/src/dimentionVux.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGAtomService\\HGImageAlgorithmService\\src\\hgabsensedetect.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\hgabsensedetect.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/hgabsensedetect.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGAtomService/HGImageAlgorithmService/src/hgabsensedetect.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGAtomService\\HGImageAlgorithmService\\src\\hgdetectcircle.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\hgdetectcircle.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/hgdetectcircle.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGAtomService/HGImageAlgorithmService/src/hgdetectcircle.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGAtomService\\HGImageAlgorithmService\\src\\hgplasticcupabsensedetect.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\hgplasticcupabsensedetect.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/hgplasticcupabsensedetect.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGAtomService/HGImageAlgorithmService/src/hgplasticcupabsensedetect.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGAtomService\\HGImageAlgorithmService\\src\\putZhText.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGImageAlgorithmService\\src\\putZhText.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGImageAlgorithmService/src/putZhText.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGAtomService/HGImageAlgorithmService/src/putZhText.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGAtomService\\HGSaveService\\src\\SQLite.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGSaveService\\src\\SQLite.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/src/SQLite.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGAtomService/HGSaveService/src/SQLite.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGAtomService\\HGSaveService\\src\\hgsavedatatodb.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGSaveService\\src\\hgsavedatatodb.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/src/hgsavedatatodb.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGAtomService/HGSaveService/src/hgsavedatatodb.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\services\\HGAtomService\\HGSaveService\\src\\hgsaveimgtolocaldisk.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGAtomService\\HGSaveService\\src\\hgsaveimgtolocaldisk.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/src/hgsaveimgtolocaldisk.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/services/HGAtomService/HGSaveService/src/hgsaveimgtolocaldisk.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/HGCupDetInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/HGCupDetInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\HGCupDetInterface.dir\\__\\__\\modules\\HGCupDetModule\\src\\hgcupdet.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\modules\\HGCupDetModule\\src\\hgcupdet.cpp",
+  "file": "D:/virtualMachine/github/vsproject/modules/HGCupDetModule/src/hgcupdet.cpp",
+  "output": "interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/__/__/modules/HGCupDetModule/src/hgcupdet.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CRInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CRInterface.dir\\src\\CameraRecognizeInterface.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\interfaces\\CameraRecognizeInterface\\src\\CameraRecognizeInterface.cpp",
+  "file": "D:/virtualMachine/github/vsproject/interfaces/CameraRecognizeInterface/src/CameraRecognizeInterface.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CRInterface.dir/src/CameraRecognizeInterface.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\src\\CameraRecognizeInterface.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\interfaces\\CameraRecognizeInterface\\src\\CameraRecognizeInterface.cpp",
+  "file": "D:/virtualMachine/github/vsproject/interfaces/CameraRecognizeInterface/src/CameraRecognizeInterface.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/src/CameraRecognizeInterface.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGCommon\\src\\HGExactTime.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\HGExactTime.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/HGExactTime.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGCommon/src/HGExactTime.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGCommon\\src\\decodecodeutility.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\decodecodeutility.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/decodecodeutility.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGCommon/src/decodecodeutility.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGCommon\\src\\hgcommonutility.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\hgcommonutility.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/hgcommonutility.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGCommon/src/hgcommonutility.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGCommon\\src\\hglog4cplus.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\hglog4cplus.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/hglog4cplus.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGCommon/src/hglog4cplus.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGCommon\\src\\libpinyinHelp.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\libpinyinHelp.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/libpinyinHelp.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGCommon/src/libpinyinHelp.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGCommon\\src\\systemusage.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGCommon\\src\\systemusage.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGCommon/src/systemusage.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGCommon/src/systemusage.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGConfig\\src\\hgcsv.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgcsv.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgcsv.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGConfig/src/hgcsv.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGConfig\\src\\hgjson.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgjson.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgjson.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGConfig/src/hgjson.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGConfig\\src\\hgpdf.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgpdf.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgpdf.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGConfig/src/hgpdf.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGConfig\\src\\hgtxt.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgtxt.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgtxt.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGConfig/src/hgtxt.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGConfig\\src\\hgxlsx.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgxlsx.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgxlsx.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGConfig/src/hgxlsx.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGConfig\\src\\hgxml.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\hgxml.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/hgxml.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGConfig/src/hgxml.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGConfig\\src\\tinyxml2.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGConfig\\src\\tinyxml2.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGConfig/src/tinyxml2.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGConfig/src/tinyxml2.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGHardware\\HGSensor\\src\\hgcapture2d.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2d.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2d.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGHardware/HGSensor/src/hgcapture2d.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromip.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromip.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2dfromip.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGHardware/HGSensor/src/hgcapture2dfromip.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromlocaldisk.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromlocaldisk.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2dfromlocaldisk.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGHardware/HGSensor/src/hgcapture2dfromlocaldisk.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromusb.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\hgcapture2dfromusb.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/hgcapture2dfromusb.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGHardware/HGSensor/src/hgcapture2dfromusb.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGHardware\\HGSensor\\src\\ipcameramanager.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\ipcameramanager.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/ipcameramanager.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGHardware/HGSensor/src/ipcameramanager.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\services\\HGHardware\\HGSensor\\src\\usbcameramanager.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\services\\HGHardware\\HGSensor\\src\\usbcameramanager.cpp",
+  "file": "D:/virtualMachine/github/vsproject/services/HGHardware/HGSensor/src/usbcameramanager.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/services/HGHardware/HGSensor/src/usbcameramanager.cpp.obj"
+},
+{
+  "directory": "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/interfaces/CameraRecognizeInterface",
+  "command": "D:\\Qt\\Tools\\mingw1310_64\\bin\\c++.exe  @CMakeFiles/CameraRecognizeInterface.dir/includes_CXX.rsp -O3 -DNDEBUG -o CMakeFiles\\CameraRecognizeInterface.dir\\__\\__\\modules\\HGCupDetModule\\src\\hgcupdet.cpp.obj -c D:\\virtualMachine\\github\\vsproject\\modules\\HGCupDetModule\\src\\hgcupdet.cpp",
+  "file": "D:/virtualMachine/github/vsproject/modules/HGCupDetModule/src/hgcupdet.cpp",
+  "output": "interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/__/__/modules/HGCupDetModule/src/hgcupdet.cpp.obj"
+}
+]

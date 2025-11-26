@@ -1,5 +1,9 @@
 project(HGAnalysisRecordModule VERSION 1.1.1)
 
+# Define Qt libraries based on OS
+
+
+
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON) # QML
 set(CMAKE_AUTORCC ON) # rc
@@ -9,7 +13,8 @@ file(GLOB MOC_HEADERS
     "../../pluginInterface/inc/*.h"
 )
 
-qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+# 根据Qt版本选择对应的MOC命令
+
 
 HG_CMAKE_ADD_MODELU(AnalysisRecordModule inc src   
     ../../pluginInterface/inc ../../pluginInterface/src  
@@ -57,11 +62,16 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     /usr/lib/x86_64-linux-gnu/libpulse.so
     /usr/lib/x86_64-linux-gnu/libpulse-simple.so
     OpenSSL::Crypto
-    Qt5::Gui
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::Charts
-    Qt5::PrintSupport
+    
+
+    
+
+    
+
+    
+
+    
+
 )
 
 HG_CMAKE_ADD_SHARED(HGAnalysisRecordModule inc src   
@@ -104,17 +114,26 @@ HG_CMAKE_MODULE_DEPEND(
     ${SWSCALE_LIBRARIES}
     ${Boost_LIBRARIES}
     OpenSSL::Crypto
-    Qt5::Gui
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::Charts
-    Qt5::PrintSupport
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    ${QT_LIBRARIES}
 )
 
 # HG_CMAKE_ADD_EXE(HGAnalysisRecordModule main.cpp)
 
 # HG_CMAKE_MODULE_DEPEND(
 #     AnalysisRecordModule
+# 
+#     ${QT_LIBRARIES}
 # )
 
 # configure_file(

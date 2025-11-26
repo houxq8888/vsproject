@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HGMethodModule.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HGMethodModule.dir/objects.a @CMakeFiles\HGMethodModule.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\g++.exe -O3 -DNDEBUG -shared -o libHGMethodModule.dll -Wl,--out-implib,libHGMethodModule.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\HGMethodModule.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\HGMethodModule.dir\linkLibs.rsp

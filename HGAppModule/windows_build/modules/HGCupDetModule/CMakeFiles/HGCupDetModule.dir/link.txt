@@ -1,0 +1,2 @@
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGCupDetModule.a CMakeFiles/HGCupDetModule.dir/src/hgcupdet.cpp.obj
+D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGCupDetModule.a

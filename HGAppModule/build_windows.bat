@@ -28,6 +28,7 @@ echo Debug: Running CMake configuration...
   -DCMAKE_C_COMPILER=gcc ^
   -DCMAKE_CXX_COMPILER=g++ ^
   -DFEATURE_clang=OFF ^
+  -DPLATFORM=win32 ^
   ..
 
 echo Debug: CMake configuration returned %errorlevel%

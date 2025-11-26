@@ -1,0 +1,2 @@
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGConfig.a CMakeFiles/HGConfig.dir/src/hgcsv.cpp.obj CMakeFiles/HGConfig.dir/src/hgjson.cpp.obj CMakeFiles/HGConfig.dir/src/hgpdf.cpp.obj CMakeFiles/HGConfig.dir/src/hgtxt.cpp.obj CMakeFiles/HGConfig.dir/src/hgxlsx.cpp.obj CMakeFiles/HGConfig.dir/src/hgxml.cpp.obj CMakeFiles/HGConfig.dir/src/tinyxml2.cpp.obj
+D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGConfig.a

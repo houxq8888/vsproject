@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HGCurveModule.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HGCurveModule.dir/objects.a @CMakeFiles\HGCurveModule.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\g++.exe -O3 -DNDEBUG -shared -o libHGCurveModule.dll -Wl,--out-implib,libHGCurveModule.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\HGCurveModule.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\HGCurveModule.dir\linkLibs.rsp
