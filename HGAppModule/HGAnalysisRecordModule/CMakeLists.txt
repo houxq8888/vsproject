@@ -6,11 +6,13 @@ set(CMAKE_AUTORCC ON) # rc
 
 file(GLOB MOC_HEADERS 
     "inc/*.h"
+    "../../pluginInterface/inc/*.h"
 )
 
 qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 
-HG_CMAKE_ADD_MODELU(AnalysisRecordModule inc src                 
+HG_CMAKE_ADD_MODELU(AnalysisRecordModule inc src   
+    ../../pluginInterface/inc ../../pluginInterface/src  
     ${MOC_SRCS})
 
 target_compile_definitions(AnalysisRecordModule PUBLIC
@@ -18,6 +20,7 @@ target_compile_definitions(AnalysisRecordModule PUBLIC
      -DENV_APP_NAME=\"HGAnalysisRecordModule\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -31,6 +34,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGPrintModule
     HGSearchModule
     HGCurveModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
@@ -60,9 +64,12 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     Qt5::PrintSupport
 )
 
-HG_CMAKE_ADD_SHARED(HGAnalysisRecordModule inc src ${MOC_SRCS})
+HG_CMAKE_ADD_SHARED(HGAnalysisRecordModule inc src   
+    ../../pluginInterface/inc ../../pluginInterface/src  
+    ${MOC_SRCS})
 
 HG_CMAKE_MODULE_DEPEND(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -76,6 +83,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGPrintModule
     HGSearchModule
     HGCurveModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}

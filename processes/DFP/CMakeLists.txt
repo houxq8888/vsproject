@@ -7,6 +7,7 @@ target_compile_definitions(DFPProcess PUBLIC
 HG_CMAKE_MODULE_DEPEND_PUB(
     HGCommon
     ${OpenCV_LIBRARIES}
+    ${ZXING_LIBRARY}
     ${LOG4CPLUS_LIBRARIES}
 )
 

@@ -1,0 +1,5 @@
+D:/virtualMachine/github/vsproject/HGAppModule/test_build/CMakeFiles/HGAppModuleTest.dir
+D:/virtualMachine/github/vsproject/HGAppModule/test_build/CMakeFiles/edit_cache.dir
+D:/virtualMachine/github/vsproject/HGAppModule/test_build/CMakeFiles/rebuild_cache.dir
+D:/virtualMachine/github/vsproject/HGAppModule/test_build/CMakeFiles/HGAppModuleTest_autogen_timestamp_deps.dir
+D:/virtualMachine/github/vsproject/HGAppModule/test_build/CMakeFiles/HGAppModuleTest_autogen.dir

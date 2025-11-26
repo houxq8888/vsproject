@@ -5,6 +5,7 @@
 #include <windows.h>   // Windows API
 #include <winioctl.h>
 #include <tchar.h>
+#include <cstdint>
 #pragma comment(lib,"kernel32.lib")
 #include <iphlpapi.h>
 #pragma comment(lib, "iphlpapi.lib")
@@ -40,6 +41,8 @@ public:
     static double getNetworkUsage();
     // 获取当前磁盘IO读写率（KB/s）
     static double getDiskIO();
+
+    static bool getUSBDevices(const uint16_t &vendorID, const uint16_t &productID);
 private:
     
     // 静态变量，用于保存上次的CPU和内存使用数据，以便增量计算

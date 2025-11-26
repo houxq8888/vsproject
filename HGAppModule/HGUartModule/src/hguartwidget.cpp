@@ -46,21 +46,21 @@ HGUartWidget::HGUartWidget(std::string lang,QWidget *parent)
     m_sendButton=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"sendCaptureCode")));
 
     connect(m_openButton,&QPushButton::clicked,this,[=](){ 
-        if (m_serialPort->isOpen()){
+        if (m_serialPort->isOpened()){
             m_serialPort->close();
             m_openButton->setText(QString::fromStdString(loadTranslation(m_lang,"openCom")));
         }
         else{
-            m_serialPort->open(m_comSelectComboBox->currentText().toStdString().c_str());
-            if (m_serialPort->isOpen()){
-                m_openButton->setText(QString::fromStdString(loadTranslation(m_lang,"closeCom")));
-            }
             std::string portName=m_comSelectComboBox->currentText().toStdString();
             unsigned int speed=m_baudrateComboBox->currentText().toInt();
             int bits=m_dataBitsComboBox->currentIndex()+5;
             char event=m_parityComboBox->currentIndex()+'0';
             int stop=m_stopBitsComboBox->currentIndex()+1;
-            m_serialPort->set(portName,speed,bits,m_parityComboBox->currentText().toStdString()[0],m_stopBitsComboBox->currentIndex()+1);
+            m_serialPort->setParam(portName,speed,bits,m_parityComboBox->currentText().toStdString()[0],m_stopBitsComboBox->currentIndex()+1);
+            m_serialPort->open();
+            if (m_serialPort->isOpened()){
+                m_openButton->setText(QString::fromStdString(loadTranslation(m_lang,"closeCom")));
+            }
         }
     });
     connect(m_sendButton,&QPushButton::clicked,this,[=](){ 

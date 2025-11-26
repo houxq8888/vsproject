@@ -39,6 +39,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     # ${ZeroMQ_LIBRARY}
     ${MQTT_LIBRARYS}
     ${LIB_MOSQUITT_LIBRARY}
+    ${ZXING_LIBRARY}
     # OpenSSL::Crypto
     Qt5::Gui
     Qt5::Core

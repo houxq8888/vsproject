@@ -30,6 +30,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     ${CUPS_LIBRARY}
     ${XLSXIO_READ_LIBRARY}
     ${XLSXIO_WRITE_LIBRARY}
+    ${ZXING_LIBRARY}
     Qt5::Gui
     Qt5::Core
     Qt5::Widgets
@@ -48,6 +49,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGSaveService
     HGLowerPC
     HGSecurityService
+    ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
     ${LOG4CPLUS_LIBRARIES}  

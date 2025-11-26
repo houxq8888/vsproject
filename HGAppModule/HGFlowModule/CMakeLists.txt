@@ -18,6 +18,7 @@ target_compile_definitions(FlowModule PUBLIC
      -DENV_APP_NAME=\"HGFlowModule\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -26,6 +27,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGSecurityService
     HGCommunicateService
     HGBaseAppModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
@@ -57,6 +59,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
 
 HG_CMAKE_ADD_SHARED(HGFlowModule inc src ${MOC_SRCS})
 HG_CMAKE_MODULE_DEPEND(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -66,6 +69,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGAuthorityService
     HGCommunicateService
     HGBaseAppModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}

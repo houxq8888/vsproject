@@ -18,6 +18,7 @@ target_compile_definitions(EBalanceModule PUBLIC
      -DENV_APP_NAME=\"HGEBalanceModule\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -26,6 +27,49 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGSecurityService
     HGBaseAppModule
     HGUartModule
+    ${ZXING_LIBRARY}
+    ALSA::ALSA
+    ${OpenCV_LIBRARIES}
+    ${OpencvFreeType_LIBRARY}
+    ${LOG4CPLUS_LIBRARIES}
+    ${CUPS_LIBRARY}
+    ${XLSXIO_READ_LIBRARY}
+    ${XLSXIO_WRITE_LIBRARY}
+    ${HARU_LIBRARY}
+    ${ZeroMQ_LIBRARY}
+    ${MQTT_LIBRARYS}
+    ${LIB_SERIALPORT_LIBRARY}
+    ${LIB_MOSQUITT_LIBRARY}
+    ${PULSE_LIBRARIES}
+    ${LIBSSH_LIBRARIES}
+    ${AVFORMAT_LIBRARIES}
+    ${AVCODEC_LIBRARIES}
+    ${AVUTIL_LIBRARIES}
+    ${SWSCALE_LIBRARIES}
+    ${Boost_LIBRARIES}
+    ${USB_LIBRARY}
+    OpenSSL::Crypto
+    Qt5::Gui
+    Qt5::Core
+    Qt5::Widgets
+    Qt5::Charts
+    Qt5::PrintSupport
+)
+
+HG_CMAKE_ADD_SHARED(HGEBalanceModule inc src ${MOC_SRCS})
+HG_CMAKE_MODULE_DEPEND(
+    PluginInterface
+    HGLowerPC
+    HGCommon
+    HGConfig
+    HGSaveService
+    HGFrameService
+    HGSecurityService
+    HGAuthorityService
+    HGBaseAppModule
+    HGUartModule
+    ${ZXING_LIBRARY}
+    ${USB_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
@@ -52,53 +96,15 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     Qt5::Charts
     Qt5::PrintSupport
 )
+# HG_CMAKE_ADD_EXE(HGEBalanceModule main.cpp)
 
-# HG_CMAKE_ADD_SHARED(HGEBalanceModule inc src ${MOC_SRCS})
 # HG_CMAKE_MODULE_DEPEND(
-#     HGLowerPC
-#     HGCommon
-#     HGConfig
-#     HGSaveService
-#     HGFrameService
-#     HGSecurityService
-#     HGAuthorityService
-#     HGBaseAppModule
-    # HGUartModule
-#     ALSA::ALSA
-#     ${OpenCV_LIBRARIES}
-#     ${OpencvFreeType_LIBRARY}
-#     ${LOG4CPLUS_LIBRARIES}
-#     ${CUPS_LIBRARY}
-#     ${XLSXIO_READ_LIBRARY}
-#     ${XLSXIO_WRITE_LIBRARY}
-#     ${HARU_LIBRARY}
-#     ${ZeroMQ_LIBRARY}
-#     ${MQTT_LIBRARYS}
-#     ${LIB_SERIALPORT_LIBRARY}
-#     ${LIB_MOSQUITT_LIBRARY}
-#     ${PULSE_LIBRARIES}
-#     ${LIBSSH_LIBRARIES}
-#     ${AVFORMAT_LIBRARIES}
-#     ${AVCODEC_LIBRARIES}
-#     ${AVUTIL_LIBRARIES}
-#     ${SWSCALE_LIBRARIES}
-#     ${Boost_LIBRARIES}
-#     OpenSSL::Crypto
-#     Qt5::Gui
-#     Qt5::Core
-#     Qt5::Widgets
-#     Qt5::Charts
-#     Qt5::PrintSupport
+#     EBalanceModule
 # )
-HG_CMAKE_ADD_EXE(HGEBalanceModule main.cpp)
 
-HG_CMAKE_MODULE_DEPEND(
-    EBalanceModule
-)
+# configure_file(
+#     "${CMAKE_CURRENT_SOURCE_DIR}/version.h.in"
+#     "${CMAKE_CURRENT_BINARY_DIR}/version.h"
+# )
 
-configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/version.h.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/version.h"
-)
-
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
+# include_directories("${CMAKE_CURRENT_BINARY_DIR}")

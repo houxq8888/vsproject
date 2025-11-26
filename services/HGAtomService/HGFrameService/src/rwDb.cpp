@@ -36,7 +36,9 @@ std::vector<std::string> userGroupInfoName={
         "LastModifier",
         "LastModifyTime"
     };
-
+    std::vector<std::string> scannerInfoName={
+        "Sname","Sbatch","Sserial","Samount","Separator"
+    };
     std::vector<std::string> methodInfoName={
         "序号","名称","类型","创建时间","DBName","参数"
     };
@@ -1128,4 +1130,15 @@ std::map<std::string,std::string> RWDb::getMapFromDevices(const ReagentLinkDevic
     info["选择"]=device.choice;
     return info;
 }
+void RWDb::writeScannerInfo(const std::map<std::string,std::string> &info){
+    dbOpera.recordSingleInfo(ScannerDBName, info);
+}
+    std::map<std::string,std::string> RWDb::readScannerInfo(){
+        std::map<std::string,std::string> info;
+        for (auto name:scannerInfoName){
+            info[name]="";
+        }
+        dbOpera.readSingleInfo(ScannerDBName,info);
+        return info;
+    }
 }

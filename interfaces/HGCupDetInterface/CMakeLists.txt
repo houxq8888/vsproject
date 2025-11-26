@@ -11,6 +11,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGSensor
     HGImageAlgorithmService
     HGCommon
+    ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
 )
 if (PLATFORM STREQUAL "x64")
@@ -21,6 +22,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGSensor
     HGImageAlgorithmService
     HGCommon
+    ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
 )
 elseif (PLATFORM STREQUAL "win32")

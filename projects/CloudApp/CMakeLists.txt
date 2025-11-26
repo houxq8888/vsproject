@@ -75,6 +75,7 @@ target_compile_definitions(MCloudApp PUBLIC
 HG_CMAKE_MODULE_DEPEND_PUB(
     HGCommon
     HGConfig
+    ${ZXING_LIBRARY}
     ${LOG4CPLUS_LIBRARIES}
     ${PCL_LIBRARIES}
     ${VTK_LIBRARIES}

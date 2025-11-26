@@ -877,8 +877,8 @@ int HgThreadManage::commOpen(){
     int bits=8;
     char event='N';
     unsigned int speed=115200;
-    m_serial.set(comPort,speed,bits,event,stop);
-    if (0==m_serial.open(comPort.c_str())) {
+    m_serial.setParam(comPort,speed,bits,event,stop);
+    if (0==m_serial.open()) {
         logtext.str("");
         logtext << /*CARLAMPAPPNAME << */"open com success";
         HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
@@ -1059,13 +1059,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
         std::ostringstream logtext;
         std::vector<uint8_t> contents;
         int timeout = 100;
-        int ret = m_serial.read(contents, timeout);
-        // printf("readBuffers:ret=%d\n",ret);
-        if (ret < 0)
-        {
-            // HGLog4Cplus::getLogInstance(LOG_PATH)->logout("Error reading serial port", LOGERROR);
-        }
-
+        contents=m_serial.read();
         // logtext.str("");
         // logtext << "[READ] serialize: count:" << int(contents.size());
         // printf("[READ]serialize:count:%d\n", int(contents.size()));
@@ -1387,6 +1381,6 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
     }
     void HgThreadManage::writeBuffer(const std::string &data)
     {
-        m_serial.write(data);
+        m_serial.write(std::vector<uint8_t>(data.begin(), data.end()));
     }
 }

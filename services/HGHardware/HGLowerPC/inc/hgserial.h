@@ -5,6 +5,7 @@
 #include <vector>
 #include "CSerialPort/SerialPort.h"  // 原始头文件路径
 #include "CSerialPort/SerialPortInfo.h"
+#include "CSerialPort/SerialPortListener.h"
 #include <mutex>
 
 #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
@@ -70,29 +71,33 @@ typedef struct tagHGSERAIL_STANDARD_INFO{
 
 std::vector<std::string> listAvailableSerialPorts();
 
-    class HGSerial {
+    class HGSerial : public itas109::CSerialPortListener {
     public:
         HGSerial();
         ~HGSerial();
     
-        int open(const char* portName);
+        int open();
         int close();
-        bool isOpen();
+        bool isOpened(){
+            if (!sp.isOpen()) return false;
+            return true;
+        }
     
         int getStartPos(const std::vector<uint8_t> &contents);
         int getEndPos(const std::vector<uint8_t> &contents);
         std::vector<size_t> findPattern(const std::vector<uint8_t>& data, const std::vector<uint8_t>& pattern);
 
-        int write(const std::string& data);
-        int read(std::vector<uint8_t> &contents, int maxLen = 256);
+        int write(const std::vector<uint8_t>& hex);
+        std::vector<uint8_t> read();
         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
         void setStandardInfo(const HGSERIAL_STANDARD_INFO &info);
-        int set(const std::string& portName,unsigned int speed,int bits,char event,int stop);
-    
+        void setParam(const std::string& portName,unsigned int speed,int bits,char event,int stop);
+    protected:
+        void onReadEvent(const char* portName,unsigned int readBufferLen);
     private:
-        std::vector<uint8_t> m_content;
+        std::vector<std::vector<uint8_t>> m_readHex;
         HGSERIAL_STANDARD_INFO m_standard_info;
-        itas109::CSerialPort m_serial;
+        itas109::CSerialPort sp;
         bool m_smaller;
         bool m_isOpened;
         bool m_valid;

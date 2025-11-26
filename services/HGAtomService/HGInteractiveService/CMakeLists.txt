@@ -7,12 +7,14 @@ HG_CMAKE_ADD_MODELU(InteractiveService inc src)
 
 HG_CMAKE_MODULE_DEPEND_PUB( 
     HGCommon
+    ${ZXING_LIBRARY}
 )
 
 HG_CMAKE_ADD_SHARED(HGInteractiveService inc src)
 
 HG_CMAKE_MODULE_DEPEND(
     HGCommon
+    ${ZXING_LIBRARY}
 )
 set_target_properties(HGInteractiveService PROPERTIES 
     VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}

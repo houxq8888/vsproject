@@ -1,5 +1,47 @@
 #include "systemusage.h"
+#include <iostream>
+#include <libusb-1.0/libusb.h>
 
+bool SystemUsage::getUSBDevices(const uint16_t &vendorID, const uint16_t &productID) {
+    bool flag =false;
+    libusb_context *context=nullptr;
+    libusb_device **list=nullptr;
+    ssize_t count;
+    // 初始化 libusb
+    if (libusb_init(&context) != 0) {
+        std::cerr << "Failed to initialize libusb" << std::endl;
+        return flag;
+    }
+    // 获取USB设备列表
+    count = libusb_get_device_list(context, &list);
+    if (count < 0) {
+        std::cerr << "Failed to get device list" << std::endl;
+        libusb_exit(context);
+        return flag;
+    }
+    // uint16_t vendorID = 0xAF99;
+    // uint16_t productID = 0x8002;
+    // 遍历USB设备列表
+    for (ssize_t i = 0; i < count; i++) {
+        libusb_device *device = list[i];
+        struct libusb_device_descriptor desc;
+        int ret = libusb_get_device_descriptor(device, &desc);
+        if (ret == 0) {
+            std::cout << "Vendor ID: " << desc.idVendor << ", Product ID:" << desc.idProduct  << std::endl;
+            // 判断目标设备的 Vendor ID 和 Product ID
+            if (desc.idVendor == vendorID && desc.idProduct == productID){
+                std::cout<<"Found target USB device"<<std::endl;
+                flag=true;
+                break;
+            }
+        }
+    }
+    // 释放USB设备列表
+    libusb_free_device_list(list, 1);
+    // 退出 libusb
+    libusb_exit(context);
+    return flag;
+}
     double SystemUsage::getCpuUsage() {
         #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
         // Windows平台的CPU使用率获取

@@ -29,6 +29,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGCommunicateService
     HGBaseAppModule
     HGDashboardModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}

@@ -1,7 +1,36 @@
 #include "config.h"
+#include <stdexcept>
+#include <iostream>
 
+namespace HGMACHINE
+{
+    uint16_t stringToUint16(const std::string &str)
+    {
+        if (str=="") return 0x00;
+        try
+        {
+            size_t pos = 0;
+            uint32_t value = std::stoul(str,&pos,16); // std::stoul() 返回 uint32_t 类型
+            if (pos != str.length())
+            {
+                throw std::invalid_argument("Invalid argument format for uint16_t");
+            }
+            if (value > UINT16_MAX){
+                throw std::out_of_range("Value is out of range for uint16_t");
+            }
+            return static_cast<uint16_t>(value); // 转换为 uint16_t
+        }
+        catch (const std::invalid_argument &e)
+        {
+            std::cerr << "Invalid argument: " << e.what() << std::endl;
+        }
+        catch (const std::out_of_range &e)
+        {
+            std::cerr << "Out of range: " << e.what() << std::endl;
+        }
+        return 0; // 返回一个默认值
+    }
 
-namespace HGMACHINE{
     Config FileConfig::m_config;
     FileConfig::FileConfig(){
 

@@ -8,6 +8,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGCommon
     HGConfig
     HGCommunicateService
+    ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
     ${AVFORMAT_LIBRARIES}
     ${AVCODEC_LIBRARIES}

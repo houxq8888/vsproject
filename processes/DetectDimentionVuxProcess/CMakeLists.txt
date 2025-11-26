@@ -8,6 +8,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGCommon
     ${OpenCV_LIBRARIES}
     ${LOG4CPLUS_LIBRARIES}
+    ${ZXING_LIBRARY}
     HXQDetectDimentionVuxInterface
 )
 

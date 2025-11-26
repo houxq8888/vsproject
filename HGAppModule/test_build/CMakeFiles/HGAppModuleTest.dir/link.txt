@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HGAppModuleTest.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HGAppModuleTest.dir/objects.a @CMakeFiles\HGAppModuleTest.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\c++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\HGAppModuleTest.dir/objects.a -Wl,--no-whole-archive -o HGAppModuleTest.exe -Wl,--out-implib,libHGAppModuleTest.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\HGAppModuleTest.dir\linkLibs.rsp

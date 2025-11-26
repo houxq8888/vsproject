@@ -9,6 +9,7 @@ HG_CMAKE_ADD_MODELU(DetectDimentionVuxModule inc src)
 HG_CMAKE_MODULE_DEPEND_PUB( 
     HGCommon
     HGImageAlgorithmService
+    ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
     ${LOG4CPLUS_LIBRARIES}
 )
@@ -18,6 +19,7 @@ HG_CMAKE_ADD_SHARED(HXQDetectDimentionVuxModule inc src)
 HG_CMAKE_MODULE_DEPEND(
     HGCommon
     HGImageAlgorithmService
+    ${ZXING_LIBRARY}
     ${LOG4CPLUS_LIBRARIES}
 )
 set_target_properties(HXQDetectDimentionVuxModule PROPERTIES 

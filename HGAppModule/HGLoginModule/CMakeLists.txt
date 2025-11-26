@@ -18,6 +18,7 @@ target_compile_definitions(LoginModule PUBLIC
      -DENV_APP_NAME=\"HGLoginModule\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -28,6 +29,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGImageAlgorithmService
     HGBaseAppModule
     HGSecurityService
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
@@ -57,6 +59,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
 
 HG_CMAKE_ADD_SHARED(HGLoginModule inc src ${MOC_SRCS})
 HG_CMAKE_MODULE_DEPEND(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -70,6 +73,7 @@ HG_CMAKE_MODULE_DEPEND(
     # HGOnlinePlatformModule
     # HGOnlinePlatformInterface
     # SQLite::SQLite3
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}

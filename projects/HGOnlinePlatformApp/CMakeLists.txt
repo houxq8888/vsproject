@@ -60,6 +60,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGAnalysisRecordModule
     HGChannelModule
     HGReagentModule
+    ${ZXING_LIBRARY}
     # SQLite::SQLite3
     ALSA::ALSA
     ${OpenCV_LIBRARIES}

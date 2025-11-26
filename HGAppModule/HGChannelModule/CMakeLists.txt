@@ -18,6 +18,7 @@ target_compile_definitions(ChannelModule PUBLIC
      -DENV_APP_NAME=\"HGChannelModule\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -28,6 +29,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGImageAlgorithmService
     HGSecurityService                        
     HGBaseAppModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
@@ -58,6 +60,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
 HG_CMAKE_ADD_SHARED(HGChannelModule inc src ${MOC_SRCS})
 
 HG_CMAKE_MODULE_DEPEND(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -68,6 +71,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGImageAlgorithmService
     HGSecurityService
     HGBaseAppModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}

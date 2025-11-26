@@ -14,6 +14,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGConfig
     HGCommunicateService
     HGAuthorityService
+    ${ZXING_LIBRARY}
     ${LOG4CPLUS_LIBRARIES}
     ${MQTT_LIBRARYS}
     ${AVFORMAT_LIBRARIES}
@@ -34,6 +35,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGFrameService
     HGCommunicateService
     HGAuthorityService
+    ${ZXING_LIBRARY}
     ${LOG4CPLUS_LIBRARIES}
     ${MQTT_LIBRARYS}
     ${AVFORMAT_LIBRARIES}

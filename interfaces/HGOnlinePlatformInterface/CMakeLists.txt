@@ -16,6 +16,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGCommunicateService
     HGAuthorityService
     HGSaveService
+    ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
     ${LOG4CPLUS_LIBRARIES}
     ${MQTT_LIBRARYS}
@@ -40,6 +41,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGAuthorityService
     HGCommunicateService
     HGSaveService
+    ${ZXING_LIBRARY}
     ${LOG4CPLUS_LIBRARIES}  
     ${OpenCV_LIBRARIES}
     ${MQTT_LIBRARYS}

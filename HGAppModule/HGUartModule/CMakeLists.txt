@@ -18,6 +18,7 @@ target_compile_definitions(UartModule PUBLIC
      -DENV_APP_NAME=\"HGUartModule\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -25,6 +26,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGFrameService
     HGSecurityService
     HGBaseAppModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
@@ -54,6 +56,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
 
 HG_CMAKE_ADD_SHARED(HGUartModule inc src ${MOC_SRCS})
 HG_CMAKE_MODULE_DEPEND(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -62,6 +65,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGSecurityService
     HGAuthorityService
     HGBaseAppModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}

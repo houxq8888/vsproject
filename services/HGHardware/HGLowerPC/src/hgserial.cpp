@@ -8,6 +8,11 @@
 #include <unistd.h>
 #include <iostream>
 
+#define COM_HEAD 0xEE
+#define COM_TAIL1 0xFF
+#define COM_TAIL2 0xFC
+#define COM_TAIL3 0xFF
+#define COM_TAIL4 0xFF
 
 namespace HGMACHINE {
 
@@ -23,31 +28,26 @@ HGSerial::~HGSerial()
 {
     close();
 }
-int HGSerial::open(const char *port_name) { 
+int HGSerial::open() { 
     if (!m_valid) return -1;
-    if (m_portName!=std::string(port_name)) return -1;
     printf("Port Name: %s\n", m_portName.c_str());
-
-    m_serial.setReadIntervalTimeout(100); // read interval timeout 0ms
-
-    m_serial.open();
-    printf("Open %s %s\n", m_portName.c_str(), m_serial.isOpen() ? "Success" : "Failed");
-    printf("Code: %d, Message: %s\n", m_serial.getLastError(), m_serial.getLastErrorMsg());
-    m_isOpened=m_serial.isOpen();
-    if (!m_serial.isOpen()) return -1;
+    sp.setReadIntervalTimeout(100); // read interval timeout 0ms
+    sp.open();
+    printf("Open %s %s\n", m_portName.c_str(), sp.isOpen() ? "Success" : "Failed");
+    printf("Code: %d, Message: %s\n", sp.getLastError(), sp.getLastErrorMsg());
+    if (sp.getLastError()!=itas109::ErrorOK) return -1;
+    if (!sp.isOpen()) return -1;
 
     // connect for read
-    // m_serial.connectReadEvent(this);
+    sp.connectReadEvent(this);
     return 0;
 }
 int HGSerial::close() {
-    if (m_serial.isOpen())
-        m_serial.close();
+    if (sp.isOpen())
+        sp.close();
     return 0;
 }
-bool HGSerial::isOpen() {
-    return m_isOpened;
-}
+
 int HGSerial::getStartPos(const std::vector<uint8_t> &contents){
     int headNum = int(m_standard_info.head.size());
     int posStart=-1;
@@ -113,44 +113,36 @@ std::vector<std::string> listAvailableSerialPorts() {
 
     return ports;
 }
-int HGSerial::write(const std::string& data){
+int HGSerial::write(const std::vector<uint8_t>& hex){
     // std::lock_guard<std::mutex> lock(m_mutex);  // 自动加锁并自动释放
-    if (!m_serial.isOpen()) return -1;
-    if (data.empty())
+    if (!sp.isOpen()) return -1;
+    if (hex.size() <= 0)
     {
         return -1; // 空字符串不进行写入操作
     }
     // write hex data
-    m_serial.writeData(data.c_str(), data.size());
+    sp.writeData(reinterpret_cast<const char*>(hex.data()),hex.size());
     return 0;
 }
-int HGSerial::read(std::vector<uint8_t> &contents,int maxLen){
+std::vector<uint8_t> HGSerial::read(){
  //std::lock_guard<std::mutex> lock(m_mutex);  // 自动加锁并自动释放
     // std::vector<uint8_t> hex;
     // read
-    contents.clear();
-    int readBufferLen = 128;
-    if (readBufferLen > 0)
-    {
-        // 创建 vector 缓冲区
-        std::vector<char> buffer(readBufferLen);
-
-        // read
-        int recLen = m_serial.readData(buffer.data(), readBufferLen);
-
-        if (recLen > 0)
-        {
-            contents.assign(buffer.begin(), buffer.begin() + recLen);
+    if (m_readHex.size() >0){
+        std::vector<uint8_t> copyReadData;
+        for (int i=0;i<int(m_readHex.size());i++){
+            copyReadData.push_back(m_readHex[0][i]);
         }
+        m_readHex.erase(m_readHex.begin());
+        return copyReadData;
     }
-
-    return 0;
+    else return std::vector<uint8_t>();
 }
 void HGSerial::setStandardInfo(const HGSERIAL_STANDARD_INFO &info)
 {
     m_standard_info = info;
 }
-int HGSerial::set(const std::string& portName,unsigned int speed,int bits,char event,int stop){
+void HGSerial::setParam(const std::string& portName,unsigned int speed,int bits,char event,int stop){
     std::vector<itas109::SerialPortInfo> m_availablePortsList = itas109::CSerialPortInfo::availablePortInfos();
 
     printf("AvailableFriendlyPorts:\n");
@@ -161,6 +153,7 @@ int HGSerial::set(const std::string& portName,unsigned int speed,int bits,char e
         itas109::SerialPortInfo serialPortInfo = m_availablePortsList[i - 1];
         if (portName==std::string(serialPortInfo.portName)){
             m_valid=true;
+            m_portName=portName;
         }
         // printf("%d - %s %s %s\n", i, serialPortInfo.portName, serialPortInfo.description, serialPortInfo.hardwareId);
     }
@@ -171,7 +164,7 @@ int HGSerial::set(const std::string& portName,unsigned int speed,int bits,char e
     }
     else
     {
-        if (!m_valid) return -1;
+        if (!m_valid) return ;
         itas109::Parity parity ;
         switch (event){
             case 'N':
@@ -226,8 +219,7 @@ int HGSerial::set(const std::string& portName,unsigned int speed,int bits,char e
         }
         itas109::FlowControl flowControl;
         flowControl=itas109::FlowControl::FlowNone;
-        m_portName=portName;
-        m_serial.init(portName.c_str(),              // windows:COM1 Linux:/dev/ttyS0
+        sp.init(portName.c_str(),              // windows:COM1 Linux:/dev/ttyS0
                 speed, // baudrate
                 parity,   // parity
                 dataBits,    // data bit
@@ -236,125 +228,31 @@ int HGSerial::set(const std::string& portName,unsigned int speed,int bits,char e
                 4096                   // read buffer size
         );
     }
-    return 0;
+    HGSERIAL_STANDARD_INFO hgserial_info;
+    hgserial_info.head.push_back(COM_HEAD);
+    hgserial_info.tail.push_back(COM_TAIL1);
+    hgserial_info.tail.push_back(COM_TAIL2);
+    hgserial_info.tail.push_back(COM_TAIL3);
+    hgserial_info.tail.push_back(COM_TAIL4);
+    setStandardInfo(hgserial_info);
 }
-// int HGSerial::open(const char *port_name) {
-//     try {
-//         // open the serial port at the desired hardware port
-//         #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
-//         #else
-//         m_serial_port.Open(port_name);
-//         #endif
-//         m_isOpened = true;
-//         return 0;
-//     } catch (const OpenFailed& e) {
-//         std::ostringstream log;
-//         log << HGLOWERPCNAME << "The serial port " << port_name << " did not open correctly: " << e.what();
-//         HGLog4Cplus::getLogInstance(LOG_PATH)->logout(log.str().c_str(), LOGERROR);
-//         return -1;
-//     } catch (const std::exception& e) {
-//         std::ostringstream log;
-//         log << HGLOWERPCNAME << "An unexpected error occurred while opening the serial port " << port_name << ": " << e.what();
-//         HGLog4Cplus::getLogInstance(LOG_PATH)->logout(log.str().c_str(), LOGERROR);
-//         return -1;
-//     } catch (...) {
-//         std::ostringstream log;
-//         log << HGLOWERPCNAME << "An unknown error occurred while opening the serial port " << port_name;
-//         HGLog4Cplus::getLogInstance(LOG_PATH)->logout(log.str().c_str(), LOGERROR);
-//         return -1;
-//     }
-// }
-// std::map<unsigned int,BaudRate> baudRates={{50,BaudRate::BAUD_50},
-//                                   {75,BaudRate::BAUD_75},
-//                                   {110,BaudRate::BAUD_110},
-//                                   {134,BaudRate::BAUD_134     },
-//                                   {150,BaudRate::BAUD_150     },
-//                                   {200,BaudRate::BAUD_200     },
-//                                   {300,BaudRate::BAUD_300     },
-//                                   {600,BaudRate::BAUD_600     },
-//                                   {1200,BaudRate::BAUD_1200    },
-//                                   {1800,BaudRate::BAUD_1800    },
-//                                   {2400,BaudRate::BAUD_2400    },
-//                                   {4800,BaudRate::BAUD_4800    },
-//                                   {9600,BaudRate::BAUD_9600    },
-//                                   {19200,BaudRate::BAUD_19200  },
-//                                   {38400,BaudRate::BAUD_38400  },
-//                                   {57600,BaudRate::BAUD_57600  },
-//                                   {115200,BaudRate::BAUD_115200},
-//                                   {230400,BaudRate::BAUD_230400},
-//                                   {460800,BaudRate::BAUD_460800},
-//                                   {500000,BaudRate::BAUD_500000}};
-
-// int HGSerial::close() {
-//     if (m_isOpened) {
-//         try {
-//             #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
-//             #else
-//             m_serial_port.Close();
-//             #endif
-//             m_isOpened = false;
-//             return 0; // 成功关闭
-//         } catch (const std::exception& e) {
-//             // 处理异常，例如记录日志
-//             std::cerr << "Error closing serial port: " << e.what() << std::endl;
-//             return -1; // 关闭失败
-//         }
-//     }
-//     return 0; // 已经关闭，无需操作
-// }
-// int HGSerial::set(unsigned int speed,int bits,char event,int stop){
-//     std::map<unsigned int,BaudRate>::iterator iter=baudRates.find(speed);
-//     BaudRate _baudRate;
-//     if (iter!=baudRates.end()) _baudRate=iter->second;
-
-//     #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
-//     #else
-//     m_serial_port.SetBaudRate(_baudRate);
-
-//     switch (bits){
-//     case 7:
-//         m_serial_port.SetCharacterSize(CharacterSize::CHAR_SIZE_7);
-//         break;
-//     case 8:
-//         m_serial_port.SetCharacterSize(CharacterSize::CHAR_SIZE_8);
-//         break;
-//     default:
-//         std::ostringstream log;
-//         log<<HGLOWERPCNAME<<"Unsupported data size";
-//         HGLog4Cplus::getLogInstance(LOG_PATH)->logout(log.str().c_str(),LOGERROR);
-//         return -1;
-//     }
-//     m_serial_port.SetFlowControl(FlowControl::FLOW_CONTROL_NONE);
-//     switch (event) {
-//     case 'O': // 奇校验
-//         m_serial_port.SetParity(Parity::PARITY_ODD);
-//         break;
-//     case 'E': // 偶校验
-//         m_serial_port.SetParity(Parity::PARITY_EVEN);
-//         break;
-//     case 'N': // 无校验
-//         m_serial_port.SetParity(Parity::PARITY_NONE);
-//         break;
-//     default:
-//         std::ostringstream log;
-//         log<<HGLOWERPCNAME<<"Unsupported parity";
-//         HGLog4Cplus::getLogInstance(LOG_PATH)->logout(log.str().c_str(),LOGERROR);
-//         return -1;
-//     }
-//     if (stop == 1) {
-//         m_serial_port.SetStopBits(StopBits::STOP_BITS_1);
-//     } else if (stop == 2) {
-//         m_serial_port.SetStopBits(StopBits::STOP_BITS_2);
-//     } else {
-//         std::ostringstream log;
-//         log<<HGLOWERPCNAME<<"Unsupported stop bits";
-//         HGLog4Cplus::getLogInstance(LOG_PATH)->logout(log.str().c_str(),LOGERROR);
-//         return -1;
-//     }
-//     #endif
-//     return 0;
-// }
-
+void HGSerial::onReadEvent(const char* portName,unsigned int readBufferLen){
+    if (readBufferLen>0){
+        int recLen=0;
+        char * str=NULL;
+        str = new char[readBufferLen];
+        recLen = sp.readData(str,readBufferLen);
+        // read
+        if (recLen>0){
+            str[recLen]='\0';
+            m_readHex.push_back(std::vector<uint8_t>(str,str+recLen));
+        }
+        if (str){
+            delete [] str;
+            str=NULL;
+        }
+    }
+}
 // int HGSerial::read(std::vector<uint8_t> &contents, int timeout)
 // {
 //     // 使用条件变量或定时器来避免忙等待

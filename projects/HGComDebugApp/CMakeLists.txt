@@ -17,6 +17,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGCommon
     HGConfig
     HGCommunicateService
+    ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
     ${LOG4CPLUS_LIBRARIES}
     ${MQTT_LIBRARYS}

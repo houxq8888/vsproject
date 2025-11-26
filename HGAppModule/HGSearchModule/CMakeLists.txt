@@ -18,6 +18,7 @@ target_compile_definitions(SearchModule PUBLIC
      -DENV_APP_NAME=\"HGSearchModule\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -28,6 +29,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGImageAlgorithmService
     HGSecurityService
     HGBaseAppModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
@@ -59,6 +61,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
 
 HG_CMAKE_ADD_SHARED(HGSearchModule inc src ${MOC_SRCS})
 HG_CMAKE_MODULE_DEPEND(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -69,6 +72,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGImageAlgorithmService
     HGSecurityService
     HGBaseAppModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}

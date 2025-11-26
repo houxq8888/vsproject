@@ -712,6 +712,7 @@ namespace HGMACHINE{
     #define ChannelDBName "Channel"
     #define ReagentLinkDeviceDBName "ReagentDevice"
     #define ReagentDBName "Reagent"
+    #define ScannerDBName "ScannerInfo"
 
 
     #define DB_PATH "/database/HG.db"
@@ -824,6 +825,10 @@ namespace HGMACHINE{
             static std::vector<std::map<std::string,std::string>> getModulesMap(Channel info);
             static void writeModulesRecord(std::string dbName,bool coverFlag,const std::vector<std::map<std::string,std::string>> &infoSS);
         
+            //----------------------------scanner---------------------------//
+            static void writeScannerInfo(const std::map<std::string,std::string> &info);
+            static std::map<std::string,std::string> readScannerInfo();
+
         protected:
             // static SendInfo response;
             static HGSaveDataToDB dbOpera;

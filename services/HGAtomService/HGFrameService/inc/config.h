@@ -3,12 +3,17 @@
 
 
 #include "hgxml.h"
+#include <sstream>
+#include <fstream>
+#include <iomanip>
 
 #ifdef __cplusplus
 extern "C" {
 #endif 
 
 namespace HGMACHINE{
+    uint16_t stringToUint16(const std::string &str);
+
     #define TaskSequenceDBName "TaskSequence"
     typedef struct tagConfig{
         std::string appVer;
@@ -18,6 +23,8 @@ namespace HGMACHINE{
         std::string reagentName;
         std::string dirPath;
         std::string comPort;
+        uint16_t scannerVendorID;
+        uint16_t scannerProductID;
         tagConfig(){
             Clear();
         }
@@ -32,6 +39,8 @@ namespace HGMACHINE{
             dirPath=obj.dirPath;
             comPort=obj.comPort;
             appName=obj.appName;
+            scannerVendorID=obj.scannerVendorID;
+            scannerProductID=obj.scannerProductID;
         }
         void Clear(){
             appVer="";
@@ -41,6 +50,8 @@ namespace HGMACHINE{
             dirPath="";
             comPort="";
             appName="";
+            scannerVendorID=0;
+            scannerProductID=0;
         }
         void setVersion(const std::string& version){
             if (appVer!=version) appVer=version;
@@ -72,7 +83,9 @@ namespace HGMACHINE{
                 taskSequenceName==obj.taskSequenceName &&
                 dirPath==obj.dirPath && 
                 comPort==obj.comPort && 
-                appName==obj.appName)
+                appName==obj.appName &&
+                scannerVendorID==obj.scannerVendorID &&
+                scannerProductID==obj.scannerProductID)
             {
                 ret=true;
             }
@@ -95,6 +108,11 @@ namespace HGMACHINE{
             XML_GETSTRING(reagentName,"","ReagentName",root);
             XML_GETSTRING(dirPath,"","DirPath",root);
             XML_GETSTRING(comPort,"","ComPort",root);
+            std::string vendorID="",productID="";
+            XML_GETSTRING(vendorID,"","ScannerVendorID",root);
+            scannerVendorID=stringToUint16(vendorID);
+            XML_GETSTRING(productID,"","ScannerProductID",root);
+            scannerProductID=stringToUint16(productID);
             return true;
         }
         void SaveXML(tinyxml2::XMLElement* root){
@@ -104,6 +122,15 @@ namespace HGMACHINE{
             XML_SAVESTRING(reagentName.c_str(),"ReagentName",root);
             XML_SAVESTRING(dirPath.c_str(),"DirPath",root);
             XML_SAVESTRING(comPort.c_str(),"ComPort",root);
+
+            std::stringstream ss;
+            ss << "0x" << std::hex <<std::uppercase << std::setw(4)<<std::setfill('0')<<scannerVendorID;
+            std::string hexStr = ss.str();
+            XML_SAVESTRING(hexStr.c_str(),"ScannerVendorID",root);
+            ss.str("");
+            ss << "0x" << std::hex <<std::uppercase << std::setw(4)<<std::setfill('0')<<scannerProductID;
+            hexStr = ss.str();
+            XML_SAVESTRING(hexStr.c_str(),"ScannerProductID",root);
         }
 
     } Config,*PConfig;
@@ -130,6 +157,8 @@ namespace HGMACHINE{
         static std::string getTaskSeqName() {return m_config.taskSequenceName;};
         static std::string getReagentName() {return m_config.reagentName;};
 
+        static uint16_t getScannerVendorID() {return m_config.scannerVendorID;};
+        static uint16_t getScannerProductID() {return m_config.scannerProductID;};
    
     private:
         static Config m_config;

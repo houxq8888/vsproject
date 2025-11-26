@@ -8,6 +8,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGCommon
     HGConfig
     CommonProtocolService
+    ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
     ${LIB_SERIALPORT_LIBRARY}
     OpenSSL::Crypto    

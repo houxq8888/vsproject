@@ -10,6 +10,7 @@ target_compile_definitions(CommonCommunicationDemoC PUBLIC
 #     CommonProtocolService
 #     ${OpenCV_LIBRARIES}
 #     ${LIB_SERIALPORT_LIBRARY}
+    # ${ZXING_LIBRARY}
 #     OpenSSL::Crypto    
 #     /usr/lib/x86_64-linux-gnu/libpulse.so
 #     /usr/lib/x86_64-linux-gnu/libpulse-simple.so

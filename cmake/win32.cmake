@@ -14,7 +14,8 @@ set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 # 不要加 pthread，g++-posix 自动链接 winpthreads
 # set(CMAKE_EXE_LINKER_FLAGS "-static -static-libgcc -static-libstdc++")
 
-set(CMAKE_CXX_STANDARD 11)
+# set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_definitions(-D_POSIX_C_SOURCE=200809L)

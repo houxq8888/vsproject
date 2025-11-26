@@ -18,6 +18,7 @@ target_compile_definitions(LogModule PUBLIC
      -DENV_APP_NAME=\"HGLogModule\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -29,6 +30,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGSecurityService
     HGBaseAppModule
     HGSearchModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
@@ -58,6 +60,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
 
 HG_CMAKE_ADD_SHARED(HGLogModule inc src ${MOC_SRCS})
 HG_CMAKE_MODULE_DEPEND(
+    PluginInterface
     HGLowerPC
     HGCommon
     HGConfig
@@ -69,6 +72,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGSecurityService
     HGBaseAppModule
     HGSearchModule
+    ${ZXING_LIBRARY}
     ALSA::ALSA
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}

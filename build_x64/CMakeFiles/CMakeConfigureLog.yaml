@@ -1,0 +1,2423 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Windows - 10.0.19045 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/"
+    found: "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\Administrator\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\local\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\Administrator\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Library\\mingw-w64\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\usr\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\bin"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-11.0.27.6-hotspot\\bin"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin"
+        - "C:\\windows\\system32"
+        - "C:\\windows"
+        - "C:\\windows\\System32\\Wbem"
+        - "C:\\windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\windows\\System32\\OpenSSH"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Android\\gradle-5.5.1"
+        - "D:\\Android\\gradle-5.5.1\\bin"
+        - "D:\\flutter_windows_3.29.3-stable\\flutter\\bin"
+        - "D:\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "D:\\Program Files\\ffmpeg-7.1.1-essentials_build\\bin"
+        - "D:\\Program Files\\Git\\cmd"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\condabin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "D:\\Program Files\\Git\\usr\\bin\\core_perl"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: -Wall;-fPIC;-g
+      Id flags:  
+      
+      The output was:
+      0
+      閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.13.19+0d9f5a35a
+      鐢熸垚鍚姩鏃堕棿涓?2025/11/26 13:15:53銆?
+      
+      鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\4.1.3\\CompilerIdC\\CompilerIdC.vcxproj鈥?榛樿鐩爣)銆?
+      PrepareForBuild:
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\鈥濄€?
+        宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\CompilerIdC.tlog\\鈥濄€?
+      InitializeBuildStatus:
+        姝ｅ湪鍒涘缓鈥淒ebug\\CompilerIdC.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdC.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+      ClCompile:
+        D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\4.1.3\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        姝ｅ湪鍒犻櫎鏂囦欢鈥淒ebug\\CompilerIdC.tlog\\unsuccessfulbuild鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+      宸插畬鎴愮敓鎴愰」鐩€淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\4.1.3\\CompilerIdC\\CompilerIdC.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+      
+      宸叉垚鍔熺敓鎴愩€?
+          0 涓鍛?
+          0 涓敊璇?
+      
+      宸茬敤鏃堕棿 00:00:00.76
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/4.1.3/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "C:/Users/Administrator/bin/"
+      - "D:/Program Files/Git/mingw64/bin/"
+      - "D:/Program Files/Git/usr/local/bin/"
+      - "D:/Program Files/Git/usr/bin/"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/"
+      - "D:/ProgramData/miniconda3/"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/"
+      - "D:/ProgramData/miniconda3/Library/bin/"
+      - "D:/ProgramData/miniconda3/Scripts/"
+      - "D:/ProgramData/miniconda3/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Strawberry/c/bin/"
+      - "C:/Strawberry/perl/site/bin/"
+      - "C:/Strawberry/perl/bin/"
+      - "D:/Android/gradle-5.5.1/"
+      - "D:/Android/gradle-5.5.1/bin/"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/"
+      - "D:/Program Files/Git/cmd/"
+      - "D:/ProgramData/miniconda3/condabin/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/"
+      - "D:/Program Files/Git/usr/bin/core_perl/"
+    searched_directories:
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/link.com"
+    found: "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\Administrator\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\local\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\Administrator\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Library\\mingw-w64\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\usr\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\bin"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-11.0.27.6-hotspot\\bin"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin"
+        - "C:\\windows\\system32"
+        - "C:\\windows"
+        - "C:\\windows\\System32\\Wbem"
+        - "C:\\windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\windows\\System32\\OpenSSH"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Android\\gradle-5.5.1"
+        - "D:\\Android\\gradle-5.5.1\\bin"
+        - "D:\\flutter_windows_3.29.3-stable\\flutter\\bin"
+        - "D:\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "D:\\Program Files\\ffmpeg-7.1.1-essentials_build\\bin"
+        - "D:\\Program Files\\Git\\cmd"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\condabin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "D:\\Program Files\\Git\\usr\\bin\\core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "C:/Users/Administrator/bin/"
+      - "D:/Program Files/Git/mingw64/bin/"
+      - "D:/Program Files/Git/usr/local/bin/"
+      - "D:/Program Files/Git/usr/bin/"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/"
+      - "D:/ProgramData/miniconda3/"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/"
+      - "D:/ProgramData/miniconda3/Library/bin/"
+      - "D:/ProgramData/miniconda3/Scripts/"
+      - "D:/ProgramData/miniconda3/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Strawberry/c/bin/"
+      - "C:/Strawberry/perl/site/bin/"
+      - "C:/Strawberry/perl/bin/"
+      - "D:/Android/gradle-5.5.1/"
+      - "D:/Android/gradle-5.5.1/bin/"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/"
+      - "D:/Program Files/Git/cmd/"
+      - "D:/ProgramData/miniconda3/condabin/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/"
+      - "D:/Program Files/Git/usr/bin/core_perl/"
+    searched_directories:
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lld-link.com"
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lld-link.exe"
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lld-link"
+      - "C:/Users/Administrator/bin/lld-link.com"
+      - "C:/Users/Administrator/bin/lld-link.exe"
+      - "C:/Users/Administrator/bin/lld-link"
+      - "D:/Program Files/Git/mingw64/bin/lld-link.com"
+      - "D:/Program Files/Git/mingw64/bin/lld-link.exe"
+      - "D:/Program Files/Git/mingw64/bin/lld-link"
+      - "D:/Program Files/Git/usr/local/bin/lld-link.com"
+      - "D:/Program Files/Git/usr/local/bin/lld-link.exe"
+      - "D:/Program Files/Git/usr/local/bin/lld-link"
+      - "D:/Program Files/Git/usr/bin/lld-link.com"
+      - "D:/Program Files/Git/usr/bin/lld-link.exe"
+      - "D:/Program Files/Git/usr/bin/lld-link"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/lld-link.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/lld-link.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/lld-link"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/lld-link.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/lld-link.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/lld-link"
+      - "D:/ProgramData/miniconda3/lld-link.com"
+      - "D:/ProgramData/miniconda3/lld-link.exe"
+      - "D:/ProgramData/miniconda3/lld-link"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/lld-link.com"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/lld-link.exe"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/lld-link"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/lld-link.com"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/lld-link.exe"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/lld-link"
+      - "D:/ProgramData/miniconda3/Library/bin/lld-link.com"
+      - "D:/ProgramData/miniconda3/Library/bin/lld-link.exe"
+      - "D:/ProgramData/miniconda3/Library/bin/lld-link"
+      - "D:/ProgramData/miniconda3/Scripts/lld-link.com"
+      - "D:/ProgramData/miniconda3/Scripts/lld-link.exe"
+      - "D:/ProgramData/miniconda3/Scripts/lld-link"
+      - "D:/ProgramData/miniconda3/bin/lld-link.com"
+      - "D:/ProgramData/miniconda3/bin/lld-link.exe"
+      - "D:/ProgramData/miniconda3/bin/lld-link"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/lld-link.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/lld-link.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/lld-link"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/lld-link.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/lld-link.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/lld-link"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/lld-link.com"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/lld-link.exe"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Strawberry/c/bin/lld-link.com"
+      - "C:/Strawberry/c/bin/lld-link.exe"
+      - "C:/Strawberry/c/bin/lld-link"
+      - "C:/Strawberry/perl/site/bin/lld-link.com"
+      - "C:/Strawberry/perl/site/bin/lld-link.exe"
+      - "C:/Strawberry/perl/site/bin/lld-link"
+      - "C:/Strawberry/perl/bin/lld-link.com"
+      - "C:/Strawberry/perl/bin/lld-link.exe"
+      - "C:/Strawberry/perl/bin/lld-link"
+      - "D:/Android/gradle-5.5.1/lld-link.com"
+      - "D:/Android/gradle-5.5.1/lld-link.exe"
+      - "D:/Android/gradle-5.5.1/lld-link"
+      - "D:/Android/gradle-5.5.1/bin/lld-link.com"
+      - "D:/Android/gradle-5.5.1/bin/lld-link.exe"
+      - "D:/Android/gradle-5.5.1/bin/lld-link"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/lld-link.com"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/lld-link.exe"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/lld-link"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/lld-link.com"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/lld-link.exe"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/lld-link"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/lld-link.com"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/lld-link.exe"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/lld-link"
+      - "D:/Program Files/Git/cmd/lld-link.com"
+      - "D:/Program Files/Git/cmd/lld-link.exe"
+      - "D:/Program Files/Git/cmd/lld-link"
+      - "D:/ProgramData/miniconda3/condabin/lld-link.com"
+      - "D:/ProgramData/miniconda3/condabin/lld-link.exe"
+      - "D:/ProgramData/miniconda3/condabin/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/lld-link.com"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/lld-link.exe"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/lld-link"
+      - "D:/Program Files/Git/usr/bin/core_perl/lld-link.com"
+      - "D:/Program Files/Git/usr/bin/core_perl/lld-link.exe"
+      - "D:/Program Files/Git/usr/bin/core_perl/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\Administrator\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\local\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\Administrator\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Library\\mingw-w64\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\usr\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\bin"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-11.0.27.6-hotspot\\bin"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin"
+        - "C:\\windows\\system32"
+        - "C:\\windows"
+        - "C:\\windows\\System32\\Wbem"
+        - "C:\\windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\windows\\System32\\OpenSSH"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Android\\gradle-5.5.1"
+        - "D:\\Android\\gradle-5.5.1\\bin"
+        - "D:\\flutter_windows_3.29.3-stable\\flutter\\bin"
+        - "D:\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "D:\\Program Files\\ffmpeg-7.1.1-essentials_build\\bin"
+        - "D:\\Program Files\\Git\\cmd"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\condabin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "D:\\Program Files\\Git\\usr\\bin\\core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "C:/Users/Administrator/bin/"
+      - "D:/Program Files/Git/mingw64/bin/"
+      - "D:/Program Files/Git/usr/local/bin/"
+      - "D:/Program Files/Git/usr/bin/"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/"
+      - "D:/ProgramData/miniconda3/"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/"
+      - "D:/ProgramData/miniconda3/Library/bin/"
+      - "D:/ProgramData/miniconda3/Scripts/"
+      - "D:/ProgramData/miniconda3/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Strawberry/c/bin/"
+      - "C:/Strawberry/perl/site/bin/"
+      - "C:/Strawberry/perl/bin/"
+      - "D:/Android/gradle-5.5.1/"
+      - "D:/Android/gradle-5.5.1/bin/"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/"
+      - "D:/Program Files/Git/cmd/"
+      - "D:/ProgramData/miniconda3/condabin/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/"
+      - "D:/Program Files/Git/usr/bin/core_perl/"
+    searched_directories:
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/link.com"
+    found: "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\Administrator\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\local\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\Administrator\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Library\\mingw-w64\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\usr\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\bin"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-11.0.27.6-hotspot\\bin"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin"
+        - "C:\\windows\\system32"
+        - "C:\\windows"
+        - "C:\\windows\\System32\\Wbem"
+        - "C:\\windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\windows\\System32\\OpenSSH"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Android\\gradle-5.5.1"
+        - "D:\\Android\\gradle-5.5.1\\bin"
+        - "D:\\flutter_windows_3.29.3-stable\\flutter\\bin"
+        - "D:\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "D:\\Program Files\\ffmpeg-7.1.1-essentials_build\\bin"
+        - "D:\\Program Files\\Git\\cmd"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\condabin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "D:\\Program Files\\Git\\usr\\bin\\core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_MT"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "mt"
+    candidate_directories:
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "C:/Users/Administrator/bin/"
+      - "D:/Program Files/Git/mingw64/bin/"
+      - "D:/Program Files/Git/usr/local/bin/"
+      - "D:/Program Files/Git/usr/bin/"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/"
+      - "D:/ProgramData/miniconda3/"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/"
+      - "D:/ProgramData/miniconda3/Library/bin/"
+      - "D:/ProgramData/miniconda3/Scripts/"
+      - "D:/ProgramData/miniconda3/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Strawberry/c/bin/"
+      - "C:/Strawberry/perl/site/bin/"
+      - "C:/Strawberry/perl/bin/"
+      - "D:/Android/gradle-5.5.1/"
+      - "D:/Android/gradle-5.5.1/bin/"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/"
+      - "D:/Program Files/Git/cmd/"
+      - "D:/ProgramData/miniconda3/condabin/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/"
+      - "D:/Program Files/Git/usr/bin/core_perl/"
+    searched_directories:
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/mt.com"
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/mt.exe"
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/mt"
+      - "C:/Users/Administrator/bin/mt.com"
+      - "C:/Users/Administrator/bin/mt.exe"
+      - "C:/Users/Administrator/bin/mt"
+      - "D:/Program Files/Git/mingw64/bin/mt.com"
+      - "D:/Program Files/Git/mingw64/bin/mt.exe"
+      - "D:/Program Files/Git/mingw64/bin/mt"
+      - "D:/Program Files/Git/usr/local/bin/mt.com"
+      - "D:/Program Files/Git/usr/local/bin/mt.exe"
+      - "D:/Program Files/Git/usr/local/bin/mt"
+      - "D:/Program Files/Git/usr/bin/mt.com"
+      - "D:/Program Files/Git/usr/bin/mt.exe"
+      - "D:/Program Files/Git/usr/bin/mt"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/mt.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/mt.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/mt"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/mt.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/mt.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/mt"
+      - "D:/ProgramData/miniconda3/mt.com"
+      - "D:/ProgramData/miniconda3/mt.exe"
+      - "D:/ProgramData/miniconda3/mt"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/mt.com"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/mt.exe"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/mt"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/mt.com"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/mt.exe"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/mt"
+      - "D:/ProgramData/miniconda3/Library/bin/mt.com"
+      - "D:/ProgramData/miniconda3/Library/bin/mt.exe"
+      - "D:/ProgramData/miniconda3/Library/bin/mt"
+      - "D:/ProgramData/miniconda3/Scripts/mt.com"
+      - "D:/ProgramData/miniconda3/Scripts/mt.exe"
+      - "D:/ProgramData/miniconda3/Scripts/mt"
+      - "D:/ProgramData/miniconda3/bin/mt.com"
+      - "D:/ProgramData/miniconda3/bin/mt.exe"
+      - "D:/ProgramData/miniconda3/bin/mt"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/mt.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/mt.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/mt"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/mt.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/mt.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/mt"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/mt.com"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/mt.exe"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/mt"
+      - "C:/Windows/System32/mt.com"
+      - "C:/Windows/System32/mt.exe"
+      - "C:/Windows/System32/mt"
+      - "C:/Windows/mt.com"
+      - "C:/Windows/mt.exe"
+      - "C:/Windows/mt"
+      - "C:/Windows/System32/wbem/mt.com"
+      - "C:/Windows/System32/wbem/mt.exe"
+      - "C:/Windows/System32/wbem/mt"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt"
+      - "C:/Windows/System32/OpenSSH/mt.com"
+      - "C:/Windows/System32/OpenSSH/mt.exe"
+      - "C:/Windows/System32/OpenSSH/mt"
+      - "C:/Strawberry/c/bin/mt.com"
+      - "C:/Strawberry/c/bin/mt.exe"
+      - "C:/Strawberry/c/bin/mt"
+      - "C:/Strawberry/perl/site/bin/mt.com"
+      - "C:/Strawberry/perl/site/bin/mt.exe"
+      - "C:/Strawberry/perl/site/bin/mt"
+      - "C:/Strawberry/perl/bin/mt.com"
+      - "C:/Strawberry/perl/bin/mt.exe"
+      - "C:/Strawberry/perl/bin/mt"
+      - "D:/Android/gradle-5.5.1/mt.com"
+      - "D:/Android/gradle-5.5.1/mt.exe"
+      - "D:/Android/gradle-5.5.1/mt"
+      - "D:/Android/gradle-5.5.1/bin/mt.com"
+      - "D:/Android/gradle-5.5.1/bin/mt.exe"
+      - "D:/Android/gradle-5.5.1/bin/mt"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/mt.com"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/mt.exe"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/mt"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/mt.com"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/mt.exe"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/mt"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/mt.com"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/mt.exe"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/mt"
+      - "D:/Program Files/Git/cmd/mt.com"
+      - "D:/Program Files/Git/cmd/mt.exe"
+      - "D:/Program Files/Git/cmd/mt"
+      - "D:/ProgramData/miniconda3/condabin/mt.com"
+      - "D:/ProgramData/miniconda3/condabin/mt.exe"
+      - "D:/ProgramData/miniconda3/condabin/mt"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/mt.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/mt.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/mt"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/mt.com"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/mt.exe"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/mt"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/mt.com"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/mt.exe"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/mt"
+      - "D:/Program Files/Git/usr/bin/core_perl/mt.com"
+      - "D:/Program Files/Git/usr/bin/core_perl/mt.exe"
+      - "D:/Program Files/Git/usr/bin/core_perl/mt"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\Administrator\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\local\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\Administrator\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Library\\mingw-w64\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\usr\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\bin"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-11.0.27.6-hotspot\\bin"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin"
+        - "C:\\windows\\system32"
+        - "C:\\windows"
+        - "C:\\windows\\System32\\Wbem"
+        - "C:\\windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\windows\\System32\\OpenSSH"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Android\\gradle-5.5.1"
+        - "D:\\Android\\gradle-5.5.1\\bin"
+        - "D:\\flutter_windows_3.29.3-stable\\flutter\\bin"
+        - "D:\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "D:\\Program Files\\ffmpeg-7.1.1-essentials_build\\bin"
+        - "D:\\Program Files\\Git\\cmd"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\condabin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "D:\\Program Files\\Git\\usr\\bin\\core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lib"
+    candidate_directories:
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "C:/Users/Administrator/bin/"
+      - "D:/Program Files/Git/mingw64/bin/"
+      - "D:/Program Files/Git/usr/local/bin/"
+      - "D:/Program Files/Git/usr/bin/"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/"
+      - "D:/ProgramData/miniconda3/"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/"
+      - "D:/ProgramData/miniconda3/Library/bin/"
+      - "D:/ProgramData/miniconda3/Scripts/"
+      - "D:/ProgramData/miniconda3/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Strawberry/c/bin/"
+      - "C:/Strawberry/perl/site/bin/"
+      - "C:/Strawberry/perl/bin/"
+      - "D:/Android/gradle-5.5.1/"
+      - "D:/Android/gradle-5.5.1/bin/"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/"
+      - "D:/Program Files/Git/cmd/"
+      - "D:/ProgramData/miniconda3/condabin/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/"
+      - "D:/Program Files/Git/usr/bin/core_perl/"
+    searched_directories:
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lib.com"
+    found: "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lib.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\Administrator\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\local\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\Administrator\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Library\\mingw-w64\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\usr\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\bin"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-11.0.27.6-hotspot\\bin"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin"
+        - "C:\\windows\\system32"
+        - "C:\\windows"
+        - "C:\\windows\\System32\\Wbem"
+        - "C:\\windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\windows\\System32\\OpenSSH"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Android\\gradle-5.5.1"
+        - "D:\\Android\\gradle-5.5.1\\bin"
+        - "D:\\flutter_windows_3.29.3-stable\\flutter\\bin"
+        - "D:\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "D:\\Program Files\\ffmpeg-7.1.1-essentials_build\\bin"
+        - "D:\\Program Files\\Git\\cmd"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\condabin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "D:\\Program Files\\Git\\usr\\bin\\core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/"
+    found: "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\Administrator\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\local\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\Administrator\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Library\\mingw-w64\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\usr\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\bin"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-11.0.27.6-hotspot\\bin"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin"
+        - "C:\\windows\\system32"
+        - "C:\\windows"
+        - "C:\\windows\\System32\\Wbem"
+        - "C:\\windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\windows\\System32\\OpenSSH"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Android\\gradle-5.5.1"
+        - "D:\\Android\\gradle-5.5.1\\bin"
+        - "D:\\flutter_windows_3.29.3-stable\\flutter\\bin"
+        - "D:\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "D:\\Program Files\\ffmpeg-7.1.1-essentials_build\\bin"
+        - "D:\\Program Files\\Git\\cmd"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\condabin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "D:\\Program Files\\Git\\usr\\bin\\core_perl"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: -Wall;-fPIC;-g;-std=c++11;-fopenmp
+      Id flags:  
+      
+      The output was:
+      0
+      閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.13.19+0d9f5a35a
+      鐢熸垚鍚姩鏃堕棿涓?2025/11/26 13:15:54銆?
+      
+      鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\4.1.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)銆?
+      PrepareForBuild:
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\鈥濄€?
+        宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\CompilerIdCXX.tlog\\鈥濄€?
+      InitializeBuildStatus:
+        姝ｅ湪鍒涘缓鈥淒ebug\\CompilerIdCXX.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdCXX.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+      ClCompile:
+        D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\4.1.3\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        姝ｅ湪鍒犻櫎鏂囦欢鈥淒ebug\\CompilerIdCXX.tlog\\unsuccessfulbuild鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+      宸插畬鎴愮敓鎴愰」鐩€淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\4.1.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+      
+      宸叉垚鍔熺敓鎴愩€?
+          0 涓鍛?
+          0 涓敊璇?
+      
+      宸茬敤鏃堕棿 00:00:00.37
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/4.1.3/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "C:/Users/Administrator/bin/"
+      - "D:/Program Files/Git/mingw64/bin/"
+      - "D:/Program Files/Git/usr/local/bin/"
+      - "D:/Program Files/Git/usr/bin/"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/"
+      - "D:/ProgramData/miniconda3/"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/"
+      - "D:/ProgramData/miniconda3/Library/bin/"
+      - "D:/ProgramData/miniconda3/Scripts/"
+      - "D:/ProgramData/miniconda3/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Strawberry/c/bin/"
+      - "C:/Strawberry/perl/site/bin/"
+      - "C:/Strawberry/perl/bin/"
+      - "D:/Android/gradle-5.5.1/"
+      - "D:/Android/gradle-5.5.1/bin/"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/"
+      - "D:/Program Files/Git/cmd/"
+      - "D:/ProgramData/miniconda3/condabin/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/"
+      - "D:/Program Files/Git/usr/bin/core_perl/"
+    searched_directories:
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lld-link.com"
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lld-link.exe"
+      - "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lld-link"
+      - "C:/Users/Administrator/bin/lld-link.com"
+      - "C:/Users/Administrator/bin/lld-link.exe"
+      - "C:/Users/Administrator/bin/lld-link"
+      - "D:/Program Files/Git/mingw64/bin/lld-link.com"
+      - "D:/Program Files/Git/mingw64/bin/lld-link.exe"
+      - "D:/Program Files/Git/mingw64/bin/lld-link"
+      - "D:/Program Files/Git/usr/local/bin/lld-link.com"
+      - "D:/Program Files/Git/usr/local/bin/lld-link.exe"
+      - "D:/Program Files/Git/usr/local/bin/lld-link"
+      - "D:/Program Files/Git/usr/bin/lld-link.com"
+      - "D:/Program Files/Git/usr/bin/lld-link.exe"
+      - "D:/Program Files/Git/usr/bin/lld-link"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/lld-link.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/lld-link.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/lld-link"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/lld-link.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/lld-link.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/lld-link"
+      - "D:/ProgramData/miniconda3/lld-link.com"
+      - "D:/ProgramData/miniconda3/lld-link.exe"
+      - "D:/ProgramData/miniconda3/lld-link"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/lld-link.com"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/lld-link.exe"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/lld-link"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/lld-link.com"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/lld-link.exe"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/lld-link"
+      - "D:/ProgramData/miniconda3/Library/bin/lld-link.com"
+      - "D:/ProgramData/miniconda3/Library/bin/lld-link.exe"
+      - "D:/ProgramData/miniconda3/Library/bin/lld-link"
+      - "D:/ProgramData/miniconda3/Scripts/lld-link.com"
+      - "D:/ProgramData/miniconda3/Scripts/lld-link.exe"
+      - "D:/ProgramData/miniconda3/Scripts/lld-link"
+      - "D:/ProgramData/miniconda3/bin/lld-link.com"
+      - "D:/ProgramData/miniconda3/bin/lld-link.exe"
+      - "D:/ProgramData/miniconda3/bin/lld-link"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/lld-link.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/lld-link.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/lld-link"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/lld-link.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/lld-link.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/lld-link"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/lld-link.com"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/lld-link.exe"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Strawberry/c/bin/lld-link.com"
+      - "C:/Strawberry/c/bin/lld-link.exe"
+      - "C:/Strawberry/c/bin/lld-link"
+      - "C:/Strawberry/perl/site/bin/lld-link.com"
+      - "C:/Strawberry/perl/site/bin/lld-link.exe"
+      - "C:/Strawberry/perl/site/bin/lld-link"
+      - "C:/Strawberry/perl/bin/lld-link.com"
+      - "C:/Strawberry/perl/bin/lld-link.exe"
+      - "C:/Strawberry/perl/bin/lld-link"
+      - "D:/Android/gradle-5.5.1/lld-link.com"
+      - "D:/Android/gradle-5.5.1/lld-link.exe"
+      - "D:/Android/gradle-5.5.1/lld-link"
+      - "D:/Android/gradle-5.5.1/bin/lld-link.com"
+      - "D:/Android/gradle-5.5.1/bin/lld-link.exe"
+      - "D:/Android/gradle-5.5.1/bin/lld-link"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/lld-link.com"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/lld-link.exe"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/lld-link"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/lld-link.com"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/lld-link.exe"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/lld-link"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/lld-link.com"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/lld-link.exe"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/lld-link"
+      - "D:/Program Files/Git/cmd/lld-link.com"
+      - "D:/Program Files/Git/cmd/lld-link.exe"
+      - "D:/Program Files/Git/cmd/lld-link"
+      - "D:/ProgramData/miniconda3/condabin/lld-link.com"
+      - "D:/ProgramData/miniconda3/condabin/lld-link.exe"
+      - "D:/ProgramData/miniconda3/condabin/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/lld-link.com"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/lld-link.exe"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/lld-link"
+      - "D:/Program Files/Git/usr/bin/core_perl/lld-link.com"
+      - "D:/Program Files/Git/usr/bin/core_perl/lld-link.exe"
+      - "D:/Program Files/Git/usr/bin/core_perl/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\Administrator\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\local\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\Administrator\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Library\\mingw-w64\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\usr\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\bin"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-11.0.27.6-hotspot\\bin"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin"
+        - "C:\\windows\\system32"
+        - "C:\\windows"
+        - "C:\\windows\\System32\\Wbem"
+        - "C:\\windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\windows\\System32\\OpenSSH"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Android\\gradle-5.5.1"
+        - "D:\\Android\\gradle-5.5.1\\bin"
+        - "D:\\flutter_windows_3.29.3-stable\\flutter\\bin"
+        - "D:\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "D:\\Program Files\\ffmpeg-7.1.1-essentials_build\\bin"
+        - "D:\\Program Files\\Git\\cmd"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\condabin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "D:\\Program Files\\Git\\usr\\bin\\core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/Platform/Windows-MSVC.cmake:574 (enable_language)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/Platform/Windows-MSVC.cmake:547 (__windows_compiler_msvc_enable_rc)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/Platform/Windows-MSVC-C.cmake:5 (__windows_compiler_msvc)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCInformation.cmake:48 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rc"
+    candidate_directories:
+      - "C:/Users/Administrator/bin/"
+      - "D:/Program Files/Git/mingw64/bin/"
+      - "D:/Program Files/Git/usr/local/bin/"
+      - "D:/Program Files/Git/usr/bin/"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/"
+      - "D:/ProgramData/miniconda3/"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/"
+      - "D:/ProgramData/miniconda3/Library/bin/"
+      - "D:/ProgramData/miniconda3/Scripts/"
+      - "D:/ProgramData/miniconda3/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Strawberry/c/bin/"
+      - "C:/Strawberry/perl/site/bin/"
+      - "C:/Strawberry/perl/bin/"
+      - "D:/Android/gradle-5.5.1/"
+      - "D:/Android/gradle-5.5.1/bin/"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/"
+      - "D:/Program Files/Git/cmd/"
+      - "D:/ProgramData/miniconda3/condabin/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/"
+      - "D:/Program Files/Git/usr/bin/core_perl/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/"
+    searched_directories:
+      - "C:/Users/Administrator/bin/rc.com"
+      - "C:/Users/Administrator/bin/rc.exe"
+      - "C:/Users/Administrator/bin/rc"
+      - "D:/Program Files/Git/mingw64/bin/rc.com"
+      - "D:/Program Files/Git/mingw64/bin/rc.exe"
+      - "D:/Program Files/Git/mingw64/bin/rc"
+      - "D:/Program Files/Git/usr/local/bin/rc.com"
+      - "D:/Program Files/Git/usr/local/bin/rc.exe"
+      - "D:/Program Files/Git/usr/local/bin/rc"
+      - "D:/Program Files/Git/usr/bin/rc.com"
+      - "D:/Program Files/Git/usr/bin/rc.exe"
+      - "D:/Program Files/Git/usr/bin/rc"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/rc.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/rc.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/rc"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/rc.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/rc.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/rc"
+      - "D:/ProgramData/miniconda3/rc.com"
+      - "D:/ProgramData/miniconda3/rc.exe"
+      - "D:/ProgramData/miniconda3/rc"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/rc.com"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/rc.exe"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/rc"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/rc.com"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/rc.exe"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/rc"
+      - "D:/ProgramData/miniconda3/Library/bin/rc.com"
+      - "D:/ProgramData/miniconda3/Library/bin/rc.exe"
+      - "D:/ProgramData/miniconda3/Library/bin/rc"
+      - "D:/ProgramData/miniconda3/Scripts/rc.com"
+      - "D:/ProgramData/miniconda3/Scripts/rc.exe"
+      - "D:/ProgramData/miniconda3/Scripts/rc"
+      - "D:/ProgramData/miniconda3/bin/rc.com"
+      - "D:/ProgramData/miniconda3/bin/rc.exe"
+      - "D:/ProgramData/miniconda3/bin/rc"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/rc.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/rc.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/rc"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/rc.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/rc.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/rc"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/rc.com"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/rc.exe"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/rc"
+      - "C:/Windows/System32/rc.com"
+      - "C:/Windows/System32/rc.exe"
+      - "C:/Windows/System32/rc"
+      - "C:/Windows/rc.com"
+      - "C:/Windows/rc.exe"
+      - "C:/Windows/rc"
+      - "C:/Windows/System32/wbem/rc.com"
+      - "C:/Windows/System32/wbem/rc.exe"
+      - "C:/Windows/System32/wbem/rc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc"
+      - "C:/Windows/System32/OpenSSH/rc.com"
+      - "C:/Windows/System32/OpenSSH/rc.exe"
+      - "C:/Windows/System32/OpenSSH/rc"
+      - "C:/Strawberry/c/bin/rc.com"
+      - "C:/Strawberry/c/bin/rc.exe"
+      - "C:/Strawberry/c/bin/rc"
+      - "C:/Strawberry/perl/site/bin/rc.com"
+      - "C:/Strawberry/perl/site/bin/rc.exe"
+      - "C:/Strawberry/perl/site/bin/rc"
+      - "C:/Strawberry/perl/bin/rc.com"
+      - "C:/Strawberry/perl/bin/rc.exe"
+      - "C:/Strawberry/perl/bin/rc"
+      - "D:/Android/gradle-5.5.1/rc.com"
+      - "D:/Android/gradle-5.5.1/rc.exe"
+      - "D:/Android/gradle-5.5.1/rc"
+      - "D:/Android/gradle-5.5.1/bin/rc.com"
+      - "D:/Android/gradle-5.5.1/bin/rc.exe"
+      - "D:/Android/gradle-5.5.1/bin/rc"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/rc.com"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/rc.exe"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/rc"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/rc.com"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/rc.exe"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/rc"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/rc.com"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/rc.exe"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/rc"
+      - "D:/Program Files/Git/cmd/rc.com"
+      - "D:/Program Files/Git/cmd/rc.exe"
+      - "D:/Program Files/Git/cmd/rc"
+      - "D:/ProgramData/miniconda3/condabin/rc.com"
+      - "D:/ProgramData/miniconda3/condabin/rc.exe"
+      - "D:/ProgramData/miniconda3/condabin/rc"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/rc.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/rc.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/rc"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/rc.com"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/rc.exe"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/rc"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/rc.com"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/rc.exe"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/rc"
+      - "D:/Program Files/Git/usr/bin/core_perl/rc.com"
+      - "D:/Program Files/Git/usr/bin/core_perl/rc.exe"
+      - "D:/Program Files/Git/usr/bin/core_perl/rc"
+      - "C:/Program Files/bin/rc.com"
+      - "C:/Program Files/bin/rc.exe"
+      - "C:/Program Files/bin/rc"
+      - "C:/Program Files/sbin/rc.com"
+      - "C:/Program Files/sbin/rc.exe"
+      - "C:/Program Files/sbin/rc"
+      - "C:/Program Files/rc.com"
+      - "C:/Program Files/rc.exe"
+      - "C:/Program Files/rc"
+      - "C:/Program Files (x86)/bin/rc.com"
+      - "C:/Program Files (x86)/bin/rc.exe"
+      - "C:/Program Files (x86)/bin/rc"
+      - "C:/Program Files (x86)/sbin/rc.com"
+      - "C:/Program Files (x86)/sbin/rc.exe"
+      - "C:/Program Files (x86)/sbin/rc"
+      - "C:/Program Files (x86)/rc.com"
+      - "C:/Program Files (x86)/rc.exe"
+      - "C:/Program Files (x86)/rc"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/rc.com"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/rc.exe"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/rc"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/rc.com"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/rc.exe"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/rc"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/rc.com"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/rc.exe"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/rc"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/rc.com"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/rc.exe"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/rc"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/rc.com"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/rc.exe"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/rc"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/rc.com"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/rc.exe"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/rc"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\Administrator\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\local\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\Administrator\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Library\\mingw-w64\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\usr\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\bin"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-11.0.27.6-hotspot\\bin"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin"
+        - "C:\\windows\\system32"
+        - "C:\\windows"
+        - "C:\\windows\\System32\\Wbem"
+        - "C:\\windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\windows\\System32\\OpenSSH"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Android\\gradle-5.5.1"
+        - "D:\\Android\\gradle-5.5.1\\bin"
+        - "D:\\flutter_windows_3.29.3-stable\\flutter\\bin"
+        - "D:\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "D:\\Program Files\\ffmpeg-7.1.1-essentials_build\\bin"
+        - "D:\\Program Files\\Git\\cmd"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\condabin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "D:\\Program Files\\Git\\usr\\bin\\core_perl"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/HG_BUILD_PROJECT"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data"
+        - "C:/Program Files (x86)/HG_BUILD_PROJECT"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-kxr850"
+      binary: "D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-kxr850"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-Wall -fPIC -g"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-kxr850'
+        
+        Run Build Command(s): "D:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_aab0b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.13.19+0d9f5a35a
+        鐢熸垚鍚姩鏃堕棿涓?2025/11/26 13:15:55銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_aab0b.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_aab0b.dir\\Debug\\cmTC_aab0b.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_aab0b.dir\\Debug\\cmTC_aab0b.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_aab0b.dir\\Debug\\cmTC_aab0b.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_aab0b.dir\\Debug\\\\" /Fd"cmTC_aab0b.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TC /errorReport:queue  -fPIC -g "D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.43.34810 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_aab0b.dir\\Debug\\\\" /Fd"cmTC_aab0b.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TC /errorReport:queue  -fPIC -g "D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fPIC鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?g鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          CMakeCCompilerABI.c
+        D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(65,7): warning C4668: 娌℃湁灏嗏€淿_ARM_ARCH鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          (缂栬瘧婧愭枃浠垛€?./../../../../../../ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCCompilerABI.c鈥?
+          
+        D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(65,26): warning C4668: 娌℃湁灏嗏€淿M_ARM鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          (缂栬瘧婧愭枃浠垛€?./../../../../../../ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCCompilerABI.c鈥?
+          
+        D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(74,7): warning C4668: 娌℃湁灏嗏€淿_ARM_ARCH鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          (缂栬瘧婧愭枃浠垛€?./../../../../../../ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCCompilerABI.c鈥?
+          
+        D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(74,26): warning C4668: 娌℃湁灏嗏€淿M_ARM鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          (缂栬瘧婧愭枃浠垛€?./../../../../../../ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCCompilerABI.c鈥?
+          
+        D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(77,7): warning C4668: 娌℃湁灏嗏€淿_ARM_ARCH鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          (缂栬瘧婧愭枃浠垛€?./../../../../../../ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCCompilerABI.c鈥?
+          
+        D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(77,26): warning C4668: 娌℃湁灏嗏€淿M_ARM鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          (缂栬瘧婧愭枃浠垛€?./../../../../../../ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCCompilerABI.c鈥?
+          
+        Link:
+          D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\Debug\\cmTC_aab0b.exe" /INCREMENTAL /ILK:"cmTC_aab0b.dir\\Debug\\cmTC_aab0b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-kxr850/Debug/cmTC_aab0b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-kxr850/Debug/cmTC_aab0b.lib" /MACHINE:X64  /machine:x64 cmTC_aab0b.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_aab0b.vcxproj -> D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\Debug\\cmTC_aab0b.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_aab0b.dir\\Debug\\cmTC_aab0b.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_aab0b.dir\\Debug\\cmTC_aab0b.tlog\\cmTC_aab0b.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+        
+        鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fPIC鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?g鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(65,7): warning C4668: 娌℃湁灏嗏€淿_ARM_ARCH鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(65,26): warning C4668: 娌℃湁灏嗏€淿M_ARM鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(74,7): warning C4668: 娌℃湁灏嗏€淿_ARM_ARCH鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(74,26): warning C4668: 娌℃湁灏嗏€淿M_ARM鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(77,7): warning C4668: 娌℃湁灏嗏€淿_ARM_ARCH鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+          D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(77,26): warning C4668: 娌℃湁灏嗏€淿M_ARM鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-kxr850\\cmTC_aab0b.vcxproj]
+        
+            8 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.52
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the C compiler's linker: "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.43.34810.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-gz1juc"
+      binary: "D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-gz1juc"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-Wall -fPIC -g -std=c++11 -fopenmp"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-gz1juc'
+        
+        Run Build Command(s): "D:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_93c00.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.13.19+0d9f5a35a
+        鐢熸垚鍚姩鏃堕棿涓?2025/11/26 13:15:55銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_93c00.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_93c00.dir\\Debug\\cmTC_93c00.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_93c00.dir\\Debug\\cmTC_93c00.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_93c00.dir\\Debug\\cmTC_93c00.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_93c00.dir\\Debug\\\\" /Fd"cmTC_93c00.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TP /errorReport:queue  -fPIC -g -std=c++11 -fopenmp "D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.43.34810 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_93c00.dir\\Debug\\\\" /Fd"cmTC_93c00.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TP /errorReport:queue  -fPIC -g -std=c++11 -fopenmp "D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fPIC鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?g鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?std=c++11鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fopenmp鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          CMakeCXXCompilerABI.cpp
+        D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(65,7): warning C4668: 娌℃湁灏嗏€淿_ARM_ARCH鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          (缂栬瘧婧愭枃浠垛€?./../../../../../../ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp鈥?
+          
+        D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(65,26): warning C4668: 娌℃湁灏嗏€淿M_ARM鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          (缂栬瘧婧愭枃浠垛€?./../../../../../../ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp鈥?
+          
+        D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(74,7): warning C4668: 娌℃湁灏嗏€淿_ARM_ARCH鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          (缂栬瘧婧愭枃浠垛€?./../../../../../../ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp鈥?
+          
+        D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(74,26): warning C4668: 娌℃湁灏嗏€淿M_ARM鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          (缂栬瘧婧愭枃浠垛€?./../../../../../../ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp鈥?
+          
+        D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(77,7): warning C4668: 娌℃湁灏嗏€淿_ARM_ARCH鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          (缂栬瘧婧愭枃浠垛€?./../../../../../../ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp鈥?
+          
+        D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(77,26): warning C4668: 娌℃湁灏嗏€淿M_ARM鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          (缂栬瘧婧愭枃浠垛€?./../../../../../../ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp鈥?
+          
+        Link:
+          D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\Debug\\cmTC_93c00.exe" /INCREMENTAL /ILK:"cmTC_93c00.dir\\Debug\\cmTC_93c00.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-gz1juc/Debug/cmTC_93c00.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-gz1juc/Debug/cmTC_93c00.lib" /MACHINE:X64  /machine:x64 cmTC_93c00.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_93c00.vcxproj -> D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\Debug\\cmTC_93c00.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_93c00.dir\\Debug\\cmTC_93c00.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_93c00.dir\\Debug\\cmTC_93c00.tlog\\cmTC_93c00.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+        
+        鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fPIC鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?g鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?std=c++11鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fopenmp鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(65,7): warning C4668: 娌℃湁灏嗏€淿_ARM_ARCH鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(65,26): warning C4668: 娌℃湁灏嗏€淿M_ARM鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(74,7): warning C4668: 娌℃湁灏嗏€淿_ARM_ARCH鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(74,26): warning C4668: 娌℃湁灏嗏€淿M_ARM鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(77,7): warning C4668: 娌℃湁灏嗏€淿_ARM_ARCH鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+          D:\\ProgramData\\miniconda3\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.1\\Modules\\CMakeCompilerABI.h(77,26): warning C4668: 娌℃湁灏嗏€淿M_ARM鈥濆畾涔変负棰勫鐞嗗櫒瀹忥紝鐢ㄢ€?鈥濇浛鎹⑩€?if/#elif鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gz1juc\\cmTC_93c00.vcxproj]
+        
+            10 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.38
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the CXX compiler's linker: "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.43.34810.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/FindThreads.cmake:97 (check_c_source_compiles)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "CMakeLists.txt:50 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-ls8h6a"
+      binary: "D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-ls8h6a"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-Wall -fPIC -g"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-ls8h6a'
+        
+        Run Build Command(s): "D:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a9f5a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.13.19+0d9f5a35a
+        鐢熸垚鍚姩鏃堕棿涓?2025/11/26 13:15:56銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\cmTC_a9f5a.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_a9f5a.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_a9f5a.dir\\Debug\\cmTC_a9f5a.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_a9f5a.dir\\Debug\\cmTC_a9f5a.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_a9f5a.dir\\Debug\\cmTC_a9f5a.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_a9f5a.dir\\Debug\\\\" /Fd"cmTC_a9f5a.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TC /errorReport:queue  -fPIC -g "D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\src.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.43.34810 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_a9f5a.dir\\Debug\\\\" /Fd"cmTC_a9f5a.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TC /errorReport:queue  -fPIC -g "D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\src.c"
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fPIC鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\cmTC_a9f5a.vcxproj]
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?g鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\cmTC_a9f5a.vcxproj]
+          src.c
+        D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\src.c(1,10): error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥減thread.h鈥? No such file or directory [D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\cmTC_a9f5a.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\cmTC_a9f5a.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\cmTC_a9f5a.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fPIC鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\cmTC_a9f5a.vcxproj]
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?g鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\cmTC_a9f5a.vcxproj]
+        
+        
+        鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\cmTC_a9f5a.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\src.c(1,10): error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥減thread.h鈥? No such file or directory [D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-ls8h6a\\cmTC_a9f5a.vcxproj]
+        
+            2 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.26
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CheckLibraryExists.cmake:154 (try_compile)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/FindThreads.cmake:112 (check_library_exists)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "CMakeLists.txt:50 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-yueas5"
+      binary: "D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-yueas5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-Wall -fPIC -g"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-yueas5'
+        
+        Run Build Command(s): "D:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8f501.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.13.19+0d9f5a35a
+        鐢熸垚鍚姩鏃堕棿涓?2025/11/26 13:15:56銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\cmTC_8f501.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_8f501.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_8f501.dir\\Debug\\cmTC_8f501.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_8f501.dir\\Debug\\cmTC_8f501.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_8f501.dir\\Debug\\cmTC_8f501.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_8f501.dir\\Debug\\\\" /Fd"cmTC_8f501.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TC /errorReport:queue  -fPIC -g "D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\CheckFunctionExists.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.43.34810 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_8f501.dir\\Debug\\\\" /Fd"cmTC_8f501.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TC /errorReport:queue  -fPIC -g "D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\CheckFunctionExists.c"
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fPIC鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\cmTC_8f501.vcxproj]
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?g鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\cmTC_8f501.vcxproj]
+          CheckFunctionExists.c
+        Link:
+          D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\Debug\\cmTC_8f501.exe" /INCREMENTAL /ILK:"cmTC_8f501.dir\\Debug\\cmTC_8f501.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-yueas5/Debug/cmTC_8f501.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-yueas5/Debug/cmTC_8f501.lib" /MACHINE:X64  /machine:x64 cmTC_8f501.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: 鏃犳硶鎵撳紑鏂囦欢鈥減threads.lib鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\cmTC_8f501.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\cmTC_8f501.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\cmTC_8f501.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fPIC鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\cmTC_8f501.vcxproj]
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?g鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\cmTC_8f501.vcxproj]
+        
+        
+        鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\cmTC_8f501.vcxproj鈥?榛樿鐩爣) (1) ->
+        (Link 鐩爣) -> 
+          LINK : fatal error LNK1104: 鏃犳硶鎵撳紑鏂囦欢鈥減threads.lib鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-yueas5\\cmTC_8f501.vcxproj]
+        
+            2 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.31
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/CheckLibraryExists.cmake:154 (try_compile)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/FindThreads.cmake:112 (check_library_exists)"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "CMakeLists.txt:50 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-m41z0j"
+      binary: "D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-m41z0j"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-Wall -fPIC -g"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-m41z0j'
+        
+        Run Build Command(s): "D:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_490f7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.13.19+0d9f5a35a
+        鐢熸垚鍚姩鏃堕棿涓?2025/11/26 13:15:57銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\cmTC_490f7.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_490f7.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_490f7.dir\\Debug\\cmTC_490f7.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_490f7.dir\\Debug\\cmTC_490f7.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_490f7.dir\\Debug\\cmTC_490f7.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_490f7.dir\\Debug\\\\" /Fd"cmTC_490f7.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TC /errorReport:queue  -fPIC -g "D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\CheckFunctionExists.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.43.34810 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_490f7.dir\\Debug\\\\" /Fd"cmTC_490f7.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TC /errorReport:queue  -fPIC -g "D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\CheckFunctionExists.c"
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fPIC鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\cmTC_490f7.vcxproj]
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?g鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\cmTC_490f7.vcxproj]
+          CheckFunctionExists.c
+        Link:
+          D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\Debug\\cmTC_490f7.exe" /INCREMENTAL /ILK:"cmTC_490f7.dir\\Debug\\cmTC_490f7.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-m41z0j/Debug/cmTC_490f7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/virtualMachine/github/vsproject/build_x64/CMakeFiles/CMakeScratch/TryCompile-m41z0j/Debug/cmTC_490f7.lib" /MACHINE:X64  /machine:x64 cmTC_490f7.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: 鏃犳硶鎵撳紑鏂囦欢鈥減thread.lib鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\cmTC_490f7.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\cmTC_490f7.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\cmTC_490f7.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fPIC鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\cmTC_490f7.vcxproj]
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?g鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\cmTC_490f7.vcxproj]
+        
+        
+        鈥淒:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\cmTC_490f7.vcxproj鈥?榛樿鐩爣) (1) ->
+        (Link 鐩爣) -> 
+          LINK : fatal error LNK1104: 鏃犳硶鎵撳紑鏂囦欢鈥減thread.lib鈥?[D:\\virtualMachine\\github\\vsproject\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-m41z0j\\cmTC_490f7.vcxproj]
+        
+            2 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.34
+        
+      exitCode: 1
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/share/cmake-4.1/Modules/FindPkgConfig.cmake:69 (find_program)"
+      - "CMakeLists.txt:51 (find_package)"
+    mode: "program"
+    variable: "PKG_CONFIG_EXECUTABLE"
+    description: "pkg-config executable"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "pkg-config.bat"
+      - "pkg-config"
+      - "pkgconf"
+    candidate_directories:
+      - "C:/Users/Administrator/bin/"
+      - "D:/Program Files/Git/mingw64/bin/"
+      - "D:/Program Files/Git/usr/local/bin/"
+      - "D:/Program Files/Git/usr/bin/"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/"
+      - "D:/ProgramData/miniconda3/"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/"
+      - "D:/ProgramData/miniconda3/Library/bin/"
+      - "D:/ProgramData/miniconda3/Scripts/"
+      - "D:/ProgramData/miniconda3/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Strawberry/c/bin/"
+      - "C:/Strawberry/perl/site/bin/"
+      - "C:/Strawberry/perl/bin/"
+      - "D:/Android/gradle-5.5.1/"
+      - "D:/Android/gradle-5.5.1/bin/"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/"
+      - "D:/Program Files/Git/cmd/"
+      - "D:/ProgramData/miniconda3/condabin/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/"
+      - "D:/Program Files/Git/usr/bin/core_perl/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/"
+    searched_directories:
+      - "C:/Users/Administrator/bin/pkg-config.bat.com"
+      - "C:/Users/Administrator/bin/pkg-config.bat.exe"
+      - "C:/Users/Administrator/bin/pkg-config.bat"
+      - "C:/Users/Administrator/bin/pkg-config.com"
+      - "C:/Users/Administrator/bin/pkg-config.exe"
+      - "C:/Users/Administrator/bin/pkg-config"
+      - "C:/Users/Administrator/bin/pkgconf.com"
+      - "C:/Users/Administrator/bin/pkgconf.exe"
+      - "C:/Users/Administrator/bin/pkgconf"
+      - "D:/Program Files/Git/mingw64/bin/pkg-config.bat.com"
+      - "D:/Program Files/Git/mingw64/bin/pkg-config.bat.exe"
+      - "D:/Program Files/Git/mingw64/bin/pkg-config.bat"
+      - "D:/Program Files/Git/mingw64/bin/pkg-config.com"
+      - "D:/Program Files/Git/mingw64/bin/pkg-config.exe"
+      - "D:/Program Files/Git/mingw64/bin/pkg-config"
+      - "D:/Program Files/Git/mingw64/bin/pkgconf.com"
+      - "D:/Program Files/Git/mingw64/bin/pkgconf.exe"
+      - "D:/Program Files/Git/mingw64/bin/pkgconf"
+      - "D:/Program Files/Git/usr/local/bin/pkg-config.bat.com"
+      - "D:/Program Files/Git/usr/local/bin/pkg-config.bat.exe"
+      - "D:/Program Files/Git/usr/local/bin/pkg-config.bat"
+      - "D:/Program Files/Git/usr/local/bin/pkg-config.com"
+      - "D:/Program Files/Git/usr/local/bin/pkg-config.exe"
+      - "D:/Program Files/Git/usr/local/bin/pkg-config"
+      - "D:/Program Files/Git/usr/local/bin/pkgconf.com"
+      - "D:/Program Files/Git/usr/local/bin/pkgconf.exe"
+      - "D:/Program Files/Git/usr/local/bin/pkgconf"
+      - "D:/Program Files/Git/usr/bin/pkg-config.bat.com"
+      - "D:/Program Files/Git/usr/bin/pkg-config.bat.exe"
+      - "D:/Program Files/Git/usr/bin/pkg-config.bat"
+      - "D:/Program Files/Git/usr/bin/pkg-config.com"
+      - "D:/Program Files/Git/usr/bin/pkg-config.exe"
+      - "D:/Program Files/Git/usr/bin/pkg-config"
+      - "D:/Program Files/Git/usr/bin/pkgconf.com"
+      - "D:/Program Files/Git/usr/bin/pkgconf.exe"
+      - "D:/Program Files/Git/usr/bin/pkgconf"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/pkg-config.bat.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/pkg-config.bat.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/pkg-config.bat"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/pkg-config.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/pkg-config.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/pkg-config"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/pkgconf.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/pkgconf.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/workspaces/ee0dc3d7/versions/node/current/pkgconf"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/pkg-config.bat.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/pkg-config.bat.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/pkg-config.bat"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/pkg-config.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/pkg-config.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/pkg-config"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/pkgconf.com"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/pkgconf.exe"
+      - "C:/Users/Administrator/.trae-cn/sdks/versions/node/current/pkgconf"
+      - "D:/ProgramData/miniconda3/pkg-config.bat.com"
+      - "D:/ProgramData/miniconda3/pkg-config.bat.exe"
+      - "D:/ProgramData/miniconda3/pkg-config.bat"
+      - "D:/ProgramData/miniconda3/pkg-config.com"
+      - "D:/ProgramData/miniconda3/pkg-config.exe"
+      - "D:/ProgramData/miniconda3/pkg-config"
+      - "D:/ProgramData/miniconda3/pkgconf.com"
+      - "D:/ProgramData/miniconda3/pkgconf.exe"
+      - "D:/ProgramData/miniconda3/pkgconf"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/pkg-config.bat.com"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/pkg-config.bat.exe"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/pkg-config.bat"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/pkg-config.com"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/pkg-config.exe"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/pkg-config"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/pkgconf.com"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/pkgconf.exe"
+      - "D:/ProgramData/miniconda3/Library/mingw-w64/bin/pkgconf"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/pkg-config.bat.com"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/pkg-config.bat.exe"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/pkg-config.bat"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/pkg-config.com"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/pkg-config.exe"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/pkg-config"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/pkgconf.com"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/pkgconf.exe"
+      - "D:/ProgramData/miniconda3/Library/usr/bin/pkgconf"
+      - "D:/ProgramData/miniconda3/Library/bin/pkg-config.bat.com"
+      - "D:/ProgramData/miniconda3/Library/bin/pkg-config.bat.exe"
+      - "D:/ProgramData/miniconda3/Library/bin/pkg-config.bat"
+      - "D:/ProgramData/miniconda3/Library/bin/pkg-config.com"
+      - "D:/ProgramData/miniconda3/Library/bin/pkg-config.exe"
+      - "D:/ProgramData/miniconda3/Library/bin/pkg-config"
+      - "D:/ProgramData/miniconda3/Library/bin/pkgconf.com"
+      - "D:/ProgramData/miniconda3/Library/bin/pkgconf.exe"
+      - "D:/ProgramData/miniconda3/Library/bin/pkgconf"
+      - "D:/ProgramData/miniconda3/Scripts/pkg-config.bat.com"
+      - "D:/ProgramData/miniconda3/Scripts/pkg-config.bat.exe"
+      - "D:/ProgramData/miniconda3/Scripts/pkg-config.bat"
+      - "D:/ProgramData/miniconda3/Scripts/pkg-config.com"
+      - "D:/ProgramData/miniconda3/Scripts/pkg-config.exe"
+      - "D:/ProgramData/miniconda3/Scripts/pkg-config"
+      - "D:/ProgramData/miniconda3/Scripts/pkgconf.com"
+      - "D:/ProgramData/miniconda3/Scripts/pkgconf.exe"
+      - "D:/ProgramData/miniconda3/Scripts/pkgconf"
+      - "D:/ProgramData/miniconda3/bin/pkg-config.bat.com"
+      - "D:/ProgramData/miniconda3/bin/pkg-config.bat.exe"
+      - "D:/ProgramData/miniconda3/bin/pkg-config.bat"
+      - "D:/ProgramData/miniconda3/bin/pkg-config.com"
+      - "D:/ProgramData/miniconda3/bin/pkg-config.exe"
+      - "D:/ProgramData/miniconda3/bin/pkg-config"
+      - "D:/ProgramData/miniconda3/bin/pkgconf.com"
+      - "D:/ProgramData/miniconda3/bin/pkgconf.exe"
+      - "D:/ProgramData/miniconda3/bin/pkgconf"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/pkg-config.bat.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/pkg-config.bat.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/pkg-config.bat"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/pkg-config.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/pkg-config.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/pkg-config"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/pkgconf.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/pkgconf.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-8.0.452.9-hotspot/bin/pkgconf"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/pkg-config.bat.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/pkg-config.bat.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/pkg-config.bat"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/pkg-config.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/pkg-config.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/pkg-config"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/pkgconf.com"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/pkgconf.exe"
+      - "D:/Program Files/Eclipse Adoptium/jdk-11.0.27.6-hotspot/bin/pkgconf"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/pkg-config.bat.com"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/pkg-config.bat.exe"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/pkg-config.bat"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/pkg-config.com"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/pkg-config.exe"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/pkg-config"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/pkgconf.com"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/pkgconf.exe"
+      - "C:/Program Files (x86)/VMware/VMware Workstation/bin/pkgconf"
+      - "C:/Windows/System32/pkg-config.bat.com"
+      - "C:/Windows/System32/pkg-config.bat.exe"
+      - "C:/Windows/System32/pkg-config.bat"
+      - "C:/Windows/System32/pkg-config.com"
+      - "C:/Windows/System32/pkg-config.exe"
+      - "C:/Windows/System32/pkg-config"
+      - "C:/Windows/System32/pkgconf.com"
+      - "C:/Windows/System32/pkgconf.exe"
+      - "C:/Windows/System32/pkgconf"
+      - "C:/Windows/pkg-config.bat.com"
+      - "C:/Windows/pkg-config.bat.exe"
+      - "C:/Windows/pkg-config.bat"
+      - "C:/Windows/pkg-config.com"
+      - "C:/Windows/pkg-config.exe"
+      - "C:/Windows/pkg-config"
+      - "C:/Windows/pkgconf.com"
+      - "C:/Windows/pkgconf.exe"
+      - "C:/Windows/pkgconf"
+      - "C:/Windows/System32/wbem/pkg-config.bat.com"
+      - "C:/Windows/System32/wbem/pkg-config.bat.exe"
+      - "C:/Windows/System32/wbem/pkg-config.bat"
+      - "C:/Windows/System32/wbem/pkg-config.com"
+      - "C:/Windows/System32/wbem/pkg-config.exe"
+      - "C:/Windows/System32/wbem/pkg-config"
+      - "C:/Windows/System32/wbem/pkgconf.com"
+      - "C:/Windows/System32/wbem/pkgconf.exe"
+      - "C:/Windows/System32/wbem/pkgconf"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/pkg-config.bat.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/pkg-config.bat.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/pkg-config.bat"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/pkg-config.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/pkg-config.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/pkg-config"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/pkgconf.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/pkgconf.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/pkgconf"
+      - "C:/Windows/System32/OpenSSH/pkg-config.bat.com"
+      - "C:/Windows/System32/OpenSSH/pkg-config.bat.exe"
+      - "C:/Windows/System32/OpenSSH/pkg-config.bat"
+      - "C:/Windows/System32/OpenSSH/pkg-config.com"
+      - "C:/Windows/System32/OpenSSH/pkg-config.exe"
+      - "C:/Windows/System32/OpenSSH/pkg-config"
+      - "C:/Windows/System32/OpenSSH/pkgconf.com"
+      - "C:/Windows/System32/OpenSSH/pkgconf.exe"
+      - "C:/Windows/System32/OpenSSH/pkgconf"
+      - "C:/Strawberry/c/bin/pkg-config.bat.com"
+      - "C:/Strawberry/c/bin/pkg-config.bat.exe"
+      - "C:/Strawberry/c/bin/pkg-config.bat"
+      - "C:/Strawberry/c/bin/pkg-config.com"
+      - "C:/Strawberry/c/bin/pkg-config.exe"
+      - "C:/Strawberry/c/bin/pkg-config"
+      - "C:/Strawberry/c/bin/pkgconf.com"
+      - "C:/Strawberry/c/bin/pkgconf.exe"
+      - "C:/Strawberry/c/bin/pkgconf"
+      - "C:/Strawberry/perl/site/bin/pkg-config.bat.com"
+      - "C:/Strawberry/perl/site/bin/pkg-config.bat.exe"
+      - "C:/Strawberry/perl/site/bin/pkg-config.bat"
+      - "C:/Strawberry/perl/site/bin/pkg-config.com"
+      - "C:/Strawberry/perl/site/bin/pkg-config.exe"
+      - "C:/Strawberry/perl/site/bin/pkg-config"
+      - "C:/Strawberry/perl/site/bin/pkgconf.com"
+      - "C:/Strawberry/perl/site/bin/pkgconf.exe"
+      - "C:/Strawberry/perl/site/bin/pkgconf"
+      - "C:/Strawberry/perl/bin/pkg-config.bat.com"
+      - "C:/Strawberry/perl/bin/pkg-config.bat.exe"
+      - "C:/Strawberry/perl/bin/pkg-config.bat"
+      - "C:/Strawberry/perl/bin/pkg-config.com"
+      - "C:/Strawberry/perl/bin/pkg-config.exe"
+      - "C:/Strawberry/perl/bin/pkg-config"
+      - "C:/Strawberry/perl/bin/pkgconf.com"
+      - "C:/Strawberry/perl/bin/pkgconf.exe"
+      - "C:/Strawberry/perl/bin/pkgconf"
+      - "D:/Android/gradle-5.5.1/pkg-config.bat.com"
+      - "D:/Android/gradle-5.5.1/pkg-config.bat.exe"
+      - "D:/Android/gradle-5.5.1/pkg-config.bat"
+      - "D:/Android/gradle-5.5.1/pkg-config.com"
+      - "D:/Android/gradle-5.5.1/pkg-config.exe"
+      - "D:/Android/gradle-5.5.1/pkg-config"
+      - "D:/Android/gradle-5.5.1/pkgconf.com"
+      - "D:/Android/gradle-5.5.1/pkgconf.exe"
+      - "D:/Android/gradle-5.5.1/pkgconf"
+      - "D:/Android/gradle-5.5.1/bin/pkg-config.bat.com"
+      - "D:/Android/gradle-5.5.1/bin/pkg-config.bat.exe"
+      - "D:/Android/gradle-5.5.1/bin/pkg-config.bat"
+      - "D:/Android/gradle-5.5.1/bin/pkg-config.com"
+      - "D:/Android/gradle-5.5.1/bin/pkg-config.exe"
+      - "D:/Android/gradle-5.5.1/bin/pkg-config"
+      - "D:/Android/gradle-5.5.1/bin/pkgconf.com"
+      - "D:/Android/gradle-5.5.1/bin/pkgconf.exe"
+      - "D:/Android/gradle-5.5.1/bin/pkgconf"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/pkg-config.bat.com"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/pkg-config.bat.exe"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/pkg-config.bat"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/pkg-config.com"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/pkg-config.exe"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/pkg-config"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/pkgconf.com"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/pkgconf.exe"
+      - "D:/flutter_windows_3.29.3-stable/flutter/bin/pkgconf"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/pkg-config.bat.com"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/pkg-config.bat.exe"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/pkg-config.bat"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/pkg-config.com"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/pkg-config.exe"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/pkg-config"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/pkgconf.com"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/pkgconf.exe"
+      - "D:/Windows Kits/10/Windows Performance Toolkit/pkgconf"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/pkg-config.bat.com"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/pkg-config.bat.exe"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/pkg-config.bat"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/pkg-config.com"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/pkg-config.exe"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/pkg-config"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/pkgconf.com"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/pkgconf.exe"
+      - "D:/Program Files/ffmpeg-7.1.1-essentials_build/bin/pkgconf"
+      - "D:/Program Files/Git/cmd/pkg-config.bat.com"
+      - "D:/Program Files/Git/cmd/pkg-config.bat.exe"
+      - "D:/Program Files/Git/cmd/pkg-config.bat"
+      - "D:/Program Files/Git/cmd/pkg-config.com"
+      - "D:/Program Files/Git/cmd/pkg-config.exe"
+      - "D:/Program Files/Git/cmd/pkg-config"
+      - "D:/Program Files/Git/cmd/pkgconf.com"
+      - "D:/Program Files/Git/cmd/pkgconf.exe"
+      - "D:/Program Files/Git/cmd/pkgconf"
+      - "D:/ProgramData/miniconda3/condabin/pkg-config.bat.com"
+      - "D:/ProgramData/miniconda3/condabin/pkg-config.bat.exe"
+      - "D:/ProgramData/miniconda3/condabin/pkg-config.bat"
+      - "D:/ProgramData/miniconda3/condabin/pkg-config.com"
+      - "D:/ProgramData/miniconda3/condabin/pkg-config.exe"
+      - "D:/ProgramData/miniconda3/condabin/pkg-config"
+      - "D:/ProgramData/miniconda3/condabin/pkgconf.com"
+      - "D:/ProgramData/miniconda3/condabin/pkgconf.exe"
+      - "D:/ProgramData/miniconda3/condabin/pkgconf"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/pkg-config.bat.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/pkg-config.bat.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/pkg-config.bat"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/pkg-config.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/pkg-config.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/pkg-config"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/pkgconf.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/pkgconf.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/pkgconf"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/pkg-config.bat.com"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/pkg-config.bat.exe"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/pkg-config.bat"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/pkg-config.com"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/pkg-config.exe"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/pkg-config"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/pkgconf.com"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/pkgconf.exe"
+      - "D:/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin/pkgconf"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/pkg-config.bat.com"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/pkg-config.bat.exe"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/pkg-config.bat"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/pkg-config.com"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/pkg-config.exe"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/pkg-config"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/pkgconf.com"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/pkgconf.exe"
+      - "D:/Program Files/Git/usr/bin/vendor_perl/pkgconf"
+      - "D:/Program Files/Git/usr/bin/core_perl/pkg-config.bat.com"
+      - "D:/Program Files/Git/usr/bin/core_perl/pkg-config.bat.exe"
+      - "D:/Program Files/Git/usr/bin/core_perl/pkg-config.bat"
+      - "D:/Program Files/Git/usr/bin/core_perl/pkg-config.com"
+      - "D:/Program Files/Git/usr/bin/core_perl/pkg-config.exe"
+      - "D:/Program Files/Git/usr/bin/core_perl/pkg-config"
+      - "D:/Program Files/Git/usr/bin/core_perl/pkgconf.com"
+      - "D:/Program Files/Git/usr/bin/core_perl/pkgconf.exe"
+      - "D:/Program Files/Git/usr/bin/core_perl/pkgconf"
+      - "C:/Program Files/bin/pkg-config.bat.com"
+      - "C:/Program Files/bin/pkg-config.bat.exe"
+      - "C:/Program Files/bin/pkg-config.bat"
+      - "C:/Program Files/bin/pkg-config.com"
+      - "C:/Program Files/bin/pkg-config.exe"
+      - "C:/Program Files/bin/pkg-config"
+      - "C:/Program Files/bin/pkgconf.com"
+      - "C:/Program Files/bin/pkgconf.exe"
+      - "C:/Program Files/bin/pkgconf"
+      - "C:/Program Files/sbin/pkg-config.bat.com"
+      - "C:/Program Files/sbin/pkg-config.bat.exe"
+      - "C:/Program Files/sbin/pkg-config.bat"
+      - "C:/Program Files/sbin/pkg-config.com"
+      - "C:/Program Files/sbin/pkg-config.exe"
+      - "C:/Program Files/sbin/pkg-config"
+      - "C:/Program Files/sbin/pkgconf.com"
+      - "C:/Program Files/sbin/pkgconf.exe"
+      - "C:/Program Files/sbin/pkgconf"
+      - "C:/Program Files/pkg-config.bat.com"
+      - "C:/Program Files/pkg-config.bat.exe"
+      - "C:/Program Files/pkg-config.bat"
+      - "C:/Program Files/pkg-config.com"
+      - "C:/Program Files/pkg-config.exe"
+      - "C:/Program Files/pkg-config"
+      - "C:/Program Files/pkgconf.com"
+      - "C:/Program Files/pkgconf.exe"
+      - "C:/Program Files/pkgconf"
+      - "C:/Program Files (x86)/bin/pkg-config.bat.com"
+      - "C:/Program Files (x86)/bin/pkg-config.bat.exe"
+      - "C:/Program Files (x86)/bin/pkg-config.bat"
+      - "C:/Program Files (x86)/bin/pkg-config.com"
+      - "C:/Program Files (x86)/bin/pkg-config.exe"
+      - "C:/Program Files (x86)/bin/pkg-config"
+      - "C:/Program Files (x86)/bin/pkgconf.com"
+      - "C:/Program Files (x86)/bin/pkgconf.exe"
+      - "C:/Program Files (x86)/bin/pkgconf"
+      - "C:/Program Files (x86)/sbin/pkg-config.bat.com"
+      - "C:/Program Files (x86)/sbin/pkg-config.bat.exe"
+      - "C:/Program Files (x86)/sbin/pkg-config.bat"
+      - "C:/Program Files (x86)/sbin/pkg-config.com"
+      - "C:/Program Files (x86)/sbin/pkg-config.exe"
+      - "C:/Program Files (x86)/sbin/pkg-config"
+      - "C:/Program Files (x86)/sbin/pkgconf.com"
+      - "C:/Program Files (x86)/sbin/pkgconf.exe"
+      - "C:/Program Files (x86)/sbin/pkgconf"
+      - "C:/Program Files (x86)/pkg-config.bat.com"
+      - "C:/Program Files (x86)/pkg-config.bat.exe"
+      - "C:/Program Files (x86)/pkg-config.bat"
+      - "C:/Program Files (x86)/pkg-config.com"
+      - "C:/Program Files (x86)/pkg-config.exe"
+      - "C:/Program Files (x86)/pkg-config"
+      - "C:/Program Files (x86)/pkgconf.com"
+      - "C:/Program Files (x86)/pkgconf.exe"
+      - "C:/Program Files (x86)/pkgconf"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/pkg-config.bat.com"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/pkg-config.bat.exe"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/pkg-config.bat"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/pkg-config.com"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/pkg-config.exe"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/pkg-config"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/pkgconf.com"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/pkgconf.exe"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/bin/pkgconf"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/pkg-config.bat.com"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/pkg-config.bat.exe"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/pkg-config.bat"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/pkg-config.com"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/pkg-config.exe"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/pkg-config"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/pkgconf.com"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/pkgconf.exe"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/sbin/pkgconf"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/pkg-config.bat.com"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/pkg-config.bat.exe"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/pkg-config.bat"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/pkg-config.com"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/pkg-config.exe"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/pkg-config"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/pkgconf.com"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/pkgconf.exe"
+      - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data/pkgconf"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/pkg-config.bat.com"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/pkg-config.bat.exe"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/pkg-config.bat"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/pkg-config.com"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/pkg-config.exe"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/pkg-config"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/pkgconf.com"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/pkgconf.exe"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/bin/pkgconf"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/pkg-config.bat.com"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/pkg-config.bat.exe"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/pkg-config.bat"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/pkg-config.com"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/pkg-config.exe"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/pkg-config"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/pkgconf.com"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/pkgconf.exe"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/sbin/pkgconf"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/pkg-config.bat.com"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/pkg-config.bat.exe"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/pkg-config.bat"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/pkg-config.com"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/pkg-config.exe"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/pkg-config"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/pkgconf.com"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/pkgconf.exe"
+      - "C:/Program Files (x86)/HG_BUILD_PROJECT/pkgconf"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\Administrator\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\local\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "D:\\Program Files\\Git\\mingw64\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\Administrator\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Library\\mingw-w64\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\usr\\bin"
+        - "D:\\ProgramData\\miniconda3\\Library\\bin"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\bin"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\workspaces\\ee0dc3d7\\versions\\node\\current"
+        - "C:\\Users\\Administrator\\.trae-cn\\sdks\\versions\\node\\current"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-11.0.27.6-hotspot\\bin"
+        - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin"
+        - "C:\\windows\\system32"
+        - "C:\\windows"
+        - "C:\\windows\\System32\\Wbem"
+        - "C:\\windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\windows\\System32\\OpenSSH"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\Program Files\\Eclipse Adoptium\\jdk-8.0.452.9-hotspot\\bin"
+        - "D:\\Android\\gradle-5.5.1"
+        - "D:\\Android\\gradle-5.5.1\\bin"
+        - "D:\\flutter_windows_3.29.3-stable\\flutter\\bin"
+        - "D:\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "D:\\Program Files\\ffmpeg-7.1.1-essentials_build\\bin"
+        - "D:\\Program Files\\Git\\cmd"
+        - "D:\\ProgramData\\miniconda3"
+        - "D:\\ProgramData\\miniconda3\\Scripts"
+        - "D:\\ProgramData\\miniconda3\\condabin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "D:\\Program Files\\Git\\usr\\bin\\core_perl"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/HG_BUILD_PROJECT"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "D:/ProgramData/miniconda3/Lib/site-packages/cmake/data"
+        - "C:/Program Files (x86)/HG_BUILD_PROJECT"
+...

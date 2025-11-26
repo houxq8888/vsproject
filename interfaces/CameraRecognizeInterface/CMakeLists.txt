@@ -12,6 +12,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGConfig
     HGSensor
     HGCupDetModule
+    ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
     ${LOG4CPLUS_LIBRARIES}  
@@ -26,6 +27,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGConfig
     HGSensor
     HGCupDetModule
+    ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
     ${LOG4CPLUS_LIBRARIES}  

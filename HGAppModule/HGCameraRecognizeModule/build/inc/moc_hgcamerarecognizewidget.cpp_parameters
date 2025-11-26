@@ -1,0 +1,5 @@
+-D_WIN32_WINNT=0x0601
+-DWIN32
+-o
+D:/virtualMachine/github/vsproject/HGAppModule/HGCameraRecognizeModule/build/inc/moc_hgcamerarecognizewidget.cpp
+D:/virtualMachine/github/vsproject/HGAppModule/HGCameraRecognizeModule/inc/hgcamerarecognizewidget.h

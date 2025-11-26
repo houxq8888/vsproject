@@ -15,6 +15,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGSecurityService
     HGCommunicateService
     HGSaveService
+    ${ZXING_LIBRARY}
     # SQLite::SQLite3
     ${OpenCV_LIBRARIES}
     ${LOG4CPLUS_LIBRARIES}
@@ -32,6 +33,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGSecurityService
     HGCommunicateService
     HGSaveService
+    ${ZXING_LIBRARY}
     # SQLite::SQLite3
     ${LOG4CPLUS_LIBRARIES}  
     ${OpenCV_LIBRARIES}

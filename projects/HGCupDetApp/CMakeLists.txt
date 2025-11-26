@@ -19,6 +19,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGCommon
     HGSaveService
     HGImageAlgorithmService
+    ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
     ${LOG4CPLUS_LIBRARIES}
