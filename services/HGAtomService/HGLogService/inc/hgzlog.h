@@ -40,7 +40,7 @@
 #define HGLOGSERVICE_H
 
 #include "HGLogService_global.h"
-#include "zlog.h"
+// #include "zlog.h"
 
 namespace HGMACHINE {
 

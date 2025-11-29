@@ -22,7 +22,12 @@ HG_CMAKE_MODULE_DEPEND(
 elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_ADD_STATIC(HGConfig inc src)
 
-
+target_link_libraries(HGConfig 
+    ${XLSXIO_READ_LIBRARY}
+    ${XLSXIO_WRITE_LIBRARY}
+    ${HARU_LIBRARY}
+    ws2_32 iphlpapi shlwapi
+)
 endif()
 
 set_target_properties(HGConfig PROPERTIES 

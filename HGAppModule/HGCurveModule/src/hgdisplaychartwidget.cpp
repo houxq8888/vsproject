@@ -1,24 +1,16 @@
 #include "hgdisplaychartwidget.h"
 #include <QtCharts/QCategoryAxis>
 #include <sstream>
+#include <iostream>
 #include <QDateTime>
 #include "common.h"
+#include "datachartinfocache.h"
 
 #define MAX_POINT_COUNT 10
 
-std::vector<std::string> displayNames={
-    "时间~信号值",
-    "时间~信号微分值",
-    "体积~信号值",
-    "时间~体积",
-    "时间~信号二次微分",
-    "时间~电压",
-    "水质量~电压",
-    "时间~水质量",
-    "时间~电解速率"
-};
-
-std::vector<std::string> recordInTimeNames={"测定实时","趋势实时"};
+// 使用HGBaseAppModuleStatic中已经定义的全局变量
+extern std::vector<std::string> displayNames;
+extern std::vector<std::string> recordInTimeNames;
 
 
 HGDisplayChartWidget::HGDisplayChartWidget(std::string lang,const std::vector<std::string> &names,QWidget *parent) : QWidget(parent), 
@@ -27,10 +19,10 @@ HGDisplayChartWidget::HGDisplayChartWidget(std::string lang,const std::vector<st
     m_dragDialog(nullptr),
     m_displayDialog(nullptr),
     m_layout(new QGridLayout()),
-    m_displayTypeLabel(new HGQLabel(false,getPath("/resources/V1/@1xze-bars 1.png"))),
-    m_exportLabel(new HGQLabel(false,getPath("/resources/V1/@down.png"))),
-    inTimeDisplayLabel(new HGQLabel(false,getPath("/resources/V1/@1xze-apps-o 1.png"))),
-    m_closeLabel(new HGQLabel(false,getPath("/resources/V1/@1xze-cross 1.png"))),
+    m_displayTypeLabel(new HGQLabel(false,std::string(getPath("/resources/V1/@1xze-bars 1.png")))),
+    m_exportLabel(new HGQLabel(false,std::string(getPath("/resources/V1/@down.png")))),
+    inTimeDisplayLabel(new HGQLabel(false,std::string(getPath("/resources/V1/@1xze-apps-o 1.png")))),
+    m_closeLabel(new HGQLabel(false,std::string(getPath("/resources/V1/@1xze-cross 1.png")))),
     m_chartView(new MyChartView()),
     m_chart(new QChart()),
     // m_xAxisTime(new QCategoryAxis()),
@@ -165,7 +157,13 @@ HGDisplayChartWidget::HGDisplayChartWidget(std::string lang,const std::vector<st
     } catch (const std::exception& e) {
         std::ostringstream ss;
         ss<< "Error initializing HGDisplayChartWidget: " << e.what();
+        // Windows平台下禁用HGLog4Cplus，因为没有编译出对应的库
+#ifdef __linux__
         HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+#else
+        // Windows平台下使用标准输出或空操作
+        std::cerr << ss.str() << std::endl;
+#endif
     }
 }
 
@@ -671,7 +669,7 @@ void HGDisplayChartWidget::drawTimeAndCubeDiff(const std::string &name,const std
         break;
     }
 
-    QDateTime fiveMinutesBefore = QDateTime(now.addSecs(-120));
+    QDateTime fiveMinutesBefore = now.addSecs(-120);
     m_xAxisTime->setRange(0, 180);
     m_chart->update();
 }

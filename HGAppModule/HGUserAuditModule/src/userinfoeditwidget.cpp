@@ -273,7 +273,7 @@ void UserInfoEditWidget::fnInit()
         QString::fromStdString(loadTranslation(m_lang,"Disable")),
         QString::fromStdString(loadTranslation(m_lang,"Locked"))
     });
-    connect(m_accountManageCombo,QOverload<int>::of(&QComboBox::currentIndexChanged),this,
+    connect(m_accountManageCombo,&QComboBox::currentIndexChanged,this,
         &UserInfoEditWidget::onAccountComboBoxChanged);
 
     m_okBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Ok")));

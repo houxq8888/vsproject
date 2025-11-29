@@ -2,6 +2,11 @@
 #define HGLOG4CPLUS_H
 
 #include "HGCommon_global.h"
+
+#if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+
+#else
+
 #include <log4cplus/logger.h>
 #include <log4cplus/loggingmacros.h>
 #include <log4cplus/configurator.h>
@@ -35,4 +40,5 @@ private:
 }
 
 
+#endif
 #endif // HGLOG4CPLUS_H

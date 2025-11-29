@@ -32,14 +32,14 @@ QPainterPath TextItem::shape() const
 {
     QPainterPath path;
     QFontMetrics fm(this->font());
-    int w = fm.width(this->text());
+    int w = fm.horizontalAdvance(this->text());
     int h = fm.height();
     path.addRect(QRectF(1,1,w+18,h+6));
     return path;
 }
 void TextItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    double scalerFator = painter->matrix().m11();
+    double scalerFator = painter->transform().m11();
 
     painter->setPen(QColor(QColor(0,0,0)));
     painter->setBrush(QColor(Qt::yellow));
@@ -92,19 +92,19 @@ QRectF ControlPosItem::boundingRect() const
 QPainterPath ControlPosItem::shape() const
 {
     QPainterPath path;
-    path.addRoundRect(QRectF(-_radius,-_radius,_radius*2,_radius*2),25,25);
+    path.addRoundedRect(QRectF(-_radius,-_radius,_radius*2,_radius*2),25,25);
     return path;
 }
 
 void ControlPosItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    double scalerFactor = painter->matrix().m11();
+    double scalerFactor = painter->transform().m11();
     painter->setPen(QColor(0,0,0,200));
     painter->setBrush(QColor(255,0,255));
     if(option->state & QStyle::State_MouseOver){
         painter->setBrush(QColor(255,0,255,200));
     }
-    painter->drawRoundRect(QRectF(-_radius,-_radius,_radius*2,_radius*2),25,25);
+    painter->drawRoundedRect(QRectF(-_radius,-_radius,_radius*2,_radius*2),25,25);
     painter->scale(scalerFactor,scalerFactor);
 }
 
@@ -413,7 +413,7 @@ void RectItem::resetRect()
 
 void RectItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    double scaleFactor = painter->matrix().m11();
+    double scaleFactor = painter->transform().m11();
     if(brushflag){
 //        painter->setBrush(QColor(226, 222, 222));
         painter->setBrush(QColor(96, 119, 136));

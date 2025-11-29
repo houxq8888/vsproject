@@ -286,8 +286,9 @@ void HGFlowEditWidget::slotDeleteFlow(){
             RWDb::deleteRecord(FLOWMANAGEDBNAME,"序号",m_tableW->item(row,0)->text().toStdString());
             std::ostringstream logtext;
             logtext<<"delete db:"<<m_fillContent[row]["DBName"];
+            #ifdef __linux__
             HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
-
+            #endif
             printf("delete db:%s\n",m_fillContent[row]["DBName"].c_str());
             RWDb::deleteDB(m_fillContent[row]["DBName"]);
             m_fillContent.erase(m_fillContent.begin()+index-1);

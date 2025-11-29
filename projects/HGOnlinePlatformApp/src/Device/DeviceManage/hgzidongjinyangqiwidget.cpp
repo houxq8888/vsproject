@@ -82,11 +82,19 @@ m_lang(lang)
     m_circleNumberSpin=new QSpinBox();
     m_circleNumberSpin->setRange(0,36);
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QObject::connect(m_circleNumberSpin, &QSpinBox::valueChanged,
+                     [](int value)
+    {
+        setCircleNumber(value);
+    });
+#else
     QObject::connect(m_circleNumberSpin, QOverload<int>::of(&QSpinBox::valueChanged),
                      [](int value)
     {
         setCircleNumber(value);
     });
+#endif
 
     m_chuisaoBtn=new QPushButton("吹扫位");
     m_circleExecuteBtn=new QPushButton("执行");

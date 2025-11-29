@@ -358,10 +358,17 @@ void MyGraphicsView::wheelEvent(QWheelEvent *event)
         }
         this->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
         double const d = delta.y() / std::abs(delta.y());
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        if(d < 0 && this->transform().m11() < 0.000001){
+            this->scale(1, 1);
+            return;
+        }
+#else
         if(d < 0 && this->matrix().m11() < 0.000001){
             this->scale(1, 1);
             return;
         }
+#endif
     d>0?Zoomflag(true):Zoomflag(false);
 
     emit pixgridsignal(m_pixelgridFlag,zoomflag);

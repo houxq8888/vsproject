@@ -1,0 +1,2 @@
+add_subdirectory(HGBaseAppModule
+add_subdirectory(HGTaskModule

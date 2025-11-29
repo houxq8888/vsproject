@@ -1,2 +1,0 @@
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGLowerPC.a CMakeFiles/HGLowerPC.dir/src/hgprinter.cpp.obj CMakeFiles/HGLowerPC.dir/src/hgserial.cpp.obj
-D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGLowerPC.a

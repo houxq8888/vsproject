@@ -12,7 +12,9 @@
 #include <QtCharts/QDateTimeAxis>
 #include <QtCharts/QCategoryAxis>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 using namespace QtCharts;
+#endif
 
 struct recordLabelWithSeries{
     recordLabel label;

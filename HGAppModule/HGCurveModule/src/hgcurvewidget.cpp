@@ -15,7 +15,7 @@ HGCurveWidget::HGCurveWidget(bool flag,const std::string &lang,const std::string
     m_lang(lang)
 {
     m_layout=new QHBoxLayout(this);
-    m_layout->setMargin(0);
+    m_layout->setContentsMargins(0, 0, 0, 0);
 
     m_label=new LabelWithImg(IMGLEFT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),name);
     connect(m_label,SIGNAL(clickLeftName(std::string)),this,SLOT(slotLabelClicked(std::string)));

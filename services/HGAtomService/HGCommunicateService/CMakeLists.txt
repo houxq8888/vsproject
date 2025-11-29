@@ -11,6 +11,7 @@ HG_CMAKE_ADD_MODELU(CommunicateService inc src)
 HG_CMAKE_MODULE_DEPEND_PUB( 
     HGCommon
     HGConfig
+    HGFrameService
     ${LOG4CPLUS_LIBRARIES}
     ${VSOMEIP_LIBRARIES}
     ${ZeroMQ_LIBRARY}
@@ -36,6 +37,7 @@ HG_CMAKE_ADD_SHARED(HGCommunicateService inc src)
 HG_CMAKE_MODULE_DEPEND(
     HGCommon
     HGConfig
+    HGFrameService
     ${LOG4CPLUS_LIBRARIES}
     ${VSOMEIP_LIBRARIES}
     ${ZeroMQ_LIBRARY}
@@ -60,6 +62,7 @@ HG_CMAKE_ADD_STATIC(HGCommunicateService inc src)
 HG_CMAKE_MODULE_DEPEND(
     HGCommon
     HGConfig
+    HGFrameService
     ${VSOMEIP_LIBRARIES}
     ${ZeroMQ_LIBRARY}
     ${MQTT_LIBRARYS}

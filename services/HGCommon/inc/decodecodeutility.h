@@ -1,6 +1,9 @@
 #ifndef DECODECODEUTILITY_H
 #define DECODECODEUTILITY_H
 
+#if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+
+#else
 #include "ZXing/ReadBarcode.h"
 #include "ZXing/BarcodeFormat.h"
 #include "ZXing/ReaderOptions.h"
@@ -29,4 +32,6 @@ private:
     ZXing::ReaderOptions options;
     int rotate = 0;  // 图像旋转角度
 };
+
+#endif
 #endif // DECODECODEUTILITY_H

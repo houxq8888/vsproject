@@ -20,7 +20,7 @@ HGEBalanceWidget::HGEBalanceWidget(std::string name,QWidget *parent)
     m_interfaceComboBox=new QComboBox();
     m_interfaceComboBox->addItems({"COM","USB","LAN"});
     m_interfaceComboBox->setCurrentIndex(0);
-    connect(m_interfaceComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),this,&HGEBalanceWidget::fnChangeParam);
+    connect(m_interfaceComboBox,&QComboBox::currentIndexChanged,this,&HGEBalanceWidget::fnChangeParam);
 
     fnChangeParam();
 

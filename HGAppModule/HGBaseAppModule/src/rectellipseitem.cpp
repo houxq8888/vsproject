@@ -4,6 +4,7 @@
     @author XiaoQin.Hou
 */
 #include "rectellipseitem.h"
+#include <QStyleOption>
 
 //中点坐标
  QPointF midPos(const QPointF &p1,const QPointF &p2)
@@ -630,7 +631,7 @@ void RectEllipseItem::rotateAndPaintRect(QPainter *painter, const QRectF &rect, 
     painter->save();
     painter->translate(cx, cy);
     painter->rotate(angle);
-    painter->drawRoundRect(rotatedRect,xRnd,yRnd);
+    painter->drawRoundedRect(rotatedRect,xRnd,yRnd);
     painter->restore();
 }
 
@@ -652,7 +653,7 @@ void RectEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
     //背景颜色
     //    painter->setBrush(QBrush(QColor(0,0,255,100)));
     //    painter->drawPath(shape());
-    double scaleFactor = painter->matrix().m11();
+    double scaleFactor = painter->transform().m11();
 
     QRectF rect;
     rect.setTopLeft(_tempTranLeftTop);
@@ -721,13 +722,13 @@ void RectEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
         QRectF rect(0,0,_radius*2.0,_radius*2.0);
         rect.moveCenter(_leftTop);
         if (fabs(scaleFactor)>0.0001) {
-            painter->drawRoundRect(rect,50/scaleFactor,50/scaleFactor);
+            painter->drawRoundedRect(rect,50/scaleFactor,50/scaleFactor);
             rect.moveCenter(_ellipsePos);
-            painter->drawRoundRect(rect,50/scaleFactor,50/scaleFactor);
+            painter->drawRoundedRect(rect,50/scaleFactor,50/scaleFactor);
             rect.moveCenter(_transformPos);
-            painter->drawRoundRect(rect,50/scaleFactor,50/scaleFactor);
+            painter->drawRoundedRect(rect,50/scaleFactor,50/scaleFactor);
             rect.moveCenter(_rightBottom);
-            painter->drawRoundRect(rect,50/scaleFactor,50/scaleFactor);
+            painter->drawRoundedRect(rect,50/scaleFactor,50/scaleFactor);
         }
         //圆
         painter->setPen(QColor(0,0,0,200));

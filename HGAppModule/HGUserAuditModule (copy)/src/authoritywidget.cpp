@@ -53,7 +53,7 @@ void AuthorityWidget::fnInit()
     m_usersLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Users")));
     m_usersComboBox=new QComboBox();
 
-    connect(m_usersComboBox,QOverload<int>::of(&QComboBox::activated),this,
+    connect(m_usersComboBox,&QComboBox::activated,this,
         &AuthorityWidget::onUsersComboBoxChanged);
 
     m_userLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"GroupUsers")));

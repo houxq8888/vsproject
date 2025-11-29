@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HGAnalysisRecordModuleRun.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HGAnalysisRecordModuleRun.dir/objects.a @CMakeFiles\HGAnalysisRecordModuleRun.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\c++.exe  -Winvalid-pch -fmax-errors=5 -O3 -DNDEBUG -march=native -mtune=native -flto=auto -g1  -flto=auto -Wl,--whole-archive CMakeFiles\HGAnalysisRecordModuleRun.dir/objects.a -Wl,--no-whole-archive -o HGAnalysisRecordModuleRun.exe -Wl,--out-implib,libHGAnalysisRecordModuleRun.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\HGAnalysisRecordModuleRun.dir\linkLibs.rsp

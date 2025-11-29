@@ -1,4 +1,4 @@
-﻿/*
+/*
 **
 **	版权:	
 **
@@ -26,7 +26,9 @@
 #include <QMenu>
 #include <QAction>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 using namespace QtCharts;
+#endif
 
 enum {
     CHART_LINE,
@@ -48,12 +50,17 @@ signals:
     void chartClicked(const QPoint& pos);
 
 protected:
-    void mousePressEvent(QMouseEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
-    void mouseReleaseEvent(QMouseEvent *event);
-    void wheelEvent(QWheelEvent* event);
-    void enterEvent(QEvent* event);
-    void leaveEvent(QEvent* event);
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
+    void wheelEvent(QWheelEvent* event) override;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    void enterEvent(QEvent* event) override;
+    void leaveEvent(QEvent* event) override;
+#else
+    void enterEvent(QEnterEvent* event) override;
+    void leaveEvent(QEvent* event) override;
+#endif
     // 重写右键菜单事件
     void contextMenuEvent(QContextMenuEvent *event) override;
 

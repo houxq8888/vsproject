@@ -30,12 +30,13 @@ include_directories(${X11_INCLUDE_DIR})
 # target_link_libraries(HGCommon ${X11_LIBRARIES} Xrandr)
 
 elseif (PLATFORM STREQUAL "win32")
+message("create Static common CMAKE_FIND_ROOT_PATH_MODE_LIBRARY: ${CMAKE_FIND_ROOT_PATH_MODE_LIBRARY}")
 HG_CMAKE_ADD_STATIC(HGCommon inc src)
-
 # 设置导出符号
 target_compile_definitions(HGCommon PRIVATE HGCOMMON_LIBRARY)
 
 target_link_libraries(HGCommon  
+    ${USB_LIBRARY}
     #${HG_PROJECT_ROOT_FS}/lib/liblog4cplusU.dll.a
     ws2_32 iphlpapi)
 endif()

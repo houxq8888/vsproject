@@ -1,8 +1,10 @@
 #include "decodecodeutility.h"
 #include <iostream>
+
+#if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+
+#else
 #include "opencv2/opencv.hpp"
-
-
 BarcodeDecoder::BarcodeDecoder()
     : options()
 {
@@ -34,3 +36,4 @@ BarcodeDecoder::BarcodeDecoder()
     std::vector<uint8_t> BarcodeDecoder::GetDecodedBytes(const ZXing::Barcode& barcode) {
         return barcode.bytes();
     }
+#endif

@@ -6,6 +6,7 @@
 #include <QPrinter>
 #include <QMessageBox>
 #include "hgcomwithssh.h"
+#include "PrinterManager.h"
 
 
 HGPrintWidget::HGPrintWidget(std::string lang,std::string printTitle,std::vector<std::string> printOptions,QWidget *parent) : QWidget(parent),
@@ -354,6 +355,17 @@ void HGPrintWidget::slotPrintClicked()
         if (i>0){
             printer.newPage();
         }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QRectF pageRect = printer.pageRect(QPrinter::Millimeter);
+        QSize imgSize = m_qimgs[i].size();
+        qreal scale = qMin(pageRect.width() / qreal(imgSize.width()), 
+            pageRect.height() / qreal(imgSize.height()));
+        
+        int w = imgSize.width() * scale;
+        int h = imgSize.height() * scale;
+        int x = pageRect.x() + (pageRect.width() - w)/2;
+        int y = pageRect.y() + (pageRect.height() - h)/2;
+#else
         QRect pageRect = printer.pageRect();
         QSize imgSize = m_qimgs[i].size();
         qreal scale = qMin(pageRect.width() / qreal(imgSize.width()), 
@@ -363,6 +375,7 @@ void HGPrintWidget::slotPrintClicked()
         int h = imgSize.height() * scale;
         int x = pageRect.x() + (pageRect.width() - w)/2;
         int y = pageRect.y() + (pageRect.height() - h)/2;
+#endif
 
         painter.drawImage(QRect(x, y, w, h), m_qimgs[i]);
     }

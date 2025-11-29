@@ -56,23 +56,11 @@ endmacro()
 
 macro(HG_CMAKE_MODULE_DEPEND)
     message(STATUS "link:${ARGN}")
-    set(FILTERED_LIBS)
-    foreach(LIB ${ARGN})
-        if(NOT (WIN32 AND (LIB STREQUAL "ALSA::ALSA" OR LIB STREQUAL "OpenSSL::Crypto")))
-            list(APPEND FILTERED_LIBS ${LIB})
-        endif()
-    endforeach()
-    target_link_libraries(${HG_MODULE_NAME} PRIVATE ${FILTERED_LIBS})
+    target_link_libraries(${HG_MODULE_NAME} PRIVATE ${ARGN})
 endmacro()
 macro(HG_CMAKE_MODULE_DEPEND_PUB)
     message(STATUS "PUBLIC link:${ARGN}")
-    set(FILTERED_LIBS)
-    foreach(LIB ${ARGN})
-        if(NOT (WIN32 AND (LIB STREQUAL "ALSA::ALSA" OR LIB STREQUAL "OpenSSL::Crypto")))
-            list(APPEND FILTERED_LIBS ${LIB})
-        endif()
-    endforeach()
-    target_link_libraries(${HG_MODULE_NAME} PUBLIC ${FILTERED_LIBS})
+    target_link_libraries(${HG_MODULE_NAME} PUBLIC ${ARGN})
 endmacro()
 
 macro(HG_CMAKE_MODULE_SOURCE)
@@ -131,6 +119,11 @@ macro(HG_CMAKE_ADD_MODELU MODULE_NAME)
     add_library(${MODULE_NAME} OBJECT ${MODULE_SRCS})
     add_library(HG::${MODULE_NAME} ALIAS ${MODULE_NAME})
     HG_CMAKE_MODULE_TARGET_INCLUDE(${ARGN} ${CMAKE_CURRENT_SOURCE_DIR})
+    
+    # 添加预编译头文件支持
+    if(HG_USE_PCH)
+        hg_add_precompiled_header(${MODULE_NAME} "${CMAKE_SOURCE_DIR}/stdafx.h")
+    endif()
 endmacro()
 
 macro(HG_CMAKE_ADD_SHARED MODULE_NAME)
@@ -141,6 +134,12 @@ macro(HG_CMAKE_ADD_SHARED MODULE_NAME)
     add_library(${MODULE_NAME} SHARED ${MODULE_SRCS})
     add_library(HG::${MODULE_NAME} ALIAS ${MODULE_NAME})
     HG_CMAKE_MODULE_TARGET_INCLUDE(${ARGN} ${CMAKE_CURRENT_SOURCE_DIR})
+    
+    # 添加预编译头文件支持
+    if(HG_USE_PCH)
+        hg_add_precompiled_header(${MODULE_NAME} "${CMAKE_SOURCE_DIR}/stdafx.h")
+    endif()
+    
     install(TARGETS ${MODULE_NAME}
     DESTINATION ${CMAKE_SOURCE_DIR}/hg_pub/${PLATFORM}/lib)
 endmacro()
@@ -153,6 +152,12 @@ macro(HG_CMAKE_ADD_STATIC MODULE_NAME)
     add_library(${MODULE_NAME} ${MODULE_SRCS})
     add_library(HG::${MODULE_NAME} ALIAS ${MODULE_NAME})
     HG_CMAKE_MODULE_TARGET_INCLUDE(${ARGN})
+    
+    # 添加预编译头文件支持
+    if(HG_USE_PCH)
+        hg_add_precompiled_header(${MODULE_NAME} "${CMAKE_SOURCE_DIR}/stdafx.h")
+    endif()
+    
     install(TARGETS ${MODULE_NAME}
     DESTINATION ${CMAKE_SOURCE_DIR}/hg_pub/${PLATFORM}/lib)
 endmacro()
@@ -164,6 +169,12 @@ macro(HG_CMAKE_ADD_EXE MODULE_NAME)
     message(STATUS "[${MODULE_NAME}-E] cpp: ${MODULE_SRCS}")
     add_executable(${MODULE_NAME} ${MODULE_SRCS})
     HG_CMAKE_MODULE_TARGET_INCLUDE(${ARGN} ${CMAKE_CURRENT_SOURCE_DIR})
+    
+    # 添加预编译头文件支持
+    if(HG_USE_PCH)
+        hg_add_precompiled_header(${MODULE_NAME} "${CMAKE_SOURCE_DIR}/stdafx.h")
+    endif()
+    
     message(STATUS "[${MODULE_NAME}-E] install: ${CMAKE_SOURCE_DIR}/hg_pub/app")
     install(TARGETS ${MODULE_NAME}
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/hg_pub/${PLATFORM}/app)
@@ -198,4 +209,3 @@ macro(HG_CMAKE_ADD_UNIT_TEST TEST_CASE SRC)
     message(STATUS "link:${ARGN}")
     target_link_libraries(${HG_MODULE_NAME} PRIVATE ${ARGN})
 endmacro()
-

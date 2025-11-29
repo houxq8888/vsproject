@@ -1,0 +1,1769 @@
+[  0%] Built target PluginInterfaceModule_autogen_timestamp_deps
+[  0%] Built target HGBaseAppModuleStatic_autogen_timestamp_deps
+[  0%] Built target PluginInterfaceStatic_autogen_timestamp_deps
+[  0%] Built target HGSharedFileModuleStatic_autogen_timestamp_deps
+[  0%] Built target BaseAppModule_autogen_timestamp_deps
+[  0%] Built target SharedFileModule_autogen_timestamp_deps
+[  0%] Built target AnalysisRecordModule_autogen_timestamp_deps
+[  0%] Built target HGAnalysisRecordModuleStatic_autogen_timestamp_deps
+[  0%] Automatic MOC and UIC for target PluginInterfaceModule
+[  1%] Automatic MOC and UIC for target PluginInterfaceStatic
+[  2%] Automatic MOC and UIC for target HGBaseAppModuleStatic
+[  3%] Automatic MOC and UIC for target HGSharedFileModuleStatic
+[  3%] Automatic MOC and UIC for target BaseAppModule
+[  5%] Automatic MOC and UIC for target HGAnalysisRecordModuleStatic
+[  5%] Automatic MOC and UIC for target AnalysisRecordModule
+[  6%] Automatic MOC and UIC for target SharedFileModule
+[  6%] Built target PluginInterfaceModule_autogen
+[  6%] Built target HGBaseAppModuleStatic_autogen
+[  6%] Built target PluginInterfaceStatic_autogen
+[  6%] Built target HGSharedFileModuleStatic_autogen
+[  6%] Built target BaseAppModule_autogen
+[  6%] Built target AnalysisRecordModule_autogen
+[  6%] Built target SharedFileModule_autogen
+[  6%] Built target HGAnalysisRecordModuleStatic_autogen
+[  6%] Generating inc/moc_usersinfocache.cpp
+[  6%] Generating inc/moc_sharedfileplugindetector.cpp
+[  7%] Generating inc/moc_sharedfileplugindetector.cpp
+[  8%] Generating inc/moc_hgdisplayrecordwidget.cpp
+[  8%] Generating inc/moc_usersinfocache.cpp
+[  8%] Generating inc/moc_hgdisplayrecordwidget.cpp
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h:31:1: note: No relevant classes found. No output generated.
+[  9%] Building CXX object pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj
+[ 10%] Building CXX object pluginInterface/CMakeFiles/PluginInterfaceModule.dir/PluginInterfaceModule_autogen/mocs_compilation.cpp.obj
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h:31:1: note: No relevant classes found. No output generated.
+[ 10%] Generating inc/moc_DragDialog.cpp
+[ 10%] Generating inc/moc_DragDialog.cpp
+[ 11%] Generating inc/moc_QRoundProgressBar.cpp
+[ 12%] Generating inc/moc_QRoundProgressBar.cpp
+[ 12%] Building CXX object pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/plugininterface.cpp.obj
+[ 12%] Building CXX object pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj
+[ 12%] Generating inc/moc_analysisrecordplugindetector.cpp
+[ 12%] Generating inc/moc_hgsharedfilewidget.cpp
+[ 12%] Generating inc/moc_analysisrecordplugindetector.cpp
+[ 13%] Generating inc/moc_hgsharedfilewidget.cpp
+[ 13%] Generating inc/moc_authorityinfocache.cpp
+[ 13%] Generating inc/moc_authorityinfocache.cpp
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/authorityinfocache.h:31:1: note: No relevant classes found. No output generated.
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/authorityinfocache.h:31:1: note: No relevant classes found. No output generated.
+[ 15%] Generating inc/moc_basewidget.cpp
+[ 15%] Generating inc/moc_basewidget.cpp
+[ 15%] Generating inc/moc_common.cpp
+[ 15%] Generating inc/moc_common.cpp
+[ 17%] Generating inc/moc_hganalysisrecordwidget.cpp
+[ 16%] Generating inc/moc_hganalysisrecordwidget.cpp
+[ 19%] Building CXX object HGSharedFileModule/CMakeFiles/HGSharedFileModuleStatic.dir/HGSharedFileModuleStatic_autogen/mocs_compilation.cpp.obj
+[ 19%] Building CXX object HGSharedFileModule/CMakeFiles/SharedFileModule.dir/SharedFileModule_autogen/mocs_compilation.cpp.obj
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:91:1: note: No relevant classes found. No output generated.
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:91:1: note: No relevant classes found. No output generated.
+[ 20%] Generating inc/moc_datachartinfocache.cpp
+[ 21%] Generating inc/moc_datachartinfocache.cpp
+[ 21%] Building CXX object HGSharedFileModule/CMakeFiles/HGSharedFileModuleStatic.dir/src/hgsharedfilewidget.cpp.obj
+[ 21%] Building CXX object HGSharedFileModule/CMakeFiles/SharedFileModule.dir/src/hgsharedfilewidget.cpp.obj
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/datachartinfocache.h:28:1: note: No relevant classes found. No output generated.
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/datachartinfocache.h:28:1: note: No relevant classes found. No output generated.
+[ 22%] Generating inc/moc_hgdisplayrecordinfowidget.cpp
+[ 22%] Generating inc/moc_globalsingleton.cpp
+[ 22%] Generating inc/moc_globalsingleton.cpp
+[ 22%] Generating inc/moc_hgdisplayrecordinfowidget.cpp
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/globalsingleton.h:71:1: note: No relevant classes found. No output generated.
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/globalsingleton.h:71:1: note: No relevant classes found. No output generated.
+[ 23%] Generating inc/moc_hgmanipulatewidget.cpp
+[ 24%] Generating inc/moc_hgmanipulatewidget.cpp
+[ 24%] Building CXX object HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleStatic.dir/HGAnalysisRecordModuleStatic_autogen/mocs_compilation.cpp.obj
+[ 25%] Building CXX object HGAnalysisRecordModule/CMakeFiles/AnalysisRecordModule.dir/AnalysisRecordModule_autogen/mocs_compilation.cpp.obj
+[ 25%] Generating inc/moc_hgqlabel.cpp
+[ 25%] Generating inc/moc_hgqlabel.cpp
+[ 26%] Generating inc/moc_labelwithimg.cpp
+[ 27%] Generating inc/moc_labelwithimg.cpp
+[ 28%] Building CXX object HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleStatic.dir/src/analysisrecordplugindetector.cpp.obj
+[ 28%] Building CXX object HGAnalysisRecordModule/CMakeFiles/AnalysisRecordModule.dir/src/analysisrecordplugindetector.cpp.obj
+[ 28%] Generating inc/moc_mychartview.cpp
+[ 28%] Generating inc/moc_mychartview.cpp
+[ 30%] Generating inc/moc_mygraphicsview.cpp
+[ 30%] Generating inc/moc_mygraphicsview.cpp
+[ 31%] Generating inc/moc_mykeyboard.cpp
+[ 31%] Generating inc/moc_mykeyboard.cpp
+[ 31%] Generating inc/moc_mypixmapitem.cpp
+[ 32%] Generating inc/moc_mypixmapitem.cpp
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mypixmapitem.h: note: No relevant classes found. No output generated.
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mypixmapitem.h: note: No relevant classes found. No output generated.
+[ 33%] Generating inc/moc_rectellipseitem.cpp
+[ 34%] Generating inc/moc_rectellipseitem.cpp
+[ 34%] Generating inc/moc_rectitem.cpp
+[ 34%] Generating inc/moc_rectitem.cpp
+[ 36%] Generating inc/moc_systeminfocache.cpp
+[ 36%] Generating inc/moc_systeminfocache.cpp
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/systeminfocache.h:22:1: note: No relevant classes found. No output generated.
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/systeminfocache.h:22:1: note: No relevant classes found. No output generated.
+[ 36%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.obj
+[ 36%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.obj
+[ 38%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj
+[ 38%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/DragDialog.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/3rdparty/include/libssh/libssh.h:64,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/inc/hgcomwithssh.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:16,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGSharedFileModule\src\hgsharedfilewidget.cpp:1:
+D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+In file included from D:/virtualMachine/github/vsproject/3rdparty/include/libssh/libssh.h:64,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/inc/hgcomwithssh.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:16,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGSharedFileModule\src\hgsharedfilewidget.cpp:1:
+D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+In file included from D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\analysisrecordplugindetector.cpp:1:
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:14: warning: ignoring '#pragma execution_character_set ' [-Wunknown-pragmas]
+   14 | #pragma execution_character_set("utf-8")
+      | 
+In file included from D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\analysisrecordplugindetector.cpp:1:
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:14: warning: ignoring '#pragma execution_character_set ' [-Wunknown-pragmas]
+   14 | #pragma execution_character_set("utf-8")
+      | 
+[ 39%] Building CXX object pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/pluginmanager.cpp.obj
+[ 40%] Building CXX object pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj
+In file included from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\DragDialog.cpp:1:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+In file included from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\DragDialog.cpp:1:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+[ 40%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.obj
+[ 40%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/QRoundProgressBar.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:15:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:15:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:8:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:8:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGCurveModule/inc/hgdisplaychartwidget.h:9,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:12:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGCurveModule/inc/hgdisplaychartwidget.h:9,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:12:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h: In member function 'virtual void AnalysisRecordPluginDetector::recMsgFromManager(QString, QString, QString)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:33:44: warning: unused parameter 'from' [-Wunused-parameter]
+   33 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                    ~~~~~~~~^~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:33:57: warning: unused parameter 'dest' [-Wunused-parameter]
+   33 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                                 ~~~~~~~~^~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\analysisrecordplugindetector.cpp: In constructor 'AnalysisRecordPluginDetector::AnalysisRecordPluginDetector(QObject*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\analysisrecordplugindetector.cpp:7:69: warning: unused parameter 'parent' [-Wunused-parameter]
+    7 | AnalysisRecordPluginDetector::AnalysisRecordPluginDetector(QObject* parent)
+      |                                                            ~~~~~~~~~^~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h: In member function 'virtual void AnalysisRecordPluginDetector::recMsgFromManager(QString, QString, QString)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:33:44: warning: unused parameter 'from' [-Wunused-parameter]
+   33 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                    ~~~~~~~~^~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:33:57: warning: unused parameter 'dest' [-Wunused-parameter]
+   33 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                                 ~~~~~~~~^~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\analysisrecordplugindetector.cpp: In constructor 'AnalysisRecordPluginDetector::AnalysisRecordPluginDetector(QObject*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\analysisrecordplugindetector.cpp:7:69: warning: unused parameter 'parent' [-Wunused-parameter]
+    7 | AnalysisRecordPluginDetector::AnalysisRecordPluginDetector(QObject* parent)
+      |                                                            ~~~~~~~~~^~~~~~
+[ 41%] Building CXX object HGSharedFileModule/CMakeFiles/HGSharedFileModuleStatic.dir/src/sharedfileplugindetector.cpp.obj
+[ 42%] Building CXX object HGSharedFileModule/CMakeFiles/SharedFileModule.dir/src/sharedfileplugindetector.cpp.obj
+[ 43%] Building CXX object HGAnalysisRecordModule/CMakeFiles/AnalysisRecordModule.dir/src/hganalysisrecordwidget.cpp.obj
+[ 43%] Building CXX object HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleStatic.dir/src/hganalysisrecordwidget.cpp.obj
+In file included from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\QRoundProgressBar.cpp:20:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/QRoundProgressBar.h: In constructor 'QRoundProgressBar::QRoundProgressBar(const std::string&, QWidget*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/QRoundProgressBar.h:251:17: warning: 'QRoundProgressBar::m_name' will be initialized after [-Wreorder]
+  251 |     std::string m_name;
+      |                 ^~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/QRoundProgressBar.h:233:12: warning:   'double QRoundProgressBar::m_min' [-Wreorder]
+  233 |     double m_min, m_max;
+      |            ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\QRoundProgressBar.cpp:25:1: warning:   when initialized here [-Wreorder]
+   25 | QRoundProgressBar::QRoundProgressBar(const std::string& name,QWidget *parent) :
+      | ^~~~~~~~~~~~~~~~~
+In file included from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\QRoundProgressBar.cpp:20:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/QRoundProgressBar.h: In constructor 'QRoundProgressBar::QRoundProgressBar(const std::string&, QWidget*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/QRoundProgressBar.h:251:17: warning: 'QRoundProgressBar::m_name' will be initialized after [-Wreorder]
+  251 |     std::string m_name;
+      |                 ^~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/QRoundProgressBar.h:233:12: warning:   'double QRoundProgressBar::m_min' [-Wreorder]
+  233 |     double m_min, m_max;
+      |            ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\QRoundProgressBar.cpp:25:1: warning:   when initialized here [-Wreorder]
+   25 | QRoundProgressBar::QRoundProgressBar(const std::string& name,QWidget *parent) :
+      | ^~~~~~~~~~~~~~~~~
+[ 44%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.obj
+[ 45%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/authorityinfocache.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/3rdparty/include/libssh/libssh.h:64,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/inc/hgcomwithssh.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:16,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:8,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGSharedFileModule\src\sharedfileplugindetector.cpp:1:
+D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+In file included from D:/virtualMachine/github/vsproject/3rdparty/include/libssh/libssh.h:64,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/inc/hgcomwithssh.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:16,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:8,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGSharedFileModule\src\sharedfileplugindetector.cpp:1:
+D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:14: warning: ignoring '#pragma execution_character_set ' [-Wunknown-pragmas]
+   14 | #pragma execution_character_set("utf-8")
+      | 
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:14: warning: ignoring '#pragma execution_character_set ' [-Wunknown-pragmas]
+   14 | #pragma execution_character_set("utf-8")
+      | 
+[ 45%] Built target PluginInterfaceModule
+[ 45%] Building CXX object HGSharedFileModule/CMakeFiles/HGSharedFileModuleStatic.dir/inc/moc_hgsharedfilewidget.cpp.obj
+[ 45%] Linking CXX static library libPluginInterfaceStatic.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe: CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj: plugin needed to handle lto object
+D:\Qt\Tools\mingw1310_64\bin\ranlib.exe: libPluginInterfaceStatic.a(mocs_compilation.cpp.obj): plugin needed to handle lto object
+[ 46%] Built target PluginInterfaceStatic
+[ 46%] Building CXX object HGSharedFileModule/CMakeFiles/SharedFileModule.dir/inc/moc_hgsharedfilewidget.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\authorityinfocache.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\authorityinfocache.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/3rdparty/include/libssh/libssh.h:64,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/inc/hgcomwithssh.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:16,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGSharedFileModule\inc\moc_hgsharedfilewidget.cpp:9:
+D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+In file included from D:/virtualMachine/github/vsproject/3rdparty/include/libssh/libssh.h:64,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/inc/hgcomwithssh.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:16,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGSharedFileModule\inc\moc_hgsharedfilewidget.cpp:9:
+D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+[ 46%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.obj
+[ 46%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/basewidget.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:15:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:15:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\hganalysisrecordwidget.cpp:1:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\hganalysisrecordwidget.cpp:1:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h: In member function 'virtual void SharedFilePluginDetector::recMsgFromManager(QString, QString, QString)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:28:44: warning: unused parameter 'from' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                    ~~~~~~~~^~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:28:57: warning: unused parameter 'dest' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                                 ~~~~~~~~^~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGSharedFileModule\src\sharedfileplugindetector.cpp: In constructor 'SharedFilePluginDetector::SharedFilePluginDetector(QObject*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGSharedFileModule\src\sharedfileplugindetector.cpp:10:61: warning: unused parameter 'parent' [-Wunused-parameter]
+   10 | SharedFilePluginDetector::SharedFilePluginDetector(QObject* parent)
+      |                                                    ~~~~~~~~~^~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h: In member function 'virtual void SharedFilePluginDetector::recMsgFromManager(QString, QString, QString)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:28:44: warning: unused parameter 'from' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                    ~~~~~~~~^~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:28:57: warning: unused parameter 'dest' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                                 ~~~~~~~~^~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGSharedFileModule\src\sharedfileplugindetector.cpp: In constructor 'SharedFilePluginDetector::SharedFilePluginDetector(QObject*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGSharedFileModule\src\sharedfileplugindetector.cpp:10:61: warning: unused parameter 'parent' [-Wunused-parameter]
+   10 | SharedFilePluginDetector::SharedFilePluginDetector(QObject* parent)
+      |                                                    ~~~~~~~~~^~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGCurveModule/inc/hgdisplaychartwidget.h:9,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:12:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGCurveModule/inc/hgdisplaychartwidget.h:9,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:12:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+[ 46%] Building CXX object HGAnalysisRecordModule/CMakeFiles/AnalysisRecordModule.dir/src/hgdisplayrecordinfowidget.cpp.obj
+[ 47%] Building CXX object HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleStatic.dir/src/hgdisplayrecordinfowidget.cpp.obj
+[ 48%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.obj
+[ 49%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/common.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:15:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:15:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp: In member function 'void BaseWidget::fnCopy(const BaseWidget&)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp:15:43: warning: unused parameter 'obj' [-Wunused-parameter]
+   15 | void BaseWidget::fnCopy(const BaseWidget& obj){
+      |                         ~~~~~~~~~~~~~~~~~~^~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp: In member function 'virtual void BaseWidget::setLanguage(std::string)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp:18:42: warning: unused parameter 'lang' [-Wunused-parameter]
+   18 | void BaseWidget::setLanguage(std::string lang){
+      |                              ~~~~~~~~~~~~^~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp: In member function 'void BaseWidget::fnCopy(const BaseWidget&)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp:15:43: warning: unused parameter 'obj' [-Wunused-parameter]
+   15 | void BaseWidget::fnCopy(const BaseWidget& obj){
+      |                         ~~~~~~~~~~~~~~~~~~^~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp: In member function 'virtual void BaseWidget::setLanguage(std::string)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp:18:42: warning: unused parameter 'lang' [-Wunused-parameter]
+   18 | void BaseWidget::setLanguage(std::string lang){
+      |                              ~~~~~~~~~~~~^~~~
+[ 50%] Building CXX object HGSharedFileModule/CMakeFiles/HGSharedFileModuleStatic.dir/inc/moc_sharedfileplugindetector.cpp.obj
+[ 51%] Building CXX object HGSharedFileModule/CMakeFiles/SharedFileModule.dir/inc/moc_sharedfileplugindetector.cpp.obj
+[ 52%] Building CXX object HGAnalysisRecordModule/CMakeFiles/AnalysisRecordModule.dir/src/hgdisplayrecordwidget.cpp.obj
+[ 52%] Building CXX object HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleStatic.dir/src/hgdisplayrecordwidget.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/3rdparty/include/libssh/libssh.h:64,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/inc/hgcomwithssh.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:16,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:8,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGSharedFileModule\inc\moc_sharedfileplugindetector.cpp:9:
+D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:14: warning: ignoring '#pragma execution_character_set ' [-Wunknown-pragmas]
+   14 | #pragma execution_character_set("utf-8")
+      | 
+In file included from D:/virtualMachine/github/vsproject/3rdparty/include/libssh/libssh.h:64,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/inc/hgcomwithssh.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:16,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:8,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGSharedFileModule\inc\moc_sharedfileplugindetector.cpp:9:
+D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:14: warning: ignoring '#pragma execution_character_set ' [-Wunknown-pragmas]
+   14 | #pragma execution_character_set("utf-8")
+      | 
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordinfowidget.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\hgdisplayrecordinfowidget.cpp:1:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordinfowidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordinfowidget.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\hgdisplayrecordinfowidget.cpp:1:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordinfowidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\hgdisplayrecordinfowidget.cpp:5:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h: At global scope:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\hgdisplayrecordinfowidget.cpp:5:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h: At global scope:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\common.cpp:1:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\common.cpp:1:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+[ 52%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/datachartinfocache.cpp.obj
+[ 53%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.obj
+[ 53%] Building CXX object HGAnalysisRecordModule/CMakeFiles/AnalysisRecordModule.dir/inc/moc_analysisrecordplugindetector.cpp.obj
+[ 54%] Building CXX object HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleStatic.dir/inc/moc_analysisrecordplugindetector.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\hgdisplayrecordwidget.cpp:1:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:15:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\hgdisplayrecordwidget.cpp:1:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:15:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\hgdisplayrecordwidget.cpp: In member function 'void HGDisplayRecordWidget::onCellClicked(int, int)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\hgdisplayrecordwidget.cpp:130:55: warning: unused parameter 'column' [-Wunused-parameter]
+  130 | void HGDisplayRecordWidget::onCellClicked(int row,int column){
+      |                                                   ~~~~^~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h: In member function 'virtual void SharedFilePluginDetector::recMsgFromManager(QString, QString, QString)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:28:44: warning: unused parameter 'from' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                    ~~~~~~~~^~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:28:57: warning: unused parameter 'dest' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                                 ~~~~~~~~^~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\hgdisplayrecordwidget.cpp: In member function 'void HGDisplayRecordWidget::onCellClicked(int, int)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\src\hgdisplayrecordwidget.cpp:130:55: warning: unused parameter 'column' [-Wunused-parameter]
+  130 | void HGDisplayRecordWidget::onCellClicked(int row,int column){
+      |                                                   ~~~~^~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h: In member function 'virtual void SharedFilePluginDetector::recMsgFromManager(QString, QString, QString)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:28:44: warning: unused parameter 'from' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                    ~~~~~~~~^~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/sharedfileplugindetector.h:28:57: warning: unused parameter 'dest' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                                 ~~~~~~~~^~~~
+[ 54%] Linking CXX static library libHGSharedFileModuleStatic.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe: CMakeFiles/HGSharedFileModuleStatic.dir/HGSharedFileModuleStatic_autogen/mocs_compilation.cpp.obj: plugin needed to handle lto object
+[ 55%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/globalsingleton.cpp.obj
+D:\Qt\Tools\mingw1310_64\bin\ranlib.exe: libHGSharedFileModuleStatic.a(mocs_compilation.cpp.obj): plugin needed to handle lto object
+[ 55%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.obj
+[ 56%] Built target HGSharedFileModuleStatic
+[ 56%] Building CXX object HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleStatic.dir/inc/moc_hganalysisrecordwidget.cpp.obj
+[ 56%] Built target SharedFileModule
+[ 57%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgmanipulatewidget.cpp.obj
+In file included from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGAnalysisRecordModule\inc\moc_analysisrecordplugindetector.cpp:9:
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:14: warning: ignoring '#pragma execution_character_set ' [-Wunknown-pragmas]
+   14 | #pragma execution_character_set("utf-8")
+      | 
+In file included from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGAnalysisRecordModule\inc\moc_analysisrecordplugindetector.cpp:9:
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:14: warning: ignoring '#pragma execution_character_set ' [-Wunknown-pragmas]
+   14 | #pragma execution_character_set("utf-8")
+      | 
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\datachartinfocache.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\datachartinfocache.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+[ 58%] Building CXX object HGAnalysisRecordModule/CMakeFiles/AnalysisRecordModule.dir/inc/moc_hganalysisrecordwidget.cpp.obj
+[ 59%] Building CXX object HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleStatic.dir/inc/moc_hgdisplayrecordinfowidget.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\globalsingleton.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\globalsingleton.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\globalsingleton.cpp: In member function 'std::string GlobalSingleton::getSystemInfo(const std::string&)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\globalsingleton.cpp:37:22: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'long long unsigned int'} [-Wsign-compare]
+   37 |         for(int i=0;i<authorities.size();i++){
+      |                     ~^~~~~~~~~~~~~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\globalsingleton.cpp: In member function 'std::string GlobalSingleton::getSystemInfo(const std::string&)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\globalsingleton.cpp:37:22: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'long long unsigned int'} [-Wsign-compare]
+   37 |         for(int i=0;i<authorities.size();i++){
+      |                     ~^~~~~~~~~~~~~~~~~~~
+[ 60%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.obj
+[ 60%] Building CXX object HGAnalysisRecordModule/CMakeFiles/AnalysisRecordModule.dir/inc/moc_hgdisplayrecordinfowidget.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:8:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:8:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGCurveModule/inc/hgdisplaychartwidget.h:9,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:12:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h: In member function 'virtual void AnalysisRecordPluginDetector::recMsgFromManager(QString, QString, QString)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:33:44: warning: unused parameter 'from' [-Wunused-parameter]
+   33 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                    ~~~~~~~~^~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:33:57: warning: unused parameter 'dest' [-Wunused-parameter]
+   33 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                                 ~~~~~~~~^~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGCurveModule/inc/hgdisplaychartwidget.h:9,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:12:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h: In member function 'virtual void AnalysisRecordPluginDetector::recMsgFromManager(QString, QString, QString)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:33:44: warning: unused parameter 'from' [-Wunused-parameter]
+   33 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                    ~~~~~~~~^~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/analysisrecordplugindetector.h:33:57: warning: unused parameter 'dest' [-Wunused-parameter]
+   33 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                                 ~~~~~~~~^~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordinfowidget.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGAnalysisRecordModule\inc\moc_hgdisplayrecordinfowidget.cpp:9:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordinfowidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\hgmanipulatewidget.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+[ 60%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.obj
+[ 60%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgqlabel.cpp.obj
+[ 61%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGAnalysisRecordModule\inc\moc_hganalysisrecordwidget.cpp:9:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGCurveModule/inc/hgdisplaychartwidget.h:9,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:12:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+[ 62%] Building CXX object HGAnalysisRecordModule/CMakeFiles/AnalysisRecordModule.dir/inc/moc_hgdisplayrecordwidget.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGAnalysisRecordModule\inc\moc_hganalysisrecordwidget.cpp:9:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+[ 62%] Building CXX object HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleStatic.dir/inc/moc_hgdisplayrecordwidget.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGCurveModule/inc/hgdisplaychartwidget.h:9,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:12:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordinfowidget.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGAnalysisRecordModule\inc\moc_hgdisplayrecordinfowidget.cpp:9:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordinfowidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+[ 62%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.obj
+[ 63%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/labelwithimg.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\hgmanipulatewidget.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+[ 63%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mychartview.cpp.obj
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp: In member function 'virtual void LabelWithImg::paintEvent(QPaintEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp:101:44: warning: unused parameter 'event' [-Wunused-parameter]
+  101 | void LabelWithImg::paintEvent(QPaintEvent* event){
+      |                               ~~~~~~~~~~~~~^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp: In member function 'virtual void LabelWithImg::mouseMoveEvent(QMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp:128:13: warning: unused variable 'dx' [-Wunused-variable]
+  128 |         int dx=event->pos().x() - m_lastMousePosition.x();
+      |             ^~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp:129:13: warning: unused variable 'dy' [-Wunused-variable]
+  129 |         int dy=event->pos().y() - m_lastMousePosition.y();
+      |             ^~
+[ 64%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj
+[ 65%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj
+[ 65%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mykeyboard.cpp.obj
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In constructor 'MyChartView::MyChartView(QWidget*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:24:35: warning: unused parameter 'parent' [-Wunused-parameter]
+   24 | MyChartView::MyChartView(QWidget* parent)
+      |                          ~~~~~~~~~^~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'void MyChartView::saveAxisRange()':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:47:69: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+   47 |     QValueAxis *axisX=dynamic_cast<QValueAxis*>(this->chart()->axisX());
+      |                                                 ~~~~~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtCharts/QChart:1,
+                 from D:/Qt/6.9.1/mingw_64/include/QtCharts/qchartview.h:9,
+                 from D:/Qt/6.9.1/mingw_64/include/QtCharts/QChartView:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mychartview.h:22,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:18:
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:52:69: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+   52 |     QValueAxis *axisY=dynamic_cast<QValueAxis*>(this->chart()->axisY());
+      |                                                 ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'virtual void MyChartView::mousePressEvent(QMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:63:54: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+   63 |         if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
+      |                                  ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:63:84: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+   63 |         if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
+      |                                                                ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'virtual void MyChartView::mouseMoveEvent(QMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:106:50: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  106 |     if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
+      |                              ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:106:80: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  106 |     if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
+      |                                                            ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:94:13: warning: variable 'curChartPos' set but not used [-Wunused-but-set-variable]
+   94 |     QPointF curChartPos=this->chart()->mapToValue(QPointF(curpos));
+      |             ^~~~~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'virtual void MyChartView::enterEvent(QEnterEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:124:50: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  124 |     if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
+      |                              ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:124:80: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  124 |     if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
+      |                                                            ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:121:43: warning: unused parameter 'event' [-Wunused-parameter]
+  121 | void MyChartView::enterEvent(QEnterEvent *event)
+      |                              ~~~~~~~~~~~~~^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'virtual void MyChartView::leaveEvent(QEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:130:38: warning: unused parameter 'event' [-Wunused-parameter]
+  130 | void MyChartView::leaveEvent(QEvent *event)
+      |                              ~~~~~~~~^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'virtual void MyChartView::mouseReleaseEvent(QMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:143:37: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  143 |             if (this->chart()->axisX()==NULL) return;
+      |                 ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:144:33: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  144 |             this->chart()->axisX()->setRange(m_xMin,m_xMax);
+      |             ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:145:37: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  145 |             if (this->chart()->axisY()==NULL) return;
+      |                 ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:146:33: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  146 |             this->chart()->axisY()->setRange(m_yMin,m_yMax);
+      |             ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'virtual void MyChartView::wheelEvent(QWheelEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:153:69: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  153 |     QValueAxis *axisY=dynamic_cast<QValueAxis*>(this->chart()->axisY());
+      |                                                 ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:155:69: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  155 |     QValueAxis *axisX=dynamic_cast<QValueAxis*>(this->chart()->axisX());
+      |                                                 ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:193:25: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  193 |     this->chart()->axisY()->setRange(yCentral-bottomOffset,yCentral+topOffset);
+      |     ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:194:25: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  194 |     this->chart()->axisX()->setRange(xCentral-leftOffset,xCentral+rightOffset);
+      |     ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp: In member function 'virtual void LabelWithImg::paintEvent(QPaintEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp:101:44: warning: unused parameter 'event' [-Wunused-parameter]
+  101 | void LabelWithImg::paintEvent(QPaintEvent* event){
+      |                               ~~~~~~~~~~~~~^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp: In member function 'virtual void LabelWithImg::mouseMoveEvent(QMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp:128:13: warning: unused variable 'dx' [-Wunused-variable]
+  128 |         int dx=event->pos().x() - m_lastMousePosition.x();
+      |             ^~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp:129:13: warning: unused variable 'dy' [-Wunused-variable]
+  129 |         int dy=event->pos().y() - m_lastMousePosition.y();
+      |             ^~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGAnalysisRecordModule\inc\moc_hgdisplayrecordwidget.cpp:9:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+[ 66%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mypixmapitem.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+[ 66%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGAnalysisRecordModule\inc\moc_hgdisplayrecordwidget.cpp:9:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In constructor 'MyChartView::MyChartView(QWidget*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:24:35: warning: unused parameter 'parent' [-Wunused-parameter]
+   24 | MyChartView::MyChartView(QWidget* parent)
+      |                          ~~~~~~~~~^~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'void MyChartView::saveAxisRange()':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:47:69: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+   47 |     QValueAxis *axisX=dynamic_cast<QValueAxis*>(this->chart()->axisX());
+      |                                                 ~~~~~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtCharts/QChart:1,
+                 from D:/Qt/6.9.1/mingw_64/include/QtCharts/qchartview.h:9,
+                 from D:/Qt/6.9.1/mingw_64/include/QtCharts/QChartView:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mychartview.h:22,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:18:
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:52:69: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+   52 |     QValueAxis *axisY=dynamic_cast<QValueAxis*>(this->chart()->axisY());
+      |                                                 ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'virtual void MyChartView::mousePressEvent(QMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:63:54: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+   63 |         if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
+      |                                  ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:63:84: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+   63 |         if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
+      |                                                                ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'virtual void MyChartView::mouseMoveEvent(QMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:106:50: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  106 |     if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
+      |                              ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:106:80: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  106 |     if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
+      |                                                            ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:94:13: warning: variable 'curChartPos' set but not used [-Wunused-but-set-variable]
+   94 |     QPointF curChartPos=this->chart()->mapToValue(QPointF(curpos));
+      |             ^~~~~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'virtual void MyChartView::enterEvent(QEnterEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:124:50: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  124 |     if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
+      |                              ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:124:80: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  124 |     if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
+      |                                                            ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:121:43: warning: unused parameter 'event' [-Wunused-parameter]
+  121 | void MyChartView::enterEvent(QEnterEvent *event)
+      |                              ~~~~~~~~~~~~~^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'virtual void MyChartView::leaveEvent(QEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:130:38: warning: unused parameter 'event' [-Wunused-parameter]
+  130 | void MyChartView::leaveEvent(QEvent *event)
+      |                              ~~~~~~~~^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'virtual void MyChartView::mouseReleaseEvent(QMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:143:37: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  143 |             if (this->chart()->axisX()==NULL) return;
+      |                 ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:144:33: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  144 |             this->chart()->axisX()->setRange(m_xMin,m_xMax);
+      |             ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:145:37: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  145 |             if (this->chart()->axisY()==NULL) return;
+      |                 ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:146:33: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  146 |             this->chart()->axisY()->setRange(m_yMin,m_yMax);
+      |             ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp: In member function 'virtual void MyChartView::wheelEvent(QWheelEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:153:69: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  153 |     QValueAxis *axisY=dynamic_cast<QValueAxis*>(this->chart()->axisY());
+      |                                                 ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:155:69: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  155 |     QValueAxis *axisX=dynamic_cast<QValueAxis*>(this->chart()->axisX());
+      |                                                 ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:193:25: warning: 'QAbstractAxis* QChart::axisY(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  193 |     this->chart()->axisY()->setRange(yCentral-bottomOffset,yCentral+topOffset);
+      |     ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:84:38: note: declared here
+   84 |     Q_DECL_DEPRECATED QAbstractAxis *axisY(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp:194:25: warning: 'QAbstractAxis* QChart::axisX(QAbstractSeries*) const' is deprecated [-Wdeprecated-declarations]
+  194 |     this->chart()->axisX()->setRange(xCentral-leftOffset,xCentral+rightOffset);
+      |     ~~~~~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h:83:38: note: declared here
+   83 |     Q_DECL_DEPRECATED QAbstractAxis *axisX(QAbstractSeries *series = nullptr) const;
+      |                                      ^~~~~
+[ 66%] Built target AnalysisRecordModule
+[ 66%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectellipseitem.cpp.obj
+[ 67%] Linking CXX static library libHGAnalysisRecordModuleStatic.a
+[ 68%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.obj
+D:\Qt\Tools\mingw1310_64\bin\ar.exe: CMakeFiles/HGAnalysisRecordModuleStatic.dir/HGAnalysisRecordModuleStatic_autogen/mocs_compilation.cpp.obj: plugin needed to handle lto object
+D:\Qt\Tools\mingw1310_64\bin\ranlib.exe: libHGAnalysisRecordModuleStatic.a(mocs_compilation.cpp.obj): plugin needed to handle lto object
+[ 69%] Built target HGAnalysisRecordModuleStatic
+[ 70%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectitem.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:9:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:9:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:12:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp: In member function 'virtual void MyGraphicsView::drawBackground(QPainter*, const QRectF&)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:299:47: warning: unused parameter 'painter' [-Wunused-parameter]
+  299 | void MyGraphicsView::drawBackground(QPainter *painter, const QRectF &rect)
+      |                                     ~~~~~~~~~~^~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:299:70: warning: unused parameter 'rect' [-Wunused-parameter]
+  299 | void MyGraphicsView::drawBackground(QPainter *painter, const QRectF &rect)
+      |                                                        ~~~~~~~~~~~~~~^~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp: In lambda function:
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:101:67: warning: unused parameter 'str' [-Wunused-parameter]
+  101 |     connect(m_yearEdit,&QComboBox::currentTextChanged,[=](QString str){
+      |                                                           ~~~~~~~~^~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp: In member function 'void KBTimeWithHourEdit::init(int, int)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:28:35: warning: unused parameter 'MyHeight' [-Wunused-parameter]
+   28 | void KBTimeWithHourEdit::init(int MyHeight,int MyWidth)
+      |                               ~~~~^~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:28:48: warning: unused parameter 'MyWidth' [-Wunused-parameter]
+   28 | void KBTimeWithHourEdit::init(int MyHeight,int MyWidth)
+      |                                            ~~~~^~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp: In lambda function:
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:249:67: warning: unused parameter 'str' [-Wunused-parameter]
+  249 |     connect(m_yearEdit,&QComboBox::currentTextChanged,[=](QString str){
+      |                                                           ~~~~~~~~^~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp: In member function 'void KBTimeEdit::init(int, int)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:203:27: warning: unused parameter 'MyHeight' [-Wunused-parameter]
+  203 | void KBTimeEdit::init(int MyHeight,int MyWidth)
+      |                       ~~~~^~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:203:40: warning: unused parameter 'MyWidth' [-Wunused-parameter]
+  203 | void KBTimeEdit::init(int MyHeight,int MyWidth)
+      |                                    ~~~~^~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp: In member function 'virtual void MyGraphicsView::drawBackground(QPainter*, const QRectF&)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:299:47: warning: unused parameter 'painter' [-Wunused-parameter]
+  299 | void MyGraphicsView::drawBackground(QPainter *painter, const QRectF &rect)
+      |                                     ~~~~~~~~~~^~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:299:70: warning: unused parameter 'rect' [-Wunused-parameter]
+  299 | void MyGraphicsView::drawBackground(QPainter *painter, const QRectF &rect)
+      |                                                        ~~~~~~~~~~~~~~^~~~
+[ 70%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.obj
+[ 70%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/systeminfocache.cpp.obj
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp: In member function 'virtual void RectEllipseItem::mouseMoveEvent(QGraphicsSceneMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp:328:9: warning: unused variable 'index' [-Wunused-variable]
+  328 |     int index = setMousePos(pos);
+      |         ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp: In member function 'virtual void RectEllipseItem::paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp:651:80: warning: unused parameter 'option' [-Wunused-parameter]
+  651 | void RectEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+      |                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp:651:97: warning: unused parameter 'widget' [-Wunused-parameter]
+  651 | void RectEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+      |                                                                                        ~~~~~~~~~^~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp: At global scope:
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp:43:16: warning: 'QPointF vRotationTransform(const QPointF&, double)' defined but not used [-Wunused-function]
+   43 | static QPointF vRotationTransform(const QPointF &pos, double dAngle)
+      |                ^~~~~~~~~~~~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp:38:13: warning: 'void vRotationTransform(double, double, double, double&, double&)' defined but not used [-Wunused-function]
+   38 | static void vRotationTransform(double dX, double dY, double dAngle, double &dbNewX, double &dbNewY)
+      |             ^~~~~~~~~~~~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp:29:16: warning: 'QPointF getTrianglePoint(QPointF, qreal, qreal)' defined but not used [-Wunused-function]
+   29 | static QPointF getTrianglePoint(QPointF pointB,qreal angle, qreal bevel)
+      |                ^~~~~~~~~~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp: In member function 'virtual void TextItem::paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:40:90: warning: unused parameter 'widget' [-Wunused-parameter]
+   40 | void TextItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+      |                                                                                 ~~~~~~~~~^~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp: In member function 'virtual void ControlPosItem::paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:99:96: warning: unused parameter 'widget' [-Wunused-parameter]
+   99 | void ControlPosItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+      |                                                                                       ~~~~~~~~~^~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp: In member function 'virtual void ControlPosItem::mousePressEvent(QGraphicsSceneMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:123:64: warning: unused parameter 'event' [-Wunused-parameter]
+  123 | void ControlPosItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp: In member function 'virtual void ControlPosItem::mouseReleaseEvent(QGraphicsSceneMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:133:66: warning: unused parameter 'event' [-Wunused-parameter]
+  133 | void ControlPosItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+      |                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp: In member function 'void RectItem::ctrlPosRelease(int)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:315:35: warning: unused parameter 'index' [-Wunused-parameter]
+  315 | void RectItem::ctrlPosRelease(int index)
+      |                               ~~~~^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp: In member function 'virtual void RectItem::paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:414:73: warning: unused parameter 'option' [-Wunused-parameter]
+  414 | void RectItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+      |                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:414:90: warning: unused parameter 'widget' [-Wunused-parameter]
+  414 | void RectItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+      |                                                                                 ~~~~~~~~~^~~~~~
+[ 72%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/usersinfocache.cpp.obj
+[ 72%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:12:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+[ 72%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp: In lambda function:
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:101:67: warning: unused parameter 'str' [-Wunused-parameter]
+  101 |     connect(m_yearEdit,&QComboBox::currentTextChanged,[=](QString str){
+      |                                                           ~~~~~~~~^~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp: In member function 'void KBTimeWithHourEdit::init(int, int)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:28:35: warning: unused parameter 'MyHeight' [-Wunused-parameter]
+   28 | void KBTimeWithHourEdit::init(int MyHeight,int MyWidth)
+      |                               ~~~~^~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:28:48: warning: unused parameter 'MyWidth' [-Wunused-parameter]
+   28 | void KBTimeWithHourEdit::init(int MyHeight,int MyWidth)
+      |                                            ~~~~^~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp: In lambda function:
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:249:67: warning: unused parameter 'str' [-Wunused-parameter]
+  249 |     connect(m_yearEdit,&QComboBox::currentTextChanged,[=](QString str){
+      |                                                           ~~~~~~~~^~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp: In member function 'void KBTimeEdit::init(int, int)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:203:27: warning: unused parameter 'MyHeight' [-Wunused-parameter]
+  203 | void KBTimeEdit::init(int MyHeight,int MyWidth)
+      |                       ~~~~^~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp:203:40: warning: unused parameter 'MyWidth' [-Wunused-parameter]
+  203 | void KBTimeEdit::init(int MyHeight,int MyWidth)
+      |                                    ~~~~^~~~~~~
+[ 73%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.obj
+[ 73%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_DragDialog.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\systeminfocache.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+[ 74%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\usersinfocache.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\systeminfocache.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp: In member function 'virtual void RectEllipseItem::mouseMoveEvent(QGraphicsSceneMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp:328:9: warning: unused variable 'index' [-Wunused-variable]
+  328 |     int index = setMousePos(pos);
+      |         ^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp: In member function 'virtual void RectEllipseItem::paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp:651:80: warning: unused parameter 'option' [-Wunused-parameter]
+  651 | void RectEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+      |                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp:651:97: warning: unused parameter 'widget' [-Wunused-parameter]
+  651 | void RectEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+      |                                                                                        ~~~~~~~~~^~~~~~
+[ 74%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.obj
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp: At global scope:
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp:43:16: warning: 'QPointF vRotationTransform(const QPointF&, double)' defined but not used [-Wunused-function]
+   43 | static QPointF vRotationTransform(const QPointF &pos, double dAngle)
+      |                ^~~~~~~~~~~~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp:38:13: warning: 'void vRotationTransform(double, double, double, double&, double&)' defined but not used [-Wunused-function]
+   38 | static void vRotationTransform(double dX, double dY, double dAngle, double &dbNewX, double &dbNewY)
+      |             ^~~~~~~~~~~~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp:29:16: warning: 'QPointF getTrianglePoint(QPointF, qreal, qreal)' defined but not used [-Wunused-function]
+   29 | static QPointF getTrianglePoint(QPointF pointB,qreal angle, qreal bevel)
+      |                ^~~~~~~~~~~~~~~~
+[ 75%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_QRoundProgressBar.cpp.obj
+[ 76%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_authorityinfocache.cpp.obj
+[ 76%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_basewidget.cpp.obj
+[ 77%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\usersinfocache.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+[ 78%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_common.cpp.obj
+[ 78%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.obj
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp: In member function 'virtual void TextItem::paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:40:90: warning: unused parameter 'widget' [-Wunused-parameter]
+   40 | void TextItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+      |                                                                                 ~~~~~~~~~^~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp: In member function 'virtual void ControlPosItem::paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:99:96: warning: unused parameter 'widget' [-Wunused-parameter]
+   99 | void ControlPosItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+      |                                                                                       ~~~~~~~~~^~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp: In member function 'virtual void ControlPosItem::mousePressEvent(QGraphicsSceneMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:123:64: warning: unused parameter 'event' [-Wunused-parameter]
+  123 | void ControlPosItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp: In member function 'virtual void ControlPosItem::mouseReleaseEvent(QGraphicsSceneMouseEvent*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:133:66: warning: unused parameter 'event' [-Wunused-parameter]
+  133 | void ControlPosItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+      |                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp: In member function 'void RectItem::ctrlPosRelease(int)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:315:35: warning: unused parameter 'index' [-Wunused-parameter]
+  315 | void RectItem::ctrlPosRelease(int index)
+      |                               ~~~~^~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp: In member function 'virtual void RectItem::paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:414:73: warning: unused parameter 'option' [-Wunused-parameter]
+  414 | void RectItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+      |                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp:414:90: warning: unused parameter 'widget' [-Wunused-parameter]
+  414 | void RectItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+      |                                                                                 ~~~~~~~~~^~~~~~
+[ 78%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_datachartinfocache.cpp.obj
+[ 79%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.obj
+[ 80%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_globalsingleton.cpp.obj
+[ 80%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.obj
+[ 80%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgmanipulatewidget.cpp.obj
+[ 81%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgqlabel.cpp.obj
+In file included from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_DragDialog.cpp:9:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+[ 82%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.obj
+[ 82%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_labelwithimg.cpp.obj
+In file included from D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_DragDialog.cpp:9:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+[ 83%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mychartview.cpp.obj
+[ 83%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mygraphicsview.cpp.obj
+[ 83%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.obj
+[ 84%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.obj
+[ 85%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mykeyboard.cpp.obj
+[ 85%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.obj
+[ 86%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.obj
+[ 86%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.obj
+[ 87%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.obj
+[ 87%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mypixmapitem.cpp.obj
+[ 88%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.obj
+[ 88%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.obj
+[ 89%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectellipseitem.cpp.obj
+[ 90%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectitem.cpp.obj
+[ 90%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_systeminfocache.cpp.obj
+[ 91%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_usersinfocache.cpp.obj
+[ 92%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.obj
+[ 92%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.obj
+[ 93%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.obj
+[ 93%] Linking CXX static library libHGBaseAppModuleStatic.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe: CMakeFiles/HGBaseAppModuleStatic.dir/HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.obj: plugin needed to handle lto object
+D:\Qt\Tools\mingw1310_64\bin\ranlib.exe: libHGBaseAppModuleStatic.a(mocs_compilation.cpp.obj): plugin needed to handle lto object
+[ 94%] Built target HGBaseAppModuleStatic
+[ 94%] Built target HGAnalysisRecordModuleRun_autogen_timestamp_deps
+[ 94%] Built target HGSharedFileModuleRun_autogen_timestamp_deps
+[ 95%] Automatic MOC and UIC for target HGAnalysisRecordModuleRun
+[ 95%] Automatic MOC and UIC for target HGSharedFileModuleRun
+[ 95%] Built target HGAnalysisRecordModuleRun_autogen
+[ 95%] Built target HGSharedFileModuleRun_autogen
+mingw32-make[2]: *** No rule to make target 'HGPrintModule/libHGPrintModuleStatic.a', needed by 'HGAnalysisRecordModule/HGAnalysisRecordModuleRun.exe'.  Stop.
+mingw32-make[2]: *** Waiting for unfinished jobs....
+[ 95%] Building CXX object HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleRun.dir/HGAnalysisRecordModuleRun_autogen/mocs_compilation.cpp.obj
+[ 96%] Building CXX object HGSharedFileModule/CMakeFiles/HGSharedFileModuleRun.dir/HGSharedFileModuleRun_autogen/mocs_compilation.cpp.obj
+[ 97%] Building CXX object HGSharedFileModule/CMakeFiles/HGSharedFileModuleRun.dir/main.cpp.obj
+[ 97%] Building CXX object HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleRun.dir/main.cpp.obj
+[ 98%] Built target BaseAppModule
+In file included from D:/virtualMachine/github/vsproject/3rdparty/include/libssh/libssh.h:64,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/inc/hgcomwithssh.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:16,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGSharedFileModule\main.cpp:1:
+D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc/hgsharedfilewidget.h:15:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hgdisplayrecordwidget.h:12,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGAnalysisRecordModule\main.cpp:1:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGCurveModule/inc/hgdisplaychartwidget.h:9,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:12:
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mousePressEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:37:49: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   37 |             dragStartPosition = event->globalPos() - frameGeometry().topLeft();
+      |                                 ~~~~~~~~~~~~~~~~^~
+In file included from D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent:1,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h:24,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/inc/hganalysisrecordwidget.h:5:
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h: In member function 'virtual void DraggableDialog::mouseMoveEvent(QMouseEvent*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h:46:34: warning: 'QPoint QMouseEvent::globalPos() const' is deprecated: Use globalPosition() [-Wdeprecated-declarations]
+   46 |             move(event->globalPos() - dragStartPosition);
+      |                  ~~~~~~~~~~~~~~~~^~
+D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:225:19: note: declared here
+  225 |     inline QPoint globalPos() const { return globalPosition().toPoint(); }
+      |                   ^~~~~~~~~
+[ 99%] Linking CXX executable HGSharedFileModuleRun.exe
+D:\Qt\Tools\mingw1310_64\bin\ar.exe: CMakeFiles/HGSharedFileModuleRun.dir/HGSharedFileModuleRun_autogen/mocs_compilation.cpp.obj: plugin needed to handle lto object
+mingw32-make[1]: *** [CMakeFiles\Makefile2:796: HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleRun.dir/all] Error 2
+mingw32-make[1]: *** Waiting for unfinished jobs....
+D:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\ADMINI~1\AppData\Local\Temp\ccgu3Mxu.ltrans0.ltrans.o: in function `main':
+D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/main.cpp:35: undefined reference to `HGSharedFileWidget::HGSharedFileWidget(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, QWidget*)'
+D:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/main.cpp:38: undefined reference to `HGSharedFileWidget::~HGSharedFileWidget()'
+D:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/main.cpp:38: undefined reference to `HGSharedFileWidget::~HGSharedFileWidget()'
+collect2.exe: error: ld returned 1 exit status
+mingw32-make[2]: *** [HGSharedFileModule\CMakeFiles\HGSharedFileModuleRun.dir\build.make:159: HGSharedFileModule/HGSharedFileModuleRun.exe] Error 1
+mingw32-make[1]: *** [CMakeFiles\Makefile2:556: HGSharedFileModule/CMakeFiles/HGSharedFileModuleRun.dir/all] Error 2
+mingw32-make: *** [Makefile:135: all] Error 2

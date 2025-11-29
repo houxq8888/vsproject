@@ -1,0 +1,8 @@
+AnalysisRecordModule_autogen/timestamp: \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/CMakeLists.txt \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/src/analysisrecordplugindetector.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/src/hganalysisrecordwidget.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/src/hgdisplayrecordinfowidget.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/src/hgdisplayrecordwidget.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule/version.h.in \
+	D:/Qt/Tools/CMake_64/bin/cmake.exe

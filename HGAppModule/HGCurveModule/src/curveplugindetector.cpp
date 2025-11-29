@@ -23,7 +23,7 @@ QWidget* CurvePluginDetector::getWidget()
     std::vector<std::string> names={
         "时间~电压","水质量~电压","时间~水质量","时间~电解速率"
     };
-    chartW=new HGDisplayChartWidget("zh",names);
+    chartW=new HGDisplayChartWidget(std::string("zh"),names);
     // connect(pluginDetector_widget,SIGNAL(sendMsg2Manager(int)),this,SLOT(recvMsgFromUI(int)));
 
     QWidget* _widget=chartW;

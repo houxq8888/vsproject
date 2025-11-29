@@ -1,2 +1,0 @@
-CMakeFiles/CameraRecognizeModule.dir/CameraRecognizeModule_autogen/mocs_compilation.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\HGCameraRecognizeModule\build\CameraRecognizeModule_autogen\mocs_compilation.cpp

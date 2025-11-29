@@ -111,7 +111,7 @@ m_lang(lang)
     groupBlank->addButton(m_manualblankCheckBox, 0);
     groupBlank->addButton(m_autoBlankCheckBox, 1);
     // 监听选中事件
-    connect(groupBlank, QOverload<int>::of(&QButtonGroup::buttonClicked), this, [=](int id)
+    connect(groupBlank, &QButtonGroup::idClicked, this, [=](int id)
     { 
         if (id==    0){
             m_manualblankEdit->setEnabled(true);

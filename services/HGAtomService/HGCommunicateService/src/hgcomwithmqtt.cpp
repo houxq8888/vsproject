@@ -346,8 +346,11 @@ public:
         std::string receivedMessage(static_cast<const char *>(message->payload), message->payloadlen);
         logtext << "[INFO] 收到消息: topic=" << message->topic << ", message=" << receivedMessage;
         // std::cout << "[INFO] 收到消息: topic=" << message->topic << ", message=" << receivedMessage << std::endl;
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
-        
+#if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+
+#else
+        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(), LOGINFO);
+#endif
         // 解析消息并存储结果
         // self->message_result[message->topic] = receivedMessage;
         result.clear(); // 清空上次的结果

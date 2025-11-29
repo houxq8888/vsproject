@@ -32,7 +32,7 @@ void HGLogService::logInit()
 
 void HGLogService::logDeInit(void)
 {
-    zlog_fini();
+    // zlog_fini();
 }
 
 }

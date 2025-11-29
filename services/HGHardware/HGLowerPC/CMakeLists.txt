@@ -26,7 +26,11 @@ elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_ADD_STATIC(HGLowerPC inc src)
 
 target_link_libraries(HGCommon  
-    ${HG_PROJECT_ROOT_FS}/lib/libcserialport.a
+    ${LIB_SERIALPORT_LIBRARY}
+    ${HG_PROJECT_ROOT_FS}/lib/libssl.a
+    ${HG_PROJECT_ROOT_FS}/lib/libcrypto.a
+    ${HG_PROJECT_ROOT_FS}/lib/libssh.a
+    ${HG_PROJECT_ROOT_FS}/lib/libzlibstatic.a
     ws2_32 iphlpapi)
 endif()
 

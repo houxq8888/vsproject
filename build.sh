@@ -36,6 +36,10 @@ config(){
 		FAKE_ROOT=${FAKE_ROOT_X64}
 		HG_TOOLCHAIN_FILE="cmake/x64_dbg.cmake"
 		build_dir=build_x64
+	elif [ ${build_ver} = "x64_release" ];then
+		FAKE_ROOT=${FAKE_ROOT_X64}
+		HG_TOOLCHAIN_FILE="cmake/x64_release.cmake"
+		build_dir=build_x64_release
 	elif [ ${build_ver} = "win32" ];then
 		FAKE_ROOT=${FAKE_ROOT_WIN32}
 		HG_TOOLCHAIN_FILE="cmake/win32.cmake"
@@ -82,16 +86,16 @@ config(){
 build(){
 	cd ${scrip_path}/${build_dir} && pwd
 	# make -j`nproc` install
-	make -j4 install
+	make -j$(nproc) install
 	if [ $? -ne 0 ]; then echo "make failed" && exit -1; fi
 }
 
 usage(){
 	echo "usage:"
 	echo "build.sh [ver] [c/b]"
-	echo "	ver: x64 stm32 win32 win32_x86"
-	echo "	c:only configure"
-	echo "	b:build with configure"
+	echo "\tver: x64 x64_release stm32 win32 win32_x86"
+	echo "\tc:only configure"
+	echo "\tb:build with configure"
 }
 
 if [ $# -eq 0 ]; then 

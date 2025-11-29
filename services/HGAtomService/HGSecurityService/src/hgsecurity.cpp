@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include "openssl/aes.h"
 #include <unistd.h>
+#include <sstream>
+#include <fstream>
 #include "hglog4cplus.h"
 #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 #pragma comment(lib, "iphlpapi.lib")
@@ -230,23 +232,34 @@ bool isRightAuthority(const std::string &in){
 
     std::ostringstream logtext;
     logtext<<"cpu serial number:"<<cpuserial;
+#if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+#else
     HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
-
+#endif
     for (int i=0;i<int(strin.size());i++){
         logtext.str("");
         logtext<<"MAC:"<<strin[i];
+#if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+#else
         HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
-
+#endif
         printf("MAC:%s\n",strin[i].c_str());
         std::string ss;
         bool flag=HGEnDecrypt(true,strin[i],ss,"HGALT");
         if (!flag) {
             printf("failed to endecrypt\n");
+
+#if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+#else
             HGLog4Cplus::getLogInstance(LOG_PATH)->logout("failed to endecrypt",LOGERROR);
+#endif
             return false;
         }
         printf("ss:%s\n",ss.c_str());
+#if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+#else
         HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss,LOGINFO);
+#endif
         if (in == ss){
             return true;
         }

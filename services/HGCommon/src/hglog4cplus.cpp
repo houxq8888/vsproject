@@ -2,6 +2,11 @@
 #include "hgcommonutility.h"
 
 namespace HGMACHINE {
+
+    #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+
+#else
+
     HGLog4Cplus::HGLog4Cplus(const std::string &logDir)
     {
         std::ostringstream logtext;
@@ -80,4 +85,5 @@ namespace HGMACHINE {
         } default:break;
         }
     }
+#endif
 }

@@ -1,2 +1,0 @@
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGSaveService.a CMakeFiles/HGSaveService.dir/src/SQLite.cpp.obj CMakeFiles/HGSaveService.dir/src/hgsavedatatodb.cpp.obj CMakeFiles/HGSaveService.dir/src/hgsaveimgtolocaldisk.cpp.obj
-D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGSaveService.a

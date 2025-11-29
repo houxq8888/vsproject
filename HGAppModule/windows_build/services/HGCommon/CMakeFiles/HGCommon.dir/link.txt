@@ -1,2 +1,0 @@
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGCommon.a CMakeFiles/HGCommon.dir/src/HGExactTime.cpp.obj CMakeFiles/HGCommon.dir/src/decodecodeutility.cpp.obj CMakeFiles/HGCommon.dir/src/hgcommonutility.cpp.obj CMakeFiles/HGCommon.dir/src/hglog4cplus.cpp.obj CMakeFiles/HGCommon.dir/src/libpinyinHelp.cpp.obj CMakeFiles/HGCommon.dir/src/systemusage.cpp.obj
-D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGCommon.a

@@ -80,7 +80,11 @@ void MyChartView::mouseMoveEvent(QMouseEvent *event)
     QGraphicsTextItem* textItem=dynamic_cast<QGraphicsTextItem*>(item);
     if (textItem){
         QString text=textItem->toPlainText();
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         QToolTip::showText(event->globalPos(),text);
+#else
+        QToolTip::showText(event->globalPosition().toPoint(),text);
+#endif
     } else {
         QToolTip::hideText();
     }
@@ -111,7 +115,11 @@ void MyChartView::mouseMoveEvent(QMouseEvent *event)
         // m_coordItem->setPos(curpos);
     }
 }
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 void MyChartView::enterEvent(QEvent *event)
+#else
+void MyChartView::enterEvent(QEnterEvent *event)
+#endif
 {
     if (this->chart()!=NULL&&this->chart()->axisX()!=NULL&&this->chart()->axisY()!=NULL) {
         // m_x_line->setVisible(true);
@@ -146,7 +154,16 @@ void MyChartView::wheelEvent(QWheelEvent *event)
     if (axisY==NULL) return;
     QValueAxis *axisX=dynamic_cast<QValueAxis*>(this->chart()->axisX());
     if (axisX==NULL) return;
+    
+    // Qt6兼容性处理
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     const QPoint curpos=event->pos();
+    const int delta=event->delta();
+#else
+    const QPoint curpos=event->position().toPoint();
+    const int delta=event->angleDelta().y();
+#endif
+    
     QPointF curChartPos=this->chart()->mapToValue(QPointF(curpos));
     if (!m_alreadySaveRange) {
         this->saveAxisRange();
@@ -162,7 +179,7 @@ void MyChartView::wheelEvent(QWheelEvent *event)
     const double xCentral=curChartPos.x();
 
     double bottomOffset, topOffset,leftOffset,rightOffset;
-    if (event->delta()>0) { // 放大
+    if (delta>0) { // 放大
         bottomOffset=1.0/factor*(yCentral-yMin);
         topOffset=1.0/factor*(yMax-yCentral);
         leftOffset=1.0/factor*(xCentral-xMin);

@@ -1,5 +1,4 @@
 #include "common.h"
-#include <QDesktopWidget>
 #include <QApplication>
 #include <QLabel>
 #include <QPushButton>
@@ -7,13 +6,24 @@
 #include <QComboBox>
 #include <QCheckBox>
 #include <QDebug>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#include <QDesktopWidget>
+#endif
 
-
+// 兼容Qt5和Qt6的屏幕几何获取
 QRect getScreenGeometry()
 {
-    QDesktopWidget* desktopWidget=QApplication::desktop();
-    QRect applicationRect=desktopWidget->screenGeometry();
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    // Qt6使用QScreen
+    QScreen* screen = QApplication::primaryScreen();
+    QRect applicationRect = screen->geometry();
     return applicationRect;
+#else
+    // Qt5使用QDesktopWidget
+    QDesktopWidget* desktopWidget = QApplication::desktop();
+    QRect applicationRect = desktopWidget->screenGeometry();
+    return applicationRect;
+#endif
 }
 int getSelectedRow(QTableWidget *tableWidget)
 {

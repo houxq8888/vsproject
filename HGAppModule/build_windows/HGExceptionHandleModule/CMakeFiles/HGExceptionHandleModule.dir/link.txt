@@ -1,3 +1,0 @@
-D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HGExceptionHandleModule.dir/objects.a
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HGExceptionHandleModule.dir/objects.a @CMakeFiles\HGExceptionHandleModule.dir\objects1.rsp
-D:\Qt\Tools\mingw1310_64\bin\g++.exe -O3 -DNDEBUG -shared -o libHGExceptionHandleModule.dll -Wl,--out-implib,libHGExceptionHandleModule.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\HGExceptionHandleModule.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\HGExceptionHandleModule.dir\linkLibs.rsp

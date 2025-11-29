@@ -56,7 +56,7 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\virtualMachine\github\vsproject
+CMAKE_SOURCE_DIR = D:\virtualMachine\github\vsproject\HGAppModule
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = D:\virtualMachine\github\vsproject\HGAppModule\windows_build
@@ -161,316 +161,394 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Common
+# Target rules for targets named BaseAppModule
 
 # Build rule for target.
-Common: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Common
-.PHONY : Common
+BaseAppModule: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 BaseAppModule
+.PHONY : BaseAppModule
 
 # fast build rule for target.
-Common/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGCommon\CMakeFiles\Common.dir\build.make services/HGCommon/CMakeFiles/Common.dir/build
-.PHONY : Common/fast
+BaseAppModule/fast:
+	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/build
+.PHONY : BaseAppModule/fast
 
 #=============================================================================
-# Target rules for targets named HGCommon
+# Target rules for targets named HGBaseAppModuleStatic
 
 # Build rule for target.
-HGCommon: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCommon
-.PHONY : HGCommon
+HGBaseAppModuleStatic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModuleStatic
+.PHONY : HGBaseAppModuleStatic
 
 # fast build rule for target.
-HGCommon/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGCommon\CMakeFiles\HGCommon.dir\build.make services/HGCommon/CMakeFiles/HGCommon.dir/build
-.PHONY : HGCommon/fast
+HGBaseAppModuleStatic/fast:
+	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/build
+.PHONY : HGBaseAppModuleStatic/fast
 
 #=============================================================================
-# Target rules for targets named Config
+# Target rules for targets named BaseAppModule_autogen_timestamp_deps
 
 # Build rule for target.
-Config: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Config
-.PHONY : Config
+BaseAppModule_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 BaseAppModule_autogen_timestamp_deps
+.PHONY : BaseAppModule_autogen_timestamp_deps
 
 # fast build rule for target.
-Config/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGConfig\CMakeFiles\Config.dir\build.make services/HGConfig/CMakeFiles/Config.dir/build
-.PHONY : Config/fast
+BaseAppModule_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule_autogen_timestamp_deps.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/build
+.PHONY : BaseAppModule_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named HGConfig
+# Target rules for targets named BaseAppModule_autogen
 
 # Build rule for target.
-HGConfig: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGConfig
-.PHONY : HGConfig
+BaseAppModule_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 BaseAppModule_autogen
+.PHONY : BaseAppModule_autogen
 
 # fast build rule for target.
-HGConfig/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGConfig\CMakeFiles\HGConfig.dir\build.make services/HGConfig/CMakeFiles/HGConfig.dir/build
-.PHONY : HGConfig/fast
+BaseAppModule_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule_autogen.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/build
+.PHONY : BaseAppModule_autogen/fast
 
 #=============================================================================
-# Target rules for targets named LowerPC
+# Target rules for targets named HGBaseAppModuleStatic_autogen_timestamp_deps
 
 # Build rule for target.
-LowerPC: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 LowerPC
-.PHONY : LowerPC
+HGBaseAppModuleStatic_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModuleStatic_autogen_timestamp_deps
+.PHONY : HGBaseAppModuleStatic_autogen_timestamp_deps
 
 # fast build rule for target.
-LowerPC/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGHardware\HGLowerPC\CMakeFiles\LowerPC.dir\build.make services/HGHardware/HGLowerPC/CMakeFiles/LowerPC.dir/build
-.PHONY : LowerPC/fast
+HGBaseAppModuleStatic_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic_autogen_timestamp_deps.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/build
+.PHONY : HGBaseAppModuleStatic_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named HGLowerPC
+# Target rules for targets named HGBaseAppModuleStatic_autogen
 
 # Build rule for target.
-HGLowerPC: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLowerPC
-.PHONY : HGLowerPC
+HGBaseAppModuleStatic_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModuleStatic_autogen
+.PHONY : HGBaseAppModuleStatic_autogen
 
 # fast build rule for target.
-HGLowerPC/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGHardware\HGLowerPC\CMakeFiles\HGLowerPC.dir\build.make services/HGHardware/HGLowerPC/CMakeFiles/HGLowerPC.dir/build
-.PHONY : HGLowerPC/fast
+HGBaseAppModuleStatic_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic_autogen.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/build
+.PHONY : HGBaseAppModuleStatic_autogen/fast
 
 #=============================================================================
-# Target rules for targets named Sensor
+# Target rules for targets named PluginInterfaceModule
 
 # Build rule for target.
-Sensor: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Sensor
-.PHONY : Sensor
+PluginInterfaceModule: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PluginInterfaceModule
+.PHONY : PluginInterfaceModule
 
 # fast build rule for target.
-Sensor/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGHardware\HGSensor\CMakeFiles\Sensor.dir\build.make services/HGHardware/HGSensor/CMakeFiles/Sensor.dir/build
-.PHONY : Sensor/fast
+PluginInterfaceModule/fast:
+	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/build
+.PHONY : PluginInterfaceModule/fast
 
 #=============================================================================
-# Target rules for targets named HGSensor
+# Target rules for targets named PluginInterfaceStatic
 
 # Build rule for target.
-HGSensor: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSensor
-.PHONY : HGSensor
+PluginInterfaceStatic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PluginInterfaceStatic
+.PHONY : PluginInterfaceStatic
 
 # fast build rule for target.
-HGSensor/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGHardware\HGSensor\CMakeFiles\HGSensor.dir\build.make services/HGHardware/HGSensor/CMakeFiles/HGSensor.dir/build
-.PHONY : HGSensor/fast
+PluginInterfaceStatic/fast:
+	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/build
+.PHONY : PluginInterfaceStatic/fast
 
 #=============================================================================
-# Target rules for targets named ImageAlgorithmService
+# Target rules for targets named PluginInterfaceModule_autogen_timestamp_deps
 
 # Build rule for target.
-ImageAlgorithmService: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ImageAlgorithmService
-.PHONY : ImageAlgorithmService
+PluginInterfaceModule_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PluginInterfaceModule_autogen_timestamp_deps
+.PHONY : PluginInterfaceModule_autogen_timestamp_deps
 
 # fast build rule for target.
-ImageAlgorithmService/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGAtomService\HGImageAlgorithmService\CMakeFiles\ImageAlgorithmService.dir\build.make services/HGAtomService/HGImageAlgorithmService/CMakeFiles/ImageAlgorithmService.dir/build
-.PHONY : ImageAlgorithmService/fast
+PluginInterfaceModule_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule_autogen_timestamp_deps.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/build
+.PHONY : PluginInterfaceModule_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named HGImageAlgorithmService
+# Target rules for targets named PluginInterfaceModule_autogen
 
 # Build rule for target.
-HGImageAlgorithmService: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGImageAlgorithmService
-.PHONY : HGImageAlgorithmService
+PluginInterfaceModule_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PluginInterfaceModule_autogen
+.PHONY : PluginInterfaceModule_autogen
 
 # fast build rule for target.
-HGImageAlgorithmService/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGAtomService\HGImageAlgorithmService\CMakeFiles\HGImageAlgorithmService.dir\build.make services/HGAtomService/HGImageAlgorithmService/CMakeFiles/HGImageAlgorithmService.dir/build
-.PHONY : HGImageAlgorithmService/fast
+PluginInterfaceModule_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule_autogen.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/build
+.PHONY : PluginInterfaceModule_autogen/fast
 
 #=============================================================================
-# Target rules for targets named SaveService
+# Target rules for targets named PluginInterfaceStatic_autogen_timestamp_deps
 
 # Build rule for target.
-SaveService: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SaveService
-.PHONY : SaveService
+PluginInterfaceStatic_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PluginInterfaceStatic_autogen_timestamp_deps
+.PHONY : PluginInterfaceStatic_autogen_timestamp_deps
 
 # fast build rule for target.
-SaveService/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGAtomService\HGSaveService\CMakeFiles\SaveService.dir\build.make services/HGAtomService/HGSaveService/CMakeFiles/SaveService.dir/build
-.PHONY : SaveService/fast
+PluginInterfaceStatic_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen_timestamp_deps.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/build
+.PHONY : PluginInterfaceStatic_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named HGSaveService
+# Target rules for targets named PluginInterfaceStatic_autogen
 
 # Build rule for target.
-HGSaveService: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSaveService
-.PHONY : HGSaveService
+PluginInterfaceStatic_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PluginInterfaceStatic_autogen
+.PHONY : PluginInterfaceStatic_autogen
 
 # fast build rule for target.
-HGSaveService/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGAtomService\HGSaveService\CMakeFiles\HGSaveService.dir\build.make services/HGAtomService/HGSaveService/CMakeFiles/HGSaveService.dir/build
-.PHONY : HGSaveService/fast
+PluginInterfaceStatic_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/build
+.PHONY : PluginInterfaceStatic_autogen/fast
 
 #=============================================================================
-# Target rules for targets named FrameService
+# Target rules for targets named SharedFileModule
 
 # Build rule for target.
-FrameService: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 FrameService
-.PHONY : FrameService
+SharedFileModule: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SharedFileModule
+.PHONY : SharedFileModule
 
 # fast build rule for target.
-FrameService/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGAtomService\HGFrameService\CMakeFiles\FrameService.dir\build.make services/HGAtomService/HGFrameService/CMakeFiles/FrameService.dir/build
-.PHONY : FrameService/fast
+SharedFileModule/fast:
+	$(MAKE) $(MAKESILENT) -f HGSharedFileModule\CMakeFiles\SharedFileModule.dir\build.make HGSharedFileModule/CMakeFiles/SharedFileModule.dir/build
+.PHONY : SharedFileModule/fast
 
 #=============================================================================
-# Target rules for targets named HGFrameService
+# Target rules for targets named HGSharedFileModuleStatic
 
 # Build rule for target.
-HGFrameService: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGFrameService
-.PHONY : HGFrameService
+HGSharedFileModuleStatic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSharedFileModuleStatic
+.PHONY : HGSharedFileModuleStatic
 
 # fast build rule for target.
-HGFrameService/fast:
-	$(MAKE) $(MAKESILENT) -f services\HGAtomService\HGFrameService\CMakeFiles\HGFrameService.dir\build.make services/HGAtomService/HGFrameService/CMakeFiles/HGFrameService.dir/build
-.PHONY : HGFrameService/fast
+HGSharedFileModuleStatic/fast:
+	$(MAKE) $(MAKESILENT) -f HGSharedFileModule\CMakeFiles\HGSharedFileModuleStatic.dir\build.make HGSharedFileModule/CMakeFiles/HGSharedFileModuleStatic.dir/build
+.PHONY : HGSharedFileModuleStatic/fast
 
 #=============================================================================
-# Target rules for targets named V6Module
+# Target rules for targets named HGSharedFileModuleRun
 
 # Build rule for target.
-V6Module: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 V6Module
-.PHONY : V6Module
+HGSharedFileModuleRun: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSharedFileModuleRun
+.PHONY : HGSharedFileModuleRun
 
 # fast build rule for target.
-V6Module/fast:
-	$(MAKE) $(MAKESILENT) -f modules\HGV6Module\CMakeFiles\V6Module.dir\build.make modules/HGV6Module/CMakeFiles/V6Module.dir/build
-.PHONY : V6Module/fast
+HGSharedFileModuleRun/fast:
+	$(MAKE) $(MAKESILENT) -f HGSharedFileModule\CMakeFiles\HGSharedFileModuleRun.dir\build.make HGSharedFileModule/CMakeFiles/HGSharedFileModuleRun.dir/build
+.PHONY : HGSharedFileModuleRun/fast
 
 #=============================================================================
-# Target rules for targets named HGV6Module
+# Target rules for targets named SharedFileModule_autogen_timestamp_deps
 
 # Build rule for target.
-HGV6Module: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGV6Module
-.PHONY : HGV6Module
+SharedFileModule_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SharedFileModule_autogen_timestamp_deps
+.PHONY : SharedFileModule_autogen_timestamp_deps
 
 # fast build rule for target.
-HGV6Module/fast:
-	$(MAKE) $(MAKESILENT) -f modules\HGV6Module\CMakeFiles\HGV6Module.dir\build.make modules/HGV6Module/CMakeFiles/HGV6Module.dir/build
-.PHONY : HGV6Module/fast
+SharedFileModule_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGSharedFileModule\CMakeFiles\SharedFileModule_autogen_timestamp_deps.dir\build.make HGSharedFileModule/CMakeFiles/SharedFileModule_autogen_timestamp_deps.dir/build
+.PHONY : SharedFileModule_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named CupDetModule
+# Target rules for targets named SharedFileModule_autogen
 
 # Build rule for target.
-CupDetModule: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CupDetModule
-.PHONY : CupDetModule
+SharedFileModule_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SharedFileModule_autogen
+.PHONY : SharedFileModule_autogen
 
 # fast build rule for target.
-CupDetModule/fast:
-	$(MAKE) $(MAKESILENT) -f modules\HGCupDetModule\CMakeFiles\CupDetModule.dir\build.make modules/HGCupDetModule/CMakeFiles/CupDetModule.dir/build
-.PHONY : CupDetModule/fast
+SharedFileModule_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGSharedFileModule\CMakeFiles\SharedFileModule_autogen.dir\build.make HGSharedFileModule/CMakeFiles/SharedFileModule_autogen.dir/build
+.PHONY : SharedFileModule_autogen/fast
 
 #=============================================================================
-# Target rules for targets named HGCupDetModule
+# Target rules for targets named HGSharedFileModuleStatic_autogen_timestamp_deps
 
 # Build rule for target.
-HGCupDetModule: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCupDetModule
-.PHONY : HGCupDetModule
+HGSharedFileModuleStatic_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSharedFileModuleStatic_autogen_timestamp_deps
+.PHONY : HGSharedFileModuleStatic_autogen_timestamp_deps
 
 # fast build rule for target.
-HGCupDetModule/fast:
-	$(MAKE) $(MAKESILENT) -f modules\HGCupDetModule\CMakeFiles\HGCupDetModule.dir\build.make modules/HGCupDetModule/CMakeFiles/HGCupDetModule.dir/build
-.PHONY : HGCupDetModule/fast
+HGSharedFileModuleStatic_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGSharedFileModule\CMakeFiles\HGSharedFileModuleStatic_autogen_timestamp_deps.dir\build.make HGSharedFileModule/CMakeFiles/HGSharedFileModuleStatic_autogen_timestamp_deps.dir/build
+.PHONY : HGSharedFileModuleStatic_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named V6Interface
+# Target rules for targets named HGSharedFileModuleStatic_autogen
 
 # Build rule for target.
-V6Interface: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 V6Interface
-.PHONY : V6Interface
+HGSharedFileModuleStatic_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSharedFileModuleStatic_autogen
+.PHONY : HGSharedFileModuleStatic_autogen
 
 # fast build rule for target.
-V6Interface/fast:
-	$(MAKE) $(MAKESILENT) -f interfaces\HGV6Interface\CMakeFiles\V6Interface.dir\build.make interfaces/HGV6Interface/CMakeFiles/V6Interface.dir/build
-.PHONY : V6Interface/fast
+HGSharedFileModuleStatic_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGSharedFileModule\CMakeFiles\HGSharedFileModuleStatic_autogen.dir\build.make HGSharedFileModule/CMakeFiles/HGSharedFileModuleStatic_autogen.dir/build
+.PHONY : HGSharedFileModuleStatic_autogen/fast
 
 #=============================================================================
-# Target rules for targets named HGV6Interface
+# Target rules for targets named HGSharedFileModuleRun_autogen_timestamp_deps
 
 # Build rule for target.
-HGV6Interface: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGV6Interface
-.PHONY : HGV6Interface
+HGSharedFileModuleRun_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSharedFileModuleRun_autogen_timestamp_deps
+.PHONY : HGSharedFileModuleRun_autogen_timestamp_deps
 
 # fast build rule for target.
-HGV6Interface/fast:
-	$(MAKE) $(MAKESILENT) -f interfaces\HGV6Interface\CMakeFiles\HGV6Interface.dir\build.make interfaces/HGV6Interface/CMakeFiles/HGV6Interface.dir/build
-.PHONY : HGV6Interface/fast
+HGSharedFileModuleRun_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGSharedFileModule\CMakeFiles\HGSharedFileModuleRun_autogen_timestamp_deps.dir\build.make HGSharedFileModule/CMakeFiles/HGSharedFileModuleRun_autogen_timestamp_deps.dir/build
+.PHONY : HGSharedFileModuleRun_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named CupDetInterface
+# Target rules for targets named HGSharedFileModuleRun_autogen
 
 # Build rule for target.
-CupDetInterface: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CupDetInterface
-.PHONY : CupDetInterface
+HGSharedFileModuleRun_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSharedFileModuleRun_autogen
+.PHONY : HGSharedFileModuleRun_autogen
 
 # fast build rule for target.
-CupDetInterface/fast:
-	$(MAKE) $(MAKESILENT) -f interfaces\HGCupDetInterface\CMakeFiles\CupDetInterface.dir\build.make interfaces/HGCupDetInterface/CMakeFiles/CupDetInterface.dir/build
-.PHONY : CupDetInterface/fast
+HGSharedFileModuleRun_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGSharedFileModule\CMakeFiles\HGSharedFileModuleRun_autogen.dir\build.make HGSharedFileModule/CMakeFiles/HGSharedFileModuleRun_autogen.dir/build
+.PHONY : HGSharedFileModuleRun_autogen/fast
 
 #=============================================================================
-# Target rules for targets named HGCupDetInterface
+# Target rules for targets named AnalysisRecordModule
 
 # Build rule for target.
-HGCupDetInterface: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCupDetInterface
-.PHONY : HGCupDetInterface
+AnalysisRecordModule: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 AnalysisRecordModule
+.PHONY : AnalysisRecordModule
 
 # fast build rule for target.
-HGCupDetInterface/fast:
-	$(MAKE) $(MAKESILENT) -f interfaces\HGCupDetInterface\CMakeFiles\HGCupDetInterface.dir\build.make interfaces/HGCupDetInterface/CMakeFiles/HGCupDetInterface.dir/build
-.PHONY : HGCupDetInterface/fast
+AnalysisRecordModule/fast:
+	$(MAKE) $(MAKESILENT) -f HGAnalysisRecordModule\CMakeFiles\AnalysisRecordModule.dir\build.make HGAnalysisRecordModule/CMakeFiles/AnalysisRecordModule.dir/build
+.PHONY : AnalysisRecordModule/fast
 
 #=============================================================================
-# Target rules for targets named CRInterface
+# Target rules for targets named HGAnalysisRecordModuleStatic
 
 # Build rule for target.
-CRInterface: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CRInterface
-.PHONY : CRInterface
+HGAnalysisRecordModuleStatic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGAnalysisRecordModuleStatic
+.PHONY : HGAnalysisRecordModuleStatic
 
 # fast build rule for target.
-CRInterface/fast:
-	$(MAKE) $(MAKESILENT) -f interfaces\CameraRecognizeInterface\CMakeFiles\CRInterface.dir\build.make interfaces/CameraRecognizeInterface/CMakeFiles/CRInterface.dir/build
-.PHONY : CRInterface/fast
+HGAnalysisRecordModuleStatic/fast:
+	$(MAKE) $(MAKESILENT) -f HGAnalysisRecordModule\CMakeFiles\HGAnalysisRecordModuleStatic.dir\build.make HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleStatic.dir/build
+.PHONY : HGAnalysisRecordModuleStatic/fast
 
 #=============================================================================
-# Target rules for targets named CameraRecognizeInterface
+# Target rules for targets named HGAnalysisRecordModuleRun
 
 # Build rule for target.
-CameraRecognizeInterface: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CameraRecognizeInterface
-.PHONY : CameraRecognizeInterface
+HGAnalysisRecordModuleRun: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGAnalysisRecordModuleRun
+.PHONY : HGAnalysisRecordModuleRun
 
 # fast build rule for target.
-CameraRecognizeInterface/fast:
-	$(MAKE) $(MAKESILENT) -f interfaces\CameraRecognizeInterface\CMakeFiles\CameraRecognizeInterface.dir\build.make interfaces/CameraRecognizeInterface/CMakeFiles/CameraRecognizeInterface.dir/build
-.PHONY : CameraRecognizeInterface/fast
+HGAnalysisRecordModuleRun/fast:
+	$(MAKE) $(MAKESILENT) -f HGAnalysisRecordModule\CMakeFiles\HGAnalysisRecordModuleRun.dir\build.make HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleRun.dir/build
+.PHONY : HGAnalysisRecordModuleRun/fast
+
+#=============================================================================
+# Target rules for targets named AnalysisRecordModule_autogen_timestamp_deps
+
+# Build rule for target.
+AnalysisRecordModule_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 AnalysisRecordModule_autogen_timestamp_deps
+.PHONY : AnalysisRecordModule_autogen_timestamp_deps
+
+# fast build rule for target.
+AnalysisRecordModule_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGAnalysisRecordModule\CMakeFiles\AnalysisRecordModule_autogen_timestamp_deps.dir\build.make HGAnalysisRecordModule/CMakeFiles/AnalysisRecordModule_autogen_timestamp_deps.dir/build
+.PHONY : AnalysisRecordModule_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named AnalysisRecordModule_autogen
+
+# Build rule for target.
+AnalysisRecordModule_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 AnalysisRecordModule_autogen
+.PHONY : AnalysisRecordModule_autogen
+
+# fast build rule for target.
+AnalysisRecordModule_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGAnalysisRecordModule\CMakeFiles\AnalysisRecordModule_autogen.dir\build.make HGAnalysisRecordModule/CMakeFiles/AnalysisRecordModule_autogen.dir/build
+.PHONY : AnalysisRecordModule_autogen/fast
+
+#=============================================================================
+# Target rules for targets named HGAnalysisRecordModuleStatic_autogen_timestamp_deps
+
+# Build rule for target.
+HGAnalysisRecordModuleStatic_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGAnalysisRecordModuleStatic_autogen_timestamp_deps
+.PHONY : HGAnalysisRecordModuleStatic_autogen_timestamp_deps
+
+# fast build rule for target.
+HGAnalysisRecordModuleStatic_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGAnalysisRecordModule\CMakeFiles\HGAnalysisRecordModuleStatic_autogen_timestamp_deps.dir\build.make HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleStatic_autogen_timestamp_deps.dir/build
+.PHONY : HGAnalysisRecordModuleStatic_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named HGAnalysisRecordModuleStatic_autogen
+
+# Build rule for target.
+HGAnalysisRecordModuleStatic_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGAnalysisRecordModuleStatic_autogen
+.PHONY : HGAnalysisRecordModuleStatic_autogen
+
+# fast build rule for target.
+HGAnalysisRecordModuleStatic_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGAnalysisRecordModule\CMakeFiles\HGAnalysisRecordModuleStatic_autogen.dir\build.make HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleStatic_autogen.dir/build
+.PHONY : HGAnalysisRecordModuleStatic_autogen/fast
+
+#=============================================================================
+# Target rules for targets named HGAnalysisRecordModuleRun_autogen_timestamp_deps
+
+# Build rule for target.
+HGAnalysisRecordModuleRun_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGAnalysisRecordModuleRun_autogen_timestamp_deps
+.PHONY : HGAnalysisRecordModuleRun_autogen_timestamp_deps
+
+# fast build rule for target.
+HGAnalysisRecordModuleRun_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGAnalysisRecordModule\CMakeFiles\HGAnalysisRecordModuleRun_autogen_timestamp_deps.dir\build.make HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleRun_autogen_timestamp_deps.dir/build
+.PHONY : HGAnalysisRecordModuleRun_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named HGAnalysisRecordModuleRun_autogen
+
+# Build rule for target.
+HGAnalysisRecordModuleRun_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGAnalysisRecordModuleRun_autogen
+.PHONY : HGAnalysisRecordModuleRun_autogen
+
+# fast build rule for target.
+HGAnalysisRecordModuleRun_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGAnalysisRecordModule\CMakeFiles\HGAnalysisRecordModuleRun_autogen.dir\build.make HGAnalysisRecordModule/CMakeFiles/HGAnalysisRecordModuleRun_autogen.dir/build
+.PHONY : HGAnalysisRecordModuleRun_autogen/fast
 
 # Help Target
 help:
@@ -484,30 +562,36 @@ help:
 	@echo ... install/strip
 	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... CRInterface
-	@echo ... CameraRecognizeInterface
-	@echo ... Common
-	@echo ... Config
-	@echo ... CupDetInterface
-	@echo ... CupDetModule
-	@echo ... FrameService
-	@echo ... HGCommon
-	@echo ... HGConfig
-	@echo ... HGCupDetInterface
-	@echo ... HGCupDetModule
-	@echo ... HGFrameService
-	@echo ... HGImageAlgorithmService
-	@echo ... HGLowerPC
-	@echo ... HGSaveService
-	@echo ... HGSensor
-	@echo ... HGV6Interface
-	@echo ... HGV6Module
-	@echo ... ImageAlgorithmService
-	@echo ... LowerPC
-	@echo ... SaveService
-	@echo ... Sensor
-	@echo ... V6Interface
-	@echo ... V6Module
+	@echo ... AnalysisRecordModule_autogen
+	@echo ... AnalysisRecordModule_autogen_timestamp_deps
+	@echo ... BaseAppModule_autogen
+	@echo ... BaseAppModule_autogen_timestamp_deps
+	@echo ... HGAnalysisRecordModuleRun_autogen
+	@echo ... HGAnalysisRecordModuleRun_autogen_timestamp_deps
+	@echo ... HGAnalysisRecordModuleStatic_autogen
+	@echo ... HGAnalysisRecordModuleStatic_autogen_timestamp_deps
+	@echo ... HGBaseAppModuleStatic_autogen
+	@echo ... HGBaseAppModuleStatic_autogen_timestamp_deps
+	@echo ... HGSharedFileModuleRun_autogen
+	@echo ... HGSharedFileModuleRun_autogen_timestamp_deps
+	@echo ... HGSharedFileModuleStatic_autogen
+	@echo ... HGSharedFileModuleStatic_autogen_timestamp_deps
+	@echo ... PluginInterfaceModule_autogen
+	@echo ... PluginInterfaceModule_autogen_timestamp_deps
+	@echo ... PluginInterfaceStatic_autogen
+	@echo ... PluginInterfaceStatic_autogen_timestamp_deps
+	@echo ... SharedFileModule_autogen
+	@echo ... SharedFileModule_autogen_timestamp_deps
+	@echo ... AnalysisRecordModule
+	@echo ... BaseAppModule
+	@echo ... HGAnalysisRecordModuleRun
+	@echo ... HGAnalysisRecordModuleStatic
+	@echo ... HGBaseAppModuleStatic
+	@echo ... HGSharedFileModuleRun
+	@echo ... HGSharedFileModuleStatic
+	@echo ... PluginInterfaceModule
+	@echo ... PluginInterfaceStatic
+	@echo ... SharedFileModule
 .PHONY : help
 
 

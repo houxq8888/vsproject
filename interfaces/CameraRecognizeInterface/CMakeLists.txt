@@ -52,7 +52,9 @@ target_link_libraries(CameraRecognizeInterface
 
 endif()
 
+if (PLATFORM STREQUAL "x64" OR PLATFORM STREQUAL "win32")
 set_target_properties(CameraRecognizeInterface PROPERTIES 
     VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}
     SOVERSION ${LIBRARY_VERSION_MAJOR}
 )
+endif()

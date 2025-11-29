@@ -17,7 +17,7 @@ HG_CMAKE_MODULE_DEPEND(
 elseif (PLATFORM STREQUAL "win32")
 
 HG_CMAKE_ADD_STATIC(HGSensor inc src)
-
+target_link_libraries(HGSensor ${OpenCV_LIBRARIES})
 INCLUDE_DIRECTORIES(${HG_PROJECT_ROOT_FS}/include/opencv4)
 endif()
 

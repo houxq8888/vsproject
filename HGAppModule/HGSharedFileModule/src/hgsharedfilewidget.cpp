@@ -23,7 +23,7 @@ HGSharedFileWidget::HGSharedFileWidget(std::string name,QWidget *parent)
     m_encodeTypeComboBox=new QComboBox();
     m_encodeTypeComboBox->addItems({"AES","MD5"});
     m_encodeTypeComboBox->setCurrentIndex(0);
-    // connect(m_encodeTypeComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),this,&HGEBalanceWidget::fnChangeParam);
+    // connect(m_encodeTypeComboBox,&QComboBox::currentIndexChanged,this,&HGEBalanceWidget::fnChangeParam);
     m_outputEnableLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Output")));
     m_outputEnableComboBox=new QComboBox();
     m_outputEnableComboBox->addItems({QString::fromStdString(loadTranslation(m_lang,"On")),

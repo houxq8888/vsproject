@@ -1,0 +1,2 @@
+pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj: \
+ D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface\PluginInterfaceStatic_autogen\mocs_compilation.cpp

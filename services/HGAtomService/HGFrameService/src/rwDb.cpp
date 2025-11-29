@@ -938,14 +938,19 @@ std::vector<std::map<std::string,std::string>> RWDb::getModulesMap(Channel info)
 void RWDb::copyTable(const std::string& sourceDBName,
             const std::string &targetDbName,const std::string &tableName){
     if (targetDbName==(RWDb::readCurDirPath()+DB_PATH)){
-        bool flag=dbOpera.copyTable(sourceDBName,tableName);
-        if (flag){
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout("copy table "+tableName+" success",LOGINFO);
-        }
-        else{
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout("copy table "+tableName+" fail",LOGERROR);
-        }
+        bool flag = dbOpera.copyTable(sourceDBName, tableName);
+#if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
+#else
+        if (flag)
+        {
+            HGLog4Cplus::getLogInstance(LOG_PATH)->logout("copy table " + tableName + " success", LOGINFO);
+        }
+        else
+        {
+            HGLog4Cplus::getLogInstance(LOG_PATH)->logout("copy table " + tableName + " fail", LOGERROR);
+        }
+#endif
         std::vector<std::map<std::string, std::string>> fillContent;
         std::map<std::string, std::string> infoS;
         if (tableName.find("Flow_") != std::string::npos)

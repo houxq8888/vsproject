@@ -153,7 +153,12 @@ void QRoundProgressBar::setFormat(const QString &format)
 
 void QRoundProgressBar::resetFormat()
 {
+    // Qt version compatibility: QString::null is deprecated in Qt6, use QString() instead
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    m_format = QString();
+#else
     m_format = QString::null;
+#endif
 
     valueFormatChanged();
 }
@@ -204,13 +209,23 @@ void QRoundProgressBar::paintEvent(QPaintEvent* /*event*/)
     p.end();
 
     QPainter painter(this);
+    // Qt version compatibility: background() is deprecated in Qt6, use window() instead
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    painter.fillRect(baseRect, palette().window());
+#else
     painter.fillRect(baseRect, palette().background());
+#endif
     painter.drawImage(0,0, buffer);
 }
 
 void QRoundProgressBar::drawBackground(QPainter &p, const QRectF &baseRect)
 {
+    // Qt version compatibility: background() is deprecated in Qt6, use window() instead
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    p.fillRect(baseRect, palette().window());
+#else
     p.fillRect(baseRect, palette().background());
+#endif
 }
 
 void QRoundProgressBar::drawBase(QPainter &p, const QRectF &baseRect)
