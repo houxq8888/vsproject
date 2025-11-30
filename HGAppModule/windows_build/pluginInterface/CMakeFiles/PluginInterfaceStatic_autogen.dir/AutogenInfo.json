@@ -67,7 +67,7 @@
 		"D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc",
 		"D:/virtualMachine/github/vsproject/services/HGCommon/inc",
 		"D:/virtualMachine/github/vsproject/services/HGConfig/inc",
-		"D:/virtualMachine/github/vsproject/pluginInterface/inc",
+		"D:/virtualMachine/github/vsproject/interfaces/CameraRecognizeInterface/inc",
 		"D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/inc",
 		"D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/src",
 		"D:/Qt/6.9.1/mingw_64/include/QtCore",

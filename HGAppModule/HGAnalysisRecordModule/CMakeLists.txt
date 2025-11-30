@@ -44,7 +44,7 @@ elseif (PLATFORM STREQUAL "win32")
     endif()
 endif()
 
-HG_CMAKE_ADD_MODELU(AnalysisRecordModule inc src
+HG_CMAKE_ADD_MODULE(AnalysisRecordModule inc src
     ${MOC_SRCS})
 
 # 添加pluginInterface头文件路径

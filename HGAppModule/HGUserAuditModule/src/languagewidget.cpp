@@ -19,8 +19,13 @@ LanguageWidget::LanguageWidget(QWidget *parent) : BaseWidget(parent)
     m_languageComboBox=new QComboBox();
     m_languageComboBox->addItem("简体中文","zh");
     m_languageComboBox->addItem("English","en");
-    connect(m_languageComboBox, &QComboBox::currentIndexChanged, this, 
-        &LanguageWidget::switchLanguage);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    connect(m_languageComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+        this, &LanguageWidget::switchLanguage);
+#else
+    connect(m_languageComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+        this, &LanguageWidget::switchLanguage);
+#endif
 
     m_layout->addWidget(m_languageLabel,0,0);
     m_layout->addWidget(m_languageComboBox,0,1);

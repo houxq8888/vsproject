@@ -15,7 +15,7 @@
 -ID:/virtualMachine/github/vsproject/HGAppModule/../services/HGHardware/HGLowerPC/inc
 -ID:/virtualMachine/github/vsproject/HGAppModule/../services/HGCommon/inc
 -ID:/virtualMachine/github/vsproject/HGAppModule/../services/HGConfig/inc
--ID:/virtualMachine/github/vsproject/HGAppModule/../pluginInterface/inc
+-ID:/virtualMachine/github/vsproject/HGAppModule/../interfaces/CameraRecognizeInterface/inc
 -ID:/virtualMachine/github/vsproject/HGAppModule
 -ID:/virtualMachine/github/vsproject/HGAppModule/../3rdparty/include
 -DWIN32

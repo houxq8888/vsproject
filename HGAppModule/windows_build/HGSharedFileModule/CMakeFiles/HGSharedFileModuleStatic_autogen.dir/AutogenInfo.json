@@ -68,7 +68,7 @@
 		"D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc",
 		"D:/virtualMachine/github/vsproject/services/HGCommon/inc",
 		"D:/virtualMachine/github/vsproject/services/HGConfig/inc",
-		"D:/virtualMachine/github/vsproject/pluginInterface/inc",
+		"D:/virtualMachine/github/vsproject/interfaces/CameraRecognizeInterface/inc",
 		"D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/inc",
 		"D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule/src",
 		"D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/inc",

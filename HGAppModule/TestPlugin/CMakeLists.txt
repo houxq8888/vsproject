@@ -44,7 +44,7 @@ elseif (PLATFORM STREQUAL "win32")
     endif()
 endif()
 
-HG_CMAKE_ADD_MODELU(TestPlugin inc src 
+HG_CMAKE_ADD_MODULE(TestPlugin inc src 
     ${MOC_SRCS})
 
 target_compile_definitions(TestPlugin PUBLIC

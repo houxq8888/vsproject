@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HGEBalanceModuleRun.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HGEBalanceModuleRun.dir/objects.a @CMakeFiles\HGEBalanceModuleRun.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\c++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\HGEBalanceModuleRun.dir/objects.a -Wl,--no-whole-archive -o HGEBalanceModuleRun.exe -Wl,--out-implib,libHGEBalanceModuleRun.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\HGEBalanceModuleRun.dir\linkLibs.rsp

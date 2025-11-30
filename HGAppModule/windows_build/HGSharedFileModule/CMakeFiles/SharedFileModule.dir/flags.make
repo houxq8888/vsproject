@@ -6,5 +6,5 @@ CXX_DEFINES = -DENV_APP_NAME=\"HGSharedFileModule\" -DENV_CFG_FILE=\"\" -DMINGW_
 
 CXX_INCLUDES = @CMakeFiles/SharedFileModule.dir/includes_CXX.rsp
 
-CXX_FLAGS =  -Winvalid-pch -fmax-errors=5 -O3 -DNDEBUG -march=native -mtune=native -flto=auto -g1 -std=gnu++17 -Wall -Wextra -Wpedantic
+CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -Wpedantic
 

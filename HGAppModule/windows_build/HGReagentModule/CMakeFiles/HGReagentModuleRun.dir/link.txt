@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HGReagentModuleRun.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HGReagentModuleRun.dir/objects.a @CMakeFiles\HGReagentModuleRun.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\c++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\HGReagentModuleRun.dir/objects.a -Wl,--no-whole-archive -o HGReagentModuleRun.exe -Wl,--out-implib,libHGReagentModuleRun.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\HGReagentModuleRun.dir\linkLibs.rsp

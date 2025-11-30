@@ -1,0 +1,8 @@
+HGPrintModuleStatic_autogen/timestamp: \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGPrintModule/CMakeLists.txt \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGPrintModule/src/hghandwritingwidget.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGPrintModule/src/hgprintwidget.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGPrintModule/src/hgserialprinter.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGPrintModule/src/printplugindetector.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGPrintModule/version.h.in \
+	D:/Qt/Tools/CMake_64/bin/cmake.exe

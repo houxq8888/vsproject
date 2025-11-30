@@ -1,0 +1,6 @@
+LogModule_autogen/timestamp: \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGLogModule/CMakeLists.txt \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGLogModule/src/hglogwidget.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGLogModule/src/logplugindetector.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGLogModule/version.h.in \
+	D:/Qt/Tools/CMake_64/bin/cmake.exe

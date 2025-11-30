@@ -1,0 +1,2 @@
+HGChannelModule/CMakeFiles/HGChannelModuleRun.dir/HGChannelModuleRun_autogen/mocs_compilation.cpp.obj: \
+ D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGChannelModule\HGChannelModuleRun_autogen\mocs_compilation.cpp

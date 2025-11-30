@@ -1,0 +1,2 @@
+HGPrintModule/CMakeFiles/HGPrintModuleStatic.dir/HGPrintModuleStatic_autogen/mocs_compilation.cpp.obj: \
+ D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGPrintModule\HGPrintModuleStatic_autogen\mocs_compilation.cpp

@@ -43,7 +43,7 @@ elseif (PLATFORM STREQUAL "win32")
     endif()
 endif()
 
-HG_CMAKE_ADD_MODELU(BaseAppModule inc src ${MOC_SRCS})
+HG_CMAKE_ADD_MODULE(BaseAppModule inc src ${MOC_SRCS})
 
 
 

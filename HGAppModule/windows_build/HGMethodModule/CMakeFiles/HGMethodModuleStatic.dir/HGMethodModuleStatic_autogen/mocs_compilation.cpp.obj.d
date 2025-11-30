@@ -1,0 +1,2 @@
+HGMethodModule/CMakeFiles/HGMethodModuleStatic.dir/HGMethodModuleStatic_autogen/mocs_compilation.cpp.obj: \
+ D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGMethodModule\HGMethodModuleStatic_autogen\mocs_compilation.cpp

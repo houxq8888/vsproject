@@ -6,5 +6,5 @@ CXX_DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_DESIGN
 
 CXX_INCLUDES = @CMakeFiles/HGAnalysisRecordModuleStatic.dir/includes_CXX.rsp
 
-CXX_FLAGS =  -Winvalid-pch -fmax-errors=5 -O3 -DNDEBUG -march=native -mtune=native -flto=auto -g1 -std=gnu++17 -Wall -Wextra -Wpedantic
+CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -Wpedantic
 

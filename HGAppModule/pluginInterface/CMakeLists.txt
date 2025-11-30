@@ -42,7 +42,7 @@ elseif (PLATFORM STREQUAL "win32")
     endif()
 endif()
 
-HG_CMAKE_ADD_MODELU(PluginInterfaceModule inc src ${MOC_SRCS})
+HG_CMAKE_ADD_MODULE(PluginInterfaceModule inc src ${MOC_SRCS})
 
 target_compile_definitions(PluginInterfaceModule PUBLIC
      -DENV_CFG_FILE=\"\"

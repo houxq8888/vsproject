@@ -23,13 +23,11 @@ elseif (PLATFORM STREQUAL "win32")
             Qt6::Charts
             Qt6::PrintSupport
         )
-        # Qt6 uses automatic MOC, but also need explicit MOC processing for static libraries
-        set(CMAKE_AUTOMOC ON)
-        set(CMAKE_AUTOUIC ON)
-        set(CMAKE_AUTORCC ON)
-        # 确保所有包含Q_OBJECT的头文件都被MOC处理
-        set_property(SOURCE ${MOC_HEADERS} PROPERTY SKIP_AUTOMOC FALSE)
-        # 显式调用qt6_wrap_cpp确保MOC文件正确生成
+        # 使用手动MOC处理，避免自动MOC问题
+        set(CMAKE_AUTOMOC OFF)
+        set(CMAKE_AUTOUIC OFF)
+        set(CMAKE_AUTORCC OFF)
+        # 手动生成MOC文件
         qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
     else()
         # Linux cross-compilation for Windows - Qt5
@@ -44,7 +42,7 @@ elseif (PLATFORM STREQUAL "win32")
     endif()
 endif()
 
-HG_CMAKE_ADD_MODELU(CurveModule inc src                 
+HG_CMAKE_ADD_MODULE(CurveModule inc src                 
     ${MOC_SRCS})
 
 # 添加pluginInterface头文件路径
@@ -136,9 +134,15 @@ endif()
 if (BUILD_EXECUTABLE)
     HG_CMAKE_ADD_EXE(HGCurveModuleRun main.cpp)
 
-    
-    # 添加HGBaseAppModuleStatic依赖
+    # 在Windows平台明确指定为控制台应用程序
     if (WIN32)
+        # 禁用LTO以避免插件错误
+        set_target_properties(HGCurveModuleRun PROPERTIES
+            INTERFACE_POSITION_INDEPENDENT_CODE OFF
+        )
+        # 明确指定为控制台应用程序
+        target_link_options(HGCurveModuleRun PRIVATE -Wl,-subsystem,console)
+        
         HG_CMAKE_MODULE_DEPEND(
             HGCurveModuleStatic
         )
@@ -161,6 +165,7 @@ if (BUILD_EXECUTABLE)
         # Windows平台只需要HGV6Interface库和基础依赖
         # 注意：libHGBaseAppModuleStatic.a必须在libPackFunInterface.a之前，因为前者依赖后者的符号
         target_link_libraries(HGCurveModuleRun PUBLIC 
+            ${CMAKE_BINARY_DIR}/HGCurveModule/libHGCurveModuleStatic.a
             ${CMAKE_BINARY_DIR}/HGBaseAppModule/libHGBaseAppModuleStatic.a
             ${CMAKE_BINARY_DIR}/pluginInterface/libPluginInterfaceStatic.a
             ${CMAKE_SOURCE_DIR}/../3rdparty/lib/libPackFunInterface.a

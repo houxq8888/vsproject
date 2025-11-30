@@ -47,7 +47,7 @@ elseif (PLATFORM STREQUAL "win32")
     endif()
 endif()
 
-HG_CMAKE_ADD_MODELU(ScannerModule inc src 
+HG_CMAKE_ADD_MODULE(ScannerModule inc src 
     ${MOC_SRCS})
 
 # 添加pluginInterface头文件路径
@@ -221,7 +221,7 @@ if (BUILD_EXECUTABLE)
             ${HG_PROJECT_ROOT_FS}/3rdparty/lib/libuuid.a
             ${HG_PROJECT_ROOT_FS}/3rdparty/lib/libstrmiids.a
             ${HG_PROJECT_ROOT_FS}/3rdparty/lib/liboleaut32.a
-          #  ${HG_PROJECT_ROOT_FS}/3rdparty/lib/libwinspool.a
+            ${HG_PROJECT_ROOT_FS}/3rdparty/lib/libusb-1.0.a
         )
         
         # 添加必要的系统库依赖

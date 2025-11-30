@@ -25,7 +25,13 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,QWidget *paren
     m_interfaceComboBox->addItems({"USB","IP"});
     m_interfaceComboBox->setCurrentIndex(0);
     fnChangeParam();
-    connect(m_interfaceComboBox,&QComboBox::currentIndexChanged,this,&HGCameraRecognizeWidget::fnChangeParam);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    connect(m_interfaceComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+        this, &HGCameraRecognizeWidget::fnChangeParam);
+#else
+    connect(m_interfaceComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+        this, &HGCameraRecognizeWidget::fnChangeParam);
+#endif
 
     m_view=new MyGraphicsView(0);
     m_scene=new QGraphicsScene();

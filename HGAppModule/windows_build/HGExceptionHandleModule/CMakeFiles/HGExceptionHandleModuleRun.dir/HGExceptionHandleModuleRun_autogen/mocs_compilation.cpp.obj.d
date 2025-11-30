@@ -1,0 +1,2 @@
+HGExceptionHandleModule/CMakeFiles/HGExceptionHandleModuleRun.dir/HGExceptionHandleModuleRun_autogen/mocs_compilation.cpp.obj: \
+ D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGExceptionHandleModule\HGExceptionHandleModuleRun_autogen\mocs_compilation.cpp

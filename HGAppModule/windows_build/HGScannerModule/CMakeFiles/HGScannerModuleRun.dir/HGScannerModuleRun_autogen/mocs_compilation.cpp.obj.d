@@ -1,0 +1,2 @@
+HGScannerModule/CMakeFiles/HGScannerModuleRun.dir/HGScannerModuleRun_autogen/mocs_compilation.cpp.obj: \
+ D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGScannerModule\HGScannerModuleRun_autogen\mocs_compilation.cpp

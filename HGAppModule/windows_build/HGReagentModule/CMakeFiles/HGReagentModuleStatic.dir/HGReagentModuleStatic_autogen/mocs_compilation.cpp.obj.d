@@ -1,0 +1,2 @@
+HGReagentModule/CMakeFiles/HGReagentModuleStatic.dir/HGReagentModuleStatic_autogen/mocs_compilation.cpp.obj: \
+ D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGReagentModule\HGReagentModuleStatic_autogen\mocs_compilation.cpp

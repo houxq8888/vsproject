@@ -1,0 +1,2 @@
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGUartModuleStatic.a CMakeFiles/HGUartModuleStatic.dir/HGUartModuleStatic_autogen/mocs_compilation.cpp.obj CMakeFiles/HGUartModuleStatic.dir/src/hguartwidget.cpp.obj CMakeFiles/HGUartModuleStatic.dir/src/uartplugindetector.cpp.obj CMakeFiles/HGUartModuleStatic.dir/inc/moc_hguartwidget.cpp.obj CMakeFiles/HGUartModuleStatic.dir/inc/moc_uartplugindetector.cpp.obj
+D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGUartModuleStatic.a

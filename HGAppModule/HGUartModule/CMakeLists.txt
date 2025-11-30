@@ -44,7 +44,7 @@ elseif (PLATFORM STREQUAL "win32")
     endif()
 endif()
 
-HG_CMAKE_ADD_MODELU(UartModule inc src 
+HG_CMAKE_ADD_MODULE(UartModule inc src 
     ${MOC_SRCS})
 
 # 添加pluginInterface头文件路径

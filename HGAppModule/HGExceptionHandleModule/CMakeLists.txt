@@ -44,7 +44,7 @@ elseif (PLATFORM STREQUAL "win32")
     endif()
 endif()
 
-HG_CMAKE_ADD_MODELU(ExceptionHandleModule inc src 
+HG_CMAKE_ADD_MODULE(ExceptionHandleModule inc src 
     ${MOC_SRCS})
 
 # 添加pluginInterface头文件路径
@@ -145,7 +145,7 @@ if (BUILD_STATIC_LIBS)
         )
         target_link_libraries(HGExceptionHandleModuleStatic PUBLIC 
             ${CMAKE_SOURCE_DIR}/../3rdparty/lib/libPackFunInterface.a
-            ${CMAKE_SOURCE_DIR}/HGSearchModule/libHGSearchModuleStatic.a
+            ${CMAKE_BINARY_DIR}/HGSearchModule/libHGSearchModuleStatic.a
             ${CMAKE_BINARY_DIR}/HGBaseAppModule/libHGBaseAppModuleStatic.a
             ${CMAKE_BINARY_DIR}/pluginInterface/libPluginInterfaceStatic.a
             ${OpenCV_LIBRARIES}
@@ -187,7 +187,7 @@ if (BUILD_EXECUTABLE)
         # Windows平台只需要HGV6Interface库和基础依赖
         # 注意：libHGBaseAppModuleStatic.a必须在libPackFunInterface.a之前，因为前者依赖后者的符号
         target_link_libraries(HGExceptionHandleModuleRun PUBLIC 
-            ${CMAKE_SOURCE_DIR}/HGSearchModule/libHGSearchModuleStatic.a
+            ${CMAKE_BINARY_DIR}/HGSearchModule/libHGSearchModuleStatic.a
             ${CMAKE_BINARY_DIR}/HGBaseAppModule/libHGBaseAppModuleStatic.a
             ${CMAKE_BINARY_DIR}/pluginInterface/libPluginInterfaceStatic.a
             ${CMAKE_SOURCE_DIR}/../3rdparty/lib/libPackFunInterface.a

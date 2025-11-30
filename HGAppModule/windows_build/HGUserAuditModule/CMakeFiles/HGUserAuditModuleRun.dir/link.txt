@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HGUserAuditModuleRun.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HGUserAuditModuleRun.dir/objects.a @CMakeFiles\HGUserAuditModuleRun.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\c++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\HGUserAuditModuleRun.dir/objects.a -Wl,--no-whole-archive -o HGUserAuditModuleRun.exe -Wl,--out-implib,libHGUserAuditModuleRun.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\HGUserAuditModuleRun.dir\linkLibs.rsp

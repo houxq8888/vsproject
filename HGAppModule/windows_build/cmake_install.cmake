@@ -49,12 +49,92 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGCurveModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGSearchModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGLogModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGUserAuditModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGUartModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGLoginModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGEBalanceModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGSharedFileModule/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGScannerModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGMethodModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGTaskModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGFlowModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGChannelModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGReagentModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGAnalysisRecordModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGPrintModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGCameraRecognizeModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGExceptionHandleModule/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

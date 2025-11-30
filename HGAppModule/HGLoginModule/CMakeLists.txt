@@ -44,7 +44,7 @@ elseif (PLATFORM STREQUAL "win32")
     endif()
 endif()
 
-HG_CMAKE_ADD_MODELU(LoginModule inc src 
+HG_CMAKE_ADD_MODULE(LoginModule inc src 
     ${MOC_SRCS})
 
 # 添加pluginInterface头文件路径
