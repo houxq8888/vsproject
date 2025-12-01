@@ -1,4 +1,4 @@
-HG_CMAKE_ADD_MODELU(DFPProcess inc src)
+HG_CMAKE_ADD_MODULE(DFPProcess inc src)
 
 target_compile_definitions(DFPProcess PUBLIC
      -DENV_CFG_FILE=\"\"

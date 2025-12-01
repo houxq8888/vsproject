@@ -1,4 +1,4 @@
-HG_CMAKE_ADD_MODELU(CommonCommunicationDemoC inc src)
+HG_CMAKE_ADD_MODULE(CommonCommunicationDemoC inc src)
 
 target_compile_definitions(CommonCommunicationDemoC PUBLIC
      -DENV_CFG_FILE=\"\"

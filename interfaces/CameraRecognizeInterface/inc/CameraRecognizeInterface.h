@@ -46,7 +46,7 @@ namespace HGMACHINE{
     void openCamera(const std::string &type, const std::string& name);
 
 cv::Mat getImgOneShotMat(const std::string &type,const std::string& name);
-std::string saveCameraTemplateMat(const cv::Mat& mat, const HGRect2D& rect);
+std::string saveCameraTemplateMat(const cv::Mat& img, const HGRect2D& rect);
     /**
      * @brief 关闭摄像头
      * @param type 摄像头类型, "USB", "IP"

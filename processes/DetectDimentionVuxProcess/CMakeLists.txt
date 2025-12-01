@@ -1,4 +1,4 @@
-HG_CMAKE_ADD_MODELU(DetectDimentionVuxProcess inc src)
+HG_CMAKE_ADD_MODULE(DetectDimentionVuxProcess inc src)
 
 target_compile_definitions(DetectDimentionVuxProcess PUBLIC
      -DENV_CFG_FILE=\"\"

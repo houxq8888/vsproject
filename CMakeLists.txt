@@ -4,6 +4,33 @@ project(HG_BUILD_PROJECT)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+
+
+include("cmake/project_macro.cmake")
+
+if(NOT DEFINED HG_PROJECT_ROOT_FS)
+    message(FATAL_ERROR "HG_PROJECT_ROOT_FS is not defined. Please set the variable.")
+endif()
+
+if(NOT DEFINED PLATFORM)
+    message(FATAL_ERROR "PLATFORM is not defined. Please set the variable.")
+endif()
+
+message(STATUS "Build platform: ${PLATFORM}")
+message(STATUS "Use rootfs: ${HG_PROJECT_ROOT_FS}")
+
+if(CMAKE_CROSSCOMPILING)
+    list(APPEND CMAKE_PREFIX_PATH "${HG_PROJECT_ROOT_FS}/cmake") #"${HG_PROJECT_ROOT_FS}/usr/lib/aarch64-linux-gnu/cmake")
+    message(STATUS "Cross-compiling: Qt/OpenCV will search in ${CMAKE_PREFIX_PATH}")
+endif()
+
+if(CMAKE_CROSSCOMPILING)
+    message(STATUS "Cross-compiling detected")
+    set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+    set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+    set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+    set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+else()
 # 检查CMake版本是否支持预编译头文件
 if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.16)
     set(HG_USE_PCH ON)
@@ -44,12 +71,15 @@ function(hg_add_precompiled_header target header_file)
         # 首先确保编译器能够找到标准库
         if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
             # 添加标准库路径到包含目录
-            target_include_directories(${target} SYSTEM PRIVATE 
-                /usr/include/c++/11
-                /usr/include/x86_64-linux-gnu/c++/11
-                /usr/include/c++/11/backward
-                /usr/lib/gcc/x86_64-linux-gnu/11/include
-            )
+            # 检查是否为Windows交叉编译，如果是则跳过Linux系统路径
+            if(NOT CMAKE_SYSTEM_NAME STREQUAL "Windows")
+                target_include_directories(${target} SYSTEM PRIVATE 
+                    /usr/include/c++/11
+                    /usr/include/x86_64-linux-gnu/c++/11
+                    /usr/include/c++/11/backward
+                    /usr/lib/gcc/x86_64-linux-gnu/11/include
+                )
+            endif()
         endif()
         
         # 为GCC/Clang设置编译选项
@@ -63,35 +93,12 @@ function(hg_add_precompiled_header target header_file)
     # 设置预编译头文件
     target_precompile_headers(${target} PRIVATE "${header_file}")
 endfunction()
-
-include("cmake/project_macro.cmake")
-
-if(NOT DEFINED HG_PROJECT_ROOT_FS)
-    message(FATAL_ERROR "HG_PROJECT_ROOT_FS is not defined. Please set the variable.")
-endif()
-
-if(NOT DEFINED PLATFORM)
-    message(FATAL_ERROR "PLATFORM is not defined. Please set the variable.")
-endif()
-
-message(STATUS "Build platform: ${PLATFORM}")
-message(STATUS "Use rootfs: ${HG_PROJECT_ROOT_FS}")
-
-if(CMAKE_CROSSCOMPILING)
-    list(APPEND CMAKE_PREFIX_PATH "${HG_PROJECT_ROOT_FS}/cmake") #"${HG_PROJECT_ROOT_FS}/usr/lib/aarch64-linux-gnu/cmake")
-    message(STATUS "Cross-compiling: Qt/OpenCV will search in ${CMAKE_PREFIX_PATH}")
-endif()
-
-if(CMAKE_CROSSCOMPILING)
-    message(STATUS "Cross-compiling detected")
-    set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
-    set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
-    set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
-    set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
-else()
     message(STATUS "Not cross-compiling")
     set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY BOTH)
     set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE BOTH)
+    # 设置模块构建选项
+    option(BUILD_EXECUTABLE "Build modules as executable" ON)
+    option(BUILD_SHARED_LIBS "Build modules as shared libraries" ON)
 endif()
 
 
@@ -210,7 +217,7 @@ else ()
     add_subdirectory(interfaces/PackFuncInterface)
 
     if (PLATFORM STREQUAL "x64" OR PLATFORM STREQUAL "x64_release")
-        # add_subdirectory(HGAppModule/pluginInterface)
+        add_subdirectory(HGAppModule/pluginInterface)
         add_subdirectory(services/HGAtomService/HGCommunicateService)
         add_subdirectory(services/HGAtomService/HGLogService)
         add_subdirectory(services/HGAtomService/HGSecurityService)
@@ -229,33 +236,33 @@ else ()
         add_subdirectory(processes/CommonProtocolAPI)
         add_subdirectory(processes/TCPPushClient)
         #add app-project
-        # add_subdirectory(HGAppModule/HGBaseAppModule)
-        # add_subdirectory(HGAppModule/HGUserAuditModule)
-        # add_subdirectory(HGAppModule/HGPrintModule)
-        # add_subdirectory(HGAppModule/HGCurveModule)
-        # add_subdirectory(HGAppModule/HGLoginModule)
-        # add_subdirectory(HGAppModule/HGSearchModule)
-        # add_subdirectory(HGAppModule/HGLogModule)
-        # add_subdirectory(HGAppModule/HGExceptionHandleModule)
-        # add_subdirectory(HGAppModule/HGUartModule)
-        # add_subdirectory(HGAppModule/HGEBalanceModule)
-        # add_subdirectory(HGAppModule/HGSharedFileModule)
-        # add_subdirectory(HGAppModule/HGCameraRecognizeModule)
-        # add_subdirectory(HGAppModule/HGMethodModule)
-        # add_subdirectory(HGAppModule/HGTaskModule)
-        # add_subdirectory(HGAppModule/HGFlowModule)
-        # add_subdirectory(HGAppModule/HGAnalysisRecordModule)
-        # add_subdirectory(HGAppModule/HGChannelModule)
-        # add_subdirectory(HGAppModule/HGReagentModule)
-        # add_subdirectory(HGAppModule/HGScannerModule)
-        # add_subdirectory(HGAppModule/TestPlugin)
-        # # add_subdirectory(projects/HGCupDetApp)
-        # # add_subdirectory(projects/HGComDebugApp)
-        # add_subdirectory(projects/HGOnlinePlatformApp)
-        # add_subdirectory(projects/HGDashboardApp)
-        # add_subdirectory(projects/CloudApp)
-        # add_subdirectory(projects/ProductFlow)
-        # # add_subdirectory(projects/MyCefTest)
+        add_subdirectory(HGAppModule/HGBaseAppModule)
+        add_subdirectory(HGAppModule/HGUserAuditModule)
+        add_subdirectory(HGAppModule/HGPrintModule)
+        add_subdirectory(HGAppModule/HGCurveModule)
+        add_subdirectory(HGAppModule/HGLoginModule)
+        add_subdirectory(HGAppModule/HGSearchModule)
+        add_subdirectory(HGAppModule/HGLogModule)
+        add_subdirectory(HGAppModule/HGExceptionHandleModule)
+        add_subdirectory(HGAppModule/HGUartModule)
+        add_subdirectory(HGAppModule/HGEBalanceModule)
+        add_subdirectory(HGAppModule/HGSharedFileModule)
+        add_subdirectory(HGAppModule/HGCameraRecognizeModule)
+        add_subdirectory(HGAppModule/HGMethodModule)
+        add_subdirectory(HGAppModule/HGTaskModule)
+        add_subdirectory(HGAppModule/HGFlowModule)
+        add_subdirectory(HGAppModule/HGAnalysisRecordModule)
+        add_subdirectory(HGAppModule/HGChannelModule)
+        add_subdirectory(HGAppModule/HGReagentModule)
+        add_subdirectory(HGAppModule/HGScannerModule)
+        add_subdirectory(HGAppModule/TestPlugin)
+        # add_subdirectory(projects/HGCupDetApp)
+        # add_subdirectory(projects/HGComDebugApp)
+        add_subdirectory(projects/HGOnlinePlatformApp)
+        add_subdirectory(projects/HGDashboardApp)
+        add_subdirectory(projects/CloudApp)
+        add_subdirectory(projects/ProductFlow)
+        # add_subdirectory(projects/MyCefTest)
 
         #TestCase
         add_subdirectory(projects/HGTestCase/testCameraInterface)

@@ -1,4 +1,4 @@
-HG_CMAKE_ADD_MODELU(ZoneTest inc src)
+HG_CMAKE_ADD_MODULE(ZoneTest inc src)
 
 target_compile_definitions(ZoneTest PUBLIC
      -DENV_CFG_FILE=\"\"

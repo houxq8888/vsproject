@@ -1,4 +1,4 @@
-HG_CMAKE_ADD_MODELU(TCPPushClient inc src)
+HG_CMAKE_ADD_MODULE(TCPPushClient inc src)
 
 target_compile_definitions(TCPPushClient PUBLIC
      -DENV_CFG_FILE=\"\"

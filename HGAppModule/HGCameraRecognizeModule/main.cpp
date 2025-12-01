@@ -1,11 +1,14 @@
 #include "hgcamerarecognizewidget.h"
 #include <QApplication>
 #include <iostream>
+#include "hgcommonutility.h"
+#include "config.h"
+#include "rwDb.h"
 #include "common.h"
 
 #define CONFIG_DIR "/config"
 
-bool loadConfig(std::string curPath){
+bool loadConfig(const std::string &curPath){
     std::string configPath=curPath+CONFIG_DIR;
     HGMkDir(configPath);
     std::string path=configPath+"/config.xml";
@@ -31,7 +34,7 @@ int main(int argc, char *argv[]){
         HGMkDir(dbDir);
         loadConfig(basePath.toStdString());
         saveConfig();
-
+        RWDb::openDB(basePath.toStdString());
         HGCameraRecognizeWidget w("zh");
         w.show();
         return app.exec();

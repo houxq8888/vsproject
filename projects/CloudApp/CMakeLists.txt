@@ -48,7 +48,7 @@ file(GLOB MOC_HEADERS
 
 qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 
-HG_CMAKE_ADD_MODELU(MCloudApp inc src 
+HG_CMAKE_ADD_MODULE(MCloudApp inc src 
     # inc/Device/SystemSet        src/Device/SystemSet 
     # inc/Device/DeviceManage     src/Device/DeviceManage
     # inc/Device/ChannelSet       src/Device/ChannelSet

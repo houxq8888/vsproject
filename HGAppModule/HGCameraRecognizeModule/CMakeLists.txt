@@ -143,6 +143,7 @@ if (BUILD_EXECUTABLE)
         # Windows平台只需要HGV6Interface库和基础依赖
         # 注意：libHGBaseAppModuleStatic.a必须在libPackFunInterface.a之前，因为前者依赖后者的符号
         target_link_libraries(HGCameraRecognizeModuleRun PUBLIC 
+            ${CMAKE_BINARY_DIR}/HGCameraRecognizeModule/libHGCameraRecognizeModuleStatic.a
             ${CMAKE_BINARY_DIR}/HGBaseAppModule/libHGBaseAppModuleStatic.a
             ${CMAKE_BINARY_DIR}/pluginInterface/libPluginInterfaceStatic.a
             ${CMAKE_SOURCE_DIR}/../3rdparty/lib/libPackFunInterface.a

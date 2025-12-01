@@ -1,4 +1,4 @@
-HG_CMAKE_ADD_MODELU(YModemTest inc src)
+HG_CMAKE_ADD_MODULE(YModemTest inc src)
 
 target_compile_definitions(YModemTest PUBLIC
      -DENV_CFG_FILE=\"\"

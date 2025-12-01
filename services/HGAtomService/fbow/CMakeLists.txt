@@ -3,7 +3,7 @@ set(LIBRARY_VERSION_MINOR 0)
 set(LIBRARY_VERSION_PATCH 0)
 
 
-HG_CMAKE_ADD_MODELU(module_fbow inc src)
+HG_CMAKE_ADD_MODULE(module_fbow inc src)
 
 
 HG_CMAKE_MODULE_DEPEND_PUB( 

@@ -57,6 +57,7 @@ public:
     ~MyGraphicsView();
     void setSelectROI(bool flag) {isDrawing=flag;};
     QRectF getSelectROI();
+    void clearRectItem();
     void init();
     void addstartbtn();
     void setstartbtntext(QString);

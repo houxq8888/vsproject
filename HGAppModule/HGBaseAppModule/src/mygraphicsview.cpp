@@ -242,6 +242,18 @@ QRectF MyGraphicsView::getSelectROI()
     }
     return m_selectROI; 
 }
+
+void MyGraphicsView::clearRectItem()
+{
+    if (currentRectItem && this->scene()){
+        this->scene()->removeItem(currentRectItem);
+        delete currentRectItem;
+        currentRectItem = nullptr;
+        m_selectROI = QRectF();
+        isDrawing = false;
+        isMousePressed = false;
+    }
+}
 void MyGraphicsView::mouseReleaseEvent(QMouseEvent *event)
 {
     QGraphicsView::mouseReleaseEvent(event);

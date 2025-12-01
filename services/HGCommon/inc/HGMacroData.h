@@ -2,12 +2,19 @@
 #define HGMACRODATA_H
 
 #include <string>
+#include <opencv2/opencv.hpp>
 
 typedef struct tagRect2D{
     int x1;
     int y1;
     int x2;
     int y2;
+    tagRect2D(){
+        this->x1 = 0;
+        this->y1 = 0;
+        this->x2 = 0;
+        this->y2 = 0;
+    }
     tagRect2D(int x1,int y1,int x2,int y2){
         this->x1 = x1;
         this->y1 = y1;
@@ -26,13 +33,11 @@ typedef struct tagImg2D{
 } HGImg2D, *PHGImg2D;
 
 typedef struct tagMatchResult2D{
-    // int offsetx;
-    // int offsety;
-    // int width;
-    // int height;
+    HGRect2D rect;
     std::string name; 
     float score;
     HGImg2D dst;
+    cv::Mat dstMat;
     bool flag;
 } MatchResult2D;
 

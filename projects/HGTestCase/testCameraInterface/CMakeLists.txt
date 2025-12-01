@@ -1,4 +1,4 @@
-HG_CMAKE_ADD_MODELU(testCameraInterface inc src)
+HG_CMAKE_ADD_MODULE(testCameraInterface inc src)
 
 target_compile_definitions(testCameraInterface PUBLIC
      -DENV_CFG_FILE=\"\"

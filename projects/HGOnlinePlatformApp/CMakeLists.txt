@@ -19,7 +19,7 @@ file(GLOB MOC_HEADERS
 
 qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 
-HG_CMAKE_ADD_MODELU(OnlinePlatformApp inc src 
+HG_CMAKE_ADD_MODULE(OnlinePlatformApp inc src 
     inc/Device/SystemSet                        src/Device/SystemSet 
     inc/Device/DeviceManage                     src/Device/DeviceManage
     inc/Data/WarnInfo                           src/Data/WarnInfo

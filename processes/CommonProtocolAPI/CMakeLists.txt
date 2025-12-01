@@ -1,4 +1,4 @@
-HG_CMAKE_ADD_MODELU(CommonProtocolAPI inc src)
+HG_CMAKE_ADD_MODULE(CommonProtocolAPI inc src)
 
 target_compile_definitions(CommonProtocolAPI PUBLIC
      -DENV_CFG_FILE=\"\"

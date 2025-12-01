@@ -21,7 +21,13 @@ BUILD_EXECUTABLE:BOOL=ON
 BUILD_HGAPPMODULE_ONLY:UNINITIALIZED=ON
 
 //No help, variable specified on the command line.
+BUILD_HGBASEAPPMODULE_ONLY:UNINITIALIZED=ON
+
+//No help, variable specified on the command line.
 BUILD_HGBASEAPP_EXECUTABLE:UNINITIALIZED=OFF
+
+//No help, variable specified on the command line.
+BUILD_HGCAMERARECOGNIZEMODULE_ONLY:UNINITIALIZED=ON
 
 //要编译的模块列表（空格分隔）
 BUILD_MODULES:STRING=

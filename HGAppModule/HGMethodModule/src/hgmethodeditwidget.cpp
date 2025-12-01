@@ -289,8 +289,10 @@ void HGMethodEditWidget::addMethodType(std::vector<std::string> methods,int inde
     typeCombo->setCurrentIndex(-1);
     if (m_fillContent[index]["类型"]!="")
         typeCombo->setCurrentText(QString::fromStdString(m_fillContent[index]["类型"]));
+    
+
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    connect(typeCombo, QOverload<int>::of(&QComboBox::currentIndexChanged),
+    connect(typeCombo,&QComboBox::currentIndexChanged,
         [=](int index){
             m_fillContent[index]["类型"]=typeCombo->itemText(index).toStdString();
         // printf("click index:%s\n",typeCombo->itemText(index).toStdString().c_str());

@@ -1,6 +1,8 @@
 #include "hgcamerarecognizewidget.h"
 #include "CameraRecognizeInterface.h"
 #include <QDebug>
+#include <QMessageBox>
+#include <QFileDialog>
 #include "opencv2/opencv.hpp"
 
 
@@ -26,18 +28,15 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,QWidget *paren
     m_interfaceComboBox->setCurrentIndex(0);
     fnChangeParam();
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    connect(m_interfaceComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
-        this, &HGCameraRecognizeWidget::fnChangeParam);
+    connect(m_interfaceComboBox,&QComboBox::currentIndexChanged,this,&HGCameraRecognizeWidget::fnChangeParam);
 #else
     connect(m_interfaceComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
         this, &HGCameraRecognizeWidget::fnChangeParam);
 #endif
-
     m_view=new MyGraphicsView(0);
     m_scene=new QGraphicsScene();
     m_view->setScene(m_scene);
     QPixmap pixmap(QString::fromStdString(getPath("/resources/V1/@print.png")));
-    connect(m_view,SIGNAL(getScenePos(int,int)),this,SLOT(updateScenePos(int,int)));
     m_pix = m_scene->addPixmap(pixmap);
     m_view->fitInView(m_pix,Qt::KeepAspectRatio);
 
@@ -46,56 +45,134 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,QWidget *paren
     m_saveTemplateBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"SaveTemplate")));
     m_recognizeBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Recognize")));
 
+    static int index=0;
     connect(m_captureBtn,&QPushButton::clicked,this,[=](){
+        qDebug()<<"capture index:"<<index++;
+        m_view->setSelectROI(false);
+        m_view->clearRectItem();
+        // 打开摄像头
         openCamera(m_interfaceComboBox->currentText().toStdString(),m_deviceNameComboBox->currentText().toStdString());
-        m_mat=getImgOneShotMat(m_interfaceComboBox->currentText().toStdString(),
+        
+        // 获取图像
+        image=getImgOneShotMat(m_interfaceComboBox->currentText().toStdString(),
             m_deviceNameComboBox->currentText().toStdString());
 
         QImage qimg;
-        if (m_mat.data && m_mat.cols > 0 && m_mat.rows > 0)
+        
+        // 检查图像数据是否有效
+        if (image.data && image.cols > 0 && image.rows > 0)
         {
-            if (m_mat.channels() == 1)
+            // 根据通道数创建QImage
+            if (image.channels() == 1)
             {
-                qimg = QImage((const uchar *)m_mat.data, m_mat.cols, m_mat.rows, m_mat.step, QImage::Format_Grayscale8);
+                qimg = QImage((const uchar *)image.data, image.cols, image.rows, image.step, QImage::Format_Grayscale8);
             }
-            else if (m_mat.channels() == 3)
+            else if (image.channels() == 3)
             {
-                qimg = QImage((const uchar *)m_mat.data, m_mat.cols, m_mat.rows, m_mat.step, QImage::Format_BGR888);
+                // OpenCV使用BGR格式，Qt使用RGB格式，需要转换
+                qimg = QImage((const uchar *)image.data, image.cols, image.rows, image.step, QImage::Format_RGB888);
             }
             else
             {
+                qDebug()<<"Unsupported image format with"<<image.channels()<<"channels";
+                return;
             }
         }
+        else
+        {
+            qDebug()<<"Failed to get image from camera";
+            // 创建一个默认的黑色图像
+            qimg = QImage(640, 480, QImage::Format_RGB888);
+            qimg.fill(Qt::black);
+        }
+        
         if (qimg.isNull()){
             qDebug()<<"failed to create QImage";
             return;
         }
+        
         QPixmap pixmap = QPixmap::fromImage(qimg);
         if (pixmap.isNull()){
             qDebug()<<"failed to convert to QPixmap";
             return;
         }
+        
+        // 设置图像并调整视图
         m_pix->setPixmap(pixmap);
+        m_view->fitInView(m_pix, Qt::KeepAspectRatio);
+        
+        qDebug()<<"Image captured successfully, size:"<<pixmap.size();
     });
     connect(m_selectBtn, &QPushButton::clicked, this, [=]()
     {
+        m_view->clearRectItem();
         m_view->setSelectROI(true);
     });
     connect(m_saveTemplateBtn,&QPushButton::clicked,this,[=](){
-        if (!(m_mat.data && m_mat.cols > 0 && m_mat.rows > 0)){
-            qDebug()<<"failed to get image";
+        if (!(image.data && image.cols > 0 && image.rows > 0)){
+            QMessageBox::warning(this,"Warning","No image available");
             return;
         }
-        QRectF rect=m_view->getSelectROI();
-        HGRect2D roiRect(rect.left(),rect.top(),rect.right(),rect.bottom());
+        QRectF selectROI=m_view->getSelectROI();
+        qDebug()<<"x1:"<<selectROI.left()<<"y1:"<<selectROI.top()<<"x2:"<<selectROI.right()<<"y2:"<<selectROI.bottom();
+        HGRect2D roiRect(0,0,0,0);
+        roiRect.x1=selectROI.left();
+        roiRect.y1=selectROI.top();
+        roiRect.x2=selectROI.right();
+        roiRect.y2=selectROI.bottom();
         if (roiRect.x1<0) roiRect.x1=0;
         if (roiRect.y1<0) roiRect.y1=0;
-        if (roiRect.x2>m_mat.cols) roiRect.x2=m_mat.cols;
-        if (roiRect.y2>m_mat.rows) roiRect.y2=m_mat.rows;
-        saveCameraTemplateMat(m_mat,roiRect);
+        if (roiRect.x2>image.cols) roiRect.x2=image.cols;
+        if (roiRect.y2>image.rows) roiRect.y2=image.rows;
+        std::string templateName=saveCameraTemplateMat(image,roiRect);
+        if (templateName=="failed"){
+            QMessageBox::warning(this,"Warning","Failed to save template");
+        } else {
+            QMessageBox::information(this,"Information","Template saved as:"+QString::fromStdString(templateName));
+        }
+        // m_view->clearRectItem();
     });
     connect(m_recognizeBtn,&QPushButton::clicked,this,[=](){
-        recognizeCameraTemplate(m_img);
+        if (image.empty()){
+            QMessageBox::warning(this,"Warning","No image available");
+            return;
+        }
+        QString filePath=QFileDialog::getOpenFileName(nullptr,"OpenFile",QDir::homePath(),
+            "image file(*.png *.jpg *.jpeg *.bmp *.gif);;"
+            "txt file(*.txt *.csv);;"
+            "all file(*.*)");
+        HGImg2D img;
+        img.data = image.data;
+        img.width=image.cols;
+        img.height=image.rows;
+        img.type=image.type();
+        MatchResult2D matchResult=recognizeCameraTemplate(img,filePath.toStdString());
+        if (!matchResult.flag){
+            QMessageBox::warning(this,"Warning","Failed to recognize template");
+            return;
+        }
+        cv::Mat dst;
+        if (matchResult.dstMat.empty()){
+            dst=cv::Mat(matchResult.dst.height,matchResult.dst.width,matchResult.dst.type,
+                const_cast<uchar*>(matchResult.dst.data));
+        } else {
+            matchResult.dstMat.copyTo(dst);
+        }
+        QImage qimg;
+        if (dst.channels() == 1)
+        {
+            qimg = QImage((const uchar *)dst.data, dst.cols, dst.rows, dst.step, QImage::Format_Grayscale8);
+        }
+        else if (dst.channels() == 3)
+        {
+            // OpenCV使用BGR格式，Qt使用RGB格式，需要转换
+            qimg = QImage((const uchar *)dst.data, dst.cols, dst.rows, dst.step, QImage::Format_RGB888);
+        }
+        else
+        {
+            qDebug()<<"Unsupported image format with"<<dst.channels()<<"channels";
+            return;
+        }
     });
     m_setLayout->addWidget(m_deviceNameLabel,0,0);
     m_setLayout->addWidget(m_deviceNameComboBox,0,1);
@@ -126,19 +203,4 @@ void HGCameraRecognizeWidget::fnChangeParam(){
 }
 bool HGCameraRecognizeWidget::eventFilter(QObject* obj,QEvent* event){
     return QObject::eventFilter(obj,event);
-}
-
-void HGCameraRecognizeWidget::updateScenePos(int x,int y)
-{
-    QPointF linepoint;
-    if(m_pix!=nullptr&&m_pix->boundingRect().width()!=0&&m_pix->boundingRect().height()!=0){
-        linepoint.setX(m_pix->mapFromScene(x*m_scene->width()/m_pix->boundingRect().width(),
-                                           y*m_scene->height()/m_pix->boundingRect().height()).x());
-        linepoint.setY(m_pix->mapFromScene(x*m_scene->width()/m_pix->boundingRect().width(),
-                                         y*m_scene->height()/m_pix->boundingRect().height()).y());
-
-        int grayval=-1;
-
-        m_view->showImageGray(linepoint.x(),linepoint.y(),grayval);
-    }
 }

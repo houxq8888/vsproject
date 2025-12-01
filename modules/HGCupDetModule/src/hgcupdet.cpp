@@ -46,14 +46,21 @@ void HGCupDet::matchTemplate(const HGImg2D &img, const HGRect2D &roi,
     double bestMatchScore = -1.0;  // 存储最好的匹配分数
     cv::Point bestMatchLocation;   // 存储最好的匹配位置
     cv::Mat bestMatchRegion;       // 存储最好的匹配区域
-
+    if (imgMat.channels()==1){
+        cv::cvtColor(imgMat,bestMatchRegion,cv::COLOR_GRAY2BGR);
+    } else if (imgMat.channels()==3){
+        bestMatchRegion=imgMat.clone();
+    }
+    
     // 设置多尺度匹配参数
     double scaleFactor = 1.1;  // 每次缩小的比例
     int minTemplateSize = 30;  // 模板最小尺寸
     int maxTemplateSize = std::min(imgMat.cols, imgMat.rows);  // 最大尺寸限制为图像的最小边
 
     // 对模板进行多尺度匹配
-    for (double scale = 1.0; scale * templ.cols <= maxTemplateSize && scale * templ.rows <= maxTemplateSize; scale *= scaleFactor) {
+    for (double scale = 1.0; 
+        scale * templ.cols <= maxTemplateSize && scale * templ.rows <= maxTemplateSize;
+        scale *= scaleFactor) {
         // 缩放模板图像
         cv::Mat scaledTemplate;
         cv::resize(templ, scaledTemplate, cv::Size(), scale, scale, cv::INTER_LINEAR);
@@ -71,7 +78,15 @@ void HGCupDet::matchTemplate(const HGImg2D &img, const HGRect2D &roi,
         if (maxVal > bestMatchScore) {
             bestMatchScore = maxVal;
             bestMatchLocation = maxLoc;
-            bestMatchRegion = imgMat(cv::Rect(bestMatchLocation.x, bestMatchLocation.y, scaledTemplate.cols, scaledTemplate.rows));
+            cv::rectangle(bestMatchRegion,cv::Point(bestMatchLocation.x,bestMatchLocation.y),
+                          cv::Point(bestMatchLocation.x + scaledTemplate.cols,
+                                bestMatchLocation.y + scaledTemplate.rows),
+                                cv::Scalar(0, 0,255));
+            m_rect.x1=bestMatchLocation.x;
+            m_rect.y1=bestMatchLocation.y;
+            m_rect.x2=bestMatchLocation.x+scaledTemplate.cols;
+            m_rect.y2=bestMatchLocation.y+scaledTemplate.rows;
+            // bestMatchRegion = imgMat(cv::Rect(bestMatchLocation.x, bestMatchLocation.y, scaledTemplate.cols, scaledTemplate.rows));
         }
     }
 
@@ -80,11 +95,14 @@ void HGCupDet::matchTemplate(const HGImg2D &img, const HGRect2D &roi,
 
     // 判断是否匹配成功
     if (bestMatchScore >= threshold) {
+        cv::imwrite("bestmatch.jpg",bestMatchRegion);
         m_matchFlag = true;
         m_dst.data = bestMatchRegion.data;
         m_dst.type = bestMatchRegion.type();
+        m_dst.steps = bestMatchRegion.channels();
         m_dst.width = bestMatchRegion.cols;
         m_dst.height = bestMatchRegion.rows;
+        bestMatchRegion.copyTo(m_dstMat);
         std::cout << "匹配成功！匹配位置: " << bestMatchLocation << ", 匹配值: " << bestMatchScore << std::endl;
     } else {
         m_matchFlag = false;

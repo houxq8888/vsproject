@@ -6,7 +6,7 @@ file(GLOB MOC_HEADERS "inc/*.h")
 
 qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 
-HG_CMAKE_ADD_MODELU(CupDetApp inc src ${MOC_SRCS})
+HG_CMAKE_ADD_MODULE(CupDetApp inc src ${MOC_SRCS})
 
 
 target_compile_definitions(CupDetApp PUBLIC

@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 if (PLATFORM STREQUAL "x64")
-HG_CMAKE_ADD_MODELU(CommonProtocolServiceModule inc src)
+HG_CMAKE_ADD_MODULE(CommonProtocolServiceModule inc src)
 HG_CMAKE_MODULE_DEPEND_PUB( 
     HGCommon
     HGConfig

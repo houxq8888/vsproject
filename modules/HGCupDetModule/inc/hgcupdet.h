@@ -25,6 +25,8 @@ public:
     float getMatchScore() {return m_matchScore;};
     bool getMatchFlag() {return m_matchFlag;};
     HGImg2D getDst() {return m_dst;};
+    cv::Mat getDstMat() {return m_dstMat;};
+    HGRect2D getRect() {return m_rect;};
     int getTargetPosX();
 
 private:
@@ -33,6 +35,8 @@ private:
     bool m_matchFlag;
     float m_matchScore;
     HGImg2D m_dst;
+    cv::Mat m_dstMat;
+    HGRect2D m_rect;
     int m_targetPosX;
 };
 }

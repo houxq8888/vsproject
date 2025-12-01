@@ -15,7 +15,7 @@ file(GLOB MOC_HEADERS
 
 qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 
-HG_CMAKE_ADD_MODELU(CefTest inc src 
+HG_CMAKE_ADD_MODULE(CefTest inc src 
     ${MOC_SRCS})
 
 target_compile_definitions(CefTest PUBLIC

@@ -55,6 +55,7 @@ bool isParentRunning();
 std::vector<std::map<std::string,std::string>> getWirelessIP();
 
 std::string getStandardCurTime();
+std::string getFileNameFromTime();
 typedef struct tagTIME_STRUECT {
     int year;
     int month;

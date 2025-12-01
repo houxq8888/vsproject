@@ -82,29 +82,30 @@ int HGCapture2DFromUSB::getFrameOne(cv::Mat &frame)
         std::cerr << "Error: Camera not opened properly!" << std::endl;
         return -1;
     }
+    for (int i=0;i<5;i++) m_cap.read(frame);
+    return 0;
+    // int fail_count = 0;
+    // while (fail_count < 5)
+    // {
+    //     bool grabbed = m_cap.grab(); // 尝试抓取一帧
+    //     if (!grabbed) {
+    //         std::cerr << "Failed to grab frame (" << fail_count + 1 << "/5)" << std::endl;
+    //         fail_count++;
+    //         std::this_thread::sleep_for(std::chrono::milliseconds(100)); // 等待一段时间再试
+    //         continue;
+    //     }
 
-    int fail_count = 0;
-    while (fail_count < 5)
-    {
-        bool grabbed = m_cap.grab(); // 尝试抓取一帧
-        if (!grabbed) {
-            std::cerr << "Failed to grab frame (" << fail_count + 1 << "/5)" << std::endl;
-            fail_count++;
-            std::this_thread::sleep_for(std::chrono::milliseconds(100)); // 等待一段时间再试
-            continue;
-        }
+    //     bool success = m_cap.retrieve(frame);  // 从缓冲区获取帧
+    //     if (!frame.empty()) {
+    //         std::cout << "Successfully retrieved a frame." << std::endl;
+    //         return 0;
+    //     }
 
-        bool success = m_cap.retrieve(frame);  // 从缓冲区获取帧
-        if (!frame.empty()) {
-            std::cout << "Successfully retrieved a frame." << std::endl;
-            return 0;
-        }
+    //     fail_count++;
+    // }
 
-        fail_count++;
-    }
-
-    std::cerr << "Failed to grab and retrieve frame after multiple attempts." << std::endl;
-    return -1;  // 返回失败
+    // std::cerr << "Failed to grab and retrieve frame after multiple attempts." << std::endl;
+    // return -1;  // 返回失败
 }
 
 }

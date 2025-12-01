@@ -31,7 +31,6 @@ signals:
   
 
 private slots:
-    void updateScenePos(int x,int y);
 
 private:
     bool eventFilter(QObject* obj,QEvent* event);
@@ -51,9 +50,8 @@ private:
     MyGraphicsView* m_view;
     QGraphicsPixmapItem *m_pix;
 
-    HGImg2D m_img;
-    cv::Mat m_mat;
     QPushButton* m_captureBtn,*m_selectBtn,*m_saveTemplateBtn,*m_recognizeBtn;
+    cv::Mat image;
 };
 
 #endif // HGCAMERARECOGNIZEWIDGET_H

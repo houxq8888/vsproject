@@ -53,12 +53,13 @@ void AuthorityWidget::fnInit()
     m_usersLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Users")));
     m_usersComboBox=new QComboBox();
 
+
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    connect(m_usersComboBox, QOverload<int>::of(&QComboBox::activated),
-        this, &AuthorityWidget::onUsersComboBoxChanged);
+    connect(m_usersComboBox,&QComboBox::activated,this,
+        &AuthorityWidget::onUsersComboBoxChanged);
 #else
-    connect(m_usersComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::activated),
-        this, &AuthorityWidget::onUsersComboBoxChanged);
+    connect(m_usersComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
+            this, &AuthorityWidget::onUsersComboBoxChanged);
 #endif
 
     m_userLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"GroupUsers")));

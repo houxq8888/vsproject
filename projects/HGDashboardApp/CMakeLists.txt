@@ -13,7 +13,7 @@ file(GLOB MOC_HEADERS
 qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 qt5_add_resources(QT_RESOURCES resources.qrc)
 
-HG_CMAKE_ADD_MODELU(DashboardApp inc src 
+HG_CMAKE_ADD_MODULE(DashboardApp inc src 
     ${MOC_SRCS}
     ${QT_RESOURCES}
 )

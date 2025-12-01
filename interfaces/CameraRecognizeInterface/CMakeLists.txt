@@ -3,7 +3,7 @@ set(LIBRARY_VERSION_MINOR 0)
 set(LIBRARY_VERSION_PATCH 0)
 
 
-HG_CMAKE_ADD_MODELU(CRInterface inc src)
+HG_CMAKE_ADD_MODULE(CRInterface inc src)
 
 
 HG_CMAKE_MODULE_DEPEND_PUB( 
@@ -11,6 +11,8 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGImageAlgorithmService
     HGConfig
     HGSensor
+    HGSaveService
+    HGFrameService
     HGCupDetModule
     ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
@@ -26,6 +28,8 @@ HG_CMAKE_MODULE_DEPEND(
     HGImageAlgorithmService
     HGConfig
     HGSensor
+    HGSaveService
+    HGFrameService
     HGCupDetModule
     ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
@@ -37,7 +41,9 @@ elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_ADD_STATIC(CameraRecognizeInterface inc src 
     ../../services/HGCommon/inc                                   ../../services/HGCommon/src
     ../../services/HGConfig/inc                                   ../../services/HGConfig/src
-    ../../services/HGAtomService/HGImageAlgorithmService/inc      ../../services/HGImageAlgorithmService/HGSaveService/src
+    ../../services/HGAtomService/HGImageAlgorithmService/inc      ../../services/HGImageAlgorithmService/src
+    ../../services/HGAtomService/HGFrameService/inc               ../../services/HGFrameService/src
+    ../../services/HGAtomService/HGSaveService/inc                ../../services/HGSaveService/src
     ../../services/HGHardware/HGSensor/inc                        ../../services/HGHardware/HGSensor/src
     ../../modules/HGCupDetModule/inc                              ../../modules/HGCupDetModule/src
 

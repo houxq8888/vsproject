@@ -33,19 +33,25 @@ config(){
 			HG_TOOLCHAIN_DIR=${TOOLCHAIN_DIR_ZONE}
 		fi
 	elif [ ${build_ver} = "x64" ];then
+        HG_USE_PCH_OPTION="-DHG_USE_PCH=ON"
 		FAKE_ROOT=${FAKE_ROOT_X64}
 		HG_TOOLCHAIN_FILE="cmake/x64_dbg.cmake"
 		build_dir=build_x64
 	elif [ ${build_ver} = "x64_release" ];then
+        HG_USE_PCH_OPTION="-DHG_USE_PCH=ON"
 		FAKE_ROOT=${FAKE_ROOT_X64}
 		HG_TOOLCHAIN_FILE="cmake/x64_release.cmake"
 		build_dir=build_x64_release
 	elif [ ${build_ver} = "win32" ];then
+	    HG_USE_PCH_OPTION="-DHG_USE_PCH=OFF"
+        echo "Windows交叉编译：禁用预编译头文件"
 		FAKE_ROOT=${FAKE_ROOT_WIN32}
 		HG_TOOLCHAIN_FILE="cmake/win32.cmake"
 		HG_TOOLCHAIN_DIR=${TOOLCHAIN_DIR_WIN32}
 		build_dir=build_win32
 	elif [ ${build_ver} = "win32_x86" ];then
+	    HG_USE_PCH_OPTION="-DHG_USE_PCH=OFF"
+        echo "Windows交叉编译：禁用预编译头文件"
 		FAKE_ROOT=${FAKE_ROOT_WIN32_X86}
 		HG_TOOLCHAIN_FILE="cmake/win32_x86.cmake"
 		HG_TOOLCHAIN_DIR=${TOOLCHAIN_DIR_WIN32_X86}

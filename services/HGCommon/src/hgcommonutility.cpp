@@ -102,6 +102,12 @@ std::string getStandardCurTime(){
     slice = exact_time.toStandardString();
     return slice;
 }
+std::string getFileNameFromTime(){
+    std::string slice;
+    HGExactTime exact_time = HGExactTime::currentTime();
+    slice = exact_time.toStringForFilename();
+    return slice;
+}
 void decodeStandardTime(const std::string &time, TIME_STRUECT &timeS)
 {
     std::string createTimeStr = time;
