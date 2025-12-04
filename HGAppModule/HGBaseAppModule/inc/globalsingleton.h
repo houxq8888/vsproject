@@ -18,6 +18,7 @@ public:
     std::string getSystemInfo(const std::string &key);
     void setSystemInfo(const std::string &key, const std::string &value);
     void addSystemInfo(const std::string &key, const std::string &value);
+    void delSystemInfo(const std::string &key, const std::string &value);
     // datachartinfo
     void loadDataChartInfo();
     void saveDataChartInfo();
@@ -36,6 +37,15 @@ public:
     void setAuthorityField(int index, const std::string& fieldName, const std::string& value);
     void addAuthorityField(int index, const std::string &fieldName, const std::string &value);
     void addAuthorityRecord(const std::map<std::string,std::string> &info);
+    void delAuthorityRecord(const std::string &value);
+    
+    // 新增临时数据管理方法
+    bool beginAuthorityEdit();
+    bool commitAuthorityEdit();
+    bool rollbackAuthorityEdit();
+    bool isAuthorityEditing();
+    void addAuthorityFieldToEdit(const std::string& authorityName, const std::string& fieldValue);
+    void removeAuthorityFieldFromEdit(const std::string& authorityName, const std::string& fieldValue);
     // usersinfo
     void loadUsersInfo();
     void saveUsersInfo();

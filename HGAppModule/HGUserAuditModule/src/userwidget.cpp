@@ -27,6 +27,7 @@ void UserWidget::fnInit()
     QStringList headers={
         QString::fromStdString(loadTranslation(m_lang,"UserNo")),
         QString::fromStdString(loadTranslation(m_lang,"UserAccount")),
+        QString::fromStdString(loadTranslation(m_lang,"UserName")), 
         QString::fromStdString(loadTranslation(m_lang,"UserJob")),
         QString::fromStdString(loadTranslation(m_lang,"Department")),
         QString::fromStdString(loadTranslation(m_lang,"Authority")),
@@ -280,10 +281,6 @@ void UserWidget::deleteUser(){
     }
 }
 void UserWidget::returnToList(){
-    if (m_userInfoEditWidget) {
-        disconnect(m_userInfoEditWidget, nullptr, this, nullptr);
-        SAFE_DELETE(m_userInfoEditWidget);
-    }
     removeWidgetsFromLayout(m_userLayout);
     fnAddUserListW();
 }
@@ -339,7 +336,15 @@ void UserWidget::slotUserInfo(const std::map<std::string,std::string>& userInfo)
     RWDb::writeAuditTrailLog(userInfo.at("UserAccount")+"账户保存完成");
     fnWriteDB();
 }
-
+void UserWidget::closeEvent(QCloseEvent *event)
+{
+    fnWriteDB();
+    if (closeWindow()){
+        event->accept();
+    }else{
+        event->ignore();
+    }
+}
 int UserWidget::getColumnIndexByName(QTableWidget* table,const QString &columnName){
     int columnCount=table->columnCount();
     for (int i=0;i<columnCount;++i){
@@ -388,6 +393,7 @@ void UserWidget::fnWriteDB()
 {
     GlobalSingleton::instance().saveSystemInfo();
     GlobalSingleton::instance().saveUsersInfo();
+    GlobalSingleton::instance().saveUserGroupInfo();
 }
 
 UserWidget::~UserWidget()

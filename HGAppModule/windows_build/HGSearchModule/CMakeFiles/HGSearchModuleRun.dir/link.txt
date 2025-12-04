@@ -1,3 +1,0 @@
-D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HGSearchModuleRun.dir/objects.a
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HGSearchModuleRun.dir/objects.a @CMakeFiles\HGSearchModuleRun.dir\objects1.rsp
-D:\Qt\Tools\mingw1310_64\bin\c++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\HGSearchModuleRun.dir/objects.a -Wl,--no-whole-archive -o HGSearchModuleRun.exe -Wl,--out-implib,libHGSearchModuleRun.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\HGSearchModuleRun.dir\linkLibs.rsp

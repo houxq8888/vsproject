@@ -1,2 +1,0 @@
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGLogModuleStatic.a CMakeFiles/HGLogModuleStatic.dir/HGLogModuleStatic_autogen/mocs_compilation.cpp.obj CMakeFiles/HGLogModuleStatic.dir/src/hglogwidget.cpp.obj CMakeFiles/HGLogModuleStatic.dir/src/logplugindetector.cpp.obj CMakeFiles/HGLogModuleStatic.dir/inc/moc_hglogwidget.cpp.obj CMakeFiles/HGLogModuleStatic.dir/inc/moc_logplugindetector.cpp.obj
-D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGLogModuleStatic.a

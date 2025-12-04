@@ -43,23 +43,29 @@ namespace HGMACHINE{
      * @param type 摄像头类型, "USB", "IP"
      * @param name 摄像头名称
      */
-    void openCamera(const std::string &type, const std::string& name);
+    void openCamera(const std::string &type="USB", const std::string& name="video=0");
 
-cv::Mat getImgOneShotMat(const std::string &type,const std::string& name);
-std::string saveCameraTemplateMat(const cv::Mat& img, const HGRect2D& rect);
-    /**
-     * @brief 关闭摄像头
-     * @param type 摄像头类型, "USB", "IP"
-     * @param name 摄像头名称
-     */
-    void closeCamera(const std::string &type,const std::string& name);
     /**
      * @brief 获取摄像头图片
      * @param type 摄像头类型, "USB", "IP"
      * @param name 摄像头名称
      * @return 摄像头图片
      */
-    HGImg2D getImgOneShot(const std::string &type,const std::string& name);
+    cv::Mat getImgOneShotMat(const std::string &type="USB",const std::string& name="video=0");
+std::string saveCameraTemplateMat(const cv::Mat& img, const HGRect2D& rect);
+    /**
+     * @brief 关闭摄像头
+     * @param type 摄像头类型, "USB", "IP"
+     * @param name 摄像头名称
+     */
+    void closeCamera(const std::string &type="USB",const std::string& name="video=0");
+    /**
+     * @brief 获取摄像头图片
+     * @param type 摄像头类型, "USB", "IP"
+     * @param name 摄像头名称
+     * @return 摄像头图片
+     */
+    HGImg2D getImgOneShot(const std::string &type="USB",const std::string& name="video=0");
 
     /**
      * @brief 保存摄像头模板

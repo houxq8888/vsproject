@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <!-- 用户审计模块翻译配置 -->
+    <language code="zh_CN">
+        <string key="app_title">用户审计模块</string>
+        <string key="start_audit">开始审计</string>
+        <string key="stop_audit">停止审计</string>
+        <string key="audit_log">审计日志</string>
+    </language>
+    <language code="en_US">
+        <string key="app_title">User Audit Module</string>
+        <string key="start_audit">Start Audit</string>
+        <string key="stop_audit">Stop Audit</string>
+        <string key="audit_log">Audit Log</string>
+    </language>
+</translations>

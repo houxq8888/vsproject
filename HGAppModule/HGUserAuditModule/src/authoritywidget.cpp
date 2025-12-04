@@ -8,8 +8,8 @@
 
 AuthorityWidget::AuthorityWidget(std::string lang,const std::vector<std::string> &wholeAuthority,QWidget *parent) : QWidget(parent),
 m_lang(lang),
-m_setAuthorityFlag(false),
-m_whole_authority(wholeAuthority)
+m_whole_authority(wholeAuthority),
+m_setAuthorityFlag(false)
 {
     GlobalSingleton::instance().setWholeAuthority(m_whole_authority);
     std::string enterUsersManageName=GlobalSingleton::instance().getSystemInfo("enterUsersManageName");
@@ -133,10 +133,16 @@ void AuthorityWidget::fnInit()
     m_usersLayout->addWidget(m_scanAuthorityInfoBtn,3,7,2,1);
     m_usersLayout->addWidget(m_userTableW,3,0,4,5);
 }
-void AuthorityWidget::closeEvent(QCloseEvent *event) {
+void AuthorityWidget::closeEvent(QCloseEvent *event) {    
+    // 检查是否处于编辑模式，如果是则回滚未确认的修改
+    if (GlobalSingleton::instance().isAuthorityEditing()) {
+        GlobalSingleton::instance().rollbackAuthorityEdit();
+    }
+    
     fnWriteDB();
     event->accept();
 }
+
 void AuthorityWidget::clickBack(){
     if (m_curPhase==USER_AUTHORITY){
         m_usersLayout->removeWidget(m_backBtn);
@@ -165,7 +171,7 @@ void AuthorityWidget::clickBack(){
         m_removeUserBtn->show();
         m_scanAuthorityInfoBtn->show();
         m_curPhase = USER_INIT;
-        fnFillAuthorityInfo();
+        if (!m_setAuthorityFlag) fnFillAuthorityInfo();
     } else if (m_curPhase==USER_SCAN_USERS) {
         removeWidgetsFromLayout(m_usersLayout);
         m_usersLayout->addWidget(m_usersLabel,0,0);
@@ -193,6 +199,7 @@ bool AuthorityWidget::fnHasUserManageAuthority()
 }
 bool AuthorityWidget::fnHasUsersManageAuthority()
 {
+    return true;
     std::string  enterUsersManageName=GlobalSingleton::instance().getSystemInfo("enterUsersManageName");
     std::string authority=GlobalSingleton::instance().getUserAuthority(enterUsersManageName);
     std::vector<std::string> userPermission = GlobalSingleton::instance().getAuthorityDetail(authority);
@@ -247,7 +254,7 @@ void AuthorityWidget::slotScanAuthorityInfo()
     m_usersLayout->addWidget(m_usersAuthorityTableW,1,0,1,9);
     m_usersLayout->addWidget(m_selfDefineBtn,2,7);
     m_usersLayout->addWidget(m_setAuthorityBtn,2,8);
-    m_usersLayout->addWidget(m_moreInfoBtn,2,9);
+    m_usersLayout->addWidget(m_moreInfoBtn,2,10);
 
     m_backBtn->show();
     m_usersAuthorityTableW->show();
@@ -259,6 +266,7 @@ void AuthorityWidget::slotScanAuthorityInfo()
 }
 bool AuthorityWidget::closeWindow()
 {
+    // 如果处于编辑模式且有未保存的修改，询问用户是否保存
     fnWriteDB();
     return true;
 }
@@ -602,7 +610,8 @@ void AuthorityWidget::fnFillAuthorityInfo()
         }
     }
     std::string authorityName = m_usersComboBox->currentText().toStdString();
-    for (auto info : GlobalSingleton::instance().getAuthorityInfo())
+    std::vector<std::map<std::string,std::string>> authorityIfno=GlobalSingleton::instance().getAuthorityInfo();
+    for (auto info : authorityIfno)
     {
         if (info.at("GroupName") == findTranslationKey(m_lang, authorityName))
         {
@@ -642,6 +651,49 @@ void AuthorityWidget::fnFillAuthorityList()
         {
             std::vector<std::string> resultvalue = splitStr(info.at("Authority"), ':');
             resultvalue.erase(resultvalue.begin() + resultvalue.size() - 1);
+
+            // 清空所有勾选标记
+            for (int row = 1; row < m_usersAuthorityTableW->rowCount(); row++) {
+                for (int col = 0; col < m_usersAuthorityTableW->columnCount(); col++) {
+                    if (col % 2 != 0) { // 只处理勾选框列
+                        QTableWidgetItem* item = m_usersAuthorityTableW->item(row, col);
+                        if (item) {
+                            item->setText("");
+                        }
+                    }
+                }
+            }
+             // 根据权限列表设置勾选标记
+            for (int i = 0; i < int(resultvalue.size()); i++)
+            {
+                if (resultvalue[i].empty()) continue;
+                
+                bool found = false;
+                for (int row = 1; row < m_usersAuthorityTableW->rowCount(); row++)
+                {
+                    for (int col = 0; col < m_usersAuthorityTableW->columnCount(); col++)
+                    {
+                        if (col % 2 != 0) continue; // 跳过勾选框列
+                        
+                        QTableWidgetItem* item = m_usersAuthorityTableW->item(row, col);
+                        if (item && !item->text().isEmpty())
+                        {
+                            std::string itemText = findTranslationKey(m_lang, item->text().toStdString());
+                            if (itemText == resultvalue[i])
+                            {
+                                QTableWidgetItem* checkItem = m_usersAuthorityTableW->item(row, col + 1);
+                                if (checkItem) {
+                                    checkItem->setText("✔");
+                                    checkItem->setTextAlignment(Qt::AlignCenter);
+                                }
+                                found = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (found) break;
+                }
+            }
             int row = 0, col = 0;
             // else if (resultkey[1] == "Authority")
             {
@@ -711,16 +763,16 @@ void AuthorityWidget::fnResetAuthorityToEnable(){
             for (int mm=0;mm<2;mm++){
                 QTableWidgetItem *item = m_usersAuthorityTableW->item(row, col-mm);
                 std::string itemText = findTranslationKey(m_lang,m_usersAuthorityTableW->item(row,col-1)->text().toStdString());
-                if (usersType == "Auditor"){
-                    if (itemText!="ScanAuditTrailRecord")
-                        continue;
-                } else if (usersType == "SystemManager"){
+                // if (usersType == "Auditor"){
+                //     if (itemText!="ScanAuditTrailRecord")
+                //         continue;
+                // } else if (usersType == "SystemManager"){
 
-                } else if (usersType == "Manager"){
+                // } else if (usersType == "Manager"){
 
-                } else {
+                // } else {
 
-                }
+                // }
                 // recover
                 item->setFlags(item->flags() | Qt::ItemIsEditable);
                 // reset
@@ -767,10 +819,10 @@ void AuthorityWidget::fnInitAuthorityTable(){
 void AuthorityWidget::fnReadDB()
 {
     GlobalSingleton::instance().loadUserGroupInfo();
+    std::vector<std::string> userGroupNames={"SystemManager","Manager","Operator","MaintenanceStaff"};
     if (GlobalSingleton::instance().getSystemInfo("userGroupName")==""){
         GlobalSingleton::instance().setSystemInfo("userGroupName", "SystemManager:Manager:Operator:MaintenanceStaff:");
         std::map<std::string,std::string> info;
-        std::vector<std::string> userGroupNames={"SystemManager","Manager","Operator","MaintenanceStaff"};
         for (auto name:userGroupNames){
             info["GroupName"] = name;
             info["GroupPNumber"] = "0";
@@ -781,6 +833,29 @@ void AuthorityWidget::fnReadDB()
             info["LastModifier"] = "";
             info["LastModifyTime"] = "";
             GlobalSingleton::instance().addAuthorityRecord(info);
+        }
+    } else {
+        std::vector<std::map<std::string,std::string>> authorityInfo=GlobalSingleton::instance().getAuthorityInfo();
+        for (int j=0;j<int(userGroupNames.size());j++){
+            bool flag=false;
+            for (int i=0;i<int(authorityInfo.size());i++){
+                if (authorityInfo[i]["GroupName"]==userGroupNames[j]){
+                    flag=true;
+                    break;
+                }
+            }
+            if (!flag){
+                std::map<std::string,std::string> info;
+                info["GroupName"] = userGroupNames[j];
+                info["GroupPNumber"] = "0";
+                info["GroupPerson"] = "";
+                info["Authority"] = "";
+                info["Creator"] = GlobalSingleton::instance().getSystemInfo("enterUsersManageName");
+                info["CreateTime"] = getStandardCurTime();
+                info["LastModifier"] = "";
+                info["LastModifyTime"] = "";
+                GlobalSingleton::instance().addAuthorityRecord(info);
+            }
         }
     }
     std::vector<std::string> usersGroupName=splitStr(GlobalSingleton::instance().getSystemInfo("userGroupName"),':');
@@ -838,23 +913,37 @@ void AuthorityWidget::onUsersAuthorityClicked(int row, int col)
             {
                 item->setText("✔");
                 item->setTextAlignment(Qt::AlignCenter);
-                fnAddAuthorityItem(attributeName, findTranslationKey(m_lang,
+                // 在编辑模式下，使用临时编辑方法而不是直接修改数据库
+                if (GlobalSingleton::instance().isAuthorityEditing()) {
+                    GlobalSingleton::instance().addAuthorityFieldToEdit(attributeName, findTranslationKey(m_lang,
                                                                      m_usersAuthorityTableW->item(row, col - 1)->text().toStdString()));
+                } else {
+                    fnAddAuthorityItem(attributeName, findTranslationKey(m_lang,
+                                                                     m_usersAuthorityTableW->item(row, col - 1)->text().toStdString()));
+                }
             }
             else
             {
                 item->setText("");
                 // remove
-                fnRemoveAuthorityItem(attributeName, findTranslationKey(m_lang,
+                if (GlobalSingleton::instance().isAuthorityEditing()) {
+                    GlobalSingleton::instance().removeAuthorityFieldFromEdit(attributeName, findTranslationKey(m_lang,
                                                                         m_usersAuthorityTableW->item(row, col - 1)->text().toStdString()));
+                } else {
+                    fnRemoveAuthorityItem(attributeName, findTranslationKey(m_lang,
+                                                                        m_usersAuthorityTableW->item(row, col - 1)->text().toStdString()));
+                }
             }
         }
     }
 }
 void AuthorityWidget::fnWriteDB()
 {
-    GlobalSingleton::instance().saveSystemInfo();
-    GlobalSingleton::instance().saveUserGroupInfo();
+    // 仅在非编辑模式下保存数据
+    if (!GlobalSingleton::instance().isAuthorityEditing()) {
+        GlobalSingleton::instance().saveSystemInfo();
+        GlobalSingleton::instance().saveUserGroupInfo();
+    }
 }
 void AuthorityWidget::clickSelfDefine(){
     QDialog dialog(this);
@@ -864,6 +953,29 @@ void AuthorityWidget::clickSelfDefine(){
     QLabel *infoLabel = new QLabel("");
     QLineEdit *inputLineEdit = new QLineEdit();
     QPushButton *okButton = new QPushButton(QString::fromStdString(loadTranslation(m_lang, "Ok")));
+    QPushButton *delBtn = new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Delete")));
+    connect (delBtn,&QPushButton::clicked,[&](){
+        if (inputLineEdit->text().isEmpty()) return;
+        if (m_usersComboBox->findText(inputLineEdit->text())==-1){
+            infoLabel->setText(QString::fromStdString(loadTranslation(m_lang, "NameNotExisted")));
+            return;
+        } else {
+            QString delQstr = inputLineEdit->text();
+            std::string delAuthority=findTranslationKey(m_lang,inputLineEdit->text().toStdString());
+            if (delAuthority=="SystemManager"||delAuthority=="Manager"||delAuthority=="Operator"||delAuthority=="MaintenanceStaff"){
+                infoLabel->setText("预设权限分组不可删除");
+                return;
+            } else {
+                GlobalSingleton::instance().delSystemInfo("userGroupName",delAuthority+":");
+                GlobalSingleton::instance().delAuthorityRecord(delAuthority);
+                int index=m_usersComboBox->findText(delQstr);
+                if (index!=-1){
+                    m_usersComboBox->removeItem(index);
+                }
+                dialog.close();
+            }
+        }
+    });
     connect(okButton, &QPushButton::clicked, [&](){
             if (inputLineEdit->text().isEmpty()) return;
             if (m_usersComboBox->findText(inputLineEdit->text())==-1){
@@ -888,7 +1000,8 @@ void AuthorityWidget::clickSelfDefine(){
     layout->addWidget(inputLabel, 0, 0);
     layout->addWidget(inputLineEdit, 0, 1);
     layout->addWidget(okButton, 1, 0);
-    layout->addWidget(infoLabel, 1, 1);
+    layout->addWidget(delBtn, 1, 1);
+    layout->addWidget(infoLabel, 1, 2);
     dialog.setLayout(layout);
     dialog.exec();
 }
@@ -923,59 +1036,122 @@ void AuthorityWidget::clickMoreInfo(){
     m_usersLabel->setText(QString::fromStdString(ss.str()));
     m_curPhase=USER_SCAN_USERS;
 }
-void AuthorityWidget::setAuthority(){
+void AuthorityWidget::setAuthority()
+{
     m_setAuthorityFlag = !m_setAuthorityFlag;
     std::string curAuthority;
     std::vector<std::string> authorities;
-    for (auto info : GlobalSingleton::instance().getAuthorityInfo()){
-        if (info["GroupName"]==findTranslationKey(m_lang,m_usersComboBox->currentText().toStdString())){
-            curAuthority = info["Authority"];
-            authorities = splitStr(curAuthority,':');
-            break;
-        }
-    }
+
     std::ostringstream ss;
     if (m_setAuthorityFlag)
     {
+        // 开始编辑模式
+        for (auto info : GlobalSingleton::instance().getAuthorityInfo())
+        {
+            if (info["GroupName"] == findTranslationKey(m_lang, m_usersComboBox->currentText().toStdString()))
+            {
+                curAuthority = info["Authority"];
+                authorities = splitStr(curAuthority, ':');
+                break;
+            }
+        }
+
+        if (!GlobalSingleton::instance().beginAuthorityEdit())
+        {
+            // 如果开始编辑失败，保持当前状态不变
+            m_setAuthorityFlag = !m_setAuthorityFlag;
+            return;
+        }
+
         fnResetAuthorityToEnable();
-        ss << "编辑 " + m_usersComboBox->currentText().toStdString()+" 原权限:";
-        for (int i=0;i<int(authorities.size());i++){
-            ss<<loadTranslation(m_lang,authorities[i])<<",";
+        ss << "编辑 " + m_usersComboBox->currentText().toStdString() + " 原权限:";
+        for (int i = 0; i < int(authorities.size()); i++)
+        {
+            ss << loadTranslation(m_lang, authorities[i]) << ",";
         }
         RWDb::writeAuditTrailLog(ss.str());
         m_setAuthorityBtn->setText(QString::fromStdString(loadTranslation(m_lang, "Ok")));
+
         for (int row = 0; row < m_usersAuthorityTableW->rowCount(); row++)
         {
             for (int col = 0; col < m_usersAuthorityTableW->columnCount(); col++)
             {
-                QTableWidgetItem* item=m_usersAuthorityTableW->item(row,col);
+                QTableWidgetItem *item = m_usersAuthorityTableW->item(row, col);
                 if (item)
                 {
-                    if (row==0) item->setFlags(item->flags() & ~Qt::ItemIsEditable);
-                    if (col%2==0) item->setFlags(item->flags() & ~Qt::ItemIsEditable);
-                    else item->setFlags(item->flags() & Qt::ItemIsEditable);
+                    if (row == 0)
+                        item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+                    if (col % 2 == 0)
+                        item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+                    else
+                        item->setFlags(item->flags() & Qt::ItemIsEditable);
                 }
             }
         }
     }
     else
     {
-        ss << "修改 " + m_usersComboBox->currentText().toStdString()+" 的权限->";
-        for (int i=0;i<int(authorities.size());i++){
-            ss<<loadTranslation(m_lang,authorities[i])<<",";
+        curAuthority = "";
+        authorities.clear();
+        // 扫描表格中所有打勾的权限项
+        for (int row = 1; row < m_usersAuthorityTableW->rowCount(); row++) {
+            for (int col = 0; col < m_usersAuthorityTableW->columnCount(); col++) {
+                if (col % 2 == 0) continue; // 跳过权限名称列
+                
+                QTableWidgetItem* item = m_usersAuthorityTableW->item(row, col);
+                if (item && item->text() == "✔") {
+                    // 获取对应的权限名称
+                    QTableWidgetItem* authorityItem = m_usersAuthorityTableW->item(row, col-1);
+                    if (authorityItem && !authorityItem->text().isEmpty()) {
+                        std::string authorityKey = findTranslationKey(m_lang, authorityItem->text().toStdString());
+                        if (!authorityKey.empty()) {
+                            authorities.push_back(authorityKey);
+                        }
+                    }
+                }
+            }
+        }
+        // 重新构建curAuthority字符串
+        for (const auto& auth : authorities) {
+            curAuthority += auth + ":";
+        }
+        ss << "修改 " + m_usersComboBox->currentText().toStdString() + " 权限:";
+        for (int i = 0; i < int(authorities.size()); i++)
+        {
+            ss << loadTranslation(m_lang, authorities[i]) << ",";
         }
         RWDb::writeAuditTrailLog(ss.str());
-        m_setAuthorityBtn->setText(QString::fromStdString(loadTranslation(m_lang,"Set")));
-        m_usersAuthorityTableW->setEditTriggers(QAbstractItemView::NoEditTriggers);
-        fnFillAuthorityList();
+        m_setAuthorityBtn->setText(QString::fromStdString(loadTranslation(m_lang, "Set")));
+        
+        // 修复：先提交编辑并更新数据库，再刷新表格显示
+        m_usersAuthorityTableW->setEditTriggers(QAbstractItemView::NoEditTriggers);  // 再设置不可编辑
 
-        for (int mm=0;mm<int(GlobalSingleton::instance().getAuthorityInfo().size());mm++){
-            if (GlobalSingleton::instance().getAuthorityField(mm,"GroupName")==findTranslationKey(m_lang,m_usersComboBox->currentText().toStdString())){
-                GlobalSingleton::instance().setAuthorityField(mm,"Authority",curAuthority);
-                GlobalSingleton::instance().setAuthorityField(mm,"LastModifier",GlobalSingleton::instance().getSystemInfo("enterUsersManageName"));
-                GlobalSingleton::instance().setAuthorityField(mm,"LastModifyTime",getStandardCurTime());
-                break;
+        // 提交编辑模式
+        if (GlobalSingleton::instance().commitAuthorityEdit())
+        {
+            // 提交成功，更新最后修改信息
+            for (int mm = 0; mm < int(GlobalSingleton::instance().getAuthorityInfo().size()); mm++)
+            {
+                if (GlobalSingleton::instance().getAuthorityField(mm, "GroupName") == findTranslationKey(m_lang, m_usersComboBox->currentText().toStdString()))
+                {
+                    GlobalSingleton::instance().setAuthorityField(mm, "Authority", curAuthority);
+                    GlobalSingleton::instance().setAuthorityField(mm, "LastModifier", GlobalSingleton::instance().getSystemInfo("enterUsersManageName"));
+                    GlobalSingleton::instance().setAuthorityField(mm, "LastModifyTime", getStandardCurTime());
+                    break;
+                }
             }
+            // 保存权限数据到数据库
+            fnWriteDB();
+
+            // 修复：在数据库更新后，再刷新表格显示
+            fnFillAuthorityList();  
+        }
+        else
+        {
+            // 提交失败，回滚编辑模式
+            GlobalSingleton::instance().rollbackAuthorityEdit();
+            // 即使回滚，也要刷新表格显示当前状态
+            fnFillAuthorityList();
         }
     }
 }

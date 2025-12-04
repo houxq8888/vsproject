@@ -1,5 +1,6 @@
 #include "systeminfocache.h"
 #include "rwDb.h"
+#include <mutex>
 
 using namespace HGMACHINE;
 
@@ -69,6 +70,15 @@ void SystemInfoCache::addValue(const std::string& key, const std::string& value)
     std::lock_guard<std::mutex> lock(m_mutex);
     m_data[key] += value;
     m_dirty = true;
+}
+void SystemInfoCache::delValue(const std::string& key, const std::string& value){
+    std::lock_guard<std::mutex> lock(m_mutex);
+    std::string substring = value;
+    size_t pos = 0;
+    while ((pos = m_data[key].find(substring,pos))!=std::string::npos){
+        m_data[key].replace(pos,substring.length(),"");
+    }
+    m_dirty=true;
 }
 const std::string& SystemInfoCache::getValue(const std::string& key) const {
     std::lock_guard<std::mutex> lock(m_mutex);

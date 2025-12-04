@@ -50,12 +50,37 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,QWidget *paren
         qDebug()<<"capture index:"<<index++;
         m_view->setSelectROI(false);
         m_view->clearRectItem();
+        
+        // 关闭之前打开的摄像头（如果有）
+        if (!m_currentCameraType.empty() && !m_currentCameraName.empty()) {
+            closeCamera(m_currentCameraType, m_currentCameraName);
+            qDebug() << "Closed previous camera:" << QString::fromStdString(m_currentCameraType) 
+                     << "-" << QString::fromStdString(m_currentCameraName);
+        }
+        
         // 打开摄像头
-        openCamera(m_interfaceComboBox->currentText().toStdString(),m_deviceNameComboBox->currentText().toStdString());
+        std::string cameraType = m_interfaceComboBox->currentText().toStdString();
+        std::string cameraName = m_deviceNameComboBox->currentText().toStdString();
+        openCamera(cameraType, cameraName);
+        
+        // 更新当前摄像头状态
+        m_currentCameraType = cameraType;
+        m_currentCameraName = cameraName;
         
         // 获取图像
         image=getImgOneShotMat(m_interfaceComboBox->currentText().toStdString(),
             m_deviceNameComboBox->currentText().toStdString());
+
+        // 检查图像是否获取成功
+        if (image.empty()) {
+            QMessageBox::warning(this, "Warning", 
+                QString("Failed to capture image from %1 camera: %2")
+                .arg(QString::fromStdString(cameraType))
+                .arg(QString::fromStdString(cameraName)));
+            qDebug() << "Failed to capture image from camera:" << QString::fromStdString(cameraType) 
+                     << "-" << QString::fromStdString(cameraName);
+            return;
+        }
 
         QImage qimg;
         
@@ -70,7 +95,7 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,QWidget *paren
             else if (image.channels() == 3)
             {
                 // OpenCV使用BGR格式，Qt使用RGB格式，需要转换
-                qimg = QImage((const uchar *)image.data, image.cols, image.rows, image.step, QImage::Format_RGB888);
+                qimg = QImage((const uchar *)image.data, image.cols, image.rows, image.step, QImage::Format_BGR888);
             }
             else
             {
@@ -115,15 +140,31 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,QWidget *paren
         }
         QRectF selectROI=m_view->getSelectROI();
         qDebug()<<"x1:"<<selectROI.left()<<"y1:"<<selectROI.top()<<"x2:"<<selectROI.right()<<"y2:"<<selectROI.bottom();
+        
+        // 检查ROI框是否有效
+        if (selectROI.isEmpty() || selectROI.width() <= 0 || selectROI.height() <= 0) {
+            QMessageBox::warning(this,"Warning","Invalid ROI selection");
+            return;
+        }
+        
         HGRect2D roiRect(0,0,0,0);
         roiRect.x1=selectROI.left();
         roiRect.y1=selectROI.top();
         roiRect.x2=selectROI.right();
         roiRect.y2=selectROI.bottom();
+        
+        // 边界检查并调整
         if (roiRect.x1<0) roiRect.x1=0;
         if (roiRect.y1<0) roiRect.y1=0;
         if (roiRect.x2>image.cols) roiRect.x2=image.cols;
         if (roiRect.y2>image.rows) roiRect.y2=image.rows;
+        
+        // 检查调整后的ROI是否有效
+        if (roiRect.x1 >= roiRect.x2 || roiRect.y1 >= roiRect.y2) {
+            QMessageBox::warning(this,"Warning","ROI selection is outside image boundaries");
+            return;
+        }
+        
         std::string templateName=saveCameraTemplateMat(image,roiRect);
         if (templateName=="failed"){
             QMessageBox::warning(this,"Warning","Failed to save template");
@@ -133,6 +174,10 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,QWidget *paren
         // m_view->clearRectItem();
     });
     connect(m_recognizeBtn,&QPushButton::clicked,this,[=](){
+        // 清除ROI框
+        m_view->clearRectItem();
+        m_view->setSelectROI(false);
+        
         if (image.empty()){
             QMessageBox::warning(this,"Warning","No image available");
             return;
@@ -151,6 +196,7 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,QWidget *paren
             QMessageBox::warning(this,"Warning","Failed to recognize template");
             return;
         }
+        cv::imwrite("dst.jpg",matchResult.dstMat);
         cv::Mat dst;
         if (matchResult.dstMat.empty()){
             dst=cv::Mat(matchResult.dst.height,matchResult.dst.width,matchResult.dst.type,
@@ -166,13 +212,31 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,QWidget *paren
         else if (dst.channels() == 3)
         {
             // OpenCV使用BGR格式，Qt使用RGB格式，需要转换
-            qimg = QImage((const uchar *)dst.data, dst.cols, dst.rows, dst.step, QImage::Format_RGB888);
+            qimg = QImage((const uchar *)dst.data, dst.cols, dst.rows, dst.step, QImage::Format_BGR888);
         }
         else
         {
             qDebug()<<"Unsupported image format with"<<dst.channels()<<"channels";
             return;
         }
+        
+        // 将识别结果显示到图像控件
+        if (qimg.isNull()){
+            qDebug()<<"failed to create QImage from recognition result";
+            return;
+        }
+        
+        QPixmap pixmap = QPixmap::fromImage(qimg);
+        if (pixmap.isNull()){
+            qDebug()<<"failed to convert to QPixmap";
+            return;
+        }
+        
+        // 设置识别结果图像并调整视图
+        m_pix->setPixmap(pixmap);
+        m_view->fitInView(m_pix, Qt::KeepAspectRatio);
+        
+        qDebug()<<"Recognition result displayed successfully, size:"<<pixmap.size();
     });
     m_setLayout->addWidget(m_deviceNameLabel,0,0);
     m_setLayout->addWidget(m_deviceNameComboBox,0,1);
@@ -189,17 +253,36 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,QWidget *paren
     m_layout->addWidget(m_manipulateGroup,1,0);
 }
 HGCameraRecognizeWidget::~HGCameraRecognizeWidget(){
-
+    // 关闭当前打开的摄像头（如果有）
+    if (!m_currentCameraType.empty() && !m_currentCameraName.empty()) {
+        closeCamera(m_currentCameraType, m_currentCameraName);
+        qDebug() << "Closed camera in destructor:" << QString::fromStdString(m_currentCameraType) 
+                 << "-" << QString::fromStdString(m_currentCameraName);
+    }
 }
 bool HGCameraRecognizeWidget::closeWindow(){
     return true;
 }
 void HGCameraRecognizeWidget::fnChangeParam(){
+    // 关闭当前打开的摄像头（如果有）
+    if (!m_currentCameraType.empty() && !m_currentCameraName.empty()) {
+        closeCamera(m_currentCameraType, m_currentCameraName);
+        qDebug() << "Closed previous camera:" << QString::fromStdString(m_currentCameraType) 
+                 << "-" << QString::fromStdString(m_currentCameraName);
+    }
+    
     m_deviceNameComboBox->clear();
     std::vector<std::string> listCameras=getCameraList(m_interfaceComboBox->currentText().toStdString());
     for (auto item:listCameras){
         m_deviceNameComboBox->addItem(QString::fromStdString(item));
     }
+    
+    // 重置当前摄像头状态
+    m_currentCameraType = "";
+    m_currentCameraName = "";
+    
+    qDebug() << "Interface changed to:" << m_interfaceComboBox->currentText() 
+             << "Available cameras:" << listCameras.size();
 }
 bool HGCameraRecognizeWidget::eventFilter(QObject* obj,QEvent* event){
     return QObject::eventFilter(obj,event);

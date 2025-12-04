@@ -88,6 +88,7 @@ private:
     std::string m_lang;
     bool m_setAuthorityFlag;
     int m_curPhase;
+    
 };
 
 #endif // AUTHORITYWIDGET_H

@@ -36,6 +36,9 @@ private slots:
 private:
     void fnInit();
 
+protected:
+    // 重载closeEvent函数
+    void closeEvent(QCloseEvent *event);
 private:
     std::vector<std::string> m_whole_authority;
     QGridLayout *m_layout;

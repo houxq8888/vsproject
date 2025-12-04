@@ -336,6 +336,7 @@ HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/main.cpp.obj: D:/virtualMa
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cpp_type_traits.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_forced.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_init_exception.h \
+  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception.h \
@@ -387,6 +388,7 @@ HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/main.cpp.obj: D:/virtualMa
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algobase.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_construct.h \
+  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_function.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_heap.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_iterator.h \
@@ -398,6 +400,7 @@ HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/main.cpp.obj: D:/virtualMa
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_numeric.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_pair.h \
+  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_raw_storage_iter.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_relops.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
@@ -422,11 +425,13 @@ HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/main.cpp.obj: D:/virtualMa
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cassert \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cctype \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cerrno \
+  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cfloat \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/chrono \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/climits \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/clocale \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/compare \
+  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/complex \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstddef \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdint \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdio \
@@ -437,6 +442,7 @@ HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/main.cpp.obj: D:/virtualMa
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwctype \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/debug.h \
+  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/exception \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/alloc_traits.h \
@@ -458,6 +464,7 @@ HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/main.cpp.obj: D:/virtualMa
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/list \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/locale \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
+  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/math.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/memory \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/new \
@@ -469,6 +476,7 @@ HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/main.cpp.obj: D:/virtualMa
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_memory_defs.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_numeric_defs.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/pstl_config.h \
+  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/queue \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
@@ -523,6 +531,7 @@ HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/main.cpp.obj: D:/virtualMa
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/emmintrin.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/enqcmdintrin.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/f16cintrin.h \
+  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/float.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/fma4intrin.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/fmaintrin.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/fxsrintrin.h \
@@ -615,6 +624,7 @@ HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/main.cpp.obj: D:/virtualMa
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/excpt.h \
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/fibersapi.h \
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/fileapi.h \
+  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/float.h \
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/fltwinerror.h \
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/guiddef.h \
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/handleapi.h \
@@ -807,6 +817,105 @@ HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/main.cpp.obj: D:/virtualMa
   D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_streams.h \
   D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_types.h \
   D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_version.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/calib3d.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/affine.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/async.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/base.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/bufferpool.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/check.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cuda.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cuda.inl.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cuda_types.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cv_cpu_dispatch.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvdef.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvstd.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvstd.inl.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvstd_wrapper.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/fast_math.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/hal/interface.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/mat.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/mat.inl.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/matx.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/neon_utils.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/operations.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/optim.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/ovx.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/persistence.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/saturate.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/traits.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/types.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/utility.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/version.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/vsx_utils.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dict.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dnn.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dnn.inl.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/layer.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/utils/inference_engine.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/version.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/features2d.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/all_indices.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/allocator.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/any.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/autotuned_index.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/composite_index.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/config.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/defines.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/dist.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/dynamic_bitset.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/flann_base.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/general.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/ground_truth.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/heap.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/hierarchical_clustering_index.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/index_testing.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/kdtree_index.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/kdtree_single_index.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/kmeans_index.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/linear_index.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/logger.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/lsh_index.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/lsh_table.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/matrix.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/miniflann.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/nn_index.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/params.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/random.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/result_set.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/sampling.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/saving.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/timer.h \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/highgui.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/imgcodecs.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/imgproc.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/imgproc/segmentation.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/ml.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/ml/ml.inl.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/objdetect.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/objdetect/detection_based_tracker.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/objdetect/face.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/opencv.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/opencv_modules.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/photo.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/blenders.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/camera.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/exposure_compensate.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/matchers.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/motion_estimators.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/seam_finders.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/util.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/util_inl.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/warpers.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/warpers_inl.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/warpers.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/video.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/video/background_segm.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/video/tracking.hpp \
+  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/videoio.hpp \
   D:/virtualMachine/github/vsproject/3rdparty/include/sqlcipher/sqlite3.h \
   D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/authorityinfocache.h \
   D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/basewidget.h \
@@ -879,6 +988,8 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtGui/qinputmethod.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvstd_wrapper.hpp:
+
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/QVBoxLayout:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h:
@@ -903,9 +1014,13 @@ D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule/version.h.in:
 
 D:/Qt/6.9.1/mingw_64/include/QtGui/qscreen.h:
 
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h:
+
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/processtopologyapi.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qstringfwd.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/saturate.hpp:
 
 D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_objects.h:
 
@@ -918,6 +1033,8 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/qnativeinterface.h:
 D:/Qt/6.9.1/mingw_64/include/QtCore/qminmax.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGroupBox:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/opencv_modules.hpp:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/q20type_traits.h:
 
@@ -972,6 +1089,8 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/memo
 D:/Qt/6.9.1/mingw_64/include/QtCore/QString:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qflags.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/bufferpool.hpp:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/QTimer:
 
@@ -1035,6 +1154,8 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/ml/ml.inl.hpp:
+
 D:/Qt/6.9.1/mingw_64/include/QtCore/qarraydataops.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/naptypes.h:
@@ -1046,6 +1167,8 @@ D:/Qt/6.9.1/mingw_64/include/QtWidgets/qlayout.h:
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/securityappcontainer.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qassert.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/layer.hpp:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qfloat16.h:
 
@@ -1072,6 +1195,8 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/qiodevicebase.h:
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winscard.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qcompare.h:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cfloat:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/fibersapi.h:
 
@@ -1106,6 +1231,8 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostr
 D:/Qt/6.9.1/mingw_64/include/QtCore/qcomparehelpers.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qcompilerdetection.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/camera.hpp:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qforeach.h:
 
@@ -1147,6 +1274,8 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/qsysinfo.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qdeadlinetimer.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/saving.h:
+
 D:/Qt/6.9.1/mingw_64/include/QtCore/qelapsedtimer.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qexceptionhandling.h:
@@ -1172,6 +1301,8 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/qglobalstatic.h:
 D:/Qt/6.9.1/mingw_64/include/QtCore/qhash.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/riemann_zeta.tcc:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/lsh_index.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/playsoundapi.h:
 
@@ -1225,6 +1356,8 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/qmath.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/QTableWidget:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cuda.hpp:
+
 D:/Qt/6.9.1/mingw_64/include/QtCore/qmetacontainer.h:
 
 D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:
@@ -1232,6 +1365,8 @@ D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:
 D:/Qt/6.9.1/mingw_64/include/QtCore/qmetatype.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/qlayoutitem.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/imgcodecs.hpp:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winuser.h:
 
@@ -1325,11 +1460,11 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/psdk_inc/_ip_types.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qspan.h:
 
-D:/Qt/6.9.1/mingw_64/include/QtCore/qstdlibdetection.h:
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h:
 
-D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string:
+D:/Qt/6.9.1/mingw_64/include/QtCore/qstdlibdetection.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qstring.h:
 
@@ -1365,6 +1500,8 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/qstringtokenizer.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/flann_base.hpp:
+
 D:/Qt/6.9.1/mingw_64/include/QtCore/qstringview.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/f16cintrin.h:
@@ -1379,8 +1516,6 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/qsystemdetection.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qtmetamacros.h:
 
-D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/cldemoteintrin.h:
-
 D:/Qt/6.9.1/mingw_64/include/QtCore/qtaggedpointer.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qtconfiginclude.h:
@@ -1388,6 +1523,8 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/qtconfiginclude.h:
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qtconfigmacros.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dnn.hpp:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qtcore-config.h:
 
@@ -1419,6 +1556,8 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/modif
 
 D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/operations.hpp:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/raointintrin.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qtimer.h:
@@ -1435,6 +1574,12 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/variant:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/char_traits.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/util.hpp:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/heap.h:
+
 D:/Qt/6.9.1/mingw_64/include/QtCore/qttypetraits.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h:
@@ -1448,6 +1593,8 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/qtypeinfo.h:
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/QTabWidget:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qtypes.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/objdetect.hpp:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/rpc.h:
 
@@ -1464,6 +1611,8 @@ D:/Qt/6.9.1/mingw_64/include/QtWidgets/QTableWidgetItem:
 D:/Qt/6.9.1/mingw_64/include/QtCore/qvariant.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtGui/qpixelformat.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cuda_types.hpp:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h:
 
@@ -1489,9 +1638,13 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/qyieldcpu.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avxvnniint8intrin.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/logger.h:
+
 D:/Qt/6.9.1/mingw_64/include/QtGui/QPainter:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_map.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/check.hpp:
 
 D:/Qt/6.9.1/mingw_64/include/QtGui/QPixmap:
 
@@ -1512,6 +1665,8 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/swprintf.inl:
 D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtGui/qfont.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/any.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/rpcsal.h:
 
@@ -1552,6 +1707,8 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector:
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/tmmintrin.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtGui/qpicture.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/hierarchical_clustering_index.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/pthread_time.h:
 
@@ -1602,6 +1759,8 @@ D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs_win.h:
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/concept_check.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/QApplication:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvdef.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/QComboBox:
 
@@ -1657,6 +1816,8 @@ D:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avx512bwintrin.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/features2d.hpp:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/prfchiintrin.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractitemview.h:
@@ -1667,19 +1828,27 @@ D:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractspinbox.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/amxbf16intrin.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/vsx_utils.hpp:
+
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/qapplication.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/qboxlayout.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/dist.h:
+
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/qcombobox.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_construct.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvstd.inl.hpp:
+
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/qformlayout.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtablewidget.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/optim.hpp:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avx512fp16vlintrin.h:
 
@@ -1785,9 +1954,15 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avx512bf16vli
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avx512cdintrin.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/exposure_compensate.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/traits.hpp:
+
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sec_api/string_s.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avx512dqintrin.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cv_cpu_dispatch.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h:
 
@@ -1795,11 +1970,15 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/pstl
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avx512erintrin.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/composite_index.h:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avx512fintrin.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mmintrin.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avx512fp16intrin.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/matchers.hpp:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avx512ifmavlintrin.h:
 
@@ -1845,6 +2024,10 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avxifmaintrin
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/refwrap.h:
 
+D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule/inc/hgsystemsetwidget.h:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/complex:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avxvnniintrin.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_raw_storage_iter.h:
@@ -1881,9 +2064,9 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/ctype.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocated_ptr.h:
 
-D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocator.h:
-
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/cetintrin.h:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocator.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.h:
 
@@ -1899,6 +2082,8 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/oleauto.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/codecvt.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/autotuned_index.h:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cpp_type_traits.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_forced.h:
@@ -1906,6 +2091,8 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxa
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functexcept.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_init_exception.h:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/rpcnterr.h:
 
@@ -1938,6 +2125,8 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/loca
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_classes.tcc:
 
 D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/utils/inference_engine.hpp:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xsavecintrin.h:
 
@@ -1985,6 +2174,8 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_mutex.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cuda.inl.hpp:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/functional:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_function.h:
@@ -1995,15 +2186,15 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/propidl.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multimap.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dict.hpp:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core.hpp:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_numeric.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_pair.h:
-
-D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/fmaintrin.h:
-
-D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/gthr.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_relops.h:
 
@@ -2037,6 +2228,14 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/util
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator_args.h:
 
+D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule/inc/hgdeviceinfowidget.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/async.hpp:
+
+D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/_timeval.h:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/queue:
+
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/psdk_inc/intrin-impl.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cassert:
@@ -2055,6 +2254,12 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwchar:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h:
 
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/prfchwintrin.h:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/poly_laguerre.tcc:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h:
@@ -2069,6 +2274,8 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stdlib.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/type_traits.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/fast_math.hpp:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream:
@@ -2076,6 +2283,8 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream:
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/math.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set:
 
@@ -2109,10 +2318,6 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/hyper
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/poly_hermite.tcc:
 
-D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/prfchwintrin.h:
-
-D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/poly_laguerre.tcc:
-
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/special_function_util.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h:
@@ -2135,11 +2340,17 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w6
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h:
 
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/fmaintrin.h:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/gthr.h:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xtestintrin.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/time_members.h:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/cldemoteintrin.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/clzerointrin.h:
 
@@ -2152,6 +2363,8 @@ D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_gstate.h:
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/enqcmdintrin.h:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/float.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/hresetintrin.h:
 
@@ -2181,6 +2394,8 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/dlgs.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mwaitxintrin.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/random.h:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/pconfigintrin.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/pkuintrin.h:
@@ -2207,13 +2422,19 @@ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xmmintrin.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/sgxintrin.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/opencv.hpp:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/shaintrin.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/smmintrin.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdbool.h:
 
+D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/float.h:
+
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/mat.hpp:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/tbmintrin.h:
 
@@ -2253,10 +2474,6 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/_mingw_stat64.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/_mingw_unicode.h:
 
-D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule/inc/hgdeviceinfowidget.h:
-
-D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/_timeval.h:
-
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/apiset.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/apisetcconv.h:
@@ -2283,6 +2500,8 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/pthread.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/corecrt_wstdlib.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/lsh_table.h:
+
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/datetimeapi.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/dde.h:
@@ -2294,6 +2513,8 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/ddeml.h:
 D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_encrypt.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/debugapi.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/ground_truth.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/dpapi.h:
 
@@ -2367,11 +2588,15 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/objbase.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/objidlbase.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvstd.hpp:
+
 D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_image.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/ocidl.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/ole2.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/util_inl.hpp:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/oleidl.h:
 
@@ -2463,11 +2688,15 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/utilapiset.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/version.hpp:
+
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winapifamily.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wincrypt.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winerror.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/base.hpp:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wingdi.h:
 
@@ -2476,6 +2705,8 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winnetwk.h:
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winnls.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winnt.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn.hpp:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winsmcrd.h:
 
@@ -2507,7 +2738,11 @@ D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_catalog.h:
 
 D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_config.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/persistence.hpp:
+
 D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_consts.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching.hpp:
 
 D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_doc.h:
 
@@ -2523,7 +2758,103 @@ D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_streams.h:
 
 D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_version.h:
 
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/calib3d.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/affine.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/hal/interface.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/mat.inl.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/version.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/matx.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/neon_utils.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/ovx.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/types.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/utility.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dnn.inl.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/all_indices.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/allocator.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/config.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/defines.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/dynamic_bitset.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/general.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/index_testing.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/kdtree_index.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/kdtree_single_index.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/kmeans_index.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/linear_index.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/matrix.h:
+
+D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/miniflann.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/nn_index.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/params.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/result_set.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/sampling.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/timer.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/highgui.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/imgproc.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/imgproc/segmentation.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/ml.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/objdetect/detection_based_tracker.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/objdetect/face.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/photo.hpp:
+
 D:/virtualMachine/github/vsproject/3rdparty/include/sqlcipher/sqlite3.h:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/blenders.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/motion_estimators.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/seam_finders.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/warpers.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/warpers_inl.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/warpers.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/video.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/video/background_segm.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/video/tracking.hpp:
+
+D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/videoio.hpp:
 
 D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/basewidget.h:
 
@@ -2537,8 +2868,6 @@ D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule/inc/dateandtime
 
 D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule/inc/displayandlightwidget.h:
 
-D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule/inc/hgsystemsetwidget.h:
-
 D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule/inc/myToolBox.h:
 
 D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule/inc/networkwidget.h:
@@ -2550,8 +2879,6 @@ D:/virtualMachine/github/vsproject/services/HGAtomService/HGSecurityService/inc/
 D:/virtualMachine/github/vsproject/services/HGAtomService/HGSecurityService/inc/hgsecurity.h:
 
 D:/virtualMachine/github/vsproject/services/HGCommon/inc/hgcommonutility.h:
-
-D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h:
 
 D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgtxt.h:
 

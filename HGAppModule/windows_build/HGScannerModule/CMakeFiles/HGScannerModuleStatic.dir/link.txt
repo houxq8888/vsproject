@@ -1,2 +1,0 @@
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGScannerModuleStatic.a CMakeFiles/HGScannerModuleStatic.dir/HGScannerModuleStatic_autogen/mocs_compilation.cpp.obj CMakeFiles/HGScannerModuleStatic.dir/src/scannerinputlineedit.cpp.obj CMakeFiles/HGScannerModuleStatic.dir/src/scannerwidget.cpp.obj CMakeFiles/HGScannerModuleStatic.dir/inc/moc_scannerinputlineedit.cpp.obj CMakeFiles/HGScannerModuleStatic.dir/inc/moc_scannerwidget.cpp.obj
-D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGScannerModuleStatic.a

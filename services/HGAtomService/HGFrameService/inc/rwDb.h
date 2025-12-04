@@ -751,7 +751,7 @@ namespace HGMACHINE{
             static std::vector<std::map<std::string,std::string>> readUserGroupInfo();
             static void writeUserInfo(const std::map<std::string,std::string> &infoS);
             static void writeUserGroupInfo(const std::map<std::string,std::string> &infoS);
-
+            static void deleteUserGroupInfo(const std::string &value);
 
             //-------------------------audit log -----------------------------//
             static std::vector<std::map<std::string,std::string>> readAuditTrailLog(const std::string &tableName="");

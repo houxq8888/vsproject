@@ -42,11 +42,21 @@ bool UserListWidget::closeWindow()
     bool result = true;
     if (m_userW){
         result &= m_userW->closeWindow();
+        SAFE_DELETE(m_userW);
     }
     if (m_authorityW){
         result &= m_authorityW->closeWindow();
+        SAFE_DELETE(m_authorityW);
     }
     return result;
+}
+void UserListWidget::closeEvent(QCloseEvent *event)
+{
+    if (closeWindow()){
+        event->accept();
+    }else{
+        event->ignore();
+    }
 }
 void UserListWidget::clickBack()
 {

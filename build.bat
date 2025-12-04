@@ -79,7 +79,7 @@ echo ========================================
 
 :: Configure CMake
 echo Configuring CMake...
-"%QT_PATH%\bin\cmake.exe" ^
+"D:\Qt\Tools\CMake_64\bin\cmake.exe" ^
     -G "MinGW Makefiles" ^
     -DCMAKE_PREFIX_PATH="%QT_PATH%" ^
     -DCMAKE_C_COMPILER="%MINGW_PATH%\bin\gcc.exe" ^
@@ -87,7 +87,7 @@ echo Configuring CMake...
     -DCMAKE_BUILD_TYPE=Release ^
     -DHG_PROJECT_ROOT_FS="d:\virtualMachine\github\vsproject" ^
     -DPLATFORM="win32" ^
-    "%SOURCE_DIR%\.." 2>&1 | tee build_log.txt
+    "%SOURCE_DIR%\.." > build_log.txt 2>&1
 
 if %errorlevel% neq 0 (
     echo CMake configuration failed!
@@ -98,7 +98,7 @@ if %errorlevel% neq 0 (
 
 :: Build project
 echo Building project...
-"%MINGW_PATH%\bin\mingw32-make.exe" -j4 2>&1 | tee -a build_log.txt
+"%MINGW_PATH%\bin\mingw32-make.exe" -j4 >> build_log.txt 2>&1
 
 if %errorlevel% neq 0 (
     echo Build failed!

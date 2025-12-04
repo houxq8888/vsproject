@@ -72,7 +72,7 @@ pluginInterface/PluginInterfaceStatic_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bi
 pluginInterface/PluginInterfaceStatic_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bin/uic.exe
 pluginInterface/PluginInterfaceStatic_autogen/timestamp: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target PluginInterfaceStatic"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/AutogenInfo.json Release
+	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/AutogenInfo.json Debug
 	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/timestamp
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/flags.make

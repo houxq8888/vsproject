@@ -1,6 +1,7 @@
 #include "rwDb.h"
 #include "HGExactTime.h"
 #include <iomanip>
+#include <memory>
 #include <sstream>
 #include "hgcommonutility.h"
 #include "config.h"
@@ -712,6 +713,9 @@ std::string RWDb::getTaskRunRecordDataDB(){
     void RWDb::writeUserGroupInfo(const std::map<std::string,std::string> &infoS){
         dbOpera.writeRecord(USERGROUPDBNAME, "GroupName",infoS);
         dbOpera.sortTable(USERGROUPDBNAME,"GroupName");
+    }
+    void RWDb::deleteUserGroupInfo(const std::string &value){
+        dbOpera.deleteRecord(USERGROUPDBNAME,"GroupName",value);
     }
     std::string RWDb::getLastLoginTime()
     {

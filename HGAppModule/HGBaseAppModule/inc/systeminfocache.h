@@ -12,6 +12,7 @@ public:
     void save();
     void setValue(const std::string &key, const std::string &value);
     void addValue(const std::string &key, const std::string &value);
+    void delValue(const std::string &key, const std::string &value);
     const std::string &getValue(const std::string &key) const;
 
 private:

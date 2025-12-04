@@ -47,7 +47,9 @@ void GlobalSingleton::setSystemInfo(const std::string &key, const std::string &v
 void GlobalSingleton::addSystemInfo(const std::string &key, const std::string &value){
     m_systemInfo.addValue(key,value);
 }
-
+void GlobalSingleton::delSystemInfo(const std::string &key, const std::string &value){
+    m_systemInfo.delValue(key,value);
+}
 
 void GlobalSingleton::loadDataChartInfo(){
     m_dataChartInfo.load();
@@ -95,11 +97,31 @@ void GlobalSingleton::addAuthorityField(int index, const std::string &fieldName,
 void GlobalSingleton::addAuthorityRecord(const std::map<std::string,std::string> &info){
     m_authorityInfo.addRecord(info);
 }
+void GlobalSingleton::delAuthorityRecord(const std::string& value){
+    m_authorityInfo.delRecord(value);
+}
 std::vector<std::string> GlobalSingleton::getWholeAuthority(){
     return m_authorityInfo.getWholeAuthority();
 }
 void GlobalSingleton::setWholeAuthority(const std::vector<std::string> &authority){
     m_authorityInfo.setWholeAuthority(authority);
+}
+
+// 新增临时数据管理方法实现
+bool GlobalSingleton::beginAuthorityEdit(){
+    return m_authorityInfo.beginEdit();
+}
+
+bool GlobalSingleton::commitAuthorityEdit(){
+    return m_authorityInfo.commitEdit();
+}
+
+bool GlobalSingleton::rollbackAuthorityEdit(){
+    return m_authorityInfo.rollbackEdit();
+}
+
+bool GlobalSingleton::isAuthorityEditing(){
+    return m_authorityInfo.isEditing();
 }
 void GlobalSingleton::loadUsersInfo(){
     m_usersInfo.load();
@@ -139,5 +161,56 @@ std::string GlobalSingleton::getUserField(int index, const std::string& fieldNam
 }
 void GlobalSingleton::addUserRecord(const std::map<std::string,std::string> &info){
     m_usersInfo.addRecord(info);
+}
+
+void GlobalSingleton::addAuthorityFieldToEdit(const std::string& authorityName, const std::string& fieldValue) {
+    // 在编辑模式下，将权限字段添加到临时编辑缓冲区
+    if (isAuthorityEditing()) {
+        // 查找对应的权限组
+        auto authorityInfo = getAuthorityInfo();
+        for (int i = 0; i < authorityInfo.size(); i++) {
+            if (authorityInfo[i].at("GroupName") == authorityName) {
+                // 直接添加到临时编辑缓冲区
+                m_authorityInfo.addFieldValueToEdit(i, "Authority", fieldValue);
+                break;
+            }
+        }
+    }
+}
+
+void GlobalSingleton::removeAuthorityFieldFromEdit(const std::string& authorityName, const std::string& fieldValue) {
+    // 在编辑模式下，从临时编辑缓冲区移除权限字段
+    if (isAuthorityEditing()) {
+        // 查找对应的权限组
+        auto authorityInfo = getAuthorityInfo();
+        for (int i = 0; i < authorityInfo.size(); i++) {
+            if (authorityInfo[i].at("GroupName") == authorityName) {
+                // 获取临时数据中的当前权限列表
+                std::string currentAuthority = m_authorityInfo.getField(i, "Authority");
+                std::vector<std::string> authorities = splitStr(currentAuthority, ':');
+                
+                // 从权限列表中移除指定的权限
+                std::vector<std::string> newAuthorities;
+                for (const auto& auth : authorities) {
+                    if (auth != fieldValue && !auth.empty()) {
+                        newAuthorities.push_back(auth);
+                    }
+                }
+                
+                // 重新构建权限字符串
+                std::string newAuthority = "";
+                for (const auto& auth : newAuthorities) {
+                    if (!newAuthority.empty()) {
+                        newAuthority += ":";
+                    }
+                    newAuthority += auth;
+                }
+                
+                // 更新临时编辑缓冲区
+                m_authorityInfo.setFieldToEdit(i, "Authority", newAuthority);
+                break;
+            }
+        }
+    }
 }
 

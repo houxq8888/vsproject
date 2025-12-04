@@ -1,2 +1,0 @@
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGEBalanceModuleStatic.a CMakeFiles/HGEBalanceModuleStatic.dir/HGEBalanceModuleStatic_autogen/mocs_compilation.cpp.obj CMakeFiles/HGEBalanceModuleStatic.dir/src/ebalanceplugindetector.cpp.obj CMakeFiles/HGEBalanceModuleStatic.dir/src/hgebalancewidget.cpp.obj CMakeFiles/HGEBalanceModuleStatic.dir/inc/moc_ebalanceplugindetector.cpp.obj CMakeFiles/HGEBalanceModuleStatic.dir/inc/moc_hgebalancewidget.cpp.obj
-D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGEBalanceModuleStatic.a

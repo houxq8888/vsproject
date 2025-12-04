@@ -219,10 +219,12 @@ void UserInfoEditWidget::fnInit()
     m_markLabel8=new QLabel("*");
     m_markLabel8->setStyleSheet("color:red");
 
+    QIntValidator *intValidator = new QIntValidator(1, 999, this);
     m_userAccountEdit=new QLineEdit();
     m_userAccountEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
     connect(m_userAccountEdit,&QLineEdit::editingFinished,this,&UserInfoEditWidget::onUserNoEditChanged);
     m_passwdInputLimitCountEdit=new QLineEdit();
+    m_passwdInputLimitCountEdit->setValidator(intValidator);
     m_passwdInputLimitCountEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
     m_userNoEdit=new QLineEdit();
     m_userNoEdit->installEventFilter(this);
@@ -234,6 +236,7 @@ void UserInfoEditWidget::fnInit()
     connect(m_passwdEdit,&QLineEdit::editingFinished,this,&UserInfoEditWidget::onPasswdEditChanged);
     m_passwdEdit->setEchoMode(QLineEdit::PasswordEchoOnEdit);
     m_passwdCycleEdit=new QLineEdit();
+    m_passwdCycleEdit->setValidator(intValidator);
     m_passwdCycleEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
     m_userNameEdit=new QLineEdit();
     m_userNameEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
@@ -513,12 +516,12 @@ void UserInfoEditWidget::slotOk()
     // userInfoMap["Authority"]=findTranslationKey(m_lang,m_authorityCombo->currentText().toStdString());
     userInfoMap["AccountManagement"]=findTranslationKey(m_lang,m_accountManageCombo->currentText().toStdString());
     userInfoMap["UserDescription"]=m_userDescriptionEdit->toPlainText().toStdString();
-    // if (findTranslationKey(m_lang, m_markLabel1->text().toStdString()) == "weak"){
-    //     QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-    //         "强制使用中强密码");
-    //     m_passwdEdit->setFocus();
-    //     return;
-    // }
+    if (findTranslationKey(m_lang, m_markLabel1->text().toStdString()) == "weak"){
+        QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
+            "强制使用中强密码");
+        m_passwdEdit->setFocus();
+        return;
+    }
     switch (m_type){
         case USER_CREATE:
         {

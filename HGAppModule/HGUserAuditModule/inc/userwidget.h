@@ -40,6 +40,9 @@ private slots:
     void returnToList();
     void slotUpdateAuthority();
 
+protected:
+    // 重载closeEvent函数
+    void closeEvent(QCloseEvent *event);
 private:
     void fnAddUserListW();
     void fnWriteDB();

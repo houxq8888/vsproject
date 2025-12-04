@@ -33,10 +33,26 @@ int main(int argc, char *argv[]){
         saveConfig();
 
         std::vector<std::string> names={
-            "UserManage",
-            "UsersManage",
-            "SpectralData",
-            "DeviceStatus"
+            "SampleDetection",
+            "SampleEditing",
+            "ManualControl",
+            "CreateMethod",
+            "RectifyMethod",
+            "CopyMethod",
+            "DeleteMethod",
+            "DeviceManage",
+            "Recalculation",
+            "ReportEditing",
+            "PrintFunction",
+            "RecordOutput",
+            "UserManage(Manager)",
+            "UserManage(Users)",
+            "AuthorityManage",
+            "AuditTrail",
+            "TimeSetting",
+            "DeviceInfo",
+            "ScanAuditTrailRecord",
+            "SampleStatisticsSettings"
         };
         AuthorityWidget w("zh",names);
         w.show();

@@ -1,6 +1,0 @@
-CameraRecognizeModule_autogen/timestamp: \
-	D:/virtualMachine/github/vsproject/HGAppModule/HGCameraRecognizeModule/CMakeLists.txt \
-	D:/virtualMachine/github/vsproject/HGAppModule/HGCameraRecognizeModule/src/camerarecognizeplugindetector.cpp \
-	D:/virtualMachine/github/vsproject/HGAppModule/HGCameraRecognizeModule/src/hgcamerarecognizewidget.cpp \
-	D:/virtualMachine/github/vsproject/HGAppModule/HGCameraRecognizeModule/version.h.in \
-	D:/Qt/Tools/CMake_64/bin/cmake.exe

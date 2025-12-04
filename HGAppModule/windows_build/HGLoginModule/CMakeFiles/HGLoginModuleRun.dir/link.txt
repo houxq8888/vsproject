@@ -1,3 +1,0 @@
-D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HGLoginModuleRun.dir/objects.a
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HGLoginModuleRun.dir/objects.a @CMakeFiles\HGLoginModuleRun.dir\objects1.rsp
-D:\Qt\Tools\mingw1310_64\bin\c++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\HGLoginModuleRun.dir/objects.a -Wl,--no-whole-archive -o HGLoginModuleRun.exe -Wl,--out-implib,libHGLoginModuleRun.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\HGLoginModuleRun.dir\linkLibs.rsp

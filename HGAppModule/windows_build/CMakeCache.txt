@@ -18,16 +18,10 @@
 BUILD_EXECUTABLE:BOOL=ON
 
 //No help, variable specified on the command line.
-BUILD_HGAPPMODULE_ONLY:UNINITIALIZED=ON
-
-//No help, variable specified on the command line.
-BUILD_HGBASEAPPMODULE_ONLY:UNINITIALIZED=ON
-
-//No help, variable specified on the command line.
 BUILD_HGBASEAPP_EXECUTABLE:UNINITIALIZED=OFF
 
 //No help, variable specified on the command line.
-BUILD_HGCAMERARECOGNIZEMODULE_ONLY:UNINITIALIZED=ON
+BUILD_HGUSERAUDITMODULE_ONLY:UNINITIALIZED=ON
 
 //要编译的模块列表（空格分隔）
 BUILD_MODULES:STRING=
@@ -46,7 +40,7 @@ CMAKE_AR:FILEPATH=D:/Qt/Tools/mingw1310_64/bin/ar.exe
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=Release
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -330,15 +324,6 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-HGAnalysisRecordModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGAnalysisRecordModule
-
-//Value Computed by CMake
-HGAnalysisRecordModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGAnalysisRecordModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGAnalysisRecordModule
-
-//Value Computed by CMake
 HGAppModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build
 
 //Value Computed by CMake
@@ -346,150 +331,6 @@ HGAppModule_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 HGAppModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule
-
-//Value Computed by CMake
-HGCameraRecognizeModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGCameraRecognizeModule
-
-//Value Computed by CMake
-HGCameraRecognizeModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGCameraRecognizeModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGCameraRecognizeModule
-
-//Value Computed by CMake
-HGChannelModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGChannelModule
-
-//Value Computed by CMake
-HGChannelModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGChannelModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGChannelModule
-
-//Value Computed by CMake
-HGCurveModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGCurveModule
-
-//Value Computed by CMake
-HGCurveModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGCurveModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGCurveModule
-
-//Value Computed by CMake
-HGEBalanceModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGEBalanceModule
-
-//Value Computed by CMake
-HGEBalanceModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGEBalanceModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGEBalanceModule
-
-//Value Computed by CMake
-HGExceptionHandleModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGExceptionHandleModule
-
-//Value Computed by CMake
-HGExceptionHandleModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGExceptionHandleModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGExceptionHandleModule
-
-//Value Computed by CMake
-HGFlowModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGFlowModule
-
-//Value Computed by CMake
-HGFlowModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGFlowModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGFlowModule
-
-//Value Computed by CMake
-HGLogModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGLogModule
-
-//Value Computed by CMake
-HGLogModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGLogModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGLogModule
-
-//Value Computed by CMake
-HGLoginModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGLoginModule
-
-//Value Computed by CMake
-HGLoginModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGLoginModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGLoginModule
-
-//Value Computed by CMake
-HGMethodModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGMethodModule
-
-//Value Computed by CMake
-HGMethodModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGMethodModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGMethodModule
-
-//Value Computed by CMake
-HGPrintModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGPrintModule
-
-//Value Computed by CMake
-HGPrintModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGPrintModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGPrintModule
-
-//Value Computed by CMake
-HGReagentModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGReagentModule
-
-//Value Computed by CMake
-HGReagentModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGReagentModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGReagentModule
-
-//Value Computed by CMake
-HGScannerModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGScannerModule
-
-//Value Computed by CMake
-HGScannerModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGScannerModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGScannerModule
-
-//Value Computed by CMake
-HGSearchModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGSearchModule
-
-//Value Computed by CMake
-HGSearchModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGSearchModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule
-
-//Value Computed by CMake
-HGSharedFileModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGSharedFileModule
-
-//Value Computed by CMake
-HGSharedFileModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGSharedFileModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGSharedFileModule
-
-//Value Computed by CMake
-HGTaskModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGTaskModule
-
-//Value Computed by CMake
-HGTaskModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGTaskModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGTaskModule
-
-//Value Computed by CMake
-HGUartModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGUartModule
-
-//Value Computed by CMake
-HGUartModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGUartModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGUartModule
 
 //Value Computed by CMake
 HGUserAuditModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGUserAuditModule
@@ -789,7 +630,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=21
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

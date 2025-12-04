@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-debug",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "cd /d d:\\virtualMachine\\github\\vsproject\\HGAppModule && windows_build.bat --debug --module HGUserAuditModule --incremental"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

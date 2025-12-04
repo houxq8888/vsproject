@@ -1,2 +1,0 @@
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGLoginModuleStatic.a CMakeFiles/HGLoginModuleStatic.dir/HGLoginModuleStatic_autogen/mocs_compilation.cpp.obj CMakeFiles/HGLoginModuleStatic.dir/src/hgloginwidget.cpp.obj CMakeFiles/HGLoginModuleStatic.dir/src/loginplugindetector.cpp.obj CMakeFiles/HGLoginModuleStatic.dir/inc/moc_hgloginwidget.cpp.obj CMakeFiles/HGLoginModuleStatic.dir/inc/moc_loginplugindetector.cpp.obj
-D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGLoginModuleStatic.a

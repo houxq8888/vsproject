@@ -1,6 +1,7 @@
 #ifndef HGCAMERARECOGNIZEWIDGET_H
 #define HGCAMERARECOGNIZEWIDGET_H
 
+#include <QObject>
 #include <QWidget>
 #include "hgqlabel.h"
 #include <QSplitter>
@@ -52,6 +53,10 @@ private:
 
     QPushButton* m_captureBtn,*m_selectBtn,*m_saveTemplateBtn,*m_recognizeBtn;
     cv::Mat image;
+    
+    // 跟踪当前打开的摄像头状态
+    std::string m_currentCameraType;
+    std::string m_currentCameraName;
 };
 
 #endif // HGCAMERARECOGNIZEWIDGET_H

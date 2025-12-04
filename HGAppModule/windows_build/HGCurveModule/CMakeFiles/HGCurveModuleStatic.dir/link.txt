@@ -1,2 +1,0 @@
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libHGCurveModuleStatic.a CMakeFiles/HGCurveModuleStatic.dir/src/curveplugindetector.cpp.obj CMakeFiles/HGCurveModuleStatic.dir/src/hgcurvewidget.cpp.obj CMakeFiles/HGCurveModuleStatic.dir/src/hgdisplaychartwidget.cpp.obj CMakeFiles/HGCurveModuleStatic.dir/inc/moc_curveplugindetector.cpp.obj CMakeFiles/HGCurveModuleStatic.dir/inc/moc_hgcurvewidget.cpp.obj CMakeFiles/HGCurveModuleStatic.dir/inc/moc_hgdisplaychartwidget.cpp.obj
-D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libHGCurveModuleStatic.a

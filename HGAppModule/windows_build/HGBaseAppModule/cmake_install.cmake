@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Release")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -50,6 +50,6 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/install-cxx-module-bmi-Debug.cmake" OPTIONAL)
 endif()
 
