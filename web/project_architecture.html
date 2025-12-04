@@ -544,6 +544,7 @@
                 <div class="compile-buttons">
                     <button id="compileBtn" class="compile-btn" onclick="startCompile()">开始编译</button>
                     <button id="stopBtn" class="stop-btn" onclick="stopCompile()" disabled>停止编译</button>
+                    <button id="packageBtn" class="compile-btn" onclick="packageModule()" disabled>打包程序</button>
                 </div>
                 <div class="compile-output">
                     <h5>编译输出</h5>
@@ -687,44 +688,54 @@
         let currentModuleId = null;
         // 编译状态轮询定时器
         let compilePollingInterval = null;
+        // 模块详情显示的防抖定时器
+        let showModuleDebounceTimer = null;
 
         function showModuleDetails(moduleId) {
-            const module = moduleData[moduleId];
-            if (!module) return;
-
-            currentModuleId = moduleId;
-            document.getElementById('detailTitle').textContent = module.name;
-            
-            // 填充依赖关系
-            const depList = document.getElementById('dependencyList');
-            depList.innerHTML = '';
-            module.dependencies.forEach(dep => {
-                const li = document.createElement('li');
-                li.textContent = dep;
-                depList.appendChild(li);
-            });
-
-            // 填充功能列表
-            const featureList = document.getElementById('featureList');
-            featureList.innerHTML = '';
-            module.features.forEach(feature => {
-                const li = document.createElement('li');
-                li.textContent = feature;
-                featureList.appendChild(li);
-            });
-
-            // 显示编译控制区域（仅对HGAppModule相关模块显示）
-            const compileControls = document.getElementById('compileControls');
-            const hgAppModules = ['hgbaseappmodule', 'hguserauditmodule', 'hglogmodule', 'hgloginmodule', 'hgsearchmodule'];
-            if (hgAppModules.includes(moduleId)) {
-                compileControls.style.display = 'block';
-                resetCompileUI();
-            } else {
-                compileControls.style.display = 'none';
+            // 清除之前的定时器
+            if (showModuleDebounceTimer) {
+                clearTimeout(showModuleDebounceTimer);
             }
 
-            // 显示详情区域
-            document.getElementById('moduleDetails').classList.add('active');
+            // 设置防抖定时器，100毫秒后执行
+            showModuleDebounceTimer = setTimeout(() => {
+                const module = moduleData[moduleId];
+                if (!module) return;
+
+                currentModuleId = moduleId;
+                document.getElementById('detailTitle').textContent = module.name;
+                
+                // 填充依赖关系
+                const depList = document.getElementById('dependencyList');
+                depList.innerHTML = '';
+                module.dependencies.forEach(dep => {
+                    const li = document.createElement('li');
+                    li.textContent = dep;
+                    depList.appendChild(li);
+                });
+
+                // 填充功能列表
+                const featureList = document.getElementById('featureList');
+                featureList.innerHTML = '';
+                module.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    featureList.appendChild(li);
+                });
+
+                // 显示编译控制区域（仅对HGAppModule相关模块显示）
+                const compileControls = document.getElementById('compileControls');
+                const hgAppModules = ['hgbaseappmodule', 'hguserauditmodule', 'hglogmodule', 'hgloginmodule', 'hgsearchmodule'];
+                if (hgAppModules.includes(moduleId)) {
+                    compileControls.style.display = 'block';
+                    resetCompileUI();
+                } else {
+                    compileControls.style.display = 'none';
+                }
+
+                // 显示详情区域
+                document.getElementById('moduleDetails').classList.add('active');
+            }, 100);
         }
 
         function hideModuleDetails() {
@@ -745,7 +756,12 @@
         function resetCompileUI() {
             document.getElementById('compileBtn').disabled = false;
             document.getElementById('stopBtn').disabled = true;
+            document.getElementById('packageBtn').disabled = true;
             document.getElementById('compileOutput').textContent = '等待编译开始...';
+        }
+
+        function enablePackageBtn() {
+            document.getElementById('packageBtn').disabled = false;
         }
 
         function startCompile() {
@@ -754,9 +770,10 @@
             const buildType = document.querySelector('input[name="buildType"]:checked').value;
             const cleanBuild = document.getElementById('cleanBuild').checked;
 
-            // 禁用开始按钮，启用停止按钮
+            // 禁用开始按钮和打包按钮，启用停止按钮
             document.getElementById('compileBtn').disabled = true;
             document.getElementById('stopBtn').disabled = false;
+            document.getElementById('packageBtn').disabled = true;
             document.getElementById('compileOutput').textContent = '正在启动编译...';
 
             // 发送编译请求
@@ -773,13 +790,13 @@
             })
             .then(response => response.json())
             .then(data => {
-                if (data.success) {
+                if (data.error) {
+                    document.getElementById('compileOutput').textContent = '编译启动失败: ' + data.error;
+                    resetCompileUI();
+                } else {
                     document.getElementById('compileOutput').textContent = '编译已启动，正在等待输出...';
                     // 开始轮询编译状态
                     startCompilePolling();
-                } else {
-                    document.getElementById('compileOutput').textContent = '编译启动失败: ' + data.message;
-                    resetCompileUI();
                 }
             })
             .catch(error => {
@@ -812,23 +829,41 @@
         }
 
         function startCompilePolling() {
+            let consecutiveErrorCount = 0;
+            const maxConsecutiveErrors = 3;
+
             compilePollingInterval = setInterval(() => {
                 fetch('/api/compile/status')
                     .then(response => response.json())
                     .then(data => {
+                        consecutiveErrorCount = 0; // 重置错误计数
                         const outputElement = document.getElementById('compileOutput');
-                        if (data.running) {
-                            outputElement.textContent = data.output || '正在编译中...';
+                        
+                        if (data.is_running) {
+                            outputElement.textContent = data.last_output || '正在编译中...';
                             // 自动滚动到底部
                             outputElement.scrollTop = outputElement.scrollHeight;
                         } else {
-                            outputElement.textContent = data.output || '编译完成';
-                            if (data.success) {
-                                outputElement.textContent += '\n✅ 编译成功！';
+                            // 编译停止，但需要检查是否有输出内容
+                            if (data.last_output && data.last_output.length > 0) {
+                                outputElement.textContent = data.last_output;
+                                // 检查编译是否成功
+                                const outputText = outputElement.textContent.toLowerCase();
+                                if (outputText.includes('编译成功') || outputText.includes('success')) {
+                                    outputElement.textContent += '\n✅ 编译成功！';
+                                    enablePackageBtn(); // 编译成功后启用打包按钮
+                                } else {
+                                    outputElement.textContent += '\n❌ 编译失败！';
+                                }
                             } else {
-                                outputElement.textContent += '\n❌ 编译失败！';
+                                outputElement.textContent = '编译已停止，但没有输出内容';
                             }
-                            resetCompileUI();
+                            
+                            // 延迟重置UI，让用户有时间看到最终结果和中间文件位置
+                            setTimeout(() => {
+                                resetCompileUI();
+                            }, 8000);
+                            
                             if (compilePollingInterval) {
                                 clearInterval(compilePollingInterval);
                                 compilePollingInterval = null;
@@ -837,8 +872,59 @@
                     })
                     .catch(error => {
                         console.error('轮询失败:', error);
+                        consecutiveErrorCount++;
+                        
+                        // 如果连续错误超过最大值，停止轮询
+                        if (consecutiveErrorCount >= maxConsecutiveErrors) {
+                            const outputElement = document.getElementById('compileOutput');
+                            outputElement.textContent += '\n⚠️ 编译状态轮询失败，可能是网络问题或服务器错误';
+                            
+                            // 延迟重置UI
+                            setTimeout(() => {
+                                resetCompileUI();
+                            }, 3000);
+                            
+                            if (compilePollingInterval) {
+                                clearInterval(compilePollingInterval);
+                                compilePollingInterval = null;
+                            }
+                        }
                     });
             }, 1000);
+        }
+
+        function packageModule() {
+            if (!currentModuleId) return;
+
+            const buildType = document.querySelector('input[name="buildType"]:checked').value;
+
+            document.getElementById('compileOutput').textContent += '\n\n开始打包程序...';
+            document.getElementById('packageBtn').disabled = true;
+
+            // 发送打包请求
+            fetch('/api/compile/package', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    module: getModuleRealName(currentModuleId),
+                    build_type: buildType
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    document.getElementById('compileOutput').textContent += '\n❌ 打包失败: ' + data.error;
+                } else {
+                    document.getElementById('compileOutput').textContent += '\n✅ 打包成功！' + data.message;
+                }
+                document.getElementById('packageBtn').disabled = false;
+            })
+            .catch(error => {
+                document.getElementById('compileOutput').textContent += '\n❌ 打包请求失败: ' + error.message;
+                document.getElementById('packageBtn').disabled = false;
+            });
         }
 
         function getModuleRealName(moduleId) {

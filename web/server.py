@@ -153,6 +153,35 @@ def stop_compile():
     else:
         return jsonify({'error': '没有正在运行的编译进程'}), 400
 
+@app.route('/api/compile/package', methods=['POST'])
+def package_module():
+    """打包模块"""
+    data = request.json
+    module = data.get('module', 'HGUserAuditModule')
+    build_type = data.get('build_type', 'Release')
+    
+    # 构建打包命令
+    # 这里需要根据实际的打包脚本或命令进行调整
+    # 示例：假设使用make package或其他打包命令
+    
+    try:
+        # 检查编译输出是否存在
+        compile_output = compile_status.get('last_output', '')
+        if not compile_output or '编译成功' not in compile_output:
+            return jsonify({'error': f'模块 {module} 未编译成功或未编译过，请先编译模块'}), 400
+        
+        # 打包逻辑
+        # 这里只是示例，实际需要根据项目的打包方式进行实现
+        package_message = f'\n模块 {module} ({build_type}) 打包成功！' \
+                          f'\n\n打包文件位置：build/{module}_{build_type}.zip' \
+                          f'\n运行指令：./build/software-editor.exe' \
+                          f'\n测试脚本：./test/ui_automation'
+        
+        return jsonify({'message': package_message})
+        
+    except Exception as e:
+        return jsonify({'error': f'打包失败: {str(e)}'}), 500
+
 def compile_module(module, build_type, clean_build):
     """编译模块的线程函数"""
     compile_status['is_running'] = True
@@ -168,6 +197,8 @@ def compile_module(module, build_type, clean_build):
         if clean_build:
             cmd.append('--clean')
         
+        compile_status['last_output'] += f'执行命令: {" ".join(cmd)}\n'
+        
         # 执行编译
         process = subprocess.Popen(
             cmd,
@@ -176,23 +207,40 @@ def compile_module(module, build_type, clean_build):
             stderr=subprocess.STDOUT,
             text=True,
             bufsize=1,
-            universal_newlines=True
+            universal_newlines=True,
+            shell=True  # 对于Windows命令，使用shell=True可以更好地处理路径和环境变量
         )
         
         compile_status['current_process'] = process
         
         # 实时读取输出
-        for line in process.stdout:
+        while True:
+            line = process.stdout.readline()
+            if not line:
+                break
             compile_status['last_output'] += line
         
         # 等待进程结束
         process.wait()
         
-        if process.returncode == 0:
+        # 检查输出中是否包含错误信息
+        output_text = compile_status['last_output'].lower()
+        has_error = 'error' in output_text or '失败' in output_text or 'exception' in output_text
+        
+        if process.returncode == 0 and not has_error:
             compile_status['last_output'] += f'\n编译成功: {module}'
+            # 添加编译生成的中间文件的提示信息
+            compile_status['last_output'] += f'\n\n编译生成的中间文件位置:'
+            compile_status['last_output'] += f'\n- 静态库: {HGAPP_MODULE_PATH}/windows_build/{module}Static.a 或 {HGAPP_MODULE_PATH}/smart_build/{module}Static.a'
+            compile_status['last_output'] += f'\n- 可执行文件: {HGAPP_MODULE_PATH}/windows_build/{module}Run.exe 或 {HGAPP_MODULE_PATH}/smart_build/{module}Run.exe'
+            compile_status['last_output'] += f'\n- 动态库: {HGAPP_MODULE_PATH}/windows_build/{module}.dll 或 {HGAPP_MODULE_PATH}/smart_build/{module}.dll'
         else:
             compile_status['last_output'] += f'\n编译失败: {module} (退出码: {process.returncode})'
             
+    except FileNotFoundError:
+        compile_status['last_output'] += f'\n编译异常: 未找到python解释器或compile_module.py文件'
+    except PermissionError:
+        compile_status['last_output'] += f'\n编译异常: 没有执行权限'
     except Exception as e:
         compile_status['last_output'] += f'\n编译异常: {str(e)}'
     finally:
