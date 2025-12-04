@@ -23,7 +23,7 @@ HGAPP_MODULE_PATH = os.path.join(PROJECT_ROOT, 'HGAppModule')
 # 编译状态存储
 compile_status = {
     'current_process': None,
-    'last_output': '',
+    'output_lines': [],
     'is_running': False,
     'start_time': None,
     'module': None,
@@ -109,7 +109,7 @@ def get_compile_status():
     """获取编译状态"""
     return jsonify({
         'is_running': compile_status['is_running'],
-        'last_output': compile_status['last_output'],
+        'output_lines': compile_status['output_lines'],
         'start_time': compile_status['start_time'],
         'module': compile_status['module'],
         'build_type': compile_status['build_type'],
@@ -146,7 +146,7 @@ def stop_compile():
         try:
             compile_status['current_process'].terminate()
             compile_status['is_running'] = False
-            compile_status['last_output'] += '\n编译已手动停止'
+            compile_status['output_lines'].append('编译已手动停止')
             return jsonify({'message': '编译已停止'})
         except Exception as e:
             return jsonify({'error': f'停止编译失败: {str(e)}'}), 500
@@ -160,13 +160,16 @@ def compile_module(module, build_type, clean_build):
     compile_status['build_type'] = build_type
     compile_status['clean_build'] = clean_build
     compile_status['start_time'] = datetime.now().isoformat()
-    compile_status['last_output'] = f'开始编译模块: {module} ({build_type})\n'
+    compile_status['output_lines'] = [f'开始编译模块: {module} ({build_type})']
     
     try:
         # 构建编译命令
         cmd = ['python', 'compile_module.py', '--module', module, '--build-type', build_type]
         if clean_build:
             cmd.append('--clean')
+        
+        compile_status['output_lines'].append(f'执行命令: {" ".join(cmd)}')
+        compile_status['output_lines'].append(f'工作目录: {HGAPP_MODULE_PATH}')
         
         # 执行编译
         process = subprocess.Popen(
@@ -182,22 +185,35 @@ def compile_module(module, build_type, clean_build):
         compile_status['current_process'] = process
         
         # 实时读取输出
+        line_count = 0
         for line in process.stdout:
-            compile_status['last_output'] += line
+            line = line.rstrip('\n\r')  # 只去掉换行符，保留其他空白字符
+            if line:  # 只添加非空行
+                compile_status['output_lines'].append(line)
+                line_count += 1
+                # 每10行输出一次进度
+                if line_count % 10 == 0:
+                    compile_status['output_lines'].append(f'[进度] 已处理 {line_count} 行输出')
         
         # 等待进程结束
         process.wait()
         
+        compile_status['output_lines'].append(f'编译进程结束，退出码: {process.returncode}')
+        
         if process.returncode == 0:
-            compile_status['last_output'] += f'\n编译成功: {module}'
+            compile_status['output_lines'].append(f'✅ 编译成功: {module}')
+            compile_status['output_lines'].append(f'编译产物路径: {os.path.join(HGAPP_MODULE_PATH, module, build_type)}')
         else:
-            compile_status['last_output'] += f'\n编译失败: {module} (退出码: {process.returncode})'
+            compile_status['output_lines'].append(f'❌ 编译失败: {module} (退出码: {process.returncode})')
+            compile_status['output_lines'].append('请检查编译输出以获取详细错误信息')
             
     except Exception as e:
-        compile_status['last_output'] += f'\n编译异常: {str(e)}'
+        compile_status['output_lines'].append(f'❌ 编译异常: {str(e)}')
+        compile_status['output_lines'].append(f'异常类型: {type(e).__name__}')
     finally:
         compile_status['is_running'] = False
         compile_status['current_process'] = None
+        compile_status['output_lines'].append(f'编译完成，总输出行数: {len(compile_status["output_lines"])}')
 
 if __name__ == '__main__':
     print("VSProject 架构展示服务器启动中...")

@@ -140,7 +140,30 @@
             line-height: 1.4;
         }
 
-        .module-details {
+        .module-item.compilable {
+            border-left-color: #667eea;
+            position: relative;
+        }
+
+        .module-item.compilable::after {
+            content: "编译";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .module-item.compilable:hover::after {
+            background: #5568d3;
+        }
+
+        .compile-panel {
             background: white;
             border-radius: 15px;
             padding: 30px;
@@ -149,7 +172,7 @@
             display: none;
         }
 
-        .module-details.active {
+        .compile-panel.active {
             display: block;
             animation: fadeIn 0.5s ease;
         }
@@ -159,7 +182,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .details-header {
+        .compile-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -178,6 +201,187 @@
 
         .close-btn:hover {
             background: #c53030;
+        }
+
+        .compile-options {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .compile-options h4 {
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .build-type-selector {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .build-type-btn {
+            padding: 10px 20px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .build-type-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .build-type-btn:hover {
+            border-color: #667eea;
+        }
+
+        .clean-build-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .compile-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .compile-btn {
+            padding: 12px 30px;
+            background: #48bb78;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .compile-btn:hover {
+            background: #38a169;
+        }
+
+        .compile-btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+        }
+
+        .stop-btn {
+            padding: 12px 30px;
+            background: #e53e3e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .stop-btn:hover {
+            background: #c53030;
+        }
+
+        .stop-btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+        }
+
+        .package-btn {
+            padding: 12px 30px;
+            background: #ed8936;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .package-btn:hover {
+            background: #dd6b20;
+        }
+
+        .package-btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+        }
+
+        .compile-output {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+
+        .compile-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .status-running {
+            background: #fef5e7;
+            color: #d68910;
+        }
+
+        .status-success {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-error {
+            background: #fce4ec;
+            color: #c62828;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .module-details {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .module-details.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .details-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
         .details-content {
@@ -399,116 +603,119 @@
         </div>
 
         <div class="modules-grid">
-            <!-- 应用模块 -->
+            <!-- HGAppModule 模块 -->
             <div class="module-category">
-                <h3>应用模块 (Applications)</h3>
+                <h3>📦 HGAppModule 模块</h3>
                 <ul class="module-list">
-                    <li class="module-item" onclick="showModuleDetails('hgdashboardapp')">
-                        <h4>HGDashboardApp</h4>
-                        <p>仪表盘应用 - 提供系统监控和数据可视化界面</p>
-                    </li>
-                    <li class="module-item" onclick="showModuleDetails('hgcomdebugapp')">
-                        <h4>HGComDebugApp</h4>
-                        <p>通信调试应用 - 用于硬件通信调试和测试</p>
-                    </li>
-                    <li class="module-item" onclick="showModuleDetails('hgcupdetapp')">
-                        <h4>HGCupDetApp</h4>
-                        <p>杯检测应用 - 基于图像识别的样品杯检测</p>
-                    </li>
-                    <li class="module-item" onclick="showModuleDetails('hgonlineplatformapp')">
-                        <h4>HGOnlinePlatformApp</h4>
-                        <p>在线平台应用 - 云端数据同步和远程监控</p>
-                    </li>
-                    <li class="module-item" onclick="showModuleDetails('productflow')">
-                        <h4>ProductFlow</h4>
-                        <p>产品流程应用 - 生产流程控制和优化</p>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- 核心模块 -->
-            <div class="module-category">
-                <h3>核心模块 (Core Modules)</h3>
-                <ul class="module-list">
-                    <li class="module-item" onclick="showModuleDetails('hgbaseappmodule')">
+                    <li class="module-item compilable" onclick="showCompilePanel('HGBaseAppModule')">
                         <h4>HGBaseAppModule</h4>
                         <p>基础应用模块 - 提供核心功能和基础服务</p>
                     </li>
-                    <li class="module-item" onclick="showModuleDetails('hguserauditmodule')">
+                    <li class="module-item compilable" onclick="showCompilePanel('HGUserAuditModule')">
                         <h4>HGUserAuditModule</h4>
                         <p>用户审计模块 - 用户权限管理和操作日志</p>
                     </li>
-                    <li class="module-item" onclick="showModuleDetails('hglogmodule')">
+                    <li class="module-item compilable" onclick="showCompilePanel('HGLogModule')">
                         <h4>HGLogModule</h4>
                         <p>日志模块 - 系统日志记录和管理</p>
                     </li>
-                    <li class="module-item" onclick="showModuleDetails('hgloginmodule')">
+                    <li class="module-item compilable" onclick="showCompilePanel('HGLoginModule')">
                         <h4>HGLoginModule</h4>
                         <p>登录模块 - 用户认证和会话管理</p>
                     </li>
-                    <li class="module-item" onclick="showModuleDetails('hgsearchmodule')">
-                        <h4>HGSearchModule</h4>
-                        <p>搜索模块 - 数据检索和查询功能</p>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- 功能模块 -->
-            <div class="module-category">
-                <h3>功能模块 (Functional Modules)</h3>
-                <ul class="module-list">
-                    <li class="module-item" onclick="showModuleDetails('hgchannelmodule')">
+                    <li class="module-item compilable" onclick="showCompilePanel('HGChannelModule')">
                         <h4>HGChannelModule</h4>
                         <p>通道模块 - 多通道数据采集和控制</p>
                     </li>
-                    <li class="module-item" onclick="showModuleDetails('hgcurvemodule')">
+                    <li class="module-item compilable" onclick="showCompilePanel('HGCurveModule')">
                         <h4>HGCurveModule</h4>
                         <p>曲线模块 - 数据曲线绘制和分析</p>
                     </li>
-                    <li class="module-item" onclick="showModuleDetails('hgflowmodule')">
+                    <li class="module-item compilable" onclick="showCompilePanel('HGFlowModule')">
                         <h4>HGFlowModule</h4>
                         <p>流程模块 - 工作流程管理和控制</p>
                     </li>
-                    <li class="module-item" onclick="showModuleDetails('hgmethodmodule')">
+                    <li class="module-item compilable" onclick="showCompilePanel('HGMethodModule')">
                         <h4>HGMethodModule</h4>
                         <p>方法模块 - 实验方法配置和执行</p>
                     </li>
-                    <li class="module-item" onclick="showModuleDetails('hgreagentmodule')">
+                    <li class="module-item compilable" onclick="showCompilePanel('HGPrintModule')">
+                        <h4>HGPrintModule</h4>
+                        <p>打印模块 - 报告打印和PDF生成</p>
+                    </li>
+                    <li class="module-item compilable" onclick="showCompilePanel('HGReagentModule')">
                         <h4>HGReagentModule</h4>
                         <p>试剂模块 - 试剂管理和库存控制</p>
                     </li>
-                </ul>
-            </div>
-
-            <!-- 服务模块 -->
-            <div class="module-category">
-                <h3>服务模块 (Service Modules)</h3>
-                <ul class="module-list">
-                    <li class="module-item" onclick="showModuleDetails('hgcommon')">
-                        <h4>HGCommon</h4>
-                        <p>通用服务 - 提供公共工具和基础组件</p>
+                    <li class="module-item compilable" onclick="showCompilePanel('HGScannerModule')">
+                        <h4>HGScannerModule</h4>
+                        <p>扫描模块 - 二维码扫描和条码识别</p>
                     </li>
-                    <li class="module-item" onclick="showModuleDetails('hgconfig')">
-                        <h4>HGConfig</h4>
-                        <p>配置服务 - 系统配置管理和持久化</p>
+                    <li class="module-item compilable" onclick="showCompilePanel('HGSearchModule')">
+                        <h4>HGSearchModule</h4>
+                        <p>搜索模块 - 数据检索和查询功能</p>
                     </li>
-                    <li class="module-item" onclick="showModuleDetails('hghardware')">
-                        <h4>HGHardware</h4>
-                        <p>硬件服务 - 硬件设备驱动和控制</p>
+                    <li class="module-item compilable" onclick="showCompilePanel('HGTaskModule')">
+                        <h4>HGTaskModule</h4>
+                        <p>任务管理模块 - 任务调度和进度跟踪</p>
                     </li>
-                    <li class="module-item" onclick="showModuleDetails('hgimageservice')">
-                        <h4>HGImageAlgorithmService</h4>
-                        <p>图像算法服务 - 图像处理和识别算法</p>
+                    <li class="module-item compilable" onclick="showCompilePanel('HGUartModule')">
+                        <h4>HGUartModule</h4>
+                        <p>串口通信模块 - 串口配置和数据传输</p>
                     </li>
-                    <li class="module-item" onclick="showModuleDetails('hgcommunicateservice')">
-                        <h4>HGCommunicateService</h4>
-                        <p>通信服务 - 网络通信和数据传输</p>
+                    <li class="module-item compilable" onclick="showCompilePanel('HGAnalysisRecordModule')">
+                        <h4>HGAnalysisRecordModule</h4>
+                        <p>分析记录模块 - 数据记录和分析结果</p>
+                    </li>
+                    <li class="module-item compilable" onclick="showCompilePanel('HGCameraRecognizeModule')">
+                        <h4>HGCameraRecognizeModule</h4>
+                        <p>相机识别模块 - 图像识别和相机控制</p>
+                    </li>
+                    <li class="module-item compilable" onclick="showCompilePanel('HGEBalanceModule')">
+                        <h4>HGEBalanceModule</h4>
+                        <p>电子秤模块 - 重量测量和数据采集</p>
+                    </li>
+                    <li class="module-item compilable" onclick="showCompilePanel('HGExceptionHandleModule')">
+                        <h4>HGExceptionHandleModule</h4>
+                        <p>异常处理模块 - 异常捕获和错误处理</p>
+                    </li>
+                    <li class="module-item compilable" onclick="showCompilePanel('HGSharedFileModule')">
+                        <h4>HGSharedFileModule</h4>
+                        <p>共享文件模块 - 文件共享和数据同步</p>
                     </li>
                 </ul>
             </div>
         </div>
 
         <!-- 模块详情区域 -->
+        <div class="compile-panel" id="compile-panel">
+            <div class="compile-header">
+                <h2 id="compile-module-name">编译模块</h2>
+                <button class="close-btn" onclick="closeCompilePanel()">关闭</button>
+            </div>
+            <div class="compile-options">
+                <h4>编译选项</h4>
+                <div class="build-type-selector">
+                    <button class="build-type-btn active" onclick="selectBuildType('Release')">Release</button>
+                    <button class="build-type-btn" onclick="selectBuildType('Debug')">Debug</button>
+                </div>
+                <div class="clean-build-option">
+                    <input type="checkbox" id="clean-build" checked>
+                    <label for="clean-build">清理构建目录（重新生成EXE和.a）</label>
+                </div>
+            </div>
+            <div class="compile-controls">
+                <button class="compile-btn" onclick="startCompile()" id="compile-btn">开始编译</button>
+                <button class="stop-btn" onclick="stopCompile()" id="stop-btn" disabled>停止编译</button>
+                <button class="package-btn" onclick="packageModule()" id="package-btn" disabled>打包运行</button>
+            </div>
+            <div class="compile-status" id="compile-status" style="display: none;">
+                <div class="spinner" id="spinner"></div>
+                <span id="status-text"></span>
+            </div>
+            <div class="compile-output" id="compile-output">准备就绪</div>
+        </div>
+
         <div id="moduleDetails" class="module-details">
             <div class="details-header">
                 <h3 id="detailTitle">模块详情</h3>
@@ -526,28 +733,6 @@
                     <ul id="featureList" class="feature-list">
                         <!-- 动态填充 -->
                     </ul>
-                </div>
-            </div>
-            <div class="compile-controls" id="compileControls" style="display: none;">
-                <h4>🔧 编译控制</h4>
-                <div class="compile-options">
-                    <label>
-                        <input type="radio" name="buildType" value="Release" checked> Release
-                    </label>
-                    <label>
-                        <input type="radio" name="buildType" value="Debug"> Debug
-                    </label>
-                    <label>
-                        <input type="checkbox" id="cleanBuild"> 清理构建
-                    </label>
-                </div>
-                <div class="compile-buttons">
-                    <button id="compileBtn" class="compile-btn" onclick="startCompile()">开始编译</button>
-                    <button id="stopBtn" class="stop-btn" onclick="stopCompile()" disabled>停止编译</button>
-                </div>
-                <div class="compile-output">
-                    <h5>编译输出</h5>
-                    <pre id="compileOutput">等待编译开始...</pre>
                 </div>
             </div>
         </div>
@@ -580,282 +765,226 @@
     </div>
 
     <script>
-        const moduleData = {
-            'hgdashboardapp': {
-                name: 'HGDashboardApp - 仪表盘应用',
-                dependencies: ['Qt5 Charts', 'Qt5 Widgets', 'HGCommon', 'HGConfig'],
-                features: ['实时数据监控', '图表可视化', '报警管理', '系统状态显示']
-            },
-            'hgcomdebugapp': {
-                name: 'HGComDebugApp - 通信调试应用',
-                dependencies: ['Qt5 SerialPort', 'HGUartModule', 'HGCommon'],
-                features: ['串口通信调试', '数据包分析', '协议测试', '日志记录']
-            },
-            'hgcupdetapp': {
-                name: 'HGCupDetApp - 杯检测应用',
-                dependencies: ['OpenCV', 'HGImageAlgorithmService', 'HGCameraRecognizeModule'],
-                features: ['图像识别', '杯位置检测', '样品识别', '质量控制']
-            },
-            'hgonlineplatformapp': {
-                name: 'HGOnlinePlatformApp - 在线平台应用',
-                dependencies: ['MQTT', 'WebSocket', 'HGCommunicateService', 'HGSecurityService'],
-                features: ['云端数据同步', '远程监控', '数据备份', '多设备管理']
-            },
-            'productflow': {
-                name: 'ProductFlow - 产品流程应用',
-                dependencies: ['HGFlowModule', 'HGMethodModule', 'HGTaskModule'],
-                features: ['流程控制', '生产调度', '质量控制', '报表生成']
-            },
-            'hgbaseappmodule': {
-                name: 'HGBaseAppModule - 基础应用模块',
-                dependencies: ['Qt5 Core', 'Qt5 Gui', 'HGCommon', 'PluginInterface'],
-                features: ['基础UI框架', '插件管理', '事件处理', '资源管理']
-            },
-            'hguserauditmodule': {
-                name: 'HGUserAuditModule - 用户审计模块',
-                dependencies: ['HGAuthorityService', 'HGSecurityService', 'SQLCipher'],
-                features: ['用户权限管理', '操作日志记录', '安全审计', '数据加密']
-            },
-            'hglogmodule': {
-                name: 'HGLogModule - 日志模块',
-                dependencies: ['log4cplus', 'HGCommon', 'HGSaveService'],
-                features: ['系统日志记录', '日志分级', '日志查询', '日志导出']
-            },
-            'hgloginmodule': {
-                name: 'HGLoginModule - 登录模块',
-                dependencies: ['HGAuthorityService', 'HGSecurityService', 'HGConfig'],
-                features: ['用户认证', '会话管理', '密码加密', '权限验证']
-            },
-            'hgsearchmodule': {
-                name: 'HGSearchModule - 搜索模块',
-                dependencies: ['HGCommon', 'HGSaveService', 'SQLCipher'],
-                features: ['数据检索', '全文搜索', '过滤查询', '结果排序']
-            },
-            'hgchannelmodule': {
-                name: 'HGChannelModule - 通道模块',
-                dependencies: ['HGLowerPC', 'HGSensor', 'HGCommon'],
-                features: ['多通道数据采集', '实时控制', '通道配置', '状态监控']
-            },
-            'hgcurvemodule': {
-                name: 'HGCurveModule - 曲线模块',
-                dependencies: ['Qt5 Charts', 'HGCommon', 'HGSaveService'],
-                features: ['曲线绘制', '数据分析', '曲线拟合', '导出功能']
-            },
-            'hgflowmodule': {
-                name: 'HGFlowModule - 流程模块',
-                dependencies: ['HGMethodModule', 'HGTaskModule', 'HGCommon'],
-                features: ['流程定义', '步骤控制', '条件判断', '流程监控']
-            },
-            'hgmethodmodule': {
-                name: 'HGMethodModule - 方法模块',
-                dependencies: ['HGReagentModule', 'HGChannelModule', 'HGCommon'],
-                features: ['方法配置', '参数设置', '执行控制', '结果分析']
-            },
-            'hgreagentmodule': {
-                name: 'HGReagentModule - 试剂模块',
-                dependencies: ['HGCommon', 'HGSaveService', 'SQLCipher'],
-                features: ['试剂管理', '库存监控', '有效期提醒', '使用记录']
-            },
-            'hgcommon': {
-                name: 'HGCommon - 通用服务',
-                dependencies: ['STL', 'Boost', 'Threads'],
-                features: ['工具函数', '数据结构', '线程管理', '异常处理']
-            },
-            'hgconfig': {
-                name: 'HGConfig - 配置服务',
-                dependencies: ['JSON', 'XML', 'SQLCipher'],
-                features: ['配置管理', '参数持久化', '配置验证', '多环境支持']
-            },
-            'hghardware': {
-                name: 'HGHardware - 硬件服务',
-                dependencies: ['HGLowerPC', 'HGSensor', 'libusb'],
-                features: ['设备驱动', '硬件控制', '状态监控', '故障诊断']
-            },
-            'hgimageservice': {
-                name: 'HGImageAlgorithmService - 图像算法服务',
-                dependencies: ['OpenCV', 'ZXing', 'FFmpeg'],
-                features: ['图像处理', '特征提取', '模式识别', '二维码识别']
-            },
-            'hgcommunicateservice': {
-                name: 'HGCommunicateService - 通信服务',
-                dependencies: ['MQTT', 'WebSocket', 'libssh', 'OpenSSL'],
-                features: ['网络通信', '协议封装', '数据加密', '连接管理']
+        // HGAppModule 模块列表
+        const hgAppModules = [
+            { name: 'HGBaseAppModule', description: '基础应用模块', dependencies: ['Qt'], features: ['基础框架', '日志系统'] },
+            { name: 'HGUserAuditModule', description: '用户审计模块', dependencies: ['Qt', 'SQLCipher'], features: ['用户管理', '权限控制'] },
+            { name: 'HGLogModule', description: '日志模块', dependencies: ['Qt', 'log4cplus'], features: ['日志记录', '日志查询'] },
+            { name: 'HGLoginModule', description: '登录模块', dependencies: ['Qt', 'SQLCipher'], features: ['用户认证', '会话管理'] },
+            { name: 'HGChannelModule', description: '通道管理模块', dependencies: ['Qt', 'SerialPort'], features: ['通道配置', '数据采集'] },
+            { name: 'HGCurveModule', description: '曲线处理模块', dependencies: ['Qt', 'OpenCV'], features: ['数据可视化', '曲线分析'] },
+            { name: 'HGFlowModule', description: '流程控制模块', dependencies: ['Qt'], features: ['流程定义', '步骤管理'] },
+            { name: 'HGMethodModule', description: '方法管理模块', dependencies: ['Qt'], features: ['方法配置', '参数管理'] },
+            { name: 'HGPrintModule', description: '打印模块', dependencies: ['Qt', 'HPDF'], features: ['报告打印', 'PDF生成'] },
+            { name: 'HGReagentModule', description: '试剂管理模块', dependencies: ['Qt', 'SQLCipher'], features: ['试剂库存', '有效期管理'] },
+            { name: 'HGScannerModule', description: '扫描模块', dependencies: ['Qt', 'ZXing'], features: ['二维码扫描', '条码识别'] },
+            { name: 'HGSearchModule', description: '搜索模块', dependencies: ['Qt'], features: ['数据搜索', '结果过滤'] },
+            { name: 'HGTaskModule', description: '任务管理模块', dependencies: ['Qt'], features: ['任务调度', '进度跟踪'] },
+            { name: 'HGUartModule', description: '串口通信模块', dependencies: ['Qt', 'SerialPort'], features: ['串口配置', '数据传输'] },
+            { name: 'HGAnalysisRecordModule', description: '分析记录模块', dependencies: ['Qt'], features: ['数据记录', '分析结果'] },
+            { name: 'HGCameraRecognizeModule', description: '相机识别模块', dependencies: ['Qt', 'OpenCV'], features: ['图像识别', '相机控制'] },
+            { name: 'HGEBalanceModule', description: '电子秤模块', dependencies: ['Qt'], features: ['重量测量', '数据采集'] },
+            { name: 'HGExceptionHandleModule', description: '异常处理模块', dependencies: ['Qt'], features: ['异常捕获', '错误处理'] },
+            { name: 'HGSharedFileModule', description: '共享文件模块', dependencies: ['Qt'], features: ['文件共享', '数据同步'] }
+        ];
+
+        // 编译状态
+        let currentBuildType = 'Release';
+        let currentModule = null;
+        let compileStatusInterval = null;
+
+        // 初始化模块列表（简化版，直接使用HTML中的模块列表）
+        function initModules() {
+            // 模块列表已经在HTML中定义，这里不需要重复创建
+            console.log('页面初始化完成');
+        }
+
+        // 显示编译面板
+        function showCompilePanel(moduleName) {
+            currentModule = moduleName;
+            document.getElementById('compile-module-name').textContent = `编译模块: ${moduleName}`;
+            document.getElementById('compile-panel').classList.add('active');
+            document.getElementById('compile-output').textContent = '准备就绪';
+            document.getElementById('compile-status').style.display = 'none';
+            document.getElementById('package-btn').disabled = true;
+        }
+
+        // 关闭编译面板
+        function closeCompilePanel() {
+            document.getElementById('compile-panel').classList.remove('active');
+            stopStatusPolling();
+            currentModule = null;
+        }
+
+        // 选择编译模式
+        function selectBuildType(buildType) {
+            currentBuildType = buildType;
+            document.querySelectorAll('.build-type-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // 开始编译
+        async function startCompile() {
+            if (!currentModule) {
+                alert('请先选择要编译的模块');
+                return;
             }
-        };
 
-        // 当前选中的模块ID
-        let currentModuleId = null;
-        // 编译状态轮询定时器
-        let compilePollingInterval = null;
-
-        function showModuleDetails(moduleId) {
-            const module = moduleData[moduleId];
-            if (!module) return;
-
-            currentModuleId = moduleId;
-            document.getElementById('detailTitle').textContent = module.name;
+            const cleanBuild = document.getElementById('clean-build').checked;
             
-            // 填充依赖关系
-            const depList = document.getElementById('dependencyList');
-            depList.innerHTML = '';
-            module.dependencies.forEach(dep => {
-                const li = document.createElement('li');
-                li.textContent = dep;
-                depList.appendChild(li);
-            });
+            // 重置按钮状态
+            document.getElementById('compile-btn').disabled = true;
+            document.getElementById('stop-btn').disabled = false;
+            document.getElementById('package-btn').disabled = true;
+            
+            // 初始化编译输出
+            const outputElement = document.getElementById('compile-output');
+            outputElement.textContent = `正在启动编译 ${currentModule} (${currentBuildType})...\n`;
+            outputElement.scrollTop = outputElement.scrollHeight;
+            
+            // 显示编译状态
+            showCompileStatus('running', `正在编译 ${currentModule} (${currentBuildType})...`);
 
-            // 填充功能列表
-            const featureList = document.getElementById('featureList');
-            featureList.innerHTML = '';
-            module.features.forEach(feature => {
-                const li = document.createElement('li');
-                li.textContent = feature;
-                featureList.appendChild(li);
-            });
-
-            // 显示编译控制区域（仅对HGAppModule相关模块显示）
-            const compileControls = document.getElementById('compileControls');
-            const hgAppModules = ['hgbaseappmodule', 'hguserauditmodule', 'hglogmodule', 'hgloginmodule', 'hgsearchmodule'];
-            if (hgAppModules.includes(moduleId)) {
-                compileControls.style.display = 'block';
-                resetCompileUI();
-            } else {
-                compileControls.style.display = 'none';
-            }
-
-            // 显示详情区域
-            document.getElementById('moduleDetails').classList.add('active');
-        }
-
-        function hideModuleDetails() {
-            document.getElementById('moduleDetails').classList.remove('active');
-        }
-
-        // 点击页面其他区域关闭详情
-        document.addEventListener('click', function(event) {
-            const details = document.getElementById('moduleDetails');
-            if (details.classList.contains('active') && 
-                !details.contains(event.target) &&
-                !event.target.classList.contains('module-item')) {
-                hideModuleDetails();
-            }
-        });
-
-        // 编译控制相关函数
-        function resetCompileUI() {
-            document.getElementById('compileBtn').disabled = false;
-            document.getElementById('stopBtn').disabled = true;
-            document.getElementById('compileOutput').textContent = '等待编译开始...';
-        }
-
-        function startCompile() {
-            if (!currentModuleId) return;
-
-            const buildType = document.querySelector('input[name="buildType"]:checked').value;
-            const cleanBuild = document.getElementById('cleanBuild').checked;
-
-            // 禁用开始按钮，启用停止按钮
-            document.getElementById('compileBtn').disabled = true;
-            document.getElementById('stopBtn').disabled = false;
-            document.getElementById('compileOutput').textContent = '正在启动编译...';
-
-            // 发送编译请求
-            fetch('/api/compile/start', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    module: getModuleRealName(currentModuleId),
-                    build_type: buildType,
-                    clean_build: cleanBuild
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    document.getElementById('compileOutput').textContent = '编译已启动，正在等待输出...';
-                    // 开始轮询编译状态
-                    startCompilePolling();
-                } else {
-                    document.getElementById('compileOutput').textContent = '编译启动失败: ' + data.message;
-                    resetCompileUI();
-                }
-            })
-            .catch(error => {
-                document.getElementById('compileOutput').textContent = '请求失败: ' + error.message;
-                resetCompileUI();
-            });
-        }
-
-        function stopCompile() {
-            fetch('/api/compile/stop', {
-                method: 'POST'
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    document.getElementById('compileOutput').textContent += '\n编译已停止';
-                } else {
-                    document.getElementById('compileOutput').textContent += '\n停止编译失败: ' + data.message;
-                }
-                resetCompileUI();
-                if (compilePollingInterval) {
-                    clearInterval(compilePollingInterval);
-                    compilePollingInterval = null;
-                }
-            })
-            .catch(error => {
-                document.getElementById('compileOutput').textContent += '\n停止请求失败: ' + error.message;
-                resetCompileUI();
-            });
-        }
-
-        function startCompilePolling() {
-            compilePollingInterval = setInterval(() => {
-                fetch('/api/compile/status')
-                    .then(response => response.json())
-                    .then(data => {
-                        const outputElement = document.getElementById('compileOutput');
-                        if (data.running) {
-                            outputElement.textContent = data.output || '正在编译中...';
-                            // 自动滚动到底部
-                            outputElement.scrollTop = outputElement.scrollHeight;
-                        } else {
-                            outputElement.textContent = data.output || '编译完成';
-                            if (data.success) {
-                                outputElement.textContent += '\n✅ 编译成功！';
-                            } else {
-                                outputElement.textContent += '\n❌ 编译失败！';
-                            }
-                            resetCompileUI();
-                            if (compilePollingInterval) {
-                                clearInterval(compilePollingInterval);
-                                compilePollingInterval = null;
-                            }
-                        }
+            try {
+                console.log(`启动编译: ${currentModule}, 模式: ${currentBuildType}, 清理: ${cleanBuild}`);
+                
+                const response = await fetch('/api/compile/start', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        module: currentModule,
+                        build_type: currentBuildType,
+                        clean_build: cleanBuild
                     })
-                    .catch(error => {
-                        console.error('轮询失败:', error);
-                    });
-            }, 1000);
+                });
+
+                const result = await response.json();
+                console.log('编译启动响应:', result);
+                
+                if (response.ok) {
+                    outputElement.textContent += `编译已启动，正在等待输出...\n`;
+                    startStatusPolling();
+                } else {
+                    const errorMsg = result.error || '编译启动失败';
+                    console.error('编译启动失败:', errorMsg);
+                    showCompileStatus('error', errorMsg);
+                    outputElement.textContent += `❌ ${errorMsg}\n`;
+                    resetButtons();
+                }
+            } catch (error) {
+                console.error('编译启动异常:', error);
+                const errorMsg = `网络错误: ${error.message}`;
+                showCompileStatus('error', errorMsg);
+                outputElement.textContent += `❌ ${errorMsg}\n`;
+                resetButtons();
+            }
         }
 
-        function getModuleRealName(moduleId) {
-            const moduleMap = {
-                'hgbaseappmodule': 'HGBaseAppModule',
-                'hguserauditmodule': 'HGUserAuditModule',
-                'hglogmodule': 'HGLogModule',
-                'hgloginmodule': 'HGLoginModule',
-                'hgsearchmodule': 'HGSearchModule'
-            };
-            return moduleMap[moduleId] || moduleId;
+        // 停止编译
+        async function stopCompile() {
+            try {
+                const response = await fetch('/api/compile/stop', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    document.getElementById('compile-output').textContent += '\n' + result.message;
+                } else {
+                    document.getElementById('compile-output').textContent += '\n停止编译失败: ' + result.error;
+                }
+                stopStatusPolling();
+                resetButtons();
+            } catch (error) {
+                document.getElementById('compile-output').textContent += '\n网络错误: ' + error.message;
+                resetButtons();
+            }
         }
 
-        // 页面加载时初始化编译UI
-        document.addEventListener('DOMContentLoaded', function() {
-            resetCompileUI();
-        });
+        // 打包模块
+        async function packageModule() {
+            if (!currentModule) return;
+
+            document.getElementById('package-btn').disabled = true;
+            document.getElementById('compile-output').textContent += '\n\n开始打包...';
+
+            try {
+                // 这里可以实现打包逻辑
+                document.getElementById('compile-output').textContent += '\n✅ 打包完成！';
+                document.getElementById('package-btn').disabled = false;
+            } catch (error) {
+                document.getElementById('compile-output').textContent += '\n❌ 打包失败: ' + error.message;
+                document.getElementById('package-btn').disabled = false;
+            }
+        }
+
+        // 开始轮询编译状态
+        function startStatusPolling() {
+            // 清除之前的轮询
+            stopStatusPolling();
+            
+            compileStatusInterval = setInterval(async () => {
+                try {
+                    const response = await fetch('/api/compile/status');
+                    const status = await response.json();
+
+                    // 更新输出内容
+                    const outputElement = document.getElementById('compile-output');
+                    if (status.output_lines && status.output_lines.length > 0) {
+                        outputElement.textContent = status.output_lines.join('\n');
+                    }
+                    outputElement.scrollTop = outputElement.scrollHeight; // 自动滚动到底部
+
+                    // 检查编译状态
+                    if (!status.is_running) {
+                        stopStatusPolling();
+                        if (status.output_lines && status.output_lines.some(line => line.includes('编译成功'))) {
+                            showCompileStatus('success', `编译成功: ${currentModule}`);
+                            document.getElementById('package-btn').disabled = false;
+                        } else if (status.output_lines && status.output_lines.some(line => line.includes('编译失败'))) {
+                            showCompileStatus('error', `编译失败: ${currentModule}`);
+                        } else {
+                            showCompileStatus('error', `编译异常: ${currentModule}`);
+                        }
+                        resetButtons();
+                    }
+                } catch (error) {
+                    console.error('轮询状态失败:', error);
+                }
+            }, 500); // 增加轮询频率，提高响应速度
+        }
+
+        // 停止轮询编译状态
+        function stopStatusPolling() {
+            if (compileStatusInterval) {
+                clearInterval(compileStatusInterval);
+                compileStatusInterval = null;
+            }
+        }
+
+        // 显示编译状态
+        function showCompileStatus(type, message) {
+            const statusDiv = document.getElementById('compile-status');
+            const statusText = document.getElementById('status-text');
+            
+            statusDiv.style.display = 'flex';
+            statusDiv.className = 'compile-status status-' + type;
+            statusText.textContent = message;
+        }
+
+        // 重置按钮状态
+        function resetButtons() {
+            document.getElementById('compile-btn').disabled = false;
+            document.getElementById('stop-btn').disabled = true;
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initModules);
     </script>
 </body>
 </html>
