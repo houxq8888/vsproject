@@ -1,0 +1,57 @@
+[  0%] Built target HGUserAuditModuleStatic_autogen_timestamp_deps
+[  0%] Automatic MOC and UIC for target HGUserAuditModuleStatic
+[  0%] Built target HGUserAuditModuleStatic_autogen
+[  4%] Building CXX object HGUserAuditModule/CMakeFiles/HGUserAuditModuleStatic.dir/src/authoritywidget.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGUserAuditModule\src\authoritywidget.cpp:4:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:\virtualMachine\github\vsproject\HGAppModule\HGUserAuditModule\src\authoritywidget.cpp:1:
+D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule/inc/authoritywidget.h: In constructor 'AuthorityWidget::AuthorityWidget(std::string, const std::vector<std::__cxx11::basic_string<char> >&, QWidget*)':
+D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule/inc/authoritywidget.h:88:17: warning: 'AuthorityWidget::m_lang' will be initialized after [-Wreorder]
+   88 |     std::string m_lang;
+      |                 ^~~~~~
+D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule/inc/authoritywidget.h:84:30: warning:   'std::vector<std::__cxx11::basic_string<char> > AuthorityWidget::m_whole_authority' [-Wreorder]
+   84 |     std::vector<std::string> m_whole_authority;
+      |                              ^~~~~~~~~~~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGUserAuditModule\src\authoritywidget.cpp:9:1: warning:   when initialized here [-Wreorder]
+    9 | AuthorityWidget::AuthorityWidget(std::string lang,const std::vector<std::string> &wholeAuthority,QWidget *parent) : QWidget(parent),
+      | ^~~~~~~~~~~~~~~
+D:\virtualMachine\github\vsproject\HGAppModule\HGUserAuditModule\src\authoritywidget.cpp: In member function 'void AuthorityWidget::onUsersComboBoxChanged(int)':
+D:\virtualMachine\github\vsproject\HGAppModule\HGUserAuditModule\src\authoritywidget.cpp:869:50: warning: unused parameter 'index' [-Wunused-parameter]
+  869 | void AuthorityWidget::onUsersComboBoxChanged(int index)
+      |                                              ~~~~^~~~~
+[  9%] Linking CXX static library libHGUserAuditModuleStatic.a
+[100%] Built target HGUserAuditModuleStatic
+[  0%] Built target HGUserAuditModuleStatic_autogen_timestamp_deps
+[  0%] Built target HGBaseAppModuleStatic_autogen_timestamp_deps
+[  2%] Automatic MOC and UIC for target HGBaseAppModuleStatic
+[  2%] Built target HGUserAuditModuleStatic_autogen
+[  2%] Built target HGBaseAppModuleStatic_autogen
+[ 46%] Built target HGUserAuditModuleStatic
+[ 48%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/authorityinfocache.cpp.obj
+In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\authorityinfocache.cpp:2:
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+[ 48%] Linking CXX static library libHGBaseAppModuleStatic.a
+[ 95%] Built target HGBaseAppModuleStatic
+[ 95%] Built target HGUserAuditModuleRun_autogen_timestamp_deps
+[ 97%] Built target HGUserAuditModuleRun_autogen
+mingw32-make[3]: *** No rule to make target 'pluginInterface/libPluginInterfaceStatic.a', needed by 'HGUserAuditModule/HGUserAuditModuleRun.exe'.  Stop.
+mingw32-make[2]: *** [CMakeFiles\Makefile2:528: HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/all] Error 2
+mingw32-make[1]: *** [CMakeFiles\Makefile2:535: HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/rule] Error 2
+mingw32-make: *** [Makefile:350: HGUserAuditModuleRun] Error 2

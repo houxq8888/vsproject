@@ -1,0 +1,2 @@
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libPluginInterfaceStatic.a CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj
+D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libPluginInterfaceStatic.a

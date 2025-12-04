@@ -1,0 +1,2 @@
+/usr/bin/x86_64-w64-mingw32-ar qc libCommonProtocolService.a CMakeFiles/CommonProtocolService.dir/src/ProtocolMiddleware.obj CMakeFiles/CommonProtocolService.dir/src/SerialTransport.obj CMakeFiles/CommonProtocolService.dir/src/commandbuilder.obj CMakeFiles/CommonProtocolService.dir/src/protocoldecoder.obj
+/usr/bin/x86_64-w64-mingw32-ranlib libCommonProtocolService.a

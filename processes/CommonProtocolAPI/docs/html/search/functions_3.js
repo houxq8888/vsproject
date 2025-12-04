@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['encode_5fcommand',['encode_command',['../ProtocolCommand_8h.html#a4d4eafeb1a0f6a71af4a011afd816693',1,'encode_command(uint32_t cmd_id, const char *cmd_name, const uint8_t *payload, uint32_t payload_len, uint8_t *buffer, uint32_t buffer_size, uint32_t *encoded_size):&#160;ProtocolCommand.c'],['../ProtocolCommand_8c.html#a4d4eafeb1a0f6a71af4a011afd816693',1,'encode_command(uint32_t cmd_id, const char *cmd_name, const uint8_t *payload, uint32_t payload_len, uint8_t *buffer, uint32_t buffer_size, uint32_t *encoded_size):&#160;ProtocolCommand.c']]],
+  ['encode_5fpayload_5ffrom_5fcommand',['encode_payload_from_command',['../ProtocolCommand_8h.html#ab0e15190dbc72806833b138acbedc856',1,'encode_payload_from_command(const Command *cmd, uint8_t *payload_buf, uint32_t buf_size, uint32_t *payload_len):&#160;ProtocolCommand.c'],['../ProtocolCommand_8c.html#ab0e15190dbc72806833b138acbedc856',1,'encode_payload_from_command(const Command *cmd, uint8_t *payload_buf, uint32_t buf_size, uint32_t *payload_len):&#160;ProtocolCommand.c']]]
+];

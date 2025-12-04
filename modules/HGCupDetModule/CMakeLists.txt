@@ -1,0 +1,40 @@
+set(LIBRARY_VERSION_MAJOR 1)
+set(LIBRARY_VERSION_MINOR 0)
+set(LIBRARY_VERSION_PATCH 0)
+
+
+HG_CMAKE_ADD_MODULE(CupDetModule inc src)
+
+
+HG_CMAKE_MODULE_DEPEND_PUB( 
+    HGCommon
+    HGImageAlgorithmService
+    ${ZXING_LIBRARY}
+    ${OpenCV_LIBRARIES}
+    ${LOG4CPLUS_LIBRARIES}  
+)
+if (PLATFORM STREQUAL "x64")
+HG_CMAKE_ADD_SHARED(HGCupDetModule inc src)
+
+HG_CMAKE_MODULE_DEPEND(
+    HGCommon
+    HGImageAlgorithmService
+    ${ZXING_LIBRARY}
+    ${OpenCV_LIBRARIES}
+    ${LOG4CPLUS_LIBRARIES}  
+)
+elseif (PLATFORM STREQUAL "win32")
+HG_CMAKE_ADD_STATIC(HGCupDetModule inc src)
+HG_CMAKE_MODULE_DEPEND(
+    HGCommon
+    HGImageAlgorithmService
+    ${OpenCV_LIBRARIES}
+)
+
+INCLUDE_DIRECTORIES(${HG_PROJECT_ROOT_FS}/include/opencv4)
+endif()
+
+set_target_properties(HGCupDetModule PROPERTIES 
+    VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}
+    SOVERSION ${LIBRARY_VERSION_MAJOR}
+)

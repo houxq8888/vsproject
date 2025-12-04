@@ -1,0 +1,21 @@
+HGBaseAppModuleStatic_autogen/timestamp: \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/CMakeLists.txt \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/DragDialog.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/QRoundProgressBar.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/authorityinfocache.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/basewidget.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/common.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/datachartinfocache.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/globalsingleton.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/hgmanipulatewidget.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/hgqlabel.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/labelwithimg.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/mychartview.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/mygraphicsview.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/mykeyboard.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/mypixmapitem.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/rectellipseitem.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/rectitem.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/systeminfocache.cpp \
+	D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/usersinfocache.cpp \
+	D:/Qt/Tools/CMake_64/bin/cmake.exe

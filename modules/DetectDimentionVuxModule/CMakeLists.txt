@@ -1,0 +1,28 @@
+set(LIBRARY_VERSION_MAJOR 1)
+set(LIBRARY_VERSION_MINOR 0)
+set(LIBRARY_VERSION_PATCH 0)
+
+
+HG_CMAKE_ADD_MODULE(DetectDimentionVuxModule inc src)
+
+
+HG_CMAKE_MODULE_DEPEND_PUB( 
+    HGCommon
+    HGImageAlgorithmService
+    ${ZXING_LIBRARY}
+    ${OpenCV_LIBRARIES}
+    ${LOG4CPLUS_LIBRARIES}
+)
+
+HG_CMAKE_ADD_SHARED(HXQDetectDimentionVuxModule inc src)
+
+HG_CMAKE_MODULE_DEPEND(
+    HGCommon
+    HGImageAlgorithmService
+    ${ZXING_LIBRARY}
+    ${LOG4CPLUS_LIBRARIES}
+)
+set_target_properties(HXQDetectDimentionVuxModule PROPERTIES 
+    VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}
+    SOVERSION ${LIBRARY_VERSION_MAJOR}
+)

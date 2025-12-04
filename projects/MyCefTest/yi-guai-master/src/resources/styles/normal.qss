@@ -1,0 +1,336 @@
+
+*{
+font-family:"Microsoft Yahei";
+}
+
+StyledMenu{
+background-color: #ffffff;
+border: 2px solid #e8e8e8;
+border-radius: 6px;
+border-bottom-right-radius:0px;
+}
+StyledMenu::item {
+background-color: transparent;
+ /* padding: top right bottom left*/
+padding: 4px 14px 4px 14px;
+}
+
+StyledMenu::icon{
+padding-left: 15px;
+}
+StyledMenu::item:selected:enabled  {
+color:black;
+background-color: #EEEEEE;
+}
+StyledMenu#HisWidgetAllHisMenu::item {
+ /* padding: top right bottom left*/
+padding-right: 30px;
+}
+
+
+QToolButton{
+border:none;
+border-radius:4px;
+padding:6px;
+}
+QToolButton:hover{
+background-color:rgba(169,169,169, 30%);
+}
+QToolButton:open{
+background: #CFCFCF;
+border:none;
+}
+QToolButton#NaviBarOptionBtn::menu-indicator{
+image: none;
+}
+
+
+/******************************************
+Description:Customizing QScrollBar
+Scope:Global QScrollBar
+*/
+/*modify vertical*/
+QScrollBar:vertical
+{
+    width:8px;
+    background:rgba(0,0,0,0%);
+    margin:0px,0px,0px,0px;
+    padding-top:9px;
+    padding-bottom:9px;
+}
+QScrollBar::handle:vertical
+{
+    width:8px;
+    background:rgba(0,0,0,25%);
+    border-radius:4px;
+    min-height:20;
+}
+QScrollBar::handle:vertical:hover
+{
+    width:8px;
+    background:rgba(0,0,0,50%);
+    border-radius:4px;
+    min-height:20;
+}
+
+QScrollBar::add-line:vertical
+{
+    height:9px;width:8px;
+    border-image:url(:/icons/resources/imgs/page_down.png);
+    subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical
+{
+    height:9px;width:8px;
+    border-image:url(:/icons/resources//imgs/page_up.png);
+    subcontrol-position:top;
+}
+
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+    background:rgba(0,0,0,10%);
+    border-radius:4px;
+}
+
+/*modify horizontal*/
+QScrollBar:horizontal
+{
+    height:8px;
+    background:rgba(0,0,0,0%);
+    margin:0px,0px,0px,0px;
+    padding-left:9px;
+    padding-right:9px;
+}
+QScrollBar::handle:horizontal
+{
+    height:8px;
+    background:rgba(0,0,0,25%);
+    border-radius:4px;
+    min-height:20;
+}
+QScrollBar::handle:horizontal:hover
+{
+    height:8px;
+    background:rgba(0,0,0,50%);
+    border-radius:4px;
+    min-height:20;
+}
+
+QScrollBar::add-line:horizontal
+{
+    height:9px;width:8px;
+    border-image:url(:/icons/resources/imgs/page_right.png);
+    subcontrol-position:right;
+}
+QScrollBar::sub-line:horizontal
+{
+    height:9px;width:8px;
+    border-image:url(:/icons/resources/imgs/page_left.png);
+    subcontrol-position:left;
+}
+
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+    background:rgba(0,0,0,10%);
+    border-radius:4px;
+}
+
+
+QWidget#mainwindow_north_widget{
+background-color:#F9F9FB;
+border:none;
+}
+
+QWidget#mainwindow_east_widget{
+background-color:white;
+border:none;
+border-left:1px solid #D2D2D2;
+}
+
+QFrame#ZoomBarFrame{
+border:1px solid #CDCDCD;
+border-left:none;
+border-right:none;
+}
+
+QToolButton#ZoomOutToolButton{
+border-radius:0px;
+border:1px solid #CDCDCD;
+border-top:none;
+border-bottom:none;
+}
+QToolButton#ZoomInToolButton{
+border-radius:0px;
+border:1px solid #CDCDCD;
+border-top:none;
+border-bottom:none;
+}
+QToolButton#ZoomBarFullscrnButton{
+border-radius:0px;
+}
+
+QLabel#ZoomValueLabel{
+border:none;
+}
+
+.AddressBar{
+border:none;
+border-radius:6px;
+background-color:#F0F0F4;
+}
+.AddressBar:hover{
+border:1px solid #D2D2D2;
+}
+.AddressBar:focus{
+background-color:white;
+border:2px solid #A3CFEC;
+}
+.AddressBar > QLineEdit{
+border:none;
+background-color:transparent;
+}
+
+.AddressBar > QPushButton{
+border:none;
+border-radius:4px;
+padding:6px;
+}
+.AddressBar > QPushButton:hover{
+background-color:rgba(169,169,169, 30%);
+}
+
+.AddressBar > QPushButton:open{
+background: #CFCFCF;
+border:none;
+}
+
+.AddressBar > QToolButton{
+border:none;
+border-radius:4px;
+padding:4px;
+}
+.AddressBar > QToolButton:hover{
+background-color:rgba(169,169,169, 30%);
+}
+
+.AddressBar > QToolButton:open{
+background: #CFCFCF;
+border:none;
+}
+
+.SearchBar{
+border:none;
+border-radius:6px;
+background-color:#F0F0F4;
+}
+.SearchBar:hover{
+border:1px solid #D2D2D2;
+}
+.SearchBar:focus{
+background-color:white;
+border:2px solid #A3CFEC;
+}
+.SearchBar > QLineEdit{
+border:none;
+background-color:transparent;
+}
+.SearchBar > QToolButton{
+border:none;
+border-radius:4px;
+padding:4px;
+}
+.SearchBar > QToolButton:hover{
+background-color:rgba(169,169,169, 30%);
+}
+.SearchBar > QToolButton:open{
+background: #CFCFCF;
+border:none;
+}
+
+.TabBar::close-button{
+    image: url(:/icons/resources/imgs/light/delete_64px.png);
+}
+
+.TabBar::close-button:hover {
+background-color:rgba(169,169,169, 30%);
+border-radius:4px;
+}
+
+
+QPushButton#InprivateCloseBtn{
+border:none;
+border-radius:4px;
+background-color:#006CBE;
+color:white;
+padding:6px;
+}
+QPushButton#InprivateCloseBtn:hover{
+background-color:rgba(0,108,190, 70%);
+}
+
+BookmarkToolBar > QToolButton:menu-indicator{
+image:none;
+}
+BookmarkToolBar > QToolButton{
+border:none;
+color:#666666;
+padding:3px;
+}
+BookmarkToolBar > QToolButton:hover{
+background: rgba(169,169,169, 30%);
+border-radius:4px;
+}
+BookmarkToolBar > QToolButton:pressed{
+background: #e8ebec;
+}
+BookmarkToolBar > QToolButton:open{
+background: #DCDCDC;
+border:none;
+border-radius:4px;
+}
+
+
+BookmarkBar > QPushButton{
+text-align:left;
+border:none;
+color:#666666;
+padding:4px;
+}
+BookmarkBar > QPushButton:menu-indicator{
+image:none;
+}
+
+BookmarkBar > QPushButton:hover{
+background: rgba(169,169,169, 30%);
+border-radius:4px;
+}
+BookmarkBar > QPushButton:pressed{
+background: #e8ebec;
+}
+BookmarkBar > QPushButton:open{
+background: #DCDCDC;
+border:none;
+border-radius:4px;
+}
+
+BookmarkMenu{
+menu-scrollable: 1;
+background-color: #ffffff;
+border: 2px solid #e8e8e8;
+border-radius: 6px;
+border-bottom-right-radius:0px;
+}
+BookmarkMenu::item {
+max-width: 400px;
+background-color: transparent;
+ /* padding: top right bottom left*/
+padding: 4px 14px 4px 14px;
+}
+
+BookmarkMenu::icon{
+padding-left: 15px;
+}
+BookmarkMenu::item:selected:enabled  {
+color:black;
+background-color: #EEEEEE;
+}

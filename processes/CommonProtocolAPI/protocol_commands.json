@@ -1,0 +1,863 @@
+{
+  "protocol_version": "1.0",
+  "commands": [
+    {
+      "id": 1,
+      "name": "GetVersion",
+      "metadata": {
+        "require_ack": false
+      },
+      "response_fields": [
+        {
+          "name": "major",
+          "type": "uint8",
+          "field_num": 1,
+          "default": 0
+        },
+        {
+          "name": "minor",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0
+        },
+        {
+          "name": "patch",
+          "type": "uint8",
+          "field_num": 3,
+          "default": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "SetParameter",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "end_potential",
+          "type": "uint16",
+          "field_num": 1,
+          "description": "终点电位"
+        },
+        {
+          "name": "end_drift",
+          "type": "uint8",
+          "field_num": 2,
+          "description": "终点漂移"
+        },
+        {
+          "name": "start_drift",
+          "type": "uint8",
+          "field_num": 3,
+          "description": "起始漂移"
+        },
+        {
+          "name": "end_delay",
+          "type": "uint8",
+          "field_num": 4,
+          "description": "终点延时"
+        },
+        {
+          "name": "calibration_factor",
+          "type": "uint8",
+          "field_num": 5,
+          "description": "校正因子"
+        },
+        {
+          "name": "min_duration",
+          "type": "uint8",
+          "field_num": 6,
+          "description": "最短时长"
+        },
+        {
+          "name": "max_duration",
+          "type": "uint8",
+          "field_num": 7,
+          "description": "最长时长"
+        },
+        {
+          "name": "extraction_time",
+          "type": "uint8",
+          "field_num": 8,
+          "description": "萃取时间"
+        },
+        {
+          "name": "termination_time",
+          "type": "uint8",
+          "field_num": 9,
+          "description": "终止时间"
+        },
+        {
+          "name": "electrolytic_electrode",
+          "type": "uint8",
+          "field_num": 10,
+          "description": "电解电极"
+        },
+        {
+          "name": "fan",
+          "type": "uint8",
+          "field_num": 11,
+          "description": "风扇"
+        },
+        {
+          "name": "heater_tube",
+          "type": "uint8",
+          "field_num": 12,
+          "description": "加热伴管"
+        },
+        {
+          "name": "initial_temperature",
+          "type": "uint8",
+          "field_num": 13,
+          "description": "初始温度"
+        },
+        {
+          "name": "constant_temperature_time",
+          "type": "uint8",
+          "field_num": 14,
+          "description": "恒温时间"
+        },
+        {
+          "name": "program_heating",
+          "type": "uint8",
+          "field_num": 15,
+          "description": "程序升温"
+        },
+        {
+          "name": "rate1",
+          "type": "uint8",
+          "field_num": 16,
+          "description": "速率1"
+        },
+        {
+          "name": "rate2",
+          "type": "uint8",
+          "field_num": 17,
+          "description": "速率2"
+        },
+        {
+          "name": "rate3",
+          "type": "uint8",
+          "field_num": 18,
+          "description": "速率3"
+        },
+        {
+          "name": "temperature1",
+          "type": "uint8",
+          "field_num": 19,
+          "description": "温度1"
+        },
+        {
+          "name": "temperature2",
+          "type": "uint8",
+          "field_num": 20,
+          "description": "温度2"
+        },
+        {
+          "name": "temperature3",
+          "type": "uint8",
+          "field_num": 21,
+          "description": "温度3"
+        },
+        {
+          "name": "keep_warm1",
+          "type": "uint8",
+          "field_num": 22,
+          "description": "保温1"
+        },
+        {
+          "name": "keep_warm2",
+          "type": "uint8",
+          "field_num": 23,
+          "description": "保温2"
+        },
+        {
+          "name": "keep_warm3",
+          "type": "uint8",
+          "field_num": 24,
+          "description": "保温3"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "GetData",
+      "metadata": {
+        "require_ack": false
+      },
+      "response_fields": [
+        {
+          "name": "fan_status",
+          "type": "uint8",
+          "field_num": 1,
+          "description": "风扇状态,0-关,1-开"
+        },
+        {
+          "name": "heating_temperature",
+          "type": "float",
+          "field_num": 2,
+          "description": "加热温度"
+        },
+        {
+          "name": "current_temperature",
+          "type": "float",
+          "field_num": 3,
+          "description": "当前温度"
+        },
+        {
+          "name": "airflow_speed",
+          "type": "float",
+          "field_num": 4,
+          "description": "气流速度"
+        },
+        {
+          "name": "voltage",
+          "type": "uint8",
+          "field_num": 5,
+          "description": "电压"
+        },
+        {
+          "name": "electrolysis_speed",
+          "type": "float",
+          "field_num": 6,
+          "description": "电解速度"
+        },
+        {
+          "name": "analysis_duration",
+          "type": "string",
+          "field_num": 7,
+          "description": "分析时长"
+        },
+        {
+          "name": "water_quality",
+          "type": "float",
+          "field_num": 8,
+          "description": "水质量"
+        },
+        {
+          "name": "status_result",
+          "type": "string",
+          "field_num": 9,
+          "description": "状态结果"
+        },
+        {
+          "name": "flag",
+          "type": "string",
+          "field_num": 10,
+          "description": "标志"
+        },
+        {
+          "name": "drift",
+          "type": "float",
+          "field_num": 11,
+          "description": "漂移"
+        },
+        {
+          "name": "blank",
+          "type": "float",
+          "field_num": 12,
+          "description": "空白"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Heating",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "status",
+          "type": "uint8",
+          "field_num": 1,
+          "description": "加热使能,0-停止加热,1-开始加热"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Fanning",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "status",
+          "type": "uint8",
+          "field_num": 1,
+          "description": "风扇使能,0-关,1-开"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Pumping",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "status",
+          "type": "uint8",
+          "field_num": 1,
+          "description": "气泵使能,0-关,1-开"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "SetSwirlSpeed",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "speed",
+          "type": "uint8",
+          "field_num": 1,
+          "description": "设置搅拌速度1-15档"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "GetSwirlSpeed",
+      "metadata": {
+        "require_ack": false
+      },
+      "response_fields": [
+        {
+          "name": "speed",
+          "type": "uint8",
+          "field_num": 1,
+          "default": 0,
+		  "description": "读取搅拌速度1-15档"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "ExecuteToCleaningPos",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "number",
+          "type": "uint8",
+          "field_num": 1,
+		  "description": "转盘执行到吹扫位,0--非使能,1--使能"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "GetDiskNumber",
+      "metadata": {
+        "require_ack": false
+      },
+      "response_fields": [
+        {
+          "name": "number",
+          "type": "uint8",
+          "field_num": 1,
+          "default": 0,
+		  "description": "获取盘位号"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "ExecuteCirculate",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "number",
+          "type": "uint8",
+          "field_num": 1,
+		  "description": "设置盘位号0-36,并转盘执行"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "SampleDetect",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "number",
+          "type": "uint8",
+          "field_num": 1,
+		  "description": "检测做样,0--非使能,1--使能"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "NeedleRaised",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "number",
+          "type": "uint8",
+          "field_num": 1,
+		  "description": "穿刺针抬起,0--非使能,1--使能"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "NeedleToLimitPosition",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "number",
+          "type": "uint8",
+          "field_num": 1,
+		  "description": "穿刺针到限位,0--非使能,1--使能"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "GetNeedlePos",
+      "metadata": {
+        "require_ack": false
+      },
+      "response_fields": [
+        {
+          "name": "number",
+          "type": "uint8",
+          "field_num": 1,
+		  "default": 0,
+		  "description": "获取穿刺针当前位置"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "NeedleLongPress",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "number",
+          "type": "uint8",
+          "field_num": 1,
+		  "description": "穿刺针长按,0--非使能,1--使能"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "NeedleMoveStep",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "step",
+          "type": "uint8",
+          "field_num": 1,
+		  "description": "穿刺针步进步数"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "NeedleToHigh",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "step",
+          "type": "uint8",
+          "field_num": 1,
+		  "description": "穿刺针到高位置"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "NeedleToMedium",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "step",
+          "type": "uint8",
+          "field_num": 1,
+		  "description": "穿刺针到中位置"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "NeedleToLow",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "step",
+          "type": "uint8",
+          "field_num": 1,
+		  "description": "穿刺针到低位置"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "StopGetNeedlePos",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "step",
+          "type": "uint8",
+          "field_num": 1,
+		  "description": "停止获取穿刺针位置"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "SaveCurNeedlePos",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "value",
+          "type": "float",
+          "field_num": 1,
+		  "description": "保存穿刺针位置值"
+        },
+		{
+		  "name": "level",
+		  "type": "uint8",
+		  "field_num": 2,
+		  "description": "保存的穿刺针位置高度等级,0--高,1--中,2--低"
+		}
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "StartBalance",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "value",
+          "type": "uint8",
+          "field_num": 1,
+		  "description": "平衡使能,0--非使能,1--使能"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    }
+  ]
+}

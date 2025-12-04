@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<V6 Version="1.0">
+    <AppVersion>1.0.0</AppVersion>
+    <AppName></AppName>
+    <TaskSeqName>TaskSequence</TaskSeqName>
+    <ReagentName></ReagentName>
+    <DirPath>D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule_Release</DirPath>
+    <ComPort></ComPort>
+    <ScannerVendorID>0x0000</ScannerVendorID>
+    <ScannerProductID>0x0000</ScannerProductID>
+</V6>

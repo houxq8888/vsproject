@@ -1,0 +1,283 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/BaseAppModule_autogen",
+	"CMAKE_BINARY_DIR" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule",
+	"CMAKE_EXECUTABLE" : "D:/Qt/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/CMakeLists.txt"
+	],
+	"CMAKE_SOURCE_DIR" : "D:/virtualMachine/github/vsproject/HGAppModule",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/BaseAppModule_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "BaseAppModule_autogen/timestamp",
+	"HEADERS" : [],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/BaseAppModule_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/BaseAppModule_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"MINGW_HAS_SECURE_API=1",
+		"QT_CHARTS_LIB",
+		"QT_CORE_LIB",
+		"QT_DESIGNER_LIB",
+		"QT_GUI_LIB",
+		"QT_NETWORK_LIB",
+		"QT_OPENGLWIDGETS_LIB",
+		"QT_OPENGL_LIB",
+		"QT_PRINTSUPPORT_LIB",
+		"QT_QMLINTEGRATION_LIB",
+		"QT_QML_LIB",
+		"QT_UIPLUGIN_LIB",
+		"QT_WIDGETS_LIB",
+		"QT_XML_LIB",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_UNICODE",
+		"_WIN64"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/virtualMachine/github/vsproject/HGAppModule",
+		"D:/virtualMachine/github/vsproject/3rdparty/include",
+		"D:/virtualMachine/github/vsproject/3rdparty/include/opencv4",
+		"D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc",
+		"D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc",
+		"D:/virtualMachine/github/vsproject/services/HGAtomService/HGSecurityService/inc",
+		"D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/inc",
+		"D:/virtualMachine/github/vsproject/services/HGAtomService/HGAuthorityService/inc",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc",
+		"D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/inc",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGUartModule/inc",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGPrintModule/inc",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGCurveModule/inc",
+		"D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc",
+		"D:/virtualMachine/github/vsproject/services/HGCommon/inc",
+		"D:/virtualMachine/github/vsproject/services/HGConfig/inc",
+		"D:/virtualMachine/github/vsproject/interfaces/CameraRecognizeInterface/inc",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule",
+		"D:/Qt/6.9.1/mingw_64/include/QtCore",
+		"D:/Qt/6.9.1/mingw_64/include",
+		"D:/Qt/6.9.1/mingw_64/mkspecs/win32-g++",
+		"D:/Qt/6.9.1/mingw_64/include/QtWidgets",
+		"D:/Qt/6.9.1/mingw_64/include/QtGui",
+		"D:/Qt/6.9.1/mingw_64/include/QtCharts",
+		"D:/Qt/6.9.1/mingw_64/include/QtOpenGL",
+		"D:/Qt/6.9.1/mingw_64/include/QtOpenGLWidgets",
+		"D:/Qt/6.9.1/mingw_64/include/QtPrintSupport",
+		"D:/Qt/6.9.1/mingw_64/include/QtDesigner",
+		"D:/Qt/6.9.1/mingw_64/include/QtUiPlugin",
+		"D:/Qt/6.9.1/mingw_64/include/QtXml",
+		"D:/Qt/6.9.1/mingw_64/include/QtQml",
+		"D:/Qt/6.9.1/mingw_64/include/QtQmlIntegration",
+		"D:/Qt/6.9.1/mingw_64/include/QtNetwork",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+		"D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"D:/Qt/Tools/mingw1310_64/bin/c++.exe",
+		"-std=gnu++17",
+		"-dM",
+		"-E",
+		"-c",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/BaseAppModule_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : 
+	[
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/QRoundProgressBar.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/authorityinfocache.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/basewidget.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/datachartinfocache.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/globalsingleton.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgmanipulatewidget.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/labelwithimg.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mychartview.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mygraphicsview.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mykeyboard.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mypixmapitem.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/rectellipseitem.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/rectitem.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/systeminfocache.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_DragDialog.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_QRoundProgressBar.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_authorityinfocache.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_basewidget.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_common.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_datachartinfocache.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_globalsingleton.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_hgmanipulatewidget.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_hgqlabel.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_labelwithimg.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mychartview.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mygraphicsview.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mykeyboard.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mypixmapitem.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_rectellipseitem.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_rectitem.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_systeminfocache.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_usersinfocache.cpp"
+	],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 10,
+	"PARSE_CACHE_FILE" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/Qt/6.9.1/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/Qt/6.9.1/mingw_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 9,
+	"SETTINGS_FILE" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/DragDialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/QRoundProgressBar.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/authorityinfocache.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/basewidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/common.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/datachartinfocache.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/globalsingleton.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/hgmanipulatewidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/hgqlabel.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/labelwithimg.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/mychartview.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/mygraphicsview.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/mykeyboard.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/mypixmapitem.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/rectellipseitem.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/rectitem.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/systeminfocache.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/usersinfocache.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : 
+	[
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_DragDialog.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_QRoundProgressBar.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_authorityinfocache.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_basewidget.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_common.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_datachartinfocache.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_globalsingleton.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_hgmanipulatewidget.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_hgqlabel.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_labelwithimg.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mychartview.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mygraphicsview.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mykeyboard.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mypixmapitem.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_rectellipseitem.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_rectitem.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_systeminfocache.cpp",
+		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_usersinfocache.cpp"
+	],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

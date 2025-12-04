@@ -1,0 +1,5 @@
+<map id="ProtocolDefinition" name="ProtocolDefinition">
+<area shape="rect" id="node2" href="$structCommandDefinition.html" title="CommandDefinition" alt="" coords="61,109,199,136"/>
+<area shape="rect" id="node3" href="$structFieldDefinition.html" title="FieldDefinition" alt="" coords="5,5,111,32"/>
+<area shape="rect" id="node4" href="$structCommandMetadata.html" title="CommandMetadata" alt="" coords="134,5,270,32"/>
+</map>

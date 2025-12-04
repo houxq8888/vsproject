@@ -1,0 +1,135 @@
+{
+  "protocol_version": "1.0",
+  "commands": [
+    {
+      "id": 1,
+      "name": "GetVersion",
+      "metadata": {
+        "require_ack": true
+      },
+      "response_fields": [
+        {
+          "name": "major",
+          "type": "uint8",
+          "field_num": 1,
+          "default": 0
+        },
+        {
+          "name": "minor",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0
+        },
+        {
+          "name": "patch",
+          "type": "uint8",
+          "field_num": 3,
+          "default": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "SetParameter",
+      "metadata": {
+        "require_ack": true,
+        "timeout_ms": 1000
+      },
+      "request_fields": [
+        {
+          "name": "param_id",
+          "type": "uint16",
+          "field_num": 1,
+          "description": "Parameter identifier"
+        },
+        {
+          "name": "value",
+          "type": "float32",
+          "field_num": 2,
+          "description": "Parameter value"
+        },
+        {
+          "name": "value1",
+          "type": "uint8",
+          "field_num": 3,
+          "description": "Parameter value"
+        },
+        {
+          "name": "value2",
+          "type": "uint32",
+          "field_num": 4,
+          "description": "Parameter value"
+        },
+        {
+          "name": "value3",
+          "type": "bool",
+          "field_num": 5,
+          "description": "Parameter value"
+        },
+        {
+          "name": "value4",
+          "type": "int8",
+          "field_num": 6,
+          "description": "Parameter value"
+        },
+        {
+          "name": "value5",
+          "type": "int16",
+          "field_num": 7,
+          "description": "Parameter value"
+        },
+        {
+          "name": "value6",
+          "type": "int32",
+          "field_num": 8,
+          "description": "Parameter value"
+        },
+        {
+          "name": "value7",
+          "type": "uint64",
+          "field_num": 9,
+          "description": "Parameter value"
+        },
+        {
+          "name": "value8",
+          "type": "double",
+          "field_num": 10,
+          "description": "Parameter value"
+        },
+        {
+          "name": "value9",
+          "type": "float",
+          "field_num": 11,
+          "description": "Parameter value"
+        },
+        {
+          "name": "value10",
+          "type": "string",
+          "field_num": 12,
+          "description": "Parameter value"
+        },
+        {
+          "name": "value11",
+          "type": "bytes",
+          "field_num": 13,
+          "description": "Parameter value"
+        }
+      ],
+      "response_fields": [
+        {
+          "name": "success",
+          "type": "bool",
+          "field_num": 1,
+          "default": false
+        },
+        {
+          "name": "error_code",
+          "type": "uint8",
+          "field_num": 2,
+          "default": 0,
+          "description": "0=success, 1=invalid_id, 2=out_of_range"
+        }
+      ]
+    }
+  ]
+}

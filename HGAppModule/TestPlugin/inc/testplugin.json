@@ -1,0 +1,11 @@
+{
+    "name": "TestWidget",
+    "version": "1.0",
+    "dependencies": [],
+    "platforms": ["any"],
+    "plugin": {
+        "name": "TestPlugin",
+        "class": "TestPlugin",
+        "path": "libHGTestPlugin.so"
+    }
+}

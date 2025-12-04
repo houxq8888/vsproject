@@ -1,0 +1,11 @@
+{
+    "name": "ScannerWidget",
+    "version": "1.0",
+    "dependencies": [],
+    "platforms": ["any"],
+    "plugin": {
+        "name": "ScannerWidgetPlugin",
+        "class": "ScannerWidgetPlugin",
+        "path": "libHGScannerModule.so"
+    }
+}

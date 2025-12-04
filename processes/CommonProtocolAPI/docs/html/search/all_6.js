@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['get_5fcommand_5ffield',['get_command_field',['../ProtocolCommand_8h.html#ae8d1efedaffff34e9a87f90be33789e5',1,'get_command_field(const Command *cmd, uint8_t field_num, FieldType *type, FieldValue *value):&#160;ProtocolCommand.c'],['../ProtocolCommand_8c.html#ae8d1efedaffff34e9a87f90be33789e5',1,'get_command_field(const Command *cmd, uint8_t field_num, FieldType *type, FieldValue *value):&#160;ProtocolCommand.c']]],
+  ['getreceivecommand',['getReceiveCommand',['../ProtocolInterface_8h.html#aa4e036781488449dffddb7ed3b299085',1,'getReceiveCommand(uint8_t *rx_buffer, uint32_t *rx_size, uint8_t *tx_buffer, uint32_t *tx_size):&#160;ProtocolInterface.c'],['../ProtocolInterface_8c.html#aa4e036781488449dffddb7ed3b299085',1,'getReceiveCommand(uint8_t *rx_buffer, uint32_t *rx_size, uint8_t *tx_buffer, uint32_t *tx_size):&#160;ProtocolInterface.c']]],
+  ['getsendcommand',['getSendCommand',['../ProtocolInterface_8h.html#aad19650ea8df69efa41aaea8d15603cd',1,'getSendCommand(uint32_t cmd_id, CommandMode mode, const FieldInput *fields, uint32_t field_count, uint8_t *tx_buffer, uint32_t *tx_size):&#160;ProtocolInterface.c'],['../ProtocolInterface_8c.html#aad19650ea8df69efa41aaea8d15603cd',1,'getSendCommand(uint32_t cmd_id, CommandMode mode, const FieldInput *fields, uint32_t field_count, uint8_t *tx_buffer, uint32_t *tx_size):&#160;ProtocolInterface.c']]],
+  ['gprotocol',['gProtocol',['../ProtocolInterface_8c.html#ac465ead9f935148c3cd2838316df6cf3',1,'ProtocolInterface.c']]]
+];

@@ -1,0 +1,81 @@
+project(HGDashboardApp VERSION 1.1.7)
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON) # QML
+set(CMAKE_AUTORCC ON) # rc
+
+
+
+file(GLOB MOC_HEADERS 
+    "inc/*.h"
+)
+
+qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+qt5_add_resources(QT_RESOURCES resources.qrc)
+
+HG_CMAKE_ADD_MODULE(DashboardApp inc src 
+    ${MOC_SRCS}
+    ${QT_RESOURCES}
+)
+
+target_compile_definitions(DashboardApp PUBLIC
+     -DENV_CFG_FILE=\"\"
+     -DENV_APP_NAME=\"HGDashboardApp\")
+
+HG_CMAKE_MODULE_DEPEND_PUB(
+    HGCommon
+    HGConfig
+    HGSaveService
+    HGCommunicateService
+    HGBaseAppModule
+    HGDashboardModule
+    ${ZXING_LIBRARY}
+    ALSA::ALSA
+    ${OpenCV_LIBRARIES}
+    ${OpencvFreeType_LIBRARY}
+    ${LOG4CPLUS_LIBRARIES}
+    ${CUPS_LIBRARY}
+    ${XLSXIO_READ_LIBRARY}
+    ${XLSXIO_WRITE_LIBRARY}
+    ${HARU_LIBRARY}
+    ${ZeroMQ_LIBRARY}
+    ${MQTT_LIBRARYS}
+    ${LIB_SERIALPORT_LIBRARY}
+    ${LIB_MOSQUITT_LIBRARY}
+    ${PULSE_LIBRARIES}
+    ${LIBSSH_LIBRARIES}
+    ${AVFORMAT_LIBRARIES}
+    ${AVCODEC_LIBRARIES}
+    ${AVUTIL_LIBRARIES}
+    ${SWSCALE_LIBRARIES}
+    CURL::libcurl
+    # ${TIDY_LIBRARIES}
+    /usr/lib/x86_64-linux-gnu/libpulse.so
+    /usr/lib/x86_64-linux-gnu/libpulse-simple.so
+    OpenSSL::Crypto
+    Qt5::Gui
+    Qt5::Core
+    Qt5::Widgets
+    Qt5::Charts
+   # Qt5::Quick
+   # Qt5::QuickWidgets
+   # Qt5::Positioning
+   # Qt5::Location
+   # Qt5::WebEngine
+   # Qt5::WebEngineWidgets 
+)
+
+
+HG_CMAKE_ADD_EXE(HGDashboardApp main.cpp)
+
+HG_CMAKE_MODULE_DEPEND(
+    DashboardApp
+)
+
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/version.h.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/version.h"
+)
+
+include_directories("${CMAKE_CURRENT_BINARY_DIR}")
+
