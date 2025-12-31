@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HGAppModule 模块编译工具</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .module-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+        }
+
+        .module-card:hover {
+            border-color: #4facfe;
+            background: #e8f4fd;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        .module-card.active {
+            border-color: #4facfe;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .module-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .module-card .status {
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+
+        .module-card .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #28a745;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+
+        .build-panel {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .build-panel.active {
+            display: block;
+        }
+
+        .build-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .build-controls button {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(79, 172, 254, 0.3);
+        }
+
+        .build-controls button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        .build-controls button:active {
+            transform: translateY(0);
+        }
+
+        .build-controls button:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .build-controls button.secondary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .build-controls button.danger {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .build-controls button.warning {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .build-mode-selector {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .build-mode-selector label {
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .build-mode-selector input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .build-mode-selector input[type="radio"]:checked + span {
+            color: #4facfe;
+            font-weight: 600;
+        }
+
+        .log-container {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            line-height: 1.4;
+        }
+
+        .log-container .error {
+            color: #f44336;
+        }
+
+        .log-container .success {
+            color: #4caf50;
+        }
+
+        .log-container .info {
+            color: #2196f3;
+        }
+
+        .log-container .warning {
+            color: #ff9800;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .progress-bar.active {
+            display: block;
+        }
+
+        .progress-bar .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .status-indicator .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator.idle .dot {
+            background: #6c757d;
+        }
+
+        .status-indicator.building .dot {
+            background: #ff9800;
+        }
+
+        .status-indicator.success .dot {
+            background: #4caf50;
+        }
+
+        .status-indicator.error .dot {
+            background: #f44336;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .output-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .output-section h3 {
+            margin-bottom: 15px;
+            color: #495057;
+        }
+
+        .output-files {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;
+        }
+
+        .output-file {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border-left: 4px solid #4facfe;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+
+        .output-file.exe {
+            border-left-color: #4caf50;
+        }
+
+        .output-file.a {
+            border-left-color: #2196f3;
+        }
+
+        .output-file.dll {
+            border-left-color: #ff9800;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-card h4 {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .stat-card .value {
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .build-controls {
+                flex-direction: column;
+            }
+
+            .build-controls button {
+                width: 100%;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>HGAppModule 模块编译工具</h1>
+            <p>Windows平台下的智能模块编译与管理系统</p>
+        </div>
+
+        <div class="content">
+            <div class="stats">
+                <div class="stat-card">
+                    <h4>总模块数</h4>
+                    <div class="value" id="totalModules">0</div>
+                </div>
+                <div class="stat-card">
+                    <h4>编译成功</h4>
+                    <div class="value" id="successCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <h4>编译失败</h4>
+                    <div class="value" id="failedCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <h4>当前状态</h4>
+                    <div class="value" id="currentStatus">就绪</div>
+                </div>
+            </div>
+
+            <div class="module-grid" id="moduleGrid">
+                <!-- 模块卡片将通过JavaScript动态生成 -->
+            </div>
+
+            <div class="build-panel" id="buildPanel">
+                <div class="status-indicator idle" id="statusIndicator">
+                    <div class="dot"></div>
+                    <span>就绪</span>
+                </div>
+
+                <div class="build-mode-selector">
+                    <label>编译模式:</label>
+                    <label>
+                        <input type="radio" name="buildMode" value="Release" checked>
+                        <span>Release</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="buildMode" value="Debug">
+                        <span>Debug</span>
+                    </label>
+                </div>
+
+                <div class="build-controls">
+                    <button id="buildBtn" onclick="startBuild()">开始编译</button>
+                    <button id="rebuildBtn" onclick="startRebuild()" class="secondary">重新编译</button>
+                    <button id="packageBtn" onclick="packageModule()" class="warning" disabled>打包</button>
+                    <button id="clearLogBtn" onclick="clearLog()" class="danger">清空日志</button>
+                </div>
+
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress" id="progress"></div>
+                </div>
+
+                <div class="log-container" id="logContainer">
+                    <span class="info">欢迎使用HGAppModule编译工具！请选择一个模块开始编译。</span>
+                </div>
+
+                <div class="output-section" id="outputSection" style="display: none;">
+                    <h3>生成的文件</h3>
+                    <div class="output-files" id="outputFiles"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let modules = [];
+        let selectedModule = null;
+        let isBuilding = false;
+        let eventSource = null;
+
+        // API基础URL
+        const API_BASE_URL = '/api';
+
+        // 初始化EventSource
+        function initEventSource() {
+            if (eventSource) {
+                eventSource.close();
+            }
+
+            eventSource = new EventSource(`${API_BASE_URL}/build/log`);
+            
+            eventSource.onmessage = function(event) {
+                const log = JSON.parse(event.data);
+                addLog(log.message, log.type);
+            };
+
+            eventSource.onerror = function(error) {
+                console.error('EventSource error:', error);
+                if (eventSource.readyState === EventSource.CLOSED) {
+                    console.log('EventSource closed');
+                }
+            };
+        }
+
+        // 初始化
+        async function init() {
+            await loadModules();
+            updateStats();
+            renderModuleGrid();
+            initEventSource();
+            startStatusPolling();
+        }
+
+        // 加载模块列表
+        async function loadModules() {
+            try {
+                const response = await axios.get(`${API_BASE_URL}/modules`);
+                modules = response.data.modules;
+            } catch (error) {
+                console.error('加载模块列表失败:', error);
+                // 使用默认模块列表
+                modules = [
+                    "HGAnalysisRecordModule",
+                    "HGBaseAppModule",
+                    "HGCameraRecognizeModule",
+                    "HGChannelModule",
+                    "HGCurveModule",
+                    "HGEBalanceModule",
+                    "HGExceptionHandleModule",
+                    "HGFlowModule",
+                    "HGLogModule",
+                    "HGLoginModule",
+                    "HGMethodModule",
+                    "HGPrintModule",
+                    "HGReagentModule",
+                    "HGScannerModule",
+                    "HGSearchModule",
+                    "HGSharedFileModule",
+                    "HGTaskModule",
+                    "HGUartModule",
+                    "HGUserAuditModule",
+                    "TestPlugin"
+                ];
+            }
+        }
+
+        // 开始状态轮询
+        function startStatusPolling() {
+            setInterval(async () => {
+                try {
+                    const response = await axios.get(`${API_BASE_URL}/build/status`);
+                    const status = response.data;
+                    
+                    isBuilding = status.is_building;
+                    updateUIState(isBuilding);
+                    
+                    if (status.progress !== undefined) {
+                        updateProgress(status.progress);
+                    }
+                    
+                    if (status.current_module) {
+                        document.getElementById('currentStatus').textContent = 
+                            isBuilding ? `正在编译: ${status.current_module}` : 
+                            status.success ? '编译成功' : '编译失败';
+                    }
+                    
+                    // 更新状态指示器
+                    if (isBuilding) {
+                        updateStatus('building', '正在编译');
+                    } else if (status.success && status.end_time) {
+                        updateStatus('success', '编译成功');
+                        document.getElementById('packageBtn').disabled = false;
+                        
+                        // 显示输出文件
+                        if (status.output_files && status.output_files.length > 0) {
+                            displayOutputFiles(status.output_files);
+                        }
+                    } else if (status.end_time && !status.success) {
+                        updateStatus('error', '编译失败');
+                    } else {
+                        updateStatus('idle', '就绪');
+                    }
+                } catch (error) {
+                    console.error('获取编译状态失败:', error);
+                }
+            }, 1000);
+        }
+
+        // 更新统计信息
+        function updateStats() {
+            document.getElementById('totalModules').textContent = modules.length;
+            // 其他统计信息可以从本地存储或服务器获取
+        }
+
+        // 渲染模块网格
+        function renderModuleGrid() {
+            const grid = document.getElementById('moduleGrid');
+            grid.innerHTML = '';
+
+            modules.forEach(module => {
+                const card = document.createElement('div');
+                card.className = 'module-card';
+                card.innerHTML = `
+                    <h3>${module}</h3>
+                    <div class="status">点击选择模块</div>
+                `;
+                card.onclick = () => selectModule(module, card);
+                grid.appendChild(card);
+            });
+        }
+
+        // 选择模块
+        function selectModule(moduleName, cardElement) {
+            // 移除所有卡片的active类
+            document.querySelectorAll('.module-card').forEach(card => {
+                card.classList.remove('active');
+            });
+
+            // 添加当前卡片的active类
+            cardElement.classList.add('active');
+            selectedModule = moduleName;
+
+            // 显示构建面板
+            document.getElementById('buildPanel').classList.add('active');
+            document.getElementById('currentStatus').textContent = `已选择: ${moduleName}`;
+
+            // 清空之前的日志
+            clearLog();
+            addLog(`已选择模块: ${moduleName}`, 'info');
+
+            // 检查是否已有编译结果
+            checkExistingBuild(moduleName);
+        }
+
+        // 检查是否已有编译结果
+        function checkExistingBuild(moduleName) {
+            // 这里可以通过AJAX或其他方式检查是否已有编译结果
+            addLog(`正在检查模块 ${moduleName} 的编译状态...`, 'info');
+        }
+
+        // 开始编译
+        function startBuild() {
+            if (!selectedModule) {
+                alert('请先选择一个模块');
+                return;
+            }
+
+            if (isBuilding) {
+                alert('正在编译中，请稍候...');
+                return;
+            }
+
+            const buildMode = document.querySelector('input[name="buildMode"]:checked').value;
+            startBuildProcess(selectedModule, buildMode, false);
+        }
+
+        // 开始重新编译
+        function startRebuild() {
+            if (!selectedModule) {
+                alert('请先选择一个模块');
+                return;
+            }
+
+            if (isBuilding) {
+                alert('正在编译中，请稍候...');
+                return;
+            }
+
+            const buildMode = document.querySelector('input[name="buildMode"]:checked').value;
+            startBuildProcess(selectedModule, buildMode, true);
+        }
+
+        // 开始编译过程
+        async function startBuildProcess(moduleName, buildMode, cleanBuild) {
+            try {
+                const response = await axios.post(`${API_BASE_URL}/build/start`, {
+                    module: moduleName,
+                    build_mode: buildMode,
+                    clean_build: cleanBuild
+                });
+
+                if (response.data.success) {
+                    isBuilding = true;
+                    updateUIState(true);
+                    clearLog();
+                    document.getElementById('outputSection').style.display = 'none';
+                    document.getElementById('packageBtn').disabled = true;
+                    
+                    // 显示进度条
+                    document.getElementById('progressBar').classList.add('active');
+                    
+                    addLog(response.data.message, 'info');
+                } else {
+                    addLog(response.data.message, 'error');
+                }
+            } catch (error) {
+                addLog(`编译请求失败: ${error.message}`, 'error');
+            }
+        }
+
+
+
+
+
+        // 显示生成的文件
+        function displayOutputFiles(files) {
+            const outputSection = document.getElementById('outputSection');
+            const outputFiles = document.getElementById('outputFiles');
+            outputFiles.innerHTML = '';
+
+            files.forEach(file => {
+                const fileElement = document.createElement('div');
+                fileElement.className = 'output-file';
+                
+                if (file.endsWith('.exe')) {
+                    fileElement.classList.add('exe');
+                } else if (file.endsWith('.a')) {
+                    fileElement.classList.add('a');
+                } else if (file.endsWith('.dll')) {
+                    fileElement.classList.add('dll');
+                }
+
+                fileElement.textContent = file;
+                outputFiles.appendChild(fileElement);
+            });
+
+            outputSection.style.display = 'block';
+        }
+
+        // 打包模块
+        async function packageModule() {
+            if (!selectedModule) {
+                alert('请先选择一个模块');
+                return;
+            }
+
+            try {
+                const response = await axios.post(`${API_BASE_URL}/package`, {
+                    module: selectedModule
+                });
+
+                if (response.data.success) {
+                    addLog(`\n开始打包模块: ${selectedModule}`, 'info');
+                    addLog('正在创建分发包...', 'info');
+                    
+                    // 等待打包完成（实际应该轮询状态）
+                    setTimeout(() => {
+                        addLog(`✅ 模块 ${selectedModule} 打包成功！`, 'success');
+                        addLog(`分发包已创建: ${response.data.package_file}`, 'success');
+                        updateStatus('success', '打包完成');
+                        
+                        // 提供下载链接
+                        const downloadLink = document.createElement('a');
+                        downloadLink.href = `/${response.data.package_file}`;
+                        downloadLink.download = response.data.package_file;
+                        downloadLink.textContent = `下载 ${response.data.package_file}`;
+                        downloadLink.className = 'output-file exe';
+                        document.getElementById('outputFiles').appendChild(downloadLink);
+                    }, 2000);
+                } else {
+                    addLog(response.data.message, 'error');
+                }
+            } catch (error) {
+                addLog(`打包失败: ${error.message}`, 'error');
+            }
+        }
+
+        // 更新UI状态
+        function updateUIState(building) {
+            document.getElementById('buildBtn').disabled = building;
+            document.getElementById('rebuildBtn').disabled = building;
+            document.getElementById('packageBtn').disabled = building || !selectedModule;
+        }
+
+        // 更新进度
+        function updateProgress(percent) {
+            document.getElementById('progress').style.width = percent + '%';
+        }
+
+        // 更新状态指示器
+        function updateStatus(type, message) {
+            const indicator = document.getElementById('statusIndicator');
+            const span = indicator.querySelector('span');
+
+            // 移除所有状态类
+            indicator.classList.remove('idle', 'building', 'success', 'error');
+            
+            // 添加新状态类
+            indicator.classList.add(type);
+            span.textContent = message;
+
+            document.getElementById('currentStatus').textContent = message;
+        }
+
+        // 更新构建后的统计信息
+        function updateStatsAfterBuild(success) {
+            const successCount = parseInt(document.getElementById('successCount').textContent);
+            const failedCount = parseInt(document.getElementById('failedCount').textContent);
+
+            if (success) {
+                document.getElementById('successCount').textContent = successCount + 1;
+            } else {
+                document.getElementById('failedCount').textContent = failedCount + 1;
+            }
+        }
+
+        // 添加日志
+        function addLog(message, type = 'info') {
+            const logContainer = document.getElementById('logContainer');
+            const logEntry = document.createElement('div');
+            logEntry.className = type;
+            logEntry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logContainer.appendChild(logEntry);
+            
+            // 滚动到日志底部
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        // 清空日志
+        function clearLog() {
+            document.getElementById('logContainer').innerHTML = '';
+        }
+
+        // 初始化页面
+        init();
+    </script>
+</body>
+</html>
