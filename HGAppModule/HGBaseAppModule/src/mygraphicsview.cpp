@@ -223,12 +223,21 @@ void MyGraphicsView::setbottomtext(QString bottomtext)
 void MyGraphicsView::mouseMoveEvent(QMouseEvent *event)
 {
     QGraphicsView::mouseMoveEvent(event);
-    if (isMousePressed && currentRectItem){
+    if (isMousePressed && currentRectItem && this->scene() && this->scene()->items().contains(currentRectItem)){
         // update the rectangle as the mouse moves
         QPointF currentPos = mapToScene(event->pos());
         QRectF rect(drawStartPos,currentPos);
         m_selectROI=rect;
-        currentRectItem->update(rect);
+        qDebug() << "MyGraphicsView::mouseMoveEvent - Updating rect item, scene items count:" << this->scene()->items().size();
+        
+        // 双重检查currentRectItem是否仍然有效
+        if (currentRectItem && this->scene()->items().contains(currentRectItem)) {
+            currentRectItem->update(rect);
+        } else {
+            qDebug() << "MyGraphicsView::mouseMoveEvent - currentRectItem became invalid during update, stopping drawing";
+            isMousePressed = false;
+            isDrawing = false;
+        }
     }
 }
 void MyGraphicsView::showImageGray(int x,int y,int gray)
@@ -237,21 +246,48 @@ void MyGraphicsView::showImageGray(int x,int y,int gray)
 }
 QRectF MyGraphicsView::getSelectROI()
 {
-    if (currentRectItem){
+    qDebug() << "MyGraphicsView::getSelectROI - currentRectItem:" << currentRectItem << ", scene:" << this->scene();
+    if (currentRectItem && this->scene() && this->scene()->items().contains(currentRectItem)){
+        qDebug() << "MyGraphicsView::getSelectROI - Item found in scene, calculating ROI";
         m_selectROI=currentRectItem->mapToScene(currentRectItem->boundingRect()).boundingRect();
+    } else {
+        qDebug() << "MyGraphicsView::getSelectROI - Item not found or scene invalid, using empty ROI";
+        m_selectROI = QRectF();
     }
+    qDebug() << "MyGraphicsView::getSelectROI - Returning ROI:" << m_selectROI;
     return m_selectROI; 
 }
 
 void MyGraphicsView::clearRectItem()
 {
+    qDebug() << "MyGraphicsView::clearRectItem - Starting, currentRectItem:" << currentRectItem << ", scene:" << this->scene();
+    
+    // 先停止任何正在进行的绘制操作
+    isDrawing = false;
+    isMousePressed = false;
+    
     if (currentRectItem && this->scene()){
-        this->scene()->removeItem(currentRectItem);
+        qDebug() << "MyGraphicsView::clearRectItem - Scene items count before removal:" << this->scene()->items().size();
+        
+        // 双重检查场景是否包含该图形项
+        if (this->scene()->items().contains(currentRectItem)) {
+            qDebug() << "MyGraphicsView::clearRectItem - Removing item from scene";
+            this->scene()->removeItem(currentRectItem);
+            
+            // 强制场景更新，确保BSP树正确重建
+            this->scene()->update();
+        } else {
+            qDebug() << "MyGraphicsView::clearRectItem - Item not found in scene";
+        }
+        
+        qDebug() << "MyGraphicsView::clearRectItem - Deleting currentRectItem";
         delete currentRectItem;
         currentRectItem = nullptr;
         m_selectROI = QRectF();
-        isDrawing = false;
-        isMousePressed = false;
+        
+        qDebug() << "MyGraphicsView::clearRectItem - Completed, scene items count after removal:" << (this->scene() ? this->scene()->items().size() : 0);
+    } else {
+        qDebug() << "MyGraphicsView::clearRectItem - No item to clear or scene invalid";
     }
 }
 void MyGraphicsView::mouseReleaseEvent(QMouseEvent *event)
@@ -267,22 +303,31 @@ void MyGraphicsView::mouseReleaseEvent(QMouseEvent *event)
 void MyGraphicsView::mousePressEvent(QMouseEvent *event)
 {
     QGraphicsView::mousePressEvent(event);
+    qDebug() << "MyGraphicsView::mousePressEvent - Button:" << event->button() << ", isDrawing:" << isDrawing;
     if (this->scene()==nullptr) {
+        qDebug() << "MyGraphicsView::mousePressEvent - Scene is null, returning";
         return ;
     }
     //鼠标左键按下事件
     if (event->button() == Qt::LeftButton)
     {
-        if (!isDrawing) return;
+        if (!isDrawing) {
+            qDebug() << "MyGraphicsView::mousePressEvent - Not in drawing mode, returning";
+            return;
+        }
         // setViewZoom(event);
         // start drawing a new rectangle
         isMousePressed=true;
         drawStartPos=mapToScene(event->pos());
+        qDebug() << "MyGraphicsView::mousePressEvent - Creating new RectItem at:" << drawStartPos;
         currentRectItem=new RectItem(drawStartPos,QPointF(drawStartPos.x()+50,drawStartPos.y()+50),"NewTemplate");
+        qDebug() << "MyGraphicsView::mousePressEvent - Scene items count before adding:" << this->scene()->items().size();
         this->scene()->addItem(currentRectItem);
+        qDebug() << "MyGraphicsView::mousePressEvent - Scene items count after adding:" << this->scene()->items().size();
     }
     else if (event->button() == Qt::RightButton)
     {
+        qDebug() << "MyGraphicsView::mousePressEvent - Right button pressed, showing menu";
         setmenu();
     }
 }

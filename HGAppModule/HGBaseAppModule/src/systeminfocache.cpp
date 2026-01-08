@@ -42,8 +42,15 @@ void SystemInfoCache::load() {
             {"声音报警", ""},
             {"声音value", ""},
             {"灯光报警", ""},
-            {"WLAN", ""}
-          //  {"显示器分辨率", ""}
+            {"WLAN", ""},
+            {"CameraType", ""},
+            {"CameraName", ""},
+            {"CameraTemplateName", ""},
+            {"CameraScore", ""},
+            {"ROIX1", ""},
+            {"ROIY1", ""},
+            {"ROIX2", ""},
+            {"ROIY2", ""},
         };
         RWDb::readSingleInfo(SYSTEMINFODBNAME, m_data);
         m_data["免密登录"]="true";

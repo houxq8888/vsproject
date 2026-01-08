@@ -144,7 +144,7 @@ HGBaseAppModule/HGBaseAppModuleStatic_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bi
 HGBaseAppModule/HGBaseAppModuleStatic_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bin/uic.exe
 HGBaseAppModule/HGBaseAppModuleStatic_autogen/timestamp: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Automatic MOC and UIC for target HGBaseAppModuleStatic"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/AutogenInfo.json Debug
+	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/AutogenInfo.json Release
 	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/HGBaseAppModuleStatic_autogen/timestamp
 
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.obj: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/flags.make

@@ -18,7 +18,16 @@
 BUILD_EXECUTABLE:BOOL=ON
 
 //No help, variable specified on the command line.
+BUILD_HGAPPMODULE_ONLY:UNINITIALIZED=ON
+
+//No help, variable specified on the command line.
+BUILD_HGBASEAPPMODULE_ONLY:UNINITIALIZED=ON
+
+//No help, variable specified on the command line.
 BUILD_HGBASEAPP_EXECUTABLE:UNINITIALIZED=OFF
+
+//No help, variable specified on the command line.
+BUILD_HGCAMERARECOGNIZEMODULE_ONLY:UNINITIALIZED=ON
 
 //No help, variable specified on the command line.
 BUILD_HGUSERAUDITMODULE_ONLY:UNINITIALIZED=ON
@@ -40,7 +49,7 @@ CMAKE_AR:FILEPATH=D:/Qt/Tools/mingw1310_64/bin/ar.exe
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -331,6 +340,15 @@ HGAppModule_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 HGAppModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule
+
+//Value Computed by CMake
+HGCameraRecognizeModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGCameraRecognizeModule
+
+//Value Computed by CMake
+HGCameraRecognizeModule_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+HGCameraRecognizeModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGCameraRecognizeModule
 
 //Value Computed by CMake
 HGUserAuditModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGUserAuditModule

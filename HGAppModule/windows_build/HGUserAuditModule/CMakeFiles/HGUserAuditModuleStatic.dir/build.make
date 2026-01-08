@@ -136,7 +136,7 @@ HGUserAuditModule/HGUserAuditModuleStatic_autogen/timestamp: D:/Qt/6.9.1/mingw_6
 HGUserAuditModule/HGUserAuditModuleStatic_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bin/uic.exe
 HGUserAuditModule/HGUserAuditModuleStatic_autogen/timestamp: HGUserAuditModule/CMakeFiles/HGUserAuditModuleStatic.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Automatic MOC and UIC for target HGUserAuditModuleStatic"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGUserAuditModule && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGUserAuditModule/CMakeFiles/HGUserAuditModuleStatic_autogen.dir/AutogenInfo.json Debug
+	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGUserAuditModule && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGUserAuditModule/CMakeFiles/HGUserAuditModuleStatic_autogen.dir/AutogenInfo.json Release
 	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGUserAuditModule && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGUserAuditModule/HGUserAuditModuleStatic_autogen/timestamp
 
 HGUserAuditModule/CMakeFiles/HGUserAuditModuleStatic.dir/HGUserAuditModuleStatic_autogen/mocs_compilation.cpp.obj: HGUserAuditModule/CMakeFiles/HGUserAuditModuleStatic.dir/flags.make

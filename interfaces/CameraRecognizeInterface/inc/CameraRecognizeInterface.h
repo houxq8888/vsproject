@@ -83,7 +83,8 @@ std::string saveCameraTemplateMat(const cv::Mat& img, const HGRect2D& rect);
      * @return 识别结果
       * @note 模板名称默认为 "default"
      */
-    MatchResult2D recognizeCameraTemplate(const HGImg2D& img, const std::string &templateName="default");
+    MatchResult2D recognizeCameraTemplate(const HGImg2D& img, const HGRect2D& rect,const float& score,const std::string &templateName="default");
+    MatchResult2D recognizeCameraTemplateMat(const cv::Mat& img, const HGRect2D &rect, const float &score,const std::string &templateName="default");
 }
 
 #ifdef __cplusplus

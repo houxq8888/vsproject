@@ -75,7 +75,23 @@ cv::Mat getImgOneShotMat(const std::string &type,const std::string& name){
 std::string saveCameraTemplate(const HGImg2D& img, const HGRect2D& rect){
     HGMkDir(RWDb::readCurDirPath()+"/template");
     cv::Mat mat(img.height,img.width,img.type,(uchar*)img.data);
-    cv::Mat roi = mat(cv::Rect(rect.x1,rect.y1,rect.x2-rect.x1,rect.y2-rect.y1));
+    // 将浮点坐标转换为整数坐标
+    int x = static_cast<int>(rect.x1);
+    int y = static_cast<int>(rect.y1);
+    int width = static_cast<int>(rect.x2 - rect.x1);
+    int height = static_cast<int>(rect.y2 - rect.y1);
+    
+    // 边界检查
+    if (x < 0) x = 0;
+    if (y < 0) y = 0;
+    if (x + width > mat.cols) width = mat.cols - x;
+    if (y + height > mat.rows) height = mat.rows - y;
+    
+    if (width <= 0 || height <= 0) {
+        return "failed";
+    }
+    
+    cv::Mat roi = mat(cv::Rect(x, y, width, height));
     std::string name=RWDb::readCurDirPath()+"/template/"+"default"+getFileNameFromTime()+".bmp";
     cv::imwrite(name.c_str(),roi);
     return name;

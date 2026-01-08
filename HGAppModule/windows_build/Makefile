@@ -317,121 +317,121 @@ PluginInterfaceStatic_autogen/fast:
 .PHONY : PluginInterfaceStatic_autogen/fast
 
 #=============================================================================
-# Target rules for targets named UserAuditModule
+# Target rules for targets named CameraRecognizeModule
 
 # Build rule for target.
-UserAuditModule: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 UserAuditModule
-.PHONY : UserAuditModule
+CameraRecognizeModule: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CameraRecognizeModule
+.PHONY : CameraRecognizeModule
 
 # fast build rule for target.
-UserAuditModule/fast:
-	$(MAKE) $(MAKESILENT) -f HGUserAuditModule\CMakeFiles\UserAuditModule.dir\build.make HGUserAuditModule/CMakeFiles/UserAuditModule.dir/build
-.PHONY : UserAuditModule/fast
+CameraRecognizeModule/fast:
+	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/build
+.PHONY : CameraRecognizeModule/fast
 
 #=============================================================================
-# Target rules for targets named HGUserAuditModuleStatic
+# Target rules for targets named HGCameraRecognizeModuleStatic
 
 # Build rule for target.
-HGUserAuditModuleStatic: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGUserAuditModuleStatic
-.PHONY : HGUserAuditModuleStatic
+HGCameraRecognizeModuleStatic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModuleStatic
+.PHONY : HGCameraRecognizeModuleStatic
 
 # fast build rule for target.
-HGUserAuditModuleStatic/fast:
-	$(MAKE) $(MAKESILENT) -f HGUserAuditModule\CMakeFiles\HGUserAuditModuleStatic.dir\build.make HGUserAuditModule/CMakeFiles/HGUserAuditModuleStatic.dir/build
-.PHONY : HGUserAuditModuleStatic/fast
+HGCameraRecognizeModuleStatic/fast:
+	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/build
+.PHONY : HGCameraRecognizeModuleStatic/fast
 
 #=============================================================================
-# Target rules for targets named HGUserAuditModuleRun
+# Target rules for targets named HGCameraRecognizeModuleRun
 
 # Build rule for target.
-HGUserAuditModuleRun: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGUserAuditModuleRun
-.PHONY : HGUserAuditModuleRun
+HGCameraRecognizeModuleRun: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModuleRun
+.PHONY : HGCameraRecognizeModuleRun
 
 # fast build rule for target.
-HGUserAuditModuleRun/fast:
-	$(MAKE) $(MAKESILENT) -f HGUserAuditModule\CMakeFiles\HGUserAuditModuleRun.dir\build.make HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/build
-.PHONY : HGUserAuditModuleRun/fast
+HGCameraRecognizeModuleRun/fast:
+	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/build
+.PHONY : HGCameraRecognizeModuleRun/fast
 
 #=============================================================================
-# Target rules for targets named UserAuditModule_autogen_timestamp_deps
+# Target rules for targets named CameraRecognizeModule_autogen_timestamp_deps
 
 # Build rule for target.
-UserAuditModule_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 UserAuditModule_autogen_timestamp_deps
-.PHONY : UserAuditModule_autogen_timestamp_deps
+CameraRecognizeModule_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CameraRecognizeModule_autogen_timestamp_deps
+.PHONY : CameraRecognizeModule_autogen_timestamp_deps
 
 # fast build rule for target.
-UserAuditModule_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f HGUserAuditModule\CMakeFiles\UserAuditModule_autogen_timestamp_deps.dir\build.make HGUserAuditModule/CMakeFiles/UserAuditModule_autogen_timestamp_deps.dir/build
-.PHONY : UserAuditModule_autogen_timestamp_deps/fast
+CameraRecognizeModule_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/build
+.PHONY : CameraRecognizeModule_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named UserAuditModule_autogen
+# Target rules for targets named CameraRecognizeModule_autogen
 
 # Build rule for target.
-UserAuditModule_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 UserAuditModule_autogen
-.PHONY : UserAuditModule_autogen
+CameraRecognizeModule_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CameraRecognizeModule_autogen
+.PHONY : CameraRecognizeModule_autogen
 
 # fast build rule for target.
-UserAuditModule_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f HGUserAuditModule\CMakeFiles\UserAuditModule_autogen.dir\build.make HGUserAuditModule/CMakeFiles/UserAuditModule_autogen.dir/build
-.PHONY : UserAuditModule_autogen/fast
+CameraRecognizeModule_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/build
+.PHONY : CameraRecognizeModule_autogen/fast
 
 #=============================================================================
-# Target rules for targets named HGUserAuditModuleStatic_autogen_timestamp_deps
+# Target rules for targets named HGCameraRecognizeModuleStatic_autogen_timestamp_deps
 
 # Build rule for target.
-HGUserAuditModuleStatic_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGUserAuditModuleStatic_autogen_timestamp_deps
-.PHONY : HGUserAuditModuleStatic_autogen_timestamp_deps
+HGCameraRecognizeModuleStatic_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModuleStatic_autogen_timestamp_deps
+.PHONY : HGCameraRecognizeModuleStatic_autogen_timestamp_deps
 
 # fast build rule for target.
-HGUserAuditModuleStatic_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f HGUserAuditModule\CMakeFiles\HGUserAuditModuleStatic_autogen_timestamp_deps.dir\build.make HGUserAuditModule/CMakeFiles/HGUserAuditModuleStatic_autogen_timestamp_deps.dir/build
-.PHONY : HGUserAuditModuleStatic_autogen_timestamp_deps/fast
+HGCameraRecognizeModuleStatic_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/build
+.PHONY : HGCameraRecognizeModuleStatic_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named HGUserAuditModuleStatic_autogen
+# Target rules for targets named HGCameraRecognizeModuleStatic_autogen
 
 # Build rule for target.
-HGUserAuditModuleStatic_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGUserAuditModuleStatic_autogen
-.PHONY : HGUserAuditModuleStatic_autogen
+HGCameraRecognizeModuleStatic_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModuleStatic_autogen
+.PHONY : HGCameraRecognizeModuleStatic_autogen
 
 # fast build rule for target.
-HGUserAuditModuleStatic_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f HGUserAuditModule\CMakeFiles\HGUserAuditModuleStatic_autogen.dir\build.make HGUserAuditModule/CMakeFiles/HGUserAuditModuleStatic_autogen.dir/build
-.PHONY : HGUserAuditModuleStatic_autogen/fast
+HGCameraRecognizeModuleStatic_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/build
+.PHONY : HGCameraRecognizeModuleStatic_autogen/fast
 
 #=============================================================================
-# Target rules for targets named HGUserAuditModuleRun_autogen_timestamp_deps
+# Target rules for targets named HGCameraRecognizeModuleRun_autogen_timestamp_deps
 
 # Build rule for target.
-HGUserAuditModuleRun_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGUserAuditModuleRun_autogen_timestamp_deps
-.PHONY : HGUserAuditModuleRun_autogen_timestamp_deps
+HGCameraRecognizeModuleRun_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModuleRun_autogen_timestamp_deps
+.PHONY : HGCameraRecognizeModuleRun_autogen_timestamp_deps
 
 # fast build rule for target.
-HGUserAuditModuleRun_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f HGUserAuditModule\CMakeFiles\HGUserAuditModuleRun_autogen_timestamp_deps.dir\build.make HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun_autogen_timestamp_deps.dir/build
-.PHONY : HGUserAuditModuleRun_autogen_timestamp_deps/fast
+HGCameraRecognizeModuleRun_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/build
+.PHONY : HGCameraRecognizeModuleRun_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named HGUserAuditModuleRun_autogen
+# Target rules for targets named HGCameraRecognizeModuleRun_autogen
 
 # Build rule for target.
-HGUserAuditModuleRun_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGUserAuditModuleRun_autogen
-.PHONY : HGUserAuditModuleRun_autogen
+HGCameraRecognizeModuleRun_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModuleRun_autogen
+.PHONY : HGCameraRecognizeModuleRun_autogen
 
 # fast build rule for target.
-HGUserAuditModuleRun_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f HGUserAuditModule\CMakeFiles\HGUserAuditModuleRun_autogen.dir\build.make HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun_autogen.dir/build
-.PHONY : HGUserAuditModuleRun_autogen/fast
+HGCameraRecognizeModuleRun_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/build
+.PHONY : HGCameraRecognizeModuleRun_autogen/fast
 
 # Help Target
 help:
@@ -447,25 +447,25 @@ help:
 	@echo ... rebuild_cache
 	@echo ... BaseAppModule_autogen
 	@echo ... BaseAppModule_autogen_timestamp_deps
+	@echo ... CameraRecognizeModule_autogen
+	@echo ... CameraRecognizeModule_autogen_timestamp_deps
 	@echo ... HGBaseAppModuleStatic_autogen
 	@echo ... HGBaseAppModuleStatic_autogen_timestamp_deps
-	@echo ... HGUserAuditModuleRun_autogen
-	@echo ... HGUserAuditModuleRun_autogen_timestamp_deps
-	@echo ... HGUserAuditModuleStatic_autogen
-	@echo ... HGUserAuditModuleStatic_autogen_timestamp_deps
+	@echo ... HGCameraRecognizeModuleRun_autogen
+	@echo ... HGCameraRecognizeModuleRun_autogen_timestamp_deps
+	@echo ... HGCameraRecognizeModuleStatic_autogen
+	@echo ... HGCameraRecognizeModuleStatic_autogen_timestamp_deps
 	@echo ... PluginInterfaceModule_autogen
 	@echo ... PluginInterfaceModule_autogen_timestamp_deps
 	@echo ... PluginInterfaceStatic_autogen
 	@echo ... PluginInterfaceStatic_autogen_timestamp_deps
-	@echo ... UserAuditModule_autogen
-	@echo ... UserAuditModule_autogen_timestamp_deps
 	@echo ... BaseAppModule
+	@echo ... CameraRecognizeModule
 	@echo ... HGBaseAppModuleStatic
-	@echo ... HGUserAuditModuleRun
-	@echo ... HGUserAuditModuleStatic
+	@echo ... HGCameraRecognizeModuleRun
+	@echo ... HGCameraRecognizeModuleStatic
 	@echo ... PluginInterfaceModule
 	@echo ... PluginInterfaceStatic
-	@echo ... UserAuditModule
 .PHONY : help
 
 
