@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mygraphicsview.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mygraphicsview.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mygraphicsview.h \
+ D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mygraphicsview.cpp \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/mygraphicsview.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsView \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsview.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -447,7 +447,7 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mygraphicsview.cpp.
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsscene.h \
  D:/Qt/6.9.1/mingw_64/include/QtCore/QRectF \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/math.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/rectellipseitem.h \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/rectellipseitem.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsEllipseItem \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsitem.h \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qpainterpath.h \
@@ -482,7 +482,7 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mygraphicsview.cpp.
  D:/Qt/6.9.1/mingw_64/include/QtGui/qcursor.h \
  D:/Qt/6.9.1/mingw_64/include/QtCore/QtMath \
  D:/Qt/6.9.1/mingw_64/include/QtCore/qmath.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/rectitem.h \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/rectitem.h \
  D:/Qt/6.9.1/mingw_64/include/QtCore/QRect \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QPushButton \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qpushbutton.h \

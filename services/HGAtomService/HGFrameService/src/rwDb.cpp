@@ -429,6 +429,23 @@ std::string RWDb::getMethodName(const std::string &flowName){
         }
         return tableNames;
     }
+    std::vector<std::map<std::string,std::string>> RWDb::readAllAuditTrailLog(){
+        std::vector<std::map<std::string,std::string>> allLogs;
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        
+        std::map<std::string,std::string> infoS = {
+            {"Operator",""},
+            {"Time",""},
+            {"LogContent",""}
+        };
+        
+        for (const auto& tableName : tableNames){
+            auto logs = logOpera.readRecord(tableName, infoS);
+            allLogs.insert(allLogs.end(), logs.begin(), logs.end());
+        }
+        
+        return allLogs;
+    }
     std::vector<std::map<std::string,std::string>> RWDb::readAuditTrailLog(const std::string &tableName){
         std::map<std::string,std::string> info;
         info["lastAuditTrailDB"]="";
@@ -446,6 +463,16 @@ std::string RWDb::getMethodName(const std::string &flowName){
             readTableName = info["lastAuditTrailDB"];
         }
         return logOpera.readRecord(readTableName, infoS);
+    }
+    int RWDb::readAllAuditTrailLogCount(){
+        int totalCount = 0;
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        
+        for (const auto& tableName : tableNames){
+            totalCount += logOpera.countOfTable(tableName);
+        }
+        
+        return totalCount;
     }
     std::vector<std::map<std::string, std::string>> RWDb::readRecord(std::string dbName, std::map<std::string, std::string> &infoS)
     {

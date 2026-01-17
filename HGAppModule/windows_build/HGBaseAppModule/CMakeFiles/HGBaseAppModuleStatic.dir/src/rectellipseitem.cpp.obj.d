@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectellipseitem.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/rectellipseitem.h \
+ D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/rectellipseitem.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsEllipseItem \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsitem.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

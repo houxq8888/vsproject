@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mychartview.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mychartview.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mychartview.h \
+ D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mychartview.cpp \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/mychartview.h \
  D:/Qt/6.9.1/mingw_64/include/QtCharts/QChartView \
  D:/Qt/6.9.1/mingw_64/include/QtCharts/qchartview.h \
  D:/Qt/6.9.1/mingw_64/include/QtCharts/QAbstractAxis \

@@ -38,7 +38,13 @@ private:
     int getTableNameIndex(const std::string& dbName);
 
 private:
+    void fnSearchAllPages();
+    void fnHighlightKeywords(QTableWidgetItem* item, const std::string& keyword);
+    void fnDisplaySearchPage();
+    
+private:
     QLabel* m_pageLabel;
+    QLabel* m_totalPageLabel;
     HGQLabel *m_saveLabel, *m_exportLabel;
     HGQLabel* m_nextLabel, *m_preLabel;
     QGroupBox *m_manipulateGroup;
@@ -53,7 +59,15 @@ private:
     
     std::map<std::string, int> m_logContentMap;
     int m_curDisplayIndex;
+    int m_curSearchPage;
+    int m_totalSearchPages;
     std::vector<std::string> m_auditLogTableNames;
+    std::vector<std::map<std::string, std::string>> m_searchResults;
+    bool m_isSearchingAll;
+    const int SEARCH_PAGE_SIZE = 1000;
+    
+    std::map<std::string, std::vector<std::map<std::string, std::string>>> m_dataCache;
+    std::vector<std::map<std::string, std::string>> m_currentPageData;
 };
 
 #endif // HGLOGWIDGET_H
