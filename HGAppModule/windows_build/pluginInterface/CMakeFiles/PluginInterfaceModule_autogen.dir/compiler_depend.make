@@ -4,6 +4,10 @@
 pluginInterface/PluginInterfaceModule_autogen/timestamp: D:/Qt/Tools/CMake_64/bin/cmake.exe \
   D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/CMakeLists.txt \
   D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/src/plugininterface.cpp \
+  D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/src/pluginmanager.cpp \
+  D:/Qt/Tools/CMake_64/bin/cmake.exe \
+  D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/CMakeLists.txt \
+  D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/src/plugininterface.cpp \
   D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/src/pluginmanager.cpp
 
 

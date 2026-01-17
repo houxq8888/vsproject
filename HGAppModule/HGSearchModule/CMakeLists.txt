@@ -219,7 +219,7 @@ if (BUILD_EXECUTABLE)
         )
         
         # 添加必要的系统库依赖
-        target_link_libraries(HGCurveModuleRun PUBLIC 
+        target_link_libraries(HGSearchModuleRun PUBLIC 
             ws2_32
             iphlpapi
             advapi32

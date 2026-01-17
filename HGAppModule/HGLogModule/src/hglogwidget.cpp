@@ -8,7 +8,11 @@
 
 HGLogWidget::HGLogWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
-m_curDisplayIndex(-1)
+m_curDisplayIndex(-1),
+m_isSearching(false),
+m_searchPageCount(0),
+m_currentSearchPage(0),
+m_totalSearchResults(0)
 {
     RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Log"));
     m_auditLogTableNames = RWDb::getAllAuditLogTables();
@@ -46,6 +50,7 @@ m_curDisplayIndex(-1)
     m_tableW->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     m_tableW->resizeRowsToContents();
     m_tableW->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    m_tableW->setItemDelegate(new HtmlDelegate(this));
     
     m_logTypeLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"LogType")));//"日志类型");
     m_logTypeComboBox=new QComboBox();
@@ -84,26 +89,46 @@ HGLogWidget::~HGLogWidget()
     
 }
 void HGLogWidget::slotNext(){
-    if (m_curDisplayIndex < 0) return;
-    if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
-    else {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                         "已经是最后一页");
-        m_curDisplayIndex=m_auditLogTableNames.size()-1;
+    if (m_isSearching) {
+        if (m_currentSearchPage < m_searchPageCount - 1) {
+            m_currentSearchPage++;
+            displaySearchResults();
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是最后一页");
+        }
+    } else {
+        if (m_curDisplayIndex < 0) return;
+        if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
+        else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是最后一页");
+            m_curDisplayIndex=m_auditLogTableNames.size()-1;
+        }
+        std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
+        fnReadDB(dbName);
     }
-    std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
-    fnReadDB(dbName);
 }
 void HGLogWidget::slotPre(){
-    if (m_curDisplayIndex < 0) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                         "已经是第一页");
-        m_curDisplayIndex=0;
+    if (m_isSearching) {
+        if (m_currentSearchPage > 0) {
+            m_currentSearchPage--;
+            displaySearchResults();
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是第一页");
+        }
     } else {
-        m_curDisplayIndex--;
+        if (m_curDisplayIndex < 0) {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是第一页");
+            m_curDisplayIndex=0;
+        } else {
+            m_curDisplayIndex--;
+        }
+        std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
+        fnReadDB(dbName);
     }
-    std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
-    fnReadDB(dbName);
 }
 int HGLogWidget::getTableNameIndex(const std::string &tableName){
     for (int i=0;i<int(m_auditLogTableNames.size());i++){
@@ -148,6 +173,9 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
                     testTimer.tm_year = timeS.year; 
                     testTimer.tm_mon = timeS.month; 
                     testTimer.tm_mday = timeS.day; 
+                    testTimer.tm_hour = 0;
+                    testTimer.tm_min = 0;
+                    testTimer.tm_sec = 0;
                     if (testTimer < m_searchCondition.timeFrom)
                         continue;
                     if (testTimer > m_searchCondition.timeTo)
@@ -202,6 +230,9 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
                     testTimer.tm_year = atoi(timestr.substr(0, 4).c_str());
                     testTimer.tm_mon = atoi(timestr.substr(4, 2).c_str());
                     testTimer.tm_mday = atoi(timestr.substr(6, 2).c_str());
+                    testTimer.tm_hour = 0;
+                    testTimer.tm_min = 0;
+                    testTimer.tm_sec = 0;
 
                     if (testTimer < m_searchCondition.timeFrom)
                         continue;
@@ -300,11 +331,38 @@ void HGLogWidget::slotTimeTo(QString text){
     m_searchCondition.timeTo.tm_sec = 59;
 }
 void HGLogWidget::slotSearch(){
+    if (m_searchCondition.isInit()) {
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                         "请输入搜索条件");
+        return;
+    }
+    
     m_tableW->setRowCount(0);
-    fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+    m_isSearching = true;
+    m_currentSearchPage = 0;
+    
+    m_tableW->setUpdatesEnabled(false);
+    m_tableW->viewport()->setCursor(Qt::WaitCursor);
+    
+    m_totalSearchResults = RWDb::searchAuditTrailLogCount(
+        m_searchCondition.key,
+        m_searchCondition.timeFrom,
+        m_searchCondition.timeTo);
+    
+    m_searchPageCount = (m_totalSearchResults + PAGE_SIZE - 1) / PAGE_SIZE;
+    
+    displaySearchResults();
+    
+    m_tableW->viewport()->setCursor(Qt::ArrowCursor);
+    m_tableW->setUpdatesEnabled(true);
 }
 void HGLogWidget::slotClearSearch(){ 
     m_searchCondition.Clear();
+    m_isSearching = false;
+    m_searchResults.clear();
+    m_totalSearchResults = 0;
+    m_searchPageCount = 0;
+    m_currentSearchPage = 0;
     fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
 }
 void HGLogWidget::slotSaveSearchLog(){
@@ -387,4 +445,82 @@ void HGLogWidget::slotSaveSearchLog(){
     layout->addWidget(cancelBtn,1,1);
     dialog.setLayout(layout);
     dialog.exec();
+}
+
+void HGLogWidget::displaySearchResults()
+{
+    m_tableW->setRowCount(0);
+    m_tableW->setUpdatesEnabled(false);
+    
+    int totalCount = 0;
+    m_searchResults = RWDb::searchAuditTrailLogAcrossTablesWithPaginationOptimized(
+        m_searchCondition.key,
+        m_searchCondition.timeFrom,
+        m_searchCondition.timeTo,
+        m_currentSearchPage,
+        PAGE_SIZE,
+        &totalCount);
+    
+    m_tableW->setRowCount(m_searchResults.size());
+    
+    for (int i = 0; i < int(m_searchResults.size()); i++) {
+        const auto& logInfo = m_searchResults[i];
+        
+        for (const auto& info : logInfo) {
+            if (info.first == "_tableName") continue;
+            
+            int nameColIndex = m_logContentMap[info.first];
+            if (nameColIndex < 0 || nameColIndex >= m_tableW->columnCount())
+                continue;
+            
+            QString text = QString::fromStdString(info.second);
+            QTableWidgetItem* item = new QTableWidgetItem(text);
+            
+            if (!m_searchCondition.key.empty()) {
+                QString keyword = QString::fromStdString(m_searchCondition.key);
+                QString highlightedText;
+                int pos = 0;
+                int lastPos = 0;
+                
+                while ((pos = text.indexOf(keyword, pos, Qt::CaseInsensitive)) != -1) {
+                    highlightedText += text.mid(lastPos, pos - lastPos);
+                    highlightedText += QString("<span style='color:red'>%1</span>").arg(text.mid(pos, keyword.length()));
+                    pos += keyword.length();
+                    lastPos = pos;
+                }
+                highlightedText += text.mid(lastPos);
+                
+                item->setText(highlightedText);
+            }
+            
+            m_tableW->setItem(i, nameColIndex, item);
+        }
+    }
+    
+    m_pageLabel->setText(QString("搜索结果 %1/%2 (共%3条)").arg(m_currentSearchPage + 1).arg(m_searchPageCount).arg(m_totalSearchResults));
+    
+    m_tableW->setUpdatesEnabled(true);
+}
+
+void HGLogWidget::highlightKeyword(QTableWidgetItem* item, const QString& keyword)
+{
+    if (keyword.isEmpty() || !item) return;
+    
+    QString text = item->text();
+    if (text.isEmpty()) return;
+    
+    QString highlightedText;
+    int pos = 0;
+    int lastPos = 0;
+    
+    while ((pos = text.indexOf(keyword, pos, Qt::CaseInsensitive)) != -1) {
+        highlightedText += text.mid(lastPos, pos - lastPos);
+        highlightedText += QString("<span style='color:red; font-weight:bold;'>%1</span>").arg(text.mid(pos, keyword.length()));
+        pos += keyword.length();
+        lastPos = pos;
+    }
+    highlightedText += text.mid(lastPos);
+    
+    item->setData(Qt::DisplayRole, highlightedText);
+    item->setData(Qt::EditRole, text);
 }

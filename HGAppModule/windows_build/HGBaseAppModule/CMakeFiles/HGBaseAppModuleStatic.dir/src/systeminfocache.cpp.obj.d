@@ -414,4 +414,6 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/systeminfocache.cpp.obj
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h \
  D:/virtualMachine/github/vsproject/3rdparty/include/sqlcipher/sqlite3.h \
- D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstring
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstring \
+ D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h \
+ D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGCommon_global.h

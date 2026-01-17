@@ -419,6 +419,8 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/globalsingleton.cpp.obj
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h \
  D:/virtualMachine/github/vsproject/3rdparty/include/sqlcipher/sqlite3.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstring \
+ D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h \
+ D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGCommon_global.h \
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgxml.h \
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/shlwapi.h \
@@ -426,5 +428,4 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/globalsingleton.cpp.obj
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/tinyxml2.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/climits \
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/hgcommonutility.h \
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGCommon_global.h \
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h

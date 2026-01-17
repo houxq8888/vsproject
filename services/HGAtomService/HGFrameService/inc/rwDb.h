@@ -2,6 +2,7 @@
 #define RWDB_H
 
 #include "hgsavedatatodb.h"
+#include "HGExactTime.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -759,6 +760,28 @@ namespace HGMACHINE{
             static void writeAuditTrailLog(const std::string &logContent);
             static int readAuditTrailLogCount(const std::string &tableName="");
             static void deleteAuditTrail();
+            static std::vector<std::map<std::string,std::string>> searchAuditTrailLogAcrossTables(
+                const std::string &key="", 
+                const HGExactTime &timeFrom=HGExactTime(), 
+                const HGExactTime &timeTo=HGExactTime());
+            static std::vector<std::map<std::string,std::string>> searchAuditTrailLogAcrossTablesWithPagination(
+                const std::string &key="", 
+                const HGExactTime &timeFrom=HGExactTime(), 
+                const HGExactTime &timeTo=HGExactTime(),
+                int pageIndex=0,
+                int pageSize=1000,
+                int *totalCount=nullptr);
+            static int searchAuditTrailLogCount(
+                const std::string &key="", 
+                const HGExactTime &timeFrom=HGExactTime(), 
+                const HGExactTime &timeTo=HGExactTime());
+            static std::vector<std::map<std::string,std::string>> searchAuditTrailLogAcrossTablesWithPaginationOptimized(
+                const std::string &key="", 
+                const HGExactTime &timeFrom=HGExactTime(), 
+                const HGExactTime &timeTo=HGExactTime(),
+                int pageIndex=0,
+                int pageSize=1000,
+                int *totalCount=nullptr);
 
 
             //-------------------------serial port------------------------------//
