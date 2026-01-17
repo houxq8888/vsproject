@@ -21,16 +21,10 @@ BUILD_EXECUTABLE:BOOL=ON
 BUILD_HGAPPMODULE_ONLY:UNINITIALIZED=ON
 
 //No help, variable specified on the command line.
-BUILD_HGBASEAPPMODULE_ONLY:UNINITIALIZED=ON
-
-//No help, variable specified on the command line.
 BUILD_HGBASEAPP_EXECUTABLE:UNINITIALIZED=OFF
 
-//No help, variable specified on the command line.
-BUILD_HGCAMERARECOGNIZEMODULE_ONLY:UNINITIALIZED=ON
-
-//No help, variable specified on the command line.
-BUILD_HGUSERAUDITMODULE_ONLY:UNINITIALIZED=ON
+//仅编译HGLogModule
+BUILD_HGLOGMODULE_ONLY:BOOL=OFF
 
 //要编译的模块列表（空格分隔）
 BUILD_MODULES:STRING=
@@ -342,22 +336,13 @@ HGAppModule_IS_TOP_LEVEL:STATIC=ON
 HGAppModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule
 
 //Value Computed by CMake
-HGCameraRecognizeModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGCameraRecognizeModule
+HGLogModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGLogModule
 
 //Value Computed by CMake
-HGCameraRecognizeModule_IS_TOP_LEVEL:STATIC=OFF
+HGLogModule_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-HGCameraRecognizeModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGCameraRecognizeModule
-
-//Value Computed by CMake
-HGUserAuditModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGUserAuditModule
-
-//Value Computed by CMake
-HGUserAuditModule_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-HGUserAuditModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGUserAuditModule
+HGLogModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGLogModule
 
 //No help, variable specified on the command line.
 HG_PROJECT_ROOT_FS:UNINITIALIZED=d:\virtualMachine\github\vsproject
@@ -648,7 +633,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

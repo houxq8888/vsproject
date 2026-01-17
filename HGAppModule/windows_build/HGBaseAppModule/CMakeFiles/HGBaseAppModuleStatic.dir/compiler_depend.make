@@ -7953,7 +7953,9 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/datachartinfocache.cpp.
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h \
-  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h \
+  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGCommon_global.h \
+  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h
 
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/globalsingleton.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/globalsingleton.cpp \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/adxintrin.h \
@@ -14589,7 +14591,9 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/systeminfocache.cpp.obj
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h \
-  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h \
+  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGCommon_global.h \
+  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h
 
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/usersinfocache.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/usersinfocache.cpp \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/adxintrin.h \

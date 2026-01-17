@@ -106,6 +106,9 @@ set(BUILD_HGBASEAPP_EXECUTABLE OFF)
 option(MODULAR_BUILD_ENABLED "启用模块化编译" OFF)
 set(BUILD_MODULES "" CACHE STRING "要编译的模块列表（空格分隔）")
 
+# 单独编译选项
+option(BUILD_HGLOGMODULE_ONLY "仅编译HGLogModule" OFF)
+
 # 模块化编译逻辑
 if(MODULAR_BUILD_ENABLED AND BUILD_MODULES)
     message(STATUS "模块化编译已启用")
@@ -123,19 +126,25 @@ if(MODULAR_BUILD_ENABLED AND BUILD_MODULES)
             message(WARNING "模块 ${MODULE} 不存在或没有CMakeLists.txt")
         endif()
     endforeach()
+elseif(BUILD_HGLOGMODULE_ONLY)
+    message(STATUS "仅编译HGLogModule")
+    add_subdirectory(HGBaseAppModule)
+    add_subdirectory(pluginInterface)
+    add_subdirectory(HGSearchModule)
+    add_subdirectory(HGLogModule)
 else()
     # 传统编译模式 - 添加所有HGAppModule子模块
     add_subdirectory(HGBaseAppModule)
     
     # 添加PluginInterface模块
-    add_subdirectory(pluginInterface)
+ #   add_subdirectory(pluginInterface)
     # 传统编译模式 - 编译所有模块
     message(STATUS "使用传统编译模式 - 编译所有模块")
     
     # 添加所有模块
   #  add_subdirectory(HGCurveModule)
   #  add_subdirectory(HGSearchModule)
-  #  add_subdirectory(HGLogModule)
+    add_subdirectory(HGLogModule)
   #  add_subdirectory(HGUserAuditModule)
   #  add_subdirectory(HGUartModule)
  #   add_subdirectory(HGLoginModule)
@@ -149,6 +158,6 @@ else()
   #  add_subdirectory(HGReagentModule)
   #  add_subdirectory(HGAnalysisRecordModule)
   #  add_subdirectory(HGPrintModule)
-    add_subdirectory(HGCameraRecognizeModule)
+  #  add_subdirectory(HGCameraRecognizeModule)
   #  add_subdirectory(HGExceptionHandleModule)
 endif()

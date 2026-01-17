@@ -130,6 +130,16 @@ if /i "%~1"=="--module" (
     )
 )
 
+if /i "%~1"=="--log" (
+    if "%BUILD_MODULE%"=="ALL" (
+        set BUILD_MODULE=HGLogModule
+    ) else (
+        set BUILD_MODULE=%BUILD_MODULE%,HGLogModule
+    )
+    shift
+    goto :parse_args
+)
+
 if /i "%~1"=="--clean" (
     set CLEAN_BUILD=ON
     shift
@@ -284,6 +294,8 @@ if "%BUILD_MODULE%"=="ALL" (
     set CMAKE_MODULE_ARGS=-DBUILD_HGBASEAPPMODULE_ONLY=ON
 ) else if "%BUILD_MODULE%"=="HGUserAuditModule" (
     set CMAKE_MODULE_ARGS=-DBUILD_HGUSERAUDITMODULE_ONLY=ON
+) else if "%BUILD_MODULE%"=="HGLogModule" (
+    set CMAKE_MODULE_ARGS=-DBUILD_HGLOGMODULE_ONLY=ON
 ) else if "%BUILD_MODULE%"=="HGBaseAppModule,HGUserAuditModule" (
     set CMAKE_MODULE_ARGS=-DBUILD_HGBASEAPPMODULE_ONLY=ON -DBUILD_HGUSERAUDITMODULE_ONLY=ON
 ) else (
@@ -333,6 +345,13 @@ if "%BUILD_MODULE%"=="ALL" (
 ) else if "%BUILD_MODULE%"=="HGUserAuditModule" (
     set MAKE_TARGET=HGUserAuditModuleStatic HGUserAuditModuleRun
     set MODULE_NAME=HGUserAuditModule
+) else if "%BUILD_MODULE%"=="HGLogModule" (
+    if "%BUILD_EXECUTABLE%"=="ON" (
+        set MAKE_TARGET=HGLogModuleRun
+    ) else (
+        set MAKE_TARGET=HGLogModuleStatic
+    )
+    set MODULE_NAME=HGLogModule
 ) else if "%BUILD_MODULE%"=="HGBaseAppModule,HGUserAuditModule" (
     set MAKE_TARGET=HGBaseAppModuleStatic HGUserAuditModuleStatic HGUserAuditModuleRun
     set MODULE_NAME=HGBaseAppModule和HGUserAuditModule

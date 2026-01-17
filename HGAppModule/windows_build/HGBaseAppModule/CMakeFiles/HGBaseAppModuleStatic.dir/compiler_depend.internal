@@ -7980,6 +7980,8 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/datachartinfocache.cpp.
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h
+ D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGCommon_global.h
+ D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h
 
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/globalsingleton.cpp.obj
  D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/globalsingleton.cpp
@@ -14627,6 +14629,8 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/systeminfocache.cpp.obj
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h
+ D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGCommon_global.h
+ D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h
 
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/usersinfocache.cpp.obj
  D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/usersinfocache.cpp

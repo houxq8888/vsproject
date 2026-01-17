@@ -2,9 +2,9 @@
 D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/DragDialog.cpp
 D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/rectellipseitem.cpp
 D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/QRoundProgressBar.cpp
-D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/authorityinfocache.cpp
-D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/basewidget.cpp
 D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/hgmanipulatewidget.cpp
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/basewidget.cpp
+D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/authorityinfocache.cpp
 D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/common.cpp
 D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/datachartinfocache.cpp
 D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/globalsingleton.cpp
