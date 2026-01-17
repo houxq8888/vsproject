@@ -494,6 +494,39 @@ std::vector<std::map<std::string,std::string>> HGSaveDataToDB::readRecord(std::s
     return infos;
 }
 
+std::vector<std::map<std::string,std::string>> HGSaveDataToDB::readRecordWithPagination(
+    std::string tableName,
+    std::map<std::string,std::string> &infoS,
+    int offset,
+    int limit)
+{
+    std::vector<std::map<std::string,std::string>> pkCols = getTableInfo(tableName);
+    std::string keyname="";
+    for (int i=0;i<int(pkCols.size());i++) {
+        if (pkCols[i]["pk"] == "1"){
+            keyname=pkCols[i]["name"];
+        }
+    }
+
+    std::vector<std::map<std::string,std::string>> infos;
+    std::ostringstream sql;
+    sql<<"SELECT ";
+    for (auto info:infoS){
+        sql<<info.first<<",";
+    }
+    std::string sqlstr= sql.str().substr(0,sql.str().find_last_of(","));
+    sql.str("");
+    sql<<sqlstr<<" FROM "<<tableName<<" ORDER BY CAST("+keyname+" AS INTEGER) LIMIT "<<limit<<" OFFSET "<<offset<<";";
+    // printf("sql:%s\n",sql.str().c_str());
+    if (!readData(sql.str(),infos))
+    {
+        sql.str("");
+        sql<<HGSAVESERVICENAME<<"get str failed";
+        printf("%s\n",sql.str().c_str());
+    } 
+    return infos;
+}
+
 void HGSaveDataToDB::deleteRecord(std::string tableName,std::string deleteKey,std::string deleteValue){
     std::ostringstream sql;
     sql<<"DELETE FROM "<<tableName<<" WHERE "<<deleteKey<<" == '"<<deleteValue<<"';";

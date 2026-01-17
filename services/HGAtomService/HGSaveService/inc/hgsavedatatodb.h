@@ -75,10 +75,17 @@ public:
      * @return 是否执行成功。
      */
     bool writeData(std::string sql);
-    /**
-     * @brief 执行 SELECT 查询并获取结果。
-     * @param sql SELECT 查询语句。
-     * @param infos 查询结果，每条记录为一个 map。
+    // /**
+    //  * @brief 执行 SELECT 查询并获取结果。
+    //  * @param sql SELECT 查询语句。
+    //  * @param infos 查询结果，每条记录为一个 map。
+    //  * @return 是否查询成功。
+    //  */
+    // bool readData(std::string sql,std::vector<std::map<std::string,std::string>> &infos);
+        /**
+     * @brief 执行自定义SQL查询。
+     * @param sql SQL语句。
+     * @param infos 查询结果。
      * @return 是否查询成功。
      */
     bool readData(std::string sql,std::vector<std::map<std::string,std::string>> &infos);
@@ -165,6 +172,22 @@ public:
      */
     std::vector<std::map<std::string,std::string>> readRecord(std::string tableName,
                                                               std::map<std::string,std::string> &infoS);
+
+    /**
+     * @brief 读取满足条件的多条记录（支持分页）。
+     * @param tableName 表名。
+     * @param infoS 查询条件（字段名及值）。
+     * @param offset 偏移量。
+     * @param limit 限制数量。
+     * @return 满足条件的记录列表。
+     */
+    std::vector<std::map<std::string,std::string>> readRecordWithPagination(
+        std::string tableName,
+        std::map<std::string,std::string> &infoS,
+        int offset,
+        int limit);
+
+
 
     /**
      * @brief 删除表中满足条件的记录。
