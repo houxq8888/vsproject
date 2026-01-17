@@ -18,6 +18,7 @@ env/
 # Build directories
 build/
 windows_build/
+HGAppModule/windows_build/
 
 # Screenshots directory
 screenshots/

@@ -52,10 +52,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\virtualMachine\github\vsproject\HGAppModule
+CMAKE_SOURCE_DIR = D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\virtualMachine\github\vsproject\HGAppModule\windows_build
+CMAKE_BINARY_DIR = D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build
 
 # Include any dependencies generated for this target.
 include HGBaseAppModule/CMakeFiles/BaseAppModule.dir/depend.make
@@ -68,639 +68,639 @@ include HGBaseAppModule/CMakeFiles/BaseAppModule.dir/progress.make
 # Include the compile flags for this target's objects.
 include HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 
-HGBaseAppModule/inc/moc_DragDialog.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating inc/moc_DragDialog.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_DragDialog.cpp_parameters
+HGBaseAppModule/inc/moc_DragDialog.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating inc/moc_DragDialog.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_DragDialog.cpp_parameters
 
-HGBaseAppModule/inc/moc_QRoundProgressBar.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/QRoundProgressBar.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating inc/moc_QRoundProgressBar.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_QRoundProgressBar.cpp_parameters
+HGBaseAppModule/inc/moc_QRoundProgressBar.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/QRoundProgressBar.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating inc/moc_QRoundProgressBar.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_QRoundProgressBar.cpp_parameters
 
-HGBaseAppModule/inc/moc_authorityinfocache.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/authorityinfocache.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating inc/moc_authorityinfocache.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_authorityinfocache.cpp_parameters
+HGBaseAppModule/inc/moc_authorityinfocache.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/authorityinfocache.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating inc/moc_authorityinfocache.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_authorityinfocache.cpp_parameters
 
-HGBaseAppModule/inc/moc_basewidget.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/basewidget.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating inc/moc_basewidget.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_basewidget.cpp_parameters
+HGBaseAppModule/inc/moc_basewidget.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/basewidget.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating inc/moc_basewidget.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_basewidget.cpp_parameters
 
-HGBaseAppModule/inc/moc_common.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating inc/moc_common.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_common.cpp_parameters
+HGBaseAppModule/inc/moc_common.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/common.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating inc/moc_common.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_common.cpp_parameters
 
-HGBaseAppModule/inc/moc_datachartinfocache.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/datachartinfocache.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating inc/moc_datachartinfocache.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_datachartinfocache.cpp_parameters
+HGBaseAppModule/inc/moc_datachartinfocache.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/datachartinfocache.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating inc/moc_datachartinfocache.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_datachartinfocache.cpp_parameters
 
-HGBaseAppModule/inc/moc_globalsingleton.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/globalsingleton.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating inc/moc_globalsingleton.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_globalsingleton.cpp_parameters
+HGBaseAppModule/inc/moc_globalsingleton.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/globalsingleton.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating inc/moc_globalsingleton.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_globalsingleton.cpp_parameters
 
-HGBaseAppModule/inc/moc_hgmanipulatewidget.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgmanipulatewidget.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating inc/moc_hgmanipulatewidget.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_hgmanipulatewidget.cpp_parameters
+HGBaseAppModule/inc/moc_hgmanipulatewidget.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/hgmanipulatewidget.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating inc/moc_hgmanipulatewidget.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_hgmanipulatewidget.cpp_parameters
 
-HGBaseAppModule/inc/moc_hgqlabel.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating inc/moc_hgqlabel.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_hgqlabel.cpp_parameters
+HGBaseAppModule/inc/moc_hgqlabel.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating inc/moc_hgqlabel.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_hgqlabel.cpp_parameters
 
-HGBaseAppModule/inc/moc_labelwithimg.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/labelwithimg.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating inc/moc_labelwithimg.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_labelwithimg.cpp_parameters
+HGBaseAppModule/inc/moc_labelwithimg.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/labelwithimg.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating inc/moc_labelwithimg.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_labelwithimg.cpp_parameters
 
-HGBaseAppModule/inc/moc_mychartview.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mychartview.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating inc/moc_mychartview.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mychartview.cpp_parameters
+HGBaseAppModule/inc/moc_mychartview.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/mychartview.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating inc/moc_mychartview.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mychartview.cpp_parameters
 
-HGBaseAppModule/inc/moc_mygraphicsview.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mygraphicsview.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating inc/moc_mygraphicsview.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mygraphicsview.cpp_parameters
+HGBaseAppModule/inc/moc_mygraphicsview.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/mygraphicsview.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating inc/moc_mygraphicsview.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mygraphicsview.cpp_parameters
 
-HGBaseAppModule/inc/moc_mykeyboard.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mykeyboard.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating inc/moc_mykeyboard.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mykeyboard.cpp_parameters
+HGBaseAppModule/inc/moc_mykeyboard.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/mykeyboard.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating inc/moc_mykeyboard.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mykeyboard.cpp_parameters
 
-HGBaseAppModule/inc/moc_mypixmapitem.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mypixmapitem.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating inc/moc_mypixmapitem.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mypixmapitem.cpp_parameters
+HGBaseAppModule/inc/moc_mypixmapitem.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/mypixmapitem.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating inc/moc_mypixmapitem.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_mypixmapitem.cpp_parameters
 
-HGBaseAppModule/inc/moc_rectellipseitem.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/rectellipseitem.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating inc/moc_rectellipseitem.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_rectellipseitem.cpp_parameters
+HGBaseAppModule/inc/moc_rectellipseitem.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/rectellipseitem.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating inc/moc_rectellipseitem.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_rectellipseitem.cpp_parameters
 
-HGBaseAppModule/inc/moc_rectitem.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/rectitem.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating inc/moc_rectitem.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_rectitem.cpp_parameters
+HGBaseAppModule/inc/moc_rectitem.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/rectitem.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating inc/moc_rectitem.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_rectitem.cpp_parameters
 
-HGBaseAppModule/inc/moc_systeminfocache.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/systeminfocache.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating inc/moc_systeminfocache.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_systeminfocache.cpp_parameters
+HGBaseAppModule/inc/moc_systeminfocache.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/systeminfocache.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating inc/moc_systeminfocache.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_systeminfocache.cpp_parameters
 
-HGBaseAppModule/inc/moc_usersinfocache.cpp: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating inc/moc_usersinfocache.cpp"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_usersinfocache.cpp_parameters
+HGBaseAppModule/inc/moc_usersinfocache.cpp: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating inc/moc_usersinfocache.cpp"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc && D:\Qt\6.9.1\mingw_64\bin\moc.exe @D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/inc/moc_usersinfocache.cpp_parameters
 
 HGBaseAppModule/BaseAppModule_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bin/moc.exe
 HGBaseAppModule/BaseAppModule_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bin/uic.exe
 HGBaseAppModule/BaseAppModule_autogen/timestamp: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Automatic MOC and UIC for target BaseAppModule"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/AutogenInfo.json Release
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/BaseAppModule_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Automatic MOC and UIC for target BaseAppModule"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/AutogenInfo.json Release
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/HGBaseAppModule/BaseAppModule_autogen/timestamp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.obj: HGBaseAppModule/BaseAppModule_autogen/mocs_compilation.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\BaseAppModule.dir\BaseAppModule_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\BaseAppModule_autogen\mocs_compilation.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\BaseAppModule_autogen\mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\BaseAppModule.dir\BaseAppModule_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\BaseAppModule_autogen\mocs_compilation.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\BaseAppModule_autogen\mocs_compilation.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\BaseAppModule_autogen\mocs_compilation.cpp > CMakeFiles\BaseAppModule.dir\BaseAppModule_autogen\mocs_compilation.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\BaseAppModule_autogen\mocs_compilation.cpp > CMakeFiles\BaseAppModule.dir\BaseAppModule_autogen\mocs_compilation.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\BaseAppModule_autogen\mocs_compilation.cpp -o CMakeFiles\BaseAppModule.dir\BaseAppModule_autogen\mocs_compilation.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\BaseAppModule_autogen\mocs_compilation.cpp -o CMakeFiles\BaseAppModule.dir\BaseAppModule_autogen\mocs_compilation.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/DragDialog.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/DragDialog.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\DragDialog.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\DragDialog.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\DragDialog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\DragDialog.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\DragDialog.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\DragDialog.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\DragDialog.cpp > CMakeFiles\BaseAppModule.dir\src\DragDialog.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\DragDialog.cpp > CMakeFiles\BaseAppModule.dir\src\DragDialog.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\DragDialog.cpp -o CMakeFiles\BaseAppModule.dir\src\DragDialog.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\DragDialog.cpp -o CMakeFiles\BaseAppModule.dir\src\DragDialog.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/QRoundProgressBar.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/QRoundProgressBar.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\QRoundProgressBar.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\QRoundProgressBar.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\QRoundProgressBar.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\QRoundProgressBar.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\QRoundProgressBar.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\QRoundProgressBar.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\QRoundProgressBar.cpp > CMakeFiles\BaseAppModule.dir\src\QRoundProgressBar.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\QRoundProgressBar.cpp > CMakeFiles\BaseAppModule.dir\src\QRoundProgressBar.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\QRoundProgressBar.cpp -o CMakeFiles\BaseAppModule.dir\src\QRoundProgressBar.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\QRoundProgressBar.cpp -o CMakeFiles\BaseAppModule.dir\src\QRoundProgressBar.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/authorityinfocache.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/authorityinfocache.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\authorityinfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\authorityinfocache.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\authorityinfocache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\authorityinfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\authorityinfocache.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\authorityinfocache.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\authorityinfocache.cpp > CMakeFiles\BaseAppModule.dir\src\authorityinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\authorityinfocache.cpp > CMakeFiles\BaseAppModule.dir\src\authorityinfocache.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\authorityinfocache.cpp -o CMakeFiles\BaseAppModule.dir\src\authorityinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\authorityinfocache.cpp -o CMakeFiles\BaseAppModule.dir\src\authorityinfocache.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/basewidget.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/basewidget.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\basewidget.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\basewidget.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\basewidget.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\basewidget.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp > CMakeFiles\BaseAppModule.dir\src\basewidget.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp > CMakeFiles\BaseAppModule.dir\src\basewidget.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp -o CMakeFiles\BaseAppModule.dir\src\basewidget.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\basewidget.cpp -o CMakeFiles\BaseAppModule.dir\src\basewidget.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/common.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/common.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\common.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\common.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\common.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\common.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\common.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\common.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/common.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\common.cpp > CMakeFiles\BaseAppModule.dir\src\common.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\common.cpp > CMakeFiles\BaseAppModule.dir\src\common.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/common.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\common.cpp -o CMakeFiles\BaseAppModule.dir\src\common.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\common.cpp -o CMakeFiles\BaseAppModule.dir\src\common.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/datachartinfocache.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/datachartinfocache.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\datachartinfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\datachartinfocache.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\datachartinfocache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\datachartinfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\datachartinfocache.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\datachartinfocache.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\datachartinfocache.cpp > CMakeFiles\BaseAppModule.dir\src\datachartinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\datachartinfocache.cpp > CMakeFiles\BaseAppModule.dir\src\datachartinfocache.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\datachartinfocache.cpp -o CMakeFiles\BaseAppModule.dir\src\datachartinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\datachartinfocache.cpp -o CMakeFiles\BaseAppModule.dir\src\datachartinfocache.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/globalsingleton.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/globalsingleton.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\globalsingleton.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\globalsingleton.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\globalsingleton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\globalsingleton.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\globalsingleton.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\globalsingleton.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\globalsingleton.cpp > CMakeFiles\BaseAppModule.dir\src\globalsingleton.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\globalsingleton.cpp > CMakeFiles\BaseAppModule.dir\src\globalsingleton.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\globalsingleton.cpp -o CMakeFiles\BaseAppModule.dir\src\globalsingleton.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\globalsingleton.cpp -o CMakeFiles\BaseAppModule.dir\src\globalsingleton.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/hgmanipulatewidget.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/hgmanipulatewidget.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\hgmanipulatewidget.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\hgmanipulatewidget.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\hgmanipulatewidget.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\hgmanipulatewidget.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\hgmanipulatewidget.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\hgmanipulatewidget.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\hgmanipulatewidget.cpp > CMakeFiles\BaseAppModule.dir\src\hgmanipulatewidget.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\hgmanipulatewidget.cpp > CMakeFiles\BaseAppModule.dir\src\hgmanipulatewidget.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\hgmanipulatewidget.cpp -o CMakeFiles\BaseAppModule.dir\src\hgmanipulatewidget.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\hgmanipulatewidget.cpp -o CMakeFiles\BaseAppModule.dir\src\hgmanipulatewidget.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/hgqlabel.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/hgqlabel.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\hgqlabel.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\hgqlabel.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\hgqlabel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\hgqlabel.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\hgqlabel.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\hgqlabel.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\hgqlabel.cpp > CMakeFiles\BaseAppModule.dir\src\hgqlabel.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\hgqlabel.cpp > CMakeFiles\BaseAppModule.dir\src\hgqlabel.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\hgqlabel.cpp -o CMakeFiles\BaseAppModule.dir\src\hgqlabel.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\hgqlabel.cpp -o CMakeFiles\BaseAppModule.dir\src\hgqlabel.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/labelwithimg.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/labelwithimg.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\labelwithimg.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\labelwithimg.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\labelwithimg.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\labelwithimg.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp > CMakeFiles\BaseAppModule.dir\src\labelwithimg.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp > CMakeFiles\BaseAppModule.dir\src\labelwithimg.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp -o CMakeFiles\BaseAppModule.dir\src\labelwithimg.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp -o CMakeFiles\BaseAppModule.dir\src\labelwithimg.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/mychartview.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/mychartview.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\mychartview.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\mychartview.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\mychartview.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\mychartview.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp > CMakeFiles\BaseAppModule.dir\src\mychartview.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp > CMakeFiles\BaseAppModule.dir\src\mychartview.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp -o CMakeFiles\BaseAppModule.dir\src\mychartview.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp -o CMakeFiles\BaseAppModule.dir\src\mychartview.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/mygraphicsview.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/mygraphicsview.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\mygraphicsview.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\mygraphicsview.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\mygraphicsview.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\mygraphicsview.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp > CMakeFiles\BaseAppModule.dir\src\mygraphicsview.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp > CMakeFiles\BaseAppModule.dir\src\mygraphicsview.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp -o CMakeFiles\BaseAppModule.dir\src\mygraphicsview.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp -o CMakeFiles\BaseAppModule.dir\src\mygraphicsview.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/mykeyboard.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/mykeyboard.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\mykeyboard.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\mykeyboard.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\mykeyboard.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\mykeyboard.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp > CMakeFiles\BaseAppModule.dir\src\mykeyboard.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp > CMakeFiles\BaseAppModule.dir\src\mykeyboard.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp -o CMakeFiles\BaseAppModule.dir\src\mykeyboard.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mykeyboard.cpp -o CMakeFiles\BaseAppModule.dir\src\mykeyboard.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/mypixmapitem.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/mypixmapitem.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\mypixmapitem.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\mypixmapitem.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mypixmapitem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\mypixmapitem.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\mypixmapitem.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mypixmapitem.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mypixmapitem.cpp > CMakeFiles\BaseAppModule.dir\src\mypixmapitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mypixmapitem.cpp > CMakeFiles\BaseAppModule.dir\src\mypixmapitem.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mypixmapitem.cpp -o CMakeFiles\BaseAppModule.dir\src\mypixmapitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mypixmapitem.cpp -o CMakeFiles\BaseAppModule.dir\src\mypixmapitem.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/rectellipseitem.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/rectellipseitem.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\rectellipseitem.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\rectellipseitem.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\rectellipseitem.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\rectellipseitem.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp > CMakeFiles\BaseAppModule.dir\src\rectellipseitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp > CMakeFiles\BaseAppModule.dir\src\rectellipseitem.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp -o CMakeFiles\BaseAppModule.dir\src\rectellipseitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\rectellipseitem.cpp -o CMakeFiles\BaseAppModule.dir\src\rectellipseitem.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/rectitem.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/rectitem.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\rectitem.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\rectitem.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\rectitem.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\rectitem.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp > CMakeFiles\BaseAppModule.dir\src\rectitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp > CMakeFiles\BaseAppModule.dir\src\rectitem.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp -o CMakeFiles\BaseAppModule.dir\src\rectitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp -o CMakeFiles\BaseAppModule.dir\src\rectitem.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/systeminfocache.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/systeminfocache.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\systeminfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\systeminfocache.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\systeminfocache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\systeminfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\systeminfocache.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\systeminfocache.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\systeminfocache.cpp > CMakeFiles\BaseAppModule.dir\src\systeminfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\systeminfocache.cpp > CMakeFiles\BaseAppModule.dir\src\systeminfocache.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\systeminfocache.cpp -o CMakeFiles\BaseAppModule.dir\src\systeminfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\systeminfocache.cpp -o CMakeFiles\BaseAppModule.dir\src\systeminfocache.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/src/usersinfocache.cpp
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/src/usersinfocache.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\usersinfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\usersinfocache.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\usersinfocache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\src\usersinfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\src\usersinfocache.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\usersinfocache.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\usersinfocache.cpp > CMakeFiles\BaseAppModule.dir\src\usersinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\usersinfocache.cpp > CMakeFiles\BaseAppModule.dir\src\usersinfocache.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\usersinfocache.cpp -o CMakeFiles\BaseAppModule.dir\src\usersinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\usersinfocache.cpp -o CMakeFiles\BaseAppModule.dir\src\usersinfocache.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.obj: HGBaseAppModule/inc/moc_DragDialog.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_DragDialog.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_DragDialog.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_DragDialog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_DragDialog.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_DragDialog.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_DragDialog.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_DragDialog.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_DragDialog.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_DragDialog.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_DragDialog.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_DragDialog.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_DragDialog.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_DragDialog.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_DragDialog.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.obj: HGBaseAppModule/inc/moc_QRoundProgressBar.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_QRoundProgressBar.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_QRoundProgressBar.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_QRoundProgressBar.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_QRoundProgressBar.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_QRoundProgressBar.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_QRoundProgressBar.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_QRoundProgressBar.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_QRoundProgressBar.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_QRoundProgressBar.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_QRoundProgressBar.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_QRoundProgressBar.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_QRoundProgressBar.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_QRoundProgressBar.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_QRoundProgressBar.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.obj: HGBaseAppModule/inc/moc_authorityinfocache.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_authorityinfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_authorityinfocache.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_authorityinfocache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_authorityinfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_authorityinfocache.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_authorityinfocache.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_authorityinfocache.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_authorityinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_authorityinfocache.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_authorityinfocache.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_authorityinfocache.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_authorityinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_authorityinfocache.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_authorityinfocache.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.obj: HGBaseAppModule/inc/moc_basewidget.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_basewidget.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_basewidget.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_basewidget.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_basewidget.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_basewidget.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_basewidget.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_basewidget.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_basewidget.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_basewidget.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_basewidget.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_basewidget.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_basewidget.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_basewidget.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_basewidget.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.obj: HGBaseAppModule/inc/moc_common.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_common.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_common.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_common.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_common.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_common.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_common.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_common.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_common.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_common.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_common.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_common.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_common.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_common.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_common.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.obj: HGBaseAppModule/inc/moc_datachartinfocache.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_datachartinfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_datachartinfocache.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_datachartinfocache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_datachartinfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_datachartinfocache.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_datachartinfocache.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_datachartinfocache.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_datachartinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_datachartinfocache.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_datachartinfocache.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_datachartinfocache.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_datachartinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_datachartinfocache.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_datachartinfocache.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.obj: HGBaseAppModule/inc/moc_globalsingleton.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_globalsingleton.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_globalsingleton.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_globalsingleton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_globalsingleton.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_globalsingleton.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_globalsingleton.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_globalsingleton.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_globalsingleton.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_globalsingleton.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_globalsingleton.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_globalsingleton.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_globalsingleton.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_globalsingleton.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_globalsingleton.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.obj: HGBaseAppModule/inc/moc_hgmanipulatewidget.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_hgmanipulatewidget.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_hgmanipulatewidget.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgmanipulatewidget.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_hgmanipulatewidget.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_hgmanipulatewidget.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgmanipulatewidget.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgmanipulatewidget.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_hgmanipulatewidget.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgmanipulatewidget.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_hgmanipulatewidget.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgmanipulatewidget.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_hgmanipulatewidget.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgmanipulatewidget.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_hgmanipulatewidget.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.obj: HGBaseAppModule/inc/moc_hgqlabel.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_hgqlabel.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_hgqlabel.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgqlabel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_hgqlabel.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_hgqlabel.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgqlabel.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgqlabel.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_hgqlabel.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgqlabel.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_hgqlabel.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgqlabel.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_hgqlabel.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgqlabel.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_hgqlabel.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.obj: HGBaseAppModule/inc/moc_labelwithimg.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_labelwithimg.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_labelwithimg.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_labelwithimg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_labelwithimg.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_labelwithimg.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_labelwithimg.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_labelwithimg.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_labelwithimg.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_labelwithimg.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_labelwithimg.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_labelwithimg.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_labelwithimg.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_labelwithimg.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_labelwithimg.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.obj: HGBaseAppModule/inc/moc_mychartview.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_mychartview.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_mychartview.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mychartview.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_mychartview.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_mychartview.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mychartview.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mychartview.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_mychartview.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mychartview.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_mychartview.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mychartview.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_mychartview.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mychartview.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_mychartview.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.obj: HGBaseAppModule/inc/moc_mygraphicsview.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_mygraphicsview.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_mygraphicsview.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mygraphicsview.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_mygraphicsview.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_mygraphicsview.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mygraphicsview.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mygraphicsview.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_mygraphicsview.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mygraphicsview.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_mygraphicsview.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mygraphicsview.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_mygraphicsview.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mygraphicsview.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_mygraphicsview.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.obj: HGBaseAppModule/inc/moc_mykeyboard.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_mykeyboard.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_mykeyboard.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mykeyboard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_mykeyboard.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_mykeyboard.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mykeyboard.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mykeyboard.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_mykeyboard.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mykeyboard.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_mykeyboard.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mykeyboard.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_mykeyboard.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mykeyboard.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_mykeyboard.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.obj: HGBaseAppModule/inc/moc_mypixmapitem.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_mypixmapitem.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_mypixmapitem.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mypixmapitem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_mypixmapitem.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_mypixmapitem.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mypixmapitem.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mypixmapitem.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_mypixmapitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mypixmapitem.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_mypixmapitem.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mypixmapitem.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_mypixmapitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mypixmapitem.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_mypixmapitem.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.obj: HGBaseAppModule/inc/moc_rectellipseitem.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_rectellipseitem.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_rectellipseitem.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_rectellipseitem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_rectellipseitem.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_rectellipseitem.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_rectellipseitem.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_rectellipseitem.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_rectellipseitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_rectellipseitem.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_rectellipseitem.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_rectellipseitem.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_rectellipseitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_rectellipseitem.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_rectellipseitem.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.obj: HGBaseAppModule/inc/moc_rectitem.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_rectitem.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_rectitem.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_rectitem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_rectitem.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_rectitem.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_rectitem.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_rectitem.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_rectitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_rectitem.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_rectitem.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_rectitem.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_rectitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_rectitem.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_rectitem.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.obj: HGBaseAppModule/inc/moc_systeminfocache.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_systeminfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_systeminfocache.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_systeminfocache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_systeminfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_systeminfocache.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_systeminfocache.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_systeminfocache.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_systeminfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_systeminfocache.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_systeminfocache.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_systeminfocache.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_systeminfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_systeminfocache.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_systeminfocache.cpp.s
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/flags.make
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/includes_CXX.rsp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.obj: HGBaseAppModule/inc/moc_usersinfocache.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.obj: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_usersinfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_usersinfocache.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_usersinfocache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.obj -MF CMakeFiles\BaseAppModule.dir\inc\moc_usersinfocache.cpp.obj.d -o CMakeFiles\BaseAppModule.dir\inc\moc_usersinfocache.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_usersinfocache.cpp
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_usersinfocache.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_usersinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_usersinfocache.cpp > CMakeFiles\BaseAppModule.dir\inc\moc_usersinfocache.cpp.i
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_usersinfocache.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_usersinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_usersinfocache.cpp -o CMakeFiles\BaseAppModule.dir\inc\moc_usersinfocache.cpp.s
 
 BaseAppModule: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.obj
 BaseAppModule: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj
@@ -747,7 +747,7 @@ HGBaseAppModule/CMakeFiles/BaseAppModule.dir/build: BaseAppModule
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule.dir/build
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/clean:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && $(CMAKE_COMMAND) -P CMakeFiles\BaseAppModule.dir\cmake_clean.cmake
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && $(CMAKE_COMMAND) -P CMakeFiles\BaseAppModule.dir\cmake_clean.cmake
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule.dir/clean
 
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/depend: HGBaseAppModule/BaseAppModule_autogen/timestamp
@@ -769,6 +769,6 @@ HGBaseAppModule/CMakeFiles/BaseAppModule.dir/depend: HGBaseAppModule/inc/moc_rec
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/depend: HGBaseAppModule/inc/moc_rectitem.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/depend: HGBaseAppModule/inc/moc_systeminfocache.cpp
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/depend: HGBaseAppModule/inc/moc_usersinfocache.cpp
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\virtualMachine\github\vsproject\HGAppModule D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule D:\virtualMachine\github\vsproject\HGAppModule\windows_build D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\CMakeFiles\BaseAppModule.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\CMakeFiles\BaseAppModule.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule.dir/depend
 

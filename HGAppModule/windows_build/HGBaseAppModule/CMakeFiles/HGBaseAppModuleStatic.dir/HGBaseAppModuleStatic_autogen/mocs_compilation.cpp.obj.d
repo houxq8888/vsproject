@@ -1,2 +1,2 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\HGBaseAppModuleStatic_autogen\mocs_compilation.cpp
+ D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\HGBaseAppModuleStatic_autogen\mocs_compilation.cpp

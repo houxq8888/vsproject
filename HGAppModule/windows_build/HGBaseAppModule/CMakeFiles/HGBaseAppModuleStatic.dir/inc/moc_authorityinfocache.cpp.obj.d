@@ -1,2 +1,2 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_authorityinfocache.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_authorityinfocache.cpp
+ D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_authorityinfocache.cpp

@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/labelwithimg.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/labelwithimg.h \
+ D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\labelwithimg.cpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/labelwithimg.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QWidget \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -397,7 +397,7 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/labelwithimg.cpp.obj: \
  D:/Qt/6.9.1/mingw_64/include/QtCore/qiodevice.h \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qtextdocument.h \
  D:/Qt/6.9.1/mingw_64/include/QtCore/qurl.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h \
  D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h \
  D:/Qt/6.9.1/mingw_64/include/QtCore/qcoreevent.h \

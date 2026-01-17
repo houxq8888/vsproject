@@ -52,10 +52,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\virtualMachine\github\vsproject\HGAppModule
+CMAKE_SOURCE_DIR = D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\virtualMachine\github\vsproject\HGAppModule\windows_build
+CMAKE_BINARY_DIR = D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build
 
 # Include any dependencies generated for this target.
 include pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/depend.make
@@ -71,54 +71,54 @@ include pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/flags.make
 pluginInterface/PluginInterfaceStatic_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bin/moc.exe
 pluginInterface/PluginInterfaceStatic_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bin/uic.exe
 pluginInterface/PluginInterfaceStatic_autogen/timestamp: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target PluginInterfaceStatic"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/AutogenInfo.json Release
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target PluginInterfaceStatic"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/AutogenInfo.json Release
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/timestamp
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/flags.make
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/includes_CXX.rsp
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj: pluginInterface/PluginInterfaceStatic_autogen/mocs_compilation.cpp
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\PluginInterfaceStatic.dir\PluginInterfaceStatic_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\PluginInterfaceStatic.dir\PluginInterfaceStatic_autogen\mocs_compilation.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface\PluginInterfaceStatic_autogen\mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\PluginInterfaceStatic.dir\PluginInterfaceStatic_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\PluginInterfaceStatic.dir\PluginInterfaceStatic_autogen\mocs_compilation.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface\PluginInterfaceStatic_autogen\mocs_compilation.cpp
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface\PluginInterfaceStatic_autogen\mocs_compilation.cpp > CMakeFiles\PluginInterfaceStatic.dir\PluginInterfaceStatic_autogen\mocs_compilation.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface\PluginInterfaceStatic_autogen\mocs_compilation.cpp > CMakeFiles\PluginInterfaceStatic.dir\PluginInterfaceStatic_autogen\mocs_compilation.cpp.i
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface\PluginInterfaceStatic_autogen\mocs_compilation.cpp -o CMakeFiles\PluginInterfaceStatic.dir\PluginInterfaceStatic_autogen\mocs_compilation.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface\PluginInterfaceStatic_autogen\mocs_compilation.cpp -o CMakeFiles\PluginInterfaceStatic.dir\PluginInterfaceStatic_autogen\mocs_compilation.cpp.s
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/flags.make
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/includes_CXX.rsp
-pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/src/plugininterface.cpp
+pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/pluginInterface/src/plugininterface.cpp
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj -MF CMakeFiles\PluginInterfaceStatic.dir\src\plugininterface.cpp.obj.d -o CMakeFiles\PluginInterfaceStatic.dir\src\plugininterface.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\pluginInterface\src\plugininterface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj -MF CMakeFiles\PluginInterfaceStatic.dir\src\plugininterface.cpp.obj.d -o CMakeFiles\PluginInterfaceStatic.dir\src\plugininterface.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\pluginInterface\src\plugininterface.cpp
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\pluginInterface\src\plugininterface.cpp > CMakeFiles\PluginInterfaceStatic.dir\src\plugininterface.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\pluginInterface\src\plugininterface.cpp > CMakeFiles\PluginInterfaceStatic.dir\src\plugininterface.cpp.i
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\pluginInterface\src\plugininterface.cpp -o CMakeFiles\PluginInterfaceStatic.dir\src\plugininterface.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\pluginInterface\src\plugininterface.cpp -o CMakeFiles\PluginInterfaceStatic.dir\src\plugininterface.cpp.s
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/flags.make
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/includes_CXX.rsp
-pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj: D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/src/pluginmanager.cpp
+pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj: D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/pluginInterface/src/pluginmanager.cpp
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj -MF CMakeFiles\PluginInterfaceStatic.dir\src\pluginmanager.cpp.obj.d -o CMakeFiles\PluginInterfaceStatic.dir\src\pluginmanager.cpp.obj -c D:\virtualMachine\github\vsproject\HGAppModule\pluginInterface\src\pluginmanager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj -MF CMakeFiles\PluginInterfaceStatic.dir\src\pluginmanager.cpp.obj.d -o CMakeFiles\PluginInterfaceStatic.dir\src\pluginmanager.cpp.obj -c D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\pluginInterface\src\pluginmanager.cpp
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.i"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\vsproject\HGAppModule\pluginInterface\src\pluginmanager.cpp > CMakeFiles\PluginInterfaceStatic.dir\src\pluginmanager.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\pluginInterface\src\pluginmanager.cpp > CMakeFiles\PluginInterfaceStatic.dir\src\pluginmanager.cpp.i
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.s"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\vsproject\HGAppModule\pluginInterface\src\pluginmanager.cpp -o CMakeFiles\PluginInterfaceStatic.dir\src\pluginmanager.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\pluginInterface\src\pluginmanager.cpp -o CMakeFiles\PluginInterfaceStatic.dir\src\pluginmanager.cpp.s
 
 # Object files for target PluginInterfaceStatic
 PluginInterfaceStatic_OBJECTS = \
@@ -134,19 +134,19 @@ pluginInterface/libPluginInterfaceStatic.a: pluginInterface/CMakeFiles/PluginInt
 pluginInterface/libPluginInterfaceStatic.a: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj
 pluginInterface/libPluginInterfaceStatic.a: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/build.make
 pluginInterface/libPluginInterfaceStatic.a: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libPluginInterfaceStatic.a"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && $(CMAKE_COMMAND) -P CMakeFiles\PluginInterfaceStatic.dir\cmake_clean_target.cmake
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\PluginInterfaceStatic.dir\link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libPluginInterfaceStatic.a"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && $(CMAKE_COMMAND) -P CMakeFiles\PluginInterfaceStatic.dir\cmake_clean_target.cmake
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\PluginInterfaceStatic.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/build: pluginInterface/libPluginInterfaceStatic.a
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/build
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/clean:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && $(CMAKE_COMMAND) -P CMakeFiles\PluginInterfaceStatic.dir\cmake_clean.cmake
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && $(CMAKE_COMMAND) -P CMakeFiles\PluginInterfaceStatic.dir\cmake_clean.cmake
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/clean
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/depend: pluginInterface/PluginInterfaceStatic_autogen/timestamp
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\virtualMachine\github\vsproject\HGAppModule D:\virtualMachine\github\vsproject\HGAppModule\pluginInterface D:\virtualMachine\github\vsproject\HGAppModule\windows_build D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\pluginInterface D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/depend
 

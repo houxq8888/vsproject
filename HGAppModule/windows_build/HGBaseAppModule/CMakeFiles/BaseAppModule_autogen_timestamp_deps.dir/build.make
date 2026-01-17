@@ -52,10 +52,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\virtualMachine\github\vsproject\HGAppModule
+CMAKE_SOURCE_DIR = D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\virtualMachine\github\vsproject\HGAppModule\windows_build
+CMAKE_BINARY_DIR = D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build
 
 # Utility rule file for BaseAppModule_autogen_timestamp_deps.
 
@@ -73,10 +73,10 @@ HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/build: BaseA
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/build
 
 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/clean:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule && $(CMAKE_COMMAND) -P CMakeFiles\BaseAppModule_autogen_timestamp_deps.dir\cmake_clean.cmake
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule && $(CMAKE_COMMAND) -P CMakeFiles\BaseAppModule_autogen_timestamp_deps.dir\cmake_clean.cmake
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/clean
 
 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\virtualMachine\github\vsproject\HGAppModule D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule D:\virtualMachine\github\vsproject\HGAppModule\windows_build D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\CMakeFiles\BaseAppModule_autogen_timestamp_deps.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\CMakeFiles\BaseAppModule_autogen_timestamp_deps.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/depend
 

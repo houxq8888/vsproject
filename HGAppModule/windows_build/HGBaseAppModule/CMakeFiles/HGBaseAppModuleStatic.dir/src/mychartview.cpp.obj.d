@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mychartview.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mychartview.h \
+ D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\mychartview.cpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/mychartview.h \
  D:/Qt/6.9.1/mingw_64/include/QtCharts/QChartView \
  D:/Qt/6.9.1/mingw_64/include/QtCharts/qchartview.h \
  D:/Qt/6.9.1/mingw_64/include/QtCharts/QAbstractAxis \
@@ -472,37 +472,37 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mychartview.cpp.obj: \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qaction.h \
  D:/Qt/6.9.1/mingw_64/include/QtCore/QDebug \
  D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h \
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGMacroData.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/opencv.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/opencv_modules.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvdef.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/version.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/hal/interface.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cv_cpu_dispatch.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/services/HGCommon/inc/HGMacroData.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/opencv.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/opencv_modules.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/cvdef.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/version.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/hal/interface.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/cv_cpu_dispatch.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/emmintrin.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xmmintrin.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mmintrin.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/base.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvstd.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvstd_wrapper.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/neon_utils.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/vsx_utils.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/check.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/traits.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/matx.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/saturate.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/fast_math.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/types.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/base.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/cvstd.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/cvstd_wrapper.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/neon_utils.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/vsx_utils.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/check.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/traits.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/matx.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/saturate.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/fast_math.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/types.hpp \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cfloat \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/float.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/float.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/mat.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/bufferpool.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/mat.inl.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/persistence.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/operations.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvstd.inl.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/mat.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/bufferpool.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/mat.inl.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/persistence.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/operations.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/cvstd.inl.hpp \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/complex \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
@@ -519,54 +519,54 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mychartview.cpp.obj: \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/utility.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/utility.hpp \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_mutex.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/optim.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/ovx.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvdef.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/calib3d.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/features2d.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/miniflann.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/defines.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/config.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/affine.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dnn.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/async.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/version.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dict.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/layer.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dnn.inl.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/utils/inference_engine.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dnn.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/flann_base.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/general.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/matrix.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/params.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/any.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/defines.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/optim.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/ovx.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/cvdef.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/calib3d.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/features2d.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/miniflann.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/defines.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/config.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/affine.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/dnn.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/dnn/dnn.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/async.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/dnn/version.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/dnn/dict.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/dnn/layer.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/dnn/dnn.inl.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/dnn/utils/inference_engine.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/dnn/dnn.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/flann_base.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/general.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/matrix.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/params.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/any.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/defines.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/saving.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/nn_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/result_set.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/all_indices.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/kdtree_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/dynamic_bitset.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/dist.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/heap.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/allocator.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/random.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/kdtree_single_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/kmeans_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/logger.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/composite_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/linear_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/hierarchical_clustering_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/lsh_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/lsh_table.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/saving.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/nn_index.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/result_set.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/all_indices.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/kdtree_index.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/dynamic_bitset.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/dist.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/heap.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/allocator.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/random.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/kdtree_single_index.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/kmeans_index.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/logger.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/composite_index.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/linear_index.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/hierarchical_clustering_index.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/lsh_index.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/lsh_table.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/locale \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.h \
@@ -577,47 +577,47 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mychartview.cpp.obj: \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_conv.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/quoted_string.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/math.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/autotuned_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/ground_truth.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/index_testing.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/timer.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/sampling.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/highgui.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/imgcodecs.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/videoio.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/imgproc.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/imgproc/segmentation.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/ml.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/ml/ml.inl.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/objdetect.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/objdetect/detection_based_tracker.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/objdetect/face.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/photo.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/warpers.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/warpers.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cuda.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cuda_types.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cuda.inl.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/warpers_inl.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/warpers.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/matchers.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/motion_estimators.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/matchers.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/util.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/util_inl.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/autotuned_index.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/ground_truth.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/index_testing.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/timer.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/flann/sampling.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/highgui.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/imgcodecs.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/videoio.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/imgproc.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/imgproc/segmentation.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/ml.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/ml/ml.inl.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/objdetect.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/objdetect/detection_based_tracker.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/objdetect/face.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/photo.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/warpers.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/warpers.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/cuda.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/cuda_types.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/core/cuda.inl.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/warpers_inl.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/warpers.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/matchers.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/motion_estimators.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/matchers.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/util.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/util_inl.hpp \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/queue \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/camera.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/exposure_compensate.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/seam_finders.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/blenders.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/camera.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/video.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/video/tracking.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/video/background_segm.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/camera.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/exposure_compensate.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/seam_finders.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/blenders.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/stitching/detail/camera.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/video.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/video/tracking.hpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv2/video/background_segm.hpp \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QToolTip \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtooltip.h

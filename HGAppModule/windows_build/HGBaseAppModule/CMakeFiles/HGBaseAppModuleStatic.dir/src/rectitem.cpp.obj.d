@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectitem.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/rectitem.h \
+ D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\rectitem.cpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/rectitem.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsEllipseItem \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsitem.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

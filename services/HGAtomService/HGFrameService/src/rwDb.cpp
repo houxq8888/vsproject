@@ -4,6 +4,7 @@
 #include <memory>
 #include <sstream>
 #include "hgcommonutility.h"
+#include <algorithm>
 #include "config.h"
 #include "hglog4cplus.h"
 
@@ -447,6 +448,121 @@ std::string RWDb::getMethodName(const std::string &flowName){
         }
         return logOpera.readRecord(readTableName, infoS);
     }
+
+    std::vector<std::map<std::string, std::string>> RWDb::searchAuditTrailLog(const std::string &keyword, 
+                                                                           const std::string &timeFrom, 
+                                                                           const std::string &timeTo,
+                                                                           int limit, 
+                                                                           int offset){
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        std::vector<std::map<std::string, std::string>> allResults;
+
+        std::string whereClause = "";
+        if (!keyword.empty()) {
+            whereClause += "(Operator LIKE '%" + keyword + "%' OR LogContent LIKE '%" + keyword + "%')";
+        }
+        if (!timeFrom.empty()) {
+            if (!whereClause.empty()) whereClause += " AND ";
+            whereClause += "Time >= '" + timeFrom + "'";
+        }
+        if (!timeTo.empty()) {
+            if (!whereClause.empty()) whereClause += " AND ";
+            whereClause += "Time <= '" + timeTo + "'";
+        }
+
+        int totalRequired = offset + limit;
+        int currentCount = 0;
+        
+        // 按时间逆序遍历表（最新的表优先）
+        std::sort(tableNames.rbegin(), tableNames.rend());
+        
+        for (const auto &tableName : tableNames) {
+            if (currentCount >= totalRequired) {
+                break;
+            }
+            
+            std::map<std::string, std::string> infoS = {
+                {"Operator",""},
+                {"Time",""},
+                {"LogContent",""}
+            };
+            
+            int remaining = totalRequired - currentCount;
+            std::vector<std::map<std::string, std::string>> results = logOpera.readRecordWithLimit(tableName, infoS, whereClause, remaining);
+            
+            allResults.insert(allResults.end(), results.begin(), results.end());
+            currentCount += results.size();
+        }
+
+        // 只对需要的部分进行排序（因为每个表内部已经是按时间排序的）
+        if (allResults.size() > limit) {
+            std::sort(allResults.begin(), allResults.end(), [](const std::map<std::string, std::string> &a, 
+                                                               const std::map<std::string, std::string> &b) {
+                return a.at("Time") > b.at("Time");
+            });
+        }
+
+        int start = offset;
+        int end = std::min(offset + limit, (int)allResults.size());
+        if (start >= (int)allResults.size()) {
+            return {};
+        }
+
+        return std::vector<std::map<std::string, std::string>>(allResults.begin() + start, allResults.begin() + end);
+    }
+
+    int RWDb::searchAuditTrailLogCount(const std::string &keyword, 
+                                       const std::string &timeFrom, 
+                                       const std::string &timeTo){
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        int totalCount = 0;
+
+        std::string whereClause = "";
+        if (!keyword.empty()) {
+            whereClause += "(Operator LIKE '%" + keyword + "%' OR LogContent LIKE '%" + keyword + "%')";
+        }
+        if (!timeFrom.empty()) {
+            if (!whereClause.empty()) whereClause += " AND ";
+            whereClause += "Time >= '" + timeFrom + "'";
+        }
+        if (!timeTo.empty()) {
+            if (!whereClause.empty()) whereClause += " AND ";
+            whereClause += "Time <= '" + timeTo + "'";
+        }
+
+        for (const auto &tableName : tableNames) {
+            totalCount += logOpera.countOfTable(tableName, whereClause);
+        }
+
+        return totalCount;
+    }
+
+    std::string RWDb::highlightKeyword(const std::string &text, const std::string &keyword){
+        if (keyword.empty()) {
+            return text;
+        }
+
+        std::string result = text;
+        std::string lowerText = text;
+        std::string lowerKeyword = keyword;
+        std::transform(lowerText.begin(), lowerText.end(), lowerText.begin(), ::tolower);
+        std::transform(lowerKeyword.begin(), lowerKeyword.end(), lowerKeyword.begin(), ::tolower);
+
+        size_t pos = 0;
+        size_t keywordLen = keyword.length();
+        size_t offset = 0;
+        
+        while ((pos = lowerText.find(lowerKeyword, pos)) != std::string::npos) {
+            size_t actualPos = pos + offset;
+            result.replace(actualPos, keywordLen, "<font color='red'>" + text.substr(pos, keywordLen) + "</font>");
+            
+            pos += keywordLen;
+            offset += 13; // "<font color='red'>"长度为13，"</font>"长度为7，但我们只需要跟踪净增加量
+        }
+
+        return result;
+    }
+
     std::vector<std::map<std::string, std::string>> RWDb::readRecord(std::string dbName, std::map<std::string, std::string> &infoS)
     {
         return dbOpera.readRecord(dbName, infoS);

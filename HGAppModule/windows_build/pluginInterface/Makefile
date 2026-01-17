@@ -56,10 +56,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\virtualMachine\github\vsproject\HGAppModule
+CMAKE_SOURCE_DIR = D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\virtualMachine\github\vsproject\HGAppModule\windows_build
+CMAKE_BINARY_DIR = D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -131,14 +131,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface\\CMakeFiles\progress.marks
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface\\CMakeFiles\progress.marks
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/clean
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/clean
 .PHONY : clean
 
 # The main clean target
@@ -147,22 +147,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/preinstall
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/preinstall
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 pluginInterface/CMakeFiles/PluginInterfaceModule.dir/rule:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceModule.dir/rule
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceModule.dir/rule
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceModule.dir/rule
 
 # Convenience name for target.
@@ -171,12 +171,12 @@ PluginInterfaceModule: pluginInterface/CMakeFiles/PluginInterfaceModule.dir/rule
 
 # fast build rule for target.
 PluginInterfaceModule/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/build
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/build
 .PHONY : PluginInterfaceModule/fast
 
 # Convenience name for target.
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/rule:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/rule
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/rule
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/rule
 
 # Convenience name for target.
@@ -185,12 +185,12 @@ PluginInterfaceStatic: pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/rule
 
 # fast build rule for target.
 PluginInterfaceStatic/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/build
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/build
 .PHONY : PluginInterfaceStatic/fast
 
 # Convenience name for target.
 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/rule:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/rule
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/rule
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -199,12 +199,12 @@ PluginInterfaceModule_autogen_timestamp_deps: pluginInterface/CMakeFiles/PluginI
 
 # fast build rule for target.
 PluginInterfaceModule_autogen_timestamp_deps/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule_autogen_timestamp_deps.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/build
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule_autogen_timestamp_deps.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/build
 .PHONY : PluginInterfaceModule_autogen_timestamp_deps/fast
 
 # Convenience name for target.
 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/rule:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/rule
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/rule
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/rule
 
 # Convenience name for target.
@@ -213,12 +213,12 @@ PluginInterfaceModule_autogen: pluginInterface/CMakeFiles/PluginInterfaceModule_
 
 # fast build rule for target.
 PluginInterfaceModule_autogen/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule_autogen.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/build
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule_autogen.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/build
 .PHONY : PluginInterfaceModule_autogen/fast
 
 # Convenience name for target.
 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/rule:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/rule
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/rule
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -227,12 +227,12 @@ PluginInterfaceStatic_autogen_timestamp_deps: pluginInterface/CMakeFiles/PluginI
 
 # fast build rule for target.
 PluginInterfaceStatic_autogen_timestamp_deps/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen_timestamp_deps.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/build
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen_timestamp_deps.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/build
 .PHONY : PluginInterfaceStatic_autogen_timestamp_deps/fast
 
 # Convenience name for target.
 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/rule:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/rule
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/rule
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/rule
 
 # Convenience name for target.
@@ -241,7 +241,7 @@ PluginInterfaceStatic_autogen: pluginInterface/CMakeFiles/PluginInterfaceStatic_
 
 # fast build rule for target.
 PluginInterfaceStatic_autogen/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/build
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/build
 .PHONY : PluginInterfaceStatic_autogen/fast
 
 PluginInterfaceModule_autogen/mocs_compilation.obj: PluginInterfaceModule_autogen/mocs_compilation.cpp.obj
@@ -249,7 +249,7 @@ PluginInterfaceModule_autogen/mocs_compilation.obj: PluginInterfaceModule_autoge
 
 # target to build an object file
 PluginInterfaceModule_autogen/mocs_compilation.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/PluginInterfaceModule_autogen/mocs_compilation.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/PluginInterfaceModule_autogen/mocs_compilation.cpp.obj
 .PHONY : PluginInterfaceModule_autogen/mocs_compilation.cpp.obj
 
 PluginInterfaceModule_autogen/mocs_compilation.i: PluginInterfaceModule_autogen/mocs_compilation.cpp.i
@@ -257,7 +257,7 @@ PluginInterfaceModule_autogen/mocs_compilation.i: PluginInterfaceModule_autogen/
 
 # target to preprocess a source file
 PluginInterfaceModule_autogen/mocs_compilation.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/PluginInterfaceModule_autogen/mocs_compilation.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/PluginInterfaceModule_autogen/mocs_compilation.cpp.i
 .PHONY : PluginInterfaceModule_autogen/mocs_compilation.cpp.i
 
 PluginInterfaceModule_autogen/mocs_compilation.s: PluginInterfaceModule_autogen/mocs_compilation.cpp.s
@@ -265,7 +265,7 @@ PluginInterfaceModule_autogen/mocs_compilation.s: PluginInterfaceModule_autogen/
 
 # target to generate assembly for a file
 PluginInterfaceModule_autogen/mocs_compilation.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/PluginInterfaceModule_autogen/mocs_compilation.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/PluginInterfaceModule_autogen/mocs_compilation.cpp.s
 .PHONY : PluginInterfaceModule_autogen/mocs_compilation.cpp.s
 
 PluginInterfaceStatic_autogen/mocs_compilation.obj: PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj
@@ -273,7 +273,7 @@ PluginInterfaceStatic_autogen/mocs_compilation.obj: PluginInterfaceStatic_autoge
 
 # target to build an object file
 PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj
 .PHONY : PluginInterfaceStatic_autogen/mocs_compilation.cpp.obj
 
 PluginInterfaceStatic_autogen/mocs_compilation.i: PluginInterfaceStatic_autogen/mocs_compilation.cpp.i
@@ -281,7 +281,7 @@ PluginInterfaceStatic_autogen/mocs_compilation.i: PluginInterfaceStatic_autogen/
 
 # target to preprocess a source file
 PluginInterfaceStatic_autogen/mocs_compilation.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.i
 .PHONY : PluginInterfaceStatic_autogen/mocs_compilation.cpp.i
 
 PluginInterfaceStatic_autogen/mocs_compilation.s: PluginInterfaceStatic_autogen/mocs_compilation.cpp.s
@@ -289,7 +289,7 @@ PluginInterfaceStatic_autogen/mocs_compilation.s: PluginInterfaceStatic_autogen/
 
 # target to generate assembly for a file
 PluginInterfaceStatic_autogen/mocs_compilation.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/PluginInterfaceStatic_autogen/mocs_compilation.cpp.s
 .PHONY : PluginInterfaceStatic_autogen/mocs_compilation.cpp.s
 
 src/plugininterface.obj: src/plugininterface.cpp.obj
@@ -297,8 +297,8 @@ src/plugininterface.obj: src/plugininterface.cpp.obj
 
 # target to build an object file
 src/plugininterface.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/plugininterface.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/plugininterface.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.obj
 .PHONY : src/plugininterface.cpp.obj
 
 src/plugininterface.i: src/plugininterface.cpp.i
@@ -306,8 +306,8 @@ src/plugininterface.i: src/plugininterface.cpp.i
 
 # target to preprocess a source file
 src/plugininterface.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/plugininterface.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/plugininterface.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.i
 .PHONY : src/plugininterface.cpp.i
 
 src/plugininterface.s: src/plugininterface.cpp.s
@@ -315,8 +315,8 @@ src/plugininterface.s: src/plugininterface.cpp.s
 
 # target to generate assembly for a file
 src/plugininterface.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/plugininterface.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/plugininterface.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/plugininterface.cpp.s
 .PHONY : src/plugininterface.cpp.s
 
 src/pluginmanager.obj: src/pluginmanager.cpp.obj
@@ -324,8 +324,8 @@ src/pluginmanager.obj: src/pluginmanager.cpp.obj
 
 # target to build an object file
 src/pluginmanager.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/pluginmanager.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/pluginmanager.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.obj
 .PHONY : src/pluginmanager.cpp.obj
 
 src/pluginmanager.i: src/pluginmanager.cpp.i
@@ -333,8 +333,8 @@ src/pluginmanager.i: src/pluginmanager.cpp.i
 
 # target to preprocess a source file
 src/pluginmanager.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/pluginmanager.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/pluginmanager.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.i
 .PHONY : src/pluginmanager.cpp.i
 
 src/pluginmanager.s: src/pluginmanager.cpp.s
@@ -342,8 +342,8 @@ src/pluginmanager.s: src/pluginmanager.cpp.s
 
 # target to generate assembly for a file
 src/pluginmanager.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/pluginmanager.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/src/pluginmanager.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/src/pluginmanager.cpp.s
 .PHONY : src/pluginmanager.cpp.s
 
 # Help Target
@@ -387,6 +387,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
