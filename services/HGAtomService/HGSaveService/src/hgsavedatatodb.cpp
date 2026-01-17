@@ -157,6 +157,30 @@ int HGSaveDataToDB::countOfTable(std::string tableName)
     }
     return count;
 }
+
+int HGSaveDataToDB::countOfTable(std::string tableName, const std::string &whereClause)
+{
+    int count=0;
+    try {
+        std::ostringstream str;
+        str<<"SELECT COUNT(*) FROM "<<tableName;
+        if (!whereClause.empty()) {
+            str<<" WHERE "<<whereClause;
+        }
+        str<<";";
+        CSQLiteQuery query=m_db.execQuery(str.str().c_str());
+        if (!query.eof()) {
+            count=query.getIntField(0);
+        }
+        query.finalize();
+        #ifndef _WIN32
+        sync();
+        #endif
+    } catch (CSQLiteException &e) {
+        return 0;
+    }
+    return count;
+}
 bool HGSaveDataToDB::writeData(std::string sql){
     // printf("writeData sql:%s\n",sql.c_str());
     try {
@@ -485,6 +509,57 @@ std::vector<std::map<std::string,std::string>> HGSaveDataToDB::readRecord(std::s
     sql.str("");
     sql<<sqlstr<<" FROM "<<tableName<<" ORDER BY CAST("+keyname+" AS INTEGER);";
     // printf("sql:%s\n",sql.str().c_str());
+    if (!readData(sql.str(),infos))
+    {
+        sql.str("");
+        sql<<HGSAVESERVICENAME<<"get str failed";
+        printf("%s\n",sql.str().c_str());
+    } 
+    return infos;
+}
+
+std::vector<std::map<std::string,std::string>> HGSaveDataToDB::readRecord(std::string tableName,
+                                                                         std::map<std::string,std::string> &infoS,
+                                                                         const std::string &whereClause){
+    std::vector<std::map<std::string,std::string>> infos;
+    std::ostringstream sql;
+    sql<<"SELECT ";
+    for (auto info:infoS){
+        sql<<info.first<<",";
+    }
+    std::string sqlstr= sql.str().substr(0,sql.str().find_last_of(","));
+    sql.str("");
+    sql<<sqlstr<<" FROM "<<tableName;
+    if (!whereClause.empty()) {
+        sql<<" WHERE "<<whereClause;
+    }
+    sql<<" ORDER BY Time DESC;";
+    if (!readData(sql.str(),infos))
+    {
+        sql.str("");
+        sql<<HGSAVESERVICENAME<<"get str failed";
+        printf("%s\n",sql.str().c_str());
+    } 
+    return infos;
+}
+
+std::vector<std::map<std::string,std::string>> HGSaveDataToDB::readRecordWithLimit(std::string tableName,
+                                                                         std::map<std::string,std::string> &infoS,
+                                                                         const std::string &whereClause,
+                                                                         int limit){
+    std::vector<std::map<std::string,std::string>> infos;
+    std::ostringstream sql;
+    sql<<"SELECT ";
+    for (auto info:infoS){
+        sql<<info.first<<",";
+    }
+    std::string sqlstr= sql.str().substr(0,sql.str().find_last_of(","));
+    sql.str("");
+    sql<<sqlstr<<" FROM "<<tableName;
+    if (!whereClause.empty()) {
+        sql<<" WHERE "<<whereClause;
+    }
+    sql<<" ORDER BY Time DESC LIMIT "<<limit<<";";
     if (!readData(sql.str(),infos))
     {
         sql.str("");

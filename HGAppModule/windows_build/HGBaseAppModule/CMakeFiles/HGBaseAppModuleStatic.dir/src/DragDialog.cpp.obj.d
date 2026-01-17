@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/DragDialog.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\DragDialog.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h \
+ D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\HGBaseAppModule\src\DragDialog.cpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/DragDialog.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QDialog \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qdialog.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -450,14 +450,14 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/DragDialog.cpp.obj: \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qbrush.h \
  D:/Qt/6.9.1/mingw_64/include/QtGui/QImage \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qimage.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/labelwithimg.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/labelwithimg.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QWidget \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGridLayout \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgridlayout.h \
  D:/Qt/6.9.1/mingw_64/include/QtGui/QPixmap \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qpixmap.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h \
  D:/Qt/6.9.1/mingw_64/include/QtCore/QModelIndex \
  D:/Qt/6.9.1/mingw_64/include/QtCore/qabstractitemmodel.h \
  D:/Qt/6.9.1/mingw_64/include/QtCore/QTimer \

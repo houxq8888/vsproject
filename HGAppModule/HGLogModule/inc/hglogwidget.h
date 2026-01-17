@@ -10,13 +10,13 @@
 #include <QGridLayout>
 #include <QComboBox>
 #include <QLineEdit>
-#include "hginputsearchconditionwidget.h"
+#include "../../../HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h"
 
 class HGLogWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HGLogWidget(std::string,QWidget *parent = nullptr);
+    explicit HGLogWidget(std::string lang, QWidget *parent = nullptr);
     bool closeWindow();
     ~HGLogWidget();
 
@@ -54,6 +54,11 @@ private:
     std::map<std::string, int> m_logContentMap;
     int m_curDisplayIndex;
     std::vector<std::string> m_auditLogTableNames;
+    
+    int m_currentSearchPage;
+    int m_totalSearchPages;
+    bool m_isSearchMode;
+    int m_searchLimit;
 };
 
 #endif // HGLOGWIDGET_H

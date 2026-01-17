@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgmanipulatewidget.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgmanipulatewidget.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgmanipulatewidget.h \
+ D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_hgmanipulatewidget.cpp \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/hgmanipulatewidget.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QWidget \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -381,7 +381,7 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgmanipulatewidget.
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qsizepolicy.h \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qcursor.h \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qbitmap.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h \
+ D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QLabel \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qlabel.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h \

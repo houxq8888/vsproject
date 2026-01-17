@@ -1,2 +1,0 @@
-HGUserAuditModule/CMakeFiles/HGUserAuditModuleRun.dir/HGUserAuditModuleRun_autogen/mocs_compilation.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGUserAuditModule\HGUserAuditModuleRun_autogen\mocs_compilation.cpp

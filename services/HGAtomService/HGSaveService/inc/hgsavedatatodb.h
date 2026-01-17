@@ -103,6 +103,14 @@ public:
     int countOfTable(std::string tableName);
 
     /**
+     * @brief 获取指定表中满足条件的记录数。
+     * @param tableName 表名。
+     * @param whereClause WHERE 子句条件。
+     * @return 满足条件的记录数。
+     */
+    int countOfTable(std::string tableName, const std::string &whereClause);
+
+    /**
      * @brief 获取当前数据库中的所有表名。
      * @return 表名列表。
      */
@@ -165,6 +173,30 @@ public:
      */
     std::vector<std::map<std::string,std::string>> readRecord(std::string tableName,
                                                               std::map<std::string,std::string> &infoS);
+
+    /**
+     * @brief 读取满足 WHERE 子句条件的多条记录。
+     * @param tableName 表名。
+     * @param infoS 查询字段映射。
+     * @param whereClause WHERE 子句条件。
+     * @return 满足条件的记录列表。
+     */
+    std::vector<std::map<std::string,std::string>> readRecord(std::string tableName,
+                                                              std::map<std::string,std::string> &infoS,
+                                                              const std::string &whereClause);
+
+    /**
+     * @brief 读取满足 WHERE 子句条件的多条记录（带 LIMIT 限制）。
+     * @param tableName 表名。
+     * @param infoS 查询字段映射。
+     * @param whereClause WHERE 子句条件。
+     * @param limit 返回记录的最大数量。
+     * @return 满足条件的记录列表。
+     */
+    std::vector<std::map<std::string,std::string>> readRecordWithLimit(std::string tableName,
+                                                              std::map<std::string,std::string> &infoS,
+                                                              const std::string &whereClause,
+                                                              int limit);
 
     /**
      * @brief 删除表中满足条件的记录。

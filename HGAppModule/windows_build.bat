@@ -187,12 +187,13 @@ echo   --incremental  增量编译，不清空构建目录 (默认)
 echo   --help         显示此帮助信息
 echo.
 echo 支持的模块:
-echo   - ALL: 编译所有模块 (默认)
-echo   - HGCameraRecognizeModule: 摄像头识别模块
-echo   - HGAnalysisRecordModule: 分析记录模块
-echo   - HGBaseAppModule: 基础应用模块
-echo   - HGUserAuditModule: 用户审计模块
-echo   - HGBaseAppModule,HGUserAuditModule: 同时编译基础应用和用户审计模块
+   echo   - ALL: 编译所有模块 (默认)
+   echo   - HGCameraRecognizeModule: 摄像头识别模块
+   echo   - HGAnalysisRecordModule: 分析记录模块
+   echo   - HGBaseAppModule: 基础应用模块
+   echo   - HGUserAuditModule: 用户审计模块
+   echo   - HGLogModule: 日志模块
+   echo   - HGBaseAppModule,HGUserAuditModule: 同时编译基础应用和用户审计模块
 echo.
 echo 示例:
 echo   windows_build.bat --exe --no-shared --no-static
@@ -201,6 +202,7 @@ echo   windows_build.bat --debug --jobs 8
 echo   windows_build.bat --module HGCameraRecognizeModule --incremental
 echo   windows_build.bat --module HGAnalysisRecordModule --clean
 echo   windows_build.bat --module HGBaseAppModule --module HGUserAuditModule --incremental
+echo   windows_build.bat --module HGLogModule --incremental
 echo.
 exit /b 1
 
@@ -284,6 +286,8 @@ if "%BUILD_MODULE%"=="ALL" (
     set CMAKE_MODULE_ARGS=-DBUILD_HGBASEAPPMODULE_ONLY=ON
 ) else if "%BUILD_MODULE%"=="HGUserAuditModule" (
     set CMAKE_MODULE_ARGS=-DBUILD_HGUSERAUDITMODULE_ONLY=ON
+) else if "%BUILD_MODULE%"=="HGLogModule" (
+    set CMAKE_MODULE_ARGS=-DBUILD_HGLOGMODULE_ONLY=ON
 ) else if "%BUILD_MODULE%"=="HGBaseAppModule,HGUserAuditModule" (
     set CMAKE_MODULE_ARGS=-DBUILD_HGBASEAPPMODULE_ONLY=ON -DBUILD_HGUSERAUDITMODULE_ONLY=ON
 ) else (
@@ -333,6 +337,9 @@ if "%BUILD_MODULE%"=="ALL" (
 ) else if "%BUILD_MODULE%"=="HGUserAuditModule" (
     set MAKE_TARGET=HGUserAuditModuleStatic HGUserAuditModuleRun
     set MODULE_NAME=HGUserAuditModule
+) else if "%BUILD_MODULE%"=="HGLogModule" (
+    set MAKE_TARGET=HGLogModule
+    set MODULE_NAME=HGLogModule
 ) else if "%BUILD_MODULE%"=="HGBaseAppModule,HGUserAuditModule" (
     set MAKE_TARGET=HGBaseAppModuleStatic HGUserAuditModuleStatic HGUserAuditModuleRun
     set MODULE_NAME=HGBaseAppModule和HGUserAuditModule
@@ -402,8 +409,15 @@ echo   - HGAnalysisRecordModule
     if "%BUILD_STATIC_LIBS%"=="ON" echo   - 静态库: HGUserAuditModuleStatic.a
     echo.
     echo 编译模块:
-    echo   - HGBaseAppModule
-    echo   - HGUserAuditModule
+   echo   - HGBaseAppModule
+   echo   - HGUserAuditModule
+) else if "%BUILD_MODULE%"=="HGLogModule" (
+    echo 生成的目标文件:
+    if "%BUILD_SHARED_LIBS%"=="ON" echo   - 动态库: %MODULE_NAME%.dll
+    if "%BUILD_STATIC_LIBS%"=="ON" echo   - 静态库: %MODULE_NAME%Static.a
+    echo.
+    echo 编译模块:
+    echo   - %MODULE_NAME%
 ) else (
     echo 生成的目标文件:
     if "%BUILD_SHARED_LIBS%"=="ON" echo   - 动态库: %MODULE_NAME%.dll

@@ -56,10 +56,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\virtualMachine\github\vsproject\HGAppModule
+CMAKE_SOURCE_DIR = D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\virtualMachine\github\vsproject\HGAppModule\windows_build
+CMAKE_BINARY_DIR = D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -131,9 +131,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles D:\virtualMachine\github\vsproject\HGAppModule\windows_build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -317,121 +317,238 @@ PluginInterfaceStatic_autogen/fast:
 .PHONY : PluginInterfaceStatic_autogen/fast
 
 #=============================================================================
-# Target rules for targets named CameraRecognizeModule
+# Target rules for targets named SearchModule
 
 # Build rule for target.
-CameraRecognizeModule: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CameraRecognizeModule
-.PHONY : CameraRecognizeModule
+SearchModule: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SearchModule
+.PHONY : SearchModule
 
 # fast build rule for target.
-CameraRecognizeModule/fast:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/build
-.PHONY : CameraRecognizeModule/fast
+SearchModule/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule.dir\build.make HGSearchModule/CMakeFiles/SearchModule.dir/build
+.PHONY : SearchModule/fast
 
 #=============================================================================
-# Target rules for targets named HGCameraRecognizeModuleStatic
+# Target rules for targets named HGSearchModuleStatic
 
 # Build rule for target.
-HGCameraRecognizeModuleStatic: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModuleStatic
-.PHONY : HGCameraRecognizeModuleStatic
+HGSearchModuleStatic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModuleStatic
+.PHONY : HGSearchModuleStatic
 
 # fast build rule for target.
-HGCameraRecognizeModuleStatic/fast:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/build
-.PHONY : HGCameraRecognizeModuleStatic/fast
+HGSearchModuleStatic/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/build
+.PHONY : HGSearchModuleStatic/fast
 
 #=============================================================================
-# Target rules for targets named HGCameraRecognizeModuleRun
+# Target rules for targets named HGSearchModuleRun
 
 # Build rule for target.
-HGCameraRecognizeModuleRun: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModuleRun
-.PHONY : HGCameraRecognizeModuleRun
+HGSearchModuleRun: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModuleRun
+.PHONY : HGSearchModuleRun
 
 # fast build rule for target.
-HGCameraRecognizeModuleRun/fast:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/build
-.PHONY : HGCameraRecognizeModuleRun/fast
+HGSearchModuleRun/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/build
+.PHONY : HGSearchModuleRun/fast
 
 #=============================================================================
-# Target rules for targets named CameraRecognizeModule_autogen_timestamp_deps
+# Target rules for targets named SearchModule_autogen_timestamp_deps
 
 # Build rule for target.
-CameraRecognizeModule_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CameraRecognizeModule_autogen_timestamp_deps
-.PHONY : CameraRecognizeModule_autogen_timestamp_deps
+SearchModule_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SearchModule_autogen_timestamp_deps
+.PHONY : SearchModule_autogen_timestamp_deps
 
 # fast build rule for target.
-CameraRecognizeModule_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/build
-.PHONY : CameraRecognizeModule_autogen_timestamp_deps/fast
+SearchModule_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/build
+.PHONY : SearchModule_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named CameraRecognizeModule_autogen
+# Target rules for targets named SearchModule_autogen
 
 # Build rule for target.
-CameraRecognizeModule_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CameraRecognizeModule_autogen
-.PHONY : CameraRecognizeModule_autogen
+SearchModule_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SearchModule_autogen
+.PHONY : SearchModule_autogen
 
 # fast build rule for target.
-CameraRecognizeModule_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/build
-.PHONY : CameraRecognizeModule_autogen/fast
+SearchModule_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule_autogen.dir\build.make HGSearchModule/CMakeFiles/SearchModule_autogen.dir/build
+.PHONY : SearchModule_autogen/fast
 
 #=============================================================================
-# Target rules for targets named HGCameraRecognizeModuleStatic_autogen_timestamp_deps
+# Target rules for targets named HGSearchModuleStatic_autogen_timestamp_deps
 
 # Build rule for target.
-HGCameraRecognizeModuleStatic_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModuleStatic_autogen_timestamp_deps
-.PHONY : HGCameraRecognizeModuleStatic_autogen_timestamp_deps
+HGSearchModuleStatic_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModuleStatic_autogen_timestamp_deps
+.PHONY : HGSearchModuleStatic_autogen_timestamp_deps
 
 # fast build rule for target.
-HGCameraRecognizeModuleStatic_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/build
-.PHONY : HGCameraRecognizeModuleStatic_autogen_timestamp_deps/fast
+HGSearchModuleStatic_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/build
+.PHONY : HGSearchModuleStatic_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named HGCameraRecognizeModuleStatic_autogen
+# Target rules for targets named HGSearchModuleStatic_autogen
 
 # Build rule for target.
-HGCameraRecognizeModuleStatic_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModuleStatic_autogen
-.PHONY : HGCameraRecognizeModuleStatic_autogen
+HGSearchModuleStatic_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModuleStatic_autogen
+.PHONY : HGSearchModuleStatic_autogen
 
 # fast build rule for target.
-HGCameraRecognizeModuleStatic_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/build
-.PHONY : HGCameraRecognizeModuleStatic_autogen/fast
+HGSearchModuleStatic_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic_autogen.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/build
+.PHONY : HGSearchModuleStatic_autogen/fast
 
 #=============================================================================
-# Target rules for targets named HGCameraRecognizeModuleRun_autogen_timestamp_deps
+# Target rules for targets named HGSearchModuleRun_autogen_timestamp_deps
 
 # Build rule for target.
-HGCameraRecognizeModuleRun_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModuleRun_autogen_timestamp_deps
-.PHONY : HGCameraRecognizeModuleRun_autogen_timestamp_deps
+HGSearchModuleRun_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModuleRun_autogen_timestamp_deps
+.PHONY : HGSearchModuleRun_autogen_timestamp_deps
 
 # fast build rule for target.
-HGCameraRecognizeModuleRun_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/build
-.PHONY : HGCameraRecognizeModuleRun_autogen_timestamp_deps/fast
+HGSearchModuleRun_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/build
+.PHONY : HGSearchModuleRun_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named HGCameraRecognizeModuleRun_autogen
+# Target rules for targets named HGSearchModuleRun_autogen
 
 # Build rule for target.
-HGCameraRecognizeModuleRun_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModuleRun_autogen
-.PHONY : HGCameraRecognizeModuleRun_autogen
+HGSearchModuleRun_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModuleRun_autogen
+.PHONY : HGSearchModuleRun_autogen
 
 # fast build rule for target.
-HGCameraRecognizeModuleRun_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/build
-.PHONY : HGCameraRecognizeModuleRun_autogen/fast
+HGSearchModuleRun_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun_autogen.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/build
+.PHONY : HGSearchModuleRun_autogen/fast
+
+#=============================================================================
+# Target rules for targets named LogModule
+
+# Build rule for target.
+LogModule: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 LogModule
+.PHONY : LogModule
+
+# fast build rule for target.
+LogModule/fast:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\LogModule.dir\build.make HGLogModule/CMakeFiles/LogModule.dir/build
+.PHONY : LogModule/fast
+
+#=============================================================================
+# Target rules for targets named HGLogModuleStatic
+
+# Build rule for target.
+HGLogModuleStatic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModuleStatic
+.PHONY : HGLogModuleStatic
+
+# fast build rule for target.
+HGLogModuleStatic/fast:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleStatic.dir\build.make HGLogModule/CMakeFiles/HGLogModuleStatic.dir/build
+.PHONY : HGLogModuleStatic/fast
+
+#=============================================================================
+# Target rules for targets named HGLogModuleRun
+
+# Build rule for target.
+HGLogModuleRun: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModuleRun
+.PHONY : HGLogModuleRun
+
+# fast build rule for target.
+HGLogModuleRun/fast:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleRun.dir\build.make HGLogModule/CMakeFiles/HGLogModuleRun.dir/build
+.PHONY : HGLogModuleRun/fast
+
+#=============================================================================
+# Target rules for targets named LogModule_autogen_timestamp_deps
+
+# Build rule for target.
+LogModule_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 LogModule_autogen_timestamp_deps
+.PHONY : LogModule_autogen_timestamp_deps
+
+# fast build rule for target.
+LogModule_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\LogModule_autogen_timestamp_deps.dir\build.make HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/build
+.PHONY : LogModule_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named LogModule_autogen
+
+# Build rule for target.
+LogModule_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 LogModule_autogen
+.PHONY : LogModule_autogen
+
+# fast build rule for target.
+LogModule_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\LogModule_autogen.dir\build.make HGLogModule/CMakeFiles/LogModule_autogen.dir/build
+.PHONY : LogModule_autogen/fast
+
+#=============================================================================
+# Target rules for targets named HGLogModuleStatic_autogen_timestamp_deps
+
+# Build rule for target.
+HGLogModuleStatic_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModuleStatic_autogen_timestamp_deps
+.PHONY : HGLogModuleStatic_autogen_timestamp_deps
+
+# fast build rule for target.
+HGLogModuleStatic_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleStatic_autogen_timestamp_deps.dir\build.make HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/build
+.PHONY : HGLogModuleStatic_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named HGLogModuleStatic_autogen
+
+# Build rule for target.
+HGLogModuleStatic_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModuleStatic_autogen
+.PHONY : HGLogModuleStatic_autogen
+
+# fast build rule for target.
+HGLogModuleStatic_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleStatic_autogen.dir\build.make HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/build
+.PHONY : HGLogModuleStatic_autogen/fast
+
+#=============================================================================
+# Target rules for targets named HGLogModuleRun_autogen_timestamp_deps
+
+# Build rule for target.
+HGLogModuleRun_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModuleRun_autogen_timestamp_deps
+.PHONY : HGLogModuleRun_autogen_timestamp_deps
+
+# fast build rule for target.
+HGLogModuleRun_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleRun_autogen_timestamp_deps.dir\build.make HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/build
+.PHONY : HGLogModuleRun_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named HGLogModuleRun_autogen
+
+# Build rule for target.
+HGLogModuleRun_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModuleRun_autogen
+.PHONY : HGLogModuleRun_autogen
+
+# fast build rule for target.
+HGLogModuleRun_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleRun_autogen.dir\build.make HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/build
+.PHONY : HGLogModuleRun_autogen/fast
 
 # Help Target
 help:
@@ -447,25 +564,34 @@ help:
 	@echo ... rebuild_cache
 	@echo ... BaseAppModule_autogen
 	@echo ... BaseAppModule_autogen_timestamp_deps
-	@echo ... CameraRecognizeModule_autogen
-	@echo ... CameraRecognizeModule_autogen_timestamp_deps
 	@echo ... HGBaseAppModuleStatic_autogen
 	@echo ... HGBaseAppModuleStatic_autogen_timestamp_deps
-	@echo ... HGCameraRecognizeModuleRun_autogen
-	@echo ... HGCameraRecognizeModuleRun_autogen_timestamp_deps
-	@echo ... HGCameraRecognizeModuleStatic_autogen
-	@echo ... HGCameraRecognizeModuleStatic_autogen_timestamp_deps
+	@echo ... HGLogModuleRun_autogen
+	@echo ... HGLogModuleRun_autogen_timestamp_deps
+	@echo ... HGLogModuleStatic_autogen
+	@echo ... HGLogModuleStatic_autogen_timestamp_deps
+	@echo ... HGSearchModuleRun_autogen
+	@echo ... HGSearchModuleRun_autogen_timestamp_deps
+	@echo ... HGSearchModuleStatic_autogen
+	@echo ... HGSearchModuleStatic_autogen_timestamp_deps
+	@echo ... LogModule_autogen
+	@echo ... LogModule_autogen_timestamp_deps
 	@echo ... PluginInterfaceModule_autogen
 	@echo ... PluginInterfaceModule_autogen_timestamp_deps
 	@echo ... PluginInterfaceStatic_autogen
 	@echo ... PluginInterfaceStatic_autogen_timestamp_deps
+	@echo ... SearchModule_autogen
+	@echo ... SearchModule_autogen_timestamp_deps
 	@echo ... BaseAppModule
-	@echo ... CameraRecognizeModule
 	@echo ... HGBaseAppModuleStatic
-	@echo ... HGCameraRecognizeModuleRun
-	@echo ... HGCameraRecognizeModuleStatic
+	@echo ... HGLogModuleRun
+	@echo ... HGLogModuleStatic
+	@echo ... HGSearchModuleRun
+	@echo ... HGSearchModuleStatic
+	@echo ... LogModule
 	@echo ... PluginInterfaceModule
 	@echo ... PluginInterfaceStatic
+	@echo ... SearchModule
 .PHONY : help
 
 

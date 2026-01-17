@@ -1,22 +1,22 @@
 {
 	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
-	"BUILD_DIR" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen",
-	"CMAKE_BINARY_DIR" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build",
-	"CMAKE_CURRENT_BINARY_DIR" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface",
-	"CMAKE_CURRENT_SOURCE_DIR" : "D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface",
+	"BUILD_DIR" : "D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen",
+	"CMAKE_BINARY_DIR" : "D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/pluginInterface",
 	"CMAKE_EXECUTABLE" : "D:/Qt/Tools/CMake_64/bin/cmake.exe",
 	"CMAKE_LIST_FILES" : 
 	[
-		"D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/CMakeLists.txt"
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/pluginInterface/CMakeLists.txt"
 	],
-	"CMAKE_SOURCE_DIR" : "D:/virtualMachine/github/vsproject/HGAppModule",
+	"CMAKE_SOURCE_DIR" : "D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule",
 	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/deps",
+	"DEP_FILE" : "D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "PluginInterfaceStatic_autogen/timestamp",
 	"HEADERS" : [],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/include",
-	"MOC_COMPILATION_FILE" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
@@ -50,26 +50,26 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"D:/virtualMachine/github/vsproject/HGAppModule",
-		"D:/virtualMachine/github/vsproject/3rdparty/include",
-		"D:/virtualMachine/github/vsproject/3rdparty/include/opencv4",
-		"D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc",
-		"D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc",
-		"D:/virtualMachine/github/vsproject/services/HGAtomService/HGSecurityService/inc",
-		"D:/virtualMachine/github/vsproject/services/HGAtomService/HGCommunicateService/inc",
-		"D:/virtualMachine/github/vsproject/services/HGAtomService/HGAuthorityService/inc",
-		"D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc",
-		"D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/inc",
-		"D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule/inc",
-		"D:/virtualMachine/github/vsproject/HGAppModule/HGUartModule/inc",
-		"D:/virtualMachine/github/vsproject/HGAppModule/HGPrintModule/inc",
-		"D:/virtualMachine/github/vsproject/HGAppModule/HGCurveModule/inc",
-		"D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc",
-		"D:/virtualMachine/github/vsproject/services/HGCommon/inc",
-		"D:/virtualMachine/github/vsproject/services/HGConfig/inc",
-		"D:/virtualMachine/github/vsproject/interfaces/CameraRecognizeInterface/inc",
-		"D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/inc",
-		"D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/src",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/3rdparty/include/opencv4",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/services/HGAtomService/HGSaveService/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/services/HGAtomService/HGFrameService/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/services/HGAtomService/HGSecurityService/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/services/HGAtomService/HGCommunicateService/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/services/HGAtomService/HGAuthorityService/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGBaseAppModule/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/pluginInterface/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGSearchModule/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGUartModule/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGPrintModule/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/HGCurveModule/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/services/HGHardware/HGLowerPC/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/services/HGCommon/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/services/HGConfig/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/interfaces/CameraRecognizeInterface/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/pluginInterface/inc",
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/pluginInterface/src",
 		"D:/Qt/6.9.1/mingw_64/include/QtCore",
 		"D:/Qt/6.9.1/mingw_64/include",
 		"D:/Qt/6.9.1/mingw_64/mkspecs/win32-g++",
@@ -112,29 +112,29 @@
 		"-c",
 		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
-		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceModule_autogen/mocs_compilation.cpp"
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceModule_autogen/mocs_compilation.cpp"
 	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 10,
-	"PARSE_CACHE_FILE" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "D:/Qt/6.9.1/mingw_64/bin/moc.exe",
 	"QT_UIC_EXECUTABLE" : "D:/Qt/6.9.1/mingw_64/bin/uic.exe",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 9,
-	"SETTINGS_FILE" : "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/src/plugininterface.cpp",
+			"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/pluginInterface/src/plugininterface.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/virtualMachine/github/vsproject/HGAppModule/pluginInterface/src/pluginmanager.cpp",
+			"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/pluginInterface/src/pluginmanager.cpp",
 			"MU",
 			null
 		]
@@ -143,7 +143,7 @@
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : 
 	[
-		"D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceModule_autogen/mocs_compilation.cpp"
+		"D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceModule_autogen/mocs_compilation.cpp"
 	],
 	"UIC_UI_FILES" : [],
 	"USE_BETTER_GRAPH" : true,

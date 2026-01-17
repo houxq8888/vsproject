@@ -52,10 +52,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\virtualMachine\github\vsproject\HGAppModule
+CMAKE_SOURCE_DIR = D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\virtualMachine\github\vsproject\HGAppModule\windows_build
+CMAKE_BINARY_DIR = D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build
 
 # Utility rule file for PluginInterfaceStatic_autogen.
 
@@ -70,9 +70,9 @@ pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen: pluginInterface/Plugin
 pluginInterface/PluginInterfaceStatic_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bin/moc.exe
 pluginInterface/PluginInterfaceStatic_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bin/uic.exe
 pluginInterface/PluginInterfaceStatic_autogen/timestamp: pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target PluginInterfaceStatic"
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/AutogenInfo.json Release
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target PluginInterfaceStatic"
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/AutogenInfo.json Release
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/virtualMachine/github/0117/alphaL1/vsproject/HGAppModule/windows_build/pluginInterface/PluginInterfaceStatic_autogen/timestamp
 
 PluginInterfaceStatic_autogen: pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen
 PluginInterfaceStatic_autogen: pluginInterface/PluginInterfaceStatic_autogen/timestamp
@@ -84,10 +84,10 @@ pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/build: PluginInterf
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/build
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/clean:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && $(CMAKE_COMMAND) -P CMakeFiles\PluginInterfaceStatic_autogen.dir\cmake_clean.cmake
+	cd /d D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface && $(CMAKE_COMMAND) -P CMakeFiles\PluginInterfaceStatic_autogen.dir\cmake_clean.cmake
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/clean
 
 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\virtualMachine\github\vsproject\HGAppModule D:\virtualMachine\github\vsproject\HGAppModule\pluginInterface D:\virtualMachine\github\vsproject\HGAppModule\windows_build D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\pluginInterface D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface D:\virtualMachine\github\0117\alphaL1\vsproject\HGAppModule\windows_build\pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/depend
 
