@@ -53,10 +53,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\virtualMachine\github\vsproject\HGAppModule
+CMAKE_SOURCE_DIR = D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\virtualMachine\github\vsproject\HGAppModule\windows_build
+CMAKE_BINARY_DIR = D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -64,19 +64,22 @@ CMAKE_BINARY_DIR = D:\virtualMachine\github\vsproject\HGAppModule\windows_build
 # The main recursive "all" target.
 all: HGBaseAppModule/all
 all: pluginInterface/all
-all: HGCameraRecognizeModule/all
+all: HGSearchModule/all
+all: HGLogModule/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: HGBaseAppModule/preinstall
 preinstall: pluginInterface/preinstall
-preinstall: HGCameraRecognizeModule/preinstall
+preinstall: HGSearchModule/preinstall
+preinstall: HGLogModule/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: HGBaseAppModule/clean
 clean: pluginInterface/clean
-clean: HGCameraRecognizeModule/clean
+clean: HGSearchModule/clean
+clean: HGLogModule/clean
 .PHONY : clean
 
 #=============================================================================
@@ -101,29 +104,54 @@ HGBaseAppModule/clean: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.
 .PHONY : HGBaseAppModule/clean
 
 #=============================================================================
-# Directory level rules for directory HGCameraRecognizeModule
+# Directory level rules for directory HGLogModule
 
 # Recursive "all" directory target.
-HGCameraRecognizeModule/all: HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/all
-HGCameraRecognizeModule/all: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/all
-HGCameraRecognizeModule/all: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/all
-.PHONY : HGCameraRecognizeModule/all
+HGLogModule/all: HGLogModule/CMakeFiles/LogModule.dir/all
+HGLogModule/all: HGLogModule/CMakeFiles/HGLogModuleStatic.dir/all
+HGLogModule/all: HGLogModule/CMakeFiles/HGLogModuleRun.dir/all
+.PHONY : HGLogModule/all
 
 # Recursive "preinstall" directory target.
-HGCameraRecognizeModule/preinstall:
-.PHONY : HGCameraRecognizeModule/preinstall
+HGLogModule/preinstall:
+.PHONY : HGLogModule/preinstall
 
 # Recursive "clean" directory target.
-HGCameraRecognizeModule/clean: HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/clean
-HGCameraRecognizeModule/clean: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/clean
-HGCameraRecognizeModule/clean: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/clean
-HGCameraRecognizeModule/clean: HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/clean
-HGCameraRecognizeModule/clean: HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/clean
-HGCameraRecognizeModule/clean: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/clean
-HGCameraRecognizeModule/clean: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/clean
-HGCameraRecognizeModule/clean: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/clean
-HGCameraRecognizeModule/clean: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/clean
-.PHONY : HGCameraRecognizeModule/clean
+HGLogModule/clean: HGLogModule/CMakeFiles/LogModule.dir/clean
+HGLogModule/clean: HGLogModule/CMakeFiles/HGLogModuleStatic.dir/clean
+HGLogModule/clean: HGLogModule/CMakeFiles/HGLogModuleRun.dir/clean
+HGLogModule/clean: HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/clean
+HGLogModule/clean: HGLogModule/CMakeFiles/LogModule_autogen.dir/clean
+HGLogModule/clean: HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/clean
+HGLogModule/clean: HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/clean
+HGLogModule/clean: HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/clean
+HGLogModule/clean: HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/clean
+.PHONY : HGLogModule/clean
+
+#=============================================================================
+# Directory level rules for directory HGSearchModule
+
+# Recursive "all" directory target.
+HGSearchModule/all: HGSearchModule/CMakeFiles/SearchModule.dir/all
+HGSearchModule/all: HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/all
+HGSearchModule/all: HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/all
+.PHONY : HGSearchModule/all
+
+# Recursive "preinstall" directory target.
+HGSearchModule/preinstall:
+.PHONY : HGSearchModule/preinstall
+
+# Recursive "clean" directory target.
+HGSearchModule/clean: HGSearchModule/CMakeFiles/SearchModule.dir/clean
+HGSearchModule/clean: HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/clean
+HGSearchModule/clean: HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/clean
+HGSearchModule/clean: HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/clean
+HGSearchModule/clean: HGSearchModule/CMakeFiles/SearchModule_autogen.dir/clean
+HGSearchModule/clean: HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/clean
+HGSearchModule/clean: HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/clean
+HGSearchModule/clean: HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/clean
+HGSearchModule/clean: HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/clean
+.PHONY : HGSearchModule/clean
 
 #=============================================================================
 # Directory level rules for directory pluginInterface
@@ -150,18 +178,18 @@ pluginInterface/clean: pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.
 # Target rules for target HGBaseAppModule/CMakeFiles/BaseAppModule.dir
 
 # All Build rule for target.
-HGBaseAppModule/CMakeFiles/BaseAppModule.dir/all: HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/all
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/all: HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/all
+HGBaseAppModule/CMakeFiles/BaseAppModule.dir/all: HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/depend
 	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37 "Built target BaseAppModule"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32 "Built target BaseAppModule"
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule.dir/all
 
 # Build rule for subdir invocation for target.
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 38
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 32
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule.dir/rule
 
 # Convenience name for target.
@@ -177,18 +205,18 @@ HGBaseAppModule/CMakeFiles/BaseAppModule.dir/clean:
 # Target rules for target HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir
 
 # All Build rule for target.
-HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/all: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/all
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/all: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/all
+HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/all: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/depend
 	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82 "Built target HGBaseAppModuleStatic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65 "Built target HGBaseAppModuleStatic"
 .PHONY : HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/all
 
 # Build rule for subdir invocation for target.
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 38
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/rule
 
 # Convenience name for target.
@@ -207,14 +235,14 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/clean:
 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/all:
 	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule_autogen_timestamp_deps.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/depend
 	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule_autogen_timestamp_deps.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target BaseAppModule_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target BaseAppModule_autogen_timestamp_deps"
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -233,14 +261,14 @@ HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/clean:
 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/all: HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule_autogen.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule_autogen.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=38 "Built target BaseAppModule_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target BaseAppModule_autogen"
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/rule
 
 # Convenience name for target.
@@ -259,14 +287,14 @@ HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/clean:
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/all:
 	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic_autogen_timestamp_deps.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/depend
 	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic_autogen_timestamp_deps.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGBaseAppModuleStatic_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGBaseAppModuleStatic_autogen_timestamp_deps"
 .PHONY : HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -285,14 +313,14 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/clea
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/all: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic_autogen.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic_autogen.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGBaseAppModuleStatic_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=66 "Built target HGBaseAppModuleStatic_autogen"
 .PHONY : HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/rule
 
 # Convenience name for target.
@@ -308,18 +336,18 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/clean:
 # Target rules for target pluginInterface/CMakeFiles/PluginInterfaceModule.dir
 
 # All Build rule for target.
-pluginInterface/CMakeFiles/PluginInterfaceModule.dir/all: pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/all
 pluginInterface/CMakeFiles/PluginInterfaceModule.dir/all: pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/all
+pluginInterface/CMakeFiles/PluginInterfaceModule.dir/all: pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/depend
 	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=93,94,95 "Built target PluginInterfaceModule"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=89,90 "Built target PluginInterfaceModule"
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceModule.dir/all
 
 # Build rule for subdir invocation for target.
 pluginInterface/CMakeFiles/PluginInterfaceModule.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceModule.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceModule.dir/rule
 
 # Convenience name for target.
@@ -335,18 +363,18 @@ pluginInterface/CMakeFiles/PluginInterfaceModule.dir/clean:
 # Target rules for target pluginInterface/CMakeFiles/PluginInterfaceStatic.dir
 
 # All Build rule for target.
-pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/all: pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/all
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/all: pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/all
+pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/all: pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/depend
 	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=97,98,99 "Built target PluginInterfaceStatic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=92,93,94 "Built target PluginInterfaceStatic"
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/all
 
 # Build rule for subdir invocation for target.
 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/rule
 
 # Convenience name for target.
@@ -365,14 +393,14 @@ pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/clean:
 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/all:
 	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule_autogen_timestamp_deps.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/depend
 	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule_autogen_timestamp_deps.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target PluginInterfaceModule_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target PluginInterfaceModule_autogen_timestamp_deps"
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -391,14 +419,14 @@ pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/clea
 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/all: pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule_autogen.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule_autogen.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=96 "Built target PluginInterfaceModule_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=91 "Built target PluginInterfaceModule_autogen"
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/rule
 
 # Convenience name for target.
@@ -417,14 +445,14 @@ pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/clean:
 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/all:
 	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen_timestamp_deps.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/depend
 	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen_timestamp_deps.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target PluginInterfaceStatic_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target PluginInterfaceStatic_autogen_timestamp_deps"
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -443,14 +471,14 @@ pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/clea
 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/all: pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=100 "Built target PluginInterfaceStatic_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target PluginInterfaceStatic_autogen"
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/rule
 
 # Convenience name for target.
@@ -463,244 +491,484 @@ pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/clean:
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/clean
 
 #=============================================================================
-# Target rules for target HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir
+# Target rules for target HGSearchModule/CMakeFiles/SearchModule.dir
 
 # All Build rule for target.
-HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/all: HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/all
-HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/all: HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/all
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/depend
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=39,40,41,42,43 "Built target CameraRecognizeModule"
-.PHONY : HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/all
+HGSearchModule/CMakeFiles/SearchModule.dir/all: HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/all
+HGSearchModule/CMakeFiles/SearchModule.dir/all: HGSearchModule/CMakeFiles/SearchModule_autogen.dir/all
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule.dir\build.make HGSearchModule/CMakeFiles/SearchModule.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule.dir\build.make HGSearchModule/CMakeFiles/SearchModule.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=95,96,97,98,99 "Built target SearchModule"
+.PHONY : HGSearchModule/CMakeFiles/SearchModule.dir/all
 
 # Build rule for subdir invocation for target.
-HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
-.PHONY : HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/rule
+HGSearchModule/CMakeFiles/SearchModule.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModule/CMakeFiles/SearchModule.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGSearchModule/CMakeFiles/SearchModule.dir/rule
 
 # Convenience name for target.
-CameraRecognizeModule: HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/rule
-.PHONY : CameraRecognizeModule
+SearchModule: HGSearchModule/CMakeFiles/SearchModule.dir/rule
+.PHONY : SearchModule
 
 # clean rule for target.
-HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/clean:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/clean
-.PHONY : HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/clean
+HGSearchModule/CMakeFiles/SearchModule.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule.dir\build.make HGSearchModule/CMakeFiles/SearchModule.dir/clean
+.PHONY : HGSearchModule/CMakeFiles/SearchModule.dir/clean
 
 #=============================================================================
-# Target rules for target HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir
+# Target rules for target HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir
 
 # All Build rule for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/all: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/all
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/all: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/all
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/depend
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=87,88,89,90,91,92 "Built target HGCameraRecognizeModuleStatic"
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/all
+HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/all: HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/all
+HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/all: HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/all
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=78,79,80,81,82 "Built target HGSearchModuleStatic"
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/all
 
 # Build rule for subdir invocation for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/rule
+HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/rule
 
 # Convenience name for target.
-HGCameraRecognizeModuleStatic: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/rule
-.PHONY : HGCameraRecognizeModuleStatic
+HGSearchModuleStatic: HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/rule
+.PHONY : HGSearchModuleStatic
 
 # clean rule for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/clean:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/clean
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/clean
+HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/clean
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/clean
 
 #=============================================================================
-# Target rules for target HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir
+# Target rules for target HGSearchModule/CMakeFiles/HGSearchModuleRun.dir
 
 # All Build rule for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/all: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/all
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/all: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/all
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/all: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/all
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/all: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/all
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/depend
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=83,84,85 "Built target HGCameraRecognizeModuleRun"
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/all
+HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/all: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/all
+HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/all: HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/all
+HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/all: HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/all
+HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/all: HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/all
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=75,76,77 "Built target HGSearchModuleRun"
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/all
 
 # Build rule for subdir invocation for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 48
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/rule
+HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 43
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/rule
 
 # Convenience name for target.
-HGCameraRecognizeModuleRun: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/rule
-.PHONY : HGCameraRecognizeModuleRun
+HGSearchModuleRun: HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/rule
+.PHONY : HGSearchModuleRun
 
 # clean rule for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/clean:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/clean
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun.dir/clean
+HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/clean
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/clean
 
 #=============================================================================
-# Target rules for target HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir
+# Target rules for target HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir
 
 # All Build rule for target.
-HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/all:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/depend
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target CameraRecognizeModule_autogen_timestamp_deps"
-.PHONY : HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/all
+HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/all:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target SearchModule_autogen_timestamp_deps"
+.PHONY : HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
-HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
-.PHONY : HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/rule
+HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
-CameraRecognizeModule_autogen_timestamp_deps: HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/rule
-.PHONY : CameraRecognizeModule_autogen_timestamp_deps
+SearchModule_autogen_timestamp_deps: HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/rule
+.PHONY : SearchModule_autogen_timestamp_deps
 
 # clean rule for target.
-HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/clean:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/clean
-.PHONY : HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/clean
+HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/clean
+.PHONY : HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/clean
 
 #=============================================================================
-# Target rules for target HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir
+# Target rules for target HGSearchModule/CMakeFiles/SearchModule_autogen.dir
 
 # All Build rule for target.
-HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/all: HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen_timestamp_deps.dir/all
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/depend
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=44 "Built target CameraRecognizeModule_autogen"
-.PHONY : HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/all
+HGSearchModule/CMakeFiles/SearchModule_autogen.dir/all: HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule_autogen.dir\build.make HGSearchModule/CMakeFiles/SearchModule_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule_autogen.dir\build.make HGSearchModule/CMakeFiles/SearchModule_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=100 "Built target SearchModule_autogen"
+.PHONY : HGSearchModule/CMakeFiles/SearchModule_autogen.dir/all
 
 # Build rule for subdir invocation for target.
-HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
-.PHONY : HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/rule
+HGSearchModule/CMakeFiles/SearchModule_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModule/CMakeFiles/SearchModule_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGSearchModule/CMakeFiles/SearchModule_autogen.dir/rule
 
 # Convenience name for target.
-CameraRecognizeModule_autogen: HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/rule
-.PHONY : CameraRecognizeModule_autogen
+SearchModule_autogen: HGSearchModule/CMakeFiles/SearchModule_autogen.dir/rule
+.PHONY : SearchModule_autogen
 
 # clean rule for target.
-HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/clean:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\CameraRecognizeModule_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/clean
-.PHONY : HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule_autogen.dir/clean
+HGSearchModule/CMakeFiles/SearchModule_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule_autogen.dir\build.make HGSearchModule/CMakeFiles/SearchModule_autogen.dir/clean
+.PHONY : HGSearchModule/CMakeFiles/SearchModule_autogen.dir/clean
 
 #=============================================================================
-# Target rules for target HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir
+# Target rules for target HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir
 
 # All Build rule for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/all:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/depend
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGCameraRecognizeModuleStatic_autogen_timestamp_deps"
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/all
+HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/all:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGSearchModuleStatic_autogen_timestamp_deps"
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/rule
+HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
-HGCameraRecognizeModuleStatic_autogen_timestamp_deps: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/rule
-.PHONY : HGCameraRecognizeModuleStatic_autogen_timestamp_deps
+HGSearchModuleStatic_autogen_timestamp_deps: HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/rule
+.PHONY : HGSearchModuleStatic_autogen_timestamp_deps
 
 # clean rule for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/clean:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/clean
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/clean
+HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/clean
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/clean
 
 #=============================================================================
-# Target rules for target HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir
+# Target rules for target HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir
 
 # All Build rule for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/all: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen_timestamp_deps.dir/all
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/depend
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGCameraRecognizeModuleStatic_autogen"
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/all
+HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/all: HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic_autogen.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic_autogen.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=83 "Built target HGSearchModuleStatic_autogen"
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/all
 
 # Build rule for subdir invocation for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/rule
+HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/rule
 
 # Convenience name for target.
-HGCameraRecognizeModuleStatic_autogen: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/rule
-.PHONY : HGCameraRecognizeModuleStatic_autogen
+HGSearchModuleStatic_autogen: HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/rule
+.PHONY : HGSearchModuleStatic_autogen
 
 # clean rule for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/clean:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleStatic_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/clean
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic_autogen.dir/clean
+HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic_autogen.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/clean
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/clean
 
 #=============================================================================
-# Target rules for target HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir
+# Target rules for target HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir
 
 # All Build rule for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/all: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/all
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/all: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/all
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/depend
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGCameraRecognizeModuleRun_autogen_timestamp_deps"
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/all
+HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/all: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/all
+HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/all: HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/all
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGSearchModuleRun_autogen_timestamp_deps"
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 44
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/rule
+HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 40
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
-HGCameraRecognizeModuleRun_autogen_timestamp_deps: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/rule
-.PHONY : HGCameraRecognizeModuleRun_autogen_timestamp_deps
+HGSearchModuleRun_autogen_timestamp_deps: HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/rule
+.PHONY : HGSearchModuleRun_autogen_timestamp_deps
 
 # clean rule for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/clean:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/clean
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/clean
+HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/clean
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/clean
 
 #=============================================================================
-# Target rules for target HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir
+# Target rules for target HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir
 
 # All Build rule for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/all: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen_timestamp_deps.dir/all
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/depend
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=86 "Built target HGCameraRecognizeModuleRun_autogen"
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/all
+HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/all: HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun_autogen.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun_autogen.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGSearchModuleRun_autogen"
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/all
 
 # Build rule for subdir invocation for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 45
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/rule
+HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 40
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/rule
 
 # Convenience name for target.
-HGCameraRecognizeModuleRun_autogen: HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/rule
-.PHONY : HGCameraRecognizeModuleRun_autogen
+HGSearchModuleRun_autogen: HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/rule
+.PHONY : HGSearchModuleRun_autogen
 
 # clean rule for target.
-HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/clean:
-	$(MAKE) $(MAKESILENT) -f HGCameraRecognizeModule\CMakeFiles\HGCameraRecognizeModuleRun_autogen.dir\build.make HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/clean
-.PHONY : HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleRun_autogen.dir/clean
+HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun_autogen.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/clean
+.PHONY : HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/clean
+
+#=============================================================================
+# Target rules for target HGLogModule/CMakeFiles/LogModule.dir
+
+# All Build rule for target.
+HGLogModule/CMakeFiles/LogModule.dir/all: HGLogModule/CMakeFiles/LogModule_autogen.dir/all
+HGLogModule/CMakeFiles/LogModule.dir/all: HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\LogModule.dir\build.make HGLogModule/CMakeFiles/LogModule.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\LogModule.dir\build.make HGLogModule/CMakeFiles/LogModule.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=84,85,86,87 "Built target LogModule"
+.PHONY : HGLogModule/CMakeFiles/LogModule.dir/all
+
+# Build rule for subdir invocation for target.
+HGLogModule/CMakeFiles/LogModule.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModule/CMakeFiles/LogModule.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGLogModule/CMakeFiles/LogModule.dir/rule
+
+# Convenience name for target.
+LogModule: HGLogModule/CMakeFiles/LogModule.dir/rule
+.PHONY : LogModule
+
+# clean rule for target.
+HGLogModule/CMakeFiles/LogModule.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\LogModule.dir\build.make HGLogModule/CMakeFiles/LogModule.dir/clean
+.PHONY : HGLogModule/CMakeFiles/LogModule.dir/clean
+
+#=============================================================================
+# Target rules for target HGLogModule/CMakeFiles/HGLogModuleStatic.dir
+
+# All Build rule for target.
+HGLogModule/CMakeFiles/HGLogModuleStatic.dir/all: HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/all
+HGLogModule/CMakeFiles/HGLogModuleStatic.dir/all: HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleStatic.dir\build.make HGLogModule/CMakeFiles/HGLogModuleStatic.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleStatic.dir\build.make HGLogModule/CMakeFiles/HGLogModuleStatic.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=69,70,71,72,73,74 "Built target HGLogModuleStatic"
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleStatic.dir/all
+
+# Build rule for subdir invocation for target.
+HGLogModule/CMakeFiles/HGLogModuleStatic.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModule/CMakeFiles/HGLogModuleStatic.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleStatic.dir/rule
+
+# Convenience name for target.
+HGLogModuleStatic: HGLogModule/CMakeFiles/HGLogModuleStatic.dir/rule
+.PHONY : HGLogModuleStatic
+
+# clean rule for target.
+HGLogModule/CMakeFiles/HGLogModuleStatic.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleStatic.dir\build.make HGLogModule/CMakeFiles/HGLogModuleStatic.dir/clean
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleStatic.dir/clean
+
+#=============================================================================
+# Target rules for target HGLogModule/CMakeFiles/HGLogModuleRun.dir
+
+# All Build rule for target.
+HGLogModule/CMakeFiles/HGLogModuleRun.dir/all: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/all
+HGLogModule/CMakeFiles/HGLogModuleRun.dir/all: HGLogModule/CMakeFiles/HGLogModuleStatic.dir/all
+HGLogModule/CMakeFiles/HGLogModuleRun.dir/all: HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/all
+HGLogModule/CMakeFiles/HGLogModuleRun.dir/all: HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/all
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleRun.dir\build.make HGLogModule/CMakeFiles/HGLogModuleRun.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleRun.dir\build.make HGLogModule/CMakeFiles/HGLogModuleRun.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=67,68 "Built target HGLogModuleRun"
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleRun.dir/all
+
+# Build rule for subdir invocation for target.
+HGLogModule/CMakeFiles/HGLogModuleRun.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 42
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModule/CMakeFiles/HGLogModuleRun.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleRun.dir/rule
+
+# Convenience name for target.
+HGLogModuleRun: HGLogModule/CMakeFiles/HGLogModuleRun.dir/rule
+.PHONY : HGLogModuleRun
+
+# clean rule for target.
+HGLogModule/CMakeFiles/HGLogModuleRun.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleRun.dir\build.make HGLogModule/CMakeFiles/HGLogModuleRun.dir/clean
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleRun.dir/clean
+
+#=============================================================================
+# Target rules for target HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir
+
+# All Build rule for target.
+HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/all:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\LogModule_autogen_timestamp_deps.dir\build.make HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\LogModule_autogen_timestamp_deps.dir\build.make HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target LogModule_autogen_timestamp_deps"
+.PHONY : HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/all
+
+# Build rule for subdir invocation for target.
+HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/rule
+
+# Convenience name for target.
+LogModule_autogen_timestamp_deps: HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/rule
+.PHONY : LogModule_autogen_timestamp_deps
+
+# clean rule for target.
+HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\LogModule_autogen_timestamp_deps.dir\build.make HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/clean
+.PHONY : HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/clean
+
+#=============================================================================
+# Target rules for target HGLogModule/CMakeFiles/LogModule_autogen.dir
+
+# All Build rule for target.
+HGLogModule/CMakeFiles/LogModule_autogen.dir/all: HGLogModule/CMakeFiles/LogModule_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\LogModule_autogen.dir\build.make HGLogModule/CMakeFiles/LogModule_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\LogModule_autogen.dir\build.make HGLogModule/CMakeFiles/LogModule_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num=88 "Built target LogModule_autogen"
+.PHONY : HGLogModule/CMakeFiles/LogModule_autogen.dir/all
+
+# Build rule for subdir invocation for target.
+HGLogModule/CMakeFiles/LogModule_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModule/CMakeFiles/LogModule_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGLogModule/CMakeFiles/LogModule_autogen.dir/rule
+
+# Convenience name for target.
+LogModule_autogen: HGLogModule/CMakeFiles/LogModule_autogen.dir/rule
+.PHONY : LogModule_autogen
+
+# clean rule for target.
+HGLogModule/CMakeFiles/LogModule_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\LogModule_autogen.dir\build.make HGLogModule/CMakeFiles/LogModule_autogen.dir/clean
+.PHONY : HGLogModule/CMakeFiles/LogModule_autogen.dir/clean
+
+#=============================================================================
+# Target rules for target HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir
+
+# All Build rule for target.
+HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/all:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleStatic_autogen_timestamp_deps.dir\build.make HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleStatic_autogen_timestamp_deps.dir\build.make HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGLogModuleStatic_autogen_timestamp_deps"
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/all
+
+# Build rule for subdir invocation for target.
+HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/rule
+
+# Convenience name for target.
+HGLogModuleStatic_autogen_timestamp_deps: HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/rule
+.PHONY : HGLogModuleStatic_autogen_timestamp_deps
+
+# clean rule for target.
+HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleStatic_autogen_timestamp_deps.dir\build.make HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/clean
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/clean
+
+#=============================================================================
+# Target rules for target HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir
+
+# All Build rule for target.
+HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/all: HGLogModule/CMakeFiles/HGLogModuleStatic_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleStatic_autogen.dir\build.make HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleStatic_autogen.dir\build.make HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGLogModuleStatic_autogen"
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/all
+
+# Build rule for subdir invocation for target.
+HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/rule
+
+# Convenience name for target.
+HGLogModuleStatic_autogen: HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/rule
+.PHONY : HGLogModuleStatic_autogen
+
+# clean rule for target.
+HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleStatic_autogen.dir\build.make HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/clean
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleStatic_autogen.dir/clean
+
+#=============================================================================
+# Target rules for target HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir
+
+# All Build rule for target.
+HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/all: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/all
+HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/all: HGLogModule/CMakeFiles/HGLogModuleStatic.dir/all
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleRun_autogen_timestamp_deps.dir\build.make HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleRun_autogen_timestamp_deps.dir\build.make HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGLogModuleRun_autogen_timestamp_deps"
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/all
+
+# Build rule for subdir invocation for target.
+HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 40
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/rule
+
+# Convenience name for target.
+HGLogModuleRun_autogen_timestamp_deps: HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/rule
+.PHONY : HGLogModuleRun_autogen_timestamp_deps
+
+# clean rule for target.
+HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleRun_autogen_timestamp_deps.dir\build.make HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/clean
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/clean
+
+#=============================================================================
+# Target rules for target HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir
+
+# All Build rule for target.
+HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/all: HGLogModule/CMakeFiles/HGLogModuleRun_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleRun_autogen.dir\build.make HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleRun_autogen.dir\build.make HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles --progress-num= "Built target HGLogModuleRun_autogen"
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/all
+
+# Build rule for subdir invocation for target.
+HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 40
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/rule
+
+# Convenience name for target.
+HGLogModuleRun_autogen: HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/rule
+.PHONY : HGLogModuleRun_autogen
+
+# clean rule for target.
+HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HGLogModule\CMakeFiles\HGLogModuleRun_autogen.dir\build.make HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/clean
+.PHONY : HGLogModule/CMakeFiles/HGLogModuleRun_autogen.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

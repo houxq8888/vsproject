@@ -56,10 +56,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\virtualMachine\github\vsproject\HGAppModule
+CMAKE_SOURCE_DIR = D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\virtualMachine\github\vsproject\HGAppModule\windows_build
+CMAKE_BINARY_DIR = D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -131,14 +131,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\\CMakeFiles\progress.marks
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\vsproject\HGAppModule\windows_build\CMakeFiles 0
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\HGBaseAppModule\\CMakeFiles\progress.marks
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/clean
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/clean
 .PHONY : clean
 
 # The main clean target
@@ -147,22 +147,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/preinstall
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/preinstall
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/rule:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/rule
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/BaseAppModule.dir/rule
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule.dir/rule
 
 # Convenience name for target.
@@ -171,12 +171,12 @@ BaseAppModule: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/rule
 
 # fast build rule for target.
 BaseAppModule/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/build
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/build
 .PHONY : BaseAppModule/fast
 
 # Convenience name for target.
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/rule:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/rule
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/rule
 .PHONY : HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/rule
 
 # Convenience name for target.
@@ -185,12 +185,12 @@ HGBaseAppModuleStatic: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/rule
 
 # fast build rule for target.
 HGBaseAppModuleStatic/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/build
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/build
 .PHONY : HGBaseAppModuleStatic/fast
 
 # Convenience name for target.
 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/rule:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/rule
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/rule
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -199,12 +199,12 @@ BaseAppModule_autogen_timestamp_deps: HGBaseAppModule/CMakeFiles/BaseAppModule_a
 
 # fast build rule for target.
 BaseAppModule_autogen_timestamp_deps/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule_autogen_timestamp_deps.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/build
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule_autogen_timestamp_deps.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule_autogen_timestamp_deps.dir/build
 .PHONY : BaseAppModule_autogen_timestamp_deps/fast
 
 # Convenience name for target.
 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/rule:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/rule
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/rule
 .PHONY : HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/rule
 
 # Convenience name for target.
@@ -213,12 +213,12 @@ BaseAppModule_autogen: HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/rule
 
 # fast build rule for target.
 BaseAppModule_autogen/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule_autogen.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/build
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule_autogen.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule_autogen.dir/build
 .PHONY : BaseAppModule_autogen/fast
 
 # Convenience name for target.
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/rule:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/rule
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/rule
 .PHONY : HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -227,12 +227,12 @@ HGBaseAppModuleStatic_autogen_timestamp_deps: HGBaseAppModule/CMakeFiles/HGBaseA
 
 # fast build rule for target.
 HGBaseAppModuleStatic_autogen_timestamp_deps/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic_autogen_timestamp_deps.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/build
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic_autogen_timestamp_deps.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen_timestamp_deps.dir/build
 .PHONY : HGBaseAppModuleStatic_autogen_timestamp_deps/fast
 
 # Convenience name for target.
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/rule:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/rule
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/rule
 .PHONY : HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/rule
 
 # Convenience name for target.
@@ -241,7 +241,7 @@ HGBaseAppModuleStatic_autogen: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_
 
 # fast build rule for target.
 HGBaseAppModuleStatic_autogen/fast:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic_autogen.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/build
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic_autogen.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic_autogen.dir/build
 .PHONY : HGBaseAppModuleStatic_autogen/fast
 
 BaseAppModule_autogen/mocs_compilation.obj: BaseAppModule_autogen/mocs_compilation.cpp.obj
@@ -249,7 +249,7 @@ BaseAppModule_autogen/mocs_compilation.obj: BaseAppModule_autogen/mocs_compilati
 
 # target to build an object file
 BaseAppModule_autogen/mocs_compilation.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.obj
 .PHONY : BaseAppModule_autogen/mocs_compilation.cpp.obj
 
 BaseAppModule_autogen/mocs_compilation.i: BaseAppModule_autogen/mocs_compilation.cpp.i
@@ -257,7 +257,7 @@ BaseAppModule_autogen/mocs_compilation.i: BaseAppModule_autogen/mocs_compilation
 
 # target to preprocess a source file
 BaseAppModule_autogen/mocs_compilation.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.i
 .PHONY : BaseAppModule_autogen/mocs_compilation.cpp.i
 
 BaseAppModule_autogen/mocs_compilation.s: BaseAppModule_autogen/mocs_compilation.cpp.s
@@ -265,7 +265,7 @@ BaseAppModule_autogen/mocs_compilation.s: BaseAppModule_autogen/mocs_compilation
 
 # target to generate assembly for a file
 BaseAppModule_autogen/mocs_compilation.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/BaseAppModule_autogen/mocs_compilation.cpp.s
 .PHONY : BaseAppModule_autogen/mocs_compilation.cpp.s
 
 HGBaseAppModuleStatic_autogen/mocs_compilation.obj: HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.obj
@@ -273,7 +273,7 @@ HGBaseAppModuleStatic_autogen/mocs_compilation.obj: HGBaseAppModuleStatic_autoge
 
 # target to build an object file
 HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.obj
 .PHONY : HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.obj
 
 HGBaseAppModuleStatic_autogen/mocs_compilation.i: HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.i
@@ -281,7 +281,7 @@ HGBaseAppModuleStatic_autogen/mocs_compilation.i: HGBaseAppModuleStatic_autogen/
 
 # target to preprocess a source file
 HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.i
 .PHONY : HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.i
 
 HGBaseAppModuleStatic_autogen/mocs_compilation.s: HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.s
@@ -289,7 +289,7 @@ HGBaseAppModuleStatic_autogen/mocs_compilation.s: HGBaseAppModuleStatic_autogen/
 
 # target to generate assembly for a file
 HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.s
 .PHONY : HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.s
 
 inc/moc_DragDialog.obj: inc/moc_DragDialog.cpp.obj
@@ -297,8 +297,8 @@ inc/moc_DragDialog.obj: inc/moc_DragDialog.cpp.obj
 
 # target to build an object file
 inc/moc_DragDialog.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_DragDialog.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_DragDialog.cpp.obj
 .PHONY : inc/moc_DragDialog.cpp.obj
 
 inc/moc_DragDialog.i: inc/moc_DragDialog.cpp.i
@@ -306,8 +306,8 @@ inc/moc_DragDialog.i: inc/moc_DragDialog.cpp.i
 
 # target to preprocess a source file
 inc/moc_DragDialog.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_DragDialog.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_DragDialog.cpp.i
 .PHONY : inc/moc_DragDialog.cpp.i
 
 inc/moc_DragDialog.s: inc/moc_DragDialog.cpp.s
@@ -315,8 +315,8 @@ inc/moc_DragDialog.s: inc/moc_DragDialog.cpp.s
 
 # target to generate assembly for a file
 inc/moc_DragDialog.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_DragDialog.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_DragDialog.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_DragDialog.cpp.s
 .PHONY : inc/moc_DragDialog.cpp.s
 
 inc/moc_QRoundProgressBar.obj: inc/moc_QRoundProgressBar.cpp.obj
@@ -324,8 +324,8 @@ inc/moc_QRoundProgressBar.obj: inc/moc_QRoundProgressBar.cpp.obj
 
 # target to build an object file
 inc/moc_QRoundProgressBar.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_QRoundProgressBar.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_QRoundProgressBar.cpp.obj
 .PHONY : inc/moc_QRoundProgressBar.cpp.obj
 
 inc/moc_QRoundProgressBar.i: inc/moc_QRoundProgressBar.cpp.i
@@ -333,8 +333,8 @@ inc/moc_QRoundProgressBar.i: inc/moc_QRoundProgressBar.cpp.i
 
 # target to preprocess a source file
 inc/moc_QRoundProgressBar.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_QRoundProgressBar.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_QRoundProgressBar.cpp.i
 .PHONY : inc/moc_QRoundProgressBar.cpp.i
 
 inc/moc_QRoundProgressBar.s: inc/moc_QRoundProgressBar.cpp.s
@@ -342,8 +342,8 @@ inc/moc_QRoundProgressBar.s: inc/moc_QRoundProgressBar.cpp.s
 
 # target to generate assembly for a file
 inc/moc_QRoundProgressBar.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_QRoundProgressBar.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_QRoundProgressBar.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_QRoundProgressBar.cpp.s
 .PHONY : inc/moc_QRoundProgressBar.cpp.s
 
 inc/moc_authorityinfocache.obj: inc/moc_authorityinfocache.cpp.obj
@@ -351,8 +351,8 @@ inc/moc_authorityinfocache.obj: inc/moc_authorityinfocache.cpp.obj
 
 # target to build an object file
 inc/moc_authorityinfocache.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_authorityinfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_authorityinfocache.cpp.obj
 .PHONY : inc/moc_authorityinfocache.cpp.obj
 
 inc/moc_authorityinfocache.i: inc/moc_authorityinfocache.cpp.i
@@ -360,8 +360,8 @@ inc/moc_authorityinfocache.i: inc/moc_authorityinfocache.cpp.i
 
 # target to preprocess a source file
 inc/moc_authorityinfocache.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_authorityinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_authorityinfocache.cpp.i
 .PHONY : inc/moc_authorityinfocache.cpp.i
 
 inc/moc_authorityinfocache.s: inc/moc_authorityinfocache.cpp.s
@@ -369,8 +369,8 @@ inc/moc_authorityinfocache.s: inc/moc_authorityinfocache.cpp.s
 
 # target to generate assembly for a file
 inc/moc_authorityinfocache.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_authorityinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_authorityinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_authorityinfocache.cpp.s
 .PHONY : inc/moc_authorityinfocache.cpp.s
 
 inc/moc_basewidget.obj: inc/moc_basewidget.cpp.obj
@@ -378,8 +378,8 @@ inc/moc_basewidget.obj: inc/moc_basewidget.cpp.obj
 
 # target to build an object file
 inc/moc_basewidget.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_basewidget.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_basewidget.cpp.obj
 .PHONY : inc/moc_basewidget.cpp.obj
 
 inc/moc_basewidget.i: inc/moc_basewidget.cpp.i
@@ -387,8 +387,8 @@ inc/moc_basewidget.i: inc/moc_basewidget.cpp.i
 
 # target to preprocess a source file
 inc/moc_basewidget.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_basewidget.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_basewidget.cpp.i
 .PHONY : inc/moc_basewidget.cpp.i
 
 inc/moc_basewidget.s: inc/moc_basewidget.cpp.s
@@ -396,8 +396,8 @@ inc/moc_basewidget.s: inc/moc_basewidget.cpp.s
 
 # target to generate assembly for a file
 inc/moc_basewidget.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_basewidget.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_basewidget.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_basewidget.cpp.s
 .PHONY : inc/moc_basewidget.cpp.s
 
 inc/moc_common.obj: inc/moc_common.cpp.obj
@@ -405,8 +405,8 @@ inc/moc_common.obj: inc/moc_common.cpp.obj
 
 # target to build an object file
 inc/moc_common.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_common.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_common.cpp.obj
 .PHONY : inc/moc_common.cpp.obj
 
 inc/moc_common.i: inc/moc_common.cpp.i
@@ -414,8 +414,8 @@ inc/moc_common.i: inc/moc_common.cpp.i
 
 # target to preprocess a source file
 inc/moc_common.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_common.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_common.cpp.i
 .PHONY : inc/moc_common.cpp.i
 
 inc/moc_common.s: inc/moc_common.cpp.s
@@ -423,8 +423,8 @@ inc/moc_common.s: inc/moc_common.cpp.s
 
 # target to generate assembly for a file
 inc/moc_common.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_common.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_common.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_common.cpp.s
 .PHONY : inc/moc_common.cpp.s
 
 inc/moc_datachartinfocache.obj: inc/moc_datachartinfocache.cpp.obj
@@ -432,8 +432,8 @@ inc/moc_datachartinfocache.obj: inc/moc_datachartinfocache.cpp.obj
 
 # target to build an object file
 inc/moc_datachartinfocache.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_datachartinfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_datachartinfocache.cpp.obj
 .PHONY : inc/moc_datachartinfocache.cpp.obj
 
 inc/moc_datachartinfocache.i: inc/moc_datachartinfocache.cpp.i
@@ -441,8 +441,8 @@ inc/moc_datachartinfocache.i: inc/moc_datachartinfocache.cpp.i
 
 # target to preprocess a source file
 inc/moc_datachartinfocache.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_datachartinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_datachartinfocache.cpp.i
 .PHONY : inc/moc_datachartinfocache.cpp.i
 
 inc/moc_datachartinfocache.s: inc/moc_datachartinfocache.cpp.s
@@ -450,8 +450,8 @@ inc/moc_datachartinfocache.s: inc/moc_datachartinfocache.cpp.s
 
 # target to generate assembly for a file
 inc/moc_datachartinfocache.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_datachartinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_datachartinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_datachartinfocache.cpp.s
 .PHONY : inc/moc_datachartinfocache.cpp.s
 
 inc/moc_globalsingleton.obj: inc/moc_globalsingleton.cpp.obj
@@ -459,8 +459,8 @@ inc/moc_globalsingleton.obj: inc/moc_globalsingleton.cpp.obj
 
 # target to build an object file
 inc/moc_globalsingleton.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_globalsingleton.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_globalsingleton.cpp.obj
 .PHONY : inc/moc_globalsingleton.cpp.obj
 
 inc/moc_globalsingleton.i: inc/moc_globalsingleton.cpp.i
@@ -468,8 +468,8 @@ inc/moc_globalsingleton.i: inc/moc_globalsingleton.cpp.i
 
 # target to preprocess a source file
 inc/moc_globalsingleton.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_globalsingleton.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_globalsingleton.cpp.i
 .PHONY : inc/moc_globalsingleton.cpp.i
 
 inc/moc_globalsingleton.s: inc/moc_globalsingleton.cpp.s
@@ -477,8 +477,8 @@ inc/moc_globalsingleton.s: inc/moc_globalsingleton.cpp.s
 
 # target to generate assembly for a file
 inc/moc_globalsingleton.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_globalsingleton.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_globalsingleton.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_globalsingleton.cpp.s
 .PHONY : inc/moc_globalsingleton.cpp.s
 
 inc/moc_hgmanipulatewidget.obj: inc/moc_hgmanipulatewidget.cpp.obj
@@ -486,8 +486,8 @@ inc/moc_hgmanipulatewidget.obj: inc/moc_hgmanipulatewidget.cpp.obj
 
 # target to build an object file
 inc/moc_hgmanipulatewidget.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgmanipulatewidget.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgmanipulatewidget.cpp.obj
 .PHONY : inc/moc_hgmanipulatewidget.cpp.obj
 
 inc/moc_hgmanipulatewidget.i: inc/moc_hgmanipulatewidget.cpp.i
@@ -495,8 +495,8 @@ inc/moc_hgmanipulatewidget.i: inc/moc_hgmanipulatewidget.cpp.i
 
 # target to preprocess a source file
 inc/moc_hgmanipulatewidget.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgmanipulatewidget.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgmanipulatewidget.cpp.i
 .PHONY : inc/moc_hgmanipulatewidget.cpp.i
 
 inc/moc_hgmanipulatewidget.s: inc/moc_hgmanipulatewidget.cpp.s
@@ -504,8 +504,8 @@ inc/moc_hgmanipulatewidget.s: inc/moc_hgmanipulatewidget.cpp.s
 
 # target to generate assembly for a file
 inc/moc_hgmanipulatewidget.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgmanipulatewidget.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgmanipulatewidget.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgmanipulatewidget.cpp.s
 .PHONY : inc/moc_hgmanipulatewidget.cpp.s
 
 inc/moc_hgqlabel.obj: inc/moc_hgqlabel.cpp.obj
@@ -513,8 +513,8 @@ inc/moc_hgqlabel.obj: inc/moc_hgqlabel.cpp.obj
 
 # target to build an object file
 inc/moc_hgqlabel.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgqlabel.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgqlabel.cpp.obj
 .PHONY : inc/moc_hgqlabel.cpp.obj
 
 inc/moc_hgqlabel.i: inc/moc_hgqlabel.cpp.i
@@ -522,8 +522,8 @@ inc/moc_hgqlabel.i: inc/moc_hgqlabel.cpp.i
 
 # target to preprocess a source file
 inc/moc_hgqlabel.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgqlabel.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgqlabel.cpp.i
 .PHONY : inc/moc_hgqlabel.cpp.i
 
 inc/moc_hgqlabel.s: inc/moc_hgqlabel.cpp.s
@@ -531,8 +531,8 @@ inc/moc_hgqlabel.s: inc/moc_hgqlabel.cpp.s
 
 # target to generate assembly for a file
 inc/moc_hgqlabel.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgqlabel.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_hgqlabel.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_hgqlabel.cpp.s
 .PHONY : inc/moc_hgqlabel.cpp.s
 
 inc/moc_labelwithimg.obj: inc/moc_labelwithimg.cpp.obj
@@ -540,8 +540,8 @@ inc/moc_labelwithimg.obj: inc/moc_labelwithimg.cpp.obj
 
 # target to build an object file
 inc/moc_labelwithimg.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_labelwithimg.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_labelwithimg.cpp.obj
 .PHONY : inc/moc_labelwithimg.cpp.obj
 
 inc/moc_labelwithimg.i: inc/moc_labelwithimg.cpp.i
@@ -549,8 +549,8 @@ inc/moc_labelwithimg.i: inc/moc_labelwithimg.cpp.i
 
 # target to preprocess a source file
 inc/moc_labelwithimg.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_labelwithimg.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_labelwithimg.cpp.i
 .PHONY : inc/moc_labelwithimg.cpp.i
 
 inc/moc_labelwithimg.s: inc/moc_labelwithimg.cpp.s
@@ -558,8 +558,8 @@ inc/moc_labelwithimg.s: inc/moc_labelwithimg.cpp.s
 
 # target to generate assembly for a file
 inc/moc_labelwithimg.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_labelwithimg.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_labelwithimg.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_labelwithimg.cpp.s
 .PHONY : inc/moc_labelwithimg.cpp.s
 
 inc/moc_mychartview.obj: inc/moc_mychartview.cpp.obj
@@ -567,8 +567,8 @@ inc/moc_mychartview.obj: inc/moc_mychartview.cpp.obj
 
 # target to build an object file
 inc/moc_mychartview.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mychartview.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mychartview.cpp.obj
 .PHONY : inc/moc_mychartview.cpp.obj
 
 inc/moc_mychartview.i: inc/moc_mychartview.cpp.i
@@ -576,8 +576,8 @@ inc/moc_mychartview.i: inc/moc_mychartview.cpp.i
 
 # target to preprocess a source file
 inc/moc_mychartview.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mychartview.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mychartview.cpp.i
 .PHONY : inc/moc_mychartview.cpp.i
 
 inc/moc_mychartview.s: inc/moc_mychartview.cpp.s
@@ -585,8 +585,8 @@ inc/moc_mychartview.s: inc/moc_mychartview.cpp.s
 
 # target to generate assembly for a file
 inc/moc_mychartview.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mychartview.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mychartview.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mychartview.cpp.s
 .PHONY : inc/moc_mychartview.cpp.s
 
 inc/moc_mygraphicsview.obj: inc/moc_mygraphicsview.cpp.obj
@@ -594,8 +594,8 @@ inc/moc_mygraphicsview.obj: inc/moc_mygraphicsview.cpp.obj
 
 # target to build an object file
 inc/moc_mygraphicsview.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mygraphicsview.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mygraphicsview.cpp.obj
 .PHONY : inc/moc_mygraphicsview.cpp.obj
 
 inc/moc_mygraphicsview.i: inc/moc_mygraphicsview.cpp.i
@@ -603,8 +603,8 @@ inc/moc_mygraphicsview.i: inc/moc_mygraphicsview.cpp.i
 
 # target to preprocess a source file
 inc/moc_mygraphicsview.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mygraphicsview.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mygraphicsview.cpp.i
 .PHONY : inc/moc_mygraphicsview.cpp.i
 
 inc/moc_mygraphicsview.s: inc/moc_mygraphicsview.cpp.s
@@ -612,8 +612,8 @@ inc/moc_mygraphicsview.s: inc/moc_mygraphicsview.cpp.s
 
 # target to generate assembly for a file
 inc/moc_mygraphicsview.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mygraphicsview.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mygraphicsview.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mygraphicsview.cpp.s
 .PHONY : inc/moc_mygraphicsview.cpp.s
 
 inc/moc_mykeyboard.obj: inc/moc_mykeyboard.cpp.obj
@@ -621,8 +621,8 @@ inc/moc_mykeyboard.obj: inc/moc_mykeyboard.cpp.obj
 
 # target to build an object file
 inc/moc_mykeyboard.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mykeyboard.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mykeyboard.cpp.obj
 .PHONY : inc/moc_mykeyboard.cpp.obj
 
 inc/moc_mykeyboard.i: inc/moc_mykeyboard.cpp.i
@@ -630,8 +630,8 @@ inc/moc_mykeyboard.i: inc/moc_mykeyboard.cpp.i
 
 # target to preprocess a source file
 inc/moc_mykeyboard.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mykeyboard.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mykeyboard.cpp.i
 .PHONY : inc/moc_mykeyboard.cpp.i
 
 inc/moc_mykeyboard.s: inc/moc_mykeyboard.cpp.s
@@ -639,8 +639,8 @@ inc/moc_mykeyboard.s: inc/moc_mykeyboard.cpp.s
 
 # target to generate assembly for a file
 inc/moc_mykeyboard.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mykeyboard.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mykeyboard.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mykeyboard.cpp.s
 .PHONY : inc/moc_mykeyboard.cpp.s
 
 inc/moc_mypixmapitem.obj: inc/moc_mypixmapitem.cpp.obj
@@ -648,8 +648,8 @@ inc/moc_mypixmapitem.obj: inc/moc_mypixmapitem.cpp.obj
 
 # target to build an object file
 inc/moc_mypixmapitem.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mypixmapitem.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mypixmapitem.cpp.obj
 .PHONY : inc/moc_mypixmapitem.cpp.obj
 
 inc/moc_mypixmapitem.i: inc/moc_mypixmapitem.cpp.i
@@ -657,8 +657,8 @@ inc/moc_mypixmapitem.i: inc/moc_mypixmapitem.cpp.i
 
 # target to preprocess a source file
 inc/moc_mypixmapitem.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mypixmapitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mypixmapitem.cpp.i
 .PHONY : inc/moc_mypixmapitem.cpp.i
 
 inc/moc_mypixmapitem.s: inc/moc_mypixmapitem.cpp.s
@@ -666,8 +666,8 @@ inc/moc_mypixmapitem.s: inc/moc_mypixmapitem.cpp.s
 
 # target to generate assembly for a file
 inc/moc_mypixmapitem.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mypixmapitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_mypixmapitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mypixmapitem.cpp.s
 .PHONY : inc/moc_mypixmapitem.cpp.s
 
 inc/moc_rectellipseitem.obj: inc/moc_rectellipseitem.cpp.obj
@@ -675,8 +675,8 @@ inc/moc_rectellipseitem.obj: inc/moc_rectellipseitem.cpp.obj
 
 # target to build an object file
 inc/moc_rectellipseitem.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectellipseitem.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectellipseitem.cpp.obj
 .PHONY : inc/moc_rectellipseitem.cpp.obj
 
 inc/moc_rectellipseitem.i: inc/moc_rectellipseitem.cpp.i
@@ -684,8 +684,8 @@ inc/moc_rectellipseitem.i: inc/moc_rectellipseitem.cpp.i
 
 # target to preprocess a source file
 inc/moc_rectellipseitem.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectellipseitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectellipseitem.cpp.i
 .PHONY : inc/moc_rectellipseitem.cpp.i
 
 inc/moc_rectellipseitem.s: inc/moc_rectellipseitem.cpp.s
@@ -693,8 +693,8 @@ inc/moc_rectellipseitem.s: inc/moc_rectellipseitem.cpp.s
 
 # target to generate assembly for a file
 inc/moc_rectellipseitem.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectellipseitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectellipseitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectellipseitem.cpp.s
 .PHONY : inc/moc_rectellipseitem.cpp.s
 
 inc/moc_rectitem.obj: inc/moc_rectitem.cpp.obj
@@ -702,8 +702,8 @@ inc/moc_rectitem.obj: inc/moc_rectitem.cpp.obj
 
 # target to build an object file
 inc/moc_rectitem.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectitem.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectitem.cpp.obj
 .PHONY : inc/moc_rectitem.cpp.obj
 
 inc/moc_rectitem.i: inc/moc_rectitem.cpp.i
@@ -711,8 +711,8 @@ inc/moc_rectitem.i: inc/moc_rectitem.cpp.i
 
 # target to preprocess a source file
 inc/moc_rectitem.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectitem.cpp.i
 .PHONY : inc/moc_rectitem.cpp.i
 
 inc/moc_rectitem.s: inc/moc_rectitem.cpp.s
@@ -720,8 +720,8 @@ inc/moc_rectitem.s: inc/moc_rectitem.cpp.s
 
 # target to generate assembly for a file
 inc/moc_rectitem.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_rectitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_rectitem.cpp.s
 .PHONY : inc/moc_rectitem.cpp.s
 
 inc/moc_systeminfocache.obj: inc/moc_systeminfocache.cpp.obj
@@ -729,8 +729,8 @@ inc/moc_systeminfocache.obj: inc/moc_systeminfocache.cpp.obj
 
 # target to build an object file
 inc/moc_systeminfocache.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_systeminfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_systeminfocache.cpp.obj
 .PHONY : inc/moc_systeminfocache.cpp.obj
 
 inc/moc_systeminfocache.i: inc/moc_systeminfocache.cpp.i
@@ -738,8 +738,8 @@ inc/moc_systeminfocache.i: inc/moc_systeminfocache.cpp.i
 
 # target to preprocess a source file
 inc/moc_systeminfocache.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_systeminfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_systeminfocache.cpp.i
 .PHONY : inc/moc_systeminfocache.cpp.i
 
 inc/moc_systeminfocache.s: inc/moc_systeminfocache.cpp.s
@@ -747,8 +747,8 @@ inc/moc_systeminfocache.s: inc/moc_systeminfocache.cpp.s
 
 # target to generate assembly for a file
 inc/moc_systeminfocache.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_systeminfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_systeminfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_systeminfocache.cpp.s
 .PHONY : inc/moc_systeminfocache.cpp.s
 
 inc/moc_usersinfocache.obj: inc/moc_usersinfocache.cpp.obj
@@ -756,8 +756,8 @@ inc/moc_usersinfocache.obj: inc/moc_usersinfocache.cpp.obj
 
 # target to build an object file
 inc/moc_usersinfocache.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_usersinfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_usersinfocache.cpp.obj
 .PHONY : inc/moc_usersinfocache.cpp.obj
 
 inc/moc_usersinfocache.i: inc/moc_usersinfocache.cpp.i
@@ -765,8 +765,8 @@ inc/moc_usersinfocache.i: inc/moc_usersinfocache.cpp.i
 
 # target to preprocess a source file
 inc/moc_usersinfocache.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_usersinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_usersinfocache.cpp.i
 .PHONY : inc/moc_usersinfocache.cpp.i
 
 inc/moc_usersinfocache.s: inc/moc_usersinfocache.cpp.s
@@ -774,8 +774,8 @@ inc/moc_usersinfocache.s: inc/moc_usersinfocache.cpp.s
 
 # target to generate assembly for a file
 inc/moc_usersinfocache.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_usersinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/inc/moc_usersinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_usersinfocache.cpp.s
 .PHONY : inc/moc_usersinfocache.cpp.s
 
 src/DragDialog.obj: src/DragDialog.cpp.obj
@@ -783,8 +783,8 @@ src/DragDialog.obj: src/DragDialog.cpp.obj
 
 # target to build an object file
 src/DragDialog.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/DragDialog.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/DragDialog.cpp.obj
 .PHONY : src/DragDialog.cpp.obj
 
 src/DragDialog.i: src/DragDialog.cpp.i
@@ -792,8 +792,8 @@ src/DragDialog.i: src/DragDialog.cpp.i
 
 # target to preprocess a source file
 src/DragDialog.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/DragDialog.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/DragDialog.cpp.i
 .PHONY : src/DragDialog.cpp.i
 
 src/DragDialog.s: src/DragDialog.cpp.s
@@ -801,8 +801,8 @@ src/DragDialog.s: src/DragDialog.cpp.s
 
 # target to generate assembly for a file
 src/DragDialog.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/DragDialog.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/DragDialog.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/DragDialog.cpp.s
 .PHONY : src/DragDialog.cpp.s
 
 src/QRoundProgressBar.obj: src/QRoundProgressBar.cpp.obj
@@ -810,8 +810,8 @@ src/QRoundProgressBar.obj: src/QRoundProgressBar.cpp.obj
 
 # target to build an object file
 src/QRoundProgressBar.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/QRoundProgressBar.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/QRoundProgressBar.cpp.obj
 .PHONY : src/QRoundProgressBar.cpp.obj
 
 src/QRoundProgressBar.i: src/QRoundProgressBar.cpp.i
@@ -819,8 +819,8 @@ src/QRoundProgressBar.i: src/QRoundProgressBar.cpp.i
 
 # target to preprocess a source file
 src/QRoundProgressBar.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/QRoundProgressBar.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/QRoundProgressBar.cpp.i
 .PHONY : src/QRoundProgressBar.cpp.i
 
 src/QRoundProgressBar.s: src/QRoundProgressBar.cpp.s
@@ -828,8 +828,8 @@ src/QRoundProgressBar.s: src/QRoundProgressBar.cpp.s
 
 # target to generate assembly for a file
 src/QRoundProgressBar.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/QRoundProgressBar.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/QRoundProgressBar.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/QRoundProgressBar.cpp.s
 .PHONY : src/QRoundProgressBar.cpp.s
 
 src/authorityinfocache.obj: src/authorityinfocache.cpp.obj
@@ -837,8 +837,8 @@ src/authorityinfocache.obj: src/authorityinfocache.cpp.obj
 
 # target to build an object file
 src/authorityinfocache.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/authorityinfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/authorityinfocache.cpp.obj
 .PHONY : src/authorityinfocache.cpp.obj
 
 src/authorityinfocache.i: src/authorityinfocache.cpp.i
@@ -846,8 +846,8 @@ src/authorityinfocache.i: src/authorityinfocache.cpp.i
 
 # target to preprocess a source file
 src/authorityinfocache.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/authorityinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/authorityinfocache.cpp.i
 .PHONY : src/authorityinfocache.cpp.i
 
 src/authorityinfocache.s: src/authorityinfocache.cpp.s
@@ -855,8 +855,8 @@ src/authorityinfocache.s: src/authorityinfocache.cpp.s
 
 # target to generate assembly for a file
 src/authorityinfocache.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/authorityinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/authorityinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/authorityinfocache.cpp.s
 .PHONY : src/authorityinfocache.cpp.s
 
 src/basewidget.obj: src/basewidget.cpp.obj
@@ -864,8 +864,8 @@ src/basewidget.obj: src/basewidget.cpp.obj
 
 # target to build an object file
 src/basewidget.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/basewidget.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/basewidget.cpp.obj
 .PHONY : src/basewidget.cpp.obj
 
 src/basewidget.i: src/basewidget.cpp.i
@@ -873,8 +873,8 @@ src/basewidget.i: src/basewidget.cpp.i
 
 # target to preprocess a source file
 src/basewidget.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/basewidget.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/basewidget.cpp.i
 .PHONY : src/basewidget.cpp.i
 
 src/basewidget.s: src/basewidget.cpp.s
@@ -882,8 +882,8 @@ src/basewidget.s: src/basewidget.cpp.s
 
 # target to generate assembly for a file
 src/basewidget.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/basewidget.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/basewidget.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/basewidget.cpp.s
 .PHONY : src/basewidget.cpp.s
 
 src/common.obj: src/common.cpp.obj
@@ -891,8 +891,8 @@ src/common.obj: src/common.cpp.obj
 
 # target to build an object file
 src/common.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/common.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/common.cpp.obj
 .PHONY : src/common.cpp.obj
 
 src/common.i: src/common.cpp.i
@@ -900,8 +900,8 @@ src/common.i: src/common.cpp.i
 
 # target to preprocess a source file
 src/common.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/common.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/common.cpp.i
 .PHONY : src/common.cpp.i
 
 src/common.s: src/common.cpp.s
@@ -909,8 +909,8 @@ src/common.s: src/common.cpp.s
 
 # target to generate assembly for a file
 src/common.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/common.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/common.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/common.cpp.s
 .PHONY : src/common.cpp.s
 
 src/datachartinfocache.obj: src/datachartinfocache.cpp.obj
@@ -918,8 +918,8 @@ src/datachartinfocache.obj: src/datachartinfocache.cpp.obj
 
 # target to build an object file
 src/datachartinfocache.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/datachartinfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/datachartinfocache.cpp.obj
 .PHONY : src/datachartinfocache.cpp.obj
 
 src/datachartinfocache.i: src/datachartinfocache.cpp.i
@@ -927,8 +927,8 @@ src/datachartinfocache.i: src/datachartinfocache.cpp.i
 
 # target to preprocess a source file
 src/datachartinfocache.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/datachartinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/datachartinfocache.cpp.i
 .PHONY : src/datachartinfocache.cpp.i
 
 src/datachartinfocache.s: src/datachartinfocache.cpp.s
@@ -936,8 +936,8 @@ src/datachartinfocache.s: src/datachartinfocache.cpp.s
 
 # target to generate assembly for a file
 src/datachartinfocache.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/datachartinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/datachartinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/datachartinfocache.cpp.s
 .PHONY : src/datachartinfocache.cpp.s
 
 src/globalsingleton.obj: src/globalsingleton.cpp.obj
@@ -945,8 +945,8 @@ src/globalsingleton.obj: src/globalsingleton.cpp.obj
 
 # target to build an object file
 src/globalsingleton.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/globalsingleton.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/globalsingleton.cpp.obj
 .PHONY : src/globalsingleton.cpp.obj
 
 src/globalsingleton.i: src/globalsingleton.cpp.i
@@ -954,8 +954,8 @@ src/globalsingleton.i: src/globalsingleton.cpp.i
 
 # target to preprocess a source file
 src/globalsingleton.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/globalsingleton.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/globalsingleton.cpp.i
 .PHONY : src/globalsingleton.cpp.i
 
 src/globalsingleton.s: src/globalsingleton.cpp.s
@@ -963,8 +963,8 @@ src/globalsingleton.s: src/globalsingleton.cpp.s
 
 # target to generate assembly for a file
 src/globalsingleton.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/globalsingleton.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/globalsingleton.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/globalsingleton.cpp.s
 .PHONY : src/globalsingleton.cpp.s
 
 src/hgmanipulatewidget.obj: src/hgmanipulatewidget.cpp.obj
@@ -972,8 +972,8 @@ src/hgmanipulatewidget.obj: src/hgmanipulatewidget.cpp.obj
 
 # target to build an object file
 src/hgmanipulatewidget.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgmanipulatewidget.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgmanipulatewidget.cpp.obj
 .PHONY : src/hgmanipulatewidget.cpp.obj
 
 src/hgmanipulatewidget.i: src/hgmanipulatewidget.cpp.i
@@ -981,8 +981,8 @@ src/hgmanipulatewidget.i: src/hgmanipulatewidget.cpp.i
 
 # target to preprocess a source file
 src/hgmanipulatewidget.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgmanipulatewidget.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgmanipulatewidget.cpp.i
 .PHONY : src/hgmanipulatewidget.cpp.i
 
 src/hgmanipulatewidget.s: src/hgmanipulatewidget.cpp.s
@@ -990,8 +990,8 @@ src/hgmanipulatewidget.s: src/hgmanipulatewidget.cpp.s
 
 # target to generate assembly for a file
 src/hgmanipulatewidget.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgmanipulatewidget.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgmanipulatewidget.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgmanipulatewidget.cpp.s
 .PHONY : src/hgmanipulatewidget.cpp.s
 
 src/hgqlabel.obj: src/hgqlabel.cpp.obj
@@ -999,8 +999,8 @@ src/hgqlabel.obj: src/hgqlabel.cpp.obj
 
 # target to build an object file
 src/hgqlabel.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgqlabel.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgqlabel.cpp.obj
 .PHONY : src/hgqlabel.cpp.obj
 
 src/hgqlabel.i: src/hgqlabel.cpp.i
@@ -1008,8 +1008,8 @@ src/hgqlabel.i: src/hgqlabel.cpp.i
 
 # target to preprocess a source file
 src/hgqlabel.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgqlabel.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgqlabel.cpp.i
 .PHONY : src/hgqlabel.cpp.i
 
 src/hgqlabel.s: src/hgqlabel.cpp.s
@@ -1017,8 +1017,8 @@ src/hgqlabel.s: src/hgqlabel.cpp.s
 
 # target to generate assembly for a file
 src/hgqlabel.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgqlabel.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/hgqlabel.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgqlabel.cpp.s
 .PHONY : src/hgqlabel.cpp.s
 
 src/labelwithimg.obj: src/labelwithimg.cpp.obj
@@ -1026,8 +1026,8 @@ src/labelwithimg.obj: src/labelwithimg.cpp.obj
 
 # target to build an object file
 src/labelwithimg.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/labelwithimg.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/labelwithimg.cpp.obj
 .PHONY : src/labelwithimg.cpp.obj
 
 src/labelwithimg.i: src/labelwithimg.cpp.i
@@ -1035,8 +1035,8 @@ src/labelwithimg.i: src/labelwithimg.cpp.i
 
 # target to preprocess a source file
 src/labelwithimg.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/labelwithimg.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/labelwithimg.cpp.i
 .PHONY : src/labelwithimg.cpp.i
 
 src/labelwithimg.s: src/labelwithimg.cpp.s
@@ -1044,8 +1044,8 @@ src/labelwithimg.s: src/labelwithimg.cpp.s
 
 # target to generate assembly for a file
 src/labelwithimg.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/labelwithimg.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/labelwithimg.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/labelwithimg.cpp.s
 .PHONY : src/labelwithimg.cpp.s
 
 src/mychartview.obj: src/mychartview.cpp.obj
@@ -1053,8 +1053,8 @@ src/mychartview.obj: src/mychartview.cpp.obj
 
 # target to build an object file
 src/mychartview.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mychartview.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mychartview.cpp.obj
 .PHONY : src/mychartview.cpp.obj
 
 src/mychartview.i: src/mychartview.cpp.i
@@ -1062,8 +1062,8 @@ src/mychartview.i: src/mychartview.cpp.i
 
 # target to preprocess a source file
 src/mychartview.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mychartview.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mychartview.cpp.i
 .PHONY : src/mychartview.cpp.i
 
 src/mychartview.s: src/mychartview.cpp.s
@@ -1071,8 +1071,8 @@ src/mychartview.s: src/mychartview.cpp.s
 
 # target to generate assembly for a file
 src/mychartview.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mychartview.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mychartview.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mychartview.cpp.s
 .PHONY : src/mychartview.cpp.s
 
 src/mygraphicsview.obj: src/mygraphicsview.cpp.obj
@@ -1080,8 +1080,8 @@ src/mygraphicsview.obj: src/mygraphicsview.cpp.obj
 
 # target to build an object file
 src/mygraphicsview.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj
 .PHONY : src/mygraphicsview.cpp.obj
 
 src/mygraphicsview.i: src/mygraphicsview.cpp.i
@@ -1089,8 +1089,8 @@ src/mygraphicsview.i: src/mygraphicsview.cpp.i
 
 # target to preprocess a source file
 src/mygraphicsview.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.i
 .PHONY : src/mygraphicsview.cpp.i
 
 src/mygraphicsview.s: src/mygraphicsview.cpp.s
@@ -1098,8 +1098,8 @@ src/mygraphicsview.s: src/mygraphicsview.cpp.s
 
 # target to generate assembly for a file
 src/mygraphicsview.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.s
 .PHONY : src/mygraphicsview.cpp.s
 
 src/mykeyboard.obj: src/mykeyboard.cpp.obj
@@ -1107,8 +1107,8 @@ src/mykeyboard.obj: src/mykeyboard.cpp.obj
 
 # target to build an object file
 src/mykeyboard.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mykeyboard.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mykeyboard.cpp.obj
 .PHONY : src/mykeyboard.cpp.obj
 
 src/mykeyboard.i: src/mykeyboard.cpp.i
@@ -1116,8 +1116,8 @@ src/mykeyboard.i: src/mykeyboard.cpp.i
 
 # target to preprocess a source file
 src/mykeyboard.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mykeyboard.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mykeyboard.cpp.i
 .PHONY : src/mykeyboard.cpp.i
 
 src/mykeyboard.s: src/mykeyboard.cpp.s
@@ -1125,8 +1125,8 @@ src/mykeyboard.s: src/mykeyboard.cpp.s
 
 # target to generate assembly for a file
 src/mykeyboard.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mykeyboard.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mykeyboard.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mykeyboard.cpp.s
 .PHONY : src/mykeyboard.cpp.s
 
 src/mypixmapitem.obj: src/mypixmapitem.cpp.obj
@@ -1134,8 +1134,8 @@ src/mypixmapitem.obj: src/mypixmapitem.cpp.obj
 
 # target to build an object file
 src/mypixmapitem.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mypixmapitem.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mypixmapitem.cpp.obj
 .PHONY : src/mypixmapitem.cpp.obj
 
 src/mypixmapitem.i: src/mypixmapitem.cpp.i
@@ -1143,8 +1143,8 @@ src/mypixmapitem.i: src/mypixmapitem.cpp.i
 
 # target to preprocess a source file
 src/mypixmapitem.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mypixmapitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mypixmapitem.cpp.i
 .PHONY : src/mypixmapitem.cpp.i
 
 src/mypixmapitem.s: src/mypixmapitem.cpp.s
@@ -1152,8 +1152,8 @@ src/mypixmapitem.s: src/mypixmapitem.cpp.s
 
 # target to generate assembly for a file
 src/mypixmapitem.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mypixmapitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mypixmapitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mypixmapitem.cpp.s
 .PHONY : src/mypixmapitem.cpp.s
 
 src/rectellipseitem.obj: src/rectellipseitem.cpp.obj
@@ -1161,8 +1161,8 @@ src/rectellipseitem.obj: src/rectellipseitem.cpp.obj
 
 # target to build an object file
 src/rectellipseitem.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectellipseitem.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectellipseitem.cpp.obj
 .PHONY : src/rectellipseitem.cpp.obj
 
 src/rectellipseitem.i: src/rectellipseitem.cpp.i
@@ -1170,8 +1170,8 @@ src/rectellipseitem.i: src/rectellipseitem.cpp.i
 
 # target to preprocess a source file
 src/rectellipseitem.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectellipseitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectellipseitem.cpp.i
 .PHONY : src/rectellipseitem.cpp.i
 
 src/rectellipseitem.s: src/rectellipseitem.cpp.s
@@ -1179,8 +1179,8 @@ src/rectellipseitem.s: src/rectellipseitem.cpp.s
 
 # target to generate assembly for a file
 src/rectellipseitem.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectellipseitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectellipseitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectellipseitem.cpp.s
 .PHONY : src/rectellipseitem.cpp.s
 
 src/rectitem.obj: src/rectitem.cpp.obj
@@ -1188,8 +1188,8 @@ src/rectitem.obj: src/rectitem.cpp.obj
 
 # target to build an object file
 src/rectitem.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectitem.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectitem.cpp.obj
 .PHONY : src/rectitem.cpp.obj
 
 src/rectitem.i: src/rectitem.cpp.i
@@ -1197,8 +1197,8 @@ src/rectitem.i: src/rectitem.cpp.i
 
 # target to preprocess a source file
 src/rectitem.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectitem.cpp.i
 .PHONY : src/rectitem.cpp.i
 
 src/rectitem.s: src/rectitem.cpp.s
@@ -1206,8 +1206,8 @@ src/rectitem.s: src/rectitem.cpp.s
 
 # target to generate assembly for a file
 src/rectitem.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/rectitem.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/rectitem.cpp.s
 .PHONY : src/rectitem.cpp.s
 
 src/systeminfocache.obj: src/systeminfocache.cpp.obj
@@ -1215,8 +1215,8 @@ src/systeminfocache.obj: src/systeminfocache.cpp.obj
 
 # target to build an object file
 src/systeminfocache.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/systeminfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/systeminfocache.cpp.obj
 .PHONY : src/systeminfocache.cpp.obj
 
 src/systeminfocache.i: src/systeminfocache.cpp.i
@@ -1224,8 +1224,8 @@ src/systeminfocache.i: src/systeminfocache.cpp.i
 
 # target to preprocess a source file
 src/systeminfocache.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/systeminfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/systeminfocache.cpp.i
 .PHONY : src/systeminfocache.cpp.i
 
 src/systeminfocache.s: src/systeminfocache.cpp.s
@@ -1233,8 +1233,8 @@ src/systeminfocache.s: src/systeminfocache.cpp.s
 
 # target to generate assembly for a file
 src/systeminfocache.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/systeminfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/systeminfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/systeminfocache.cpp.s
 .PHONY : src/systeminfocache.cpp.s
 
 src/usersinfocache.obj: src/usersinfocache.cpp.obj
@@ -1242,8 +1242,8 @@ src/usersinfocache.obj: src/usersinfocache.cpp.obj
 
 # target to build an object file
 src/usersinfocache.cpp.obj:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.obj
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/usersinfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.obj
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/usersinfocache.cpp.obj
 .PHONY : src/usersinfocache.cpp.obj
 
 src/usersinfocache.i: src/usersinfocache.cpp.i
@@ -1251,8 +1251,8 @@ src/usersinfocache.i: src/usersinfocache.cpp.i
 
 # target to preprocess a source file
 src/usersinfocache.cpp.i:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.i
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/usersinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.i
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/usersinfocache.cpp.i
 .PHONY : src/usersinfocache.cpp.i
 
 src/usersinfocache.s: src/usersinfocache.cpp.s
@@ -1260,8 +1260,8 @@ src/usersinfocache.s: src/usersinfocache.cpp.s
 
 # target to generate assembly for a file
 src/usersinfocache.cpp.s:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.s
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/usersinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/usersinfocache.cpp.s
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(MAKE) $(MAKESILENT) -f HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/usersinfocache.cpp.s
 .PHONY : src/usersinfocache.cpp.s
 
 # Help Target
@@ -1407,6 +1407,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

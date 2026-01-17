@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/QRoundProgressBar.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\QRoundProgressBar.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/QRoundProgressBar.h \
+ D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGBaseAppModule\src\QRoundProgressBar.cpp \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/QRoundProgressBar.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QWidget \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

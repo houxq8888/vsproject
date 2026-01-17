@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/datachartinfocache.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\datachartinfocache.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/datachartinfocache.h \
+ D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGBaseAppModule\src\datachartinfocache.cpp \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/datachartinfocache.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -144,9 +144,9 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/datachartinfocache.cpp.
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/atomicity.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \
- D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h \
- D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h \
- D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/direct.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/io.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/string.h \
@@ -412,6 +412,6 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/datachartinfocache.cpp.
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/ifdef.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/tcpestats.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/netioapi.h \
- D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/sqlcipher/sqlite3.h \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/3rdparty/include/sqlcipher/sqlite3.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstring

@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_mykeyboard.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mykeyboard.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mykeyboard.h \
+ D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_mykeyboard.cpp \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/mykeyboard.h \
  D:/Qt/6.9.1/mingw_64/include/QtCore/QVariant \
  D:/Qt/6.9.1/mingw_64/include/QtCore/qvariant.h \
  D:/Qt/6.9.1/mingw_64/include/QtCore/qatomic.h \

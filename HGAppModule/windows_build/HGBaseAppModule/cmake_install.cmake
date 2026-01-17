@@ -1,4 +1,4 @@
-# Install script for directory: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule
+# Install script for directory: D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,17 +39,17 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "D:/virtualMachine/github/vsproject/HGAppModule/hg_pub/win32/lib/libHGBaseAppModuleStatic.a")
+   "D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/hg_pub/win32/lib/libHGBaseAppModuleStatic.a")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "D:/virtualMachine/github/vsproject/HGAppModule/hg_pub/win32/lib" TYPE STATIC_LIBRARY FILES "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/libHGBaseAppModuleStatic.a")
+  file(INSTALL DESTINATION "D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/hg_pub/win32/lib" TYPE STATIC_LIBRARY FILES "D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/windows_build/HGBaseAppModule/libHGBaseAppModuleStatic.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  include("D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/windows_build/HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
 endif()
 

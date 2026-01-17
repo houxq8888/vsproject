@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_basewidget.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_basewidget.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/basewidget.h \
+ D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\HGBaseAppModule\inc\moc_basewidget.cpp \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/basewidget.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QWidget \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -389,7 +389,7 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_basewidget.cpp.obj:
  D:/Qt/6.9.1/mingw_64/include/QtCore/qiodevice.h \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qtextdocument.h \
  D:/Qt/6.9.1/mingw_64/include/QtCore/qurl.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/labelwithimg.h \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/labelwithimg.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGridLayout \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgridlayout.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qlayout.h \
@@ -398,7 +398,7 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_basewidget.cpp.obj:
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgridlayout.h \
  D:/Qt/6.9.1/mingw_64/include/QtGui/QPixmap \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qpixmap.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h \
  D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h \
  D:/Qt/6.9.1/mingw_64/include/QtCore/qcoreevent.h \

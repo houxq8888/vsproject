@@ -52,10 +52,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\virtualMachine\github\vsproject\HGAppModule
+CMAKE_SOURCE_DIR = D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\virtualMachine\github\vsproject\HGAppModule\windows_build
+CMAKE_BINARY_DIR = D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build
 
 # Utility rule file for PluginInterfaceModule_autogen_timestamp_deps.
 
@@ -73,10 +73,10 @@ pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/buil
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/build
 
 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/clean:
-	cd /d D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface && $(CMAKE_COMMAND) -P CMakeFiles\PluginInterfaceModule_autogen_timestamp_deps.dir\cmake_clean.cmake
+	cd /d D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\pluginInterface && $(CMAKE_COMMAND) -P CMakeFiles\PluginInterfaceModule_autogen_timestamp_deps.dir\cmake_clean.cmake
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/clean
 
 pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\virtualMachine\github\vsproject\HGAppModule D:\virtualMachine\github\vsproject\HGAppModule\pluginInterface D:\virtualMachine\github\vsproject\HGAppModule\windows_build D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface D:\virtualMachine\github\vsproject\HGAppModule\windows_build\pluginInterface\CMakeFiles\PluginInterfaceModule_autogen_timestamp_deps.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\pluginInterface D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\pluginInterface D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\pluginInterface\CMakeFiles\PluginInterfaceModule_autogen_timestamp_deps.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/depend
 

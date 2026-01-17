@@ -1,207 +1,253 @@
 [  0%] Built target BaseAppModule_autogen_timestamp_deps
 [  0%] Built target HGBaseAppModuleStatic_autogen_timestamp_deps
-[  0%] Built target PluginInterfaceStatic_autogen_timestamp_deps
-[  0%] Built target CameraRecognizeModule_autogen_timestamp_deps
 [  0%] Built target PluginInterfaceModule_autogen_timestamp_deps
-[  0%] Built target HGCameraRecognizeModuleStatic_autogen_timestamp_deps
-[  1%] Built target PluginInterfaceModule_autogen
-[  1%] Automatic MOC and UIC for target HGBaseAppModuleStatic
-[  2%] Automatic MOC and UIC for target BaseAppModule
-[  3%] Built target PluginInterfaceStatic_autogen
-[  3%] Automatic MOC and UIC for target HGCameraRecognizeModuleStatic
-[  4%] Automatic MOC and UIC for target CameraRecognizeModule
-[  4%] Built target HGBaseAppModuleStatic_autogen
-[  4%] Built target BaseAppModule_autogen
-[  4%] Built target HGCameraRecognizeModuleStatic_autogen
-[  4%] Built target CameraRecognizeModule_autogen
-[  7%] Built target PluginInterfaceModule
-[ 10%] Built target PluginInterfaceStatic
-[ 11%] Building CXX object HGCameraRecognizeModule/CMakeFiles/HGCameraRecognizeModuleStatic.dir/src/hgcamerarecognizewidget.cpp.obj
-[ 12%] Building CXX object HGCameraRecognizeModule/CMakeFiles/CameraRecognizeModule.dir/src/hgcamerarecognizewidget.cpp.obj
-[ 13%] Building CXX object HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj
-[ 14%] Building CXX object HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj
-In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
-                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
-                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
-                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:9:
-D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+[  0%] Built target HGSearchModuleStatic_autogen_timestamp_deps
+[  0%] Built target SearchModule_autogen_timestamp_deps
+[  0%] Built target LogModule_autogen_timestamp_deps
+[  0%] Built target PluginInterfaceStatic_autogen_timestamp_deps
+[  0%] Built target HGLogModuleStatic_autogen_timestamp_deps
+[  0%] Built target BaseAppModule_autogen
+[  1%] Built target HGBaseAppModuleStatic_autogen
+[  2%] Built target HGSearchModuleStatic_autogen
+[  3%] Built target PluginInterfaceModule_autogen
+[  4%] Built target SearchModule_autogen
+[  4%] Built target PluginInterfaceStatic_autogen
+[  4%] Automatic MOC and UIC for target HGLogModuleStatic
+[  5%] Automatic MOC and UIC for target LogModule
+[  5%] Built target HGLogModuleStatic_autogen
+[  5%] Built target LogModule_autogen
+[  5%] Generating inc/moc_hglogwidget.cpp
+[  6%] Generating inc/moc_hglogwidget.cpp
+[  8%] Built target PluginInterfaceModule
+[ 11%] Built target PluginInterfaceStatic
+[ 16%] Built target HGSearchModuleStatic
+[ 21%] Built target SearchModule
+[ 54%] Built target BaseAppModule
+[ 86%] Built target HGBaseAppModuleStatic
+[ 86%] Built target HGSearchModuleRun_autogen_timestamp_deps
+[ 86%] Built target HGSearchModuleRun_autogen
+[ 86%] Building CXX object HGLogModule/CMakeFiles/HGLogModuleStatic.dir/src/hglogwidget.cpp.obj
+[ 87%] Building CXX object HGLogModule/CMakeFiles/HGLogModuleStatic.dir/src/logplugindetector.cpp.obj
+[ 87%] Building CXX object HGLogModule/CMakeFiles/HGLogModuleStatic.dir/inc/moc_hglogwidget.cpp.obj
+[ 88%] Building CXX object HGLogModule/CMakeFiles/HGLogModuleStatic.dir/inc/moc_logplugindetector.cpp.obj
+[ 89%] Building CXX object HGLogModule/CMakeFiles/LogModule.dir/src/hglogwidget.cpp.obj
+[ 89%] Building CXX object HGLogModule/CMakeFiles/LogModule.dir/src/logplugindetector.cpp.obj
+[ 90%] Building CXX object HGLogModule/CMakeFiles/LogModule.dir/inc/moc_hglogwidget.cpp.obj
+[ 93%] Built target HGSearchModuleRun
+[ 93%] Building CXX object HGLogModule/CMakeFiles/LogModule.dir/inc/moc_logplugindetector.cpp.obj
+In file included from D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\HGLogModule\inc\moc_logplugindetector.cpp:9:
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:14: warning: ignoring '#pragma execution_character_set ' [-Wunknown-pragmas]
+   14 | #pragma execution_character_set("utf-8")
+      | 
+In file included from D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\logplugindetector.cpp:1:
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:14: warning: ignoring '#pragma execution_character_set ' [-Wunknown-pragmas]
+   14 | #pragma execution_character_set("utf-8")
+      | 
+In file included from D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\logplugindetector.cpp:1:
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:14: warning: ignoring '#pragma execution_character_set ' [-Wunknown-pragmas]
+   14 | #pragma execution_character_set("utf-8")
+      | 
+In file included from D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\HGLogModule\inc\moc_logplugindetector.cpp:9:
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:14: warning: ignoring '#pragma execution_character_set ' [-Wunknown-pragmas]
+   14 | #pragma execution_character_set("utf-8")
+      | 
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/hglogwidget.h:13,
+                 from D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\hglogwidget.cpp:1:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
    61 |     const int errorCode() { return mnErrCode; }
       |     ^~~~~
-In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
-                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
-                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
-                 from D:/virtualMachine/github/vsproject/HGAppModule/HGCameraRecognizeModule/inc/hgcamerarecognizewidget.h:16,
-                 from D:\virtualMachine\github\vsproject\HGAppModule\HGCameraRecognizeModule\src\hgcamerarecognizewidget.cpp:1:
-D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/hglogwidget.h:13,
+                 from D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\HGLogModule\inc\moc_hglogwidget.cpp:9:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
    61 |     const int errorCode() { return mnErrCode; }
       |     ^~~~~
-In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
-                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
-                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
-                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:9:
-D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/hglogwidget.h:13,
+                 from D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\windows_build\HGLogModule\inc\moc_hglogwidget.cpp:9:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
    61 |     const int errorCode() { return mnErrCode; }
       |     ^~~~~
-In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
-D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
-D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/hglogwidget.h:13,
+                 from D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\hglogwidget.cpp:1:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/hglogwidget.h:13,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:8:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/hglogwidget.h:13,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:8:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/hglogwidget.h:13,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:8:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGSearchModule/inc/hginputsearchconditionwidget.h:13,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/hglogwidget.h:13,
+                 from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:8:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   61 |     const int errorCode() { return mnErrCode; }
+      |     ^~~~~
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
    92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
       |                                                          ^~~~~~~~~~~~~~~
-D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
    44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
       |                                ^~~~~~~~
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp: In member function 'QRectF MyGraphicsView::getSelectROI()':
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:249:67: error: ambiguous overload for 'operator<<' (operand types are 'QDebug' and 'RectItem*')
-  249 |     qDebug() << "MyGraphicsView::getSelectROI - currentRectItem:" << currentRectItem << ", scene:" << this->scene();
-      |                                                                   ^~ ~~~~~~~~~~~~~~~
-      |                                                                      |
-      |                                                                      RectItem*
-In file included from D:/Qt/6.9.1/mingw_64/include/QtCore/qvariant.h:12,
-                 from D:/Qt/6.9.1/mingw_64/include/QtGui/qaction.h:13,
-                 from D:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h:12,
-                 from D:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h:8,
-                 from D:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractscrollarea.h:8,
-                 from D:/Qt/6.9.1/mingw_64/include/QtWidgets/qscrollarea.h:8,
-                 from D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsview.h:10,
-                 from D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsView:1,
-                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mygraphicsview.h:21,
-                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:6:
-D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h:129:20: note: candidate: 'QDebug& QDebug::operator<<(bool)'
-  129 |     inline QDebug &operator<<(bool t) { stream->ts << (t ? "true" : "false"); return maybeSpace(); }
-      |                    ^~~~~~~~
-D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h:152:20: note: candidate: 'QDebug& QDebug::operator<<(const void*)'
-  152 |     inline QDebug &operator<<(const void * t) { stream->ts << t; return maybeSpace(); }
-      |                    ^~~~~~~~
-In file included from D:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h:9:
-D:/Qt/6.9.1/mingw_64/include/QtCore/qobject.h:481:22: note: candidate: 'QDebug operator<<(QDebug, const QObject*)'
-  481 | Q_CORE_EXPORT QDebug operator<<(QDebug, const QObject *);
-      |                      ^~~~~~~~
-In file included from D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsEllipseItem:1,
-                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/rectellipseitem.h:23,
-                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mygraphicsview.h:36:
-D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsitem.h:1002:25: note: candidate: 'QDebug operator<<(QDebug, const QGraphicsItem*)'
- 1002 | Q_WIDGETS_EXPORT QDebug operator<<(QDebug debug, const QGraphicsItem *item);
-      |                         ^~~~~~~~
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp: In member function 'void MyGraphicsView::clearRectItem()':
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:263:78: error: ambiguous overload for 'operator<<' (operand types are 'QDebug' and 'RectItem*')
-  263 |     qDebug() << "MyGraphicsView::clearRectItem - Starting, currentRectItem:" << currentRectItem << ", scene:" << this->scene();
-      |                                                                              ^~ ~~~~~~~~~~~~~~~
-      |                                                                                 |
-      |                                                                                 RectItem*
-D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h:129:20: note: candidate: 'QDebug& QDebug::operator<<(bool)'
-  129 |     inline QDebug &operator<<(bool t) { stream->ts << (t ? "true" : "false"); return maybeSpace(); }
-      |                    ^~~~~~~~
-D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h:152:20: note: candidate: 'QDebug& QDebug::operator<<(const void*)'
-  152 |     inline QDebug &operator<<(const void * t) { stream->ts << t; return maybeSpace(); }
-      |                    ^~~~~~~~
-D:/Qt/6.9.1/mingw_64/include/QtCore/qobject.h:481:22: note: candidate: 'QDebug operator<<(QDebug, const QObject*)'
-  481 | Q_CORE_EXPORT QDebug operator<<(QDebug, const QObject *);
-      |                      ^~~~~~~~
-D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsitem.h:1002:25: note: candidate: 'QDebug operator<<(QDebug, const QGraphicsItem*)'
- 1002 | Q_WIDGETS_EXPORT QDebug operator<<(QDebug debug, const QGraphicsItem *item);
-      |                         ^~~~~~~~
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp: In member function 'virtual void MyGraphicsView::drawBackground(QPainter*, const QRectF&)':
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:356:47: warning: unused parameter 'painter' [-Wunused-parameter]
-  356 | void MyGraphicsView::drawBackground(QPainter *painter, const QRectF &rect)
-      |                                     ~~~~~~~~~~^~~~~~~
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:356:70: warning: unused parameter 'rect' [-Wunused-parameter]
-  356 | void MyGraphicsView::drawBackground(QPainter *painter, const QRectF &rect)
-      |                                                        ~~~~~~~~~~~~~~^~~~
-In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
-D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
-D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
    92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
       |                                                          ^~~~~~~~~~~~~~~
-D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
    44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
       |                                ^~~~~~~~
-In file included from D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h:24,
-                 from D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h:4,
-                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:11,
-                 from D:/virtualMachine/github/vsproject/HGAppModule/HGCameraRecognizeModule/inc/hgcamerarecognizewidget.h:16,
-                 from D:\virtualMachine\github\vsproject\HGAppModule\HGCameraRecognizeModule\src\hgcamerarecognizewidget.cpp:1:
-D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h:61:5: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
-   61 |     const int errorCode() { return mnErrCode; }
-      |     ^~~~~
-In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
-D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
-D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
    92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
       |                                                          ^~~~~~~~~~~~~~~
-D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
    44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
       |                                ^~~~~~~~
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp: In member function 'QRectF MyGraphicsView::getSelectROI()':
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:249:67: error: ambiguous overload for 'operator<<' (operand types are 'QDebug' and 'RectItem*')
-  249 |     qDebug() << "MyGraphicsView::getSelectROI - currentRectItem:" << currentRectItem << ", scene:" << this->scene();
-      |                                                                   ^~ ~~~~~~~~~~~~~~~
-      |                                                                      |
-      |                                                                      RectItem*
-In file included from D:/Qt/6.9.1/mingw_64/include/QtCore/qvariant.h:12,
-                 from D:/Qt/6.9.1/mingw_64/include/QtGui/qaction.h:13,
-                 from D:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h:12,
-                 from D:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h:8,
-                 from D:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractscrollarea.h:8,
-                 from D:/Qt/6.9.1/mingw_64/include/QtWidgets/qscrollarea.h:8,
-                 from D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsview.h:10,
-                 from D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsView:1,
-                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mygraphicsview.h:21,
-                 from D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:6:
-D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h:129:20: note: candidate: 'QDebug& QDebug::operator<<(bool)'
-  129 |     inline QDebug &operator<<(bool t) { stream->ts << (t ? "true" : "false"); return maybeSpace(); }
-      |                    ^~~~~~~~
-D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h:152:20: note: candidate: 'QDebug& QDebug::operator<<(const void*)'
-  152 |     inline QDebug &operator<<(const void * t) { stream->ts << t; return maybeSpace(); }
-      |                    ^~~~~~~~
-In file included from D:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h:9:
-D:/Qt/6.9.1/mingw_64/include/QtCore/qobject.h:481:22: note: candidate: 'QDebug operator<<(QDebug, const QObject*)'
-  481 | Q_CORE_EXPORT QDebug operator<<(QDebug, const QObject *);
-      |                      ^~~~~~~~
-In file included from D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsEllipseItem:1,
-                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/rectellipseitem.h:23,
-                 from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mygraphicsview.h:36:
-D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsitem.h:1002:25: note: candidate: 'QDebug operator<<(QDebug, const QGraphicsItem*)'
- 1002 | Q_WIDGETS_EXPORT QDebug operator<<(QDebug debug, const QGraphicsItem *item);
-      |                         ^~~~~~~~
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp: In member function 'void MyGraphicsView::clearRectItem()':
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:263:78: error: ambiguous overload for 'operator<<' (operand types are 'QDebug' and 'RectItem*')
-  263 |     qDebug() << "MyGraphicsView::clearRectItem - Starting, currentRectItem:" << currentRectItem << ", scene:" << this->scene();
-      |                                                                              ^~ ~~~~~~~~~~~~~~~
-      |                                                                                 |
-      |                                                                                 RectItem*
-D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h:129:20: note: candidate: 'QDebug& QDebug::operator<<(bool)'
-  129 |     inline QDebug &operator<<(bool t) { stream->ts << (t ? "true" : "false"); return maybeSpace(); }
-      |                    ^~~~~~~~
-D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h:152:20: note: candidate: 'QDebug& QDebug::operator<<(const void*)'
-  152 |     inline QDebug &operator<<(const void * t) { stream->ts << t; return maybeSpace(); }
-      |                    ^~~~~~~~
-D:/Qt/6.9.1/mingw_64/include/QtCore/qobject.h:481:22: note: candidate: 'QDebug operator<<(QDebug, const QObject*)'
-  481 | Q_CORE_EXPORT QDebug operator<<(QDebug, const QObject *);
-      |                      ^~~~~~~~
-D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsitem.h:1002:25: note: candidate: 'QDebug operator<<(QDebug, const QGraphicsItem*)'
- 1002 | Q_WIDGETS_EXPORT QDebug operator<<(QDebug debug, const QGraphicsItem *item);
-      |                         ^~~~~~~~
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp: In member function 'virtual void MyGraphicsView::drawBackground(QPainter*, const QRectF&)':
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:356:47: warning: unused parameter 'painter' [-Wunused-parameter]
-  356 | void MyGraphicsView::drawBackground(QPainter *painter, const QRectF &rect)
-      |                                     ~~~~~~~~~~^~~~~~~
-D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp:356:70: warning: unused parameter 'rect' [-Wunused-parameter]
-  356 | void MyGraphicsView::drawBackground(QPainter *painter, const QRectF &rect)
-      |                                                        ~~~~~~~~~~~~~~^~~~
-mingw32-make[2]: *** [HGBaseAppModule\CMakeFiles\HGBaseAppModuleStatic.dir\build.make:335: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj] Error 1
-mingw32-make[1]: *** [CMakeFiles\Makefile2:183: HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/all] Error 2
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\hglogwidget.cpp: In member function 'void HGLogWidget::fnReadDB(const std::string&)':
+D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\hglogwidget.cpp:190:46: error: 'HGMACHINE::TIME_STRUECT' {aka 'struct HGMACHINE::tagTIME_STRUECT'} has no member named 'mon'; did you mean 'month'?
+  190 |                     testTimer.tm_mon = timeS.mon;
+      |                                              ^~~
+      |                                              month
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h: In member function 'virtual void LogPluginDetector::recMsgFromManager(QString, QString, QString)':
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:28:44: warning: unused parameter 'from' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                    ~~~~~~~~^~~~
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:28:57: warning: unused parameter 'dest' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                                 ~~~~~~~~^~~~
+D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\hglogwidget.cpp: In member function 'void HGLogWidget::fnReadDB(const std::string&)':
+D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\hglogwidget.cpp:190:46: error: 'HGMACHINE::TIME_STRUECT' {aka 'struct HGMACHINE::tagTIME_STRUECT'} has no member named 'mon'; did you mean 'month'?
+  190 |                     testTimer.tm_mon = timeS.mon;
+      |                                              ^~~
+      |                                              month
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\hglogwidget.cpp: In member function 'void HGLogWidget::fnSearchAllPages()':
+D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\hglogwidget.cpp:424:38: error: 'HGMACHINE::TIME_STRUECT' {aka 'struct HGMACHINE::tagTIME_STRUECT'} has no member named 'mon'; did you mean 'month'?
+  424 |             testTimer.tm_mon = timeS.mon;
+      |                                      ^~~
+      |                                      month
+D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\hglogwidget.cpp: In member function 'void HGLogWidget::fnSearchAllPages()':
+D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\hglogwidget.cpp:424:38: error: 'HGMACHINE::TIME_STRUECT' {aka 'struct HGMACHINE::tagTIME_STRUECT'} has no member named 'mon'; did you mean 'month'?
+  424 |             testTimer.tm_mon = timeS.mon;
+      |                                      ^~~
+      |                                      month
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h: In member function 'virtual void LogPluginDetector::recMsgFromManager(QString, QString, QString)':
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:28:44: warning: unused parameter 'from' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                    ~~~~~~~~^~~~
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:28:57: warning: unused parameter 'dest' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                                 ~~~~~~~~^~~~
+D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\logplugindetector.cpp: In constructor 'LogPluginDetector::LogPluginDetector(QObject*)':
+D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\logplugindetector.cpp:10:47: warning: unused parameter 'parent' [-Wunused-parameter]
+   10 | LogPluginDetector::LogPluginDetector(QObject* parent)
+      |                                      ~~~~~~~~~^~~~~~
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h: In member function 'virtual void LogPluginDetector::recMsgFromManager(QString, QString, QString)':
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:28:44: warning: unused parameter 'from' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                    ~~~~~~~~^~~~
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:28:57: warning: unused parameter 'dest' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                                 ~~~~~~~~^~~~
+D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\logplugindetector.cpp: In constructor 'LogPluginDetector::LogPluginDetector(QObject*)':
+D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGLogModule\src\logplugindetector.cpp:10:47: warning: unused parameter 'parent' [-Wunused-parameter]
+   10 | LogPluginDetector::LogPluginDetector(QObject* parent)
+      |                                      ~~~~~~~~~^~~~~~
+In file included from D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
+   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
+      |                                                          ^~~~~~~~~~~~~~~
+D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
+   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
+      |                                ^~~~~~~~
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h: In member function 'virtual void LogPluginDetector::recMsgFromManager(QString, QString, QString)':
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:28:44: warning: unused parameter 'from' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                    ~~~~~~~~^~~~
+D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGLogModule/inc/logplugindetector.h:28:57: warning: unused parameter 'dest' [-Wunused-parameter]
+   28 |     virtual void recMsgFromManager(QString from,QString dest,QString msg) Q_DECL_OVERRIDE {
+      |                                                 ~~~~~~~~^~~~
+mingw32-make[2]: *** [HGLogModule\CMakeFiles\LogModule.dir\build.make:106: HGLogModule/CMakeFiles/LogModule.dir/src/hglogwidget.cpp.obj] Error 1
+mingw32-make[2]: *** Waiting for unfinished jobs....
+mingw32-make[2]: *** [HGLogModule\CMakeFiles\HGLogModuleStatic.dir\build.make:106: HGLogModule/CMakeFiles/HGLogModuleStatic.dir/src/hglogwidget.cpp.obj] Error 1
+mingw32-make[2]: *** Waiting for unfinished jobs....
+mingw32-make[1]: *** [CMakeFiles\Makefile2:767: HGLogModule/CMakeFiles/HGLogModuleStatic.dir/all] Error 2
 mingw32-make[1]: *** Waiting for unfinished jobs....
-mingw32-make[2]: *** [HGBaseAppModule\CMakeFiles\BaseAppModule.dir\build.make:335: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/src/mygraphicsview.cpp.obj] Error 1
-mingw32-make[1]: *** [CMakeFiles\Makefile2:156: HGBaseAppModule/CMakeFiles/BaseAppModule.dir/all] Error 2
-In file included from D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h:22:
-D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h: In member function 'HGMACHINE::HGSERIAL_STANDARD_INFO HGMACHINE::HGSerial::getStandardInfo()':
-D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:92:58: warning: implicitly-declared 'HGMACHINE::tagHGSERAIL_STANDARD_INFO::tagHGSERAIL_STANDARD_INFO(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)' is deprecated [-Wdeprecated-copy]
-   92 |         HGSERIAL_STANDARD_INFO getStandardInfo() {return m_standard_info;};
-      |                                                          ^~~~~~~~~~~~~~~
-D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h:44:32: note: because 'HGMACHINE::tagHGSERAIL_STANDARD_INFO' has user-provided 'HGMACHINE::tagHGSERAIL_STANDARD_INFO& HGMACHINE::tagHGSERAIL_STANDARD_INFO::operator=(const HGMACHINE::tagHGSERAIL_STANDARD_INFO&)'
-   44 |     tagHGSERAIL_STANDARD_INFO& operator=(const tagHGSERAIL_STANDARD_INFO& obj)
-      |                                ^~~~~~~~
-[ 15%] Linking CXX static library libHGCameraRecognizeModuleStatic.a
-[ 19%] Built target HGCameraRecognizeModuleStatic
-[ 23%] Built target CameraRecognizeModule
+mingw32-make[1]: *** [CMakeFiles\Makefile2:740: HGLogModule/CMakeFiles/LogModule.dir/all] Error 2
 mingw32-make: *** [Makefile:135: all] Error 2

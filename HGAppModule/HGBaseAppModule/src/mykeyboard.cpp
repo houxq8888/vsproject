@@ -217,7 +217,7 @@ void KBTimeEdit::init(int MyHeight,int MyWidth)
 
     m_yearEdit=new QComboBox();
     HGExactTime curTime=HGExactTime::currentTime();
-    for (int i=0;i<100;i++){
+    for (int i=-10;i<100;i++){
         QString name=QString::number(curTime.tm_year+i);
         m_yearEdit->addItem(name);
     }

@@ -1,6 +1,6 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mypixmapitem.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mypixmapitem.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mypixmapitem.h \
+ D:\virtualMachine\github\0117\alphaL2\vsproject\HGAppModule\HGBaseAppModule\src\mypixmapitem.cpp \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/HGAppModule/HGBaseAppModule/inc/mypixmapitem.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QApplication \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qapplication.h \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -416,8 +416,8 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mypixmapitem.cpp.obj: \
  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsSceneContextMenuEvent \
  D:/Qt/6.9.1/mingw_64/include/QtGui/QCursor \
  D:/Qt/6.9.1/mingw_64/include/QtGui/qcursor.h \
- D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgxml.h \
- D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGConfig/inc/hgxml.h \
+ D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGConfig/inc/HGConfig_global.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/shlwapi.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/_mingw_unicode.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winapifamily.h \
@@ -680,4 +680,4 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mypixmapitem.cpp.obj: \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/ifdef.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/tcpestats.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/netioapi.h \
- D:/virtualMachine/github/vsproject/services/HGConfig/inc/tinyxml2.h
+ D:/virtualMachine/github/0117/alphaL2/vsproject/services/HGConfig/inc/tinyxml2.h
