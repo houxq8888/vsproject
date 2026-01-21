@@ -39,20 +39,22 @@ def load_actual_design_layers():
         0: ["BaseCommon", "BaseConfig"],  # 基础设施层 (Base前缀)
         1: ["SvcLog", "SvcAuthority", "SvcInteractive", "SvcImageAlgorithm", 
             "SvcDataPostProcess", "SvcSave", "SvcFrame", "SvcCommunicate", 
-            "SvcError", "SvcOTA", "SvcSecurity"],  # 原子服务层 (Svc前缀)
+            "SvcError", "SvcOTA", "SvcSecurity", "SvcCommonProtocol"],  # 原子服务层 (Svc前缀)
         2: ["HwRobot", "HwSensor", "HwLowerPC"],  # 硬件抽象层 (Hw前缀)
-        3: ["CoreCupDet", "CoreDashboard", "CoreOnlinePlatform", "CoreV6", "CoreLog"],  # 模块层 (Core前缀)
+        3: ["CoreCupDet", "CoreDashboard", "CoreOnlinePlatform", "CoreV6", "CoreLog", 
+            "CoreDetectDimentionVux"],  # 模块层 (Core前缀)
         4: ["IfCameraControl", "IfCameraRecognize", "IfCupDet", "IfOnlinePlatform", 
-            "IfV6", "IfLog", "IfPackFunc"],  # 接口层 (If前缀)
+            "IfV6", "IfLog", "IfPackFunc", "IfDetectDimentionVux"],  # 接口层 (If前缀)
         5: ["UIAnalysisRecord", "UIBaseApp", "UICameraRecognize", "UIChannel", 
             "UICurve", "UISharedFile", "UIReagent", "UIScanner", "UISearch", 
             "UIUart", "UILog", "UILogin", "UIMethod", "UIUserAudit", 
             "UITask", "UIFlow", "UIPrint", "UIEBalance", "UIExceptionHandle", 
             "UIPluginInterface"],  # UI应用模块层 (UI前缀)
         6: ["AppDashboard", "AppOnlinePlatform", "AppComDebug", "AppCloud", 
-            "AppCupDet", "AppSpectrometer"],  # 应用层 (App前缀)
+            "AppCupDet", "AppSpectrometer", "CmdCommonProtocol", "CmdDetectDimentionVux", 
+            "CmdDFP"],  # 应用层 (App前缀和Cmd前缀)
         7: ["TestPlugin", "TestCommonCommunicationDemo", "TestCommonCommunicationDemoC", 
-            "TestCameraInterface", "TestYModem"]  # 测试层 (Test前缀)
+            "TestTCPPushClient", "TestYModem"]  # 测试层 (Test前缀)
     }
     
     module_to_layer = {}

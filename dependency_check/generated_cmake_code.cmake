@@ -9,8 +9,6 @@ setup_module_layers()
 
 # 检查 PluginInterfaceModule 的依赖关系
 check_module_dependencies(PluginInterfaceModule)
-# 检查 TestPlugin 的依赖关系
-check_module_dependencies(TestPlugin)
 # 检查 UIAnalysisRecord 的依赖关系
 check_module_dependencies(UIAnalysisRecord)
 # 检查 UIBaseApp 的依赖关系
@@ -69,28 +67,20 @@ check_module_dependencies(IfV6)
 check_module_dependencies(CoreCupDet)
 # 检查 CoreDashboard 的依赖关系
 check_module_dependencies(CoreDashboard)
+# 检查 CoreDetectDimentionVux 的依赖关系
+check_module_dependencies(CoreDetectDimentionVux)
 # 检查 CoreLog 的依赖关系
 check_module_dependencies(CoreLog)
 # 检查 CoreOnlinePlatform 的依赖关系
 check_module_dependencies(CoreOnlinePlatform)
 # 检查 CoreV6 的依赖关系
 check_module_dependencies(CoreV6)
-# 检查 DetectDimentionVuxModule 的依赖关系
-check_module_dependencies(DetectDimentionVuxModule)
-# 检查 CommonCommunicationDemo 的依赖关系
-check_module_dependencies(CommonCommunicationDemo)
-# 检查 CommonCommunicationDemoC 的依赖关系
-check_module_dependencies(CommonCommunicationDemoC)
-# 检查 CommonProtocolAPI 的依赖关系
-check_module_dependencies(CommonProtocolAPI)
-# 检查 DetectDimentionVuxProcess 的依赖关系
-check_module_dependencies(DetectDimentionVuxProcess)
-# 检查 DFPProcess 的依赖关系
-check_module_dependencies(DFPProcess)
-# 检查 TCPPushClient 的依赖关系
-check_module_dependencies(TCPPushClient)
-# 检查 YModemTest 的依赖关系
-check_module_dependencies(YModemTest)
+# 检查 CmdCommonProtocol 的依赖关系
+check_module_dependencies(CmdCommonProtocol)
+# 检查 CmdDetectDimentionVux 的依赖关系
+check_module_dependencies(CmdDetectDimentionVux)
+# 检查 CmdDFP 的依赖关系
+check_module_dependencies(CmdDFP)
 # 检查 AppCloud 的依赖关系
 check_module_dependencies(AppCloud)
 # 检查 AppComDebug 的依赖关系
@@ -103,14 +93,12 @@ check_module_dependencies(AppDashboard)
 check_module_dependencies(AppOnlinePlatform)
 # 检查 AppSpectrometer 的依赖关系
 check_module_dependencies(AppSpectrometer)
-# 检查 testCameraInterface 的依赖关系
-check_module_dependencies(testCameraInterface)
-# 检查 CommonProtocolServiceModule 的依赖关系
-check_module_dependencies(CommonProtocolServiceModule)
-# 检查 CommonProtocolService 的依赖关系
-check_module_dependencies(CommonProtocolService)
 # 检查 SvcAuthority 的依赖关系
 check_module_dependencies(SvcAuthority)
+# 检查 SvcCommonProtocol 的依赖关系
+check_module_dependencies(SvcCommonProtocol)
+# 检查 HGSvcCommonProtocol 的依赖关系
+check_module_dependencies(HGSvcCommonProtocol)
 # 检查 SvcCommunicate 的依赖关系
 check_module_dependencies(SvcCommunicate)
 # 检查 SvcDataPostProcess 的依赖关系
@@ -141,7 +129,16 @@ check_module_dependencies(HwLowerPC)
 check_module_dependencies(HwRobot)
 # 检查 HwSensor 的依赖关系
 check_module_dependencies(HwSensor)
-# 检查 HGTestPlugin 的依赖关系
+# 检查 TestCommonCommunicationDemo 的依赖关系
+check_module_dependencies(TestCommonCommunicationDemo)
+# 检查 TestCommonCommunicationDemoC 的依赖关系
+check_module_dependencies(TestCommonCommunicationDemoC)
+# 检查 TestPlugin 的依赖关系
+check_module_dependencies(TestPlugin)
+# 检查 TestTCPPushClient 的依赖关系
+check_module_dependencies(TestTCPPushClient)
+# 检查 TestYModem 的依赖关系
+check_module_dependencies(TestYModem)
 # 检查 HGUIAnalysisRecordRun 的依赖关系
 # 检查 HGUICameraRecognizeRun 的依赖关系
 # 检查 HGUIChannelRun 的依赖关系
@@ -160,20 +157,20 @@ check_module_dependencies(HwSensor)
 # 检查 HGUITaskRun 的依赖关系
 # 检查 HGUIUartRun 的依赖关系
 # 检查 HGUIUserAuditRun 的依赖关系
-# 检查 HXQCommonCommunicationDemo 的依赖关系
-# 检查 HXQCommonCommunicationDemoC 的依赖关系
-# 检查 HXQCommonProtocolAPI 的依赖关系
-# 检查 HXQDetectDimentionVuxProcess 的依赖关系
-# 检查 HXQDFPProcess 的依赖关系
-# 检查 HXQTCPPushClient 的依赖关系
-# 检查 HGYModemTest 的依赖关系
+# 检查 HGCmdCommonProtocol 的依赖关系
+# 检查 HGCmdDetectDimentionVux 的依赖关系
+# 检查 HGCmdDFP 的依赖关系
 # 检查 HGAppCloud 的依赖关系
 # 检查 HGAppComDebug 的依赖关系
 # 检查 HGAppCupDet 的依赖关系
 # 检查 HGAppDashboard 的依赖关系
 # 检查 HGAppOnlinePlatform 的依赖关系
 # 检查 HGAppSpectrometer 的依赖关系
-# 检查 HXQtestCameraInterface 的依赖关系
+# 检查 HGTestCommonCommunicationDemo 的依赖关系
+# 检查 HGTestCommonCommunicationDemoC 的依赖关系
+# 检查 HGTestPlugin 的依赖关系
+# 检查 HGTestTCPPushClient 的依赖关系
+# 检查 HGTestYModem 的依赖关系
 # 检查 PluginInterfaceStatic 的依赖关系
 # 检查 HGUIAnalysisRecordStatic 的依赖关系
 # 检查 HGUIBaseAppStatic 的依赖关系
@@ -239,7 +236,7 @@ check_module_dependencies(HwSensor)
 # 检查 HGUIUserAudit 的依赖关系
 # 检查 HGIfDetectDimentionVux 的依赖关系
 # 检查 HGIfOnlinePlatform 的依赖关系
-# 检查 HXQDetectDimentionVuxModule 的依赖关系
+# 检查 HGCoreDetectDimentionVux 的依赖关系
 # 检查 HGSvcDataPostProcess 的依赖关系
 # 检查 HGSvcInteractive 的依赖关系
 # 检查 HGSvcOTA 的依赖关系

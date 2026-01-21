@@ -1,9 +1,9 @@
 # 模块匹配分析报告 v2
 
-总模块数: 170
-匹配设计的模块数: 116
-未匹配设计的模块数: 54
-匹配率: 68.24%
+总模块数: 168
+匹配设计的模块数: 128
+未匹配设计的模块数: 40
+匹配率: 76.19%
 
 ## 按层统计匹配的模块
 
@@ -13,8 +13,9 @@
 - HGBaseCommon
 - HGBaseConfig
 
-### 第1层 (22个模块)
+### 第1层 (24个模块)
 - HGSvcAuthority
+- HGSvcCommonProtocol
 - HGSvcCommunicate
 - HGSvcDataPostProcess
 - HGSvcError
@@ -26,6 +27,7 @@
 - HGSvcSave
 - HGSvcSecurity
 - SvcAuthority
+- SvcCommonProtocol
 - SvcCommunicate
 - SvcDataPostProcess
 - SvcError
@@ -45,22 +47,25 @@
 - HwRobot
 - HwSensor
 
-### 第3层 (10个模块)
+### 第3层 (12个模块)
 - CoreCupDet
 - CoreDashboard
+- CoreDetectDimentionVux
 - CoreLog
 - CoreOnlinePlatform
 - CoreV6
 - HGCoreCupDet
 - HGCoreDashboard
+- HGCoreDetectDimentionVux
 - HGCoreLog
 - HGCoreOnlinePlatform
 - HGCoreV6
 
-### 第4层 (14个模块)
+### 第4层 (16个模块)
 - HGIfCameraControl
 - HGIfCameraRecognize
 - HGIfCupDet
+- HGIfDetectDimentionVux
 - HGIfLog
 - HGIfOnlinePlatform
 - HGIfPackFunc
@@ -68,6 +73,7 @@
 - IfCameraControl
 - IfCameraRecognize
 - IfCupDet
+- IfDetectDimentionVux
 - IfLog
 - IfOnlinePlatform
 - IfPackFunc
@@ -113,43 +119,41 @@
 - UIUart
 - UIUserAudit
 
-### 第6层 (12个模块)
+### 第6层 (18个模块)
 - AppCloud
 - AppComDebug
 - AppCupDet
 - AppDashboard
 - AppOnlinePlatform
 - AppSpectrometer
+- CmdCommonProtocol
+- CmdDFP
+- CmdDetectDimentionVux
 - HGAppCloud
 - HGAppComDebug
 - HGAppCupDet
 - HGAppDashboard
 - HGAppOnlinePlatform
 - HGAppSpectrometer
+- HGCmdCommonProtocol
+- HGCmdDFP
+- HGCmdDetectDimentionVux
 
 ### 第7层 (10个模块)
-- CommonCommunicationDemo
-- CommonCommunicationDemoC
+- HGTestCommonCommunicationDemo
+- HGTestCommonCommunicationDemoC
 - HGTestPlugin
-- HGYModemTest
-- HXQCommonCommunicationDemo
-- HXQCommonCommunicationDemoC
-- HXQtestCameraInterface
+- HGTestTCPPushClient
+- HGTestYModem
+- TestCommonCommunicationDemo
+- TestCommonCommunicationDemoC
 - TestPlugin
-- YModemTest
-- testCameraInterface
+- TestTCPPushClient
+- TestYModem
 
 ## 未匹配的模块
 
 - PluginInterfaceModule -> PluginInterfaceModule
-- IfDetectDimentionVux -> IfDetectDimentionVux
-- DetectDimentionVuxModule -> DetectDimentionVuxModule
-- CommonProtocolAPI -> CommonProtocolAPI
-- DetectDimentionVuxProcess -> DetectDimentionVuxProcess
-- DFPProcess -> DFPProcess
-- TCPPushClient -> TCPPushClient
-- CommonProtocolServiceModule -> CommonProtocolServiceModule
-- CommonProtocolService -> CommonProtocolService
 - HGUIAnalysisRecordRun -> UIAnalysisRecordRun
 - HGUICameraRecognizeRun -> UICameraRecognizeRun
 - HGUIChannelRun -> UIChannelRun
@@ -168,10 +172,6 @@
 - HGUITaskRun -> UITaskRun
 - HGUIUartRun -> UIUartRun
 - HGUIUserAuditRun -> UIUserAuditRun
-- HXQCommonProtocolAPI -> CommonProtocolAPI
-- HXQDetectDimentionVuxProcess -> DetectDimentionVuxProcess
-- HXQDFPProcess -> DFPProcess
-- HXQTCPPushClient -> TCPPushClient
 - PluginInterfaceStatic -> PluginInterfaceStatic
 - HGUIAnalysisRecordStatic -> UIAnalysisRecordStatic
 - HGUIBaseAppStatic -> UIBaseAppStatic
@@ -193,8 +193,6 @@
 - HGUIUartStatic -> UIUartStatic
 - HGUIUserAuditStatic -> UIUserAuditStatic
 - PluginInterface -> PluginInterface
-- HGIfDetectDimentionVux -> IfDetectDimentionVux
-- HXQDetectDimentionVuxModule -> DetectDimentionVuxModule
 
 ## 未匹配模块特征分析
 
@@ -243,22 +241,7 @@
 - PluginInterfaceStatic -> PluginInterfaceStatic
 - PluginInterface -> PluginInterface
 
-### Module类模块 (3个)
-- DetectDimentionVuxModule -> DetectDimentionVuxModule
-- CommonProtocolServiceModule -> CommonProtocolServiceModule
-- HXQDetectDimentionVuxModule -> DetectDimentionVuxModule
-
-### Process类模块 (4个)
-- DetectDimentionVuxProcess -> DetectDimentionVuxProcess
-- DFPProcess -> DFPProcess
-- HXQDetectDimentionVuxProcess -> DetectDimentionVuxProcess
-- HXQDFPProcess -> DFPProcess
-
-### Other类模块 (44个)
-- IfDetectDimentionVux -> IfDetectDimentionVux
-- CommonProtocolAPI -> CommonProtocolAPI
-- TCPPushClient -> TCPPushClient
-- CommonProtocolService -> CommonProtocolService
+### Other类模块 (37个)
 - HGUIAnalysisRecordRun -> UIAnalysisRecordRun
 - HGUICameraRecognizeRun -> UICameraRecognizeRun
 - HGUIChannelRun -> UIChannelRun
@@ -277,8 +260,6 @@
 - HGUITaskRun -> UITaskRun
 - HGUIUartRun -> UIUartRun
 - HGUIUserAuditRun -> UIUserAuditRun
-- HXQCommonProtocolAPI -> CommonProtocolAPI
-- HXQTCPPushClient -> TCPPushClient
 - HGUIAnalysisRecordStatic -> UIAnalysisRecordStatic
 - HGUIBaseAppStatic -> UIBaseAppStatic
 - HGUICameraRecognizeStatic -> UICameraRecognizeStatic
@@ -298,4 +279,3 @@
 - HGUITaskStatic -> UITaskStatic
 - HGUIUartStatic -> UIUartStatic
 - HGUIUserAuditStatic -> UIUserAuditStatic
-- HGIfDetectDimentionVux -> IfDetectDimentionVux

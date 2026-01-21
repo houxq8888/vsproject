@@ -7,14 +7,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 if (PLATFORM STREQUAL "x64")
-HG_CMAKE_ADD_MODULE(CommonProtocolServiceModule inc src)
+HG_CMAKE_ADD_MODULE(SvcCommonProtocol inc src)
 HG_CMAKE_MODULE_DEPEND_PUB( 
     HGCommon
     HGConfig
     ${LIB_SERIALPORT_LIBRARY}
 )
 
-HG_CMAKE_ADD_SHARED(CommonProtocolService inc src)
+HG_CMAKE_ADD_SHARED(HGSvcCommonProtocol inc src)
 
 HG_CMAKE_MODULE_DEPEND(
     HGCommon
@@ -34,22 +34,13 @@ include_directories(
 # 收集源文件
 file(GLOB SOURCES src/*.cpp)
 
-add_library(CommonProtocolService STATIC ${SOURCES})
+add_library(HGSvcCommonProtocol STATIC ${SOURCES})
 
-# HG_CMAKE_ADD_STATIC(CommonProtocolService inc src)
-# HG_CMAKE_MODULE_DEPEND(
-#     HGCommon
-#     HGConfig
-#     ${HG_PROJECT_ROOT_FS}/lib/libcserialport.a
-# )
-# target_link_libraries(CommonProtocolService  
-#     ${HG_PROJECT_ROOT_FS}/lib/libcserialport.a
-#     ws2_32 iphlpapi pthread)
 
 endif()
 
 
-set_target_properties(CommonProtocolService PROPERTIES 
+set_target_properties(HGSvcCommonProtocol PROPERTIES 
     VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}
     SOVERSION ${LIBRARY_VERSION_MAJOR}
 )

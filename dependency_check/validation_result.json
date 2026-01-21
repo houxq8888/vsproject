@@ -7,363 +7,352 @@
         "HGBaseCommon"
       ]
     },
-    "TestPlugin": {
-      "path": "HGAppModule\\TestPlugin",
-      "cmake_file": "HGAppModule\\TestPlugin\\CMakeLists.txt",
-      "dependencies": [
-        "Qt5::Core",
-        "Qt5::Widgets",
-        "Qt5::UiPlugin",
-        "Qt5::Designer",
-        "Qt5::Gui"
-      ]
-    },
     "UIAnalysisRecord": {
       "path": "HGAppModule\\UIAnalysisRecord",
       "cmake_file": "HGAppModule\\UIAnalysisRecord\\CMakeLists.txt",
       "dependencies": [
-        "HGHwLowerPC",
-        "HGBaseConfig",
-        "HGSvcSecurity",
-        "HGUICurve",
-        "HGUIBaseApp",
-        "HGSvcAuthority",
-        "OpenSSL::Crypto",
         "PluginInterface",
+        "HGHwLowerPC",
         "HGSvcFrame",
         "HGSvcImageAlgorithm",
-        "HGBaseCommon",
-        "HGUIPrint",
-        "ALSA::ALSA",
+        "HGSvcSecurity",
         "HGSvcCommunicate",
         "HGUISearch",
-        "HGSvcSave"
+        "OpenSSL::Crypto",
+        "HGSvcAuthority",
+        "HGUIBaseApp",
+        "HGUIPrint",
+        "HGBaseConfig",
+        "HGUICurve",
+        "HGSvcSave",
+        "ALSA::ALSA",
+        "HGBaseCommon"
       ]
     },
     "UIBaseApp": {
       "path": "HGAppModule\\UIBaseApp",
       "cmake_file": "HGAppModule\\UIBaseApp\\CMakeLists.txt",
       "dependencies": [
-        "HGHwLowerPC",
-        "HGBaseConfig",
-        "HGSvcSecurity",
-        "HGSvcFrame",
         "HGSvcImageAlgorithm",
-        "HGBaseCommon",
-        "HGSvcSave"
+        "HGHwLowerPC",
+        "HGSvcFrame",
+        "HGSvcSecurity",
+        "HGBaseConfig",
+        "HGSvcSave",
+        "HGBaseCommon"
       ]
     },
     "UICameraRecognize": {
       "path": "HGAppModule\\UICameraRecognize",
       "cmake_file": "HGAppModule\\UICameraRecognize\\CMakeLists.txt",
       "dependencies": [
+        "PluginInterface",
         "HGHwLowerPC",
-        "HGBaseConfig",
+        "HGSvcFrame",
         "HGSvcSecurity",
         "HGUIBaseApp",
-        "PluginInterface",
-        "HGSvcFrame",
-        "HGBaseCommon",
+        "HGBaseConfig",
         "HGIfCameraRecognize",
-        "HGSvcSave"
+        "HGSvcSave",
+        "HGBaseCommon"
       ]
     },
     "UIChannel": {
       "path": "HGAppModule\\UIChannel",
       "cmake_file": "HGAppModule\\UIChannel\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "UICurve": {
       "path": "HGAppModule\\UICurve",
       "cmake_file": "HGAppModule\\UICurve\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGSecurityService",
-        "HGConfig",
         "PluginInterface",
         "HGLowerPC",
-        "HGSaveService",
+        "HGConfig",
+        "HGCommon",
         "HGBaseAppModule",
-        "HGFrameService"
+        "HGSecurityService",
+        "HGFrameService",
+        "HGSaveService"
       ]
     },
     "UIEBalance": {
       "path": "HGAppModule\\UIEBalance",
       "cmake_file": "HGAppModule\\UIEBalance\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGSecurityService",
+        "PluginInterface",
+        "HGUartModule",
+        "HGLowerPC",
         "HGConfig",
         "OpenSSL::Crypto",
-        "PluginInterface",
-        "HGLowerPC",
-        "HGUartModule",
-        "ALSA::ALSA",
-        "HGSaveService",
+        "HGCommon",
         "HGBaseAppModule",
-        "HGFrameService"
+        "HGSecurityService",
+        "HGFrameService",
+        "ALSA::ALSA",
+        "HGSaveService"
       ]
     },
     "UIExceptionHandle": {
       "path": "HGAppModule\\UIExceptionHandle",
       "cmake_file": "HGAppModule\\UIExceptionHandle\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGSearchModule",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGSearchModule",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "UIFlow": {
       "path": "HGAppModule\\UIFlow",
       "cmake_file": "HGAppModule\\UIFlow\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
-        "ALSA::ALSA",
-        "HGSaveService",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
         "HGBaseAppModule",
-        "HGFrameService"
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
+        "ALSA::ALSA",
+        "HGSaveService"
       ]
     },
     "UILog": {
       "path": "HGAppModule\\UILog",
       "cmake_file": "HGAppModule\\UILog\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGSearchModule",
+        "PluginInterface",
+        "LogInterface",
+        "HGLowerPC",
         "HGConfig",
         "OpenSSL::Crypto",
-        "PluginInterface",
-        "HGLowerPC",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGSearchModule",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "LogInterface",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "UILogin": {
       "path": "HGAppModule\\UILogin",
       "cmake_file": "HGAppModule\\UILogin\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "UIMethod": {
       "path": "HGAppModule\\UIMethod",
       "cmake_file": "HGAppModule\\UIMethod\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
-        "ALSA::ALSA",
-        "HGSaveService",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
         "HGBaseAppModule",
-        "HGFrameService"
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
+        "ALSA::ALSA",
+        "HGSaveService"
       ]
     },
     "UIPrint": {
       "path": "HGAppModule\\UIPrint",
       "cmake_file": "HGAppModule\\UIPrint\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "UIReagent": {
       "path": "HGAppModule\\UIReagent",
       "cmake_file": "HGAppModule\\UIReagent\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "UIScanner": {
       "path": "HGAppModule\\UIScanner",
       "cmake_file": "HGAppModule\\UIScanner\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "UISearch": {
       "path": "HGAppModule\\UISearch",
       "cmake_file": "HGAppModule\\UISearch\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "UISharedFile": {
       "path": "HGAppModule\\UISharedFile",
       "cmake_file": "HGAppModule\\UISharedFile\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
-        "ALSA::ALSA",
-        "HGSaveService",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
         "HGBaseAppModule",
-        "HGFrameService"
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
+        "ALSA::ALSA",
+        "HGSaveService"
       ]
     },
     "UITask": {
       "path": "HGAppModule\\UITask",
       "cmake_file": "HGAppModule\\UITask\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
-        "ALSA::ALSA",
-        "HGSaveService",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
         "HGBaseAppModule",
-        "HGFrameService"
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
+        "ALSA::ALSA",
+        "HGSaveService"
       ]
     },
     "UIUart": {
       "path": "HGAppModule\\UIUart",
       "cmake_file": "HGAppModule\\UIUart\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
-        "ALSA::ALSA",
-        "HGSaveService",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
         "HGBaseAppModule",
-        "HGFrameService"
+        "HGSecurityService",
+        "HGFrameService",
+        "ALSA::ALSA",
+        "HGSaveService"
       ]
     },
     "UIUserAudit": {
       "path": "HGAppModule\\UIUserAudit",
       "cmake_file": "HGAppModule\\UIUserAudit\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
+        "HGLowerPC",
         "HGConfig",
         "OpenSSL::Crypto",
-        "HGLowerPC",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "IfCameraControl": {
       "path": "interfaces\\IfCameraControl",
       "cmake_file": "interfaces\\IfCameraControl\\CMakeLists.txt",
       "dependencies": [
+        "HGSvcImageAlgorithm",
+        "HGHwSensor",
         "HGSvcError",
         "HGBaseConfig",
-        "HGHwSensor",
-        "HGSvcImageAlgorithm",
         "HGBaseCommon"
       ]
     },
@@ -371,24 +360,24 @@
       "path": "interfaces\\IfCameraRecognize",
       "cmake_file": "interfaces\\IfCameraRecognize\\CMakeLists.txt",
       "dependencies": [
-        "HGBaseConfig",
-        "HGIfCameraControl",
-        "HGHwSensor",
-        "HGSvcFrame",
         "HGSvcImageAlgorithm",
-        "HGBaseCommon",
-        "HGIfCupDet",
+        "HGSvcFrame",
+        "HGHwSensor",
         "HGCoreCupDet",
-        "HGSvcSave"
+        "HGBaseConfig",
+        "HGIfCupDet",
+        "HGIfCameraControl",
+        "HGSvcSave",
+        "HGBaseCommon"
       ]
     },
     "IfCupDet": {
       "path": "interfaces\\IfCupDet",
       "cmake_file": "interfaces\\IfCupDet\\CMakeLists.txt",
       "dependencies": [
+        "HGSvcImageAlgorithm",
         "HGSvcError",
         "HGCoreCupDet",
-        "HGSvcImageAlgorithm",
         "HGBaseCommon"
       ]
     },
@@ -396,36 +385,36 @@
       "path": "interfaces\\IfDetectDimentionVux",
       "cmake_file": "interfaces\\IfDetectDimentionVux\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
+        "HXQDetectDimentionVuxModule",
         "HGImageAlgorithmService",
-        "HXQDetectDimentionVuxModule"
+        "HGCommon"
       ]
     },
     "IfLog": {
       "path": "interfaces\\IfLog",
       "cmake_file": "interfaces\\IfLog\\CMakeLists.txt",
       "dependencies": [
-        "HGBaseConfig",
-        "HGSvcLog",
-        "HGBaseCommon",
         "HGCoreLog",
-        "HGSvcSave"
+        "HGSvcLog",
+        "HGBaseConfig",
+        "HGSvcSave",
+        "HGBaseCommon"
       ]
     },
     "IfOnlinePlatform": {
       "path": "interfaces\\IfOnlinePlatform",
       "cmake_file": "interfaces\\IfOnlinePlatform\\CMakeLists.txt",
       "dependencies": [
-        "HGCoreOnlinePlatform",
         "HGHwLowerPC",
-        "HGBaseConfig",
-        "HGSvcSecurity",
-        "HGSvcAuthority",
-        "OpenSSL::Crypto",
         "HGSvcFrame",
-        "HGBaseCommon",
+        "HGSvcSecurity",
         "HGSvcCommunicate",
-        "HGSvcSave"
+        "OpenSSL::Crypto",
+        "HGSvcAuthority",
+        "HGCoreOnlinePlatform",
+        "HGBaseConfig",
+        "HGSvcSave",
+        "HGBaseCommon"
       ]
     },
     "IfPackFunc": {
@@ -433,30 +422,30 @@
       "cmake_file": "interfaces\\IfPackFunc\\CMakeLists.txt",
       "dependencies": [
         "HGHwLowerPC",
-        "HGSvcSecurity",
-        "HGBaseConfig",
-        "HGSvcAuthority",
         "HGSvcFrame",
-        "HGBaseCommon",
+        "HGSvcSecurity",
         "HGSvcCommunicate",
-        "HGSvcSave"
+        "HGSvcAuthority",
+        "HGBaseConfig",
+        "HGSvcSave",
+        "HGBaseCommon"
       ]
     },
     "IfV6": {
       "path": "interfaces\\IfV6",
       "cmake_file": "interfaces\\IfV6\\CMakeLists.txt",
       "dependencies": [
-        "SQLite::SQLite3",
         "HGHwLowerPC",
-        "HGBaseConfig",
-        "HGSvcSecurity",
-        "HGSvcLog",
-        "HGCoreV6",
-        "#",
         "HGSvcFrame",
+        "HGSvcSecurity",
         "HGBaseCommon",
         "HGSvcCommunicate",
-        "HGSvcSave"
+        "HGSvcLog",
+        "#",
+        "HGBaseConfig",
+        "SQLite::SQLite3",
+        "HGSvcSave",
+        "HGCoreV6"
       ]
     },
     "CoreCupDet": {
@@ -471,21 +460,29 @@
       "path": "modules\\CoreDashboard",
       "cmake_file": "modules\\CoreDashboard\\CMakeLists.txt",
       "dependencies": [
-        "HGSvcCommunicate",
         "HGBaseConfig",
-        "HGBaseCommon",
-        "HGSvcSave"
+        "HGSvcSave",
+        "HGSvcCommunicate",
+        "HGBaseCommon"
+      ]
+    },
+    "CoreDetectDimentionVux": {
+      "path": "modules\\CoreDetectDimentionVux",
+      "cmake_file": "modules\\CoreDetectDimentionVux\\CMakeLists.txt",
+      "dependencies": [
+        "HGCommon",
+        "HGImageAlgorithmService"
       ]
     },
     "CoreLog": {
       "path": "modules\\CoreLog",
       "cmake_file": "modules\\CoreLog\\CMakeLists.txt",
       "dependencies": [
-        "HGBaseConfig",
-        "HGSvcLog",
         "HGSvcFrame",
-        "HGBaseCommon",
-        "HGSvcSave"
+        "HGSvcLog",
+        "HGBaseConfig",
+        "HGSvcSave",
+        "HGBaseCommon"
       ]
     },
     "CoreOnlinePlatform": {
@@ -493,131 +490,88 @@
       "cmake_file": "modules\\CoreOnlinePlatform\\CMakeLists.txt",
       "dependencies": [
         "HGHwLowerPC",
-        "HGBaseConfig",
-        "HGSvcAuthority",
         "HGSvcFrame",
-        "HGBaseCommon",
         "HGSvcCommunicate",
-        "HGSvcSave"
+        "HGSvcAuthority",
+        "HGBaseConfig",
+        "HGSvcSave",
+        "HGBaseCommon"
       ]
     },
     "CoreV6": {
       "path": "modules\\CoreV6",
       "cmake_file": "modules\\CoreV6\\CMakeLists.txt",
       "dependencies": [
-        "SQLite::SQLite3",
-        "HGCoreOnlinePlatform",
         "HGHwLowerPC",
+        "HGSvcFrame",
         "HGSvcSecurity",
-        "HGBaseConfig",
+        "HGSvcCommunicate",
         "HGSvcLog",
         "#",
-        "HGSvcFrame",
-        "HGBaseCommon",
-        "HGSvcCommunicate",
-        "HGSvcSave"
+        "HGCoreOnlinePlatform",
+        "HGBaseConfig",
+        "SQLite::SQLite3",
+        "HGSvcSave",
+        "HGBaseCommon"
       ]
     },
-    "DetectDimentionVuxModule": {
-      "path": "modules\\DetectDimentionVuxModule",
-      "cmake_file": "modules\\DetectDimentionVuxModule\\CMakeLists.txt",
-      "dependencies": [
-        "HGCommon",
-        "HGImageAlgorithmService"
-      ]
-    },
-    "CommonCommunicationDemo": {
-      "path": "processes\\CommonCommunicationDemo",
-      "cmake_file": "processes\\CommonCommunicationDemo\\CMakeLists.txt",
-      "dependencies": [
-        "HGCommon",
-        "CommonProtocolService",
-        "HGConfig",
-        "OpenSSL::Crypto"
-      ]
-    },
-    "CommonCommunicationDemoC": {
-      "path": "processes\\CommonCommunicationDemoC",
-      "cmake_file": "processes\\CommonCommunicationDemoC\\CMakeLists.txt",
-      "dependencies": [
-        "HGCommon",
-        "#",
-        "HGConfig",
-        "OpenSSL::Crypto",
-        "CommonProtocolService"
-      ]
-    },
-    "CommonProtocolAPI": {
-      "path": "processes\\CommonProtocolAPI",
-      "cmake_file": "processes\\CommonProtocolAPI\\CMakeLists.txt",
+    "CmdCommonProtocol": {
+      "path": "processes\\CmdCommonProtocol",
+      "cmake_file": "processes\\CmdCommonProtocol\\CMakeLists.txt",
       "dependencies": []
     },
-    "DetectDimentionVuxProcess": {
-      "path": "processes\\DetectDimentionVuxProcess",
-      "cmake_file": "processes\\DetectDimentionVuxProcess\\CMakeLists.txt",
+    "CmdDetectDimentionVux": {
+      "path": "processes\\CmdDetectDimentionVux",
+      "cmake_file": "processes\\CmdDetectDimentionVux\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HXQDetectDimentionVuxInterface"
-      ]
-    },
-    "DFPProcess": {
-      "path": "processes\\DFP",
-      "cmake_file": "processes\\DFP\\CMakeLists.txt",
-      "dependencies": [
+        "HXQDetectDimentionVuxInterface",
         "HGCommon"
       ]
     },
-    "TCPPushClient": {
-      "path": "processes\\TCPPushClient",
-      "cmake_file": "processes\\TCPPushClient\\CMakeLists.txt",
+    "CmdDFP": {
+      "path": "processes\\CmdDFP",
+      "cmake_file": "processes\\CmdDFP\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGConfig"
+        "HGCommon"
       ]
-    },
-    "YModemTest": {
-      "path": "processes\\YModemTest",
-      "cmake_file": "processes\\YModemTest\\CMakeLists.txt",
-      "dependencies": []
     },
     "AppCloud": {
       "path": "projects\\AppCloud",
       "cmake_file": "projects\\AppCloud\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "Qt5::Core",
-        "Qt5::PrintSupport",
-        "Qt5::Widgets",
         "Qt5::Charts",
+        "Qt5::Gui",
         "HGConfig",
-        "Qt5::Gui"
+        "Qt5::PrintSupport",
+        "HGCommon",
+        "Qt5::Widgets",
+        "Qt5::Core"
       ]
     },
     "AppComDebug": {
       "path": "projects\\AppComDebug",
       "cmake_file": "projects\\AppComDebug\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "Qt5::Core",
-        "HGCommunicateService",
-        "Qt5::Widgets",
-        "HGConfig",
         "HGLowerPC",
-        "Qt5::Gui"
+        "HGConfig",
+        "Qt5::Gui",
+        "HGCommon",
+        "Qt5::Widgets",
+        "HGCommunicateService",
+        "Qt5::Core"
       ]
     },
     "AppCupDet": {
       "path": "projects\\AppCupDet",
       "cmake_file": "projects\\AppCupDet\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "Qt5::Core",
-        "Qt5::Widgets",
-        "HGSensor",
-        "HGImageAlgorithmService",
-        "HGCupDetInterface",
         "Qt5::Gui",
+        "HGImageAlgorithmService",
+        "HGCommon",
+        "Qt5::Widgets",
+        "HGCupDetInterface",
+        "Qt5::Core",
+        "HGSensor",
         "HGSaveService"
       ]
     },
@@ -625,114 +579,89 @@
       "path": "projects\\AppDashboard",
       "cmake_file": "projects\\AppDashboard\\CMakeLists.txt",
       "dependencies": [
-        "OpenSSL::Crypto",
-        "Qt5::WebEngine",
-        "Qt5::Quick",
-        "Qt5::Gui",
-        "Qt5::Core",
+        "HGCommon",
         "Qt5::Widgets",
-        "Qt5::QuickWidgets",
-        "ALSA::ALSA",
-        "HGSaveService",
         "CURL::libcurl",
-        "HGDashboardModule",
-        "Qt5::Location",
-        "Qt5::WebEngineWidgets",
+        "Qt5::Gui",
         "HGConfig",
         "HGBaseAppModule",
-        "HGCommon",
         "HGCommunicateService",
+        "Qt5::Positioning",
+        "OpenSSL::Crypto",
+        "Qt5::Location",
+        "Qt5::WebEngineWidgets",
+        "Qt5::Quick",
+        "Qt5::WebEngine",
         "Qt5::Charts",
         "#",
-        "Qt5::Positioning"
+        "Qt5::QuickWidgets",
+        "Qt5::Core",
+        "ALSA::ALSA",
+        "HGSaveService",
+        "HGDashboardModule"
       ]
     },
     "AppOnlinePlatform": {
       "path": "projects\\AppOnlinePlatform",
       "cmake_file": "projects\\AppOnlinePlatform\\CMakeLists.txt",
       "dependencies": [
-        "HGPrintModule",
+        "HGLogModule",
         "HGFlowModule",
-        "HGLoginModule",
-        "OpenSSL::Crypto",
-        "Qt5::Gui",
-        "HGExceptionHandleModule",
-        "HGTaskModule",
-        "Qt5::Core",
-        "HGOnlinePlatformModule",
-        "HGSecurityService",
         "HGUserAuditModule",
-        "HGAnalysisRecordModule",
-        "Qt5::Widgets",
-        "ALSA::ALSA",
-        "HGAuthorityService",
-        "HGMethodModule",
+        "HGLowerPC",
+        "HGCommon",
         "HGImageAlgorithmService",
-        "HGSaveService",
+        "HGLoginModule",
+        "Qt5::Widgets",
+        "HGFrameService",
         "HGOnlinePlatformInterface",
+        "HGAuthorityService",
+        "HGChannelModule",
+        "HGExceptionHandleModule",
+        "ALSA::ALSA",
+        "Qt5::Gui",
         "HGConfig",
         "HGBaseAppModule",
-        "HGChannelModule",
-        "HGCommon",
-        "SQLite::SQLite3",
+        "HGTaskModule",
         "HGCommunicateService",
         "HGReagentModule",
-        "Qt5::PrintSupport",
-        "Qt5::Charts",
+        "OpenSSL::Crypto",
         "HGSearchModule",
+        "HGSecurityService",
+        "HGPrintModule",
+        "HGOnlinePlatformModule",
+        "HGMethodModule",
+        "Qt5::Charts",
         "#",
-        "HGLogModule",
-        "HGLowerPC",
+        "Qt5::PrintSupport",
         "HGCurveModule",
-        "HGFrameService"
+        "SQLite::SQLite3",
+        "Qt5::Core",
+        "HGAnalysisRecordModule",
+        "HGSaveService"
       ]
     },
     "AppSpectrometer": {
       "path": "projects\\AppSpectrometer",
       "cmake_file": "projects\\AppSpectrometer\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "SQLite::SQLite3",
-        "Qt5::Core",
-        "HGCommunicateService",
-        "Qt5::PrintSupport",
-        "Qt5::Widgets",
         "Qt5::Charts",
         "#",
-        "HGConfig",
         "OpenSSL::Crypto",
-        "ALSA::ALSA",
-        "HGAuthorityService",
-        "HGImageAlgorithmService",
-        "Qt5::Gui",
-        "HGSaveService",
-        "HGFrameService"
-      ]
-    },
-    "testCameraInterface": {
-      "path": "projects\\HGTestCase\\testCameraInterface",
-      "cmake_file": "projects\\HGTestCase\\testCameraInterface\\CMakeLists.txt",
-      "dependencies": [
-        "HGCommon",
-        "HGSensor",
         "HGConfig",
-        "CameraRecognizeInterface",
-        "HGCupDetModule",
-        "HGImageAlgorithmService"
-      ]
-    },
-    "CommonProtocolServiceModule": {
-      "path": "services\\AtomService\\CommonProtocolService",
-      "cmake_file": "services\\AtomService\\CommonProtocolService\\CMakeLists.txt",
-      "dependencies": [
+        "Qt5::Gui",
+        "Qt5::PrintSupport",
         "HGCommon",
-        "HGConfig"
+        "HGImageAlgorithmService",
+        "Qt5::Widgets",
+        "HGFrameService",
+        "SQLite::SQLite3",
+        "HGCommunicateService",
+        "HGAuthorityService",
+        "Qt5::Core",
+        "ALSA::ALSA",
+        "HGSaveService"
       ]
-    },
-    "CommonProtocolService": {
-      "path": "services\\AtomService\\CommonProtocolService",
-      "cmake_file": "services\\AtomService\\CommonProtocolService\\CMakeLists.txt",
-      "dependencies": []
     },
     "SvcAuthority": {
       "path": "services\\AtomService\\SvcAuthority",
@@ -741,14 +670,27 @@
         "HGBaseCommon"
       ]
     },
+    "SvcCommonProtocol": {
+      "path": "services\\AtomService\\SvcCommonProtocol",
+      "cmake_file": "services\\AtomService\\SvcCommonProtocol\\CMakeLists.txt",
+      "dependencies": [
+        "HGConfig",
+        "HGCommon"
+      ]
+    },
+    "HGSvcCommonProtocol": {
+      "path": "services\\AtomService\\SvcCommonProtocol",
+      "cmake_file": "services\\AtomService\\SvcCommonProtocol\\CMakeLists.txt",
+      "dependencies": []
+    },
     "SvcCommunicate": {
       "path": "services\\AtomService\\SvcCommunicate",
       "cmake_file": "services\\AtomService\\SvcCommunicate\\CMakeLists.txt",
       "dependencies": [
-        "HGBaseConfig",
+        "HGSvcFrame",
         "HGSvcLog",
         "#",
-        "HGSvcFrame",
+        "HGBaseConfig",
         "HGBaseCommon"
       ]
     },
@@ -768,8 +710,8 @@
       "dependencies": [
         "HGSvcLog",
         "HGBaseConfig",
-        "HGBaseCommon",
-        "HGSvcSave"
+        "HGSvcSave",
+        "HGBaseCommon"
       ]
     },
     "SvcImageAlgorithm": {
@@ -801,17 +743,17 @@
       "path": "services\\AtomService\\SvcSave",
       "cmake_file": "services\\AtomService\\SvcSave\\CMakeLists.txt",
       "dependencies": [
-        "HGBaseCommon",
-        "HGSvcLog"
+        "HGSvcLog",
+        "HGBaseCommon"
       ]
     },
     "SvcSecurity": {
       "path": "services\\AtomService\\SvcSecurity",
       "cmake_file": "services\\AtomService\\SvcSecurity\\CMakeLists.txt",
       "dependencies": [
+        "HGSvcLog",
         "OpenSSL::Crypto",
-        "HGBaseCommon",
-        "HGSvcLog"
+        "HGBaseCommon"
       ]
     },
     "BaseCommon": {
@@ -845,258 +787,279 @@
       "cmake_file": "services\\Hardware\\HwSensor\\CMakeLists.txt",
       "dependencies": []
     },
-    "HGTestPlugin": {
-      "path": "HGAppModule\\TestPlugin",
-      "cmake_file": "HGAppModule\\TestPlugin\\CMakeLists.txt",
+    "TestCommonCommunicationDemo": {
+      "path": "test\\TestCommonCommunicationDemo",
+      "cmake_file": "test\\TestCommonCommunicationDemo\\CMakeLists.txt",
+      "dependencies": [
+        "OpenSSL::Crypto",
+        "HGConfig",
+        "HGCommon",
+        "CommonProtocolService"
+      ]
+    },
+    "TestCommonCommunicationDemoC": {
+      "path": "test\\TestCommonCommunicationDemoC",
+      "cmake_file": "test\\TestCommonCommunicationDemoC\\CMakeLists.txt",
+      "dependencies": [
+        "#",
+        "OpenSSL::Crypto",
+        "HGConfig",
+        "HGCommon",
+        "CommonProtocolService"
+      ]
+    },
+    "TestPlugin": {
+      "path": "test\\TestPlugin",
+      "cmake_file": "test\\TestPlugin\\CMakeLists.txt",
+      "dependencies": [
+        "Qt5::Gui",
+        "Qt5::Widgets",
+        "Qt5::Designer",
+        "Qt5::Core",
+        "Qt5::UiPlugin"
+      ]
+    },
+    "TestTCPPushClient": {
+      "path": "test\\TestTCPPushClient",
+      "cmake_file": "test\\TestTCPPushClient\\CMakeLists.txt",
+      "dependencies": [
+        "HGCommunicateService",
+        "HGConfig",
+        "HGCommon"
+      ]
+    },
+    "TestYModem": {
+      "path": "test\\TestYModem",
+      "cmake_file": "test\\TestYModem\\CMakeLists.txt",
       "dependencies": []
     },
     "HGUIAnalysisRecordRun": {
       "path": "HGAppModule\\UIAnalysisRecord",
       "cmake_file": "HGAppModule\\UIAnalysisRecord\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUICameraRecognizeRun": {
       "path": "HGAppModule\\UICameraRecognize",
       "cmake_file": "HGAppModule\\UICameraRecognize\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUIChannelRun": {
       "path": "HGAppModule\\UIChannel",
       "cmake_file": "HGAppModule\\UIChannel\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUICurveRun": {
       "path": "HGAppModule\\UICurve",
       "cmake_file": "HGAppModule\\UICurve\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUIEBalanceRun": {
       "path": "HGAppModule\\UIEBalance",
       "cmake_file": "HGAppModule\\UIEBalance\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUIExceptionHandleRun": {
       "path": "HGAppModule\\UIExceptionHandle",
       "cmake_file": "HGAppModule\\UIExceptionHandle\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUIFlowRun": {
       "path": "HGAppModule\\UIFlow",
       "cmake_file": "HGAppModule\\UIFlow\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUILogRun": {
       "path": "HGAppModule\\UILog",
       "cmake_file": "HGAppModule\\UILog\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUILoginRun": {
       "path": "HGAppModule\\UILogin",
       "cmake_file": "HGAppModule\\UILogin\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUIMethodRun": {
       "path": "HGAppModule\\UIMethod",
       "cmake_file": "HGAppModule\\UIMethod\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUIPrintRun": {
       "path": "HGAppModule\\UIPrint",
       "cmake_file": "HGAppModule\\UIPrint\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUIReagentRun": {
       "path": "HGAppModule\\UIReagent",
       "cmake_file": "HGAppModule\\UIReagent\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUIScannerRun": {
       "path": "HGAppModule\\UIScanner",
       "cmake_file": "HGAppModule\\UIScanner\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUISearchRun": {
       "path": "HGAppModule\\UISearch",
       "cmake_file": "HGAppModule\\UISearch\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUISharedFileRun": {
       "path": "HGAppModule\\UISharedFile",
       "cmake_file": "HGAppModule\\UISharedFile\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUITaskRun": {
       "path": "HGAppModule\\UITask",
       "cmake_file": "HGAppModule\\UITask\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUIUartRun": {
       "path": "HGAppModule\\UIUart",
       "cmake_file": "HGAppModule\\UIUart\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
     "HGUIUserAuditRun": {
       "path": "HGAppModule\\UIUserAudit",
       "cmake_file": "HGAppModule\\UIUserAudit\\CMakeLists.txt",
       "dependencies": [
-        "advapi32",
-        "#",
-        "user32",
-        "ws2_32",
         "kernel32",
-        "iphlpapi"
+        "ws2_32",
+        "#",
+        "iphlpapi",
+        "advapi32",
+        "user32"
       ]
     },
-    "HXQCommonCommunicationDemo": {
-      "path": "processes\\CommonCommunicationDemo",
-      "cmake_file": "processes\\CommonCommunicationDemo\\CMakeLists.txt",
+    "HGCmdCommonProtocol": {
+      "path": "processes\\CmdCommonProtocol",
+      "cmake_file": "processes\\CmdCommonProtocol\\CMakeLists.txt",
       "dependencies": []
     },
-    "HXQCommonCommunicationDemoC": {
-      "path": "processes\\CommonCommunicationDemoC",
-      "cmake_file": "processes\\CommonCommunicationDemoC\\CMakeLists.txt",
+    "HGCmdDetectDimentionVux": {
+      "path": "processes\\CmdDetectDimentionVux",
+      "cmake_file": "processes\\CmdDetectDimentionVux\\CMakeLists.txt",
       "dependencies": []
     },
-    "HXQCommonProtocolAPI": {
-      "path": "processes\\CommonProtocolAPI",
-      "cmake_file": "processes\\CommonProtocolAPI\\CMakeLists.txt",
-      "dependencies": []
-    },
-    "HXQDetectDimentionVuxProcess": {
-      "path": "processes\\DetectDimentionVuxProcess",
-      "cmake_file": "processes\\DetectDimentionVuxProcess\\CMakeLists.txt",
-      "dependencies": []
-    },
-    "HXQDFPProcess": {
-      "path": "processes\\DFP",
-      "cmake_file": "processes\\DFP\\CMakeLists.txt",
-      "dependencies": []
-    },
-    "HXQTCPPushClient": {
-      "path": "processes\\TCPPushClient",
-      "cmake_file": "processes\\TCPPushClient\\CMakeLists.txt",
-      "dependencies": []
-    },
-    "HGYModemTest": {
-      "path": "processes\\YModemTest",
-      "cmake_file": "processes\\YModemTest\\CMakeLists.txt",
+    "HGCmdDFP": {
+      "path": "processes\\CmdDFP",
+      "cmake_file": "processes\\CmdDFP\\CMakeLists.txt",
       "dependencies": []
     },
     "HGAppCloud": {
@@ -1129,9 +1092,29 @@
       "cmake_file": "projects\\AppSpectrometer\\CMakeLists.txt",
       "dependencies": []
     },
-    "HXQtestCameraInterface": {
-      "path": "projects\\HGTestCase\\testCameraInterface",
-      "cmake_file": "projects\\HGTestCase\\testCameraInterface\\CMakeLists.txt",
+    "HGTestCommonCommunicationDemo": {
+      "path": "test\\TestCommonCommunicationDemo",
+      "cmake_file": "test\\TestCommonCommunicationDemo\\CMakeLists.txt",
+      "dependencies": []
+    },
+    "HGTestCommonCommunicationDemoC": {
+      "path": "test\\TestCommonCommunicationDemoC",
+      "cmake_file": "test\\TestCommonCommunicationDemoC\\CMakeLists.txt",
+      "dependencies": []
+    },
+    "HGTestPlugin": {
+      "path": "test\\TestPlugin",
+      "cmake_file": "test\\TestPlugin\\CMakeLists.txt",
+      "dependencies": []
+    },
+    "HGTestTCPPushClient": {
+      "path": "test\\TestTCPPushClient",
+      "cmake_file": "test\\TestTCPPushClient\\CMakeLists.txt",
+      "dependencies": []
+    },
+    "HGTestYModem": {
+      "path": "test\\TestYModem",
+      "cmake_file": "test\\TestYModem\\CMakeLists.txt",
       "dependencies": []
     },
     "PluginInterfaceStatic": {
@@ -1365,331 +1348,331 @@
       "path": "HGAppModule\\UIAnalysisRecord",
       "cmake_file": "HGAppModule\\UIAnalysisRecord\\CMakeLists.txt",
       "dependencies": [
-        "HGHwLowerPC",
-        "HGBaseConfig",
-        "HGSvcSecurity",
-        "HGUICurve",
-        "HGUIBaseApp",
-        "HGSvcAuthority",
-        "OpenSSL::Crypto",
         "PluginInterface",
+        "HGHwLowerPC",
         "HGSvcFrame",
         "HGSvcImageAlgorithm",
-        "HGBaseCommon",
-        "HGUIPrint",
-        "ALSA::ALSA",
+        "HGSvcSecurity",
         "HGSvcCommunicate",
         "HGUISearch",
-        "HGSvcSave"
+        "OpenSSL::Crypto",
+        "HGSvcAuthority",
+        "HGUIBaseApp",
+        "HGUIPrint",
+        "HGBaseConfig",
+        "HGUICurve",
+        "HGSvcSave",
+        "ALSA::ALSA",
+        "HGBaseCommon"
       ]
     },
     "HGUIBaseApp": {
       "path": "HGAppModule\\UIBaseApp",
       "cmake_file": "HGAppModule\\UIBaseApp\\CMakeLists.txt",
       "dependencies": [
-        "HGHwLowerPC",
-        "HGBaseConfig",
-        "HGSvcSecurity",
-        "HGSvcFrame",
         "HGSvcImageAlgorithm",
-        "HGBaseCommon",
-        "HGSvcSave"
+        "HGHwLowerPC",
+        "HGSvcFrame",
+        "HGSvcSecurity",
+        "HGBaseConfig",
+        "HGSvcSave",
+        "HGBaseCommon"
       ]
     },
     "HGUICameraRecognize": {
       "path": "HGAppModule\\UICameraRecognize",
       "cmake_file": "HGAppModule\\UICameraRecognize\\CMakeLists.txt",
       "dependencies": [
+        "PluginInterface",
         "HGHwLowerPC",
-        "HGBaseConfig",
+        "HGSvcFrame",
         "HGSvcSecurity",
         "HGUIBaseApp",
-        "PluginInterface",
-        "HGSvcFrame",
-        "HGBaseCommon",
+        "HGBaseConfig",
         "HGIfCameraRecognize",
-        "HGSvcSave"
+        "HGSvcSave",
+        "HGBaseCommon"
       ]
     },
     "HGUIChannel": {
       "path": "HGAppModule\\UIChannel",
       "cmake_file": "HGAppModule\\UIChannel\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGUICurve": {
       "path": "HGAppModule\\UICurve",
       "cmake_file": "HGAppModule\\UICurve\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
-        "ALSA::ALSA",
-        "HGSaveService",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
         "HGBaseAppModule",
-        "HGFrameService"
+        "HGSecurityService",
+        "HGFrameService",
+        "ALSA::ALSA",
+        "HGSaveService"
       ]
     },
     "HGUIEBalance": {
       "path": "HGAppModule\\UIEBalance",
       "cmake_file": "HGAppModule\\UIEBalance\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGSecurityService",
+        "PluginInterface",
+        "HGUartModule",
+        "HGLowerPC",
         "HGConfig",
         "OpenSSL::Crypto",
-        "PluginInterface",
-        "HGLowerPC",
-        "HGAuthorityService",
-        "HGUartModule",
-        "ALSA::ALSA",
-        "HGSaveService",
+        "HGCommon",
         "HGBaseAppModule",
-        "HGFrameService"
+        "HGSecurityService",
+        "HGFrameService",
+        "HGAuthorityService",
+        "ALSA::ALSA",
+        "HGSaveService"
       ]
     },
     "HGUIExceptionHandle": {
       "path": "HGAppModule\\UIExceptionHandle",
       "cmake_file": "HGAppModule\\UIExceptionHandle\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGSearchModule",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGSearchModule",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGUIFlow": {
       "path": "HGAppModule\\UIFlow",
       "cmake_file": "HGAppModule\\UIFlow\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGUILog": {
       "path": "HGAppModule\\UILog",
       "cmake_file": "HGAppModule\\UILog\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGSearchModule",
+        "PluginInterface",
+        "LogInterface",
+        "HGLowerPC",
         "HGConfig",
         "OpenSSL::Crypto",
-        "PluginInterface",
-        "HGLowerPC",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGSearchModule",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "LogInterface",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGUILogin": {
       "path": "HGAppModule\\UILogin",
       "cmake_file": "HGAppModule\\UILogin\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "SQLite::SQLite3",
-        "HGCommunicateService",
-        "HGOnlinePlatformModule",
-        "HGSecurityService",
-        "HGOnlinePlatformInterface",
+        "PluginInterface",
         "#",
+        "HGLowerPC",
         "HGConfig",
         "OpenSSL::Crypto",
-        "PluginInterface",
-        "HGLowerPC",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGOnlinePlatformInterface",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGOnlinePlatformModule",
+        "SQLite::SQLite3",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGUIMethod": {
       "path": "HGAppModule\\UIMethod",
       "cmake_file": "HGAppModule\\UIMethod\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGUIPrint": {
       "path": "HGAppModule\\UIPrint",
       "cmake_file": "HGAppModule\\UIPrint\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGUIReagent": {
       "path": "HGAppModule\\UIReagent",
       "cmake_file": "HGAppModule\\UIReagent\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGUISearch": {
       "path": "HGAppModule\\UISearch",
       "cmake_file": "HGAppModule\\UISearch\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGUISharedFile": {
       "path": "HGAppModule\\UISharedFile",
       "cmake_file": "HGAppModule\\UISharedFile\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGUITask": {
       "path": "HGAppModule\\UITask",
       "cmake_file": "HGAppModule\\UITask\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGUIUart": {
       "path": "HGAppModule\\UIUart",
       "cmake_file": "HGAppModule\\UIUart\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGSecurityService",
-        "HGConfig",
-        "OpenSSL::Crypto",
         "PluginInterface",
         "HGLowerPC",
+        "HGConfig",
+        "OpenSSL::Crypto",
+        "HGCommon",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGUIUserAudit": {
       "path": "HGAppModule\\UIUserAudit",
       "cmake_file": "HGAppModule\\UIUserAudit\\CMakeLists.txt",
       "dependencies": [
-        "HGCommon",
-        "HGCommunicateService",
-        "HGSecurityService",
+        "HGLowerPC",
         "HGConfig",
         "OpenSSL::Crypto",
-        "HGLowerPC",
+        "HGCommon",
+        "HGImageAlgorithmService",
+        "HGBaseAppModule",
+        "HGSecurityService",
+        "HGFrameService",
+        "HGCommunicateService",
         "HGAuthorityService",
         "ALSA::ALSA",
-        "HGImageAlgorithmService",
-        "HGSaveService",
-        "HGBaseAppModule",
-        "HGFrameService"
+        "HGSaveService"
       ]
     },
     "HGIfDetectDimentionVux": {
@@ -1702,9 +1685,9 @@
       "cmake_file": "interfaces\\IfOnlinePlatform\\CMakeLists.txt",
       "dependencies": []
     },
-    "HXQDetectDimentionVuxModule": {
-      "path": "modules\\DetectDimentionVuxModule",
-      "cmake_file": "modules\\DetectDimentionVuxModule\\CMakeLists.txt",
+    "HGCoreDetectDimentionVux": {
+      "path": "modules\\CoreDetectDimentionVux",
+      "cmake_file": "modules\\CoreDetectDimentionVux\\CMakeLists.txt",
       "dependencies": []
     },
     "HGSvcDataPostProcess": {
