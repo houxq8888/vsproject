@@ -64,7 +64,7 @@ if(BUILD_SHARED_LIBS)
         message(STATUS "Windows平台：只包含其他库的头文件")
     else()
         HG_CMAKE_MODULE_DEPEND_PUB(
-            HGCommon
+            HGBaseCommon
             ${OpenCV_LIBRARIES}
             ${LOG4CPLUS_LIBRARIES}
             ${QT_LIBRARIES}
@@ -73,7 +73,7 @@ if(BUILD_SHARED_LIBS)
         HG_CMAKE_ADD_SHARED(PluginInterface inc src ${MOC_SRCS})
         message(STATUS "Linux平台：包含整个库")
         HG_CMAKE_MODULE_DEPEND(
-            HGCommon
+            HGBaseCommon
             ${OpenCV_LIBRARIES}
             ${LOG4CPLUS_LIBRARIES}
             ${QT_LIBRARIES}
@@ -94,7 +94,7 @@ if(BUILD_STATIC_LIBS)
     if(WIN32)
         message(STATUS "Windows平台：链接所有依赖库")
         HG_CMAKE_MODULE_DEPEND_PUB(
-            ${CMAKE_SOURCE_DIR}/../3rdparty/lib/libPackFunInterface.a
+            ${CMAKE_SOURCE_DIR}/../3rdparty/lib/libHGIfPackFun.a
             ${QT_LIBRARIES}
         )
     else()

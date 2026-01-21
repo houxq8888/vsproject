@@ -1,0 +1,81 @@
+模块分层视图:
+
+第 0 层 基础设施层 (Base前缀):
+  - BaseCommon
+  - BaseConfig
+
+第 1 层 原子服务层 (Svc前缀):
+  - SvcLog
+  - SvcAuthority
+  - SvcInteractive
+  - SvcImageAlgorithm
+  - SvcDataPostProcess
+  - SvcSave
+  - SvcFrame
+  - SvcCommunicate
+  - SvcError
+  - SvcOTA
+  - SvcSecurity
+
+第 2 层 硬件抽象层 (Hw前缀):
+  - HwRobot
+  - HwSensor
+  - HwLowerPC
+
+第 3 层 模块层 (Core前缀):
+  - CoreCupDet
+  - CoreDashboard
+  - CoreOnlinePlatform
+  - CoreV6
+  - CoreLog
+
+第 4 层 接口层 (If前缀):
+  - IfCameraControl
+  - IfCameraRecognize
+  - IfCupDet
+  - IfOnlinePlatform
+  - IfV6
+  - IfLog
+  - IfPackFunc
+
+第 5 层 UI应用模块层 (UI前缀):
+  - UIAnalysisRecord
+  - UIBaseApp
+  - UICameraRecognize
+  - UIChannel
+  - UICurve
+  - UISharedFile
+  - UIReagent
+  - UIScanner
+  - UISearch
+  - UIUart
+  - UILog
+  - UILogin
+  - UIMethod
+  - UIUserAudit
+  - UITask
+  - UIFlow
+  - UIPrint
+  - UIEBalance
+  - UIExceptionHandle
+  - UIPluginInterface
+
+第 6 层 应用层 (App前缀):
+  - AppDashboard
+  - AppOnlinePlatform
+  - AppComDebug
+  - AppCloud
+  - AppCupDet
+  - AppSpectrometer
+
+第 6 层 应用层 (Cmd前缀):
+  - CmdCommonProtocol
+  - CmdDetectDimentionVux
+  - CmdDFP
+
+第 7 层 测试层 (Test前缀):
+  - TestPlugin
+  - TestCommonCommunicationDemo
+  - TestCommonCommunicationDemoC
+  - TestTCPPushClient
+  - TestYModem

@@ -1,0 +1,27 @@
+set(LIBRARY_VERSION_MAJOR 1)
+set(LIBRARY_VERSION_MINOR 0)
+set(LIBRARY_VERSION_PATCH 0)
+
+HG_CMAKE_ADD_MODULE(SvcSecurity inc src)
+
+if (PLATFORM STREQUAL "x64")
+HG_CMAKE_MODULE_DEPEND_PUB( 
+    HGBaseCommon
+    HGSvcLog
+    OpenSSL::Crypto
+)
+
+HG_CMAKE_ADD_SHARED(HGSvcSecurity inc src)
+HG_CMAKE_MODULE_DEPEND(
+    HGBaseCommon
+    HGSvcLog
+    OpenSSL::Crypto
+)
+elseif (PLATFORM STREQUAL "win32")
+HG_CMAKE_ADD_STATIC(HGSvcSecurity inc src)
+endif()
+
+set_target_properties(HGSvcSecurity PROPERTIES 
+    VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}
+    SOVERSION ${LIBRARY_VERSION_MAJOR}
+)
