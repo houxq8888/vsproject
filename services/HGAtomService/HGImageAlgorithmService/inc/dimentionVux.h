@@ -7,7 +7,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-namespace HXQACHINE {
+namespace HGMACHINE {
 
 class HxqDimentionVux : public HGMACHINE::HGAbsenseDetect
 {
@@ -20,7 +20,6 @@ public:
 private:
 
 };
-
 }
 #ifdef __cplusplus
 }

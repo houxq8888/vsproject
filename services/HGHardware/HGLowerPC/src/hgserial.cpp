@@ -260,7 +260,7 @@ void HGSerial::onReadEvent(const char* portName,unsigned int readBufferLen){
 //     // if (!m_data_available_cv.wait_for(lock, std::chrono::milliseconds(timeout), [this] { return m_serial_port.IsDataAvailable(); })) {
 //     //     std::ostringstream log;
 //     //     log << HGLOWERPCNAME << "The Read() call timed out waiting for additional data.";
-//     //     HGLog4Cplus::getLogInstance(LOG_PATH)->logout(log.str().c_str(), LOGWARN);
+//     //     HGLogService::getLogInstance(HGLogService::getLogPath())->logout(log.str().c_str(), LOGWARN);
 //     //     return -1;
 //     // }
 
@@ -272,12 +272,12 @@ void HGSerial::onReadEvent(const char* portName,unsigned int readBufferLen){
 //     } catch (const ReadTimeout&) {
 //         std::ostringstream log;
 //         log << HGLOWERPCNAME << "The Read() call timed out waiting for additional data.";
-//         // HGLog4Cplus::getLogInstance(LOG_PATH)->logout(log.str().c_str(), LOGWARN);
+//         // HGLogService::getLogInstance(HGLogService::getLogPath())->logout(log.str().c_str(), LOGWARN);
 //         return -1;
 //     } catch (const std::exception& e) {
 //         std::ostringstream log;
 //         log << HGLOWERPCNAME << "An error occurred during Read(): " << e.what();
-//         HGLog4Cplus::getLogInstance(LOG_PATH)->logout(log.str().c_str(), LOGERROR);
+//         HGLogService::getLogInstance(HGLogService::getLogPath())->logout(log.str().c_str(), LOGERROR);
 //         return -1;
 //     }
 

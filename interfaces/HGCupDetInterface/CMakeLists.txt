@@ -8,7 +8,6 @@ HG_CMAKE_ADD_MODULE(CupDetInterface inc src)
 
 HG_CMAKE_MODULE_DEPEND_PUB( 
     HGCupDetModule
-    HGSensor
     HGImageAlgorithmService
     HGCommon
     ${ZXING_LIBRARY}
@@ -19,7 +18,6 @@ HG_CMAKE_ADD_SHARED(HGCupDetInterface inc src)
 
 HG_CMAKE_MODULE_DEPEND(
     HGCupDetModule
-    HGSensor
     HGImageAlgorithmService
     HGCommon
     ${ZXING_LIBRARY}
@@ -29,7 +27,6 @@ elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_ADD_STATIC(HGCupDetInterface inc src
     ../../services/HGCommon/inc                                 ../../services/HGCommon/src
     ../../services/HGConfig/inc                                 ../../services/HGConfig/src    
-    ../../services/HGHardware/HGSensor/inc                      ../../services/HGHardware/HGSensor/src
     ../../services/HGAtomService/HGImageAlgorithmService/inc    ../../services/HGAtomService/HGImageAlgorithmService/src
     ../../services/HGAtomService/HGSaveService/inc              ../../services/HGAtomService/HGSaveService/src
     ../../modules/HGCupDetModule/inc                            ../../modules/HGCupDetModule/src

@@ -239,6 +239,201 @@ HGBaseAppModuleStatic_autogen/fast:
 .PHONY : HGBaseAppModuleStatic_autogen/fast
 
 #=============================================================================
+# Target rules for targets named PluginInterfaceModule
+
+# Build rule for target.
+PluginInterfaceModule: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PluginInterfaceModule
+.PHONY : PluginInterfaceModule
+
+# fast build rule for target.
+PluginInterfaceModule/fast:
+	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule.dir/build
+.PHONY : PluginInterfaceModule/fast
+
+#=============================================================================
+# Target rules for targets named PluginInterfaceStatic
+
+# Build rule for target.
+PluginInterfaceStatic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PluginInterfaceStatic
+.PHONY : PluginInterfaceStatic
+
+# fast build rule for target.
+PluginInterfaceStatic/fast:
+	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic.dir/build
+.PHONY : PluginInterfaceStatic/fast
+
+#=============================================================================
+# Target rules for targets named PluginInterfaceModule_autogen_timestamp_deps
+
+# Build rule for target.
+PluginInterfaceModule_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PluginInterfaceModule_autogen_timestamp_deps
+.PHONY : PluginInterfaceModule_autogen_timestamp_deps
+
+# fast build rule for target.
+PluginInterfaceModule_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule_autogen_timestamp_deps.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule_autogen_timestamp_deps.dir/build
+.PHONY : PluginInterfaceModule_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named PluginInterfaceModule_autogen
+
+# Build rule for target.
+PluginInterfaceModule_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PluginInterfaceModule_autogen
+.PHONY : PluginInterfaceModule_autogen
+
+# fast build rule for target.
+PluginInterfaceModule_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceModule_autogen.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceModule_autogen.dir/build
+.PHONY : PluginInterfaceModule_autogen/fast
+
+#=============================================================================
+# Target rules for targets named PluginInterfaceStatic_autogen_timestamp_deps
+
+# Build rule for target.
+PluginInterfaceStatic_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PluginInterfaceStatic_autogen_timestamp_deps
+.PHONY : PluginInterfaceStatic_autogen_timestamp_deps
+
+# fast build rule for target.
+PluginInterfaceStatic_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen_timestamp_deps.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen_timestamp_deps.dir/build
+.PHONY : PluginInterfaceStatic_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named PluginInterfaceStatic_autogen
+
+# Build rule for target.
+PluginInterfaceStatic_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PluginInterfaceStatic_autogen
+.PHONY : PluginInterfaceStatic_autogen
+
+# fast build rule for target.
+PluginInterfaceStatic_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f pluginInterface\CMakeFiles\PluginInterfaceStatic_autogen.dir\build.make pluginInterface/CMakeFiles/PluginInterfaceStatic_autogen.dir/build
+.PHONY : PluginInterfaceStatic_autogen/fast
+
+#=============================================================================
+# Target rules for targets named SearchModule
+
+# Build rule for target.
+SearchModule: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SearchModule
+.PHONY : SearchModule
+
+# fast build rule for target.
+SearchModule/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule.dir\build.make HGSearchModule/CMakeFiles/SearchModule.dir/build
+.PHONY : SearchModule/fast
+
+#=============================================================================
+# Target rules for targets named HGSearchModuleStatic
+
+# Build rule for target.
+HGSearchModuleStatic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModuleStatic
+.PHONY : HGSearchModuleStatic
+
+# fast build rule for target.
+HGSearchModuleStatic/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic.dir/build
+.PHONY : HGSearchModuleStatic/fast
+
+#=============================================================================
+# Target rules for targets named HGSearchModuleRun
+
+# Build rule for target.
+HGSearchModuleRun: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModuleRun
+.PHONY : HGSearchModuleRun
+
+# fast build rule for target.
+HGSearchModuleRun/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun.dir/build
+.PHONY : HGSearchModuleRun/fast
+
+#=============================================================================
+# Target rules for targets named SearchModule_autogen_timestamp_deps
+
+# Build rule for target.
+SearchModule_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SearchModule_autogen_timestamp_deps
+.PHONY : SearchModule_autogen_timestamp_deps
+
+# fast build rule for target.
+SearchModule_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/SearchModule_autogen_timestamp_deps.dir/build
+.PHONY : SearchModule_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named SearchModule_autogen
+
+# Build rule for target.
+SearchModule_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SearchModule_autogen
+.PHONY : SearchModule_autogen
+
+# fast build rule for target.
+SearchModule_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\SearchModule_autogen.dir\build.make HGSearchModule/CMakeFiles/SearchModule_autogen.dir/build
+.PHONY : SearchModule_autogen/fast
+
+#=============================================================================
+# Target rules for targets named HGSearchModuleStatic_autogen_timestamp_deps
+
+# Build rule for target.
+HGSearchModuleStatic_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModuleStatic_autogen_timestamp_deps
+.PHONY : HGSearchModuleStatic_autogen_timestamp_deps
+
+# fast build rule for target.
+HGSearchModuleStatic_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen_timestamp_deps.dir/build
+.PHONY : HGSearchModuleStatic_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named HGSearchModuleStatic_autogen
+
+# Build rule for target.
+HGSearchModuleStatic_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModuleStatic_autogen
+.PHONY : HGSearchModuleStatic_autogen
+
+# fast build rule for target.
+HGSearchModuleStatic_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleStatic_autogen.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleStatic_autogen.dir/build
+.PHONY : HGSearchModuleStatic_autogen/fast
+
+#=============================================================================
+# Target rules for targets named HGSearchModuleRun_autogen_timestamp_deps
+
+# Build rule for target.
+HGSearchModuleRun_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModuleRun_autogen_timestamp_deps
+.PHONY : HGSearchModuleRun_autogen_timestamp_deps
+
+# fast build rule for target.
+HGSearchModuleRun_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun_autogen_timestamp_deps.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen_timestamp_deps.dir/build
+.PHONY : HGSearchModuleRun_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named HGSearchModuleRun_autogen
+
+# Build rule for target.
+HGSearchModuleRun_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HGSearchModuleRun_autogen
+.PHONY : HGSearchModuleRun_autogen
+
+# fast build rule for target.
+HGSearchModuleRun_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f HGSearchModule\CMakeFiles\HGSearchModuleRun_autogen.dir\build.make HGSearchModule/CMakeFiles/HGSearchModuleRun_autogen.dir/build
+.PHONY : HGSearchModuleRun_autogen/fast
+
+#=============================================================================
 # Target rules for targets named LogModule
 
 # Build rule for target.
@@ -375,13 +570,28 @@ help:
 	@echo ... HGLogModuleRun_autogen_timestamp_deps
 	@echo ... HGLogModuleStatic_autogen
 	@echo ... HGLogModuleStatic_autogen_timestamp_deps
+	@echo ... HGSearchModuleRun_autogen
+	@echo ... HGSearchModuleRun_autogen_timestamp_deps
+	@echo ... HGSearchModuleStatic_autogen
+	@echo ... HGSearchModuleStatic_autogen_timestamp_deps
 	@echo ... LogModule_autogen
 	@echo ... LogModule_autogen_timestamp_deps
+	@echo ... PluginInterfaceModule_autogen
+	@echo ... PluginInterfaceModule_autogen_timestamp_deps
+	@echo ... PluginInterfaceStatic_autogen
+	@echo ... PluginInterfaceStatic_autogen_timestamp_deps
+	@echo ... SearchModule_autogen
+	@echo ... SearchModule_autogen_timestamp_deps
 	@echo ... BaseAppModule
 	@echo ... HGBaseAppModuleStatic
 	@echo ... HGLogModuleRun
 	@echo ... HGLogModuleStatic
+	@echo ... HGSearchModuleRun
+	@echo ... HGSearchModuleStatic
 	@echo ... LogModule
+	@echo ... PluginInterfaceModule
+	@echo ... PluginInterfaceStatic
+	@echo ... SearchModule
 .PHONY : help
 
 

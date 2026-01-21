@@ -5,7 +5,7 @@
 
 
 
-namespace HXQACHINE {
+namespace HGMACHINE {
 
 #ifdef __cplusplus
 extern "C" {

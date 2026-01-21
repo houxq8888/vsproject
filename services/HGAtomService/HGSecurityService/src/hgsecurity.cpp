@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <sstream>
 #include <fstream>
-#include "hglog4cplus.h"
+#include "hglogservice.h"
 #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 #pragma comment(lib, "iphlpapi.lib")
 #define SAFE_DEL_ARRAY(ptr) if (ptr){delete[] ptr; ptr=NULL;}
@@ -234,14 +234,14 @@ bool isRightAuthority(const std::string &in){
     logtext<<"cpu serial number:"<<cpuserial;
 #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 #else
-    HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+    HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
 #endif
     for (int i=0;i<int(strin.size());i++){
         logtext.str("");
         logtext<<"MAC:"<<strin[i];
 #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 #else
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+        HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
 #endif
         printf("MAC:%s\n",strin[i].c_str());
         std::string ss;
@@ -251,14 +251,14 @@ bool isRightAuthority(const std::string &in){
 
 #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 #else
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout("failed to endecrypt",LOGERROR);
+            HGLogService::getInstance(HGLogService::getLogPath())->logError("failed to endecrypt");
 #endif
             return false;
         }
         printf("ss:%s\n",ss.c_str());
 #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 #else
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss,LOGINFO);
+        HGLogService::getInstance(HGLogService::getLogPath())->logInfo(ss);
 #endif
         if (in == ss){
             return true;
@@ -268,4 +268,3 @@ bool isRightAuthority(const std::string &in){
 }
 
 }
-

@@ -7522,6 +7522,9 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/common.cpp.obj: D:/virt
   D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/config.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h \
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/HGLogService_global.h \
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/hglogservice.h \
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/log_backend_interface.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h \
@@ -7531,7 +7534,6 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/common.cpp.obj: D:/virt
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h \
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGMacroData.h \
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/hgcommonutility.h \
-  D:/virtualMachine/github/vsproject/services/HGCommon/inc/hglog4cplus.h \
   D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h \
   D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgcsv.h \
   D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgpdf.h \
@@ -9274,6 +9276,9 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgmanipulatewidget.cpp.
   D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/config.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h \
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/HGLogService_global.h \
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/hglogservice.h \
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/log_backend_interface.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h \
@@ -9283,7 +9288,6 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgmanipulatewidget.cpp.
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h \
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGMacroData.h \
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/hgcommonutility.h \
-  D:/virtualMachine/github/vsproject/services/HGCommon/inc/hglog4cplus.h \
   D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h \
   D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgcsv.h \
   D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgpdf.h \
@@ -11699,6 +11703,9 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
   D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/config.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h \
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/HGLogService_global.h \
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/hglogservice.h \
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/log_backend_interface.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h \
@@ -11708,7 +11715,6 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h \
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGMacroData.h \
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/hgcommonutility.h \
-  D:/virtualMachine/github/vsproject/services/HGCommon/inc/hglog4cplus.h \
   D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h \
   D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgcsv.h \
   D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgpdf.h \
@@ -12630,6 +12636,9 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mykeyboard.cpp.obj: D:/
   D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/config.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h \
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/HGLogService_global.h \
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/hglogservice.h \
+  D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/log_backend_interface.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h \
   D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h \
@@ -12639,7 +12648,6 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mykeyboard.cpp.obj: D:/
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h \
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGMacroData.h \
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/hgcommonutility.h \
-  D:/virtualMachine/github/vsproject/services/HGCommon/inc/hglog4cplus.h \
   D:/virtualMachine/github/vsproject/services/HGCommon/inc/libpinyinHelp.h \
   D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h \
   D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgcsv.h \
@@ -15284,6 +15292,8 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/QVariant:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h:
 
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/hglogservice.h:
+
 D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGCommon_global.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtGui/qpixmap.h:
@@ -15469,6 +15479,8 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/crtdefs.h:
 D:/Qt/6.9.1/mingw_64/include/QtCore/qfunctionpointer.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio:
+
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/log_backend_interface.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qtversion.h:
 
@@ -15713,8 +15725,6 @@ D:/Qt/6.9.1/mingw_64/include/QtCore/qtcoreglobal.h:
 D:/Qt/6.9.1/mingw_64/include/QtGui/qtextoption.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qtdeprecationdefinitions.h:
-
-D:/virtualMachine/github/vsproject/services/HGCommon/inc/hglog4cplus.h:
 
 D:/Qt/6.9.1/mingw_64/include/QtCore/qtdeprecationmarkers.h:
 
@@ -17089,6 +17099,8 @@ D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/globalsinglet
 D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/systeminfocache.h:
 
 D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h:
+
+D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/HGLogService_global.h:
 
 D:/virtualMachine/github/vsproject/services/HGAtomService/HGSecurityService/inc/HGSecurityService_global.h:
 

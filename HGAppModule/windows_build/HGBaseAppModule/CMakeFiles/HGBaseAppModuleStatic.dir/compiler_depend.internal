@@ -7547,6 +7547,9 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/common.cpp.obj
  D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/config.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h
+ D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/HGLogService_global.h
+ D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/hglogservice.h
+ D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/log_backend_interface.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h
@@ -7556,7 +7559,6 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/common.cpp.obj
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGMacroData.h
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/hgcommonutility.h
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/hglog4cplus.h
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgcsv.h
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgpdf.h
@@ -9302,6 +9304,9 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgmanipulatewidget.cpp.
  D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/config.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h
+ D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/HGLogService_global.h
+ D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/hglogservice.h
+ D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/log_backend_interface.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h
@@ -9311,7 +9316,6 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/hgmanipulatewidget.cpp.
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGMacroData.h
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/hgcommonutility.h
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/hglog4cplus.h
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgcsv.h
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgpdf.h
@@ -11731,6 +11735,9 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj
  D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/config.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h
+ D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/HGLogService_global.h
+ D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/hglogservice.h
+ D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/log_backend_interface.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h
@@ -11740,7 +11747,6 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGMacroData.h
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/hgcommonutility.h
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/hglog4cplus.h
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgcsv.h
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgpdf.h
@@ -12663,6 +12669,9 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mykeyboard.cpp.obj
  D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/config.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h
+ D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/HGLogService_global.h
+ D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/hglogservice.h
+ D:/virtualMachine/github/vsproject/services/HGAtomService/HGLogService/inc/log_backend_interface.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h
@@ -12672,7 +12681,6 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mykeyboard.cpp.obj
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGMacroData.h
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/hgcommonutility.h
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/hglog4cplus.h
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/libpinyinHelp.h
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgcsv.h

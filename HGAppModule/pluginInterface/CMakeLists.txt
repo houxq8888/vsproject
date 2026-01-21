@@ -5,16 +5,19 @@ set(LIBRARY_VERSION_PATCH 1)
 file(GLOB MOC_HEADERS "inc/*.h")
 
 # Define Qt libraries based on platform and compilation environment
-if (PLATFORM STREQUAL "x64")
-    # Linux native compilation - Qt5
+if (PLATFORM STREQUAL "x64" OR PLATFORM STREQUAL "x64_release")
+    # Linux native compilation - Qt6
     set(QT_LIBRARIES
-        Qt5::Gui
-        Qt5::Core
-        Qt5::Widgets
-        Qt5::Charts
-        Qt5::PrintSupport
+        Qt6::Gui
+        Qt6::Core
+        Qt6::Widgets
+        Qt6::Charts
+        Qt6::PrintSupport
     )
-    qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+    # Qt6 uses automatic MOC, no need for qt5_wrap_cpp
+    set(CMAKE_AUTOMOC ON)
+    set(CMAKE_AUTOUIC ON)
+    set(CMAKE_AUTORCC ON)
 elseif (PLATFORM STREQUAL "win32")
     if(WIN32)
         # Windows native compilation - Qt6
@@ -30,15 +33,18 @@ elseif (PLATFORM STREQUAL "win32")
         set(CMAKE_AUTOUIC ON)
         set(CMAKE_AUTORCC ON)
     else()
-        # Linux cross-compilation for Windows - Qt5
+        # Linux cross-compilation for Windows - Qt6
         set(QT_LIBRARIES
-            Qt5::Gui
-            Qt5::Core
-            Qt5::Widgets
-            Qt5::Charts
-            Qt5::PrintSupport
+            Qt6::Gui
+            Qt6::Core
+            Qt6::Widgets
+            Qt6::Charts
+            Qt6::PrintSupport
         )
-        qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+        # Qt6 uses automatic MOC, no need for qt5_wrap_cpp
+        set(CMAKE_AUTOMOC ON)
+        set(CMAKE_AUTOUIC ON)
+        set(CMAKE_AUTORCC ON)
     endif()
 endif()
 
@@ -106,5 +112,3 @@ if(BUILD_STATIC_LIBS)
         SOVERSION ${LIBRARY_VERSION_MAJOR}
     )
 endif()
-
-

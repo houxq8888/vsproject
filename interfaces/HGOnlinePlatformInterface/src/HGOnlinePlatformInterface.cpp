@@ -11,7 +11,7 @@
 #include "hgserial.h"
 #include "hgsecurity.h"
 #include "HGMacroData.h"
-#include "hglog4cplus.h"
+#include "HGLogService.h"
 #include "hgcommonutility.h"
 
 
@@ -279,7 +279,7 @@ void makeCurSample()
     std::map<std::string, std::string> taskInfo = getCurRunningTaskInfo();
     std::map<std::vector<uint8_t>, std::vector<uint8_t>> sendMethodInfo;
     printf("cirlce no:%s\n",taskInfo["circleNo"].c_str());
-    HGLog4Cplus::getLogInstance(LOG_PATH)->logout("circle no:"+taskInfo["circleNo"],LOGINFO);
+    HGLogService::getLogInstance(LOG_PATH)->logout("circle no:"+taskInfo["circleNo"],LOGINFO);
     std::string paramstr = taskInfo["param"];
     int circleNo = std::atoi(taskInfo["circleNo"].c_str());
     std::map<std::string, std::string> wparam = getParamMap(paramstr);

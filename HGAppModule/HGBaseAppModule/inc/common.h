@@ -12,7 +12,6 @@
 #include "HGExactTime.h"
 #include "hgcommonutility.h"
 #include "hgxml.h"
-#include "hglog4cplus.h"
 #include "HGMacroData.h"
 #include "hgprinter.h"
 #include "config.h"

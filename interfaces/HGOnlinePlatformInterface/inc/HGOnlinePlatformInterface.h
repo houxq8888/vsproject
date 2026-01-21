@@ -22,7 +22,7 @@
 #include "hgcsv.h"
 #include "hgserial.h"
 #include "hgprinter.h"
-#include "hglog4cplus.h"
+#include "hglogservice.h"
 #include "HGAuthorityService.h"
 
 

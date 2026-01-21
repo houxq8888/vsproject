@@ -14,6 +14,7 @@
 #include <QPainter>
 #include <QTextDocument>
 #include "hginputsearchconditionwidget.h"
+#include "loginterface.h"
 
 class HtmlDelegate : public QStyledItemDelegate
 {
@@ -105,6 +106,7 @@ private:
     int m_totalSearchResults;
     std::vector<std::map<std::string,std::string>> m_searchResults;
     static const int PAGE_SIZE = 1000;
+    HGMACHINE::LogInterface* m_logInterface;
 };
 
 #endif // HGLOGWIDGET_H

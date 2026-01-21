@@ -53,7 +53,6 @@ int countInstances(const std::string& appName);
 bool isProcessRunning(const std::string& processName);
 bool isParentRunning();
 std::vector<std::map<std::string,std::string>> getWirelessIP();
-
 std::string getStandardCurTime();
 std::string getFileNameFromTime();
 typedef struct tagTIME_STRUECT {
@@ -69,7 +68,8 @@ typedef struct tagTIME_STRUECT {
 }TIME_STRUECT;
 
 void decodeStandardTime(const std::string& time, TIME_STRUECT& timeS);
-
+bool getUSBDevices(const uint16_t& vendorID,const uint16_t& productID);
+bool removeFile(const std::string& sFile);
 
 }
 #ifdef __cplusplus

@@ -809,7 +809,6 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/shlwapi.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/shtypes.h \
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/tinyxml2.h \
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/hglog4cplus.h \
  D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGMacroData.h \
  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/opencv.hpp \
  D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/opencv_modules.hpp \

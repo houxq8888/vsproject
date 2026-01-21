@@ -3,7 +3,7 @@
 #include <sstream>
 #include <iomanip>
 #include <iostream>
-#include "hglog4cplus.h"
+#include "HGLogService.h"
 #include "hgcommonutility.h"
 
 using namespace HGMACHINE;
@@ -117,13 +117,13 @@ void HGComDebugWidget::fnSlotListenTimerOut()
 //        std::stringstream ss;
 //        ss<<std::hex;
 //        printf("len:%d\n",int(contents.size()));
-////        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(std::to_string(contents.size()),LOGINFO);
+////        HGLogService::getLogInstance(LOG_PATH)->logout(std::to_string(contents.size()),LOGINFO);
 //        for (int i=0;i<int(contents.size());i++){
 //            ss<<std::setw(2)<<std::setfill('0')<<(int)contents[i]<<"  ";
 //        }
 //        std::string hex_str=ss.str();
 //        printf("\n[hex]:%s\n",hex_str.c_str());
-////        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(hex_str,LOGINFO);
+////        HGLogService::getLogInstance(LOG_PATH)->logout(hex_str,LOGINFO);
         // start=HGGetTime();
         // HGSerial::deSerialize(contents);
         // end=HGGetTime();

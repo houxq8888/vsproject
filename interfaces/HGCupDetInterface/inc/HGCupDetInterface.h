@@ -4,27 +4,30 @@
 #include "HGMacroData.h"
 #include "HGCupDetInterface_global.h"
 #include <string>
+#include "HGError.h"
 
 namespace HGMACHINE {
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+class HGCupDetInterface
+{
+public:
+    HGCupDetInterface();
+    ~HGCupDetInterface();
 
-    void openUSBCamera(const int &index);
-    HGImg2D getImgFromUSBOneShot();
-// det plastic cup is absense or not,input img struct and roi
     void detCupExistence(const HGImg2D &img, const HGRect2D &roi);
     void detCircle(const HGImg2D &img, const HGRect2D &roi);
-// get absense flag,true:absense,flag:non absense
     bool getAbsenseFlag();
-// get detect dst img
     HGImg2D getDst();
     int getTargetPosX();
-    void closeUSBCamera();
+
+    ErrorInfo getLastError() const;
+    void clearError();
+
+private:
+    class Impl;
+    Impl* m_impl;
+};
+
 }
 
-#ifdef __cplusplus
-}
-#endif
 #endif // HGCUPDETINTERFACE_H

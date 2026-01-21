@@ -11,7 +11,7 @@
 #include "hgonlinerwDB.h"
 #include <vector>
 #include <map>
-#include "hglog4cplus.h"
+#include "HGLogService.h"
 
 namespace HGMACHINE {
         StyleALT::StyleALT(int type, std::string dbName)
@@ -118,7 +118,7 @@ namespace HGMACHINE {
                 result.push_back(m_taskArr[i]->selfCheck());
 
                 logtext<<"device status:"<<result[i];
-                HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+                HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
             }
             return result;
         }

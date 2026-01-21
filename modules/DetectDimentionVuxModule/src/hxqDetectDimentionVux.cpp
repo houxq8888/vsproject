@@ -1,10 +1,10 @@
 #include "hxqDetectDimentionVux.h"
 #include <opencv2/opencv.hpp>
-#include "hglog4cplus.h"
+#include "hglogservice.h"
 #include "hgcommonutility.h"
 #include "hxqDetectDimentionVux_global.h"
 
-namespace HXQACHINE {
+namespace HGMACHINE {
 
 HXQDetectDimentionVux::HXQDetectDimentionVux()
 {
@@ -19,13 +19,13 @@ void HXQDetectDimentionVux::detDimentionVux(const HGImg2D &img, const HGRect2D &
     std::ostringstream ss, press;
     press << HXQDETECTDIIMENTIONVUXNAME<<"|"<<HXQDETECTDIIMENTIONVUXAUTHOR<<"|";
     ss<<press.str()<<"start det dimention vux";
-    HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGINFO);
+    HGLogService::getInstance(HGLogService::getLogPath())->logInfo(ss.str());
     cv::Rect inputRoi(cv::Point(roi.x1,roi.y1),cv::Point(roi.x2,roi.y2));
 
     ss.str("");
     ss<<press.str()<<"input ROI["<<inputRoi.tl().x<<","<<inputRoi.tl().y<<","<<inputRoi.br().x<<","<<inputRoi.br().y
      <<"],img info["<<img.width<<","<<img.height<<","<<img.type;
-    HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGINFO);
+    HGLogService::getInstance(HGLogService::getLogPath())->logInfo(ss.str());
 
     cv::Mat mat(img.height,img.width,CV_8UC1,(uchar*)img.data);
 
@@ -38,6 +38,6 @@ void HXQDetectDimentionVux::detDimentionVux(const HGImg2D &img, const HGRect2D &
     m_dst.height=mat.rows;
     ss.str("");
     ss<<press.str()<<"elapsed time:"<<HGCalTimeElapsed(start,end)<<" ms";
-    HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGINFO);
+    HGLogService::getInstance(HGLogService::getLogPath())->logInfo(ss.str());
 }
 }

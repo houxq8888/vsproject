@@ -8,7 +8,7 @@
 
 using namespace HGMACHINE;
 
-namespace HXQACHINE {
+namespace HGMACHINE {
 
 class HXQDetectDimentionVux
 {
@@ -25,6 +25,7 @@ private:
     float m_dimentionValue;
     HGImg2D m_dst;
 };
+
 }
 
 #endif // HXQDETECTDIMENTIONVUX_H

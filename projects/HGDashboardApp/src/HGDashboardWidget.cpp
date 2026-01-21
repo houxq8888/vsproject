@@ -1,7 +1,7 @@
 #include "HGDashboardWidget.h"
 #include <QDebug>
 #include <QFileDialog>
-#include "hglog4cplus.h"
+#include "HGLogService.h"
 #include "hgcommonutility.h"
 #include <QDesktopWidget>
 #include "hgcomwithmqtt.h"
@@ -53,7 +53,7 @@ bool parseTH(const std::string &data, THData &out) {
     // 检查 "th=" 和 "#" 是否有效
     if (posStart == std::string::npos || posEnd == std::string::npos || posEnd <= posStart + 3) {
         printf("decode TH failed: invalid format or no valid data between 'th=' and '#'\n");
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout("decode TH failed: invalid format or no valid data between 'th=' and '#'\n",LOGERROR);
+        HGLogService::getLogInstance(LOG_PATH)->logout("decode TH failed: invalid format or no valid data between 'th=' and '#'\n",LOGERROR);
         return false;
     }
 
@@ -67,17 +67,17 @@ bool parseTH(const std::string &data, THData &out) {
     while (std::getline(ss, tempStr, ',')) {
         try {
             printf("th: %s\n", tempStr.c_str());
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout("decode TH: " + tempStr,LOGINFO);
+            HGLogService::getLogInstance(LOG_PATH)->logout("decode TH: " + tempStr,LOGINFO);
             numbers.push_back(std::stof(tempStr)); // 转换为 float
         } catch (const std::invalid_argument& e) {
             std::ostringstream errorMsg;
             errorMsg << "decode stof TH failed: " << e.what();
             printf("decode stof TH failed: %s\n", e.what());
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout(errorMsg.str(),LOGERROR);
+            HGLogService::getLogInstance(LOG_PATH)->logout(errorMsg.str(),LOGERROR);
             return false; // 转换失败
         } catch (const std::out_of_range& e) {
             printf("decode stof TH failed: out of range\n");
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout("decode stof TH failed: out of range",LOGERROR);
+            HGLogService::getLogInstance(LOG_PATH)->logout("decode stof TH failed: out of range",LOGERROR);
             return false; // 转换失败
         }
     }
@@ -85,7 +85,7 @@ bool parseTH(const std::string &data, THData &out) {
     // 确保我们解析到了两个数值
     if (numbers.size() != 2) {
         printf("decode TH failed: expected 2 values, got %zu\n", numbers.size());
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout("decode TH failed: expected 2 values, got " + std::to_string(numbers.size()),LOGERROR);
+        HGLogService::getLogInstance(LOG_PATH)->logout("decode TH failed: expected 2 values, got " + std::to_string(numbers.size()),LOGERROR);
         return false;
     }
 
@@ -261,14 +261,14 @@ HGDashboardWidget::HGDashboardWidget(QWidget *parent)
     for (int i=0;i<int(ipLists.size());i++){
         for (const auto &kv : ipLists[i]) {
             logtext<<"face: "<<kv.first<<" : "<<kv.second<<std::endl;
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+            HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
             std::cout<<"face: "<<kv.first<<" : "<<kv.second<<std::endl;
             if (kv.first == "ens33" || kv.first == "wlo1") ip=kv.second;
         }
     }
     logtext.str("");
     logtext<<"ip: "<<ip;
-    HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+    HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
     std::cout<<"ip: "<<ip<<std::endl;
     // m_mqttclient=new HgComWithLibMQTT(ip,"jwp9Gz8CQhr4DLiCPURT",1883);
     m_mqttclient=new HgComWithLibMQTT("5.tcp.cpolar.cn","jwp9Gz8CQhr4DLiCPURT",14519);
@@ -556,7 +556,7 @@ HGDashboardWidget::HGDashboardWidget(QWidget *parent)
             std::ostringstream logtext;
             logtext << "socket tuzhuang start error\n";
             printf(logtext.str().c_str());
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
+            HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
         } 
     }).detach();
     // diding
@@ -566,7 +566,7 @@ HGDashboardWidget::HGDashboardWidget(QWidget *parent)
             std::ostringstream logtext;
             logtext << "socket diding start error\n";
             printf(logtext.str().c_str());
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
+            HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
         }
     }).detach();
     // shuifen
@@ -576,7 +576,7 @@ HGDashboardWidget::HGDashboardWidget(QWidget *parent)
             std::ostringstream logtext;
             logtext << "socket shuifen start error\n";
             printf(logtext.str().c_str());
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
+            HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
         }
     }).detach();
 
@@ -1020,9 +1020,9 @@ std::vector<MResultValue> parseMResultValue(const std::string &data, const std::
         std::cout << "value = " << resultValue.value << std::endl;
         std::cout << "time = " << resultValue.time << std::endl;
 
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout("name = " + resultValue.name,LOGINFO);
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout("value = " + std::to_string(resultValue.value),LOGINFO);
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout("time = " + resultValue.time,LOGINFO);
+        HGLogService::getLogInstance(LOG_PATH)->logout("name = " + resultValue.name,LOGINFO);
+        HGLogService::getLogInstance(LOG_PATH)->logout("value = " + std::to_string(resultValue.value),LOGINFO);
+        HGLogService::getLogInstance(LOG_PATH)->logout("time = " + resultValue.time,LOGINFO);
         results.push_back(resultValue);
 
         // 更新搜索位置，跳到下一个可能的匹配
@@ -1031,7 +1031,7 @@ std::vector<MResultValue> parseMResultValue(const std::string &data, const std::
 
     if (results.empty()) {
         std::cout << "No match found for input: " << input << std::endl;
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout("No match found for input: " + input,LOGERROR);
+        HGLogService::getLogInstance(LOG_PATH)->logout("No match found for input: " + input,LOGERROR);
     }
 
     return results;
@@ -1150,7 +1150,7 @@ void HGDashboardWidget::fnSlotListenTimerOut()
         if (ret > 0)
         {
             std::cout << "Server reply ["<<i<<"]: ";
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout("Server reply ["+std::to_string(i)+"]: ",LOGINFO);
+            HGLogService::getLogInstance(LOG_PATH)->logout("Server reply ["+std::to_string(i)+"]: ",LOGINFO);
             for (int i = 0; i < int(reply.size()); i++)
             {
                 std::cout << std::hex << std::setw(2) << std::setfill('0')
@@ -1159,7 +1159,7 @@ void HGDashboardWidget::fnSlotListenTimerOut()
             std::cout << std::dec << std::endl;
             std::string asciiStr = bytesToAscii(reply.data(), reply.size());
             std::cout << "ASCII output ["<<i<<"]: " << asciiStr << std::endl;
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout("ASCII output ["+std::to_string(i)+"]: " + asciiStr,LOGINFO);
+            HGLogService::getLogInstance(LOG_PATH)->logout("ASCII output ["+std::to_string(i)+"]: " + asciiStr,LOGINFO);
 
             THData th;
             std::string cValue;
@@ -1168,13 +1168,13 @@ void HGDashboardWidget::fnSlotListenTimerOut()
             {
 
                 printf("parseth temp and humidity: %.2f,%.2f\n",th.temperature,th.humidity);
-                HGLog4Cplus::getLogInstance(LOG_PATH)->logout("parseth temp and humidity: "+std::to_string(th.temperature)+","+std::to_string(th.humidity),LOGINFO);
+                HGLogService::getLogInstance(LOG_PATH)->logout("parseth temp and humidity: "+std::to_string(th.temperature)+","+std::to_string(th.humidity),LOGINFO);
                 std::ostringstream ss;
                 ss << th.temperature << "°C, " << th.humidity << "%";
                 m_rightTimeLabel->setText(QString::fromStdString(ss.str()));
             } else {
                 printf("parse TH error\n");
-                HGLog4Cplus::getLogInstance(LOG_PATH)->logout("parse TH error",LOGERROR);
+                HGLogService::getLogInstance(LOG_PATH)->logout("parse TH error",LOGERROR);
             }
             // 仪器状态
             std::vector<std::string> dictkey; // 字典
@@ -1649,7 +1649,7 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                 }
 
                 logtext<<"msg key:"<<kv.first<<",value:"<<kv.second<<",";
-                HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+                HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
                 // std::cout << kv.first << " : " << kv.second << ",";
             }
             // std::cout<<std::endl;

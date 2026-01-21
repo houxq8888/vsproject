@@ -29,7 +29,8 @@ include_directories(
     ${HG_PROJECT_ROOT_FS}/services/HGAtomService/HGFrameService/inc
     ${HG_PROJECT_ROOT_FS}/services/HGAtomService/HGSecurityService/inc
     ${HG_PROJECT_ROOT_FS}/services/HGAtomService/HGCommunicateService/inc
-    ${HG_PROJECT_ROOT_FS}/services/HGAtomService/HGAuthorityService/inc 
+    ${HG_PROJECT_ROOT_FS}/services/HGAtomService/HGAuthorityService/inc
+    ${HG_PROJECT_ROOT_FS}/services/HGAtomService/HGLogService/inc
     ${HG_PROJECT_ROOT_FS}/HGAppModule/HGBaseAppModule/inc 
     ${HG_PROJECT_ROOT_FS}/HGAppModule/pluginInterface/inc 
     ${HG_PROJECT_ROOT_FS}/HGAppModule/HGSearchModule/inc
@@ -40,6 +41,8 @@ include_directories(
     ${HG_PROJECT_ROOT_FS}/services/HGCommon/inc
     ${HG_PROJECT_ROOT_FS}/services/HGConfig/inc
     ${HG_PROJECT_ROOT_FS}/interfaces/CameraRecognizeInterface/inc
+    ${HG_PROJECT_ROOT_FS}/interfaces/LogInterface/inc
+    ${HG_PROJECT_ROOT_FS}/modules/LogModule/inc
 )
 
 # 链接3rdparty目录

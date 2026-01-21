@@ -1,5 +1,6 @@
 #include "hgcommonutility.h"
 #include "HGExactTime.h"
+#include <libusb-1.0/libusb.h>
 #ifdef __WIN32
 #include <windows.h>
 #include <tlhelp32.h>
@@ -29,6 +30,11 @@
 #include <signal.h>
 #include <cstdlib>
 #include <cstring>
+
+// Define MAXCHAR constant if not already defined
+#ifndef MAXCHAR
+#define MAXCHAR 128
+#endif
 
 namespace HGMACHINE {
 
@@ -1016,5 +1022,49 @@ std::vector<std::map<std::string, std::string>> getWirelessIP() {
     return ip_list;
 }
 
-
+bool getUSBDevices(const uint16_t& vendorID,const uint16_t& productID)
+{
+    bool flag=false;
+    libusb_context *context=nullptr;
+    libusb_device **list=nullptr;
+    ssize_t count;
+    if (libusb_init(&context) != 0){
+        std::cout<<"libusb_init error"<<std::endl;
+        return flag;
+    }
+    count = libusb_get_device_list(context, &list);
+    if (count < 0){
+        std::cerr<<"libusb_get_device_list error"<<std::endl;
+        libusb_exit(context);
+        return flag;
+    }
+    for (ssize_t i = 0; i < count; i++)
+    {
+        libusb_device *device = list[i];
+        struct libusb_device_descriptor desc;
+        int ret=libusb_get_device_descriptor(device, &desc);
+        if (ret == 0){
+            std::cout<<"Vendor ID: 0x"<<std::hex<<desc.idVendor<<" Product ID: 0x"<<std::hex<<desc.idProduct<<std::endl;
+            if (desc.idVendor == vendorID && desc.idProduct == productID){
+                std::cout<<"Found target USB device"<<std::endl;
+                flag=true;
+                break;
+            }
+        }
+    }
+    libusb_free_device_list(list, 1);
+    libusb_exit(context);
+    return flag;
+}
+bool removeFile(const std::string& sFile)
+{
+    struct stat fileStat;
+    if (stat(sFile.c_str(), &fileStat) == 0)
+    {
+        if (S_ISREG(fileStat.st_mode)){
+            return (std::remove(sFile.c_str()) == 0);
+        }
+    }
+    return false;
+}
 }

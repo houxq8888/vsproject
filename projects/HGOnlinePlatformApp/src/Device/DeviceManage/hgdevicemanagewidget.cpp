@@ -458,7 +458,7 @@ void HGDeviceManageWidget::fnInitDeviceStatus()
     for (int i=0;i<int(deviceNames.size());i++){
         logtext<<"deviceType:"<<deviceNames[i]<<" ";
     }
-    HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+    HGLogService::getInstance(LOG_PATH)->logInfo(logtext.str());
 
     fnInitTreeWidget(deviceNames);
     

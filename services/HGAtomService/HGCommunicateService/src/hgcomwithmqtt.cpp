@@ -4,7 +4,7 @@
 #include <map>
 #include <string>
 #include <algorithm>
-#include "hglog4cplus.h"
+#include "hglogservice.h"
 
 namespace std {
     template <typename T, typename... Args>
@@ -349,7 +349,7 @@ public:
 #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(logtext.str(), LOGINFO);
+        HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
 #endif
         // 解析消息并存储结果
         // self->message_result[message->topic] = receivedMessage;

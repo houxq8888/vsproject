@@ -1,6 +1,5 @@
 #include "hglogwidget.h"
 #include <QHeaderView>
-#include "common.h"
 #include <fstream>
 #include <algorithm>
 #include <QMessageBox>
@@ -12,10 +11,11 @@ m_curDisplayIndex(-1),
 m_isSearching(false),
 m_searchPageCount(0),
 m_currentSearchPage(0),
-m_totalSearchResults(0)
+m_totalSearchResults(0),
+m_logInterface(new HGMACHINE::LogInterface())
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Log"));
-    m_auditLogTableNames = RWDb::getAllAuditLogTables();
+    m_logInterface->initialize();
+    m_auditLogTableNames = m_logInterface->getLogTableNames();
     m_searchCondition.Clear();
 
     m_layout=new QGridLayout();
@@ -151,7 +151,7 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
             const int MAXROW = 1000;
             m_tableW->setRowCount(MAXROW);
             start =HGExactTime::currentTime();
-            int auditTrailLogCount=RWDb::readAuditTrailLogCount(tableName);
+            int auditTrailLogCount=m_logInterface->getLogCount(tableName);
             if (auditTrailLogCount > 10000){
                 if (m_searchCondition.isInit()){
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
@@ -159,7 +159,7 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
                     return;
                 }
             }
-            loginfos=RWDb::readAuditTrailLog(tableName);
+            loginfos=m_logInterface->getAuditTrailLogs(tableName);
             getTableNameIndex(tableName);
             m_pageLabel->setText("第"+QString::number(m_curDisplayIndex+1)+"页");
             int traillogIndex = 0;
@@ -344,10 +344,10 @@ void HGLogWidget::slotSearch(){
     m_tableW->setUpdatesEnabled(false);
     m_tableW->viewport()->setCursor(Qt::WaitCursor);
     
-    m_totalSearchResults = RWDb::searchAuditTrailLogCount(
+    m_totalSearchResults = m_logInterface->getSearchLogCount(
         m_searchCondition.key,
-        m_searchCondition.timeFrom,
-        m_searchCondition.timeTo);
+        m_searchCondition.timeRangeFrom,
+        m_searchCondition.timeRangeTo);
     
     m_searchPageCount = (m_totalSearchResults + PAGE_SIZE - 1) / PAGE_SIZE;
     
@@ -453,10 +453,10 @@ void HGLogWidget::displaySearchResults()
     m_tableW->setUpdatesEnabled(false);
     
     int totalCount = 0;
-    m_searchResults = RWDb::searchAuditTrailLogAcrossTablesWithPaginationOptimized(
+    m_searchResults = m_logInterface->searchLogs(
         m_searchCondition.key,
-        m_searchCondition.timeFrom,
-        m_searchCondition.timeTo,
+        m_searchCondition.timeRangeFrom,
+        m_searchCondition.timeRangeTo,
         m_currentSearchPage,
         PAGE_SIZE,
         &totalCount);

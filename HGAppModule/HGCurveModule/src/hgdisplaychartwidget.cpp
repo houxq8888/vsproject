@@ -157,9 +157,9 @@ HGDisplayChartWidget::HGDisplayChartWidget(std::string lang,const std::vector<st
     } catch (const std::exception& e) {
         std::ostringstream ss;
         ss<< "Error initializing HGDisplayChartWidget: " << e.what();
-        // Windows平台下禁用HGLog4Cplus，因为没有编译出对应的库
+        // Windows平台下禁用HGLogService，因为没有编译出对应的库
 #ifdef __linux__
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+        HGLogService::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
 #else
         // Windows平台下使用标准输出或空操作
         std::cerr << ss.str() << std::endl;

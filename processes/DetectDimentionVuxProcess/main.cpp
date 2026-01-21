@@ -4,7 +4,7 @@
 #include <string>
 #include <algorithm>
 
-using namespace HXQACHINE;
+using namespace HGMACHINE;
 
 std::vector<cv::Point> findSmoothPerimeter(int gray_gaussian_filter, std::vector<cv::Point> contours)
 {

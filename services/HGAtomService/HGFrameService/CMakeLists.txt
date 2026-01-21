@@ -8,6 +8,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGCommon
     HGConfig
     HGSaveService
+    HGLogService
 )
 
 if (PLATFORM STREQUAL "x64")
@@ -17,15 +18,18 @@ HG_CMAKE_MODULE_DEPEND(
     HGCommon
     HGConfig
     HGSaveService
+    HGLogService
 )
 elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_ADD_STATIC(HGFrameService inc src
     ../../services/HGAtomService/HGSaveService/inc          ../../services/HGAtomService/HGSaveService/src
+    ../../services/HGAtomService/HGLogService/inc           ../../services/HGAtomService/HGLogService/src
 )
 HG_CMAKE_MODULE_DEPEND(
     HGCommon
     HGConfig
     HGSaveService
+    HGLogService
 )
 endif()
 

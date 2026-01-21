@@ -14,6 +14,8 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGSaveService
     HGFrameService
     HGCupDetModule
+    CameraControlInterface
+    HGCupDetInterface
     ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
@@ -31,6 +33,8 @@ HG_CMAKE_MODULE_DEPEND(
     HGSaveService
     HGFrameService
     HGCupDetModule
+    CameraControlInterface
+    HGCupDetInterface
     ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
     ${OpencvFreeType_LIBRARY}
@@ -46,6 +50,8 @@ HG_CMAKE_ADD_STATIC(CameraRecognizeInterface inc src
     ../../services/HGAtomService/HGSaveService/inc                ../../services/HGSaveService/src
     ../../services/HGHardware/HGSensor/inc                        ../../services/HGHardware/HGSensor/src
     ../../modules/HGCupDetModule/inc                              ../../modules/HGCupDetModule/src
+    ../CameraControlInterface/inc                                 ../CameraControlInterface/src
+    ../HGCupDetInterface/inc                                      ../HGCupDetInterface/src
 
 )
 INCLUDE_DIRECTORIES(${HG_PROJECT_ROOT_FS}/include/opencv4)

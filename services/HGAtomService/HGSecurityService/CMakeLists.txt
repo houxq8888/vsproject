@@ -7,12 +7,14 @@ HG_CMAKE_ADD_MODULE(SecurityService inc src)
 if (PLATFORM STREQUAL "x64")
 HG_CMAKE_MODULE_DEPEND_PUB( 
     HGCommon
+    HGLogService
     OpenSSL::Crypto
 )
 
 HG_CMAKE_ADD_SHARED(HGSecurityService inc src)
 HG_CMAKE_MODULE_DEPEND(
     HGCommon
+    HGLogService
     OpenSSL::Crypto
 )
 elseif (PLATFORM STREQUAL "win32")

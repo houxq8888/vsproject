@@ -6,6 +6,7 @@ HG_CMAKE_ADD_MODULE(SaveService inc src)
 if (PLATFORM STREQUAL "x64")
 HG_CMAKE_MODULE_DEPEND_PUB( 
     HGCommon
+    HGLogService
     ${OpenCV_LIBRARIES}
 )
 
@@ -13,6 +14,7 @@ HG_CMAKE_ADD_SHARED(HGSaveService inc src)
 
 HG_CMAKE_MODULE_DEPEND(
     HGCommon
+    HGLogService
     ${OpenCV_LIBRARIES}
 )
 

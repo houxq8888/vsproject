@@ -910,7 +910,6 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mykeyboard.cpp.obj: \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/shlwapi.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/shtypes.h \
  D:/virtualMachine/github/vsproject/services/HGConfig/inc/tinyxml2.h \
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/hglog4cplus.h \
  D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgprinter.h \
  D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/config.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \

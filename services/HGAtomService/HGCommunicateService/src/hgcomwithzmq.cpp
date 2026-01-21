@@ -2,7 +2,7 @@
 #include <cstring>
 #include <assert.h>
 #include <sstream>
-#include "hglog4cplus.h"
+#include "hglogservice.h"
 
 namespace HGMACHINE {
 HGComWithZmq::HGComWithZmq()
@@ -84,7 +84,7 @@ int HGComWithZmq::sendStruct(const ComDataStruct &value)
         #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout("send failed",LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError("send failed");
         #endif
     }
     
@@ -100,7 +100,7 @@ ComDataStruct HGComWithZmq::recvStruct()
         #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout("recv struct failed",LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError("recv struct failed");
         #endif
     } else {
         const char* data=static_cast<const char*>(zmq_msg_data(&msg));
@@ -109,7 +109,7 @@ ComDataStruct HGComWithZmq::recvStruct()
             #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout("deserialize failed",LOGERROR);
+            HGLogService::getInstance(HGLogService::getLogPath())->logError("deserialize failed");
             #endif
         }
     }
@@ -136,7 +136,7 @@ int HGComWithZmq::createPub(const char* pServerAddr)
             #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+            HGLogService::getInstance(HGLogService::getLogPath())->logError(ss.str());
             #endif
             return -1;
         }
@@ -151,7 +151,7 @@ int HGComWithZmq::createPub(const char* pServerAddr)
         #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError(ss.str());
         #endif
         zmq_ctx_term(pTmpCtx);
         return -1;
@@ -167,7 +167,7 @@ int HGComWithZmq::createPub(const char* pServerAddr)
         #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError(ss.str());
         #endif
         zmq_close(pTmpSock);
         zmq_ctx_term(pTmpCtx);
@@ -184,7 +184,7 @@ int HGComWithZmq::createPub(const char* pServerAddr)
         #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError(ss.str());
         #endif
         zmq_close(pTmpSock);
         zmq_ctx_term(pTmpCtx);
@@ -202,7 +202,7 @@ int HGComWithZmq::createPub(const char* pServerAddr)
         #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError(ss.str());
         #endif
         zmq_close(pTmpSock);
         zmq_ctx_term(pTmpCtx);
@@ -215,7 +215,7 @@ int HGComWithZmq::createPub(const char* pServerAddr)
     #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-    HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGINFO);
+    HGLogService::getInstance(HGLogService::getLogPath())->logInfo(ss.str());
     #endif
     *ppCtx = pTmpCtx;
     *ppSock = pTmpSock;
@@ -240,7 +240,7 @@ int HGComWithZmq::createSub(const char* pServerAddr)
             #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+            HGLogService::getInstance(HGLogService::getLogPath())->logError(ss.str());
             #endif
             return -1;
         }
@@ -255,7 +255,7 @@ int HGComWithZmq::createSub(const char* pServerAddr)
         #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError(ss.str());
         #endif
         zmq_ctx_term(pTmpCtx);
         return -1;
@@ -272,7 +272,7 @@ int HGComWithZmq::createSub(const char* pServerAddr)
             #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+            HGLogService::getInstance(HGLogService::getLogPath())->logError(ss.str());
             #endif
             zmq_close(pTmpSock);
             zmq_ctx_term(pTmpCtx);
@@ -290,7 +290,7 @@ int HGComWithZmq::createSub(const char* pServerAddr)
             #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+            HGLogService::getInstance(HGLogService::getLogPath())->logError(ss.str());
             #endif
             zmq_close(pTmpSock);
             zmq_ctx_term(pTmpCtx);
@@ -309,7 +309,7 @@ int HGComWithZmq::createSub(const char* pServerAddr)
         #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError(ss.str());
         #endif
         zmq_close(pTmpSock);
         zmq_ctx_term(pTmpCtx);
@@ -322,7 +322,7 @@ int HGComWithZmq::createSub(const char* pServerAddr)
     #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
 #else
-    HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGINFO);
+    HGLogService::getInstance(HGLogService::getLogPath())->logInfo(ss.str());
     #endif
     *ppCtx = pTmpCtx;
     *ppSock = pTmpSock;

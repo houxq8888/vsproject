@@ -1,53 +1,104 @@
 #include "HGCupDetInterface.h"
 #include "hgcupdet.h"
 #include "hgdetectcircle.h"
-#include "hgcapture2dfromusb.h"
 
 namespace HGMACHINE {
-HGCupDet hgcupDet;
-HGCapture2DFromUSB hgcapture2dFromUSB;
 
-void openUSBCamera(const int & index){
-    // hgcapture2dFromUSB.open(index);
-}
-HGImg2D getImgFromUSBOneShot(){
-    HGImg2D img;
-    cv::Mat mat;
-    hgcapture2dFromUSB.getFrameOne(mat);
-    // 检查类型是否是 uchar（8-bit），不是就报错
-    if (mat.depth() != CV_8U) {
-        throw std::runtime_error("Only 8-bit image supported in HGImg2D");
+class HGCupDetInterface::Impl {
+public:
+    HGCupDet hgcupDet;
+    ErrorInfo m_lastError;
+
+    void setError(ErrorCode code, const std::string& message) {
+        m_lastError.set(code, message);
     }
-    img.data = mat.ptr<unsigned char>(0);  // 指向图像数据首地址
-    img.width = mat.cols;                  // 宽度（列）
-    img.height = mat.rows;                 // 高度（行）
-    img.channels = mat.channels();         // 通道数
-    img.steps = static_cast<int>(mat.step); // 每行字节数（包含通道和对齐）
-    img.type = mat.type();
 
-    cv::imwrite("oneshot.bmp",mat);
-    printf("type:%d\n",mat.channels());
-    return img;
+    void clearError() {
+        m_lastError.clear();
+    }
+
+    bool validateImage(const HGImg2D& img) {
+        if (img.data == nullptr) {
+            setError(ErrorCode::HGCupDet_INVALID_IMAGE, "Image data is null");
+            return false;
+        }
+        if (img.width <= 0 || img.height <= 0) {
+            setError(ErrorCode::HGCupDet_INVALID_IMAGE, "Invalid image dimensions");
+            return false;
+        }
+        return true;
+    }
+
+    bool validateROI(const HGRect2D& roi) {
+        if (roi.x1 < 0 || roi.y1 < 0 || roi.x2 <= roi.x1 || roi.y2 <= roi.y1) {
+            setError(ErrorCode::HGCupDet_INVALID_ROI, "Invalid ROI coordinates");
+            return false;
+        }
+        return true;
+    }
+};
+
+HGCupDetInterface::HGCupDetInterface() : m_impl(new Impl()) {
 }
-void closeUSBCamera(){
-    hgcapture2dFromUSB.close();
+
+HGCupDetInterface::~HGCupDetInterface() {
+    delete m_impl;
 }
-void detCircle(const HGImg2D &img, const HGRect2D &roi){
-    hgcupDet.detCircle(img,roi);
+
+void HGCupDetInterface::detCupExistence(const HGImg2D &img, const HGRect2D &roi) {
+    m_impl->clearError();
+    
+    if (!m_impl->validateImage(img)) {
+        return;
+    }
+    
+    if (!m_impl->validateROI(roi)) {
+        return;
+    }
+    
+    try {
+        m_impl->hgcupDet.detCupExistence(img, roi);
+    } catch (const std::exception& e) {
+        m_impl->setError(ErrorCode::HGCupDet_DETECTION_FAILED, std::string("Detection failed: ") + e.what());
+    }
 }
-int getTargetPosX(){
-    return hgcupDet.getTargetPosX();
+
+void HGCupDetInterface::detCircle(const HGImg2D &img, const HGRect2D &roi) {
+    m_impl->clearError();
+    
+    if (!m_impl->validateImage(img)) {
+        return;
+    }
+    
+    if (!m_impl->validateROI(roi)) {
+        return;
+    }
+    
+    try {
+        m_impl->hgcupDet.detCircle(img, roi);
+    } catch (const std::exception& e) {
+        m_impl->setError(ErrorCode::HGCupDet_DETECTION_FAILED, std::string("Detection failed: ") + e.what());
+    }
 }
-void detCupExistence(const HGImg2D &img, const HGRect2D &roi)
-{
-    hgcupDet.detCupExistence(img,roi);
+
+bool HGCupDetInterface::getAbsenseFlag() {
+    return m_impl->hgcupDet.getAbsenseFlag();
 }
-bool getAbsenseFlag()
-{
-    return hgcupDet.getAbsenseFlag();
+
+HGImg2D HGCupDetInterface::getDst() {
+    return m_impl->hgcupDet.getDst();
 }
-HGImg2D getDst()
-{
-    return hgcupDet.getDst();
+
+int HGCupDetInterface::getTargetPosX() {
+    return m_impl->hgcupDet.getTargetPosX();
 }
+
+ErrorInfo HGCupDetInterface::getLastError() const {
+    return m_impl->m_lastError;
+}
+
+void HGCupDetInterface::clearError() {
+    m_impl->clearError();
+}
+
 }

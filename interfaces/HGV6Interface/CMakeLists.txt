@@ -12,6 +12,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGLowerPC
     HGConfig
     HGFrameService
+    HGLogService
     HGSecurityService
     HGCommunicateService
     HGSaveService
@@ -30,6 +31,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGLowerPC
     HGConfig
     HGFrameService
+    HGLogService
     HGSecurityService
     HGCommunicateService
     HGSaveService
@@ -47,6 +49,7 @@ HG_CMAKE_ADD_STATIC(HGV6Interface inc src
     ../../services/HGAtomService/HGFrameService/inc         ../../services/HGAtomService/HGFrameService/src
     ../../modules/HGV6Module/inc                            ../../modules/HGV6Module/src
     ../../services/HGAtomService/HGCommunicateService/inc   ../../services/HGAtomService/HGCommunicateService/src
+    ../../services/HGAtomService/HGLogService/inc           ../../services/HGAtomService/HGLogService/src
 )
 
 # HG_CMAKE_MODULE_DEPEND(

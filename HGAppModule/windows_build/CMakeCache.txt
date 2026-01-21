@@ -24,7 +24,7 @@ BUILD_HGAPPMODULE_ONLY:UNINITIALIZED=ON
 BUILD_HGBASEAPP_EXECUTABLE:UNINITIALIZED=OFF
 
 //仅编译HGLogModule
-BUILD_HGLOGMODULE_ONLY:BOOL=OFF
+BUILD_HGLOGMODULE_ONLY:BOOL=ON
 
 //要编译的模块列表（空格分隔）
 BUILD_MODULES:STRING=
@@ -344,6 +344,15 @@ HGLogModule_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 HGLogModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGLogModule
 
+//Value Computed by CMake
+HGSearchModule_BINARY_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGSearchModule
+
+//Value Computed by CMake
+HGSearchModule_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+HGSearchModule_SOURCE_DIR:STATIC=D:/virtualMachine/github/vsproject/HGAppModule/HGSearchModule
+
 //No help, variable specified on the command line.
 HG_PROJECT_ROOT_FS:UNINITIALIZED=d:\virtualMachine\github\vsproject
 
@@ -633,7 +642,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

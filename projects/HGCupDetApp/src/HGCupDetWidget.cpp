@@ -3,7 +3,7 @@
 #include <QRegularExpression>
 #include <QFileDialog>
 #include <QMessageBox>
-#include "hglog4cplus.h"
+#include "HGLogService.h"
 #include "hgsaveimgtolocaldisk.h"
 #include "hgcommonutility.h"
 #include "hgsavedatatodb.h"
@@ -114,7 +114,7 @@ int HGCupDetWidget::OnInitial()
         std::ostringstream name;
         name << SAVE_IMG_PATH(m_basePath.toStdString()) << "mkdir success\n";
 //        printf(name.str().c_str());
-//        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(name.str(),LOGINFO);
+//        HGLogService::getLogInstance(LOG_PATH)->logout(name.str(),LOGINFO);
     } else {
         std::ostringstream name;
         name << SAVE_IMG_PATH(m_basePath.toStdString()) << "mkdir failed\n";
@@ -305,7 +305,7 @@ void HGCupDetWidget::UpdateImg()
     } else {
         std::ostringstream str;
         str << HGCUPDETNAME << mat.cols << "," << mat.rows;
-        HGLog4Cplus::getLogInstance(LOG_PATH)->logout(str.str(),LOGINFO);
+        HGLogService::getInstance(LOG_PATH)->logInfo(str.str());
         HGSaveImgToLocalDisk::getSaveImgInstance()->save(mat,SAVE_IMG_PATH(m_basePath.toStdString()));
     }
 

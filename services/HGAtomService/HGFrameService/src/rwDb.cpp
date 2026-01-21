@@ -6,7 +6,7 @@
 #include <cstdio>
 #include "hgcommonutility.h"
 #include "config.h"
-#include "hglog4cplus.h"
+#include "hglogservice.h"
 
 namespace HGMACHINE{
     std::vector<std::string> userInfoName={
@@ -949,11 +949,11 @@ void RWDb::copyTable(const std::string& sourceDBName,
 #else
         if (flag)
         {
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout("copy table " + tableName + " success", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("copy table " + tableName + " success");
         }
         else
         {
-            HGLog4Cplus::getLogInstance(LOG_PATH)->logout("copy table " + tableName + " fail", LOGERROR);
+            HGLogService::getInstance(HGLogService::getLogPath())->logError("copy table " + tableName + " fail");
         }
 #endif
         std::vector<std::map<std::string, std::string>> fillContent;

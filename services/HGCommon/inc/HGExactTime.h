@@ -65,6 +65,9 @@ public:
     //! 转换为字符串，可用于文件名
     std::string toStringForFilename() const;
 
+    //! 从字符串解析时间
+    bool fromString(const std::string& timeStr);
+
     //! 获取当前时间
     static HGExactTime currentTime();
     static int fasterThanThirtyMimutes(const std::string &timeStr);

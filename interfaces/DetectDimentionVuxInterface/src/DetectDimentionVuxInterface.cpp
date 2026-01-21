@@ -3,7 +3,7 @@
 
 using namespace HGMACHINE;
 
-namespace HXQACHINE {
+namespace HGMACHINE {
 HXQDetectDimentionVux  hxqDetectDimentionVux;
 
 void detDimentionVux(const HGImg2D &img, const HGRect2D &roi)

@@ -1,6 +1,6 @@
 #include "dimentionVux.h"
 
-namespace HXQACHINE {
+namespace HGMACHINE {
 
 HxqDimentionVux::HxqDimentionVux()
 {

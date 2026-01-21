@@ -12,6 +12,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGCommon
     HGConfig
     HGFrameService
+    HGLogService
     ${LOG4CPLUS_LIBRARIES}
     ${VSOMEIP_LIBRARIES}
     ${ZeroMQ_LIBRARY}
@@ -38,6 +39,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGCommon
     HGConfig
     HGFrameService
+    HGLogService
     ${LOG4CPLUS_LIBRARIES}
     ${VSOMEIP_LIBRARIES}
     ${ZeroMQ_LIBRARY}
@@ -63,6 +65,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGCommon
     HGConfig
     HGFrameService
+    HGLogService
     ${VSOMEIP_LIBRARIES}
     ${ZeroMQ_LIBRARY}
     ${MQTT_LIBRARYS}

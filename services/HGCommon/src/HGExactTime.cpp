@@ -136,6 +136,57 @@ std::string HGExactTime::toStringForFilename() const
     return std::string(temp);
 }
 
+bool HGExactTime::fromString(const std::string& timeStr)
+{
+    // 检查字符串长度，格式应为：YYYYMMDD_HHMMSS_MMMUUU (27个字符)
+    if (timeStr.length() != 27) {
+        return false;
+    }
+
+    // 检查分隔符位置
+    if (timeStr[8] != '_' || timeStr[15] != '_') {
+        return false;
+    }
+
+    try {
+        // 解析年份 (YYYY)
+        tm_year = std::stoi(timeStr.substr(0, 4));
+        
+        // 解析月份 (MM)
+        tm_mon = std::stoi(timeStr.substr(4, 2));
+        
+        // 解析日期 (DD)
+        tm_mday = std::stoi(timeStr.substr(6, 2));
+        
+        // 解析小时 (HH)
+        tm_hour = std::stoi(timeStr.substr(9, 2));
+        
+        // 解析分钟 (MM)
+        tm_min = std::stoi(timeStr.substr(11, 2));
+        
+        // 解析秒 (SS)
+        tm_sec = std::stoi(timeStr.substr(13, 2));
+        
+        // 解析毫秒 (MMM)
+        tm_millisec = std::stoi(timeStr.substr(16, 3));
+        
+        // 解析微秒 (UUU)
+        tm_microsec = std::stoi(timeStr.substr(19, 3));
+        
+        // 验证解析的值是否在合理范围内
+        if (tm_year < 1900 || tm_mon < 1 || tm_mon > 12 || 
+            tm_mday < 1 || tm_mday > 31 || tm_hour < 0 || tm_hour > 23 ||
+            tm_min < 0 || tm_min > 59 || tm_sec < 0 || tm_sec > 59 ||
+            tm_millisec < 0 || tm_millisec > 999 || tm_microsec < 0 || tm_microsec > 999) {
+            return false;
+        }
+        
+        return true;
+    } catch (const std::exception&) {
+        return false;
+    }
+}
+
 HGExactTime HGExactTime::currentTime()
 {
     system_clock::time_point time_point_now = system_clock::now(); // 获取当前时间点

@@ -78,7 +78,7 @@ void HGMethodManageWidget::slotSaveMethod(){
     std::ostringstream ss;
     ss<<"param:"<<param;
     #ifdef __linux__
-    HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGINFO);
+    HGLogService::getLogInstance(LOG_PATH)->logout(ss.str(),LOGINFO);
     #else
     printf("param:%s\n",param.c_str());
     #endif

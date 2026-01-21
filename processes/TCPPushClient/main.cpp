@@ -74,9 +74,9 @@ std::vector<MResultValue> parseMResultValue(const std::string &data, const std::
         std::cout << "value = " << resultValue.value << std::endl;
         std::cout << "time = " << resultValue.time << std::endl;
 
-        // HGLog4Cplus::getLogInstance(LOG_PATH)->logout("name = " + resultValue.name,LOGINFO);
-        // HGLog4Cplus::getLogInstance(LOG_PATH)->logout("value = " + std::to_string(resultValue.value),LOGINFO);
-        // HGLog4Cplus::getLogInstance(LOG_PATH)->logout("time = " + resultValue.time,LOGINFO);
+        // HGLogService::getLogInstance(LOG_PATH)->logout("name = " + resultValue.name,LOGINFO);
+        // HGLogService::getLogInstance(LOG_PATH)->logout("value = " + std::to_string(resultValue.value),LOGINFO);
+        // HGLogService::getLogInstance(LOG_PATH)->logout("time = " + resultValue.time,LOGINFO);
         results.push_back(resultValue);
 
         // 更新搜索位置，跳到下一个可能的匹配
@@ -85,7 +85,7 @@ std::vector<MResultValue> parseMResultValue(const std::string &data, const std::
 
     if (results.empty()) {
         std::cout << "No match found for input: " << input << std::endl;
-        // HGLog4Cplus::getLogInstance(LOG_PATH)->logout("No match found for input: " + input,LOGERROR);
+        // HGLogService::getLogInstance(LOG_PATH)->logout("No match found for input: " + input,LOGERROR);
     }
 
     return results;

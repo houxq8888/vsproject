@@ -1,4 +1,4 @@
-#include "hglog4cplus.h"
+#include "hglogservice.h"
 #include "hgcommonutility.h"
 #include "hgserial.h"
 #include "hgonlineplatformmodule.h"

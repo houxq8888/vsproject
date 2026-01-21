@@ -2,7 +2,7 @@
 #include "common.h"
 #include <QDebug>
 #include <QDialog>
-#include "hglog4cplus.h"
+#include "HGLogService.h"
 #include "HGMacroData.h"
 #include "demo.h"
 #include "HGOnlinePlatformInterface.h"
@@ -951,7 +951,7 @@ void HGOnlineMainWidget::clickSound()
 void HGOnlineMainWidget::clickEscape()
 {
     stopThread();
-    HGLog4Cplus::getLogInstance(LOG_PATH)->logout("quit HG online platform app",LOGINFO);
+    HGLogService::getInstance(LOG_PATH)->logInfo("quit HG online platform app");
     fnCloseWindow();
     printf("close window\n");
     saveConfig();

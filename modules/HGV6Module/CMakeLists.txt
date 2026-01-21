@@ -12,6 +12,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGConfig
     HGFrameService
     HGSecurityService
+    HGLogService
     HGCommunicateService
     HGSaveService
     HGOnlinePlatformModule
@@ -29,6 +30,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGLowerPC
     HGConfig
     HGFrameService
+    HGLogService
     HGSecurityService
     HGCommunicateService
     HGSaveService
@@ -42,6 +44,7 @@ HG_CMAKE_MODULE_DEPEND(
 elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_ADD_STATIC(HGV6Module inc src
     ../../services/HGAtomService/HGFrameService/inc                      ../../services/HGAtomService/HGFrameService/src
+    ../../services/HGAtomService/HGLogService/inc                        ../../services/HGAtomService/HGLogService/src
 )
 
 
@@ -50,6 +53,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGConfig
     HGLowerPC
     HGFrameService
+    HGLogService
     HGSaveService
     HGCommunicateService
     HGAuthorityService

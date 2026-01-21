@@ -1,6 +1,6 @@
 #include "hgcupdet.h"
 #include <opencv2/opencv.hpp>
-// #include "hglog4cplus.h"
+// #include "HGLogService.h"
 #include "hgcommonutility.h"
 #include "hgdetectcircle.h"
 
@@ -114,13 +114,13 @@ void HGCupDet::detCupExistence(const HGImg2D &img, const HGRect2D &roi)
     std::ostringstream ss, press;
     press << HGCUPDETMODULENAME<<"|"<<HGCUPDETMODULEAUTHOR<<"|";
     ss<<press.str()<<"start det cup existence";
-    // HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGINFO);
+    // HGLogService::getLogInstance(HGLogService::getLogPath())->logout(ss.str(),LOGINFO);
     cv::Rect inputRoi(cv::Point(roi.x1,roi.y1),cv::Point(roi.x2,roi.y2));
 
     ss.str("");
     ss<<press.str()<<"input ROI["<<inputRoi.tl().x<<","<<inputRoi.tl().y<<","<<inputRoi.br().x<<","<<inputRoi.br().y
      <<"],img info["<<img.width<<","<<img.height<<","<<img.type;
-    // HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGINFO);
+    // HGLogService::getLogInstance(HGLogService::getLogPath())->logout(ss.str(),LOGINFO);
 
     cv::Mat mat(img.height,img.width,img.type,(uchar*)img.data);
 
@@ -133,6 +133,6 @@ void HGCupDet::detCupExistence(const HGImg2D &img, const HGRect2D &roi)
     m_dst.height=mat.rows;
     ss.str("");
     ss<<press.str()<<"elapsed time:"<<HGCalTimeElapsed(start,end)<<" ms";
-    // HGLog4Cplus::getLogInstance(LOG_PATH)->logout(ss.str(),LOGINFO);
+    // HGLogService::getLogInstance(HGLogService::getLogPath())->logout(ss.str(),LOGINFO);
 }
 }
