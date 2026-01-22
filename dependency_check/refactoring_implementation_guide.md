@@ -48,7 +48,7 @@
 
 1. 创建目录结构
    ```
-   services/UIServiceInterfaces/
+   services/ServiceInterfaces/
    ├── include/
    │   ├── IUIConfigService.h
    │   ├── IUISaveService.h
@@ -68,7 +68,7 @@
 
 1. 实现UIConfigServiceAdapter
    ```cpp
-   // services/UIServiceInterfaces/src/UIConfigServiceAdapter.cpp
+   // services/ServiceInterfaces/src/UIConfigServiceAdapter.cpp
    #include "IUIConfigService.h"
    #include "HGBaseConfig.h"
    
@@ -79,7 +79,7 @@
 
 2. 实现UISaveServiceAdapter
    ```cpp
-   // services/UIServiceInterfaces/src/UISaveServiceAdapter.cpp
+   // services/ServiceInterfaces/src/UISaveServiceAdapter.cpp
    #include "IUISaveService.h"
    #include "HGSvcSave.h"
    
@@ -90,7 +90,7 @@
 
 3. 实现UICommonServiceAdapter
    ```cpp
-   // services/UIServiceInterfaces/src/UICommonServiceAdapter.cpp
+   // services/ServiceInterfaces/src/UICommonServiceAdapter.cpp
    #include "IUICommonService.h"
    #include "HGBaseCommon.h"
    
@@ -103,7 +103,7 @@
 
 1. 实现UIDependencyContainer
    ```cpp
-   // services/UIServiceInterfaces/src/UIDependencyContainer.cpp
+   // services/ServiceInterfaces/src/UIDependencyContainer.cpp
    #include "IUIServiceManager.h"
    
    class UIDependencyContainer : public IUIServiceManager {
@@ -113,7 +113,7 @@
 
 2. 创建服务初始化代码
    ```cpp
-   // services/UIServiceInterfaces/src/UIServiceInitializer.cpp
+   // services/ServiceInterfaces/src/UIServiceInitializer.cpp
    #include "UIDependencyContainer.h"
    
    void InitializeUIServices() {
@@ -125,7 +125,7 @@
 
 1. 编写单元测试
    ```cpp
-   // services/UIServiceInterfaces/tests/test_ui_config_service.cpp
+   // services/ServiceInterfaces/tests/test_ui_config_service.cpp
    #include <gtest/gtest.h>
    #include "IUIConfigService.h"
    
@@ -136,7 +136,7 @@
 
 2. 运行测试
    ```bash
-   cd services/UIServiceInterfaces
+   cd services/ServiceInterfaces
    mkdir build && cd build
    cmake .. && make
    ./run_tests

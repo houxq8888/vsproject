@@ -2,6 +2,7 @@
 #include <QHeaderView>
 #include "common.h"
 #include <QMessageBox>
+#include "SvcFactory.h"
 
 HGInputSearchConditionWidget::HGInputSearchConditionWidget(const int& maxRange,std::string lang,QWidget *parent) : QWidget(parent),
     m_lang(lang),
@@ -15,33 +16,35 @@ HGInputSearchConditionWidget::HGInputSearchConditionWidget(const int& maxRange,s
     m_markLabel1->setStyleSheet("color: red;");
     m_markLabel2->setStyleSheet("color: red;");
 
-    m_searchGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Search")));//"查询");
+    auto configService = SvcFactory::CreateConfigService();
+    m_searchGroup=new QGroupBox(QString::fromStdString(configService->LoadTranslation(m_lang,"Search")));
     m_searchGroup->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
     m_searchLayout=new QGridLayout();
 
     QFont font;
     font.setPointSize(10);
-    m_keyLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"KeyWord")));//"关键词");
+    m_keyLabel=new QLabel(QString::fromStdString(configService->LoadTranslation(m_lang,"KeyWord")));
     m_keyLabel->setFont(font);
     m_keyEdit=new QLineEdit();
-    m_keyEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
+    m_keyEdit->setPlaceholderText(QString::fromStdString(configService->LoadTranslation(m_lang,"Input")));
     m_keyEdit->installEventFilter(this);
 
-    m_timeRangeLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"TimeFrom")));//"时间范围 从");
+    m_timeRangeLabel=new QLabel(QString::fromStdString(configService->LoadTranslation(m_lang,"TimeFrom")));
     m_timeRangeLabel->setFont(font);
     m_timeRangeFromEdit=new QLineEdit();
-    m_timeRangeFromEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
+    m_timeRangeFromEdit->setPlaceholderText(QString::fromStdString(configService->LoadTranslation(m_lang,"Input")));
     m_timeRangeFromEdit->installEventFilter(this);
 
-    m_timeRangeLabel1=new QLabel(QString::fromStdString(loadTranslation(m_lang,"To")));//"至");
+    m_timeRangeLabel1=new QLabel(QString::fromStdString(configService->LoadTranslation(m_lang,"To")));
     m_timeRangeLabel1->setFont(font);
     m_timeRangeToEdit=new QLineEdit();
-    m_timeRangeToEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
+    m_timeRangeToEdit->setPlaceholderText(QString::fromStdString(configService->LoadTranslation(m_lang,"Input")));
     m_timeRangeToEdit->installEventFilter(this);
 
-    m_searchLabel=new HGQLabel(false,getPath("/resources/V1/@1xmb-search 1.png"));
+    auto frameService = SvcFactory::CreateFrameService();
+    m_searchLabel=new HGQLabel(false,frameService->ReadCurDirPath()+"/resources/V1/@1xmb-search 1.png");
     connect(m_searchLabel,SIGNAL(leftClicked()),this,SLOT(slotSearch()));
-    m_clearSearchLabel=new HGQLabel(false,getPath("/resources/V1/@1xarcoDesign-stop 1.png"));
+    m_clearSearchLabel=new HGQLabel(false,frameService->ReadCurDirPath()+"/resources/V1/@1xarcoDesign-stop 1.png");
     connect(m_clearSearchLabel,SIGNAL(leftClicked()),this,SLOT(slotClearSearch()));
 
     m_searchLayout->addWidget(m_keyLabel, 0,0);
@@ -108,31 +111,33 @@ bool HGInputSearchConditionWidget::eventFilter(QObject* obj,QEvent* event){
     return QWidget::eventFilter(obj,event);
 }
 void HGInputSearchConditionWidget::slotTimeFrom(QString text){
+    auto configService = SvcFactory::CreateConfigService();
+    auto timeService = SvcFactory::CreateTimeService();
     if (m_timeRangeToEdit->text()!=""){
-        HGExactTime timeFrom=HGExactTime::currentTime();
-        timeFrom.tm_year = atoi(text.toStdString().substr(0, 4).c_str());
-        timeFrom.tm_mon = atoi(text.toStdString().substr(4, 2).c_str());
-        timeFrom.tm_mday = atoi(text.toStdString().substr(6, 2).c_str());
-        HGExactTime timeTo=HGExactTime::currentTime();
-        timeTo.tm_year = atoi(m_timeRangeToEdit->text().toStdString().substr(0, 4).c_str());
-        timeTo.tm_mon = atoi(m_timeRangeToEdit->text().toStdString().substr(4, 2).c_str());
-        timeTo.tm_mday = atoi(m_timeRangeToEdit->text().toStdString().substr(6, 2).c_str());
+        TimeInfo timeFrom = timeService->GetCurrentTime();
+        timeFrom.year = atoi(text.toStdString().substr(0, 4).c_str());
+        timeFrom.month = atoi(text.toStdString().substr(4, 2).c_str());
+        timeFrom.day = atoi(text.toStdString().substr(6, 2).c_str());
+        TimeInfo timeTo = timeService->GetCurrentTime();
+        timeTo.year = atoi(m_timeRangeToEdit->text().toStdString().substr(0, 4).c_str());
+        timeTo.month = atoi(m_timeRangeToEdit->text().toStdString().substr(4, 2).c_str());
+        timeTo.day = atoi(m_timeRangeToEdit->text().toStdString().substr(6, 2).c_str());
 
-        HGExactTime preTimeFrom=HGExactTime::currentTime();
-        preTimeFrom.tm_year=timeFrom.tm_year;
-        preTimeFrom.tm_mon=timeFrom.tm_mon;
-        preTimeFrom.tm_mday=timeFrom.tm_mday;
-        preTimeFrom += m_maxRange;
+        TimeInfo preTimeFrom = timeService->GetCurrentTime();
+        preTimeFrom.year = timeFrom.year;
+        preTimeFrom.month = timeFrom.month;
+        preTimeFrom.day = timeFrom.day;
+        preTimeFrom.day += m_maxRange;
 
         if (timeFrom>=timeTo){
             QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"Theendtimeisearlierthanstarttime")));
+                QString::fromStdString(configService->LoadTranslation(m_lang,"Theendtimeisearlierthanstarttime")));
             m_timeRangeFromEdit->clear();
             m_timeRangeFromEdit->setFocus();
             return;
         } else if (preTimeFrom<timeTo){
             QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"Theendtimeisearlierthanstarttimeoutofmaxrange"))+
+                QString::fromStdString(configService->LoadTranslation(m_lang,"Theendtimeisearlierthanstarttimeoutofmaxrange"))+
                     QString::fromStdString(std::to_string(m_maxRange)));
             m_timeRangeFromEdit->clear();
             m_timeRangeFromEdit->setFocus();
@@ -145,32 +150,33 @@ void HGInputSearchConditionWidget::slotTimeFrom(QString text){
     emit signalTimeFrom(text);
 }
 void HGInputSearchConditionWidget::slotTimeTo(QString text){
-
+    auto configService = SvcFactory::CreateConfigService();
+    auto timeService = SvcFactory::CreateTimeService();
     if (m_timeRangeFromEdit->text()!=""){
-        HGExactTime timeFrom=HGExactTime::currentTime();
-        timeFrom.tm_year = atoi(m_timeRangeFromEdit->text().toStdString().substr(0, 4).c_str());
-        timeFrom.tm_mon = atoi(m_timeRangeFromEdit->text().toStdString().substr(4, 2).c_str());
-        timeFrom.tm_mday = atoi(m_timeRangeFromEdit->text().toStdString().substr(6, 2).c_str());
-        HGExactTime timeTo=HGExactTime::currentTime();
-        timeTo.tm_year = atoi(text.toStdString().substr(0, 4).c_str());
-        timeTo.tm_mon = atoi(text.toStdString().substr(4, 2).c_str());
-        timeTo.tm_mday = atoi(text.toStdString().substr(6, 2).c_str());
-        HGExactTime preTimeFrom=HGExactTime::currentTime();
-        preTimeFrom.tm_year=timeFrom.tm_year;
-        preTimeFrom.tm_mon=timeFrom.tm_mon;
-        preTimeFrom.tm_mday=timeFrom.tm_mday;
-        preTimeFrom += m_maxRange;
+        TimeInfo timeFrom = timeService->GetCurrentTime();
+        timeFrom.year = atoi(m_timeRangeFromEdit->text().toStdString().substr(0, 4).c_str());
+        timeFrom.month = atoi(m_timeRangeFromEdit->text().toStdString().substr(4, 2).c_str());
+        timeFrom.day = atoi(m_timeRangeFromEdit->text().toStdString().substr(6, 2).c_str());
+        TimeInfo timeTo = timeService->GetCurrentTime();
+        timeTo.year = atoi(text.toStdString().substr(0, 4).c_str());
+        timeTo.month = atoi(text.toStdString().substr(4, 2).c_str());
+        timeTo.day = atoi(text.toStdString().substr(6, 2).c_str());
+        TimeInfo preTimeFrom = timeService->GetCurrentTime();
+        preTimeFrom.year = timeFrom.year;
+        preTimeFrom.month = timeFrom.month;
+        preTimeFrom.day = timeFrom.day;
+        preTimeFrom.day += m_maxRange;
 
         if ((timeFrom>=timeTo)){
             QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"Theendtimeisearlierthanstarttime")));
+                QString::fromStdString(configService->LoadTranslation(m_lang,"Theendtimeisearlierthanstarttime")));
             
             m_timeRangeToEdit->clear();
             m_timeRangeToEdit->setFocus();
             return;
         } else if (preTimeFrom<timeTo){
             QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"Theendtimeisearlierthanstarttimeoutofmaxrange"))+
+                QString::fromStdString(configService->LoadTranslation(m_lang,"Theendtimeisearlierthanstarttimeoutofmaxrange"))+
                     QString::fromStdString(std::to_string(m_maxRange))+"天");
             m_timeRangeToEdit->clear();
             m_timeRangeToEdit->setFocus();
@@ -192,12 +198,13 @@ void HGInputSearchConditionWidget::slotClearSearch(){
     emit signalClearSearch();
 }
 void HGInputSearchConditionWidget::slotSearch(){
+    auto configService = SvcFactory::CreateConfigService();
     emit signalKeyWord(m_keyEdit->text());
     if (m_timeRangeFromEdit->text()!="" && m_timeRangeToEdit->text()!=""){
         emit signalSearch();
     } else {
         QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-            QString::fromStdString(loadTranslation(m_lang,"Pleaseinputalltheparameters")));
+            QString::fromStdString(configService->LoadTranslation(m_lang,"Pleaseinputalltheparameters")));
         if (m_timeRangeFromEdit->text()==""){
             m_timeRangeFromEdit->setFocus();
         } else if (m_timeRangeToEdit->text()==""){

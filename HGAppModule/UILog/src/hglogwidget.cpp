@@ -3,7 +3,7 @@
 #include <fstream>
 #include <algorithm>
 #include <QMessageBox>
-
+#include "SvcFactory.h"
 
 HGLogWidget::HGLogWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
@@ -29,7 +29,7 @@ m_logInterface(new HGMACHINE::LogInterface())
     connect(m_inputsearchConditionW,SIGNAL(signalSearch()),this,SLOT(slotSearch()));
     connect(m_inputsearchConditionW,SIGNAL(signalClearSearch()),this,SLOT(slotClearSearch()));
 
-    m_manipulateGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"manipulate")));//"操作");
+    m_manipulateGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"manipulate")));//"操作");
     m_manipulateGroup->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
     m_manipulateLayout=new QGridLayout();
 
@@ -52,10 +52,10 @@ m_logInterface(new HGMACHINE::LogInterface())
     m_tableW->setEditTriggers(QAbstractItemView::NoEditTriggers);
     m_tableW->setItemDelegate(new HtmlDelegate(this));
     
-    m_logTypeLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"LogType")));//"日志类型");
+    m_logTypeLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"LogType")));//"日志类型");
     m_logTypeComboBox=new QComboBox();
-    m_logTypeComboBox->addItems({QString::fromStdString(loadTranslation(m_lang,"AuditTrail")),
-                                 QString::fromStdString(loadTranslation(m_lang,"RunLog"))});
+    m_logTypeComboBox->addItems({QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AuditTrail")),
+                                 QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"RunLog"))});
     m_logTypeComboBox->setCurrentIndex(0);
     connect(m_logTypeComboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(slotLogTypeChanged(int)));
     slotLogTypeChanged(0);
@@ -79,7 +79,10 @@ bool HGLogWidget::closeWindow()
 {
     if (m_inputsearchConditionW){
         if (m_inputsearchConditionW->closeWindow()){
-            SAFE_DELETE(m_inputsearchConditionW);
+            if (m_inputsearchConditionW){
+                delete m_inputsearchConditionW;
+                m_inputsearchConditionW=NULL;
+            }
         }
     }
     return true;
@@ -142,7 +145,7 @@ int HGLogWidget::getTableNameIndex(const std::string &tableName){
 }
 void HGLogWidget::fnReadDB(const std::string &tableName){
     m_tableW->setRowCount(0);
-    HGExactTime start,end,start1,end1;
+    TimeInfo start,end,start1,end1;
     std::vector<std::map<std::string,std::string>> loginfos;
     m_tableW->setUpdatesEnabled(false);  // 禁用更新
     switch (m_logTypeComboBox->currentIndex()){
@@ -150,12 +153,12 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
         {
             const int MAXROW = 1000;
             m_tableW->setRowCount(MAXROW);
-            start =HGExactTime::currentTime();
+            start = SvcFactory::CreateTimeService()->GetCurrentTime();
             int auditTrailLogCount=m_logInterface->getLogCount(tableName);
             if (auditTrailLogCount > 10000){
                 if (m_searchCondition.isInit()){
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                                     QString::fromStdString(loadTranslation(m_lang,"TooManagLogFiles")));
+                                     QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"TooManagLogFiles")));
                     return;
                 }
             }
@@ -167,15 +170,15 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
             for (int i =int(loginfos.size())-1;i>=0;i--){
                 if (!m_searchCondition.isInit()){
                     std::string timeStr = loginfos[i]["Time"];
-                    HGExactTime testTimer = HGExactTime::currentTime();
-                    TIME_STRUECT timeS;
-                    decodeStandardTime(timeStr, timeS);
-                    testTimer.tm_year = timeS.year; 
-                    testTimer.tm_mon = timeS.month; 
-                    testTimer.tm_mday = timeS.day; 
-                    testTimer.tm_hour = 0;
-                    testTimer.tm_min = 0;
-                    testTimer.tm_sec = 0;
+                    TimeInfo testTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
+                    if (timeStr.size() >= 8) {
+                        testTimer.year = atoi(timeStr.substr(0, 4).c_str());
+                        testTimer.month = atoi(timeStr.substr(4, 2).c_str());
+                        testTimer.day = atoi(timeStr.substr(6, 2).c_str());
+                    }
+                    testTimer.hour = 0;
+                    testTimer.minute = 0;
+                    testTimer.second = 0;
                     if (testTimer < m_searchCondition.timeFrom)
                         continue;
                     if (testTimer > m_searchCondition.timeTo)
@@ -201,11 +204,11 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
         }
         case 1:
         {
-            std::vector<FileInfo> fileList;
-            HGGetFilesNoBytes("/app/log/",".log",fileList);
+            std::vector<ServiceInterfaces::FileInfo> fileList;
+            SvcFactory::CreateCommonService()->GetFilesNoBytes("/app/log/",".log",fileList);
             // printf("log count:%d\n",int(fileList.size()));
             // 按创建时间排序（从旧到新）
-            std::sort(fileList.begin(), fileList.end(), [](const FileInfo& a, const FileInfo& b) {
+            std::sort(fileList.begin(), fileList.end(), [](const ServiceInterfaces::FileInfo& a, const ServiceInterfaces::FileInfo& b) {
                 return a.createtime < b.createtime;
             });
             bool beyondMaxFileCount=false;
@@ -213,7 +216,7 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
                 if (m_searchCondition.isInit()){
                     beyondMaxFileCount=true;
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                                     QString::fromStdString(loadTranslation(m_lang,"TooManagLogFiles")));
+                                     QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"TooManagLogFiles")));
                     return;
                 }
             }
@@ -226,13 +229,13 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
                     std::string filename = fileList[i].filename.substr(timepos + 1, fileList[i].filename.length() - timepos - 1);
                     timepos = filename.find_first_of("_");
                     std::string timestr = filename.substr(0, timepos);
-                    HGExactTime testTimer = HGExactTime::currentTime();
-                    testTimer.tm_year = atoi(timestr.substr(0, 4).c_str());
-                    testTimer.tm_mon = atoi(timestr.substr(4, 2).c_str());
-                    testTimer.tm_mday = atoi(timestr.substr(6, 2).c_str());
-                    testTimer.tm_hour = 0;
-                    testTimer.tm_min = 0;
-                    testTimer.tm_sec = 0;
+                    TimeInfo testTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
+                    testTimer.year = atoi(timestr.substr(0, 4).c_str());
+                    testTimer.month = atoi(timestr.substr(4, 2).c_str());
+                    testTimer.day = atoi(timestr.substr(6, 2).c_str());
+                    testTimer.hour = 0;
+                    testTimer.minute = 0;
+                    testTimer.second = 0;
 
                     if (testTimer < m_searchCondition.timeFrom)
                         continue;
@@ -279,9 +282,9 @@ void HGLogWidget::slotLogTypeChanged(int index){
     m_logContentMap["Operator"]=2;
     switch (index){
         case 0:{
-        QStringList headers={QString::fromStdString(loadTranslation(m_lang,"Time")),
-                             QString::fromStdString(loadTranslation(m_lang,"LogContent")),
-                             QString::fromStdString(loadTranslation(m_lang,"Operator"))};
+        QStringList headers={QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Time")),
+                             QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"LogContent")),
+                             QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Operator"))};
         m_tableW->setColumnCount(headers.size());
         m_tableW->setHorizontalHeaderLabels(headers);
         m_tableW->horizontalHeaderItem(0)->setToolTip("Time");
@@ -290,10 +293,10 @@ void HGLogWidget::slotLogTypeChanged(int index){
         break;
         }
         case 1:{
-        QStringList headers1={QString::fromStdString(loadTranslation(m_lang,"Time")),
+        QStringList headers1={QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Time")),
                                 // "通道","采样电位","日志类型",
-                                QString::fromStdString(loadTranslation(m_lang,"LogContent")),
-                                QString::fromStdString(loadTranslation(m_lang,"Operator"))};
+                                QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"LogContent")),
+                                QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Operator"))};
         m_tableW->setColumnCount(headers1.size());
         m_tableW->setHorizontalHeaderLabels(headers1);
         m_tableW->horizontalHeaderItem(0)->setToolTip("Time");
@@ -311,24 +314,24 @@ void HGLogWidget::slotKeyWord(QString text){
 }
 void HGLogWidget::slotTimeFrom(QString text){
     m_searchCondition.timeRangeFrom=text.toStdString();
-    m_searchCondition.timeFrom=HGExactTime::currentTime();
-    m_searchCondition.timeFrom.tm_year = atoi(m_searchCondition.timeRangeFrom.substr(0, 4).c_str());
-    m_searchCondition.timeFrom.tm_mon = atoi(m_searchCondition.timeRangeFrom.substr(4, 2).c_str());
-    m_searchCondition.timeFrom.tm_mday = atoi(m_searchCondition.timeRangeFrom.substr(6, 2).c_str());
-    m_searchCondition.timeFrom.tm_hour = 0;
-    m_searchCondition.timeFrom.tm_min = 0;
-    m_searchCondition.timeFrom.tm_sec = 0;
+    m_searchCondition.timeFrom=SvcFactory::CreateTimeService()->GetCurrentTime();
+    m_searchCondition.timeFrom.year = atoi(m_searchCondition.timeRangeFrom.substr(0, 4).c_str());
+    m_searchCondition.timeFrom.month = atoi(m_searchCondition.timeRangeFrom.substr(4, 2).c_str());
+    m_searchCondition.timeFrom.day = atoi(m_searchCondition.timeRangeFrom.substr(6, 2).c_str());
+    m_searchCondition.timeFrom.hour = 0;
+    m_searchCondition.timeFrom.minute = 0;
+    m_searchCondition.timeFrom.second = 0;
 
 }
 void HGLogWidget::slotTimeTo(QString text){
     m_searchCondition.timeRangeTo=text.toStdString();
-    m_searchCondition.timeTo=HGExactTime::currentTime();
-    m_searchCondition.timeTo.tm_year = atoi(m_searchCondition.timeRangeTo.substr(0, 4).c_str());
-    m_searchCondition.timeTo.tm_mon = atoi(m_searchCondition.timeRangeTo.substr(4, 2).c_str());
-    m_searchCondition.timeTo.tm_mday = atoi(m_searchCondition.timeRangeTo.substr(6, 2).c_str());
-    m_searchCondition.timeTo.tm_hour = 23;
-    m_searchCondition.timeTo.tm_min = 59;
-    m_searchCondition.timeTo.tm_sec = 59;
+    m_searchCondition.timeTo=SvcFactory::CreateTimeService()->GetCurrentTime();
+    m_searchCondition.timeTo.year = atoi(m_searchCondition.timeRangeTo.substr(0, 4).c_str());
+    m_searchCondition.timeTo.month = atoi(m_searchCondition.timeRangeTo.substr(4, 2).c_str());
+    m_searchCondition.timeTo.day = atoi(m_searchCondition.timeRangeTo.substr(6, 2).c_str());
+    m_searchCondition.timeTo.hour = 23;
+    m_searchCondition.timeTo.minute = 59;
+    m_searchCondition.timeTo.second = 59;
 }
 void HGLogWidget::slotSearch(){
     if (m_searchCondition.isInit()) {
@@ -368,14 +371,14 @@ void HGLogWidget::slotClearSearch(){
 void HGLogWidget::slotSaveSearchLog(){
     if (m_tableW->rowCount()==0){
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                             QString::fromStdString(loadTranslation(m_lang,"NoData")));
+                             QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"NoData")));
         return;
     }
 
     QDialog dialog(this);
-    dialog.setWindowTitle(QString::fromStdString(loadTranslation(m_lang,"InputSaveName")));
+    dialog.setWindowTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"InputSaveName")));
     dialog.setWindowModality(Qt::ApplicationModal);
-    QLabel* saveLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"LogSaveType")));
+    QLabel* saveLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"LogSaveType")));
     QComboBox* saveCombox=new QComboBox();
     saveCombox->addItems({"txt","csv","pdf"});
     enum {
@@ -387,16 +390,16 @@ void HGLogWidget::slotSaveSearchLog(){
     connect(saveCombox,&QComboBox::currentTextChanged,[&](QString text){
         if (text=="txt"){
             logsavetype=SAVE_TEXT;
-            // saveLabel->setText(QString::fromStdString(loadTranslation(m_lang,"LogSaveName")));
+            // saveLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"LogSaveName")));
         }else if (text=="csv"){
             logsavetype=SAVE_CSV;
         } else{
             logsavetype=SAVE_PDF;
-            // saveLabel->setText(QString::fromStdString(loadTranslation(m_lang,"LogSaveName")));
+            // saveLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"LogSaveName")));
         }
     });
-    QPushButton *okBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Ok")));
-    QPushButton *cancelBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Cancel")));
+    QPushButton *okBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Ok")));
+    QPushButton *cancelBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Cancel")));
     connect(okBtn,&QPushButton::clicked,[&](){
         std::vector<std::map<std::string,std::string>> logList;
         for (int i=0;i<m_tableW->rowCount();i++){
@@ -408,25 +411,24 @@ void HGLogWidget::slotSaveSearchLog(){
             }
             logList.push_back(log);
         }
-        std::string outlogPath=FileConfig::getDirPath()+"/outlog/";
-        HGMkDir(outlogPath);
-        HGExactTime curTime = HGExactTime::currentTime();
-        std::string syncslice = curTime.toStringFromYearToSec();
+        std::string outlogPath=SvcFactory::CreateConfigService()->GetDirPath()+"/outlog/";
+        SvcFactory::CreateCommonService()->CreateDirectory(outlogPath);
+        std::string syncslice = SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec();
         std::string logname=outlogPath+syncslice;
         switch (logsavetype){
             case SAVE_TEXT:{
                 logname+=".txt";
-                saveTableToTxt(logList,logname);
+                SvcFactory::CreateConfigService()->SaveTableToTxt(logList,logname);
                 break;
             }
             case SAVE_CSV:{
                 logname+=".csv";
-                saveTableToCsv(logList,logname);
+                SvcFactory::CreateConfigService()->SaveTableToCsv(logList,logname);
                 break;
             }
             case SAVE_PDF:{
                 logname+=".pdf";
-                saveTableToPdf(logList,logname,getPath("/resources/simhei.ttf"));
+                SvcFactory::CreateConfigService()->SaveTableToPdf(logList,logname,getPath("/resources/simhei.ttf"));
                 break;
             }
             default:{

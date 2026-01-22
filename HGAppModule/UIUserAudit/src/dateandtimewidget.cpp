@@ -1,6 +1,7 @@
 #include "dateandtimewidget.h"
 #include "common.h"
 #include <QMessageBox>
+#include "SvcFactory.h"
 
 
 DateAndTimeWidget::DateAndTimeWidget(std::string lang,QWidget *parent) : BaseWidget(parent),
@@ -133,19 +134,20 @@ void DateAndTimeWidget::setLanguage(std::string lang){
     m_manualSetBtn->setText(QString::fromStdString(loadTranslation(m_lang,"Change")));
 }
 void DateAndTimeWidget::fnSetSystemTime(const std::string &time){
-    HGExactTime setSystemTimer = HGExactTime::currentTime();
-    setSystemTimer.tm_year = atoi(time.substr(0, 4).c_str());
-    setSystemTimer.tm_mon = atoi(time.substr(4, 2).c_str());
-    setSystemTimer.tm_mday = atoi(time.substr(6, 2).c_str());
-    // setSystemTimer.tm_hour = atoi(time.substr(8, 2).c_str());
-    // setSystemTimer.tm_min = atoi(time.substr(10, 2).c_str());
-    // setSystemTimer.tm_sec = atoi(time.substr(12, 2).c_str());
-    TIME_STRUECT tmS;
-    decodeStandardTime(GlobalSingleton::instance().getSystemInfo("lastLoginTime"),tmS); 
-    HGExactTime softwareLastTimer=HGExactTime::currentTime();
-    softwareLastTimer.tm_year =tmS.year;
-    softwareLastTimer.tm_mon =tmS.month;
-    softwareLastTimer.tm_mday =tmS.day;
+    TimeInfo setSystemTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
+    setSystemTimer.year = atoi(time.substr(0, 4).c_str());
+    setSystemTimer.month = atoi(time.substr(4, 2).c_str());
+    setSystemTimer.day = atoi(time.substr(6, 2).c_str());
+    // setSystemTimer.hour = atoi(time.substr(8, 2).c_str());
+    // setSystemTimer.minute = atoi(time.substr(10, 2).c_str());
+    // setSystemTimer.second = atoi(time.substr(12, 2).c_str());
+    std::string lastLoginTime = GlobalSingleton::instance().getSystemInfo("lastLoginTime");
+    TimeInfo softwareLastTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
+    if (lastLoginTime.size() >= 8) {
+        softwareLastTimer.year = atoi(lastLoginTime.substr(0, 4).c_str());
+        softwareLastTimer.month = atoi(lastLoginTime.substr(4, 2).c_str());
+        softwareLastTimer.day = atoi(lastLoginTime.substr(6, 2).c_str());
+    }
     bool setflag=false;
     if (GlobalSingleton::instance().getSystemInfo("lastLoginTime")==""){
         setflag=true;
@@ -164,11 +166,11 @@ void DateAndTimeWidget::fnSetSystemTime(const std::string &time){
         }
     }
     if (setflag){
-        HGExactTime::setSystemTime(setSystemTimer.tm_year,setSystemTimer.tm_mon,setSystemTimer.tm_mday,
-                setSystemTimer.tm_hour,setSystemTimer.tm_min,setSystemTimer.tm_sec);
+        SvcFactory::CreateTimeService()->SetSystemTime(setSystemTimer.year,setSystemTimer.month,setSystemTimer.day,
+                setSystemTimer.hour,setSystemTimer.minute,setSystemTimer.second);
         std::ostringstream ss;
-        ss<<setSystemTimer.tm_year<<"-"<<setSystemTimer.tm_mon<<"-"<<setSystemTimer.tm_mday<<"-" \
-            <<setSystemTimer.tm_hour<<"-"<<setSystemTimer.tm_min<<"-"<<setSystemTimer.tm_sec;
+        ss<<setSystemTimer.year<<"-"<<setSystemTimer.month<<"-"<<setSystemTimer.day<<"-" \
+            <<setSystemTimer.hour<<"-"<<setSystemTimer.minute<<"-"<<setSystemTimer.second;
         RWDb::writeAuditTrailLog("手动设置系统时间为:"+ss.str());
     }
 }

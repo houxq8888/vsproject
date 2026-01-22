@@ -1,6 +1,7 @@
 #include "hgsoftwareinfowidget.h"
 #include <QMessageBox>
 #include "common.h"
+#include "SvcFactory.h"
 
 HGSoftwareInfoWidget::HGSoftwareInfoWidget(std::string lang,QWidget *parent) : QWidget(parent),
     // m_loginAuthority(HGOnlineRWDB::readLoginAuthority()),
@@ -79,9 +80,9 @@ void HGSoftwareInfoWidget::fnWriteDB(){
     GlobalSingleton::instance().setSystemInfo("激活码",m_productIDEdit->text().toStdString());
     if (isRightAuthority(GlobalSingleton::instance().getSystemInfo("激活码")))
     {
-        HGExactTime curTimer = HGExactTime::currentTime();
+        TimeInfo curTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
         std::ostringstream curTimeS;
-        curTimeS << curTimer.tm_year << curTimer.tm_mon << curTimer.tm_mday;
+        curTimeS << curTimer.year << curTimer.month << curTimer.day;
     
         GlobalSingleton::instance().setSystemInfo("授权日期", curTimeS.str());
         GlobalSingleton::instance().setSystemInfo("授权期限", m_productKeyEdit->text().toStdString());
@@ -125,8 +126,8 @@ void HGSoftwareInfoWidget::fnReadDB(){
         }
         else
         {
-            HGExactTime curTimer = HGExactTime::currentTime();
-            HGExactTime deadlineTimer = HGExactTime::currentTime();
+            TimeInfo curTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
+            TimeInfo deadlineTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
             if (GlobalSingleton::instance().getSystemInfo("授权期限").length() >= 8) {
                 deadlineTimer.tm_year = atoi(GlobalSingleton::instance().getSystemInfo("授权期限").substr(0, 4).c_str());
                 deadlineTimer.tm_mon = atoi(GlobalSingleton::instance().getSystemInfo("授权期限").substr(4, 2).c_str());

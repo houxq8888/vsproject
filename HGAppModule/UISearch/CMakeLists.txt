@@ -58,78 +58,18 @@ if (BUILD_SHARED_LIBS)
     else()
         HG_CMAKE_MODULE_DEPEND_PUB(
             PluginInterface
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
-            HGAuthorityService
-            HGCommunicateService
-            HGImageAlgorithmService
-            HGSecurityService
-            HGBaseAppModule
-            ${ZXING_LIBRARY}
-            ALSA::ALSA
+            HGUIBaseCore
+            HGServiceInterfaces
             ${OpenCV_LIBRARIES}
-            ${OpencvFreeType_LIBRARY}
-            ${LOG4CPLUS_LIBRARIES}
-            ${CUPS_LIBRARY}
-            ${XLSXIO_READ_LIBRARY}
-            ${XLSXIO_WRITE_LIBRARY}
-            ${HARU_LIBRARY}
-            ${ZeroMQ_LIBRARY}
-            ${MQTT_LIBRARYS}
-            ${LIB_SERIALPORT_LIBRARY}
-            ${LIB_MOSQUITT_LIBRARY}
-            ${PULSE_LIBRARIES}
-            ${LIBSSH_LIBRARIES}
-            ${AVFORMAT_LIBRARIES}
-            ${AVCODEC_LIBRARIES}
-            ${AVUTIL_LIBRARIES}
-            ${SWSCALE_LIBRARIES}
-            ${Boost_LIBRARIES}
-            /usr/lib/x86_64-linux-gnu/libpulse.so
-            /usr/lib/x86_64-linux-gnu/libpulse-simple.so
-            OpenSSL::Crypto
             ${QT_LIBRARIES}
         )
 
         HG_CMAKE_ADD_SHARED(HGUISearch inc src ${MOC_SRCS})
         HG_CMAKE_MODULE_DEPEND(
             PluginInterface
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
-            HGAuthorityService
-            HGCommunicateService
-            HGImageAlgorithmService
-            HGSecurityService
-            HGBaseAppModule
-            ${ZXING_LIBRARY}
-            ALSA::ALSA
+            HGUIBaseCore
+            HGServiceInterfaces
             ${OpenCV_LIBRARIES}
-            ${OpencvFreeType_LIBRARY}
-            ${LOG4CPLUS_LIBRARIES}
-            ${CUPS_LIBRARY}
-            ${XLSXIO_READ_LIBRARY}
-            ${XLSXIO_WRITE_LIBRARY}
-            ${HARU_LIBRARY}
-            ${ZeroMQ_LIBRARY}
-            ${MQTT_LIBRARYS}
-            ${LIB_SERIALPORT_LIBRARY}
-            ${LIB_MOSQUITT_LIBRARY}
-            ${PULSE_LIBRARIES}
-            ${LIBSSH_LIBRARIES}
-            ${AVFORMAT_LIBRARIES}
-            ${AVCODEC_LIBRARIES}
-            ${AVUTIL_LIBRARIES}
-            ${SWSCALE_LIBRARIES}
-            ${Boost_LIBRARIES}
-            /usr/lib/x86_64-linux-gnu/libpulse.so
-            /usr/lib/x86_64-linux-gnu/libpulse-simple.so
-            OpenSSL::Crypto
             ${QT_LIBRARIES}
         )
     endif()
@@ -179,8 +119,8 @@ if (BUILD_EXECUTABLE)
     )
 
     include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-    # 添加HGBaseAppModule的头文件路径
-    include_directories("${CMAKE_SOURCE_DIR}/HGBaseAppModule/inc")
+    # 添加HGUIBaseCore的头文件路径
+    include_directories("${CMAKE_SOURCE_DIR}/HGUIBaseCore/inc")
     if (WIN32)
         # Windows平台链接HGUISearchStatic库，该库已包含所有必要依赖
         target_link_libraries(HGUISearchRun PUBLIC 

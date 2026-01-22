@@ -6,6 +6,9 @@
 #include <QComboBox>
 #include <QCheckBox>
 #include <QDebug>
+#include "IBaseConfig.h"
+#include "SvcFactory.h"
+#include "ISvcFrame.h"
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QDesktopWidget>
 #endif
@@ -142,7 +145,8 @@ void setWidgetTextAtPosition(QGridLayout* layout,int row,int column,const std::s
 }
 std::string getPath(std::string inPath){
     std::ostringstream ss;
-    ss<<RWDb::readCurDirPath()<<inPath;
+    auto frameService = SvcFactory::CreateFrameService();
+    ss<<frameService->ReadCurDirPath()<<inPath;
     return (ss.str());
 }
 // QObject* findObjectByName(QLayout* layout,const std::string &name){
@@ -165,7 +169,8 @@ std::string getPath(std::string inPath){
 //     return nullptr;
 // }
 void setControlText(QGridLayout* layout,const std::string& param){
-    std::map<std::string,std::string> wparam=getParamMap(param);
+    auto configService = SvcFactory::CreateConfigService();
+    std::map<std::string,std::string> wparam=configService->GetParamMap(param);
     for(auto w:wparam){
         int row=-1,column=-1;
         bool stable=false;

@@ -11,14 +11,17 @@
 #include <QLineEdit>
 #include "mykeyboard.h"
 #include "common.h"
+#include "IBaseConfig.h"
+#include "ISvcFrame.h"
+#include "ITime.h"
 
 typedef struct tagSearchCondition
 {
     std::string key;
     std::string timeRangeFrom;
     std::string timeRangeTo;
-    HGExactTime timeFrom;
-    HGExactTime timeTo;
+    TimeInfo timeFrom;
+    TimeInfo timeTo;
     void Clear(){
         key="";
         timeRangeFrom="";

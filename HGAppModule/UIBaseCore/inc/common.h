@@ -8,24 +8,6 @@
 #include <sstream>
 #include <QToolBox>
 #include "labelwithimg.h"
-#include "rwDb.h"
-#include "HGExactTime.h"
-#include "hgcommonutility.h"
-#include "hgxml.h"
-#include "HGMacroData.h"
-#include "hgprinter.h"
-#include "config.h"
-#include "hgtxt.h"
-#include "hgcsv.h"
-#include "hgpdf.h"
-#include "hgserial.h"
-#include "hgsecurity.h"
-#include "HGMacroData.h"
-// #include "version.h"
-// #include "HGOnlinePlatformInterface.h"
-#include "globalsingleton.h"
-
-using namespace HGMACHINE;
 
 // template function
 template <typename T>

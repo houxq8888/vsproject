@@ -100,7 +100,7 @@ if(BUILD_STATIC_LIBS)
     else()
         message(STATUS "Linux平台：包含整个库")
         HG_CMAKE_MODULE_DEPEND_PUB(
-            HGCommon
+            HGBaseCommon
             ${OpenCV_LIBRARIES}
             ${LOG4CPLUS_LIBRARIES}
             ${QT_LIBRARIES}

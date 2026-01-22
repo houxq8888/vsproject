@@ -7,6 +7,7 @@
 #include <QMessageBox>
 #include "hgcomwithssh.h"
 #include "PrinterManager.h"
+#include "SvcFactory.h"
 
 
 HGPrintWidget::HGPrintWidget(std::string lang,std::string printTitle,std::vector<std::string> printOptions,QWidget *parent) : QWidget(parent),
@@ -325,8 +326,7 @@ void HGPrintWidget::slotPrintClicked()
 
     std::string reportPath = FileConfig::getDirPath() + "/report/";
     HGMkDir(reportPath);
-    HGExactTime curTime = HGExactTime::currentTime();
-    std::string syncslice = curTime.toStringFromYearToSec();
+    std::string syncslice = SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec();
     std::string filename = reportPath + syncslice + ".pdf";
 
     // 设置 PDF 打印机

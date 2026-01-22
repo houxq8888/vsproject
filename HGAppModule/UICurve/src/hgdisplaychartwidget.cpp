@@ -5,6 +5,7 @@
 #include <QDateTime>
 #include "common.h"
 #include "datachartinfocache.h"
+#include "SvcFactory.h"
 
 #define MAX_POINT_COUNT 10
 
@@ -211,8 +212,7 @@ void HGDisplayChartWidget::slotExportData(){
     std::vector<std::map<std::string,std::string>> logList;
     std::string outlogPath=FileConfig::getDirPath()+"/outlog/";
     HGMkDir(outlogPath);
-    HGExactTime curTime=HGExactTime::currentTime();
-    std::string syncslice = curTime.toStringFromYearToSec();
+    std::string syncslice = SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec();
     std::string logname = outlogPath+syncslice;
     logname+=".csv";
     // logList=RWDb::readSampleDetectInfo();

@@ -55,18 +55,10 @@ if (BUILD_SHARED_LIBS)
     else()
         HG_CMAKE_MODULE_DEPEND_PUB(
             PluginInterface
-            LogInterface
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
-            HGAuthorityService
-            HGCommunicateService
-            HGImageAlgorithmService
-            HGSecurityService
-            HGBaseAppModule
-            HGSearchModule
+            HGIfLog
+            HGServiceInterfaces
+            HGUIBaseCore
+            HGUISearch
             ${ZXING_LIBRARY}
             ALSA::ALSA
             ${OpenCV_LIBRARIES}
@@ -94,18 +86,10 @@ if (BUILD_SHARED_LIBS)
         HG_CMAKE_ADD_SHARED(HGUILog inc src ${MOC_SRCS})
         HG_CMAKE_MODULE_DEPEND(
             PluginInterface
-            LogInterface
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
-            HGAuthorityService
-            HGCommunicateService
-            HGImageAlgorithmService
-            HGSecurityService
-            HGBaseAppModule
-            HGSearchModule
+            HGIfLog
+            HGServiceInterfaces
+            HGUIBaseCore
+            HGUISearch
             ${ZXING_LIBRARY}
             ALSA::ALSA
             ${OpenCV_LIBRARIES}

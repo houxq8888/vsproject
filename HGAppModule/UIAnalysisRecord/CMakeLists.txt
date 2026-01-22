@@ -57,10 +57,7 @@ if (BUILD_SHARED_LIBS)
         HG_CMAKE_MODULE_DEPEND_PUB(
             PluginInterface
             HGHwLowerPC
-            HGBaseCommon
-            HGBaseConfig
-            HGSvcSave
-            HGSvcFrame
+            HGServiceInterfaces
             HGSvcAuthority
             HGSvcCommunicate
             HGSvcImageAlgorithm

@@ -15,6 +15,7 @@
 #include <QTextDocument>
 #include "hginputsearchconditionwidget.h"
 #include "loginterface.h"
+#include "ITime.h"
 
 class HtmlDelegate : public QStyledItemDelegate
 {

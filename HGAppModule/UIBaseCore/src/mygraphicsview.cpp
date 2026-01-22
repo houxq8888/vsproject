@@ -6,8 +6,8 @@
 #include "mygraphicsview.h"
 #include <QApplication>
 #include <iostream>
-#include "common.h"
 #include <QDateTime>
+
 
 
 MyGraphicsView::MyGraphicsView(int wpIndex, QWidget *parent):QGraphicsView(parent)
@@ -59,21 +59,21 @@ MyGraphicsView::MyGraphicsView(int wpIndex, QWidget *parent):QGraphicsView(paren
 }
 MyGraphicsView::~MyGraphicsView()
 {
-    SAFE_DELETE(start_btn);
-    SAFE_DELETE(simulate_btn);
-    SAFE_DELETE(centerLab);
-    SAFE_DELETE(bottomLab);
-    SAFE_DELETE(actiongroup);
-    SAFE_DELETE(actionZoom);
-    SAFE_DELETE(Pointer);
-    SAFE_DELETE(Pan);
-    SAFE_DELETE(Zoomin);
-    SAFE_DELETE(Zoomout);
-    SAFE_DELETE(Fitimage);
-    SAFE_DELETE(Zoom);
-    SAFE_DELETE(pixelgrid);
-    SAFE_DELETE(SubpixelGrid);
-    SAFE_DELETE(menu);
+    if (start_btn) { delete start_btn; start_btn = nullptr; }
+    if (simulate_btn) { delete simulate_btn; simulate_btn = nullptr; }
+    if (centerLab) { delete centerLab; centerLab = nullptr; }
+    if (bottomLab) { delete bottomLab; bottomLab = nullptr; }
+    if (actiongroup) { delete actiongroup; actiongroup = nullptr; }
+    if (actionZoom) { delete actionZoom; actionZoom = nullptr; }
+    if (Pointer) { delete Pointer; Pointer = nullptr; }
+    if (Pan) { delete Pan; Pan = nullptr; }
+    if (Zoomin) { delete Zoomin; Zoomin = nullptr; }
+    if (Zoomout) { delete Zoomout; Zoomout = nullptr; }
+    if (Fitimage) { delete Fitimage; Fitimage = nullptr; }
+    if (Zoom) { delete Zoom; Zoom = nullptr; }
+    if (pixelgrid) { delete pixelgrid; pixelgrid = nullptr; }
+    if (SubpixelGrid) { delete SubpixelGrid; SubpixelGrid = nullptr; }
+    if (menu) { delete menu; menu = nullptr; }
 }
 void MyGraphicsView::init(){
     zoomflag = 0;

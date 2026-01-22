@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <QShortcut>
 #include "common.h"
+#include "SvcFactory.h"
 
 
 HGLoginWidget::HGLoginWidget(std::string lang,QWidget *parent) : QWidget(parent),
@@ -232,8 +233,7 @@ void HGLoginWidget::clickLoginOn()
                         if (splitStrs.size() >0) timeStr=splitStrs[0];
                         if (splitStrs.size() >1) lockDuration=std::atoi(splitStrs[1].c_str());
                         // lockDuration=0;// debug
-                        HGExactTime curTime=HGExactTime::currentTime();
-                        int countsecond = curTime.fasterThanThirtyMimutes(timeStr);
+                        int countsecond = SvcFactory::CreateTimeService()->GetTimeDifferenceInSeconds(timeStr);
                         if (countsecond < lockDuration){
                             QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "该用户已被锁，剩余时间：" + QString::number(lockDuration-countsecond) + "秒!");
                             RWDb::writeAuditTrailLog("该用户已被锁，剩余时间："+std::to_string(lockDuration-countsecond)+"秒");
@@ -286,9 +286,8 @@ void HGLoginWidget::clickLoginOn()
                 RWDb::writeAuditTrailLog("用户 " + userName + " 曾经锁定，还未真正解锁");
                 if (wrongPasswdCnt<=std::atoi(maxWrongPasswdCnt.c_str())+3){
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "密码错误!");
-                    HGExactTime againLockTime=HGExactTime::currentTime();
                     GlobalSingleton::instance().setUserField(index,"AccountManagement","Locked");
-                    GlobalSingleton::instance().addUserField(index,"AccountManagement","["+againLockTime.toStringFromYearToSec()+":0:"+std::to_string(wrongPasswdCnt)+"]");
+                    GlobalSingleton::instance().addUserField(index,"AccountManagement","["+SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec()+":0:"+std::to_string(wrongPasswdCnt)+"]");
                     RWDb::writeAuditTrailLog(userName + " 登录密码错误["+std::to_string(wrongPasswdCnt)+"次!");
                     return;
                 } else if (wrongPasswdCnt<=std::atoi(maxWrongPasswdCnt.c_str())+8){
@@ -297,18 +296,16 @@ void HGLoginWidget::clickLoginOn()
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "30分钟到期后，密码再次输出错，请"+QString::number(waitTime.at(wrongPasswdCnt-std::atoi(maxWrongPasswdCnt.c_str())-4))+"秒后，请重新输入密码！");
                     RWDb::writeAuditTrailLog(userName+" 登录密码错误["+std::to_string(wrongPasswdCnt)+"次!,请"+std::to_string(waitTime.at(wrongPasswdCnt-std::atoi(maxWrongPasswdCnt.c_str())-4))+"秒后，请重新输入密码！");
 
-                    HGExactTime againLockTime=HGExactTime::currentTime();
                     GlobalSingleton::instance().setUserField(index,"AccountManagement","Locked");
-                    GlobalSingleton::instance().addUserField(index,"AccountManagement","["+againLockTime.toStringFromYearToSec()+":"+
+                    GlobalSingleton::instance().addUserField(index,"AccountManagement","["+SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec()+":"+
                         std::to_string(waitTime.at(wrongPasswdCnt-std::atoi(maxWrongPasswdCnt.c_str())-4))+":"+std::to_string(wrongPasswdCnt)+"]");
                     return;
                 } else if (wrongPasswdCnt<=std::atoi(maxWrongPasswdCnt.c_str())+11){
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "密码再次输出错，请15分钟后，请重新输入密码！");
                     RWDb::writeAuditTrailLog(userName+" 登录密码错误["+std::to_string(wrongPasswdCnt)+"次!,请15分钟后，请重新输入密码！");
 
-                    HGExactTime againLockTime=HGExactTime::currentTime();
                     GlobalSingleton::instance().setUserField(index,"AccountManagement","Locked");
-                    GlobalSingleton::instance().addUserField(index,"AccountManagement","["+againLockTime.toStringFromYearToSec()+":900:"+
+                    GlobalSingleton::instance().addUserField(index,"AccountManagement","["+SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec()+":900:"+
                         std::to_string(wrongPasswdCnt)+"]");
                     return;
                 } else {
@@ -332,9 +329,8 @@ void HGLoginWidget::clickLoginOn()
                     wrongPasswdCnt>=std::atoi(maxWrongPasswdCnt.c_str())){
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "密码输入错误次数已达上限[" + QString::fromStdString(maxWrongPasswdCnt) + "],账户已锁定，请30分钟后再试!");
                     RWDb::writeAuditTrailLog(userName+" 密码输入错误次数已达上限["+maxWrongPasswdCnt+"次,账户已锁定，请30分钟后再试!");
-                    HGExactTime curTime=HGExactTime::currentTime();
                     GlobalSingleton::instance().setUserField(index,"AccountManagement","Locked");
-                    GlobalSingleton::instance().addUserField(index,"AccountManagement","["+curTime.toStringFromYearToSec()+":"+std::to_string(30*60)+":"+std::to_string(wrongPasswdCnt)+"]");
+                    GlobalSingleton::instance().addUserField(index,"AccountManagement","["+SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec()+":"+std::to_string(30*60)+":"+std::to_string(wrongPasswdCnt)+"]");
                     return;
                 } else {
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "密码错误！");
@@ -348,16 +344,15 @@ void HGLoginWidget::clickLoginOn()
         {
             GlobalSingleton::instance().setUserField(index,"AccountManagement","Enable");
             std::string createTimeStr = GlobalSingleton::instance().getUserField(index,"CreateTime");
-            TIME_STRUECT timeS;
-            decodeStandardTime(createTimeStr,timeS);
-
-            HGExactTime createTime = HGExactTime::currentTime();
-            createTime.tm_year = timeS.year;
-            createTime.tm_mon = timeS.month;
-            createTime.tm_mday = timeS.day;
+            TimeInfo createTime = SvcFactory::CreateTimeService()->GetCurrentTime();
+            if (createTimeStr.size() >= 8) {
+                createTime.year = atoi(createTimeStr.substr(0, 4).c_str());
+                createTime.month = atoi(createTimeStr.substr(4, 2).c_str());
+                createTime.day = atoi(createTimeStr.substr(6, 2).c_str());
+            }
             int passwdCycle = std::atoi(GlobalSingleton::instance().getUserField(index,"PasswdCycle").c_str());
 
-            HGExactTime currentTime = HGExactTime::currentTime();
+            TimeInfo currentTime = SvcFactory::CreateTimeService()->GetCurrentTime();
             int passDay = currentTime - createTime;
 
             if (loginAuthority.find("SystemManager") == std::string::npos)
@@ -377,7 +372,7 @@ void HGLoginWidget::clickLoginOn()
                         {
                             createTime += passwdCycle;
                             std::ostringstream ss;
-                            ss << "该账号密码将于" << createTime.tm_year << "年" << createTime.tm_mon << "月" << createTime.tm_mday << "日" << "失效，请及时修改密码!";
+                            ss << "该账号密码将于" << createTime.year << "年" << createTime.month << "月" << createTime.day << "日" << "失效，请及时修改密码!";
                             QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(ss.str()));
                             RWDb::writeAuditTrailLog(userName + ss.str());
                             GlobalSingleton::instance().setUserField(index, "PasswdCycle", std::to_string(passwdCycle) + ";" + std::to_string(passDay));
@@ -397,7 +392,7 @@ void HGLoginWidget::clickLoginOn()
                     {
                         createTime += passwdCycle;
                         std::ostringstream ss;
-                        ss << "该账号密码将于" << createTime.tm_year << "年" << createTime.tm_mon << "月" << createTime.tm_mday << "日" << "失效，请及时修改密码!";
+                        ss << "该账号密码将于" << createTime.year << "年" << createTime.month << "月" << createTime.day << "日" << "失效，请及时修改密码!";
                         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(ss.str()));
                         GlobalSingleton::instance().addUserField(index, "PasswdCycle", ";" + std::to_string(passDay));
                     }

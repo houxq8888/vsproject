@@ -8,34 +8,18 @@ HG_CMAKE_ADD_MODULE(IfLog inc src)
 
 HG_CMAKE_MODULE_DEPEND_PUB( 
     HGCoreLog
-    HGBaseConfig
-    HGBaseCommon
-    HGSvcLog
-    HGSvcSave
 )
 if (PLATFORM STREQUAL "x64")
 HG_CMAKE_ADD_SHARED(HGIfLog inc src)
 
 HG_CMAKE_MODULE_DEPEND(
     HGCoreLog
-    HGBaseConfig
-    HGBaseCommon
-    HGSvcLog
-    HGSvcSave
 )
 elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_ADD_STATIC(HGIfLog inc src
-    ../../BaseConfig/inc                                        ../../BaseConfig/src
-    ../../services/BaseCommon/inc                               ../../services/BaseCommon/src
-    ../../services/AtomService/SvcLog/inc                       ../../services/AtomService/SvcLog/src
-    ../../modules/CoreLog/inc                                   ../../modules/CoreLog/src
-)
+    ../../modules/CoreLog/inc                                   ../../modules/CoreLog/src)
 HG_CMAKE_MODULE_DEPEND(
     HGCoreLog
-    HGBaseConfig
-    HGBaseCommon
-    HGSvcLog
-    HGSvcSave
 )
 
 endif()

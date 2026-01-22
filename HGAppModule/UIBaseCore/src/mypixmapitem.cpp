@@ -1,7 +1,7 @@
 #include "mypixmapitem.h"
-#include "hgxml.h"
+#include "IBaseConfig.h"
+#include "SvcFactory.h"
 
-using namespace HGMACHINE;
 
 MyPixmapItem::MyPixmapItem(const std::string &lang,const QPixmap &pixmap) : QGraphicsPixmapItem(pixmap) {
     m_lang = lang;
@@ -57,7 +57,8 @@ void MyPixmapItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
 void MyPixmapItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event) {
     QMenu menu;
 
-    QAction *deleteAction = menu.addAction(QString::fromStdString(loadTranslation(m_lang,"Delete")));
+    auto configService = SvcFactory::CreateConfigService();
+    QAction *deleteAction = menu.addAction(QString::fromStdString(configService->LoadTranslation(m_lang,"Delete")));
     // QAction *resizeAction = menu.addAction("调整大小");
     // QAction *infoAction = menu.addAction("查看信息");
 

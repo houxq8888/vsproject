@@ -3,6 +3,7 @@
 #include <QShortcut>
 #include <QMessageBox>
 #include "globalsingleton.h"
+#include "SvcFactory.h"
 
 
 UserRegisterWidget::UserRegisterWidget(std::string lang,bool isNoPwdLogin,QWidget *parent) : QWidget(parent),
@@ -125,8 +126,7 @@ void UserRegisterWidget::clickRegister()
                     if (start != std::string::npos && end != std::string::npos && end > start)
                     {
                         timeStr = management.substr(start + 1, end - start - 1);
-                        HGExactTime time=HGExactTime::currentTime();
-                        int countsecond = time.fasterThanThirtyMimutes(timeStr);
+                        int countsecond = SvcFactory::CreateTimeService()->GetTimeDifferenceInSeconds(timeStr);
                         int minutes = int(countsecond / 60.0 + 0.5);
                         if (minutes < 30){
                             QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "该用户已被锁，剩余时间：" + QString::number(30-minutes) + "分钟！");
@@ -177,8 +177,7 @@ void UserRegisterWidget::clickRegister()
                 QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "密码输入错误次数已达上限[" + QString::number(wrongPasswdCnt) + "],账户已锁定，请30分钟后再试!");
                 RWDb::writeAuditTrailLog(userName+ "密码输入错误次数已达上限[" + std::to_string(wrongPasswdCnt) + "],账户已锁定，请30分钟后再试!");
                 GlobalSingleton::instance().setUserField(index,"AccountManagement","Locked");
-                HGExactTime curTime=HGExactTime::currentTime();
-                GlobalSingleton::instance().addUserField(index,"AccountManagement", "["+curTime.toStringFromYearToSec()+"]");
+                GlobalSingleton::instance().addUserField(index,"AccountManagement", "["+SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec()+"]");
                 wrongPasswdCnt = 0;
                 return;
             }else {

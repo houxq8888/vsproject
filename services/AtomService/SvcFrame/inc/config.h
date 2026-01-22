@@ -163,6 +163,9 @@ namespace HGMACHINE{
     private:
         static Config m_config;
     };
+
+    bool loadConfig(const std::string &curPath);
+    void saveConfig();
 }
 #ifdef __cplusplus
 }

@@ -7,8 +7,8 @@ HG_CMAKE_ADD_MODULE(CoreDetectDimentionVux inc src)
 
 
 HG_CMAKE_MODULE_DEPEND_PUB( 
-    HGCommon
-    HGImageAlgorithmService
+    HGBaseCommon
+    HGSvcImageAlgorithm
     ${ZXING_LIBRARY}
     ${OpenCV_LIBRARIES}
     ${LOG4CPLUS_LIBRARIES}
@@ -17,8 +17,8 @@ HG_CMAKE_MODULE_DEPEND_PUB(
 HG_CMAKE_ADD_SHARED(HGCoreDetectDimentionVux inc src)
 
 HG_CMAKE_MODULE_DEPEND(
-    HGCommon
-    HGImageAlgorithmService
+    HGBaseCommon
+    HGSvcImageAlgorithm
     ${ZXING_LIBRARY}
     ${LOG4CPLUS_LIBRARIES}
 )

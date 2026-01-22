@@ -1,6 +1,7 @@
 #include "config.h"
 #include <stdexcept>
 #include <iostream>
+#include "hgcommonutility.h"
 
 namespace HGMACHINE
 {
@@ -85,5 +86,28 @@ namespace HGMACHINE
     }
     void FileConfig::setVersion(const std::string& version){
         m_config.setVersion(version);
+    }
+
+    #define CONFIG_DIR "/config"
+    bool loadConfig(const std::string &curPath)
+    {
+        std::string configPath=curPath+CONFIG_DIR;
+        HGMkDir(configPath);
+        std::string path=configPath+"/config.xml";
+        bool valid=isFileExist(path);
+        if (!valid)
+        {
+            FileConfig::createConfigFile(path,"config");
+        }
+        else
+        {
+            FileConfig::loadConfigFile(path);
+        }
+        FileConfig::setDirPath(curPath);
+        return true;
+    }
+    void saveConfig()
+    {
+        FileConfig::saveConfigFile("config");
     }
 }

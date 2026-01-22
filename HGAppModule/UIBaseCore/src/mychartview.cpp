@@ -17,7 +17,6 @@
 */
 #include "mychartview.h"
 #include <QDebug>
-#include "HGMacroData.h"
 #include <QToolTip>
 
 
@@ -36,9 +35,9 @@ MyChartView::MyChartView(QWidget* parent)
 }
 MyChartView::~MyChartView()
 {
-    SAFE_DELETE(m_x_line);
-    SAFE_DELETE(m_y_line);
-    SAFE_DELETE(m_coordItem);
+    if (m_x_line) { delete m_x_line; m_x_line = nullptr; }
+    if (m_y_line) { delete m_y_line; m_y_line = nullptr; }
+    if (m_coordItem) { delete m_coordItem; m_coordItem = nullptr; }
 }
 void MyChartView::saveAxisRange()
 {

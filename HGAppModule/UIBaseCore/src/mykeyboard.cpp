@@ -1,4 +1,4 @@
-﻿/*
+/*
     @file   mykeyboard.cpp
     @brief  Implementation file
     @author XiaoQin.Hou
@@ -8,9 +8,9 @@
 #include <iostream>
 #include <QDebug>
 #include <iomanip>
-#include "HGMacroData.h"
 #include "common.h"
-#include "libpinyinHelp.h"
+#include "ITime.h"
+#include "SvcFactory.h"
 
 
 
@@ -44,9 +44,10 @@ void KBTimeWithHourEdit::init(int MyHeight,int MyWidth)
     m_everRadioBtn=new QRadioButton("长期");
 
     m_yearEdit=new QComboBox();
-    HGExactTime curTime=HGExactTime::currentTime();
+    auto timeService = SvcFactory::CreateTimeService();
+    TimeInfo curTime = timeService->GetCurrentTime();
     for (int i=0;i<100;i++){
-        QString name=QString::number(curTime.tm_year+i);
+        QString name=QString::number(curTime.year+i);
         m_yearEdit->addItem(name);
     }
     m_monthEdit=new QComboBox();
@@ -54,10 +55,10 @@ void KBTimeWithHourEdit::init(int MyHeight,int MyWidth)
         QString name=QString::number(i+1);
         m_monthEdit->addItem(name);
     }
-    m_monthEdit->setCurrentIndex(curTime.tm_mon-1);
+    m_monthEdit->setCurrentIndex(curTime.month-1);
     m_dayEdit=new QComboBox();
-    fillDayCombo(curTime.tm_mon);
-    m_dayEdit->setCurrentIndex(curTime.tm_mday-1);
+    fillDayCombo(curTime.month);
+    m_dayEdit->setCurrentIndex(curTime.day-1);
 
     m_hourEdit=new QComboBox();
     for (int i=0;i<24;i++){
@@ -216,9 +217,10 @@ void KBTimeEdit::init(int MyHeight,int MyWidth)
     m_everRadioBtn=new QRadioButton("长期");
 
     m_yearEdit=new QComboBox();
-    HGExactTime curTime=HGExactTime::currentTime();
+    auto timeService = SvcFactory::CreateTimeService();
+    TimeInfo curTime = timeService->GetCurrentTime();
     for (int i=-10;i<100;i++){
-        QString name=QString::number(curTime.tm_year+i);
+        QString name=QString::number(curTime.year+i);
         m_yearEdit->addItem(name);
     }
     m_monthEdit=new QComboBox();
@@ -226,10 +228,10 @@ void KBTimeEdit::init(int MyHeight,int MyWidth)
         QString name=QString::number(i+1);
         m_monthEdit->addItem(name);
     }
-    m_monthEdit->setCurrentIndex(curTime.tm_mon-1);
+    m_monthEdit->setCurrentIndex(curTime.month-1);
     m_dayEdit=new QComboBox();
-    fillDayCombo(curTime.tm_mon);
-    m_dayEdit->setCurrentIndex(curTime.tm_mday-1);
+    fillDayCombo(curTime.month);
+    m_dayEdit->setCurrentIndex(curTime.day-1);
 
     gridLayout->addWidget(m_yearLabel,0,0);
     gridLayout->addWidget(m_yearEdit,0,1);
@@ -263,11 +265,12 @@ void KBTimeEdit::init(int MyHeight,int MyWidth)
         }
         else
         {
-            HGExactTime curTimer = HGExactTime::currentTime();
-            HGExactTime deadlineTimer = HGExactTime::currentTime();
-            deadlineTimer.tm_year = m_yearEdit->currentText().toInt();
-            deadlineTimer.tm_mon = m_monthEdit->currentText().toInt();
-            deadlineTimer.tm_mday = m_dayEdit->currentText().toInt();
+            auto timeService = SvcFactory::CreateTimeService();
+            TimeInfo curTimer = timeService->GetCurrentTime();
+            TimeInfo deadlineTimer = timeService->GetCurrentTime();
+            deadlineTimer.year = m_yearEdit->currentText().toInt();
+            deadlineTimer.month = m_monthEdit->currentText().toInt();
+            deadlineTimer.day = m_dayEdit->currentText().toInt();
             if (m_flag && curTimer > deadlineTimer)
             {
                 QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
@@ -357,22 +360,22 @@ KBUIntEdit::KBUIntEdit(bool secretFlag, QWidget *parent) : QWidget(parent)
 }
 KBUIntEdit::~KBUIntEdit()
 {
-    SAFE_DELETE(pushButton_2);
-    SAFE_DELETE(pushButton_7);
-    SAFE_DELETE(pushButton_9);
-    SAFE_DELETE(pushButton_6);
-    SAFE_DELETE(pushButton_8);
-    SAFE_DELETE(pushButton_5);
-    SAFE_DELETE(pushButton_1);
-    SAFE_DELETE(pushButton_3);
-    SAFE_DELETE(pushButton_4);
-    SAFE_DELETE(pushButton_clear);
-    SAFE_DELETE(pushButton_enter);
-    SAFE_DELETE(pushButton_space);
-    SAFE_DELETE(pushButton_esc);
-    SAFE_DELETE(pushButton_0);
-    SAFE_DELETE(lineEdit);
-    SAFE_DELETE(widget);
+    if (pushButton_2); {delete pushButton_2; pushButton_2 = nullptr;}
+    if (pushButton_7); {delete pushButton_7; pushButton_7 = nullptr;}
+    if (pushButton_9); {delete pushButton_9; pushButton_9 = nullptr;}
+    if (pushButton_6); {delete pushButton_6; pushButton_6 = nullptr;}
+    if (pushButton_8); {delete pushButton_8; pushButton_8 = nullptr;}
+    if (pushButton_5); {delete pushButton_5; pushButton_5 = nullptr;}
+    if (pushButton_1); {delete pushButton_1; pushButton_1 = nullptr;}
+    if (pushButton_3); {delete pushButton_3; pushButton_3 = nullptr;}
+    if (pushButton_4); {delete pushButton_4; pushButton_4 = nullptr;}
+    if (pushButton_clear); {delete pushButton_clear; pushButton_clear = nullptr;}   
+    if (pushButton_enter); {delete pushButton_enter; pushButton_enter = nullptr;}
+    if (pushButton_space); {delete pushButton_space; pushButton_space = nullptr;}
+    if (pushButton_esc); {delete pushButton_esc; pushButton_esc = nullptr;}
+    if (pushButton_0); {delete pushButton_0; pushButton_0 = nullptr;}
+    if (lineEdit);       {delete lineEdit; lineEdit = nullptr;}
+    if (widget);         {delete widget; widget = nullptr;}
 }
 void KBUIntEdit::init(int MyHeight,int MyWidth){
     this->resize(160, 150);
@@ -601,24 +604,24 @@ KBIntEdit::KBIntEdit(QWidget *parent) : QWidget(parent)
 }
 KBIntEdit::~KBIntEdit()
 {
-    SAFE_DELETE(pushButton_space);
-    SAFE_DELETE(pushButton_enter);
-    SAFE_DELETE(pushButton_clear);
-    SAFE_DELETE(pushButton_0);
-    SAFE_DELETE(pushButton_1);
-    SAFE_DELETE(pushButton_2);
-    SAFE_DELETE(pushButton_3);
-    SAFE_DELETE(pushButton_4);
-    SAFE_DELETE(pushButton_9);
-    SAFE_DELETE(pushButton_7);
-    SAFE_DELETE(pushButton_5);
-    SAFE_DELETE(pushButton_6);
-    SAFE_DELETE(pushButton_esc);
-    SAFE_DELETE(pushButton_add);
-    SAFE_DELETE(pushButton_point);
-    SAFE_DELETE(pushButton_8);
-    SAFE_DELETE(lineEdit);
-    SAFE_DELETE(widget);
+    if (pushButton_space) { delete pushButton_space; pushButton_space = nullptr; }
+    if (pushButton_enter) { delete pushButton_enter; pushButton_enter = nullptr; }
+    if (pushButton_clear) { delete pushButton_clear; pushButton_clear = nullptr; }
+    if (pushButton_0) { delete pushButton_0; pushButton_0 = nullptr; }
+    if (pushButton_1) { delete pushButton_1; pushButton_1 = nullptr; }
+    if (pushButton_2) { delete pushButton_2; pushButton_2 = nullptr; }
+    if (pushButton_3) { delete pushButton_3; pushButton_3 = nullptr; }
+    if (pushButton_4) { delete pushButton_4; pushButton_4 = nullptr; }
+    if (pushButton_9) { delete pushButton_9; pushButton_9 = nullptr; }
+    if (pushButton_7) { delete pushButton_7; pushButton_7 = nullptr; }
+    if (pushButton_5) { delete pushButton_5; pushButton_5 = nullptr; }
+    if (pushButton_6) { delete pushButton_6; pushButton_6 = nullptr; }
+    if (pushButton_esc) { delete pushButton_esc; pushButton_esc = nullptr; }
+    if (pushButton_add) { delete pushButton_add; pushButton_add = nullptr; }
+    if (pushButton_point) { delete pushButton_point; pushButton_point = nullptr; }
+    if (pushButton_8) { delete pushButton_8; pushButton_8 = nullptr; }
+    if (lineEdit) { delete lineEdit; lineEdit = nullptr; }
+    if (widget) { delete widget; widget = nullptr; }
 }
 void KBIntEdit::init(int MyHeight,int MyWidth){
     this->resize(160, 150);
@@ -870,24 +873,24 @@ KBFLoatEdit::KBFLoatEdit(QWidget *parent) : QWidget(parent)
 }
 KBFLoatEdit::~KBFLoatEdit()
 {
-    SAFE_DELETE(pushButton_0);
-    SAFE_DELETE(pushButton_1);
-    SAFE_DELETE(pushButton_2);
-    SAFE_DELETE(pushButton_3);
-    SAFE_DELETE(pushButton_4);
-    SAFE_DELETE(pushButton_5);
-    SAFE_DELETE(pushButton_6);
-    SAFE_DELETE(pushButton_7);
-    SAFE_DELETE(pushButton_8);
-    SAFE_DELETE(pushButton_9);
-    SAFE_DELETE(pushButton_add);
-    SAFE_DELETE(pushButton_space);
-    SAFE_DELETE(pushButton_esc);
-    SAFE_DELETE(pushButton_clear);
-    SAFE_DELETE(pushButton_enter);
-    SAFE_DELETE(pushButton_point);
-    SAFE_DELETE(lineEdit);
-    SAFE_DELETE(widget);
+    if (pushButton_0) { delete pushButton_0; pushButton_0 = nullptr; }
+    if (pushButton_1) { delete pushButton_1; pushButton_1 = nullptr; }
+    if (pushButton_2) { delete pushButton_2; pushButton_2 = nullptr; }
+    if (pushButton_3) { delete pushButton_3; pushButton_3 = nullptr; }
+    if (pushButton_4) { delete pushButton_4; pushButton_4 = nullptr; }
+    if (pushButton_5) { delete pushButton_5; pushButton_5 = nullptr; }
+    if (pushButton_6) { delete pushButton_6; pushButton_6 = nullptr; }
+    if (pushButton_7) { delete pushButton_7; pushButton_7 = nullptr; }
+    if (pushButton_8) { delete pushButton_8; pushButton_8 = nullptr; }
+    if (pushButton_9) { delete pushButton_9; pushButton_9 = nullptr; }
+    if (pushButton_add) { delete pushButton_add; pushButton_add = nullptr; }
+    if (pushButton_space) { delete pushButton_space; pushButton_space = nullptr; }
+    if (pushButton_esc) { delete pushButton_esc; pushButton_esc = nullptr; }
+    if (pushButton_clear) { delete pushButton_clear; pushButton_clear = nullptr; }
+    if (pushButton_enter) { delete pushButton_enter; pushButton_enter = nullptr; }
+    if (pushButton_point) { delete pushButton_point; pushButton_point = nullptr; }
+    if (lineEdit) { delete lineEdit; lineEdit = nullptr; }
+    if (widget) { delete widget; widget = nullptr; }
 }
 void KBFLoatEdit::init(int MyHeight,int MyWidth){
     this->resize(160, 150);
@@ -1136,59 +1139,59 @@ KBCharEdit::KBCharEdit(QWidget *parent) : QWidget(parent)
 }
 KBCharEdit::~KBCharEdit()
 {
-    SAFE_DELETE(pushButton_0);
-    SAFE_DELETE(pushButton_lbracked);
-    SAFE_DELETE(pushButton_rbracked);
-    SAFE_DELETE(pushButton_shoulder);
-    SAFE_DELETE(pushButton_colom);
-    SAFE_DELETE(pushButton_bar);
-    SAFE_DELETE(pushButton_underbar);
-    SAFE_DELETE(pushButton_s);
-    SAFE_DELETE(pushButton_d);
-    SAFE_DELETE(pushButton_space);
-    SAFE_DELETE(pushButton_f);
-    SAFE_DELETE(pushButton_r);
-    SAFE_DELETE(pushButton_e);
-    SAFE_DELETE(pushButton_t);
-    SAFE_DELETE(lineEdit);
-    SAFE_DELETE(pushButton_a);
-    SAFE_DELETE(pushButton_7);
-    SAFE_DELETE(pushButton_6);
-    SAFE_DELETE(pushButton_q);
-    SAFE_DELETE(pushButton_j);
-    SAFE_DELETE(pushButton_1);
-    SAFE_DELETE(pushButton_h);
-    SAFE_DELETE(pushButton_v);
-    SAFE_DELETE(pushButton_8);
-    SAFE_DELETE(pushButton_3);
-    SAFE_DELETE(pushButton_g);
-    SAFE_DELETE(pushButton_l);
-    SAFE_DELETE(pushButton_b);
-    SAFE_DELETE(pushButton_p);
-    SAFE_DELETE(pushButton_k);
-    SAFE_DELETE(pushButton_clear);
-    SAFE_DELETE(pushButton_c);
-    SAFE_DELETE(pushButton_4);
-    SAFE_DELETE(pushButton_9);
-    SAFE_DELETE(pushButton_5);
-    SAFE_DELETE(pushButton_w);
-    SAFE_DELETE(pushButton_o);
-    SAFE_DELETE(pushButton_m);
-    SAFE_DELETE(pushButton_i);
-    SAFE_DELETE(pushButton_2);
-    SAFE_DELETE(pushButton_n);
-    SAFE_DELETE(pushButton_enter);
-    SAFE_DELETE(pushButton_esc);
-    SAFE_DELETE(pushButton_u);
-    SAFE_DELETE(pushButton_x);
-    SAFE_DELETE(pushButton_y);
-    SAFE_DELETE(pushButton_z);
-    SAFE_DELETE(pushButton_caps);
-    SAFE_DELETE(pushButton_point);
-    SAFE_DELETE(zhChBtn);
-    SAFE_DELETE(zhLabel);
-    SAFE_DELETE(widget_2);
-    SAFE_DELETE(widget);
+    if (pushButton_0) { delete pushButton_0; pushButton_0 = nullptr; }
+    if (pushButton_lbracked) { delete pushButton_lbracked; pushButton_lbracked = nullptr; }
+    if (pushButton_rbracked) { delete pushButton_rbracked; pushButton_rbracked = nullptr; }
+    if (pushButton_shoulder) { delete pushButton_shoulder; pushButton_shoulder = nullptr; }
+    if (pushButton_colom) { delete pushButton_colom; pushButton_colom = nullptr; }
+    if (pushButton_bar) { delete pushButton_bar; pushButton_bar = nullptr; }
+    if (pushButton_underbar) { delete pushButton_underbar; pushButton_underbar = nullptr; }
+    if (pushButton_s) { delete pushButton_s; pushButton_s = nullptr; }
+    if (pushButton_d) { delete pushButton_d; pushButton_d = nullptr; }
+    if (pushButton_space) { delete pushButton_space; pushButton_space = nullptr; }
+    if (pushButton_f) { delete pushButton_f; pushButton_f = nullptr; }
+    if (pushButton_r) { delete pushButton_r; pushButton_r = nullptr; }
+    if (pushButton_e) { delete pushButton_e; pushButton_e = nullptr; }
+    if (pushButton_t) { delete pushButton_t; pushButton_t = nullptr; }
+    if (lineEdit) { delete lineEdit; lineEdit = nullptr; }
+    if (pushButton_a) { delete pushButton_a; pushButton_a = nullptr; }
+    if (pushButton_7) { delete pushButton_7; pushButton_7 = nullptr; }
+    if (pushButton_6) { delete pushButton_6; pushButton_6 = nullptr; }
+    if (pushButton_q) { delete pushButton_q; pushButton_q = nullptr; }
+    if (pushButton_j) { delete pushButton_j; pushButton_j = nullptr; }
+    if (pushButton_1) { delete pushButton_1; pushButton_1 = nullptr; }
+    if (pushButton_h) { delete pushButton_h; pushButton_h = nullptr; }
+    if (pushButton_v) { delete pushButton_v; pushButton_v = nullptr; }
+    if (pushButton_8) { delete pushButton_8; pushButton_8 = nullptr; }
+    if (pushButton_3) { delete pushButton_3; pushButton_3 = nullptr; }
+    if (pushButton_g) { delete pushButton_g; pushButton_g = nullptr; }
+    if (pushButton_l) { delete pushButton_l; pushButton_l = nullptr; }
+    if (pushButton_b) { delete pushButton_b; pushButton_b = nullptr; }
+    if (pushButton_p) { delete pushButton_p; pushButton_p = nullptr; }
+    if (pushButton_k) { delete pushButton_k; pushButton_k = nullptr; }
+    if (pushButton_clear) { delete pushButton_clear; pushButton_clear = nullptr; }
+    if (pushButton_c) { delete pushButton_c; pushButton_c = nullptr; }
+    if (pushButton_4) { delete pushButton_4; pushButton_4 = nullptr; }
+    if (pushButton_9) { delete pushButton_9; pushButton_9 = nullptr; }
+    if (pushButton_5) { delete pushButton_5; pushButton_5 = nullptr; }
+    if (pushButton_w) { delete pushButton_w; pushButton_w = nullptr; }
+    if (pushButton_o) { delete pushButton_o; pushButton_o = nullptr; }
+    if (pushButton_m) { delete pushButton_m; pushButton_m = nullptr; }
+    if (pushButton_i) { delete pushButton_i; pushButton_i = nullptr; }
+    if (pushButton_2) { delete pushButton_2; pushButton_2 = nullptr; }
+    if (pushButton_n) { delete pushButton_n; pushButton_n = nullptr; }
+    if (pushButton_enter) { delete pushButton_enter; pushButton_enter = nullptr; }
+    if (pushButton_esc) { delete pushButton_esc; pushButton_esc = nullptr; }
+    if (pushButton_u) { delete pushButton_u; pushButton_u = nullptr; }
+    if (pushButton_x) { delete pushButton_x; pushButton_x = nullptr; }
+    if (pushButton_y) { delete pushButton_y; pushButton_y = nullptr; }
+    if (pushButton_z) { delete pushButton_z; pushButton_z = nullptr; }
+    if (pushButton_caps) { delete pushButton_caps; pushButton_caps = nullptr; }
+    if (pushButton_point) { delete pushButton_point; pushButton_point = nullptr; }
+    if (zhChBtn) { delete zhChBtn; zhChBtn = nullptr; }
+    if (zhLabel) { delete zhLabel; zhLabel = nullptr; }
+    if (widget_2) { delete widget_2; widget_2 = nullptr; }
+    if (widget) { delete widget; widget = nullptr; }
 }
 void KBCharEdit::init(int MyHeight,int MyWidth,int smallhw){
     this->resize(370, 150);

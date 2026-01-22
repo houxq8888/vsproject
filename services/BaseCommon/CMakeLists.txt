@@ -11,6 +11,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     ${ZXING_LIBRARY}
     ${USB_LIBRARY}
     ${X11_LIBRARIES}
+    ${OpenCV_LIBRARIES}
     Xrandr
 )
 
@@ -23,6 +24,7 @@ HG_CMAKE_MODULE_DEPEND(
     ${ZXING_LIBRARY}
     ${USB_LIBRARY}
     ${X11_LIBRARIES}
+    ${OpenCV_LIBRARIES}
     Xrandr
 )
 

@@ -56,10 +56,7 @@ if (BUILD_SHARED_LIBS)
         HG_CMAKE_MODULE_DEPEND_PUB(
             PluginInterface
             HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
+            HGServiceInterfaces
             HGAuthorityService
             HGCommunicateService
             HGImageAlgorithmService
@@ -94,10 +91,7 @@ if (BUILD_SHARED_LIBS)
         HG_CMAKE_MODULE_DEPEND(
             PluginInterface
             HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
+            HGServiceInterfaces
             HGAuthorityService
             HGCommunicateService
             HGImageAlgorithmService
