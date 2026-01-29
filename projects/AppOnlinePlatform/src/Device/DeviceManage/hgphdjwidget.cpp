@@ -59,7 +59,10 @@ m_lang(lang)
 bool HGPHdjWidget::closeWindow(){
     if (m_djAdjustW){
         if (m_djAdjustW->closeWindow()){
-            SAFE_DELETE(m_djAdjustW);
+            if (m_djAdjustW) {
+                delete (m_djAdjustW);
+                m_djAdjustW = nullptr;
+            }
         }
     }
     return true;

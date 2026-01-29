@@ -2,7 +2,11 @@
 #include "common.h"
 #include <QDebug>
 #include <iostream>
+#include "loginterface.h"
+#include "SystemDataManager.h"
+#include "SvcFactory.h"
 
+using namespace HGMACHINE;
 
 NetworkWidget::NetworkWidget(std::string lang,QWidget *parent) : BaseWidget(parent),
     m_isEnableWifi(true),
@@ -40,7 +44,7 @@ bool NetworkWidget::closeWindow()
     return true;
 }
 void NetworkWidget::fnInitWifiInfo(){
-    std::vector<WifiNetwork> networks = scanWifiNetworks();
+    std::vector<ServiceInterfaces::WifiNetwork> networks = SvcFactory::CreateCommonService()->ScanWifiNetworks();
     std::map<std::string,int> wifiNames;
     // 打印出网络列表
     for (const auto& network : networks) {
@@ -69,12 +73,12 @@ void NetworkWidget::fnInitWifiInfo(){
 }
 void NetworkWidget::fnReadDB()
 {
-    m_isEnableWifi=(GlobalSingleton::instance().getSystemInfo("WLAN")=="true"?true:false);
+    m_isEnableWifi=(SystemDataManager::instance().get().getSystemInfo("WLAN")=="true"?true:false);
     setControlStatus();
 }
 void NetworkWidget::fnWriteDB()
 {
-    GlobalSingleton::instance().setSystemInfo("WLAN", m_isEnableWifi?"true":"false");
+    SystemDataManager::instance().get().setSystemInfo("WLAN", m_isEnableWifi?"true":"false");
 }
 void NetworkWidget::setControlStatus(){
     if (!m_isEnableWifi){
@@ -93,16 +97,22 @@ void NetworkWidget::fnDestroyWifiWidget()
         if (m_wifiWs[wifi.first].wifiW != NULL)
         {
             if (m_wifiWs[wifi.first].wifiW->closeWindow())
-                SAFE_DELETE(m_wifiWs[wifi.first].wifiW);
+                if (m_wifiWs[wifi.first].wifiW){
+                    delete m_wifiWs[wifi.first].wifiW;
+                    m_wifiWs[wifi.first].wifiW = NULL;
+                }
         }
-        SAFE_DELETE(m_wifiWs[wifi.first].wifiItem);
+        if (m_wifiWs[wifi.first].wifiItem){
+            delete m_wifiWs[wifi.first].wifiItem;
+            m_wifiWs[wifi.first].wifiItem = NULL;
+        }
     }
     m_wifiWs.clear();
 }
 void NetworkWidget::clickEnableWifi()
 {
     m_isEnableWifi=!m_isEnableWifi;
-    RWDb::writeAuditTrailLog(m_isEnableWifi?("打开"+m_wifiLabel->text().toStdString()): \
+    LOG_IF.writeAuditTrailLog(m_isEnableWifi?("打开"+m_wifiLabel->text().toStdString()): \
         "关闭"+m_wifiLabel->text().toStdString());
     setControlStatus();
 }

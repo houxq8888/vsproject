@@ -3,16 +3,21 @@
 #include <QDialog>
 #include "labelwithimg.h"
 #include "common.h"
+#include "ChartDataManager.h"
+#include "AnalysisRecordManager.h"
+#include "SvcFactory.h"
 
+using namespace HGMACHINE;
 
-// std::vector<std::string> recordNames={"流程","方法","检测器","滴定剂","反应液","溶剂","分析时长","运行状态"};
 
 HGDisplayRecordInfoWidget::HGDisplayRecordInfoWidget(
     std::string lang,
     const std::string &name,QWidget *parent) : QWidget(parent),
     m_lang(lang)
 {
-    for (auto name:recordNames){
+    m_allRecordNames = ChartDataManager::instance().get().getRecordInTimeNames();
+    
+    for (auto name:m_allRecordNames){
         m_recordLabels[name]=recordLabel();
     }
 
@@ -41,20 +46,20 @@ HGDisplayRecordInfoWidget::HGDisplayRecordInfoWidget(
     m_layout->addWidget(m_tableW,1,0,1,3);
 
 
-    for (auto name:recordNames){
+    for (auto name:m_allRecordNames){
         fnUpdateDisplay(m_recordLabels[name].flag,name);
     }
 }
 void HGDisplayRecordInfoWidget::fnWriteDB(){
-    for (auto name:recordNames){
-        if (m_recordLabels[name].flag) GlobalSingleton::instance().setDataChartInfo(name,"true");
-        else GlobalSingleton::instance().setDataChartInfo(name,"false");
-        GlobalSingleton::instance().saveDataChartInfo();
+    for (auto name:m_allRecordNames){
+        if (m_recordLabels[name].flag) ChartDataManager::instance().get().setValue(name,"true");
+        else ChartDataManager::instance().get().setValue(name,"false");
+        ChartDataManager::instance().get().save();
     }
 }
 void HGDisplayRecordInfoWidget::fnReadDB(){
-    for (auto name:recordNames){
-        if (GlobalSingleton::instance().getDataChartInfo(name)=="true") m_recordLabels[name].flag=true;
+    for (auto name:m_allRecordNames){
+        if (ChartDataManager::instance().get().getValue(name)=="true") m_recordLabels[name].flag=true;
         else m_recordLabels[name].flag=false;
     }
 }
@@ -69,7 +74,10 @@ HGDisplayRecordInfoWidget::~HGDisplayRecordInfoWidget()
 }
 void HGDisplayRecordInfoWidget::slotDisplayType(){
     if (m_dragDialog!=NULL) {
-        SAFE_DELETE(m_dragDialog);
+        if (m_dragDialog) {
+            delete (m_dragDialog);
+            m_dragDialog = nullptr;
+        }
         return;
     }
     m_dragDialog=new DraggableDialog(this);
@@ -77,9 +85,9 @@ void HGDisplayRecordInfoWidget::slotDisplayType(){
     QVBoxLayout* layout=new QVBoxLayout(m_dragDialog);
 
     LabelWithImg* nameLabel=new LabelWithImg(IMGTOP,12,getPath("/resources/V1/@1xze-bars 1.png"),
-        loadTranslation(m_lang,"DisplayContent"));// "显示内容");
+        SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DisplayContent"));// "显示内容");
 
-    for (auto name : recordNames)
+    for (auto name : m_allRecordNames)
     {
         if (m_recordLabels[name].flag)
             m_recordLabels[name].label = new LabelWithImg(IMGLEFT, 12, getPath("/resources/V1/@1xze-certificate 1.png"), name);
@@ -124,7 +132,7 @@ void HGDisplayRecordInfoWidget::fnUpdateDisplay(bool flag,std::string name){
 }
 void HGDisplayRecordInfoWidget::showTestInfo(std::map<std::string,std::string> info)
 {
-    if (RWDb::getTaskRunFlag() == "true") return;
+    if (AnalysisRecordManager::instance().get().getTaskRunFlag() == "true") return;
     for (int i=0;i<int(m_tableW->rowCount());i++){
         QString name=m_tableW->item(i,0)->text();
         std::string content=info[name.toStdString()];

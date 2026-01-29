@@ -37,17 +37,6 @@ int main(int argc, char *argv[])
         // 创建QApplication对象，用于管理图形界面的应用程序
         QApplication a(argc, argv);
         QString basePath = qApp->applicationDirPath();
-        // loadConfig(basePath.toStdString());
-        // openDB(HGOnlineRWDB::readCurDirPath());
-        // GlobalSingleton::instance().loadSystemInfo();
-        // GlobalSingleton::instance().loadDataChartInfo();
-        // if (!HGOnlineRWDB::isLoginRightTime()) {
-        //     RWDb::writeAuditTrailLog("系统时间设置落后于上一次软件退出时间，请修改！");
-        //     if (QMessageBox::Ok == QMessageBox::warning(nullptr, QString::fromStdString(HG_DEVICE_NAME), "系统时间设置落后于上一次软件退出时间，请修改！"))
-        //     {
-        //         return 0;
-        //     }
-        // }
    
         // 创建主窗口对象
         CloudMainWidget w;

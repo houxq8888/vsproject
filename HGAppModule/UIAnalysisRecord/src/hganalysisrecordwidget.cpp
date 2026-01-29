@@ -6,13 +6,15 @@
 #include <QTextDocument>
 #include <QMessageBox>
 #include <QGraphicsOpacityEffect>
+#include "loginterface.h"
+#include "SvcFactory.h"
 
 
 HGAnalysisRecordWidget::HGAnalysisRecordWidget(std::string lang,QWidget *parent) : QWidget(parent),
     m_lang(lang),
     m_printW(nullptr)
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"AnalysisRecord"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AnalysisRecord"));
     m_displayRecordW=NULL;
     m_displayChartsW=NULL;
     m_displayRecordInfoW=NULL;
@@ -22,7 +24,7 @@ HGAnalysisRecordWidget::HGAnalysisRecordWidget(std::string lang,QWidget *parent)
         "时间~电压"
     };
     m_displayChartsW=new HGDisplayChartWidget(m_lang,chartNames);
-    m_displayRecordInfoW=new HGDisplayRecordInfoWidget(m_lang,loadTranslation(m_lang,"TestInfo"));//"测试信息");
+    m_displayRecordInfoW=new HGDisplayRecordInfoWidget(m_lang,SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"TestInfo"));//"测试信息");
 
     connect(m_displayRecordW,&HGDisplayRecordWidget::signalShowDataInfo,this,&HGAnalysisRecordWidget::slotShowDataInfo);
     connect(m_displayRecordW,&HGDisplayRecordWidget::showPrinter,this,&HGAnalysisRecordWidget::slotShowPrinter);
@@ -65,17 +67,26 @@ bool HGAnalysisRecordWidget::closeWindow()
 {
     if (m_displayRecordW){
         if (m_displayRecordW->closeWindow()){
-            SAFE_DELETE(m_displayRecordW);
+            if (m_displayRecordW) {
+                delete (m_displayRecordW);
+                m_displayRecordW = nullptr;
+            }
         }
     }
     if (m_displayChartsW){
         if (m_displayChartsW->closeWindow()){
-            SAFE_DELETE(m_displayChartsW);
+            if (m_displayChartsW) {
+                delete (m_displayChartsW);
+                m_displayChartsW = nullptr;
+            }
         }
     }
     if (m_displayRecordInfoW){
         if (m_displayRecordInfoW->closeWindow()){
-            SAFE_DELETE(m_displayRecordInfoW);
+            if (m_displayRecordInfoW) {
+                delete (m_displayRecordInfoW);
+                m_displayRecordInfoW = nullptr;
+            }
         }
     }
     return true;

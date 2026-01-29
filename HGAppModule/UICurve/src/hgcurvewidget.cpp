@@ -1,8 +1,8 @@
 #include "hgcurvewidget.h"
 #include "common.h"
-#include "hgxml.h"
+#include "SvcFactory.h"
 
-using namespace HGMACHINE;
+// using namespace HGMACHINE;
 
 std::map<std::string,std::vector<std::string>> units={
     {"U-t",     {"mv","v"}},
@@ -51,7 +51,7 @@ bool HGCurveWidget::eventFilter(QObject *obj, QEvent *event) {
         if (mouseEvent->button() == Qt::LeftButton)
         {
             QColor color = QColorDialog::getColor(Qt::white, this, 
-                QString::fromStdString(loadTranslation(m_lang,"ChooseColor")));
+                QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ChooseColor")));
             if (color.isValid())
             {
                 m_colorLabel->setStyleSheet("background-color: " + color.name() + "; color: white;");

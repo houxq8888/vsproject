@@ -10,7 +10,7 @@ file(GLOB MOC_HEADERS
     "inc/*.h"
 )
 
-qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 
 HG_CMAKE_ADD_MODULE(AppSpectrometer inc src 
     ${MOC_SRCS})
@@ -20,32 +20,11 @@ target_compile_definitions(AppSpectrometer PUBLIC
      -DENV_APP_NAME=\"HGAppSpectrometer\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
-    HGCommon
-    HGConfig
-    HGSaveService
-    # HGFrameService
-    # HGAuthorityService
-    HGCommunicateService
-    # HGImageAlgorithmService
-    # SQLite::SQLite3
-    # ALSA::ALSA
-    ${OpenCV_LIBRARIES}
-    # ${OpencvFreeType_LIBRARY}
-    ${LOG4CPLUS_LIBRARIES}
-    # ${CUPS_LIBRARY}
-    # ${XLSXIO_READ_LIBRARY}
-    # ${XLSXIO_WRITE_LIBRARY}
-    # ${HARU_LIBRARY}
-    # ${ZeroMQ_LIBRARY}
-    ${MQTT_LIBRARYS}
-    ${LIB_MOSQUITT_LIBRARY}
-    ${ZXING_LIBRARY}
-    # OpenSSL::Crypto
-    Qt5::Gui
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::Charts
-    # Qt5::PrintSupport
+    Qt6::Gui
+    Qt6::Core
+    Qt6::Widgets
+    Qt6::Charts
+    # Qt6::PrintSupport
 )
 
 

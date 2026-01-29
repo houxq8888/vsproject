@@ -169,8 +169,7 @@ std::string getPath(std::string inPath){
 //     return nullptr;
 // }
 void setControlText(QGridLayout* layout,const std::string& param){
-    auto configService = SvcFactory::CreateConfigService();
-    std::map<std::string,std::string> wparam=configService->GetParamMap(param);
+    std::map<std::string,std::string> wparam=SvcFactory::CreateCommonService()->GetParamMap(param);
     for(auto w:wparam){
         int row=-1,column=-1;
         bool stable=false;

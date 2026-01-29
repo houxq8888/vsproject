@@ -147,7 +147,7 @@ else()
     # 添加所有模块
   #  add_subdirectory(HGCurveModule)
   #  add_subdirectory(HGSearchModule)
-    add_subdirectory(HGLogModule)
+    add_subdirectory(UILog)
   #  add_subdirectory(HGUserAuditModule)
   #  add_subdirectory(HGUartModule)
  #   add_subdirectory(HGLoginModule)

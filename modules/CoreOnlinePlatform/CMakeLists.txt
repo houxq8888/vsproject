@@ -14,15 +14,9 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGBaseConfig
     HGSvcCommunicate
     HGSvcAuthority
-    ${ZXING_LIBRARY}
-    ${LOG4CPLUS_LIBRARIES}
-    ${MQTT_LIBRARYS}
-    ${AVFORMAT_LIBRARIES}
-    ${AVCODEC_LIBRARIES}
-    ${AVUTIL_LIBRARIES}
-    ${SWSCALE_LIBRARIES}
-    /usr/lib/x86_64-linux-gnu/libpulse.so
-    /usr/lib/x86_64-linux-gnu/libpulse-simple.so
+    HGSvcLog
+    HGIfSerial
+    HGCoreSerial
 )
 if (PLATFORM STREQUAL "x64")
 HG_CMAKE_ADD_SHARED(HGCoreOnlinePlatform inc src)
@@ -35,15 +29,9 @@ HG_CMAKE_MODULE_DEPEND(
     HGBaseConfig
     HGSvcCommunicate
     HGSvcAuthority
-    ${ZXING_LIBRARY}
-    ${LOG4CPLUS_LIBRARIES}
-    ${MQTT_LIBRARYS}
-    ${AVFORMAT_LIBRARIES}
-    ${AVCODEC_LIBRARIES}
-    ${AVUTIL_LIBRARIES}
-    ${SWSCALE_LIBRARIES}
-    /usr/lib/x86_64-linux-gnu/libpulse.so
-    /usr/lib/x86_64-linux-gnu/libpulse-simple.so
+    HGSvcLog
+    HGIfSerial
+    HGCoreSerial
 )
 elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_ADD_STATIC(HGCoreOnlinePlatform inc src)
@@ -55,6 +43,9 @@ HG_CMAKE_MODULE_DEPEND(
     HGBaseConfig
     HGSvcCommunicate
     HGSvcAuthority
+    HGSvcLog
+    HGIfSerial
+    HGCoreSerial
 )
 endif()
 

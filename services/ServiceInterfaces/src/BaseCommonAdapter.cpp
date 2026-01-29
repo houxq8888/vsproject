@@ -1,7 +1,8 @@
 #include "BaseCommonAdapter.h"
-#include "HGMacroData.h"
 #include "hgcommonutility.h"
 #include "HGExactTime.h"
+#include "systemusage.h"
+#include "HGCommonTypes.h"
 
 using namespace HGMACHINE;
 
@@ -27,14 +28,13 @@ std::string BaseCommonAdapter::GetConfigPath() const {
     return "";
 }
 
-bool BaseCommonAdapter::CreateDirectory(const std::string& path) {
+int BaseCommonAdapter::CreateDirectory(const std::string& path) {
     return HGMkDir(path);
 }
 
 bool BaseCommonAdapter::DirectoryExists(const std::string& path) const {
     return isFileExist(path);
 }
-
 bool BaseCommonAdapter::FileExists(const std::string& path) const {
     return isFileExist(path);
 }
@@ -70,10 +70,37 @@ bool BaseCommonAdapter::CopyFile(const std::string& source, const std::string& d
     return false;
 }
 
+std::vector<std::string> BaseCommonAdapter::ListResolutions(std::string &deviceName) {
+    return HGMACHINE::listResolutions(deviceName);
+}
+void BaseCommonAdapter::SetTimezone(const std::string& timezone) {
+    HGMACHINE::setTimezone(timezone);
+}
+std::string BaseCommonAdapter::GetStandardCurTime()  {
+    return HGMACHINE::getStandardCurTime();
+}
+
+std::vector<ServiceInterfaces::WifiNetwork> BaseCommonAdapter::ScanWifiNetworks() {
+    std::vector<ServiceInterfaces::WifiNetwork> wifiNetWorks;
+    std::vector<HGMACHINE::WifiNetwork> hgnetworks= HGMACHINE::scanWifiNetworks();
+    for (const auto& hgnetwork : hgnetworks) {
+        wifiNetWorks.push_back(ServiceInterfaces::WifiNetwork(hgnetwork.ssid, hgnetwork.signal_strength, hgnetwork.security));
+    }
+    return wifiNetWorks;
+}
 void BaseCommonAdapter::SafeDelete(void* ptr) {
     SAFE_DELETE(ptr);
 }
 
+std::string BaseCommonAdapter::CheckPasswordStrengthToString(const std::string &password) {
+    return HGMACHINE::checkPasswordStrengthToString(password);
+}
+void BaseCommonAdapter::SetVolume(long volume) {
+    HGMACHINE::setVolume(volume);
+}
+void BaseCommonAdapter::PlaySound(const std::string& filename) {
+    HGMACHINE::playSound(filename);
+}
 std::vector<std::string> BaseCommonAdapter::SplitString(const std::string& str, char delimiter) {
     return splitStr(str, delimiter);
 }
@@ -102,3 +129,11 @@ std::string BaseCommonAdapter::ToUpperString(const std::string& str) {
     std::transform(result.begin(), result.end(), result.begin(), ::toupper);
     return result;
 }
+std::map<std::string, std::string> BaseCommonAdapter::GetParamMap(const std::string& param) {
+    return HGMACHINE::getParamMap(param);
+}
+
+bool BaseCommonAdapter::GetUSBDevices(uint16_t vendorID, uint16_t productID) {
+    return SystemUsage::getUSBDevices(vendorID, productID);
+}
+    

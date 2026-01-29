@@ -4,7 +4,7 @@
 #include "pthread.h"
 #include <vector>
 #include "hgonlinerwDB.h"
-#include "hgserial.h"
+#include "SerialAdapter.h"
 #include "structUpperPcToLowerPC.h"
 #include "styleALT.h"
 #include "hgcomwithzmq.h"
@@ -146,7 +146,7 @@ enum{
         int m_listenProtectProcessFlag, m_threadBreakFlag;
         
         ResSerialize m_sendInfo;
-        HGSerial m_serial;
+        HGMACHINE::ISerial* m_serial;
         HGComWithZmq m_comwithzmq;
 
         std::vector<int> m_deviceRunStatuss;

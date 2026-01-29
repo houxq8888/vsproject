@@ -1,8 +1,6 @@
 #include "BaseConfigAdapter.h"
 #include "hgjson.h"
 #include "hgxml.h"
-#include "hgcommonutility.h"
-#include "config.h"
 #include "hgtxt.h"
 #include "hgcsv.h"
 #include "hgpdf.h"
@@ -113,14 +111,10 @@ bool BaseConfigAdapter::LoadConfig() {
 std::string BaseConfigAdapter::LoadTranslation(const std::string& language, const std::string& key) {
     return HGMACHINE::loadTranslation(language, key);
 }
-
-std::map<std::string, std::string> BaseConfigAdapter::GetParamMap(const std::string& param) {
-    return HGMACHINE::getParamMap(param);
+std::string BaseConfigAdapter::FindTranslationKey(const string& language, const string& key) {
+    return HGMACHINE::findTranslationKey(language, key);
 }
 
-std::string BaseConfigAdapter::GetDirPath() const {
-    return HGMACHINE::FileConfig::getDirPath();
-}
 
 int BaseConfigAdapter::SaveTableToTxt(const std::vector<std::map<std::string, std::string>>& content, const std::string& savename) {
     return HGMACHINE::saveTableToTxt(content, savename);

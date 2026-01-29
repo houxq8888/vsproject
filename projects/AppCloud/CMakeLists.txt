@@ -46,7 +46,7 @@ file(GLOB MOC_HEADERS
     # "inc/Control/*.h"
 )
 
-qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 
 HG_CMAKE_ADD_MODULE(AppCloud inc src 
     # inc/Device/SystemSet        src/Device/SystemSet 
@@ -75,15 +75,11 @@ target_compile_definitions(AppCloud PUBLIC
 HG_CMAKE_MODULE_DEPEND_PUB(
     HGCommon
     HGConfig
-    ${ZXING_LIBRARY}
-    ${LOG4CPLUS_LIBRARIES}
-    ${PCL_LIBRARIES}
-    ${VTK_LIBRARIES}
-    Qt5::Gui
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::Charts
-    Qt5::PrintSupport
+    Qt6::Gui
+    Qt6::Core
+    Qt6::Widgets
+    Qt6::Charts
+    Qt6::PrintSupport
 )
 
 

@@ -5,20 +5,14 @@
 #include "ISvcSave.h"
 #include "ISvcFrame.h"
 #include "ITime.h"
-#include "IUserDataAccess.h"
-#include "ISystemDataAccess.h"
-#include "IAuthorityDataAccess.h"
-#include "IDataChartDataAccess.h"
+#include "IDatabaseManager.h"
 #include "BaseCommonAdapter.h"
 #include "BaseConfigAdapter.h"
 #include "SvcLogAdapter.h"
 #include "SvcSaveAdapter.h"
 #include "SvcFrameAdapter.h"
 #include "TimeAdapter.h"
-#include "UserDataAccessAdapter.h"
-#include "SystemDataAccessAdapter.h"
-#include "AuthorityDataAccessAdapter.h"
-#include "DataChartDataAccessAdapter.h"
+#include "DatabaseManagerAdapter.h"
 
 std::shared_ptr<IBaseCommon> SvcFactory::CreateCommonService() {
     return std::make_shared<BaseCommonAdapter>();
@@ -44,19 +38,7 @@ std::shared_ptr<ITime> SvcFactory::CreateTimeService() {
     return std::make_shared<TimeAdapter>();
 }
 
-std::shared_ptr<IUserDataAccess> SvcFactory::CreateUserDataAccess() {
-    return std::make_shared<UserDataAccessAdapter>();
-}
-
-std::shared_ptr<ISystemDataAccess> SvcFactory::CreateSystemDataAccess() {
-    return std::make_shared<SystemDataAccessAdapter>();
-}
-
-std::shared_ptr<IAuthorityDataAccess> SvcFactory::CreateAuthorityDataAccess() {
-    return std::make_shared<AuthorityDataAccessAdapter>();
-}
-
-std::shared_ptr<IDataChartDataAccess> SvcFactory::CreateDataChartDataAccess() {
-    return std::make_shared<DataChartDataAccessAdapter>();
-}
+std::shared_ptr<IDatabaseManager> SvcFactory::CreateDatabaseManager() {
+    static std::shared_ptr<IDatabaseManager> instance = std::make_shared<DatabaseManagerAdapter>();
+    return instance;
 }

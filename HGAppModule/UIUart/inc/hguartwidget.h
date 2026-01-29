@@ -13,7 +13,7 @@
 #include <QTextEdit>
 #include "mykeyboard.h"
 #include "common.h"
-
+#include "ISerial.h"
 
 class HGUartWidget : public QWidget
 {
@@ -48,7 +48,7 @@ private:
     QLineEdit* m_captureLineEdit;
     QCheckBox* m_enterCheck, *m_returnCheck;
 
-    HGSerial* m_serialPort;
+    HGMACHINE::ISerial* m_serialPort;
 };
 
 #endif // HGUARTWIDGET_H

@@ -7,21 +7,13 @@ HG_CMAKE_ADD_MODULE(IfDetectDimentionVux inc src)
 
 
 HG_CMAKE_MODULE_DEPEND_PUB( 
-    HXQDetectDimentionVuxModule
-    HGImageAlgorithmService
-    HGCommon
-    ${ZXING_LIBRARY}
-    ${LOG4CPLUS_LIBRARIES}
+    HGCoreDetectDimentionVux
 )
 
 HG_CMAKE_ADD_SHARED(HGIfDetectDimentionVux inc src)
 
 HG_CMAKE_MODULE_DEPEND(
-    HXQDetectDimentionVuxModule
-    HGImageAlgorithmService
-    HGCommon
-    ${ZXING_LIBRARY}
-    ${LOG4CPLUS_LIBRARIES}
+    HGCoreDetectDimentionVux
 )
 set_target_properties(HGIfDetectDimentionVux PROPERTIES 
     VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}

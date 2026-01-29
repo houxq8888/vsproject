@@ -3,18 +3,22 @@
 #include <QMessageBox>
 #include "common.h"
 #include <QDialog>
-#include "globalsingleton.h"
+#include "UserAuditManager.h"
+#include "loginterface.h"
+#include "SvcFactory.h"
+#include "SystemDataManager.h"
 
+using namespace HGMACHINE;
 
 AuthorityWidget::AuthorityWidget(std::string lang,const std::vector<std::string> &wholeAuthority,QWidget *parent) : QWidget(parent),
 m_lang(lang),
 m_whole_authority(wholeAuthority),
 m_setAuthorityFlag(false)
 {
-    GlobalSingleton::instance().setWholeAuthority(m_whole_authority);
-    std::string enterUsersManageName=GlobalSingleton::instance().getSystemInfo("enterUsersManageName");
-    std::string authority = GlobalSingleton::instance().getUserAuthority(enterUsersManageName);
-    permissionInfo = GlobalSingleton::instance().getAuthorityDetail(authority);
+    UserAuditManager::instance().get().setWholeAuthority(m_whole_authority);
+    std::string enterUsersManageName=SystemDataManager::instance().get().getSystemInfo("enterUsersManageName");
+    std::string authority = UserAuditManager::instance().get().getUserAuthority(enterUsersManageName);
+    permissionInfo = UserAuditManager::instance().get().getAuthorityDetail(authority);
 
     m_curPhase = USER_INIT;
     fnInit();
@@ -42,15 +46,15 @@ void AuthorityWidget::fnInit()
     headerItem->setFont(QFont("Arial",24));
     m_usersAuthorityInfoW->setItem(0,0,headerItem);
 
-    m_selfDefineBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"SelfDefine")));
-    m_moreInfoBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"MoreInfo")));
-    m_backBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Back")));
+    m_selfDefineBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelfDefine")));
+    m_moreInfoBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"MoreInfo")));
+    m_backBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Back")));
 
     connect(m_selfDefineBtn,SIGNAL(clicked()),this,SLOT(clickSelfDefine()));
     connect(m_moreInfoBtn,SIGNAL(clicked()),this,SLOT(clickMoreInfo()));
     connect(m_backBtn,SIGNAL(clicked()),this,SLOT(clickBack()));
 
-    m_usersLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Users")));
+    m_usersLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Users")));
     m_usersComboBox=new QComboBox();
 
 
@@ -62,9 +66,9 @@ void AuthorityWidget::fnInit()
             this, &AuthorityWidget::onUsersComboBoxChanged);
 #endif
 
-    m_userLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"GroupUsers")));
-    m_addUserBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"AddUser")));
-    m_removeUserBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"DeleteUser")));
+    m_userLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"GroupUsers")));
+    m_addUserBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AddUser")));
+    m_removeUserBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DeleteUser")));
     connect(m_addUserBtn,&QPushButton::clicked,this,&AuthorityWidget::slotAddUser);
     connect(m_removeUserBtn,&QPushButton::clicked,this,&AuthorityWidget::slotRemoveUser);
 
@@ -77,14 +81,14 @@ void AuthorityWidget::fnInit()
     connect(m_usersAuthorityTableW,&QTableWidget::cellClicked,this,&AuthorityWidget::onUsersAuthorityClicked);
     QString data[1][8]={
         {
-            QString::fromStdString(loadTranslation(m_lang,"Authority")),
-            QString::fromStdString(loadTranslation(m_lang,"Select")),
-            QString::fromStdString(loadTranslation(m_lang,"Authority")),
-            QString::fromStdString(loadTranslation(m_lang,"Select")),
-            QString::fromStdString(loadTranslation(m_lang,"Authority")),
-            QString::fromStdString(loadTranslation(m_lang,"Select")),
-            QString::fromStdString(loadTranslation(m_lang,"Authority")),
-            QString::fromStdString(loadTranslation(m_lang,"Select"))
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Authority")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Select")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Authority")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Select")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Authority")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Select")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Authority")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Select"))
         }
     };
     for (int row=0;row<1;row++){
@@ -95,11 +99,11 @@ void AuthorityWidget::fnInit()
             if (col%2!=0) item->setFlags(item->flags() & ~Qt::ItemIsEditable);
         }
     }
-    std::vector<std::string> permissionInfoTemp = GlobalSingleton::instance().getWholeAuthority();
+    std::vector<std::string> permissionInfoTemp = UserAuditManager::instance().get().getWholeAuthority();
     for (int mm=0;mm<int(permissionInfoTemp.size());mm++){
         int row = mm / 4 + 1;
         int col = (2*mm)%8;
-        QString text = QString::fromStdString(loadTranslation(m_lang,permissionInfoTemp[mm]));
+        QString text = QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,permissionInfoTemp[mm]));
         QTableWidgetItem* item=new QTableWidgetItem(text);
         m_usersAuthorityTableW->setItem(row,col,item);
         col = (2*mm+1)%8;
@@ -117,11 +121,11 @@ void AuthorityWidget::fnInit()
     m_userTableW->resizeRowsToContents();
     m_userTableW->setMouseTracking(true);
 
-    m_setAuthorityBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Set")));
+    m_setAuthorityBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Set")));
     connect(m_setAuthorityBtn,&QPushButton::clicked,this,&AuthorityWidget::setAuthority);
 
     // 
-    m_scanAuthorityInfoBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"ScanAuthorityInfo")));
+    m_scanAuthorityInfoBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ScanAuthorityInfo")));
     connect(m_scanAuthorityInfoBtn,&QPushButton::clicked,this,&AuthorityWidget::slotScanAuthorityInfo);
 
     m_usersLayout->addWidget(m_usersLabel,0,0);
@@ -135,8 +139,8 @@ void AuthorityWidget::fnInit()
 }
 void AuthorityWidget::closeEvent(QCloseEvent *event) {    
     // 检查是否处于编辑模式，如果是则回滚未确认的修改
-    if (GlobalSingleton::instance().isAuthorityEditing()) {
-        GlobalSingleton::instance().rollbackAuthorityEdit();
+    if (UserAuditManager::instance().get().isAuthorityEditing()) {
+        UserAuditManager::instance().get().rollbackAuthorityEdit();
     }
     
     fnWriteDB();
@@ -178,21 +182,21 @@ void AuthorityWidget::clickBack(){
         m_usersLayout->addWidget(m_usersComboBox,0,1);
         m_usersLabel->show();
         m_usersComboBox->show();
-        m_usersLabel->setText(QString::fromStdString(loadTranslation(m_lang,"Users")));
+        m_usersLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Users")));
         slotScanAuthorityInfo();
     }
 }
 bool AuthorityWidget::fnHasUserManageAuthority()
 {
-    std::string  enterUsersManageName=GlobalSingleton::instance().getSystemInfo("enterUsersManageName");
-    std::string authority=GlobalSingleton::instance().getUserAuthority(enterUsersManageName);
-    std::vector<std::string> userPermission = GlobalSingleton::instance().getAuthorityDetail(authority);
+    std::string  enterUsersManageName=SystemDataManager::instance().get().getSystemInfo("enterUsersManageName");
+    std::string authority=UserAuditManager::instance().get().getUserAuthority(enterUsersManageName);
+    std::vector<std::string> userPermission = UserAuditManager::instance().get().getAuthorityDetail(authority);
 
-    if (GlobalSingleton::instance().getSystemInfo("免密登录")!="true"&&
+    if (SystemDataManager::instance().get().getSystemInfo("免密登录")!="true"&&
         std::find(userPermission.begin(),userPermission.end(),"UserManage")==userPermission.end()){
         std::ostringstream ss;
-        QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),"没有"+QString::fromStdString(loadTranslation(m_lang,"UserManage"))+"权限，请联系管理员开通！");
-        RWDb::writeAuditTrailLog("没有"+loadTranslation(m_lang,"UserManage")+"权限，请联系管理员开通！");
+        QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),"没有"+QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UserManage"))+"权限，请联系管理员开通！");
+        LOG_IF.writeAuditTrailLog("没有"+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UserManage")+"权限，请联系管理员开通！");
         return false;
     }
     return true;
@@ -200,15 +204,15 @@ bool AuthorityWidget::fnHasUserManageAuthority()
 bool AuthorityWidget::fnHasUsersManageAuthority()
 {
     return true;
-    std::string  enterUsersManageName=GlobalSingleton::instance().getSystemInfo("enterUsersManageName");
-    std::string authority=GlobalSingleton::instance().getUserAuthority(enterUsersManageName);
-    std::vector<std::string> userPermission = GlobalSingleton::instance().getAuthorityDetail(authority);
+    std::string  enterUsersManageName=SystemDataManager::instance().get().getSystemInfo("enterUsersManageName");
+    std::string authority=UserAuditManager::instance().get().getUserAuthority(enterUsersManageName);
+    std::vector<std::string> userPermission = UserAuditManager::instance().get().getAuthorityDetail(authority);
 
-    if (GlobalSingleton::instance().getSystemInfo("免密登录")!="true"&&
+    if (SystemDataManager::instance().get().getSystemInfo("免密登录")!="true"&&
         std::find(userPermission.begin(),userPermission.end(),"UsersManage")==userPermission.end()){
         std::ostringstream ss;
-        QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),"没有"+QString::fromStdString(loadTranslation(m_lang,"UsersManage"))+"权限，请联系管理员开通！");
-        RWDb::writeAuditTrailLog("没有"+loadTranslation(m_lang,"UsersManage")+"权限，请联系管理员开通！");
+        QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),"没有"+QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UsersManage"))+"权限，请联系管理员开通！");
+        LOG_IF.writeAuditTrailLog("没有"+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UsersManage")+"权限，请联系管理员开通！");
         return false;
     }
     return true;
@@ -216,20 +220,62 @@ bool AuthorityWidget::fnHasUsersManageAuthority()
 
 AuthorityWidget::~AuthorityWidget()
 {
-    SAFE_DELETE(m_usersLayout);
-    SAFE_DELETE(m_usersAuthorityInfoW);
-    SAFE_DELETE(m_selfDefineBtn);
-    SAFE_DELETE(m_moreInfoBtn);
-    SAFE_DELETE(m_usersLabel);
-    SAFE_DELETE(m_usersComboBox);
-    SAFE_DELETE(m_userLabel);
-    SAFE_DELETE(m_addUserBtn);
-    SAFE_DELETE(m_removeUserBtn);
-    SAFE_DELETE(m_usersAuthorityTableW);
-    SAFE_DELETE(m_userTableW);
-    SAFE_DELETE(m_setAuthorityBtn);
-    SAFE_DELETE(m_backBtn);
-    SAFE_DELETE(m_scanAuthorityInfoBtn);
+    if (m_usersLayout);{
+        delete (m_usersLayout);
+        m_usersLayout = nullptr;
+    }
+    if (m_usersAuthorityInfoW);{
+        delete (m_usersAuthorityInfoW);
+        m_usersAuthorityInfoW = nullptr;
+    }
+    if (m_selfDefineBtn);{
+        delete (m_selfDefineBtn);
+        m_selfDefineBtn = nullptr;
+    }
+    if (m_moreInfoBtn);{
+        delete (m_moreInfoBtn);
+        m_moreInfoBtn = nullptr;
+    }
+    if (m_usersLabel);{
+        delete (m_usersLabel);
+        m_usersLabel = nullptr;
+    }
+    if (m_usersComboBox);{
+        delete (m_usersComboBox);
+        m_usersComboBox = nullptr;
+    }
+    if (m_userLabel);{
+        delete (m_userLabel);
+        m_userLabel = nullptr;
+    }
+    if (m_addUserBtn);{
+        delete (m_addUserBtn);
+        m_addUserBtn = nullptr;
+    }
+    if (m_removeUserBtn);{
+        delete (m_removeUserBtn);
+        m_removeUserBtn = nullptr;
+    }
+    if (m_usersAuthorityTableW);{
+        delete (m_usersAuthorityTableW);
+        m_usersAuthorityTableW = nullptr;
+    }
+    if (m_userTableW);{
+        delete (m_userTableW);
+        m_userTableW = nullptr;
+    }
+    if (m_setAuthorityBtn);{
+        delete (m_setAuthorityBtn);
+        m_setAuthorityBtn = nullptr;
+    }
+    if (m_backBtn);{
+        delete (m_backBtn);
+        m_backBtn = nullptr;
+    }
+    if (m_scanAuthorityInfoBtn);{
+        delete (m_scanAuthorityInfoBtn);
+        m_scanAuthorityInfoBtn = nullptr;
+    }
 }
 void AuthorityWidget::slotScanAuthorityInfo()
 {
@@ -273,13 +319,13 @@ bool AuthorityWidget::closeWindow()
 
 void AuthorityWidget::slotAddUser(){
     QDialog dialog(this);
-    dialog.setWindowTitle(QString::fromStdString(loadTranslation(m_lang,"AddUser")));
+    dialog.setWindowTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AddUser")));
     dialog.setWindowModality(Qt::ApplicationModal);
     QListWidget* listW=new QListWidget(&dialog);
     QPushButton* okbtn=new QPushButton(&dialog);
-    okbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Ok")));//"确定");
+    okbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Ok")));//"确定");
     QPushButton* cancelbtn=new QPushButton(&dialog);
-    cancelbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Cancel")));//"取消");
+    cancelbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Cancel")));//"取消");
 
     std::string addUserName;
     connect(okbtn,&QPushButton::clicked,[&](){
@@ -289,7 +335,7 @@ void AuthorityWidget::slotAddUser(){
     connect(cancelbtn,&QPushButton::clicked,[&](){
         dialog.close();
     });
-    std::vector<std::string> names=GlobalSingleton::instance().getUsersNo();
+    std::vector<std::string> names=UserAuditManager::instance().get().getUsersNo();
     for (const auto &name:names){
         listW->addItem(QString::fromStdString(name));
     }
@@ -304,57 +350,57 @@ void AuthorityWidget::slotAddUser(){
     if (addUserName!=""){
         bool flag=false;
         int index=findUserAuthorityIndex(addUserName);
-        if (loadTranslation(m_lang, GlobalSingleton::instance().getUserField(index, "Authority")) 
+        if (SvcFactory::CreateConfigService()->LoadTranslation(m_lang, UserAuditManager::instance().get().getUserField(index, "Authority")) 
             != m_usersComboBox->currentText().toStdString())
         {
-            std::string selectAuthority=findTranslationKey(m_lang,m_usersComboBox->currentText().toStdString());
+            std::string selectAuthority=SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,m_usersComboBox->currentText().toStdString());
             if (selectAuthority == "Manager") {
-                if (GlobalSingleton::instance().getSystemInfo("免密登录") != "true" &&
+                if (SystemDataManager::instance().get().getSystemInfo("免密登录") != "true" &&
                     std::find(permissionInfo.begin(), permissionInfo.end(), "UserManage(Manager)") == permissionInfo.end())
                 {
                     std::ostringstream ss;
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "该用户没有权限创建管理员，请联系管理员开通!");
-                    RWDb::writeAuditTrailLog("该用户没有权限创建管理员，请联系管理员开通!");
+                    LOG_IF.writeAuditTrailLog("该用户没有权限创建管理员，请联系管理员开通!");
                     return;
                 }
             } else if (selectAuthority != "SystemManager"&&selectAuthority!="Manager"&&selectAuthority!="所有权限")
             {
-                if (GlobalSingleton::instance().getSystemInfo("免密登录") != "true" &&
+                if (SystemDataManager::instance().get().getSystemInfo("免密登录") != "true" &&
                     std::find(permissionInfo.begin(), permissionInfo.end(), "UserManage(Users)") == permissionInfo.end())
                 {
                     std::ostringstream ss;
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "该用户没有权限创建非管理员用户，请联系管理员开通！");
-                    RWDb::writeAuditTrailLog("该用户没有权限创建非管理员用户，请联系管理员开通！");
+                    LOG_IF.writeAuditTrailLog("该用户没有权限创建非管理员用户，请联系管理员开通！");
                     return;
                 }
             } else if (selectAuthority=="所有权限"){
                 QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "不能创建所有权限账号!");
-                RWDb::writeAuditTrailLog("不能创建所有权限账号!");
+                LOG_IF.writeAuditTrailLog("不能创建所有权限账号!");
                 return;
             } else if (selectAuthority=="SystemManager"){
-                std::string enterUsersManageName=GlobalSingleton::instance().getSystemInfo("enterUsersManageName");
-                std::string authority = GlobalSingleton::instance().getUserAuthority(enterUsersManageName);
+                std::string enterUsersManageName=SystemDataManager::instance().get().getSystemInfo("enterUsersManageName");
+                std::string authority = UserAuditManager::instance().get().getUserAuthority(enterUsersManageName);
                 if (authority.find("所有权限")==std::string::npos){
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "只有厂家账号才能创建超级管理员账号!");
-                    RWDb::writeAuditTrailLog("只有厂家账号才能创建超级管理员账号!");
+                    LOG_IF.writeAuditTrailLog("只有厂家账号才能创建超级管理员账号!");
                     return;
                 }
             }
             if (QMessageBox::Yes==QMessageBox::question(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"SureToChangeAccoundAuthority")),
+                QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SureToChangeAccoundAuthority")),
                 QMessageBox::Yes|QMessageBox::No))
             {
-                std::string attributeName=GlobalSingleton::instance().getUserField(index,"Authority");
+                std::string attributeName=UserAuditManager::instance().get().getUserField(index,"Authority");
 
-                QString name = QString::fromStdString(loadTranslation(m_lang, "Authority"));
-                if (splitStr(GlobalSingleton::instance().getUserField(index,"Authority"),';').size() <=1)
-                    GlobalSingleton::instance().addUserField(index,"Authority",';'+findTranslationKey(m_lang,m_usersComboBox->currentText().toStdString())+';');
+                QString name = QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "Authority"));
+                if (SvcFactory::CreateCommonService()->SplitString(UserAuditManager::instance().get().getUserField(index,"Authority"),';').size() <=1)
+                    UserAuditManager::instance().get().addUserField(index,"Authority",';'+SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,m_usersComboBox->currentText().toStdString())+';');
                 else 
-                    GlobalSingleton::instance().addUserField(index,"Authority",findTranslationKey(m_lang,m_usersComboBox->currentText().toStdString())+';');
-                GlobalSingleton::instance().setUserField(index,"LastModifyTime",getStandardCurTime());
-                GlobalSingleton::instance().setUserField(index,"LastModifier",GlobalSingleton::instance().getSystemInfo("enterUsersManageName"));
-                if (addUserName == GlobalSingleton::instance().getSystemInfo("loginName")){
-                    GlobalSingleton::instance().setSystemInfo("authority",GlobalSingleton::instance().getUserField(index,"Authority"));
+                    UserAuditManager::instance().get().addUserField(index,"Authority",SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,m_usersComboBox->currentText().toStdString())+';');
+                UserAuditManager::instance().get().setUserField(index,"LastModifyTime",SvcFactory::CreateCommonService()->GetStandardCurTime());
+                UserAuditManager::instance().get().setUserField(index,"LastModifier",SystemDataManager::instance().get().getSystemInfo("enterUsersManageName"));
+                if (addUserName == SystemDataManager::instance().get().getSystemInfo("loginName")){
+                    SystemDataManager::instance().get().setSystemInfo("authority",UserAuditManager::instance().get().getUserField(index,"Authority"));
                     emit updateAuthority();
                 }
                 flag=true;
@@ -370,15 +416,15 @@ void AuthorityWidget::slotAddUser(){
         findNextRowAndCol(m_userTableW,addUserName,row,col);
         if (row==-1&&col==-1) return;
         m_userTableW->setItem(row,col,new QTableWidgetItem(QString::fromStdString(addUserName)));
-        std::string attributeName=findTranslationKey(m_lang,m_usersComboBox->currentText().toStdString());
+        std::string attributeName=SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,m_usersComboBox->currentText().toStdString());
  
-        RWDb::writeAuditTrailLog(loadTranslation(m_lang,attributeName)+" 增加账户 ["+addUserName+"] ");
+        LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,attributeName)+" 增加账户 ["+addUserName+"] ");
         fnAddUsrsGroupUser(m_usersComboBox->currentText().toStdString(),addUserName);
     }
 }
 int  AuthorityWidget::findUserAuthorityIndex(const std::string &userNo){
     int index=-1;
-    std::vector<std::string> nos = GlobalSingleton::instance().getUsersNo();
+    std::vector<std::string> nos = UserAuditManager::instance().get().getUsersNo();
     for (int i=0;i<int(nos.size());i++){
         if (nos[i]==userNo){
             index=i;
@@ -416,51 +462,51 @@ void AuthorityWidget::findNextRowAndCol(QTableWidget* tableW,std::string key,int
     }
 }
 void AuthorityWidget::fnAddAuthorityItem(const std::string &authorityName, const std::string &text){
-    for (int i=0;i<int(GlobalSingleton::instance().getAuthorityInfo().size());i++)
+    for (int i=0;i<int(UserAuditManager::instance().get().getAuthorityInfo().size());i++)
     {
-        if (GlobalSingleton::instance().getAuthorityField(i,"GroupName") == findTranslationKey(m_lang, authorityName))
+        if (UserAuditManager::instance().get().getAuthorityField(i,"GroupName") == SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, authorityName))
         {
-            if (GlobalSingleton::instance().getAuthorityField(i,"Authority").find(text)!= std::string::npos) break;
-            GlobalSingleton::instance().setAuthorityField(i,"Authority", 
-                GlobalSingleton::instance().getAuthorityField(i,"Authority") + (text + ":"));
-            GlobalSingleton::instance().setAuthorityField(i,"LastModifyTime", getStandardCurTime());
-            GlobalSingleton::instance().setAuthorityField(i,"LastModifier",GlobalSingleton::instance().getSystemInfo("enterUsersManageName"));
+            if (UserAuditManager::instance().get().getAuthorityField(i,"Authority").find(text)!= std::string::npos) break;
+            UserAuditManager::instance().get().setAuthorityField(i,"Authority", 
+                UserAuditManager::instance().get().getAuthorityField(i,"Authority") + (text + ":"));
+            UserAuditManager::instance().get().setAuthorityField(i,"LastModifyTime", SvcFactory::CreateCommonService()->GetStandardCurTime());
+            UserAuditManager::instance().get().setAuthorityField(i,"LastModifier",SystemDataManager::instance().get().getSystemInfo("enterUsersManageName"));
             break;
         }
     }
 }
 void AuthorityWidget::fnAddUsrsGroupUser(const std::string &authorityName, const std::string &text)
 {
-    for (int i=0;i<int(GlobalSingleton::instance().getAuthorityInfo().size());i++)
+    for (int i=0;i<int(UserAuditManager::instance().get().getAuthorityInfo().size());i++)
     {
-        if (GlobalSingleton::instance().getAuthorityField(i,"GroupName") == findTranslationKey(m_lang, authorityName))
+        if (UserAuditManager::instance().get().getAuthorityField(i,"GroupName") == SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, authorityName))
         {
-            if (GlobalSingleton::instance().getAuthorityField(i,"GroupPerson").find(text)!= std::string::npos) break;
-            GlobalSingleton::instance().setAuthorityField(i,"GroupPerson", 
-                GlobalSingleton::instance().getAuthorityField(i,"GroupPerson") + text + ":");
-            std::string groupPerson = GlobalSingleton::instance().getAuthorityField(i,"GroupPerson");
-            std::vector<std::string> persons = splitStr(groupPerson, ':');
+            if (UserAuditManager::instance().get().getAuthorityField(i,"GroupPerson").find(text)!= std::string::npos) break;
+            UserAuditManager::instance().get().setAuthorityField(i,"GroupPerson", 
+                UserAuditManager::instance().get().getAuthorityField(i,"GroupPerson") + text + ":");
+            std::string groupPerson = UserAuditManager::instance().get().getAuthorityField(i,"GroupPerson");
+            std::vector<std::string> persons = SvcFactory::CreateCommonService()->SplitString(groupPerson, ':');
             int count=0;
             for (int m=0;m<int(persons.size());m++){
                 if (persons[m]=="") continue;
                 count++;
             }
-            GlobalSingleton::instance().setAuthorityField(i,"GroupPNumber",
+            UserAuditManager::instance().get().setAuthorityField(i,"GroupPNumber",
                 std::to_string(count));
-            GlobalSingleton::instance().setAuthorityField(i,"LastModifyTime",getStandardCurTime());
-            GlobalSingleton::instance().setAuthorityField(i,"LastModifier",GlobalSingleton::instance().getSystemInfo("enterUsersManageName"));
+            UserAuditManager::instance().get().setAuthorityField(i,"LastModifyTime",SvcFactory::CreateCommonService()->GetStandardCurTime());
+            UserAuditManager::instance().get().setAuthorityField(i,"LastModifier",SystemDataManager::instance().get().getSystemInfo("enterUsersManageName"));
             break;
         }
     }
 }
 void AuthorityWidget::fnRemoveAuthorityItem(const std::string &authorityName, const std::string &text)
 {
-     for (int i=0;i<int(GlobalSingleton::instance().getAuthorityInfo().size());i++)
+     for (int i=0;i<int(UserAuditManager::instance().get().getAuthorityInfo().size());i++)
     {
-        if (GlobalSingleton::instance().getAuthorityField(i,"GroupName") == findTranslationKey(m_lang, authorityName))
+        if (UserAuditManager::instance().get().getAuthorityField(i,"GroupName") == SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, authorityName))
         {
-            if (GlobalSingleton::instance().getAuthorityField(i,"Authority").find(text)== std::string::npos) break;
-            std::vector<std::string> authoritys = splitStr(GlobalSingleton::instance().getAuthorityField(i,"Authority"), ':');
+            if (UserAuditManager::instance().get().getAuthorityField(i,"Authority").find(text)== std::string::npos) break;
+            std::vector<std::string> authoritys = SvcFactory::CreateCommonService()->SplitString(UserAuditManager::instance().get().getAuthorityField(i,"Authority"), ':');
             for (auto authority : authoritys)
             {
                 if (authority == text)
@@ -469,24 +515,24 @@ void AuthorityWidget::fnRemoveAuthorityItem(const std::string &authorityName, co
                     break;
                 }
             }
-            GlobalSingleton::instance().setAuthorityField(i,"Authority","");
+            UserAuditManager::instance().get().setAuthorityField(i,"Authority","");
             for (auto authority : authoritys)
             {
-                GlobalSingleton::instance().addAuthorityField(i,"Authority", authority + ":");
+                UserAuditManager::instance().get().addAuthorityField(i,"Authority", authority + ":");
             }
-            GlobalSingleton::instance().setAuthorityField(i,"LastModifyTime",getStandardCurTime());
-            GlobalSingleton::instance().setAuthorityField(i,"LastModifier",GlobalSingleton::instance().getSystemInfo("enterUsersManageName"));
+            UserAuditManager::instance().get().setAuthorityField(i,"LastModifyTime",SvcFactory::CreateCommonService()->GetStandardCurTime());
+            UserAuditManager::instance().get().setAuthorityField(i,"LastModifier",SystemDataManager::instance().get().getSystemInfo("enterUsersManageName"));
             break;
         }
     }
 }
 void AuthorityWidget::fnRemoveUsrsGroupUser(const std::string &authorityName, const std::string &text)
 {
-    for (int i=0;i<int(GlobalSingleton::instance().getAuthorityInfo().size());i++)
+    for (int i=0;i<int(UserAuditManager::instance().get().getAuthorityInfo().size());i++)
     {
-        if (GlobalSingleton::instance().getAuthorityField(i,"GroupName") == findTranslationKey(m_lang, authorityName))
+        if (UserAuditManager::instance().get().getAuthorityField(i,"GroupName") == SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, authorityName))
         {
-            std::vector<std::string> persons = splitStr(GlobalSingleton::instance().getAuthorityField(i,"GroupPerson"), ':');
+            std::vector<std::string> persons = SvcFactory::CreateCommonService()->SplitString(UserAuditManager::instance().get().getAuthorityField(i,"GroupPerson"), ':');
             for (auto person : persons)
             {
                 if (person == text)
@@ -495,29 +541,29 @@ void AuthorityWidget::fnRemoveUsrsGroupUser(const std::string &authorityName, co
                     break;
                 }
             }
-            GlobalSingleton::instance().setAuthorityField(i,"GroupPerson","");
+            UserAuditManager::instance().get().setAuthorityField(i,"GroupPerson","");
             for (auto person : persons)
             {
-                GlobalSingleton::instance().addAuthorityField(i,"GroupPerson",person + ":");
+                UserAuditManager::instance().get().addAuthorityField(i,"GroupPerson",person + ":");
             }
-            std::string groupPerson = GlobalSingleton::instance().getAuthorityField(i,"GroupPerson");
+            std::string groupPerson = UserAuditManager::instance().get().getAuthorityField(i,"GroupPerson");
             persons.clear();
-            persons = splitStr(groupPerson, ':');
+            persons = SvcFactory::CreateCommonService()->SplitString(groupPerson, ':');
             int count = 0;
             for (int m=0;m<int(persons.size());m++){
                 if (persons[m]=="") continue;
                 count++;
             }
-            GlobalSingleton::instance().setAuthorityField(i,"GroupPNumber",
+            UserAuditManager::instance().get().setAuthorityField(i,"GroupPNumber",
                 std::to_string(count));
-            GlobalSingleton::instance().setAuthorityField(i,"LastModifyTime",getStandardCurTime());
-            GlobalSingleton::instance().setAuthorityField(i,"LastModifier",GlobalSingleton::instance().getSystemInfo("enterUsersManageName"));
+            UserAuditManager::instance().get().setAuthorityField(i,"LastModifyTime",SvcFactory::CreateCommonService()->GetStandardCurTime());
+            UserAuditManager::instance().get().setAuthorityField(i,"LastModifier",SystemDataManager::instance().get().getSystemInfo("enterUsersManageName"));
             break;
         }
     }
 }
 void AuthorityWidget::slotRemoveUser(){
-    std::string attributeName=findTranslationKey(m_lang,m_usersComboBox->currentText().toStdString());
+    std::string attributeName=SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,m_usersComboBox->currentText().toStdString());
     // remove 
     int col=m_userTableW->currentColumn();
     int row=m_userTableW->currentRow();
@@ -525,66 +571,66 @@ void AuthorityWidget::slotRemoveUser(){
         (col<0||col>=m_userTableW->columnCount()))
     {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), 
-            QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));
         return;
     }
     if (m_userTableW->item(row,col)){
         std::string text=m_userTableW->item(row,col)->text().toStdString();
         int index = findUserAuthorityIndex(text);
 
-        std::string selectAuthority = findTranslationKey(m_lang, m_usersComboBox->currentText().toStdString());
+        std::string selectAuthority = SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, m_usersComboBox->currentText().toStdString());
         if (selectAuthority == "Manager")
         {
-            if (GlobalSingleton::instance().getSystemInfo("免密登录") != "true" &&
+            if (SystemDataManager::instance().get().getSystemInfo("免密登录") != "true" &&
                 std::find(permissionInfo.begin(), permissionInfo.end(), "UserManage(Manager)") == permissionInfo.end())
             {
                 std::ostringstream ss;
                 QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "该用户没有权限移除管理员，请联系管理员开通!");
-                RWDb::writeAuditTrailLog("该用户没有权限移除管理员，请联系管理员开通!");
+                LOG_IF.writeAuditTrailLog("该用户没有权限移除管理员，请联系管理员开通!");
                 return;
             }
         }
         else if (selectAuthority != "SystemManager" && selectAuthority != "Manager" && selectAuthority != "所有权限")
         {
-            if (GlobalSingleton::instance().getSystemInfo("免密登录") != "true" &&
+            if (SystemDataManager::instance().get().getSystemInfo("免密登录") != "true" &&
                 std::find(permissionInfo.begin(), permissionInfo.end(), "UserManage(Users)") == permissionInfo.end())
             {
                 std::ostringstream ss;
                 QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "该用户没有权限移除非管理员用户，请联系管理员开通！");
-                RWDb::writeAuditTrailLog("该用户没有权限移除非管理员用户，请联系管理员开通！");
+                LOG_IF.writeAuditTrailLog("该用户没有权限移除非管理员用户，请联系管理员开通！");
                 return;
             }
         }
         else if (selectAuthority == "所有权限")
         {
             QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "不能移除所有权限账号!");
-            RWDb::writeAuditTrailLog("不能移除所有权限账号!");
+            LOG_IF.writeAuditTrailLog("不能移除所有权限账号!");
             return;
         }
        
 
         if (QMessageBox::Yes == QMessageBox::question(this,QString::fromStdString(HG_DEVICE_NAME),
-            QString::fromStdString(loadTranslation(m_lang,"SureToChangeAccoundAuthority")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SureToChangeAccoundAuthority")),
             QMessageBox::Yes|QMessageBox::No))
         {
             m_userTableW->item(row,col)->setText("");
-            RWDb::writeAuditTrailLog(loadTranslation(m_lang,attributeName)+" 删除账户 ["+text+"] ");
+            LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,attributeName)+" 删除账户 ["+text+"] ");
             fnRemoveUsrsGroupUser(m_usersComboBox->currentText().toStdString(),text);
-            std::string authorityTemp = GlobalSingleton::instance().getUserField(index,"Authority");
-            std::vector<std::string> authorities = splitStr(authorityTemp,';');
+            std::string authorityTemp = UserAuditManager::instance().get().getUserField(index,"Authority");
+            std::vector<std::string> authorities = SvcFactory::CreateCommonService()->SplitString(authorityTemp,';');
             authorityTemp = "";
             for (int mm=0;mm<int(authorities.size());mm++){
                 if (authorities[mm]=="") continue;
-                if (authorities[mm]==findTranslationKey(m_lang,m_usersComboBox->currentText().toStdString())) continue;
-                authorityTemp +=loadTranslation(m_lang,authorities[mm])+';';
+                if (authorities[mm]==SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,m_usersComboBox->currentText().toStdString())) continue;
+                authorityTemp +=SvcFactory::CreateConfigService()->LoadTranslation(m_lang,authorities[mm])+';';
             }
-            GlobalSingleton::instance().setUserField(index,"Authority",authorityTemp);
-            if (text==GlobalSingleton::instance().getSystemInfo("loginName")){
-                GlobalSingleton::instance().setSystemInfo("authority",GlobalSingleton::instance().getUserField(index,"Authority"));
+            UserAuditManager::instance().get().setUserField(index,"Authority",authorityTemp);
+            if (text==SystemDataManager::instance().get().getSystemInfo("loginName")){
+                SystemDataManager::instance().get().setSystemInfo("authority",UserAuditManager::instance().get().getUserField(index,"Authority"));
                 emit updateAuthority();
             }
-            GlobalSingleton::instance().setUserField(index,"LastModifyTime",getStandardCurTime());
-            GlobalSingleton::instance().setUserField(index,"LastModifier",GlobalSingleton::instance().getSystemInfo("enterUsersManageName"));
+            UserAuditManager::instance().get().setUserField(index,"LastModifyTime",SvcFactory::CreateCommonService()->GetStandardCurTime());
+            UserAuditManager::instance().get().setUserField(index,"LastModifier",SystemDataManager::instance().get().getSystemInfo("enterUsersManageName"));
         }
     }
 }
@@ -610,13 +656,13 @@ void AuthorityWidget::fnFillAuthorityInfo()
         }
     }
     std::string authorityName = m_usersComboBox->currentText().toStdString();
-    std::vector<std::map<std::string,std::string>> authorityIfno=GlobalSingleton::instance().getAuthorityInfo();
+    std::vector<std::map<std::string,std::string>> authorityIfno=UserAuditManager::instance().get().getAuthorityInfo();
     for (auto info : authorityIfno)
     {
-        if (info.at("GroupName") == findTranslationKey(m_lang, authorityName))
+        if (info.at("GroupName") == SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, authorityName))
         {
             std::vector<std::string> resultvalue;
-            resultvalue = splitStr(info.at("Authority"), ':');
+            resultvalue = SvcFactory::CreateCommonService()->SplitString(info.at("Authority"), ':');
             resultvalue.erase(std::remove(resultvalue.begin(),resultvalue.end(),""),resultvalue.end());
 
             int row = 0, col = 0;
@@ -632,9 +678,9 @@ void AuthorityWidget::fnFillAuthorityInfo()
                 }
                 QTableWidgetItem *item = m_usersAuthorityInfoW->item(row, col);
                 if (item)
-                    m_usersAuthorityInfoW->item(row, col)->setText(QString::fromStdString(loadTranslation(m_lang, resultvalue[i])));
+                    m_usersAuthorityInfoW->item(row, col)->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, resultvalue[i])));
                 else
-                    m_usersAuthorityInfoW->setItem(row, col, new QTableWidgetItem(QString::fromStdString(loadTranslation(m_lang, resultvalue[i]))));
+                    m_usersAuthorityInfoW->setItem(row, col, new QTableWidgetItem(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, resultvalue[i]))));
             }
             break;
         }
@@ -645,11 +691,11 @@ void AuthorityWidget::fnFillAuthorityList()
     m_userTableW->clearContents();
     fnResetAuthorityToEnable();
     std::string authorityName = m_usersComboBox->currentText().toStdString();
-    for (auto info : GlobalSingleton::instance().getAuthorityInfo())
+    for (auto info : UserAuditManager::instance().get().getAuthorityInfo())
     {
-        if (info.at("GroupName") == findTranslationKey(m_lang, authorityName))
+        if (info.at("GroupName") == SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, authorityName))
         {
-            std::vector<std::string> resultvalue = splitStr(info.at("Authority"), ':');
+            std::vector<std::string> resultvalue = SvcFactory::CreateCommonService()->SplitString(info.at("Authority"), ':');
             resultvalue.erase(resultvalue.begin() + resultvalue.size() - 1);
 
             // 清空所有勾选标记
@@ -678,7 +724,7 @@ void AuthorityWidget::fnFillAuthorityList()
                         QTableWidgetItem* item = m_usersAuthorityTableW->item(row, col);
                         if (item && !item->text().isEmpty())
                         {
-                            std::string itemText = findTranslationKey(m_lang, item->text().toStdString());
+                            std::string itemText = SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, item->text().toStdString());
                             if (itemText == resultvalue[i])
                             {
                                 QTableWidgetItem* checkItem = m_usersAuthorityTableW->item(row, col + 1);
@@ -711,7 +757,7 @@ void AuthorityWidget::fnFillAuthorityList()
                             if (m_usersAuthorityTableW->item(row, col) == NULL)
                                 continue;
                             if (m_usersAuthorityTableW->item(row, col)->text().toStdString() ==
-                                loadTranslation(m_lang, resultvalue[i]))
+                                SvcFactory::CreateConfigService()->LoadTranslation(m_lang, resultvalue[i]))
                             {
                                 m_usersAuthorityTableW->item(row, col + 1)->setText("✔");
                                 m_usersAuthorityTableW->item(row, col + 1)->setTextAlignment(Qt::AlignCenter);
@@ -726,7 +772,7 @@ void AuthorityWidget::fnFillAuthorityList()
                 fnInitAuthorityTable();
             }
             resultvalue.clear();
-            resultvalue = splitStr(info.at("GroupPerson"), ':');
+            resultvalue = SvcFactory::CreateCommonService()->SplitString(info.at("GroupPerson"), ':');
             resultvalue.erase(resultvalue.begin() + resultvalue.size() - 1);
             row=0; col=0;
             // if (resultkey[1] == "Account")
@@ -752,7 +798,7 @@ void AuthorityWidget::fnFillAuthorityList()
     }
 }
 void AuthorityWidget::fnResetAuthorityToEnable(){
-    std::string usersType = findTranslationKey(m_lang, m_usersComboBox->currentText().toStdString());
+    std::string usersType = SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, m_usersComboBox->currentText().toStdString());
     int row,col;
     for (row = 1; row < m_usersAuthorityTableW->rowCount(); row++){
         for (col=0; col < m_usersAuthorityTableW->columnCount(); col++){
@@ -762,7 +808,7 @@ void AuthorityWidget::fnResetAuthorityToEnable(){
             if (m_usersAuthorityTableW->item(row, col - 1)==NULL) continue;
             for (int mm=0;mm<2;mm++){
                 QTableWidgetItem *item = m_usersAuthorityTableW->item(row, col-mm);
-                std::string itemText = findTranslationKey(m_lang,m_usersAuthorityTableW->item(row,col-1)->text().toStdString());
+                std::string itemText = SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,m_usersAuthorityTableW->item(row,col-1)->text().toStdString());
                 // if (usersType == "Auditor"){
                 //     if (itemText!="ScanAuditTrailRecord")
                 //         continue;
@@ -818,24 +864,24 @@ void AuthorityWidget::fnInitAuthorityTable(){
 }
 void AuthorityWidget::fnReadDB()
 {
-    GlobalSingleton::instance().loadUserGroupInfo();
+    UserAuditManager::instance().get().loadUserGroupInfo();
     std::vector<std::string> userGroupNames={"SystemManager","Manager","Operator","MaintenanceStaff"};
-    if (GlobalSingleton::instance().getSystemInfo("userGroupName")==""){
-        GlobalSingleton::instance().setSystemInfo("userGroupName", "SystemManager:Manager:Operator:MaintenanceStaff:");
+    if (SystemDataManager::instance().get().getSystemInfo("userGroupName")==""){
+        SystemDataManager::instance().get().setSystemInfo("userGroupName", "SystemManager:Manager:Operator:MaintenanceStaff:");
         std::map<std::string,std::string> info;
         for (auto name:userGroupNames){
             info["GroupName"] = name;
             info["GroupPNumber"] = "0";
             info["GroupPerson"] = "";
             info["Authority"] = "";
-            info["Creator"] = GlobalSingleton::instance().getSystemInfo("enterUsersManageName");
-            info["CreateTime"] = getStandardCurTime();
+            info["Creator"] = SystemDataManager::instance().get().getSystemInfo("enterUsersManageName");
+            info["CreateTime"] = SvcFactory::CreateCommonService()->GetStandardCurTime();
             info["LastModifier"] = "";
             info["LastModifyTime"] = "";
-            GlobalSingleton::instance().addAuthorityRecord(info);
+            UserAuditManager::instance().get().addAuthorityRecord(info);
         }
     } else {
-        std::vector<std::map<std::string,std::string>> authorityInfo=GlobalSingleton::instance().getAuthorityInfo();
+        std::vector<std::map<std::string,std::string>> authorityInfo=UserAuditManager::instance().get().getAuthorityInfo();
         for (int j=0;j<int(userGroupNames.size());j++){
             bool flag=false;
             for (int i=0;i<int(authorityInfo.size());i++){
@@ -850,18 +896,18 @@ void AuthorityWidget::fnReadDB()
                 info["GroupPNumber"] = "0";
                 info["GroupPerson"] = "";
                 info["Authority"] = "";
-                info["Creator"] = GlobalSingleton::instance().getSystemInfo("enterUsersManageName");
-                info["CreateTime"] = getStandardCurTime();
+                info["Creator"] = SystemDataManager::instance().get().getSystemInfo("enterUsersManageName");
+                info["CreateTime"] = SvcFactory::CreateCommonService()->GetStandardCurTime();
                 info["LastModifier"] = "";
                 info["LastModifyTime"] = "";
-                GlobalSingleton::instance().addAuthorityRecord(info);
+                UserAuditManager::instance().get().addAuthorityRecord(info);
             }
         }
     }
-    std::vector<std::string> usersGroupName=splitStr(GlobalSingleton::instance().getSystemInfo("userGroupName"),':');
+    std::vector<std::string> usersGroupName=SvcFactory::CreateCommonService()->SplitString(SystemDataManager::instance().get().getSystemInfo("userGroupName"),':');
     usersGroupName.erase(usersGroupName.begin()+usersGroupName.size()-1);
     for (int i=0;i<int(usersGroupName.size());i++){
-        m_usersComboBox->addItem(QString::fromStdString(loadTranslation(m_lang,usersGroupName[i])));
+        m_usersComboBox->addItem(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,usersGroupName[i])));
     }
 
     fnFillAuthorityList();
@@ -901,7 +947,7 @@ void AuthorityWidget::onUsersAuthorityClicked(int row, int col)
         QTableWidgetItem *item = m_usersAuthorityTableW->item(row, col);
         if (item)
         {
-            std::string attributeName = findTranslationKey(m_lang, m_usersComboBox->currentText().toStdString());
+            std::string attributeName = SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, m_usersComboBox->currentText().toStdString());
             if (m_usersAuthorityTableW->item(row, col - 1) == NULL)
                 return;
             if (m_usersAuthorityTableW->item(row, col - 1)->text() == "")
@@ -914,11 +960,11 @@ void AuthorityWidget::onUsersAuthorityClicked(int row, int col)
                 item->setText("✔");
                 item->setTextAlignment(Qt::AlignCenter);
                 // 在编辑模式下，使用临时编辑方法而不是直接修改数据库
-                if (GlobalSingleton::instance().isAuthorityEditing()) {
-                    GlobalSingleton::instance().addAuthorityFieldToEdit(attributeName, findTranslationKey(m_lang,
+                if (UserAuditManager::instance().get().isAuthorityEditing()) {
+                    UserAuditManager::instance().get().addAuthorityFieldToEdit(attributeName, SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,
                                                                      m_usersAuthorityTableW->item(row, col - 1)->text().toStdString()));
                 } else {
-                    fnAddAuthorityItem(attributeName, findTranslationKey(m_lang,
+                    fnAddAuthorityItem(attributeName, SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,
                                                                      m_usersAuthorityTableW->item(row, col - 1)->text().toStdString()));
                 }
             }
@@ -926,11 +972,11 @@ void AuthorityWidget::onUsersAuthorityClicked(int row, int col)
             {
                 item->setText("");
                 // remove
-                if (GlobalSingleton::instance().isAuthorityEditing()) {
-                    GlobalSingleton::instance().removeAuthorityFieldFromEdit(attributeName, findTranslationKey(m_lang,
+                if (UserAuditManager::instance().get().isAuthorityEditing()) {
+                    UserAuditManager::instance().get().removeAuthorityFieldFromEdit(attributeName, SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,
                                                                         m_usersAuthorityTableW->item(row, col - 1)->text().toStdString()));
                 } else {
-                    fnRemoveAuthorityItem(attributeName, findTranslationKey(m_lang,
+                    fnRemoveAuthorityItem(attributeName, SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,
                                                                         m_usersAuthorityTableW->item(row, col - 1)->text().toStdString()));
                 }
             }
@@ -940,34 +986,34 @@ void AuthorityWidget::onUsersAuthorityClicked(int row, int col)
 void AuthorityWidget::fnWriteDB()
 {
     // 仅在非编辑模式下保存数据
-    if (!GlobalSingleton::instance().isAuthorityEditing()) {
-        GlobalSingleton::instance().saveSystemInfo();
-        GlobalSingleton::instance().saveUserGroupInfo();
+    if (!UserAuditManager::instance().get().isAuthorityEditing()) {
+        SystemDataManager::instance().get().saveSystemInfo();
+        UserAuditManager::instance().get().saveUserGroupInfo();
     }
 }
 void AuthorityWidget::clickSelfDefine(){
     QDialog dialog(this);
-    dialog.setWindowTitle(QString::fromStdString(loadTranslation(m_lang, "SelfDefine")));
+    dialog.setWindowTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "SelfDefine")));
     dialog.setWindowModality(Qt::ApplicationModal);
-    QLabel *inputLabel = new QLabel(QString::fromStdString(loadTranslation(m_lang, "InputDefineName")));
+    QLabel *inputLabel = new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "InputDefineName")));
     QLabel *infoLabel = new QLabel("");
     QLineEdit *inputLineEdit = new QLineEdit();
-    QPushButton *okButton = new QPushButton(QString::fromStdString(loadTranslation(m_lang, "Ok")));
-    QPushButton *delBtn = new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Delete")));
+    QPushButton *okButton = new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "Ok")));
+    QPushButton *delBtn = new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Delete")));
     connect (delBtn,&QPushButton::clicked,[&](){
         if (inputLineEdit->text().isEmpty()) return;
         if (m_usersComboBox->findText(inputLineEdit->text())==-1){
-            infoLabel->setText(QString::fromStdString(loadTranslation(m_lang, "NameNotExisted")));
+            infoLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "NameNotExisted")));
             return;
         } else {
             QString delQstr = inputLineEdit->text();
-            std::string delAuthority=findTranslationKey(m_lang,inputLineEdit->text().toStdString());
+            std::string delAuthority=SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,inputLineEdit->text().toStdString());
             if (delAuthority=="SystemManager"||delAuthority=="Manager"||delAuthority=="Operator"||delAuthority=="MaintenanceStaff"){
                 infoLabel->setText("预设权限分组不可删除");
                 return;
             } else {
-                GlobalSingleton::instance().delSystemInfo("userGroupName",delAuthority+":");
-                GlobalSingleton::instance().delAuthorityRecord(delAuthority);
+                SystemDataManager::instance().get().delSystemInfo("userGroupName",delAuthority+":");
+                UserAuditManager::instance().get().delAuthorityRecord(delAuthority);
                 int index=m_usersComboBox->findText(delQstr);
                 if (index!=-1){
                     m_usersComboBox->removeItem(index);
@@ -979,22 +1025,22 @@ void AuthorityWidget::clickSelfDefine(){
     connect(okButton, &QPushButton::clicked, [&](){
             if (inputLineEdit->text().isEmpty()) return;
             if (m_usersComboBox->findText(inputLineEdit->text())==-1){
-                std::string defineName=findTranslationKey(m_lang,inputLineEdit->text().toStdString());
-                GlobalSingleton::instance().addSystemInfo("userGroupName",defineName+":");
+                std::string defineName=SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,inputLineEdit->text().toStdString());
+                SystemDataManager::instance().get().addSystemInfo("userGroupName",defineName+":");
 
                 std::map<std::string, std::string> info;
                 info["GroupName"] = defineName;
                 info["GroupPNumber"] = "0";
                 info["GroupPerson"] = "";
                 info["Authority"] = "";
-                info["Creator"] = GlobalSingleton::instance().getSystemInfo("enterUsersManageName");
-                info["CreateTime"] = getStandardCurTime();
+                info["Creator"] = SystemDataManager::instance().get().getSystemInfo("enterUsersManageName");
+                info["CreateTime"] = SvcFactory::CreateCommonService()->GetStandardCurTime();
                 info["LastModifier"] = "";
                 info["LastModifyTime"] = "";
-                GlobalSingleton::instance().addAuthorityRecord(info);
+                UserAuditManager::instance().get().addAuthorityRecord(info);
                 m_usersComboBox->addItem(inputLineEdit->text());
                 dialog.close();
-            } else infoLabel->setText(QString::fromStdString(loadTranslation(m_lang, "NameExisted"))); 
+            } else infoLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "NameExisted"))); 
     });
     QGridLayout *layout = new QGridLayout(&dialog);
     layout->addWidget(inputLabel, 0, 0);
@@ -1007,8 +1053,8 @@ void AuthorityWidget::clickSelfDefine(){
 }
 void AuthorityWidget::clickMoreInfo(){
     std::map<std::string,std::string> groupInfo;
-    for (auto info : GlobalSingleton::instance().getAuthorityInfo()){
-        if (info.at("GroupName")==findTranslationKey(m_lang,m_usersComboBox->currentText().toStdString())){
+    for (auto info : UserAuditManager::instance().get().getAuthorityInfo()){
+        if (info.at("GroupName")==SvcFactory::CreateConfigService()->FindTranslationKey(m_lang,m_usersComboBox->currentText().toStdString())){
             groupInfo = info;
             break;
         }
@@ -1046,17 +1092,17 @@ void AuthorityWidget::setAuthority()
     if (m_setAuthorityFlag)
     {
         // 开始编辑模式
-        for (auto info : GlobalSingleton::instance().getAuthorityInfo())
+        for (auto info : UserAuditManager::instance().get().getAuthorityInfo())
         {
-            if (info["GroupName"] == findTranslationKey(m_lang, m_usersComboBox->currentText().toStdString()))
+            if (info["GroupName"] == SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, m_usersComboBox->currentText().toStdString()))
             {
                 curAuthority = info["Authority"];
-                authorities = splitStr(curAuthority, ':');
+                authorities = SvcFactory::CreateCommonService()->SplitString(curAuthority, ':');
                 break;
             }
         }
 
-        if (!GlobalSingleton::instance().beginAuthorityEdit())
+        if (!UserAuditManager::instance().get().beginAuthorityEdit())
         {
             // 如果开始编辑失败，保持当前状态不变
             m_setAuthorityFlag = !m_setAuthorityFlag;
@@ -1067,10 +1113,10 @@ void AuthorityWidget::setAuthority()
         ss << "编辑 " + m_usersComboBox->currentText().toStdString() + " 原权限:";
         for (int i = 0; i < int(authorities.size()); i++)
         {
-            ss << loadTranslation(m_lang, authorities[i]) << ",";
+            ss << SvcFactory::CreateConfigService()->LoadTranslation(m_lang, authorities[i]) << ",";
         }
-        RWDb::writeAuditTrailLog(ss.str());
-        m_setAuthorityBtn->setText(QString::fromStdString(loadTranslation(m_lang, "Ok")));
+        LOG_IF.writeAuditTrailLog(ss.str());
+        m_setAuthorityBtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "Ok")));
 
         for (int row = 0; row < m_usersAuthorityTableW->rowCount(); row++)
         {
@@ -1103,7 +1149,7 @@ void AuthorityWidget::setAuthority()
                     // 获取对应的权限名称
                     QTableWidgetItem* authorityItem = m_usersAuthorityTableW->item(row, col-1);
                     if (authorityItem && !authorityItem->text().isEmpty()) {
-                        std::string authorityKey = findTranslationKey(m_lang, authorityItem->text().toStdString());
+                        std::string authorityKey = SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, authorityItem->text().toStdString());
                         if (!authorityKey.empty()) {
                             authorities.push_back(authorityKey);
                         }
@@ -1118,25 +1164,25 @@ void AuthorityWidget::setAuthority()
         ss << "修改 " + m_usersComboBox->currentText().toStdString() + " 权限:";
         for (int i = 0; i < int(authorities.size()); i++)
         {
-            ss << loadTranslation(m_lang, authorities[i]) << ",";
+            ss << SvcFactory::CreateConfigService()->LoadTranslation(m_lang, authorities[i]) << ",";
         }
-        RWDb::writeAuditTrailLog(ss.str());
-        m_setAuthorityBtn->setText(QString::fromStdString(loadTranslation(m_lang, "Set")));
+        LOG_IF.writeAuditTrailLog(ss.str());
+        m_setAuthorityBtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "Set")));
         
         // 修复：先提交编辑并更新数据库，再刷新表格显示
         m_usersAuthorityTableW->setEditTriggers(QAbstractItemView::NoEditTriggers);  // 再设置不可编辑
 
         // 提交编辑模式
-        if (GlobalSingleton::instance().commitAuthorityEdit())
+        if (UserAuditManager::instance().get().commitAuthorityEdit())
         {
             // 提交成功，更新最后修改信息
-            for (int mm = 0; mm < int(GlobalSingleton::instance().getAuthorityInfo().size()); mm++)
+            for (int mm = 0; mm < int(UserAuditManager::instance().get().getAuthorityInfo().size()); mm++)
             {
-                if (GlobalSingleton::instance().getAuthorityField(mm, "GroupName") == findTranslationKey(m_lang, m_usersComboBox->currentText().toStdString()))
+                if (UserAuditManager::instance().get().getAuthorityField(mm, "GroupName") == SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, m_usersComboBox->currentText().toStdString()))
                 {
-                    GlobalSingleton::instance().setAuthorityField(mm, "Authority", curAuthority);
-                    GlobalSingleton::instance().setAuthorityField(mm, "LastModifier", GlobalSingleton::instance().getSystemInfo("enterUsersManageName"));
-                    GlobalSingleton::instance().setAuthorityField(mm, "LastModifyTime", getStandardCurTime());
+                    UserAuditManager::instance().get().setAuthorityField(mm, "Authority", curAuthority);
+                    UserAuditManager::instance().get().setAuthorityField(mm, "LastModifier", SystemDataManager::instance().get().getSystemInfo("enterUsersManageName"));
+                    UserAuditManager::instance().get().setAuthorityField(mm, "LastModifyTime", SvcFactory::CreateCommonService()->GetStandardCurTime());
                     break;
                 }
             }
@@ -1149,7 +1195,7 @@ void AuthorityWidget::setAuthority()
         else
         {
             // 提交失败，回滚编辑模式
-            GlobalSingleton::instance().rollbackAuthorityEdit();
+            UserAuditManager::instance().get().rollbackAuthorityEdit();
             // 即使回滚，也要刷新表格显示当前状态
             fnFillAuthorityList();
         }

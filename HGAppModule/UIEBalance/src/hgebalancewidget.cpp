@@ -1,4 +1,5 @@
 #include "hgebalancewidget.h"
+#include "SvcFactory.h"
 
 
 HGEBalanceWidget::HGEBalanceWidget(std::string name,QWidget *parent)
@@ -9,14 +10,14 @@ HGEBalanceWidget::HGEBalanceWidget(std::string name,QWidget *parent)
     this->setLayout(m_layout);
     m_setLayout=new QGridLayout();
     m_paramLayout=new QGridLayout();
-    m_setGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Set")));
-    m_paramGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Param")));
+    m_setGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Set")));
+    m_paramGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Param")));
     m_setGroup->setLayout(m_setLayout);
     m_paramGroup->setLayout(m_paramLayout);
-    m_typeLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Brand")));
+    m_typeLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Brand")));
     m_typeComboBox=new QComboBox();
     m_typeComboBox->addItems({"Mettler"});
-    m_interfaceLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Interface")));
+    m_interfaceLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Interface")));
     m_interfaceComboBox=new QComboBox();
     m_interfaceComboBox->addItems({"COM","USB","LAN"});
     m_interfaceComboBox->setCurrentIndex(0);

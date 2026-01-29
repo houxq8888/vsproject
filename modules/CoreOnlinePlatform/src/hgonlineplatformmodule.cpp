@@ -1,6 +1,5 @@
 #include "hglogservice.h"
 #include "hgcommonutility.h"
-#include "hgserial.h"
 #include "hgonlineplatformmodule.h"
 #include "hgxml.h"
 

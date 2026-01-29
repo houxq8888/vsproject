@@ -8,6 +8,10 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <sstream>
+#include "SvcFactory.h"
+#include "MethodManager.h"
+
+using namespace HGMACHINE;
 
 HGMethodEditWidget::HGMethodEditWidget(std::string lang,std::vector<std::string> methods,
     QWidget *parent) : QWidget(parent),
@@ -16,7 +20,7 @@ HGMethodEditWidget::HGMethodEditWidget(std::string lang,std::vector<std::string>
     m_methodlists=methods;
     m_index=-1;
     m_fillContent.clear();
-    m_editGroupBox=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Method")));//"方法");
+    m_editGroupBox=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Method")));//"方法");
     m_editlayout=new QGridLayout();
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
@@ -60,9 +64,9 @@ HGMethodEditWidget::HGMethodEditWidget(std::string lang,std::vector<std::string>
 
     m_layout->addWidget(m_editGroupBox,0,0);
 
-    m_fillContent=RWDb::readMethodInfo();
+    m_fillContent=MethodManager::instance().get().readMethodInfo();
     for (int index=0;index<int(m_fillContent.size());index++){
-        m_fillContent[index]["参数"]=RWDb::readMethodParam(m_fillContent[index]["DBName"]).param;
+        m_fillContent[index]["参数"]=MethodManager::instance().get().readMethodParam(m_fillContent[index]["DBName"]);
         fnDisplayMethodInfo(index,m_fillContent[index]);
         addMethodType(m_methodlists,index);
     }
@@ -91,42 +95,42 @@ std::string HGMethodEditWidget::getIndexTableName(std::string tableName,int &ind
 }
 void HGMethodEditWidget::saveParam(std::string param){
     int row=getSelectedRow(m_tableW);
-    m_method.param=param;
-    m_method.dbName=m_curSaveDBName;
-    m_method.name=m_tableW->item(row,1)->text().toStdString();
-    m_method.indexStr=m_tableW->item(row,0)->text().toStdString();
-    m_method.createTime=m_tableW->item(row,3)->text().toStdString();
-    m_method.type=m_tableW->item(row,2)->text().toStdString();
+    m_methodParam=param;
+    m_methodDbName=m_curSaveDBName;
+    m_methodName=m_tableW->item(row,1)->text().toStdString();
+    m_methodIndexStr=m_tableW->item(row,0)->text().toStdString();
+    m_methodCreateTime=m_tableW->item(row,3)->text().toStdString();
+    m_methodType=m_tableW->item(row,2)->text().toStdString();
     
     std::vector<std::map<std::string,std::string>> infoS;
-    infoS=RWDb::getMethodParamMap(m_method);
-    RWDb::writeMethodRecord(m_method.dbName,m_coverFlag,infoS);
+    infoS=MethodManager::instance().get().getMethodParamMap(m_methodIndexStr, m_methodName, m_methodType, m_methodCreateTime, m_methodDbName, m_methodParam);
+    MethodManager::instance().get().writeMethodRecord(m_methodDbName,m_coverFlag,infoS);
 }
 void HGMethodEditWidget::slotSaveMethod(){
     int row = getSelectedRow(m_tableW);
     if (row >= m_tableW->rowCount()) return;
     m_tableW->setEditTriggers(QAbstractItemView::NoEditTriggers);
     if (row==-1) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
         return;
     }
     std::string tableName="";
     bool coverFlag=false;
     // list method
     QDialog dialog(this);
-    dialog.setWindowTitle(QString::fromStdString(loadTranslation(m_lang,"InputSaveName")));
+    dialog.setWindowTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"InputSaveName")));
     dialog.setWindowModality(Qt::ApplicationModal);
 
     QListWidget* listW=new QListWidget(&dialog);
     QLineEdit* saveNameEdit=new QLineEdit(&dialog);
-    saveNameEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"InputSaveName")));
-    QPushButton* coverBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"OverwriteFile"))/*"覆盖原文件"*/,&dialog);
+    saveNameEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"InputSaveName")));
+    QPushButton* coverBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"OverwriteFile"))/*"覆盖原文件"*/,&dialog);
     QPushButton* okbtn=new QPushButton(&dialog);
-    okbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Ok")));//"确定");
+    okbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Ok")));//"确定");
     QPushButton* cancelbtn=new QPushButton(&dialog);
-    cancelbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Cancel")));//"取消");
+    cancelbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Cancel")));//"取消");
 
-    std::vector<std::string> names=RWDb::getAllTables(MethodDBName);
+    std::vector<std::string> names=MethodManager::instance().get().getAllTables(MethodManager::instance().get().getMethodPrefix());
 
     int selectRow=row, coverRow=-1;
     std::string selectIndex=m_fillContent[row]["序号"];
@@ -158,7 +162,7 @@ void HGMethodEditWidget::slotSaveMethod(){
                 coverFlag=true;
             }
         } else {
-            tableName=MethodDBName+std::string("_")+tableName;
+            tableName=MethodManager::instance().get().getMethodPrefix()+std::string("_")+tableName;
         }
        
        dialog.close();
@@ -169,7 +173,7 @@ void HGMethodEditWidget::slotSaveMethod(){
 
     
     for (const auto &name:names){
-        if (name==METHODMANAGENAME) continue;
+        if (name==MethodManager::instance().get().getMethodTableName()) continue;
         listW->addItem(QString::fromStdString(name));
     }
     setFocusByName(listW,m_fillContent[row]["DBName"]);
@@ -188,14 +192,14 @@ void HGMethodEditWidget::slotSaveMethod(){
         m_fillContent[row]["DBName"]=tableName;
         if (coverRow!=-1&&coverFlag&&selectRow!=coverRow){
             // delete 
-            RWDb::deleteRecord(METHODMANAGENAME,"序号",coverIndex);
+            MethodManager::instance().get().deleteRecord("序号",coverIndex);
             m_fillContent.erase(m_fillContent.begin()+coverRow);
             m_tableW->removeRow(coverRow);
             for (int i=0;i<m_tableW->rowCount();i++){
                 m_tableW->item(i,0)->setText(QString("%1").arg(i+1));
                 m_fillContent[i]["序号"]=std::to_string(i+1);
             }
-            RWDb::clearMethodManageRecord();
+            MethodManager::instance().get().clearMethodManageRecord();
         }
         for (int i=0;i<m_tableW->rowCount();++i){
             QComboBox* combox=qobject_cast<QComboBox*>(m_tableW->cellWidget(i,2));
@@ -205,7 +209,7 @@ void HGMethodEditWidget::slotSaveMethod(){
             }
             m_fillContent[i]["名称"]=m_tableW->item(i,1)->text().toStdString();
             
-            RWDb::writeMethodManageRecord(m_fillContent[i]);
+            MethodManager::instance().get().writeMethodManageRecord(m_fillContent[i]);
         }
         emit saveSignal();
     }
@@ -215,7 +219,7 @@ void HGMethodEditWidget::slotDeleteMethod(){
     if (row >= m_tableW->rowCount()) return;
     m_tableW->setEditTriggers(QAbstractItemView::NoEditTriggers);
     if (row==-1) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
         return;
     }
     if (row != -1)
@@ -229,23 +233,23 @@ void HGMethodEditWidget::slotDeleteMethod(){
                                                       QMessageBox::Yes | QMessageBox::No))
         {
             int index=std::stoi(m_tableW->item(row,0)->text().toStdString());
-            RWDb::deleteRecord(METHODMANAGENAME,"序号",m_tableW->item(row,0)->text().toStdString());
-            RWDb::deleteDB(m_fillContent[row]["DBName"]);
+            MethodManager::instance().get().deleteRecord("序号",m_tableW->item(row,0)->text().toStdString());
+            MethodManager::instance().get().deleteDB(m_fillContent[row]["DBName"]);
             m_fillContent.erase(m_fillContent.begin()+index-1);
             m_tableW->removeRow(row);
             for (int i=0;i<m_tableW->rowCount();i++){
                 m_tableW->item(i,0)->setText(QString("%1").arg(i+1));
                 m_fillContent[i]["序号"]=std::to_string(i+1);
             }
-            RWDb::clearMethodManageRecord();
+            MethodManager::instance().get().clearMethodManageRecord();
             for (const auto &info:m_fillContent){
-                RWDb::writeMethodManageRecord(info);
+                MethodManager::instance().get().writeMethodManageRecord(info);
             }
         }
     }
     else
     {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
     }
 }
 void HGMethodEditWidget::fnDisplayMethodInfo(int count,std::map<std::string,std::string> fillContent){
@@ -265,16 +269,16 @@ void HGMethodEditWidget::fnDisplayMethodInfo(int count,std::map<std::string,std:
 
 void HGMethodEditWidget::slotAddMethod(){
     int index=m_fillContent.size();
-    m_method.indexStr=std::to_string(index+1);
+    m_methodIndexStr=std::to_string(index+1);
     
-    m_method.createTime=getStandardCurTime();
+    m_methodCreateTime=SvcFactory::CreateCommonService()->GetStandardCurTime();
 
-    std::map<std::string,std::string> infoS=RWDb::getMethodMap(index+1,m_method);
+    std::map<std::string,std::string> infoS=MethodManager::instance().get().getMethodMap(index+1, m_methodIndexStr, "", "", m_methodCreateTime, "", "");
     m_fillContent.push_back(infoS);
     fnDisplayMethodInfo(index,m_fillContent[index]);
     m_tableW->setEditTriggers(QAbstractItemView::AllEditTriggers);
 
-    RWDb::writeMethodManageRecord(infoS);
+    MethodManager::instance().get().writeMethodManageRecord(infoS);
 
     setTableWColNoEdit(m_tableW,0);
     setTableWColNoEdit(m_tableW,3);

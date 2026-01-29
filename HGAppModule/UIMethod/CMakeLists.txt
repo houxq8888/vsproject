@@ -12,7 +12,7 @@ if (PLATFORM STREQUAL "x64")
         Qt6::Charts
         Qt6::PrintSupport
     )
-    # Qt6 uses automatic MOC, no need for qt5_wrap_cpp
+    # Qt6 uses automatic MOC, no need for qt6_wrap_cpp
     qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
         set(CMAKE_AUTOMOC ON)
         set(CMAKE_AUTOUIC ON)
@@ -55,73 +55,22 @@ if (BUILD_SHARED_LIBS)
     else()
         HG_CMAKE_MODULE_DEPEND_PUB(
             PluginInterface
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
-            HGSecurityService
-            HGCommunicateService
-            HGBaseAppModule
-            ${ZXING_LIBRARY}
-            ALSA::ALSA
-            ${OpenCV_LIBRARIES}
-            ${OpencvFreeType_LIBRARY}
-            ${LOG4CPLUS_LIBRARIES}
-            ${CUPS_LIBRARY}
-            ${XLSXIO_READ_LIBRARY}
-            ${XLSXIO_WRITE_LIBRARY}
-            ${HARU_LIBRARY}
-            ${ZeroMQ_LIBRARY}
-            ${MQTT_LIBRARYS}
-            ${LIB_SERIALPORT_LIBRARY}
-            ${LIB_MOSQUITT_LIBRARY}
-            ${PULSE_LIBRARIES}
-            ${LIBSSH_LIBRARIES}
-            ${AVFORMAT_LIBRARIES}
-            ${AVCODEC_LIBRARIES}
-            ${AVUTIL_LIBRARIES}
-            ${SWSCALE_LIBRARIES}
-            ${Boost_LIBRARIES}
-            /usr/lib/x86_64-linux-gnu/libpulse.so
-            /usr/lib/x86_64-linux-gnu/libpulse-simple.so
-            OpenSSL::Crypto
+            HGUIBaseCore
+            HGServiceInterfaces
+            HGUILog
+            HGIfMethod
+            HGIfLog
             ${QT_LIBRARIES}
         )
 
         HG_CMAKE_ADD_SHARED(HGUIMethod inc src ${MOC_SRCS})
         HG_CMAKE_MODULE_DEPEND(
             PluginInterface
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
-            HGSecurityService
-            HGAuthorityService
-            HGCommunicateService
-            HGBaseAppModule
-            ${ZXING_LIBRARY}
-            ALSA::ALSA
-            ${OpenCV_LIBRARIES}
-            ${OpencvFreeType_LIBRARY}
-            ${LOG4CPLUS_LIBRARIES}
-            ${CUPS_LIBRARY}
-            ${XLSXIO_READ_LIBRARY}
-            ${XLSXIO_WRITE_LIBRARY}
-            ${HARU_LIBRARY}
-            ${ZeroMQ_LIBRARY}
-            ${MQTT_LIBRARYS}
-            ${LIB_SERIALPORT_LIBRARY}
-            ${LIB_MOSQUITT_LIBRARY}
-            ${PULSE_LIBRARIES}
-            ${LIBSSH_LIBRARIES}
-            ${AVFORMAT_LIBRARIES}
-            ${AVCODEC_LIBRARIES}
-            ${AVUTIL_LIBRARIES}
-            ${SWSCALE_LIBRARIES}
-            ${Boost_LIBRARIES}
-            OpenSSL::Crypto
+            HGUIBaseCore
+            HGServiceInterfaces
+            HGUILog
+            HGIfMethod
+            HGIfLog
             ${QT_LIBRARIES}
         )
     endif()
@@ -134,10 +83,14 @@ if (BUILD_STATIC_LIBS)
         target_include_directories(HGUIMethodStatic PUBLIC 
             ${CMAKE_SOURCE_DIR}/pluginInterface/inc
         )
+        target_include_directories(HGUIMethodStatic PUBLIC 
+            ${CMAKE_SOURCE_DIR}/interfaces/IfMethod/inc
+        )
         target_link_libraries(HGUIMethodStatic PUBLIC 
             ${CMAKE_SOURCE_DIR}/../3rdparty/lib/libPackFunInterface.a
             ${CMAKE_BINARY_DIR}/HGBaseAppModule/libHGBaseAppModuleStatic.a
             ${CMAKE_BINARY_DIR}/pluginInterface/libPluginInterfaceStatic.a
+            ${CMAKE_BINARY_DIR}/interfaces/IfMethod/libHGIfMethodStatic.a
             ${OpenCV_LIBRARIES}
             ${OpencvFreeType_LIBRARY}
             ${LOG4CPLUS_LIBRARIES}

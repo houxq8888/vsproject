@@ -1,6 +1,7 @@
-#include "HGLogService.h"
+#include "hglogservice.h"
 #include "hgcommonutility.h"
 #include "hgthreadManage.h"
+#include "SerialAdapter.h"
 #include <string.h>
 #include <thread>
 #include <stdio.h>
@@ -21,7 +22,7 @@
 #include <cstdlib>
 #include <fcntl.h>
 #include "structUpperPcToLowerPC.h"
-#include "HGMacroData.h"
+
 
 
 using namespace HGMACHINE;
@@ -115,7 +116,7 @@ void *threadRecvCommFunc(void *pUser)
 
     // std::ostringstream logtext;
     // logtext << /*CARLAMPAPPNAME << */"quit comm recv thread";
-    // HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+    // HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
     // pthread_exit(NULL);
     return NULL;
 }
@@ -137,7 +138,7 @@ void *threadSendCommFunc(void *pUser)
       
     std::ostringstream logtext;
     logtext <</* CARLAMPAPPNAME <<*/ "quit comm send thread";
-    HGLogService::getLogInstance(HGLogService::getLogPath())->logout(logtext.str(),LOGINFO);
+    HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
     // pthread_exit(NULL);
     return NULL;
 }
@@ -158,7 +159,7 @@ void *threadBreakProcessFunc(void *pUser){
       
     std::ostringstream logtext;
     logtext <<"quit break process thread";
-    HGLogService::getLogInstance(HGLogService::getLogPath())->logout(logtext.str(),LOGINFO);
+    HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
     // pthread_exit(NULL);
     return NULL;
 }
@@ -174,12 +175,13 @@ void *listenProtectProcess(void *pUser){
     pHGThreadManage->runListenProtectProcess();
     std::ostringstream logtext;
     logtext <<"quit listen protect process thread";
-    HGLogService::getLogInstance(HGLogService::getLogPath())->logout(logtext.str(),LOGINFO);
+    HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
     // pthread_exit(NULL);
     return NULL;
 }
 HgThreadManage::HgThreadManage()
 {
+    m_serial = HGMACHINE::SerialAdapterManager::instance().get();
     m_makeSampleFlag=false;
     m_recvComThreadFlag=FLAGEND;
     m_sendComThreadFlag=FLAGEND;
@@ -191,7 +193,7 @@ HgThreadManage::HgThreadManage()
         char *errstr = strerror(res);
         logtext.str("");
         logtext << "create thread listen protect process failed,ret:" << errstr;
-        HGLogService::getLogInstance(HGLogService::getLogPath())->logout(logtext.str(),LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
         m_exitTrd = FLAGEND;
         return ;
     }
@@ -203,7 +205,7 @@ HgThreadManage::HgThreadManage()
     m_styleALT=new StyleALT(LOAD,HgOnlinePlatformModule::getTaskSeqName());
 
     if (0!=commOpen()) {
-        HGLogService::getLogInstance(HGLogService::getLogPath())->logout("打开串口失败",LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError("打开串口失败");
         printf("open comm failed\n");
         m_connectWithMCUStatus=LINK_OFFLINE;
         m_cur_mcu_status="打开串口失败";
@@ -216,7 +218,7 @@ HgThreadManage::HgThreadManage()
         char *errstr = strerror(res);
         logtext.str("");
         logtext << /*CARLAMPAPPNAME << */"create thread recv failed,ret:" << errstr;
-        HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError(logtext.str());
         m_exitTrd = FLAGEND;
         return ;
     }
@@ -226,7 +228,7 @@ HgThreadManage::HgThreadManage()
         char *errstr = strerror(res);
         logtext.str("");
         logtext << /*CARLAMPAPPNAME << */"create thread send failed,ret:" << errstr;
-        HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError(logtext.str());
         m_exitTrd = FLAGEND;
         return ;
     }
@@ -235,7 +237,7 @@ HgThreadManage::HgThreadManage()
         char *errstr = strerror(res);
         logtext.str("");
         logtext << "create thread process break failed,ret:" << errstr;
-        HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError(logtext.str());
         m_exitTrd = FLAGEND;
         return ;
     }
@@ -245,43 +247,45 @@ HgThreadManage::~HgThreadManage()
 {
     try
     {
-        m_serial.close();
+        if (m_serial) {
+            m_serial->close();
+        }
         if (m_listenProtectProcessFlag == FLAGSTART)
         {
             if (pthread_join(m_listenProtectProcess, nullptr) != 0)
             {
-                HGLogService::getLogInstance(LOG_PATH)->logout("Failed to join thread daemon", LOGERROR);
+                HGLogService::getInstance(HGLogService::getLogPath())->logError("Failed to join thread daemon");
             }
         }
         if (m_threadBreakFlag == FLAGSTART)
         {
             if (pthread_join(m_threadBreak, nullptr) != 0)
             {
-                HGLogService::getLogInstance(LOG_PATH)->logout("Failed to join thread break", LOGERROR);
+                HGLogService::getInstance(HGLogService::getLogPath())->logError("Failed to join thread break");
             }
         }
         if (m_recvComThreadFlag == FLAGSTART)
         {
             if (pthread_join(threadRecvComm, nullptr) != 0)
             {
-                HGLogService::getLogInstance(LOG_PATH)->logout("Failed to join thread recv", LOGERROR);
+                HGLogService::getInstance(HGLogService::getLogPath())->logError("Failed to join thread recv");
             }
         }
         if (m_sendComThreadFlag == FLAGSTART)
         {
             if (pthread_join(threadSendComm, nullptr) != 0)
             {
-                HGLogService::getLogInstance(LOG_PATH)->logout("Failed to join thread send", LOGERROR);
+                HGLogService::getInstance(HGLogService::getLogPath())->logError("Failed to join thread send");
             }
         }
         std::ostringstream logtext;
         logtext << "release thread";
-        HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(), LOGINFO);
+        HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
     }
     catch (const std::exception &e)
     {
         // 记录异常信息，确保程序继续执行以释放其他资源
-        HGLogService::getLogInstance(LOG_PATH)->logout("Exception in destructor: " + std::string(e.what()), LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError("Exception in destructor: " + std::string(e.what()));
     }
 }
 
@@ -307,7 +311,7 @@ void HgThreadManage::runRecv(){
         std::this_thread::sleep_for(std::chrono::seconds(1));
     } while(FLAGSTART==m_exitTrd);
     printf("serial end recv \n");
-    HGLogService::getLogInstance(LOG_PATH)->logout("serial end recv",LOGINFO);
+    HGLogService::getInstance(HGLogService::getLogPath())->logInfo("serial end recv");
     HGOnlineRWDB::clearCAS6DeviceStatus();
 }
 void HgThreadManage::updateFlowInfo(){
@@ -360,14 +364,14 @@ void HgThreadManage::initSendInfoCAS6(){
         {
         case DEVICE_INIT:
             printf("device init\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("device init", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("device init");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 0xEE, 0xB1, 0x11, 0x00, 0x03, 0x00, 0x2C, 0x10, 0x01, 0x01, 0xFF, 0xFC, 0xFF, 0xFF}); // get version
             break;
         case SWIRL_SET_INIT1:
         {
             printf("swirl set init1\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("swirl set init1", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("swirl set init1");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 0xEE, 0xB1, 0x11, 0x00, 0x03, 0x00, 0x0E, 0x10, 0x01, 0x01, 0xFF, 0xFC, 0xFF, 0xFF});
             m_cas6_swirl_speed = 1;
@@ -375,32 +379,32 @@ void HgThreadManage::initSendInfoCAS6(){
         }
         case HEAT_ON:
             printf("heat on\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("heat on", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("heat on");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 0xEE, 0xB1, 0x11, 0x00, 0x03, 0x00, 0x0C, 0x10, 0x01, 0x01, 0xFF, 0xFC, 0xFF, 0xFF});
             break;
         case HEAT_OFF:
             printf("heat off\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("heat off", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("heat off");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 0xEE, 0xB1, 0x11, 0x00, 0x03, 0x00, 0x0C, 0x10, 0x01, 0x00, 0xFF, 0xFC, 0xFF, 0xFF});
             break;
         case FAN_ON:
             printf("fan on\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("fan on", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("fan on");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 0xEE, 0xB1, 0x14, 0x00, 0x06, 0x00, 0x11, 0x1A, 0x00, 0x00, 0xFF, 0xFC, 0xFF, 0xFF});
             break;
         case FAN_OFF:
             printf("fan off\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("fan off", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("fan off");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 0xEE, 0xB1, 0x14, 0x00, 0x06, 0x00, 0x11, 0x1A, 0x01, 0x00, 0xFF, 0xFC, 0xFF, 0xFF});
             break;
         case PUMP_ON:
         {
             printf("pump on\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("pump on", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("pump on");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 0xEE, 0xB1, 0x11, 0x00, 0x09, 0x00, 0x09, 0x10, 0x01, 0x01, 0xFF, 0xFC, 0xFF, 0xFF});
             break;
@@ -408,7 +412,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case PUMP_OFF:
         {
             printf("pump off\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("pump off", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("pump off");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 0xEE, 0xB1, 0x11, 0x00, 0x09, 0x00, 0x09, 0x10, 0x01, 0x00, 0xFF, 0xFC, 0xFF, 0xFF});
             break;
@@ -416,7 +420,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case READ_SWIRL_SPEED:
         {
             printf("read swirl speed\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("read swirl speed", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("read swirl speed");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 0xEE, 0xB1, 0x11, 0x00, 0x03, 0x00, 0x0E, 0x10, 0x01, 0x00, 0xFF, 0xFC, 0xFF, 0xFF});
             break;
@@ -424,7 +428,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case SWIRL_ASCEND:
         {
             printf("swirl ascend\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("swirl ascend", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("swirl ascend");
             m_cas6_swirl_speed++;
             if (m_cas6_swirl_speed > SWIRL_SPEED_MAX)
                 m_cas6_swirl_speed = SWIRL_SPEED_MAX;
@@ -435,7 +439,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case SWIRL_DESCEND:
         {
             printf("swirl descend\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("swirl descend", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("swirl descend");
             m_cas6_swirl_speed--;
             if (m_cas6_swirl_speed < SWIRL_SPEED_MIN)
                 m_cas6_swirl_speed = SWIRL_SPEED_MIN;
@@ -446,7 +450,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case NEEDLE_RELEASE:
         {
             printf("needle release\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("needle release", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("needle release");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // EEB1 11 00 09 00 06 10 01 01 FF FC FF FF
                 0xEE, 0xB1, 0x11, 0x00, 0x09, 0x00, 0x06, 0x10, 0x01, 0x01, 0xFF, 0xFC, 0xFF, 0xFF});
@@ -455,7 +459,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case CIRCLE_EXECUTE:
         {
             printf("circle execute\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("circle execute", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("circle execute");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // EE B1 11 00 09 00 0A 10 01 01 FF FC FF FF
                 0xEE, 0xB1, 0x11, 0x00, 0x09, 0x00, 0x0A, 0x10, 0x01, 0x01, 0xFF, 0xFC, 0xFF, 0xFF});
@@ -464,7 +468,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case SET_CIRCLE_NUMBER:
         {
             printf("set circle number\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("set circle number", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("set circle number");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // EE B1 1100 09 00 04 11 盘位号 00 FF FC FF FF
                 0xEE, 0xB1, 0x11, 0x00, 0x09, 0x00, 0x04, 0x11, static_cast<uint8_t>(m_circle_number + 48), 0x00, 0xFF, 0xFC, 0xFF, 0xFF});
@@ -473,7 +477,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case SET_CUR_CIRCLE_NO:
         {
             printf("set cur circle no\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("set cur circle no", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("set cur circle no");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // ee b1 11 00 08 00 03 11 盘号 00 ff fc ff ff
                 0xEE, 0xB1, 0x11, 0x00, 0x08, 0x00, 0x03, 0x11, static_cast<uint8_t>(m_cur_circle_no + 48), 0x00, 0xFF, 0xFC, 0xFF, 0xFF});
@@ -482,7 +486,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case NEEDLE_ARRIVAL_LIMIT_POS:
         {
             printf("needle arrival limit pos\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("needle arrival limit pos", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("needle arrival limit pos");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // EE B1 11 00 09 00 07 10 01 00 FF FC FF FF
                 0xEE, 0xB1, 0x11, 0x00, 0x09, 0x00, 0x07, 0x10, 0x01, 0x00, 0xFF, 0xFC, 0xFF, 0xFF});
@@ -491,7 +495,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case NEEDLE_PUNCTURE_RELEASE:
         {
             printf("needle puncture release\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("needle puncture release", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("needle puncture release");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // EE B1 11 00 03 00 23 10 01 00 FF FC FF FF
                 0xEE, 0xB1, 0x11, 0x00, 0x03, 0x00, 0x23, 0x10, 0x01, 0x00, 0xFF, 0xFC, 0xFF, 0xFF});
@@ -500,7 +504,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case NEEDLE_PUNCTURE_STEP:
         {
             printf("needle puncture step\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("needle puncture step", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("needle puncture step");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // EE B1 11 00 03 00 26 10 01 00 FF FC FF FF
                 0xEE, 0xB1, 0x11, 0x00, 0x03, 0x00, 0x26, 0x10, 0x01, 0x00, 0xFF, 0xFC, 0xFF, 0xFF});
@@ -509,7 +513,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case SET_NEEDLE_PUNCTURE_STEP:
         {
             printf("set needle puncture step\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("set needle puncture step", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("set needle puncture step");
             //
             auto vec = doubleToAsciiVector(m_needle_puncture_step);
             m_sendbytes.push_back(std::vector<uint8_t>{
@@ -530,7 +534,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case SET_PUNCTURE_POS_INDEX:
         {
             printf("set puncture pos index\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("set puncture pos index", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("set puncture pos index");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // EE B1 11 00 03 00 2f 10 01 01 FF FC FF FF
                 0xEE, 0xB1, 0x11, 0x00, 0x03, 0x00, 0x2f, 0x10, 0x01, static_cast<uint8_t>(m_puncture_position_index), 0xFF, 0xFC, 0xFF, 0xFF});
@@ -539,7 +543,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case NEEDLE_PUNCTURE_TARGET_POS:
         {
             printf("needle puncture target pos\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("needle puncture target pos", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("needle puncture target pos");
             // EE B1 11 00 09 00 07 10 01 01 FF FC FF FF
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // EE B1 11 00 09 00 07 10 01 01 FF FC FF FF
@@ -549,7 +553,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case GET_NEEDLE_PUNCTURE_CUR_POS:
         {
             printf("get needle puncture cur pos\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("get needle puncture cur pos", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("get needle puncture cur pos");
             // EE B1 11 00 03 00 2e 10 00 05 FF FC FF FF
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // EE B1 11 00 03 00 2e 10 00 05 FF FC FF FF
@@ -559,7 +563,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case MAKE_A_SAMPLE:
         {
             printf("make a sample\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("make a sample", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("make a sample");
             // ee b1 11 00 03 00 04 10 01 01 ff fc ff ff
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // ee b1 11 00 03 00 04 10 01 01 ff fc ff ff
@@ -569,7 +573,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case SEND_METHOD_PARAM:
         {
             printf("send method param\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("send method param", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("send method param");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // ee b1 12 00 05 2个字节为编号 2个字节为内容大小 内容 … FF FC FF FF
                 0xEE, 0xB1, 0x12, 0x00, 0x05});
@@ -606,7 +610,7 @@ void HgThreadManage::initSendInfoCAS6(){
         case REQUEST_DATA:
         {
             // printf("request data\n");
-            // HGLogService::getLogInstance(LOG_PATH)->logout("request data",LOGINFO);
+            // HGLogService::getInstance(HGLogService::getLogPath())->logInfo("request data");
             m_sendbytes.push_back(std::vector<uint8_t>{
                 // ee b1 11 00 03 00 29 10 01 01 ff fc ff ff
                 0xEE, 0xB1, 0x11, 0x00, 0x03, 0x00, 0x29, 0x10, 0x01, 0x01, 0xFF, 0xFC, 0xFF, 0xFF});
@@ -691,11 +695,11 @@ void HgThreadManage::runListenProtectProcess(){
     do {
         if (isProcessRunning(processName)) {
             if (isZombieProcess(daemonPid)){
-                HGLogService::getLogInstance(LOG_PATH)->logout("zombie process, restart",LOGERROR);
+                HGLogService::getInstance(HGLogService::getLogPath())->logError("zombie process, restart");
             }
-            // HGLogService::getLogInstance(LOG_PATH)->logout(processName+" process is running",LOGINFO);
+            // HGLogService::getInstance(HGLogService::getLogPath())->logInfo(processName+" process is running");
         } else {
-            HGLogService::getLogInstance(LOG_PATH)->logout(processName+" process is not running",LOGERROR);
+            HGLogService::getInstance(HGLogService::getLogPath())->logError(processName+" process is not running");
             std::string curPath=HGOnlineRWDB::readCurDirPath()+"/process/";
             HGMkDir(curPath);
             curPath+=processName;
@@ -710,10 +714,10 @@ void HgThreadManage::runListenProtectProcess(){
             {
                 createProcessFlag=true;
                 signal(SIGCHLD, handlechild);  // 处理 SIGCHLD，防止僵尸进程
-                HGLogService::getLogInstance(LOG_PATH)->logout("create process success, PID:"+std::to_string(daemonPid),LOGERROR);
+                HGLogService::getInstance(HGLogService::getLogPath())->logError("create process success, PID:"+std::to_string(daemonPid));
             } else {
                 createProcessFlag=false;
-                HGLogService::getLogInstance(LOG_PATH)->logout("create process failed",LOGERROR);
+                HGLogService::getInstance(HGLogService::getLogPath())->logError("create process failed");
             }
             setsid();
             // 释放属性
@@ -747,7 +751,7 @@ void HgThreadManage::runListenProtectProcess(){
         ComDataStruct sendComData;
         sendComData.id = HGOnlineRWDB::readLoginName();
         sendComData.pid=getpid();
-        // HGLogService::getLogInstance(LOG_PATH)->logout(
+        // HGLogService::getInstance(HGLogService::getLogPath())->logInfo(
         //     "send pid:"+std::to_string(sendComData.pid)+",userId:"+sendComData.id,
         //     LOGINFO);
         int rc = m_comwithzmq.sendStruct(sendComData);
@@ -755,7 +759,7 @@ void HgThreadManage::runListenProtectProcess(){
     } while (FLAGSTART == m_exitTrd);
 
     // if (createProcessFlag && daemonPid > 0) {
-    //     HGLogService::getLogInstance(LOG_PATH)->logout(
+    //     HGLogService::getInstance(HGLogService::getLogPath())->logInfo(
     //         "Killing process: " + std::to_string(daemonPid),
     //         LOGINFO);
     //     kill(daemonPid, SIGTERM);  // 发送终止信号
@@ -782,7 +786,7 @@ void HgThreadManage::runSend(){
             ss << std::hex << std::setw(2) << std::setfill('0') << (int)m_sendbytes[0][i] << " ";
         }
         printf("\n");
-        HGLogService::getLogInstance(LOG_PATH)->logout(ss.str(), LOGINFO);
+        HGLogService::getInstance(HGLogService::getLogPath())->logInfo(ss.str());
 
         // printf("send data: %s\n", hexString.c_str());
        // EE B1 11 00 03 00 2C 10 01 01 FF FC FF FF
@@ -814,7 +818,7 @@ void HgThreadManage::runSend(){
             printf("send info:count:%d,%s\n", m_sendInfo.count, data.c_str());
 
             logtext << "send info:count:" << m_sendInfo.count << "," << data.c_str();
-            HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(), LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
 
             {
                 printf("[SEND] serialize:count:%d\n", m_sendInfo.count);
@@ -834,7 +838,7 @@ void HgThreadManage::runSend(){
                 printf("[SEND end]\n");
                 logtext << "[SEND end]";
 
-                HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(), LOGINFO);
+                HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
             }
             writeBuffer(data);
         }
@@ -877,25 +881,30 @@ int HgThreadManage::commOpen(){
     int bits=8;
     char event='N';
     unsigned int speed=115200;
-    m_serial.setParam(comPort,speed,bits,event,stop);
-    if (0==m_serial.open()) {
+    m_serial->setPortName(comPort);
+    m_serial->setBaudRate(speed);
+    m_serial->setDataBits(bits);
+    m_serial->setStopBits(stop);
+    m_serial->setParity(event);
+    if (0==m_serial->open()) {
         logtext.str("");
         logtext << /*CARLAMPAPPNAME << */"open com success";
-        HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError(logtext.str());
     }
     else {
         logtext.str("");
         logtext << /*CARLAMPAPPNAME << */"open com failed!";
-        HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
+        HGLogService::getInstance(HGLogService::getLogPath())->logError(logtext.str());
         return -1;
     }
-    HGSERIAL_STANDARD_INFO hgserial_info;
+    HGMACHINE::SerialStandardInfo hgserial_info;
     hgserial_info.head.push_back(COM_HEAD);
     hgserial_info.tail.push_back(COM_TAIL1);
     hgserial_info.tail.push_back(COM_TAIL2);
     hgserial_info.tail.push_back(COM_TAIL3);
     hgserial_info.tail.push_back(COM_TAIL4);
-    m_serial.setStandardInfo(hgserial_info);
+    m_serial->setHead(hgserial_info.head);
+    m_serial->setTail(hgserial_info.tail);
 
     return 0;
 }
@@ -933,8 +942,8 @@ std::vector<splitDataInfo> HgThreadManage::splitRawDataCAS6(const std::vector<ui
     if (contents.empty()) return rawDatas;
     int start=0;
     std::vector<size_t> posStartList, posEndList;
-    posStartList=m_serial.findPattern(contents,m_serial.getStandardInfo().head);
-    posEndList=m_serial.findPattern(contents,m_serial.getStandardInfo().tail);
+    posStartList=m_serial->findPattern(contents,m_serial->getHead());
+    posEndList=m_serial->findPattern(contents,m_serial->getTail());
 
     printf("posStartList：");
     for (int i=0;i<posStartList.size();i++){
@@ -962,8 +971,8 @@ std::vector<ResSerialize> HgThreadManage::splitRawData(const std::vector<uint8_t
     if (contents.empty()) return rawDatas;
     int start=0;
     std::vector<size_t> posStartList, posEndList;
-    posStartList=m_serial.findPattern(contents,m_serial.getStandardInfo().head);
-    posEndList=m_serial.findPattern(contents,m_serial.getStandardInfo().tail);
+    posStartList=m_serial->findPattern(contents,m_serial->getHead());
+    posEndList=m_serial->findPattern(contents,m_serial->getTail());
     auto matches = matchStartEndPairs(posStartList, posEndList, 200);
 
     printf("匹配结果：");
@@ -1059,7 +1068,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
         std::ostringstream logtext;
         std::vector<uint8_t> contents;
         int timeout = 100;
-        contents=m_serial.read();
+        contents=m_serial->read();
         // logtext.str("");
         // logtext << "[READ] serialize: count:" << int(contents.size());
         // printf("[READ]serialize:count:%d\n", int(contents.size()));
@@ -1074,7 +1083,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
         }
 
         printf("\n");
-        HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(), LOGINFO);
+        HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
 
         logtext.str("");
 
@@ -1126,7 +1135,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
 
                 std::vector<std::string> partsVersion = splitStringBySemicolon(ascii);
                 printf("bin version: %s\n", ascii.c_str());
-                HGLogService::getLogInstance(LOG_PATH)->logout("bin version: " + ascii, LOGINFO);
+                HGLogService::getInstance(HGLogService::getLogPath())->logInfo("bin version: " + ascii);
                 std::vector<std::map<std::string, std::string>> versions;
                 int count = 0;
                 std::vector<std::string> binsName = {"shuifenyi", "zidongjinyangqi", "jiareban"};
@@ -1143,7 +1152,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
                         version["Online"] = "online";
 
                     printf("bin version part: %s\n", s.c_str());
-                    HGLogService::getLogInstance(LOG_PATH)->logout("bin version part: " + s, LOGINFO);
+                    HGLogService::getInstance(HGLogService::getLogPath())->logInfo("bin version part: " + s);
                     versions.push_back(version);
                 }
                 HGOnlineRWDB::writeCAS6DeviceInfo(versions);
@@ -1155,7 +1164,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
             {
                 // EE B1 10 00 03 00 0E 搅拌速度 FF FC FF FF
                 printf("swirl speed: %s\n", ascii.c_str());
-                HGLogService::getLogInstance(LOG_PATH)->logout("swirl speed: " + ascii, LOGINFO);
+                HGLogService::getInstance(HGLogService::getLogPath())->logInfo("swirl speed: " + ascii);
                 m_cas6_swirl_speed = std::atoi(ascii.c_str());
                 // m_deviceRunStatus = DEVICE_WAIT;
             }
@@ -1177,7 +1186,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
             }
             printf("\n");
 
-            HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(), LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
         }
 #else
         std::vector<ResSerialize> rawData = splitRawData(contents);
@@ -1199,7 +1208,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
 
                 printf("\n");
 
-                HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(), LOGINFO);
+                HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
             }
             else
             {
@@ -1210,7 +1219,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
             int curPhase = std::atoi(std::to_string(upperToLowerStruct.CurPhase).c_str());
             logtext.str("");
             logtext << "curPhase:" << curPhase;
-            HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(), LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
 
             printf("%s\n", logtext.str().c_str());
             logtext.str("");
@@ -1226,7 +1235,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
                 printf("deSerialize: %s\n", ssstring.c_str());
                 logtext << "deSerialize:" << ssstring;
 
-                HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(), LOGINFO);
+                HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
 
                 HGOnlineRWDB::writeLowerPCDeviceInfo(upperToLowerStruct);
                 UpperPCToLowerPC sendLowerData = initUpperPCToLowerPC();
@@ -1241,25 +1250,25 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
                 if (upperToLowerStruct.CheckDevice.FaceReceiveStatus == 0x80)
                 {
                     printf("80\n");
-                    HGLogService::getLogInstance(LOG_PATH)->logout("80", LOGINFO);
+                    HGLogService::getInstance(HGLogService::getLogPath())->logInfo("80");
                 }
             }
             else if (curPhase == RUN_FLOW)
             {
                 printf("receive RUN_FLOW\n");
-                HGLogService::getLogInstance(LOG_PATH)->logout("receive RUN_FLOW", LOGINFO);
+                HGLogService::getInstance(HGLogService::getLogPath())->logInfo("receive RUN_FLOW");
             }
             else if (curPhase == RESPONSE_FLOW)
             {
                 if (upperToLowerStruct.Instrument_Run == 0xFF)
                 {
                     printf("lower pc receive flow already\n");
-                    HGLogService::getLogInstance(LOG_PATH)->logout("lower pc receive flow already", LOGINFO);
+                    HGLogService::getInstance(HGLogService::getLogPath())->logInfo("lower pc receive flow already");
                 }
                 else if (upperToLowerStruct.Instrument_Run == 0x00)
                 {
                     printf("lower pc is initializing...\n");
-                    HGLogService::getLogInstance(LOG_PATH)->logout("lower pc is initializing...", LOGINFO);
+                    HGLogService::getInstance(HGLogService::getLogPath())->logInfo("lower pc is initializing...");
                 }
                 else
                 {
@@ -1274,7 +1283,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
             else if (curPhase == INTERACTE_DATA)
             {
                 printf("lower pc send data\n");
-                HGLogService::getLogInstance(LOG_PATH)->logout("lower pc send data", LOGINFO);
+                HGLogService::getInstance(HGLogService::getLogPath())->logInfo("lower pc send data");
                 std::string curStatus;
                 if (m_styleALT != NULL && (getRunTaskInfo(curStatus) != -1))
                 {
@@ -1284,7 +1293,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
                 }
             }
             printf("[RECV end]\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("[RECV end]", LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("[RECV end]");
         }
 #endif
     }
@@ -1353,7 +1362,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
             rawValues[key] = pair.second;
         }
         printf("%s\n",ss.str().c_str());
-        HGLogService::getLogInstance(LOG_PATH)->logout(ss.str(), LOGINFO);
+        HGLogService::getInstance(HGLogService::getLogPath())->logInfo(ss.str());
 
         ss.str("");
         for (const auto &pair : rawValues){
@@ -1361,7 +1370,7 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
         }
 
         printf("%s\n", ss.str().c_str());
-        HGLogService::getLogInstance(LOG_PATH)->logout(ss.str(), LOGINFO);
+        HGLogService::getInstance(HGLogService::getLogPath())->logInfo(ss.str());
         m_rawValues.erase(m_rawValues.begin());
 
         #else
@@ -1381,6 +1390,6 @@ std::map<std::vector<uint8_t>, std::string> parsePacketCAS6Batch(const std::vect
     }
     void HgThreadManage::writeBuffer(const std::string &data)
     {
-        m_serial.write(std::vector<uint8_t>(data.begin(), data.end()));
+        m_serial->write(std::vector<uint8_t>(data.begin(), data.end()));
     }
 }

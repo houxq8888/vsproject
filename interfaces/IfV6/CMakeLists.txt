@@ -7,39 +7,13 @@ HG_CMAKE_ADD_MODULE(IfV6 inc src)
 
 
 HG_CMAKE_MODULE_DEPEND_PUB( 
-    HGBaseCommon
     HGCoreV6
-    HGHwLowerPC
-    HGBaseConfig
-    HGSvcFrame
-    HGSvcLog
-    HGSvcSecurity
-    HGSvcCommunicate
-    HGSvcSave
-    ${ZXING_LIBRARY}
-    # SQLite::SQLite3
-    ${OpenCV_LIBRARIES}
-    ${LOG4CPLUS_LIBRARIES}
-    ${MQTT_LIBRARYS}
 )
 if (PLATFORM STREQUAL "x64")
 HG_CMAKE_ADD_SHARED(HGIfV6 inc src)
 
 HG_CMAKE_MODULE_DEPEND(
-    HGBaseCommon
     HGCoreV6
-    HGHwLowerPC
-    HGBaseConfig
-    HGSvcFrame
-    HGSvcLog
-    HGSvcSecurity
-    HGSvcCommunicate
-    HGSvcSave
-    ${ZXING_LIBRARY}
-    # SQLite::SQLite3
-    ${LOG4CPLUS_LIBRARIES}  
-    ${OpenCV_LIBRARIES}
-    ${MQTT_LIBRARYS}
 )
 elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_ADD_STATIC(HGIfV6 inc src 

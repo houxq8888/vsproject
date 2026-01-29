@@ -8,13 +8,15 @@
 #include <QFileDialog>
 #include "common.h"
 #include "HGOnlinePlatformInterface.h"
+#include "loginterface.h"
+#include "SvcFactory.h"
 
 
 
 HGDeviceManageWidget::HGDeviceManageWidget(std::string lang,QWidget *parent) : QWidget(parent),
     m_lang(lang)
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"DeviceManage"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DeviceManage"));
     m_deviceInterfaces.clear();
     m_linkStatus=getLinkStatus();
     m_hgphDJW=NULL;
@@ -31,7 +33,7 @@ HGDeviceManageWidget::HGDeviceManageWidget(std::string lang,QWidget *parent) : Q
     m_layout= new QGridLayout();
     this->setLayout(m_layout);
     m_inputEdit=new QLineEdit();
-    m_inputEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));//"请输入");
+    m_inputEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));//"请输入");
     m_searchLabel=new HGQLabel(false,getPath("/resources/V1/@1xmb-search 1.png"));
     connect(m_searchLabel,SIGNAL(leftClicked()),this,SLOT(slotLeftClickSearchLabel()));
 
@@ -64,7 +66,7 @@ void HGDeviceManageWidget::showContextMenu(const QPoint &pos) {
     QMenu menu(this);
 
     if (item) {  // 右键点击了某个节点
-        QAction *updateAction = menu.addAction(QString::fromStdString(loadTranslation(m_lang,"Update")));
+        QAction *updateAction = menu.addAction(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Update")));
 
         connect(updateAction, &QAction::triggered, this, [=]() { updateSingleFirmware(item); });
     } else {  // 右键点击空白处
@@ -77,7 +79,7 @@ void HGDeviceManageWidget::showContextMenu(const QPoint &pos) {
 void HGDeviceManageWidget::updateSingleFirmware(QTreeWidgetItem *item) {
     if (!item) return;
     QString binFileName=QFileDialog::getOpenFileName(NULL,
-        QString::fromStdString(loadTranslation(m_lang,"SelectUpdateBinFile")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectUpdateBinFile")),
         "./",tr("bin files(*.bin);;All files(*.*)"));
         
 }
@@ -171,7 +173,10 @@ bool HGDeviceManageWidget::closeWindow()
             m_deviceInterfaces[index].param=m_hgphDJW->getParamStr();
         }
         if (m_hgphDJW->closeWindow()){
-            SAFE_DELETE(m_hgphDJW);
+            if (m_hgphDJW) {
+                delete (m_hgphDJW);
+                m_hgphDJW = nullptr;
+            }
         }
     }
     if (m_rs485W){
@@ -180,7 +185,10 @@ bool HGDeviceManageWidget::closeWindow()
             m_deviceInterfaces[index].param=m_rs485W->getParamStr();
         }
         if (m_rs485W->closeWindow()){
-            SAFE_DELETE(m_rs485W);
+            if (m_rs485W) {
+                delete (m_rs485W);
+                m_rs485W = nullptr;
+            }
         }
     }
     if (m_externalDeviceW){
@@ -189,7 +197,10 @@ bool HGDeviceManageWidget::closeWindow()
             m_deviceInterfaces[index].param=m_externalDeviceW->getParamStr();
         }
         if (m_externalDeviceW->closeWindow()){
-            SAFE_DELETE(m_externalDeviceW);
+            if (m_externalDeviceW) {
+                delete (m_externalDeviceW);
+                m_externalDeviceW = nullptr;
+            }
         }
     }
     if (m_jiarebanW){
@@ -198,7 +209,10 @@ bool HGDeviceManageWidget::closeWindow()
             m_deviceInterfaces[index].param=m_jiarebanW->getParamStr();
         }
         if (m_jiarebanW->closeWindow()){
-            SAFE_DELETE(m_jiarebanW);
+            if (m_jiarebanW) {
+                delete (m_jiarebanW);
+                m_jiarebanW = nullptr;
+            }
         }
     }
     if (m_shuifenyiW){
@@ -207,7 +221,10 @@ bool HGDeviceManageWidget::closeWindow()
             m_deviceInterfaces[index].param=m_shuifenyiW->getParamStr();
         }
         if (m_shuifenyiW->closeWindow()){
-            SAFE_DELETE(m_shuifenyiW);
+            if (m_shuifenyiW) {
+                delete (m_shuifenyiW);
+                m_shuifenyiW = nullptr;
+            }
         }
     }
     if (m_zidongjinyangqiW){
@@ -216,7 +233,10 @@ bool HGDeviceManageWidget::closeWindow()
             m_deviceInterfaces[index].param=m_zidongjinyangqiW->getParamStr();
         }
         if (m_zidongjinyangqiW->closeWindow()){
-            SAFE_DELETE(m_zidongjinyangqiW);
+            if (m_zidongjinyangqiW) {
+                delete (m_zidongjinyangqiW);
+                m_zidongjinyangqiW = nullptr;
+            }
         }
     }
     if (m_colorsensorW){
@@ -225,7 +245,10 @@ bool HGDeviceManageWidget::closeWindow()
             m_deviceInterfaces[index].param=m_colorsensorW->getParamStr();
         }
         if (m_colorsensorW->closeWindow()){
-            SAFE_DELETE(m_colorsensorW);
+            if (m_colorsensorW) {
+                delete (m_colorsensorW);
+                m_colorsensorW = nullptr;
+            }
         }
     }
     if (m_photometerW){
@@ -234,7 +257,10 @@ bool HGDeviceManageWidget::closeWindow()
             m_deviceInterfaces[index].param=m_photometerW->getParamStr();
         }
         if (m_photometerW->closeWindow()){
-            SAFE_DELETE(m_photometerW);
+            if (m_photometerW) {
+                delete (m_photometerW);
+                m_photometerW = nullptr;
+            }
         }
     }
     if (m_signalDJW){
@@ -243,7 +269,10 @@ bool HGDeviceManageWidget::closeWindow()
             m_deviceInterfaces[index].param=m_signalDJW->getParamStr();
         }
         if (m_signalDJW->closeWindow()){
-            SAFE_DELETE(m_signalDJW);
+            if (m_signalDJW) {
+                delete (m_signalDJW);
+                m_signalDJW = nullptr;
+            }
         }
     }
     if (m_backUnitW){
@@ -252,7 +281,10 @@ bool HGDeviceManageWidget::closeWindow()
             m_deviceInterfaces[index].param=m_backUnitW->getParamStr();
         }
         if (m_backUnitW->closeWindow()){
-            SAFE_DELETE(m_backUnitW);
+            if (m_backUnitW) {
+                delete (m_backUnitW);
+                m_backUnitW = nullptr;
+            }
         }
     }
     if (m_auxiliaryPumpW){
@@ -261,7 +293,10 @@ bool HGDeviceManageWidget::closeWindow()
             m_deviceInterfaces[index].param=m_auxiliaryPumpW->getParamStr();
         }
         if (m_auxiliaryPumpW->closeWindow()){
-            SAFE_DELETE(m_auxiliaryPumpW);
+            if (m_auxiliaryPumpW) {
+                delete (m_auxiliaryPumpW);
+                m_auxiliaryPumpW = nullptr;
+            }
         }
     }
 

@@ -108,6 +108,12 @@ public:
         }
         return false;
     }
+
+    void writeAuditTrailLog(const std::string& logContent) {
+        if (m_logModule) {
+            m_logModule->writeAuditTrailLog(logContent);
+        }
+    }
 };
 
 LogInterface::LogInterface() : m_impl(new Impl()) {
@@ -115,6 +121,11 @@ LogInterface::LogInterface() : m_impl(new Impl()) {
 
 LogInterface::~LogInterface() {
     delete m_impl;
+}
+
+LogInterface& LogInterface::instance() {
+    static LogInterface instance;
+    return instance;
 }
 
 bool LogInterface::initialize() {
@@ -183,6 +194,10 @@ bool LogInterface::saveLogsToFile(const std::vector<std::map<std::string, std::s
                                    const std::string& filePath,
                                    const std::string& format) {
     return m_impl->saveLogsToFile(logs, filePath, format);
+}
+
+void LogInterface::writeAuditTrailLog(const std::string& logContent) {
+    m_impl->writeAuditTrailLog(logContent);
 }
 
 }

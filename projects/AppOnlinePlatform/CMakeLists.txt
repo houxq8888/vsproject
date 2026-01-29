@@ -17,7 +17,7 @@ file(GLOB MOC_HEADERS
 
 )
 
-qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 
 HG_CMAKE_ADD_MODULE(AppOnlinePlatform inc src 
     inc/Device/SystemSet                        src/Device/SystemSet 
@@ -28,6 +28,10 @@ HG_CMAKE_ADD_MODULE(AppOnlinePlatform inc src
     inc/Maintenance/Material                    src/Maintenance/Material
     inc/MainPage/RunStatus                      src/MainPage/RunStatus
     inc/Control                                 src/Control
+    ${CMAKE_SOURCE_DIR}/../../interfaces/IfChartData/inc
+    ${CMAKE_SOURCE_DIR}/../../interfaces/IfChartData/src
+    ${CMAKE_SOURCE_DIR}/../../modules/CoreChartData/inc
+    ${CMAKE_SOURCE_DIR}/../../modules/CoreChartData/src
     ${MOC_SRCS})
 
 target_compile_definitions(AppOnlinePlatform PUBLIC
@@ -35,61 +39,19 @@ target_compile_definitions(AppOnlinePlatform PUBLIC
      -DENV_APP_NAME=\"HGAppOnlinePlatform\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
-    HGLowerPC
-    HGCommon
-    HGConfig
-    HGSaveService
-    HGFrameService
-    HGAuthorityService
-    HGCommunicateService
-    HGImageAlgorithmService
-    HGSecurityService
-    HGOnlinePlatformModule
-    HGOnlinePlatformInterface
-    HGUserAuditModule
-    HGPrintModule
-    HGCurveModule
-    HGLoginModule
-    HGMethodModule
-    HGFlowModule
-    HGTaskModule
-    HGLogModule
-    HGExceptionHandleModule
-    HGSearchModule
-    HGBaseAppModule
-    HGAnalysisRecordModule
-    HGChannelModule
-    HGReagentModule
-    ${ZXING_LIBRARY}
-    # SQLite::SQLite3
-    ALSA::ALSA
-    ${OpenCV_LIBRARIES}
-    ${OpencvFreeType_LIBRARY}
-    ${LOG4CPLUS_LIBRARIES}
-    ${CUPS_LIBRARY}
-    ${XLSXIO_READ_LIBRARY}
-    ${XLSXIO_WRITE_LIBRARY}
-    ${HARU_LIBRARY}
-    ${ZeroMQ_LIBRARY}
-    ${MQTT_LIBRARYS}
-    ${LIB_SERIALPORT_LIBRARY}
-    ${LIB_MOSQUITT_LIBRARY}
-    ${PULSE_LIBRARIES}
-    ${LIBSSH_LIBRARIES}
-    ${AVFORMAT_LIBRARIES}
-    ${AVCODEC_LIBRARIES}
-    ${AVUTIL_LIBRARIES}
-    ${SWSCALE_LIBRARIES}
-    /usr/lib/x86_64-linux-gnu/libpulse.so
-    /usr/lib/x86_64-linux-gnu/libpulse-simple.so
-    OpenSSL::Crypto
-    Qt5::Gui
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::Charts
-    Qt5::PrintSupport
-
-
+    UIBaseCore
+    HGUILog
+    HGUIFlow
+    HGUILogin
+    HGUIChannel
+    HGUITask
+    HGUIMethod
+    HGUIReagent
+    Qt6::Gui
+    Qt6::Core
+    Qt6::Widgets
+    Qt6::Charts
+    Qt6::PrintSupport
 )
 
 

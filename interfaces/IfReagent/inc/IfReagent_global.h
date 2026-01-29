@@ -1,0 +1,12 @@
+#ifndef IFREAGENT_GLOBAL_H
+#define IFREAGENT_GLOBAL_H
+
+#include <QtCore/QtGlobal>
+
+#if defined(IFREAGENT_LIBRARY)
+#  define IFREAGENT_EXPORT Q_DECL_EXPORT
+#else
+#  define IFREAGENT_IMPORT Q_DECL_IMPORT
+#endif
+
+#endif // IFREAGENT_GLOBAL_H

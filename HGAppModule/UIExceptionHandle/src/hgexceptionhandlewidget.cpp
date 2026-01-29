@@ -2,18 +2,20 @@
 #include <QHeaderView>
 #include <QDebug>
 #include "common.h"
+#include "SvcFactory.h"
+#include "loginterface.h"
 
 HGExceptionHandleWidget::HGExceptionHandleWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
 m_chartView(new MyChartView()),
 m_chart(new QChart())
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"ExceptionHandle"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ExceptionHandle"));
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
     fnInitMaintainence();
 
-    // m_chart->setTitle(QString::fromStdString(loadTranslation(m_lang,"AbnormalDistribution")));
+    // m_chart->setTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AbnormalDistribution")));
 
     // 创建视图
     m_chartView->setChart(m_chart);
@@ -29,27 +31,27 @@ m_chart(new QChart())
     m_upperGroup1=new QGroupBox();
     m_upperLayout1=new QGridLayout();
     m_upperGroup1->setLayout(m_upperLayout1);
-    m_manipulateGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"manipulate")));//"操作");
+    m_manipulateGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"manipulate")));//"操作");
     m_manipulateGroup->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
     m_manipulateLayout=new QGridLayout();
 
-    m_statisticsResultGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"StatisticsResult")));
+    m_statisticsResultGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"StatisticsResult")));
     m_statisticsLayout=new QGridLayout();
     m_statisticsResultGroup->setLayout(m_statisticsLayout);
-    m_detailBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Detail")));
+    m_detailBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Detail")));
     m_statisticsResultTableW=new QTableWidget(2,7);
     QString data[2][7]={
         {
-            QString::fromStdString(loadTranslation(m_lang,"ExceptionSource")),
-            QString::fromStdString(loadTranslation(m_lang,"Device")),
-            QString::fromStdString(loadTranslation(m_lang,"Reagent")),
-            QString::fromStdString(loadTranslation(m_lang,"Consumable")),
-            QString::fromStdString(loadTranslation(m_lang,"IPC")),
-            QString::fromStdString(loadTranslation(m_lang,"SoftwareF")),
-            QString::fromStdString(loadTranslation(m_lang,"AppF"))
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ExceptionSource")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Device")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Reagent")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Consumable")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"IPC")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SoftwareF")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AppF"))
         },
         {
-            QString::fromStdString(loadTranslation(m_lang,"FrequencyStat")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"FrequencyStat")),
             "","","","","",""
         },
     };
@@ -77,15 +79,15 @@ m_chart(new QChart())
             
     
     QStringList headers={
-        QString::fromStdString(loadTranslation(m_lang,"WarnTime")),
-        QString::fromStdString(loadTranslation(m_lang,"Operator")),
-        QString::fromStdString(loadTranslation(m_lang,"InstrumentID")),
-        QString::fromStdString(loadTranslation(m_lang,"WarnContent")),
-        QString::fromStdString(loadTranslation(m_lang,"ErrCode")),
-        QString::fromStdString(loadTranslation(m_lang,"WarnCount")),
-        QString::fromStdString(loadTranslation(m_lang,"State")),
-        QString::fromStdString(loadTranslation(m_lang,"RecommandSolution")),
-        QString::fromStdString(loadTranslation(m_lang,"Solution"))};
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"WarnTime")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Operator")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"InstrumentID")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"WarnContent")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ErrCode")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"WarnCount")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"State")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"RecommandSolution")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Solution"))};
     m_tableW=new QTableWidget(0,headers.size());
     m_tableW->setHorizontalHeaderLabels(headers);
     m_tableW->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -93,7 +95,7 @@ m_chart(new QChart())
     m_tableW->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     m_tableW->resizeRowsToContents();
 
-    m_errJudgeBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"ErrJudge")));//"故障诊断");
+    m_errJudgeBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ErrJudge")));//"故障诊断");
 
     m_noProcesGroup=new QGroupBox();
     m_noProcessLayout=new QGridLayout();
@@ -110,17 +112,17 @@ m_chart(new QChart())
     m_manipulateLayout->addWidget(m_deleteLabel,0,3);
     m_manipulateGroup->setLayout(m_manipulateLayout);
 
-    m_exceptionLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"ExceptionStatistics")));
+    m_exceptionLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ExceptionStatistics")));
     m_exceptionCombo=new QComboBox();
-    m_exceptionCombo->addItems({QString::fromStdString(loadTranslation(m_lang,"All"))});
+    m_exceptionCombo->addItems({QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"All"))});
 
     m_toolBox=new QToolBox();
     m_toolBox->addItem(m_noProcesGroup,QIcon(QString::fromStdString(getPath("/resources/V1/@1xze-arrow 1.png"))),
-        QString::fromStdString(loadTranslation(m_lang,"UntreatedInfo")));//"未处理设备信息");
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UntreatedInfo")));//"未处理设备信息");
     // m_toolBox->addItem(m_errJudgeContent,QIcon(QString::fromStdString(getPath("/resources/V1/@1xze-arrow 1.png"))),
-    //     QString::fromStdString(loadTranslation(m_lang,"Diagnostic")));//"诊断信息");
+    //     QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Diagnostic")));//"诊断信息");
     // m_toolBox->addItem(m_maintenanceGroup,QIcon(QString::fromStdString(getPath("/resources/V1/@1xze-arrow 1.png"))),
-    //     QString::fromStdString(loadTranslation(m_lang,"MaintainManage")));//"维护管理");
+    //     QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"MaintainManage")));//"维护管理");
     connect(m_toolBox,SIGNAL(currentChanged(int)),this,SLOT(togglePage(int)));
 
     m_upperLayout1->addWidget(m_exceptionLabel,0,0);
@@ -148,7 +150,7 @@ void HGExceptionHandleWidget::fnReadDB()
     QPieSeries *series = new QPieSeries();
 
     for (const auto count : exceptionCount){
-        QString name=QString::fromStdString(loadTranslation(m_lang,count.first));
+        QString name=QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,count.first));
         series->append(name,count.second);
 
         for (int col = 0; col < m_statisticsResultTableW->columnCount(); ++col)
@@ -211,7 +213,10 @@ bool HGExceptionHandleWidget::closeWindow()
 {
     if (m_inputsearchConditionW){
         if (m_inputsearchConditionW->closeWindow()){
-            SAFE_DELETE(m_inputsearchConditionW);
+            if (m_inputsearchConditionW){
+                delete m_inputsearchConditionW;
+                m_inputsearchConditionW=nullptr;
+            }
         }
     }
     return true;
@@ -230,10 +235,10 @@ void HGExceptionHandleWidget::fnInitMaintainence()
     m_jiaozhengDeviceCombo=new QComboBox();
     m_startJiaozheng=new QPushButton();
     m_jiaozhengTypeCombo->addItems({"电极校正","滴定管校正", "滴定剂校正", "辅助泵校正", "波长校正"});
-    m_startJiaozheng->setText(QString::fromStdString(loadTranslation(m_lang,"start calibrating")));//"开始校正");
+    m_startJiaozheng->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"start calibrating")));//"开始校正");
    
-    m_functionMLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"FunctionModule")));//"功能模块");
-    m_numberLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"No.")));//"编号");
+    m_functionMLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"FunctionModule")));//"功能模块");
+    m_numberLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"No.")));//"编号");
     m_functionMCombo=new QComboBox();
     m_numberCombo=new QComboBox();
 
@@ -242,8 +247,8 @@ void HGExceptionHandleWidget::fnInitMaintainence()
     m_jiaozhengGroup->setLayout(m_jiaozhengLayout);
 
     m_shoudongGroup=new QGroupBox();
-    m_chooseGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"choose")));//"选择对象");
-    m_shoudongmanipulateGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"manual")));//"手动操作");
+    m_chooseGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"choose")));//"选择对象");
+    m_shoudongmanipulateGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"manual")));//"手动操作");
     m_shoudongLayout=new QGridLayout();
     m_chooseLayout=new QGridLayout();
     m_shoudongmanipulateLayout=new QGridLayout();

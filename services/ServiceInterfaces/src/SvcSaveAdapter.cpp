@@ -1,5 +1,6 @@
 #include "SvcSaveAdapter.h"
 #include "hgsavedatatodb.h"
+#include "hgsaveimgtolocaldisk.h"
 
 class SvcSaveAdapter::Impl {
 public:
@@ -110,4 +111,8 @@ std::vector<std::string> SvcSaveAdapter::GetAllKeys() const {
         }
     }
     return keys;
+}
+void SvcSaveAdapter::SaveImage(const HGMACHINE::HGImg2D& mat, const std::string &path) {
+    cv::Mat mat_cv(mat.height, mat.width, mat.type, const_cast<uchar*>(mat.data));
+    HGMACHINE::HGSaveImgToLocalDisk::getSaveImgInstance()->save(mat_cv, path);
 }

@@ -10,8 +10,8 @@ file(GLOB MOC_HEADERS
     "inc/*.h"
 )
 
-qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
-qt5_add_resources(QT_RESOURCES resources.qrc)
+qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+qt6_add_resources(QT_RESOURCES resources.qrc)
 
 HG_CMAKE_ADD_MODULE(AppDashboard inc src 
     ${MOC_SRCS}
@@ -23,40 +23,12 @@ target_compile_definitions(AppDashboard PUBLIC
      -DENV_APP_NAME=\"HGAppDashboard\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
-    HGCommon
-    HGConfig
-    HGSaveService
-    HGCommunicateService
-    HGBaseAppModule
-    HGDashboardModule
-    ${ZXING_LIBRARY}
-    ALSA::ALSA
-    ${OpenCV_LIBRARIES}
-    ${OpencvFreeType_LIBRARY}
-    ${LOG4CPLUS_LIBRARIES}
-    ${CUPS_LIBRARY}
-    ${XLSXIO_READ_LIBRARY}
-    ${XLSXIO_WRITE_LIBRARY}
-    ${HARU_LIBRARY}
-    ${ZeroMQ_LIBRARY}
-    ${MQTT_LIBRARYS}
-    ${LIB_SERIALPORT_LIBRARY}
-    ${LIB_MOSQUITT_LIBRARY}
-    ${PULSE_LIBRARIES}
-    ${LIBSSH_LIBRARIES}
-    ${AVFORMAT_LIBRARIES}
-    ${AVCODEC_LIBRARIES}
-    ${AVUTIL_LIBRARIES}
-    ${SWSCALE_LIBRARIES}
-    CURL::libcurl
-    # ${TIDY_LIBRARIES}
-    /usr/lib/x86_64-linux-gnu/libpulse.so
-    /usr/lib/x86_64-linux-gnu/libpulse-simple.so
-    OpenSSL::Crypto
-    Qt5::Gui
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::Charts
+    HGIfLog
+    HGUIBaseCore
+    Qt6::Gui
+    Qt6::Core
+    Qt6::Widgets
+    Qt6::Charts
    # Qt5::Quick
    # Qt5::QuickWidgets
    # Qt5::Positioning

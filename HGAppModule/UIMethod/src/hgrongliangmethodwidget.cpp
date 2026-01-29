@@ -1,5 +1,6 @@
 #include "hgrongliangmethodwidget.h"
 #include "common.h"
+#include "SvcFactory.h"
 
 
 HGRongliangMethodWidget::HGRongliangMethodWidget(std::string lang,QWidget *parent) : QWidget(parent),
@@ -161,7 +162,7 @@ void HGRongliangMethodWidget::setDriftParam()
 }
 void HGRongliangMethodWidget::setParam(std::string param){
     setControlText(m_layout,param);
-    std::map<std::string,std::string> wparam=getParamMap(param);
+    std::map<std::string,std::string> wparam=SvcFactory::CreateCommonService()->GetParamMap(param);
     if (wparam["漂移扣除"]=="true"){
         m_driftflag=true;
         m_driftLabel->setImg(getPath("/resources/V1/@1xIOS开关_enable.png"));

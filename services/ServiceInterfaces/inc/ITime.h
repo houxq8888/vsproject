@@ -116,6 +116,8 @@ public:
     virtual std::string GetCurrentTimeFromYearToSecAndZone() = 0;
     virtual void SetSystemTime(int year, int month, int day, int hour, int minute, int second) = 0;
     virtual int GetTimeDifferenceInSeconds(const std::string& timeStr) = 0;
+    
+    virtual double GetElapsedMilliseconds(const TimeInfo& start, const TimeInfo& end) = 0;
 };
 
 #endif // I_TIME_H

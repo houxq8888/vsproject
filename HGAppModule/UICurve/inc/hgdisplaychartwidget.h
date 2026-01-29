@@ -107,8 +107,8 @@ private:
     QGridLayout* m_layout;
     QChart* m_chart;
     MyChartView* m_chartView;
-    // QCategoryAxis* m_xAxisTime;
-    // QDateTimeAxis* m_xAxisTime;
+    std::vector<std::string> m_allDisplayNames;
+    std::vector<std::string> m_allRecordInTimeNames;
     QValueAxis *m_xAxisTime;
     QValueAxis *m_yAxisSignal, *m_yAxisDiff, *m_yAxisDiff2,*m_xAxisCube,*m_yAxisCube;
     QValueAxis *m_yAxisDiffCubeWithTime;

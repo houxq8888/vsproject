@@ -3,16 +3,30 @@
 // #include "HGLogService.h"
 #include "hgcommonutility.h"
 #include "hgdetectcircle.h"
+#include "hgplasticcupabsensedetect.h"
+#include <sstream>
+#include <iomanip>
+#include <chrono>
+#include <filesystem>
 
 namespace HGMACHINE {
 
 HGCupDet::HGCupDet()
+    : m_plasticAbsenseDet(nullptr)
+    , m_absenseFlag(false)
+    , m_matchFlag(false)
+    , m_matchScore(0.0f)
+    , m_targetPosX(0)
 {
-
+    m_plasticAbsenseDet = new HGPlasticCupAbsenseDetect();
 }
+
 HGCupDet::~HGCupDet()
 {
-
+    if (m_plasticAbsenseDet != nullptr) {
+        delete m_plasticAbsenseDet;
+        m_plasticAbsenseDet = nullptr;
+    }
 }
 void HGCupDet::detCircle(const HGImg2D &img, const HGRect2D &roi){
     cv::Mat mat(img.height,img.width,img.type,(uchar*)img.data);
@@ -54,7 +68,6 @@ void HGCupDet::matchTemplate(const HGImg2D &img, const HGRect2D &roi,
     
     // 设置多尺度匹配参数
     double scaleFactor = 1.1;  // 每次缩小的比例
-    int minTemplateSize = 30;  // 模板最小尺寸
     int maxTemplateSize = std::min(imgMat.cols, imgMat.rows);  // 最大尺寸限制为图像的最小边
 
     // 对模板进行多尺度匹配
@@ -114,18 +127,18 @@ void HGCupDet::detCupExistence(const HGImg2D &img, const HGRect2D &roi)
     std::ostringstream ss, press;
     press << HGCUPDETMODULENAME<<"|"<<HGCUPDETMODULEAUTHOR<<"|";
     ss<<press.str()<<"start det cup existence";
-    // HGLogService::getLogInstance(HGLogService::getLogPath())->logout(ss.str(),LOGINFO);
+    // HGLogService::getInstance(HGLogService::getLogPath())->logInfo(ss.str());
     cv::Rect inputRoi(cv::Point(roi.x1,roi.y1),cv::Point(roi.x2,roi.y2));
 
     ss.str("");
     ss<<press.str()<<"input ROI["<<inputRoi.tl().x<<","<<inputRoi.tl().y<<","<<inputRoi.br().x<<","<<inputRoi.br().y
      <<"],img info["<<img.width<<","<<img.height<<","<<img.type;
-    // HGLogService::getLogInstance(HGLogService::getLogPath())->logout(ss.str(),LOGINFO);
+    // HGLogService::getInstance(HGLogService::getLogPath())->logInfo(ss.str());
 
     cv::Mat mat(img.height,img.width,img.type,(uchar*)img.data);
 
     HGExactTime start=HGGetTime();
-    m_absenseFlag=m_plasticAbsenseDet.detect(mat,inputRoi);
+    m_absenseFlag=m_plasticAbsenseDet->detect(mat,inputRoi);
     HGExactTime end=HGGetTime();
     m_dst.data=mat.data;
     m_dst.type=mat.type();
@@ -133,6 +146,38 @@ void HGCupDet::detCupExistence(const HGImg2D &img, const HGRect2D &roi)
     m_dst.height=mat.rows;
     ss.str("");
     ss<<press.str()<<"elapsed time:"<<HGCalTimeElapsed(start,end)<<" ms";
-    // HGLogService::getLogInstance(HGLogService::getLogPath())->logout(ss.str(),LOGINFO);
+    // HGLogService::getInstance(HGLogService::getLogPath())->logInfo(ss.str());
+}
+
+std::string HGCupDet::saveTemplate(const cv::Mat& img, int x, int y, int width, int height, const std::string& templateDir) {
+    try {
+        std::string basePath = ".";
+        std::string templatePath = basePath + "/" + templateDir;
+        
+        HGMkDir(templatePath);
+        
+        cv::Mat mat = img.clone();
+        
+        if (x < 0) x = 0;
+        if (y < 0) y = 0;
+        if (x + width > mat.cols) width = mat.cols - x;
+        if (y + height > mat.rows) height = mat.rows - y;
+        
+        if (width <= 0 || height <= 0) {
+            return "failed";
+        }
+        
+        cv::Mat roi = mat(cv::Rect(x, y, width, height));
+        
+        std::string fileName = templatePath + "/default" + getFileNameFromTime() + ".bmp";
+        
+        if (!cv::imwrite(fileName.c_str(), roi)) {
+            return "failed";
+        }
+        
+        return fileName;
+    } catch (const std::exception& e) {
+        return "failed";
+    }
 }
 }

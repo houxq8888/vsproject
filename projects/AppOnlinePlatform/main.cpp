@@ -10,6 +10,8 @@
 #include <fstream>
 #include <QPrinterInfo>
 #include "globalsingleton.h"
+#include "loginterface.h"
+#include "ChartDataManager.h"
 
 
 using namespace HGMACHINE;
@@ -129,9 +131,9 @@ int main(int argc, char *argv[])
         loadConfig(basePath.toStdString());
         openDB(HGOnlineRWDB::readCurDirPath());
         GlobalSingleton::instance().loadSystemInfo();
-        GlobalSingleton::instance().loadDataChartInfo();
+        ChartDataManager::instance().get().load();
         if (!HGOnlineRWDB::isLoginRightTime()) {
-            RWDb::writeAuditTrailLog("系统时间设置落后于上一次软件退出时间，请修改！");
+            LOG_IF.writeAuditTrailLog("系统时间设置落后于上一次软件退出时间，请修改！");
             if (QMessageBox::Ok == QMessageBox::warning(nullptr, QString::fromStdString(HG_DEVICE_NAME), "系统时间设置落后于上一次软件退出时间，请修改！"))
             {
                 return 0;

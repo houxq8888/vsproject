@@ -10,6 +10,7 @@
 #include <QGroupBox>
 #include <QComboBox>
 #include "common.h"
+#include "SvcFactory.h"
 
 
 class HGLoginWidget : public QWidget
@@ -20,7 +21,7 @@ public:
     bool closeWindow();
 
 signals:
-    void loginOn(UserInfoS);
+    void loginOn(ServiceInterfaces::UserInfoS);
 
 private slots:
     void clickLoginOn();
@@ -36,7 +37,7 @@ private:
     QGridLayout* m_layout, *m_userLayout;
     QGroupBox* m_userGroup;
 
-    UserInfoS m_userInfoStruct;
+    ServiceInterfaces::UserInfoS m_userInfoStruct;
     std::string m_lang;
 
 };

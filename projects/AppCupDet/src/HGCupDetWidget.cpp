@@ -3,21 +3,18 @@
 #include <QRegularExpression>
 #include <QFileDialog>
 #include <QMessageBox>
-#include "HGLogService.h"
-#include "hgsaveimgtolocaldisk.h"
-#include "hgcommonutility.h"
-#include "hgsavedatatodb.h"
-#include "HGCupDetInterface.h"
-// #include "hgonnxdetect.h"
-#include "hgdetectcircle.h"
+#include <QDir>
+#include "loginterface.h"
+#include "SvcFactory.h"
 
 using namespace HGMACHINE;
 
 HGCupDetWidget::HGCupDetWidget(QWidget *parent)
     : QWidget(parent)
 {
-    // m_saveDataToDB=new HGSaveDataToDB();
-    // m_saveDataToDB->openDB("./cupdet.db");
+    m_cameraControl = new CameraControlInterface();
+    m_cupDet = new HGCupDetInterface();
+    m_timeService = SvcFactory::CreateTimeService().get();
     m_basePath = qApp->applicationDirPath();
     this->setFixedSize(640*800/480, 800);
     OnInitial();
@@ -35,9 +32,10 @@ HGCupDetWidget::~HGCupDetWidget()
         delete m_listentimer;
         m_listentimer = NULL;
     }
-    // closeUSBCamera();
-    m_capture2DFromUSB.close();
-    // m_saveDataToDB->closeDB();
+    m_cameraControl->closeCamera();
+    delete m_cameraControl;
+    delete m_cupDet;
+    delete m_timeService;
 }
 
 int HGCupDetWidget::OnInitial()
@@ -106,20 +104,8 @@ int HGCupDetWidget::OnInitial()
     m_absenseLabel->move(m_pic_label->width()+20,m_scaleLabel->height()+m_moveDistanceLabel->height()+20);
     m_absenseLabel->setFixedSize(200,200);
 
-    m_capture2DFromUSB.open(0);
-    // openUSBCamera("/dev/media0");
-
-    int ret=HGMkDir(SAVE_IMG_PATH(m_basePath.toStdString()));
-    if (ret == 0) {
-        std::ostringstream name;
-        name << SAVE_IMG_PATH(m_basePath.toStdString()) << "mkdir success\n";
-//        printf(name.str().c_str());
-//        HGLogService::getLogInstance(LOG_PATH)->logout(name.str(),LOGINFO);
-    } else {
-        std::ostringstream name;
-        name << SAVE_IMG_PATH(m_basePath.toStdString()) << "mkdir failed\n";
-        printf(name.str().c_str());
-    }
+    m_cameraControl->openCamera("USB", "video=0");
+    SvcFactory::CreateCommonService()->CreateDirectory(SAVE_IMG_PATH(m_basePath.toStdString()));
 
     UpdateImg();
     return 0;
@@ -223,20 +209,14 @@ void HGCupDetWidget::clickScan()
 #endif
     m_scanPath+="/";
 
-    std::vector<std::string> fileLists;
-    HGGetFiles(m_scanPath.toStdString(),".jpg",fileLists);
-    for (int i=0;i<int(fileLists.size());i++) {
-        m_fileLists.push_back(fileLists[i]);
-    }
-    fileLists.clear();
-    HGGetFiles(m_scanPath.toStdString(),".png",fileLists);
-    for (int i=0;i<int(fileLists.size());i++) {
-        m_fileLists.push_back(fileLists[i]);
-    }
-    fileLists.clear();
-    HGGetFiles(m_scanPath.toStdString(),".bmp",fileLists);
-    for (int i=0;i<int(fileLists.size());i++) {
-        m_fileLists.push_back(fileLists[i]);
+    QDir dir(m_scanPath);
+    QStringList filters;
+    filters << "*.jpg" << "*.png" << "*.bmp";
+    dir.setNameFilters(filters);
+    QFileInfoList fileList = dir.entryInfoList(QDir::Files);
+    
+    for (const QFileInfo& fileInfo : fileList) {
+        m_fileLists.push_back(fileInfo.absoluteFilePath().toStdString());
     }
 
     qDebug()<<"size:"<<m_fileLists.size();
@@ -244,30 +224,17 @@ void HGCupDetWidget::clickScan()
 }
 void HGCupDetWidget::DetImg(cv::Mat &mat)
 {
-    // HGOnnxDetect onnxDet;
-    // onnxDet.detect(mat, cv::Rect(0,0,0,0));
-    // return ;
+    TimeInfo start = m_timeService->GetCurrentTime();
+    m_cupDet->detCircle(mat, 0, 0, mat.cols, mat.rows);
+    TimeInfo end = m_timeService->GetCurrentTime();
     
-    HGImg2D img;
-    img.width=mat.cols;
-    img.height=mat.rows;
-    img.type=mat.type();
-    img.data=mat.data;
-    HGRect2D roi;
-    roi.x1=0;
-    roi.y1=0;
-    roi.x2=mat.cols;
-    roi.y2=mat.rows;
-    HGExactTime start=HGGetTime();
-    detCircle(img,roi);
-    HGExactTime end=HGGetTime();
-    double timeElapsed=HGCalTimeElapsed(start,end);
+    double timeElapsed = m_timeService->GetElapsedMilliseconds(start, end);
     std::ostringstream content;
     content<<"elpased:"<<timeElapsed<<" ms";
-    printf("elpased: %.2f ms, content:%s\n", timeElapsed,content.str().c_str());
+    printf("elpased: %lld ms, content:%s\n", timeElapsed, content.str().c_str());
     m_elapsedLabel->setText(QString::fromStdString(content.str()));
 
-    bool flag=getAbsenseFlag();
+    bool flag=m_cupDet->getAbsenseFlag();
     if (flag){
         m_absenseLabel->setPixmap(QPixmap(m_basePath+"/resources/ok.png"));
     } else {
@@ -276,19 +243,20 @@ void HGCupDetWidget::DetImg(cv::Mat &mat)
 }
 void HGCupDetWidget::DisplayImg(cv::Mat &mat)
 {
-    HGImg2D img=getDst();
-    // cv::Mat image(img.height, img.width, img.type, img.data);
-    cv::Mat image(img.height, img.width, img.type, const_cast<uchar*>(img.data)); 
+    cv::Mat dst = m_cupDet->getDst();
+    if (dst.empty()) {
+        dst = mat;
+    }
 
     QImage qimg;
 
-    if (image.channels() == 1)
+    if (dst.channels() == 1)
     {
-        qimg = QImage((const uchar*)image.data, image.cols, image.rows, image.step, QImage::Format_Grayscale8);
+        qimg = QImage((const uchar*)dst.data, dst.cols, dst.rows, dst.step, QImage::Format_Grayscale8);
     }
-    else if (image.channels() == 3)
+    else if (dst.channels() == 3)
     {
-        qimg = QImage((const uchar*)image.data, image.cols, image.rows, image.step, QImage::Format_BGR888);
+        qimg = QImage((const uchar*)dst.data, dst.cols, dst.rows, dst.step, QImage::Format_BGR888);
     }
     else{}
     QPixmap pixmap = QPixmap::fromImage(qimg);
@@ -297,16 +265,20 @@ void HGCupDetWidget::DisplayImg(cv::Mat &mat)
 
 void HGCupDetWidget::UpdateImg()
 {
-    cv::Mat mat;
-    m_capture2DFromUSB.getFrameOne(mat);
+    cv::Mat mat = m_cameraControl->getImgOneShot("USB", "video=0");
     if (mat.empty()) {
         // qDebug()<<"mat is empty";
         return;
     } else {
         std::ostringstream str;
         str << HGCUPDETNAME << mat.cols << "," << mat.rows;
-        HGLogService::getInstance(LOG_PATH)->logInfo(str.str());
-        HGSaveImgToLocalDisk::getSaveImgInstance()->save(mat,SAVE_IMG_PATH(m_basePath.toStdString()));
+        LOG_IF.logInfo(str.str());
+        HGImg2D img;
+        img.width=mat.cols;
+        img.height=mat.rows;
+        img.type=mat.type();
+        img.data=mat.data;
+        SvcFactory::CreateSaveService()->SaveImage(img,SAVE_IMG_PATH(m_basePath.toStdString()));
     }
 
     // HGImg2D img=getImgFromUSBOneShot();

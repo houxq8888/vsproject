@@ -5,7 +5,6 @@
     @author xiaoqin.hou
 */
 #include "taskALT.h"
-#include "HGMacroData.h"
 #include "hgonlinerwDB.h"
 
 namespace HGMACHINE

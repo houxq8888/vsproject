@@ -1,0 +1,12 @@
+#ifndef IFCHANNEL_GLOBAL_H
+#define IFCHANNEL_GLOBAL_H
+
+#include <QtCore/QtGlobal>
+
+#if defined(IFCHANNEL_LIBRARY)
+#  define IFCHANNEL_EXPORT Q_DECL_EXPORT
+#else
+#  define IFCHANNEL_IMPORT Q_DECL_IMPORT
+#endif
+
+#endif // IFCHANNEL_GLOBAL_H

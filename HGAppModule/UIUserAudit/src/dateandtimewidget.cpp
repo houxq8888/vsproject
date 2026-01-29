@@ -1,9 +1,11 @@
 #include "dateandtimewidget.h"
 #include "common.h"
 #include <QMessageBox>
+#include "loginterface.h"
+#include "SystemDataManager.h"
 #include "SvcFactory.h"
 
-
+using namespace HGMACHINE;
 DateAndTimeWidget::DateAndTimeWidget(std::string lang,QWidget *parent) : BaseWidget(parent),
     m_lang(lang)
     ,m_isEnableAutoSetTime(true),
@@ -11,16 +13,16 @@ DateAndTimeWidget::DateAndTimeWidget(std::string lang,QWidget *parent) : BaseWid
     m_manualSetTimeStr(""),
     m_systemTimeCtrl(nullptr)
 {
-    m_autoSetRegionLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"AutoSetZone")));//"自动设置时区");
-    m_regionLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Zone")));//"时区");
-    m_autoSetTimeLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"AutoSetTime")));//"自动设置时间");
-    m_manualSetLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"ManualTime")));//"手动设置日期和时间");
+    m_autoSetRegionLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AutoSetZone")));//"自动设置时区");
+    m_regionLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Zone")));//"时区");
+    m_autoSetTimeLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AutoSetTime")));//"自动设置时间");
+    m_manualSetLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ManualTime")));//"手动设置日期和时间");
  
 // 关 
     m_autoSetRegionImg=new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xIOS开关_enable.png"),
-        loadTranslation(m_lang,"On"));//"开");
+        SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"On"));//"开");
     m_autoSetTimeImg=new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xIOS开关_enable.png"),
-        loadTranslation(m_lang,"Off"));//"开");
+        SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Off"));//"开");
     connect(m_autoSetRegionImg,SIGNAL(clickImgLabel()),this,SLOT(clickEnableAutoSetRegion()));
     connect(m_autoSetTimeImg,SIGNAL(clickImgLabel()),this,SLOT(clickEnableAutoSetTime()));
 
@@ -34,7 +36,7 @@ DateAndTimeWidget::DateAndTimeWidget(std::string lang,QWidget *parent) : BaseWid
     m_regionComboBox->addItem("Europe/Rome");
     m_regionComboBox->addItem("Europe/Vienna");
     m_regionComboBox->addItem("Europe/Zurich");
-    m_manualSetBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Change")));//"更改");
+    m_manualSetBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Change")));//"更改");
 
     connect(m_regionComboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(slotRegionChanged(int)));
     connect(m_manualSetBtn,SIGNAL(clicked()),this,SLOT(clickManualSetTime()));
@@ -62,36 +64,36 @@ bool DateAndTimeWidget::closeWindow()
 }
 void DateAndTimeWidget::fnReadDB()
 {
-    m_isEnableAutoSetRegion=GlobalSingleton::instance().getSystemInfo("自动设置时区")=="true"?true:false;
-    m_isEnableAutoSetTime=GlobalSingleton::instance().getSystemInfo("自动设置时间")=="true"?true:false;
+    m_isEnableAutoSetRegion=SystemDataManager::instance().get().getSystemInfo("自动设置时区")=="true"?true:false;
+    m_isEnableAutoSetTime=SystemDataManager::instance().get().getSystemInfo("自动设置时间")=="true"?true:false;
 
     setControlStatus();
 }
 void DateAndTimeWidget::fnWriteDB()
 {
-    GlobalSingleton::instance().setSystemInfo("自动设置时区",m_isEnableAutoSetRegion?"true":"false");
-    GlobalSingleton::instance().setSystemInfo("时区",m_regionComboBox->currentText().toStdString());
-    GlobalSingleton::instance().setSystemInfo("自动设置时间",m_isEnableAutoSetTime?"true":"false");
-    GlobalSingleton::instance().setSystemInfo("手动设置日期和时间",m_manualSetTimeStr);
+    SystemDataManager::instance().get().setSystemInfo("自动设置时区",m_isEnableAutoSetRegion?"true":"false");
+    SystemDataManager::instance().get().setSystemInfo("时区",m_regionComboBox->currentText().toStdString());
+    SystemDataManager::instance().get().setSystemInfo("自动设置时间",m_isEnableAutoSetTime?"true":"false");
+    SystemDataManager::instance().get().setSystemInfo("手动设置日期和时间",m_manualSetTimeStr);
 }
 void DateAndTimeWidget::setControlStatus()
 {   
     if (!m_isEnableAutoSetRegion){
         m_autoSetRegionImg->setImg(getPath("/resources/V1/@1xIOS开关.png"));
-        m_autoSetRegionImg->getTextLabel()->setText(QString::fromStdString(loadTranslation(m_lang,"Off")));
+        m_autoSetRegionImg->getTextLabel()->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Off")));
     } else {
         m_autoSetRegionImg->setImg(getPath("/resources/V1/@1xIOS开关_enable.png"));
-        m_autoSetRegionImg->getTextLabel()->setText(QString::fromStdString(loadTranslation(m_lang,"On")));
+        m_autoSetRegionImg->getTextLabel()->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"On")));
     }
 
     m_regionComboBox->setEnabled(!m_isEnableAutoSetRegion);
 
     if (!m_isEnableAutoSetTime){
         m_autoSetTimeImg->setImg(getPath("/resources/V1/@1xIOS开关.png"));
-        m_autoSetTimeImg->getTextLabel()->setText(QString::fromStdString(loadTranslation(m_lang,"Off")));
+        m_autoSetTimeImg->getTextLabel()->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Off")));
     } else {
         m_autoSetTimeImg->setImg(getPath("/resources/V1/@1xIOS开关_enable.png"));
-        m_autoSetTimeImg->getTextLabel()->setText(QString::fromStdString(loadTranslation(m_lang,"On")));
+        m_autoSetTimeImg->getTextLabel()->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"On")));
     }
 
     m_manualSetBtn->setEnabled(!m_isEnableAutoSetTime);
@@ -99,7 +101,7 @@ void DateAndTimeWidget::setControlStatus()
 void DateAndTimeWidget::clickEnableAutoSetRegion()
 {
     m_isEnableAutoSetRegion=!m_isEnableAutoSetRegion;
-    RWDb::writeAuditTrailLog(m_isEnableAutoSetRegion?("打开"+m_autoSetRegionLabel->text().toStdString()): \
+    LOG_IF.writeAuditTrailLog(m_isEnableAutoSetRegion?("打开"+m_autoSetRegionLabel->text().toStdString()): \
         "关闭"+m_autoSetRegionLabel->text().toStdString());
     setControlStatus();
 }
@@ -107,13 +109,13 @@ void DateAndTimeWidget::clickEnableAutoSetRegion()
 void DateAndTimeWidget::clickEnableAutoSetTime()
 {
     m_isEnableAutoSetTime=!m_isEnableAutoSetTime;
-    RWDb::writeAuditTrailLog(m_isEnableAutoSetTime?("打开"+m_autoSetTimeLabel->text().toStdString()): \
+    LOG_IF.writeAuditTrailLog(m_isEnableAutoSetTime?("打开"+m_autoSetTimeLabel->text().toStdString()): \
         "关闭"+m_autoSetTimeLabel->text().toStdString());
     setControlStatus();
 }
 void DateAndTimeWidget::slotRegionChanged(int index){
-    RWDb::writeAuditTrailLog("切换时区为"+m_regionComboBox->currentText().toStdString());
-    setTimezone(m_regionComboBox->currentText().toStdString());
+    LOG_IF.writeAuditTrailLog("切换时区为"+m_regionComboBox->currentText().toStdString());
+    SvcFactory::CreateCommonService()->SetTimezone(m_regionComboBox->currentText().toStdString());
 }
 void DateAndTimeWidget::clickManualSetTime(){
     m_systemTimeCtrl=new KBTimeWithHourEdit(false);
@@ -127,11 +129,11 @@ void DateAndTimeWidget::clickManualSetTime(){
 }
 void DateAndTimeWidget::setLanguage(std::string lang){
     m_lang=lang;
-    m_autoSetRegionLabel->setText(QString::fromStdString(loadTranslation(m_lang,"AutoSetZone")));//"自动设置时区");
-    m_regionLabel->setText(QString::fromStdString(loadTranslation(m_lang,"Zone")));//"时区");
-    m_autoSetTimeLabel->setText(QString::fromStdString(loadTranslation(m_lang,"AutoSetTime")));//"自动设置时间");
-    m_manualSetLabel->setText(QString::fromStdString(loadTranslation(m_lang,"ManualTime")));//"手动设置日期和时间");
-    m_manualSetBtn->setText(QString::fromStdString(loadTranslation(m_lang,"Change")));
+    m_autoSetRegionLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AutoSetZone")));//"自动设置时区");
+    m_regionLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Zone")));//"时区");
+    m_autoSetTimeLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AutoSetTime")));//"自动设置时间");
+    m_manualSetLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ManualTime")));//"手动设置日期和时间");
+    m_manualSetBtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Change")));
 }
 void DateAndTimeWidget::fnSetSystemTime(const std::string &time){
     TimeInfo setSystemTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
@@ -141,7 +143,7 @@ void DateAndTimeWidget::fnSetSystemTime(const std::string &time){
     // setSystemTimer.hour = atoi(time.substr(8, 2).c_str());
     // setSystemTimer.minute = atoi(time.substr(10, 2).c_str());
     // setSystemTimer.second = atoi(time.substr(12, 2).c_str());
-    std::string lastLoginTime = GlobalSingleton::instance().getSystemInfo("lastLoginTime");
+    std::string lastLoginTime = SystemDataManager::instance().get().getSystemInfo("lastLoginTime");
     TimeInfo softwareLastTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
     if (lastLoginTime.size() >= 8) {
         softwareLastTimer.year = atoi(lastLoginTime.substr(0, 4).c_str());
@@ -149,17 +151,17 @@ void DateAndTimeWidget::fnSetSystemTime(const std::string &time){
         softwareLastTimer.day = atoi(lastLoginTime.substr(6, 2).c_str());
     }
     bool setflag=false;
-    if (GlobalSingleton::instance().getSystemInfo("lastLoginTime")==""){
+    if (SystemDataManager::instance().get().getSystemInfo("lastLoginTime")==""){
         setflag=true;
     } else {
         if (setSystemTimer<softwareLastTimer){
             if (QMessageBox::Ok==QMessageBox::question(this, QString::fromStdString(HG_DEVICE_NAME),
-                    QString::fromStdString(loadTranslation(m_lang,"loginWarning")),QMessageBox::Ok|QMessageBox::Cancel))
+                    QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"loginWarning")),QMessageBox::Ok|QMessageBox::Cancel))
             {
-                RWDb::writeAuditTrailLog(loadTranslation(m_lang,"loginWarning")+":[Yes]");
+                LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"loginWarning")+":[Yes]");
                 setflag=true;
             } else {
-                RWDb::writeAuditTrailLog(loadTranslation(m_lang,"loginWarning")+":[No]");
+                LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"loginWarning")+":[No]");
             }
         } else {
             setflag=true;
@@ -171,6 +173,6 @@ void DateAndTimeWidget::fnSetSystemTime(const std::string &time){
         std::ostringstream ss;
         ss<<setSystemTimer.year<<"-"<<setSystemTimer.month<<"-"<<setSystemTimer.day<<"-" \
             <<setSystemTimer.hour<<"-"<<setSystemTimer.minute<<"-"<<setSystemTimer.second;
-        RWDb::writeAuditTrailLog("手动设置系统时间为:"+ss.str());
+        LOG_IF.writeAuditTrailLog("手动设置系统时间为:"+ss.str());
     }
 }

@@ -1,8 +1,8 @@
 #include "scannerwidget.h"
 #include "common.h"
 #include <QHeaderView>
-#include "systemusage.h"
-#include "config.h"
+#include "SvcFactory.h"
+#include "ScannerManager.h"
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1600)
 #pragma execution_character_set("utf-8")
@@ -10,43 +10,43 @@
 
 ScannerWidget::ScannerWidget(std::string path,QWidget *parent) : QWidget(parent)
 { 
-    uint16_t vendorID = FileConfig::getScannerVendorID();//0xAF99;
-    uint16_t productID = FileConfig::getScannerProductID();//0x8002;
+    uint16_t vendorID = SvcFactory::CreateFrameService()->getScannerProductID();//0xAF99;
+    uint16_t productID = SvcFactory::CreateFrameService()->getScannerProductID();//0x8002;
     // 检查USB设备是否存在
-    if (!SystemUsage::getUSBDevices(vendorID, productID)){
+    if (!SvcFactory::CreateCommonService()->GetUSBDevices(vendorID, productID)){
         std::cerr << "Target USB device not found" << std::endl;
         // return;
     }
-    scannerInfo=RWDb::readScannerInfo();
+    scannerInfo=HGMACHINE::ScannerManager::instance().get()->readScannerInfo();
 
     m_lang = path;
     m_layout = new QGridLayout(this);
     m_contentLayout = new QGridLayout();
-    m_contentGroupBox = new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Content")));
-    m_sampleNameCheckBox = new QCheckBox(QString::fromStdString(loadTranslation(m_lang,"Sname")));
-    m_batchCheckBox = new QCheckBox(QString::fromStdString(loadTranslation(m_lang,"Sbatch")));
-    m_serialCheckBox = new QCheckBox(QString::fromStdString(loadTranslation(m_lang,"Sserial")));
-    m_weightCheckBox = new QCheckBox(QString::fromStdString(loadTranslation(m_lang,"Samount")));
+    m_contentGroupBox = new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Content")));
+    m_sampleNameCheckBox = new QCheckBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Sname")));
+    m_batchCheckBox = new QCheckBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Sbatch")));
+    m_serialCheckBox = new QCheckBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Sserial")));
+    m_weightCheckBox = new QCheckBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Samount")));
     m_sampleNameCheckBox->setObjectName(m_sampleNameCheckBox->text());
     m_batchCheckBox->setObjectName(m_batchCheckBox->text());
     m_serialCheckBox->setObjectName(m_serialCheckBox->text());
     m_weightCheckBox->setObjectName(m_weightCheckBox->text());
 
     m_separatorLayout=new QGridLayout();
-    m_separatorGroupBox=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"SeparatorSet")));
+    m_separatorGroupBox=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SeparatorSet")));
     m_separatorGroupBox->setLayout(m_separatorLayout);
 
     m_realDisplayLayout=new QGridLayout();
-    m_realDisplayGroupBox=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"RealPreview")));
+    m_realDisplayGroupBox=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"RealPreview")));
     m_realDisplayGroupBox->setLayout(m_realDisplayLayout);
-    m_realDisplayRegionLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Preview"))+":");
+    m_realDisplayRegionLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Preview"))+":");
    
     m_separatorLineEdit = new QLineEdit();
     m_separatorLineEdit->setPlaceholderText("请输入分隔符（如逗号、空格等）");
     
 
-    m_saveBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Save")));
-    m_resetBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Reset")));
+    m_saveBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Save")));
+    m_resetBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Reset")));
 
     m_contentGroupBox->setLayout(m_contentLayout);
     m_sampleNameCheckBox->setChecked(true);
@@ -55,7 +55,7 @@ ScannerWidget::ScannerWidget(std::string path,QWidget *parent) : QWidget(parent)
     m_contentLayout->addWidget(m_serialCheckBox,0,2);
     m_contentLayout->addWidget(m_weightCheckBox,1,0);
 
-    m_separatorLayout->addWidget(new QLabel(QString::fromStdString(loadTranslation(m_lang,"InputSeparator"))+":"));
+    m_separatorLayout->addWidget(new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"InputSeparator"))+":"));
     m_separatorLayout->addWidget(m_separatorLineEdit);
 
     m_testTable = new QTableWidget(m_contentLayout->count(),2);
@@ -79,12 +79,12 @@ ScannerWidget::ScannerWidget(std::string path,QWidget *parent) : QWidget(parent)
         }
     }
      
-    m_testGroupBox=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Test")));
+    m_testGroupBox=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Test")));
     m_testLayout = new QGridLayout(m_testGroupBox);
     m_testLineEdit = new ScanInputLineEdit();
-    m_testLineEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"PleaseInputTestBarcode")));
+    m_testLineEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"PleaseInputTestBarcode")));
     m_testStatusLabel = new QLabel();
-    m_testLayout->addWidget(new QLabel(QString::fromStdString(loadTranslation(m_lang,"TestBarcode"))+":"));
+    m_testLayout->addWidget(new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"TestBarcode"))+":"));
     m_testLayout->addWidget(m_testLineEdit);
     m_testLayout->addWidget(m_testTable,0,1,2,1);
     m_testLayout->addWidget(m_testStatusLabel,m_testLayout->rowCount(),0,1,2);
@@ -134,7 +134,7 @@ bool ScannerWidget::closeWindow()
 
 void ScannerWidget::saveSettings() {
     // 保存用户设置的代码
-    RWDb::writeScannerInfo(std::map<std::string,std::string>{
+    HGMACHINE::ScannerManager::instance().get()->writeScannerInfo(std::map<std::string,std::string>{
         {"Sname", m_sampleNameCheckBox->isChecked() ? "true" : "false"},  // 使用 isChecked() 获取勾选状态
         {"Sbatch", m_batchCheckBox->isChecked() ? "true" : "false"},
         {"Sserial", m_serialCheckBox->isChecked() ? "true" : "false"},
@@ -148,7 +148,7 @@ void ScannerWidget::resetSettings() {
     m_serialCheckBox->setChecked(false);
     m_weightCheckBox->setChecked(false);
     m_separatorLineEdit->clear();
-    m_realDisplayRegionLabel->setText(QString::fromStdString(loadTranslation(m_lang,"Preview"))+":");
+    m_realDisplayRegionLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Preview"))+":");
     updatePreview();
 }
 void ScannerWidget::updatePreview() {
@@ -158,7 +158,7 @@ void ScannerWidget::updatePreview() {
     if (m_serialCheckBox->isChecked()) selectedOptions.append(m_serialCheckBox->text());
     if (m_weightCheckBox->isChecked()) selectedOptions.append(m_weightCheckBox->text());
     QString separator = m_separatorLineEdit->text();
-    m_realDisplayRegionLabel->setText(QString::fromStdString(loadTranslation(m_lang,"Preview"))+":\n" + selectedOptions.join(separator));
+    m_realDisplayRegionLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Preview"))+":\n" + selectedOptions.join(separator));
 }
 int ScannerWidget::decodeInput(const std::string &inputStr,std::map<std::string,std::string> &parseList)
 {

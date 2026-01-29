@@ -26,10 +26,9 @@ public:
     virtual bool LoadConfig() = 0;
     
     virtual std::string LoadTranslation(const std::string& language, const std::string& key) = 0;
+    virtual std::string FindTranslationKey(const std::string& language, const std::string& key) = 0;
+
     
-    virtual std::map<std::string, std::string> GetParamMap(const std::string& param) = 0;
-    
-    virtual std::string GetDirPath() const = 0;
     virtual int SaveTableToTxt(const std::vector<std::map<std::string, std::string>>& content, const std::string& savename) = 0;
     virtual int SaveTableToCsv(const std::vector<std::map<std::string, std::string>>& content, const std::string& savename) = 0;
     virtual int SaveTableToPdf(const std::vector<std::map<std::string, std::string>>& content, const std::string& savename, const std::string& charset) = 0;

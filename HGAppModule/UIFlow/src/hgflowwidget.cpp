@@ -1,9 +1,11 @@
 #include "hgflowwidget.h"
+#include "loginterface.h"
+#include "SvcFactory.h"
 
 HGFlowWidget::HGFlowWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang)
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Flow"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Flow"));
     m_flowEditW=NULL;
     m_flowEditW=new HGFlowEditWidget(m_lang);
     m_flowModuleListW=NULL;

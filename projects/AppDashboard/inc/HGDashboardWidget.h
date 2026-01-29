@@ -14,12 +14,16 @@
 #include <QWidget>
 #include <QFrame>
 #include <QTableWidget>
+#include <QMap>
+#include <QSettings>
 #include "hgqlabel.h"
 #include "QRoundProgressBar.h"
 #include "HGCurDataWidget.h"
 #include "hgcomwithmqtt.h"
 #include "hgcomwithsocket.h"
 #include "tcpvideoreceiver.h"
+#include "RangeConfigDialog.h"
+#include "CommDialog.h"
 
 using namespace HGMACHINE;
 
@@ -31,10 +35,10 @@ typedef struct tagDataInfo{
     QColor color;
 } DashboardDataInfo;
 
-typedef struct tagRange{
-    float min;
-    float max;
-} Range;
+// typedef struct tagRange{
+//     float min;
+//     float max;
+// } Range;
 
 enum {
     TUZHUANG=0,
@@ -81,6 +85,17 @@ private:
         const std::vector<std::string> &secondColumnNames);
     void displayRealData();
     void deThread();
+    void loadRangeConfig();
+    void saveRangeConfig();
+    void loadCommConfig();
+    void saveCommConfig();
+    void onTableCellClicked(int row, int column);
+    void onAdminConfig();
+    Range* getRangeForItem(int tableType, int row);
+    QString getRangeKey(int tableType, int row);
+    void updateRangeDisplay(int tableType, int row);
+    void updateItemNameDisplay(int tableType, int row);
+    Range getConfiguredRange(int tableType, int row);
 
 protected:
     void keyPressEvent(QKeyEvent* event) override;
@@ -121,6 +136,10 @@ private:
     Range m_vlRange;
     std::string m_basePath;
     std::string m_temperature, m_weatherStatus;
+    
+    QMap<QString, Range> m_rangeConfigMap;
+    QMap<QString, QString> m_itemNameMap;
+    CommConfig m_commConfig;
 
     bool m_playVideoFlag;
 

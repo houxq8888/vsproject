@@ -2,7 +2,6 @@
 #define HXQDETECTDIMENTIONVUX_H
 
 
-#include "HGMacroData.h"
 #include "hgcommonutility.h"
 #include "dimentionVux.h"
 

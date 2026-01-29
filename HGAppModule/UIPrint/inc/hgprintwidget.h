@@ -17,6 +17,8 @@
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
 #include "hghandwritingwidget.h"
+#include "ICommunicate.h"
+#include "IPrinter.h"
 
 typedef struct tagInPrintElement{
     std::string key;
@@ -83,6 +85,8 @@ private:
     std::vector<QImage> m_qimgs;
 
 
+    HGMACHINE::ICommunicate* m_communicate;
+    HGMACHINE::IPrinter* m_printer;
     HGHandWritingWidget* m_handWritingWidget;
     QGraphicsView* view;
     QGraphicsScene* scene;

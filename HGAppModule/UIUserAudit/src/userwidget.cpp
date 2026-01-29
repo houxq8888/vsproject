@@ -3,16 +3,21 @@
 #include <QMessageBox>
 #include "common.h"
 #include <QDialog>
-#include "globalsingleton.h"
+#include "UserAuditManager.h"
+#include "loginterface.h"
+#include "SvcFactory.h"
+#include "SystemDataManager.h"
+
+using namespace HGMACHINE;
 
 
 UserWidget::UserWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
 m_userInfoEditWidget(nullptr)
 {
-    std::string enterUsersManageName=GlobalSingleton::instance().getSystemInfo("enterUsersManageName");
-    std::string authority = GlobalSingleton::instance().getUserAuthority(enterUsersManageName);
-    permissionInfo = GlobalSingleton::instance().getAuthorityDetail(authority);
+    std::string enterUsersManageName=SystemDataManager::instance().get().getSystemInfo("enterUsersManageName");
+    std::string authority = UserAuditManager::instance().get().getUserAuthority(enterUsersManageName);
+    permissionInfo = UserAuditManager::instance().get().getAuthorityDetail(authority);
 
     fnInit();
     fnReadDB();
@@ -23,15 +28,15 @@ void UserWidget::fnInit()
     this->setLayout(m_userLayout);
     
     // 
-    m_userManageLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"UserManage")));
+    m_userManageLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UserManage")));
     QStringList headers={
-        QString::fromStdString(loadTranslation(m_lang,"UserNo")),
-        QString::fromStdString(loadTranslation(m_lang,"UserAccount")),
-        QString::fromStdString(loadTranslation(m_lang,"UserName")), 
-        QString::fromStdString(loadTranslation(m_lang,"UserJob")),
-        QString::fromStdString(loadTranslation(m_lang,"Department")),
-        QString::fromStdString(loadTranslation(m_lang,"Authority")),
-        QString::fromStdString(loadTranslation(m_lang,"AccountManagement"))
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UserNo")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UserAccount")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UserName")), 
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UserJob")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Department")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Authority")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AccountManagement"))
     };
     m_userManageTableW=new QTableWidget(0,headers.size());
     m_userManageTableW->setHorizontalHeaderLabels(headers);
@@ -74,7 +79,10 @@ bool UserWidget::closeWindow()
 {
     if (m_userInfoEditWidget){
         if (m_userInfoEditWidget->closeWindow()){
-            SAFE_DELETE(m_userInfoEditWidget);
+            if  (m_userInfoEditWidget) {
+                delete (m_userInfoEditWidget);
+                m_userInfoEditWidget = nullptr;
+            }
         }
     }
     fnWriteDB();
@@ -82,7 +90,7 @@ bool UserWidget::closeWindow()
 }
 
 void UserWidget::slotHasUserNo(std::string userNo){
-    std::vector<std::string> names=GlobalSingleton::instance().getUsersNo();
+    std::vector<std::string> names=UserAuditManager::instance().get().getUsersNo();
     for (const auto &name:names){
         if (name==userNo){
             m_userInfoEditWidget->hasUserNo(true);
@@ -94,7 +102,7 @@ void UserWidget::slotHasUserNo(std::string userNo){
 
 int  UserWidget::findUserAuthorityIndex(const std::string &userNo){
     int index=-1;
-    std::vector<std::string> nos = GlobalSingleton::instance().getUsersNo();
+    std::vector<std::string> nos = UserAuditManager::instance().get().getUsersNo();
     for (int i=0;i<int(nos.size());i++){
         if (nos[i]==userNo){
             index=i;
@@ -134,35 +142,35 @@ void UserWidget::findNextRowAndCol(QTableWidget* tableW,std::string key,int& row
 
 void UserWidget::fnAddUsrsGroupUser(const std::string &authorityName, const std::string &text)
 {
-    for (int i=0;i<int(GlobalSingleton::instance().getAuthorityInfo().size());i++)
+    for (int i=0;i<int(UserAuditManager::instance().get().getAuthorityInfo().size());i++)
     {
-        if (GlobalSingleton::instance().getAuthorityField(i,"GroupName") == findTranslationKey(m_lang, authorityName))
+        if (UserAuditManager::instance().get().getAuthorityField(i,"GroupName") == SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, authorityName))
         {
-            if (GlobalSingleton::instance().getAuthorityField(i,"GroupPerson").find(text)!= std::string::npos) break;
-            GlobalSingleton::instance().setAuthorityField(i,"GroupPerson", 
-                GlobalSingleton::instance().getAuthorityField(i,"GroupPerson") + text + ":");
-            std::string groupPerson = GlobalSingleton::instance().getAuthorityField(i,"GroupPerson");
-            std::vector<std::string> persons = splitStr(groupPerson, ':');
+            if (UserAuditManager::instance().get().getAuthorityField(i,"GroupPerson").find(text)!= std::string::npos) break;
+            UserAuditManager::instance().get().setAuthorityField(i,"GroupPerson", 
+                UserAuditManager::instance().get().getAuthorityField(i,"GroupPerson") + text + ":");
+            std::string groupPerson = UserAuditManager::instance().get().getAuthorityField(i,"GroupPerson");
+            std::vector<std::string> persons = SvcFactory::CreateCommonService()->SplitString(groupPerson, ':');
             int count=0;
             for (int m=0;m<int(persons.size());m++){
                 if (persons[m]=="") continue;
                 count++;
             }
-            GlobalSingleton::instance().setAuthorityField(i,"GroupPNumber",
+            UserAuditManager::instance().get().setAuthorityField(i,"GroupPNumber",
                 std::to_string(count));
-            GlobalSingleton::instance().setAuthorityField(i,"LastModifyTime",getStandardCurTime());
-            GlobalSingleton::instance().setAuthorityField(i,"LastModifier",GlobalSingleton::instance().getSystemInfo("enterUsersManageName"));
+            UserAuditManager::instance().get().setAuthorityField(i,"LastModifyTime",SvcFactory::CreateCommonService()->GetStandardCurTime());
+            UserAuditManager::instance().get().setAuthorityField(i,"LastModifier",SystemDataManager::instance().get().getSystemInfo("enterUsersManageName"));
             break;
         }
     }
 }
 void UserWidget::fnRemoveUsrsGroupUser(const std::string &authorityName, const std::string &text)
 {
-    for (int i=0;i<int(GlobalSingleton::instance().getAuthorityInfo().size());i++)
+    for (int i=0;i<int(UserAuditManager::instance().get().getAuthorityInfo().size());i++)
     {
-        if (GlobalSingleton::instance().getAuthorityField(i,"GroupName") == findTranslationKey(m_lang, authorityName))
+        if (UserAuditManager::instance().get().getAuthorityField(i,"GroupName") == SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, authorityName))
         {
-            std::vector<std::string> persons = splitStr(GlobalSingleton::instance().getAuthorityField(i,"GroupPerson"), ':');
+            std::vector<std::string> persons = SvcFactory::CreateCommonService()->SplitString(UserAuditManager::instance().get().getAuthorityField(i,"GroupPerson"), ':');
             for (auto person : persons)
             {
                 if (person == text)
@@ -171,23 +179,23 @@ void UserWidget::fnRemoveUsrsGroupUser(const std::string &authorityName, const s
                     break;
                 }
             }
-            GlobalSingleton::instance().setAuthorityField(i,"GroupPerson","");
+            UserAuditManager::instance().get().setAuthorityField(i,"GroupPerson","");
             for (auto person : persons)
             {
-                GlobalSingleton::instance().addAuthorityField(i,"GroupPerson",person + ":");
+                UserAuditManager::instance().get().addAuthorityField(i,"GroupPerson",person + ":");
             }
-            std::string groupPerson = GlobalSingleton::instance().getAuthorityField(i,"GroupPerson");
+            std::string groupPerson = UserAuditManager::instance().get().getAuthorityField(i,"GroupPerson");
             persons.clear();
-            persons = splitStr(groupPerson, ':');
+            persons = SvcFactory::CreateCommonService()->SplitString(groupPerson, ':');
             int count = 0;
             for (int m=0;m<int(persons.size());m++){
                 if (persons[m]=="") continue;
                 count++;
             }
-            GlobalSingleton::instance().setAuthorityField(i,"GroupPNumber",
+            UserAuditManager::instance().get().setAuthorityField(i,"GroupPNumber",
                 std::to_string(count));
-            GlobalSingleton::instance().setAuthorityField(i,"LastModifyTime",getStandardCurTime());
-            GlobalSingleton::instance().setAuthorityField(i,"LastModifier",GlobalSingleton::instance().getSystemInfo("enterUsersManageName"));
+            UserAuditManager::instance().get().setAuthorityField(i,"LastModifyTime",SvcFactory::CreateCommonService()->GetStandardCurTime());
+            UserAuditManager::instance().get().setAuthorityField(i,"LastModifier",SystemDataManager::instance().get().getSystemInfo("enterUsersManageName"));
             break;
         }
     }
@@ -199,40 +207,40 @@ void UserWidget::onUserManageClicked(int row,int column){
 void UserWidget::scanUser(){
     int row=getSelectedRow(m_userManageTableW);
     if (row<0||row>=m_userManageTableW->rowCount()) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));
         return;
     }
 
     std::string scanUserAccount = m_userManageTableW->item(row,1)->text().toStdString();
-    int index = GlobalSingleton::instance().getUserFieldIndex(scanUserAccount);
+    int index = UserAuditManager::instance().get().getUserFieldIndex(scanUserAccount);
     if (index < 0) return;
 
     removeWidgetsFromLayout(m_userLayout);
-    m_userInfoEditWidget=new UserInfoEditWidget(USER_SCAN,m_lang,GlobalSingleton::instance().getUserInfo(index),this);
+    m_userInfoEditWidget=new UserInfoEditWidget(USER_SCAN,m_lang,UserAuditManager::instance().get().getUserInfo(index),this);
     m_userLayout->addWidget(m_userInfoEditWidget,0,0);
     connect(m_userInfoEditWidget,SIGNAL(signalUserInfo(const std::map<std::string,std::string> &)),
         this,SLOT(slotUserInfo(const std::map<std::string,std::string> &)));
     connect(m_userInfoEditWidget,SIGNAL(signalUserNo(std::string)),this,SLOT(slotHasUserNo(std::string)));
     connect(m_userInfoEditWidget,SIGNAL(signalBack()),this,SLOT(returnToList()));
     connect(m_userInfoEditWidget,SIGNAL(updateAuthority()),this,SLOT(slotUpdateAuthority()));
-    RWDb::writeAuditTrailLog("查看用户"+GlobalSingleton::instance().getUserField(index,"UserAccount"));
+    LOG_IF.writeAuditTrailLog("查看用户"+UserAuditManager::instance().get().getUserField(index,"UserAccount"));
 }
 void UserWidget::editUser(){
     int row=getSelectedRow(m_userManageTableW);
     if (row<0||row>=m_userManageTableW->rowCount()) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));
         return;
     }
     std::string editUserAccount=m_userManageTableW->item(row,1)->text().toStdString(); 
-    int index = GlobalSingleton::instance().getUserFieldIndex(editUserAccount);
+    int index = UserAuditManager::instance().get().getUserFieldIndex(editUserAccount);
     if (index < 0) return;
-    std::string editauthority = GlobalSingleton::instance().getUserAuthority(editUserAccount);
+    std::string editauthority = UserAuditManager::instance().get().getUserAuthority(editUserAccount);
     if (editauthority.find("所有权限")!=std::string::npos){
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "厂家账号不可编辑");
         return;
     }
     removeWidgetsFromLayout(m_userLayout);
-    m_userInfoEditWidget=new UserInfoEditWidget(USER_RECTIFY,m_lang,GlobalSingleton::instance().getUserInfo(index),this);
+    m_userInfoEditWidget=new UserInfoEditWidget(USER_RECTIFY,m_lang,UserAuditManager::instance().get().getUserInfo(index),this);
     m_userLayout->addWidget(m_userInfoEditWidget,0,0);
     connect(m_userInfoEditWidget,SIGNAL(signalUserInfo(const std::map<std::string,std::string> &)),
         this,SLOT(slotUserInfo(const std::map<std::string,std::string> &)));
@@ -243,13 +251,13 @@ void UserWidget::editUser(){
 void UserWidget::deleteUser(){
     int row=getSelectedRow(m_userManageTableW);
     if (row<0||row>=m_userManageTableW->rowCount()) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));
         return;
     }
     std::string delUserAccount = m_userManageTableW->item(row,1)->text().toStdString();
-    int index = GlobalSingleton::instance().getUserFieldIndex(delUserAccount);
+    int index = UserAuditManager::instance().get().getUserFieldIndex(delUserAccount);
     if (index < 0) return;
-    std::string delauthority = GlobalSingleton::instance().getUserAuthority(delUserAccount);
+    std::string delauthority = UserAuditManager::instance().get().getUserAuthority(delUserAccount);
     if (delauthority.find("所有权限")!=std::string::npos){
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "厂家账号不可删除");
         return;
@@ -261,23 +269,23 @@ void UserWidget::deleteUser(){
         return;
     }
     m_userManageTableW->removeRow(row);
-    std::string authority=GlobalSingleton::instance().getUserField(index,"Authority");
-    GlobalSingleton::instance().deleteUserInfo(delUserAccount);
-    
-    std::vector<std::string> authorities = splitStr(authority,';');
+    std::string authority=UserAuditManager::instance().get().getUserField(index,"Authority");
+    UserAuditManager::instance().get().deleteUserInfo(delUserAccount);
+
+    std::vector<std::string> authorities = SvcFactory::CreateCommonService()->SplitString(authority,';');
     for (int i=0;i<int(authorities.size());i++){
         if (authorities[i]=="") continue;
         fnRemoveUsrsGroupUser(authorities[i], delUserAccount);
     }
-    RWDb::writeAuditTrailLog("删除用户:"+delUserAccount);
-    if (GlobalSingleton::instance().getSystemInfo("loginNames").find(delUserAccount)!=std::string::npos){
-        std::string loginNames = GlobalSingleton::instance().getSystemInfo("loginNames");
+    LOG_IF.writeAuditTrailLog("删除用户:"+delUserAccount);
+    if (SystemDataManager::instance().get().getSystemInfo("loginNames").find(delUserAccount)!=std::string::npos){
+        std::string loginNames = SystemDataManager::instance().get().getSystemInfo("loginNames");
         std::string target=delUserAccount+':';
         size_t pos =loginNames.find(target);
         if (pos!=std::string::npos){
             loginNames.erase(pos,target.length());
         }
-        GlobalSingleton::instance().setSystemInfo("loginNames",loginNames);
+        SystemDataManager::instance().get().setSystemInfo("loginNames",loginNames);
     }
 }
 void UserWidget::returnToList(){
@@ -293,14 +301,14 @@ void UserWidget::newUser(){
     connect(m_userInfoEditWidget,SIGNAL(signalUserNo(std::string)),this,SLOT(slotHasUserNo(std::string)));
     connect(m_userInfoEditWidget,SIGNAL(signalBack()),this,SLOT(returnToList()));
     connect(m_userInfoEditWidget,SIGNAL(updateAuthority()),this,SLOT(slotUpdateAuthority()));
-    RWDb::writeAuditTrailLog("创建用户");
+    LOG_IF.writeAuditTrailLog("创建用户");
 }
 void UserWidget::slotUpdateAuthority(){
     emit updateAuthority();
 }
 void UserWidget::slotUserInfo(const std::map<std::string,std::string>& userInfo){
     int index=-1;
-    std::vector<std::map<std::string,std::string>> fillContent=GlobalSingleton::instance().getUsersInfo();
+    std::vector<std::map<std::string,std::string>> fillContent=UserAuditManager::instance().get().getUsersInfo();
     for (int i=0;i<int(fillContent.size());i++){
         if (fillContent[i].at("UserNo")==userInfo.at("UserNo")){
             index=i;
@@ -310,22 +318,22 @@ void UserWidget::slotUserInfo(const std::map<std::string,std::string>& userInfo)
     std::string authority="";
     if (index==-1) {
         m_userManageTableW->insertRow(m_userManageTableW->rowCount());
-        GlobalSingleton::instance().addUserRecord(userInfo);
+        UserAuditManager::instance().get().addUserRecord(userInfo);
         index=m_userManageTableW->rowCount()-1;
         authority = userInfo.at("Authority");
     } else {
-        authority=GlobalSingleton::instance().getUserField(index,"Authority");
-        GlobalSingleton::instance().setUserInfoWithIndex(index,userInfo);
+        authority=UserAuditManager::instance().get().getUserField(index,"Authority");
+        UserAuditManager::instance().get().setUserInfoWithIndex(index,userInfo);
     }
     for (auto content : userInfo)
     {
-        QString name=QString::fromStdString(loadTranslation(m_lang,content.first));
+        QString name=QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,content.first));
         int nameColIndex = getColumnIndexByName(m_userManageTableW, name);
         if (nameColIndex < 0 || nameColIndex >= m_userManageTableW->columnCount())
             continue;
         if (content.first=="Authority" || content.first=="AccountManagement") 
             m_userManageTableW->setItem(index, nameColIndex, 
-                new QTableWidgetItem(QString::fromStdString(loadTranslation(m_lang,content.second))));
+                new QTableWidgetItem(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,content.second))));
         else 
             m_userManageTableW->setItem(index, nameColIndex, 
                 new QTableWidgetItem(QString::fromStdString(content.second)));
@@ -333,7 +341,7 @@ void UserWidget::slotUserInfo(const std::map<std::string,std::string>& userInfo)
 
     fnAddUsrsGroupUser(authority, userInfo.at("UserAccount"));
     QMessageBox::information(this, QString::fromStdString(HG_DEVICE_NAME), "账户保存完成");
-    RWDb::writeAuditTrailLog(userInfo.at("UserAccount")+"账户保存完成");
+    LOG_IF.writeAuditTrailLog(userInfo.at("UserAccount")+"账户保存完成");
     fnWriteDB();
 }
 void UserWidget::closeEvent(QCloseEvent *event)
@@ -357,7 +365,7 @@ int UserWidget::getColumnIndexByName(QTableWidget* table,const QString &columnNa
 void UserWidget::fnFillUserList()
 {
     m_userManageTableW->setRowCount(0);
-    std::vector<std::map<std::string, std::string>> fillContent=GlobalSingleton::instance().getUsersInfo();
+    std::vector<std::map<std::string, std::string>> fillContent=UserAuditManager::instance().get().getUsersInfo();
     for (int i = 0; i < int(fillContent.size()); i++)
     {
         if (fillContent[i]["Authority"].find("所有权限")!=std::string::npos 
@@ -366,15 +374,15 @@ void UserWidget::fnFillUserList()
         m_userManageTableW->insertRow(m_userManageTableW->rowCount());
         for (auto content : fillContent[i])
         {
-            QString name = QString::fromStdString(loadTranslation(m_lang, content.first));
+            QString name = QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, content.first));
             int nameColIndex = getColumnIndexByName(m_userManageTableW, name);
             if (nameColIndex < 0 || nameColIndex >= m_userManageTableW->columnCount())
                 continue;
             if (content.first=="Authority" || content.first=="AccountManagement") {
-                std::vector<std::string> authorities = splitStr(content.second, ';');
+                std::vector<std::string> authorities = SvcFactory::CreateCommonService()->SplitString(content.second, ';');
                 std::string temp="";
                 for (int j=0;j<int(authorities.size());j++){
-                    temp+=loadTranslation(m_lang, authorities[j])+';';
+                    temp+=SvcFactory::CreateConfigService()->LoadTranslation(m_lang, authorities[j])+';';
                 }
                 m_userManageTableW->setItem(m_userManageTableW->rowCount() - 1, nameColIndex, 
                     new QTableWidgetItem(QString::fromStdString(temp)));
@@ -386,24 +394,48 @@ void UserWidget::fnFillUserList()
 }
 void UserWidget::fnReadDB()
 {
-    GlobalSingleton::instance().loadUsersInfo();
+    UserAuditManager::instance().get().loadUsersInfo();
     fnFillUserList();
 }
 void UserWidget::fnWriteDB()
 {
-    GlobalSingleton::instance().saveSystemInfo();
-    GlobalSingleton::instance().saveUsersInfo();
-    GlobalSingleton::instance().saveUserGroupInfo();
+    SystemDataManager::instance().get().saveSystemInfo();
+    UserAuditManager::instance().get().saveUsersInfo();
+    UserAuditManager::instance().get().saveUserGroupInfo();
 }
 
 UserWidget::~UserWidget()
 {
-    SAFE_DELETE(m_userLayout);
-    SAFE_DELETE(m_userManageLabel);
-    SAFE_DELETE(m_userManageTableW);
-    SAFE_DELETE(m_newUserLabel);
-    SAFE_DELETE(m_deleteUserLabel);
-    SAFE_DELETE(m_editUserLabel);
-    SAFE_DELETE(m_scanUserLabel);
-    SAFE_DELETE(m_userInfoEditWidget);
+    if (m_userLayout);{
+        delete m_userLayout;
+        m_userLayout=nullptr;
+    }
+    if (m_userManageLabel);{
+        delete m_userManageLabel;
+        m_userManageLabel=nullptr;
+    }
+    if (m_userManageTableW);{
+        delete m_userManageTableW;
+        m_userManageTableW=nullptr;
+    }
+    if (m_newUserLabel);{
+        delete m_newUserLabel;
+        m_newUserLabel=nullptr;
+    }
+    if (m_deleteUserLabel);{
+        delete m_deleteUserLabel;
+        m_deleteUserLabel=nullptr;
+    }
+    if (m_editUserLabel);{
+        delete m_editUserLabel;
+        m_editUserLabel=nullptr;
+    }
+    if (m_scanUserLabel);{
+        delete m_scanUserLabel;
+        m_scanUserLabel=nullptr;
+    }
+    if (m_userInfoEditWidget);{
+        delete m_userInfoEditWidget;
+        m_userInfoEditWidget=nullptr;
+    }
 }

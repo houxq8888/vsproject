@@ -6,6 +6,10 @@
 #include <QPushButton>
 #include <QMessageBox>
 #include "common.h"
+#include "SvcFactory.h"
+#include "TaskManager.h"
+
+using namespace HGMACHINE;
 
 HGTaskEditWidget::HGTaskEditWidget(std::string lang,const std::string& taskSeqName,QWidget *parent) : QWidget(parent),
 m_lang(lang),
@@ -16,7 +20,7 @@ m_taskSeqName(taskSeqName)
     m_deviceOnlineFlag=true;
     m_index=-1;
     m_fillContent.clear();
-    m_editGroupBox=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Sequence")));//"序列");
+    m_editGroupBox=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Sequence")));//"序列");
     m_editlayout=new QGridLayout();
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
@@ -78,7 +82,7 @@ m_taskSeqName(taskSeqName)
 
     m_layout->addWidget(m_editGroupBox,0,0);
 
-    m_fillContent=RWDb::readTaskInfo(taskSeqName);
+    m_fillContent=TaskManager::instance().get().readTaskInfo(taskSeqName);
     for (int index=0;index<int(m_fillContent.size());index++){
         fnDisplayTaskInfo(index,m_fillContent[index]);
     }
@@ -101,7 +105,7 @@ m_taskSeqName(taskSeqName)
 }
 bool HGTaskEditWidget::closeWindow()
 {
-    RWDb::writeTaskRecord(true,m_taskSeqName,m_fillContent);
+    TaskManager::instance().get().writeTaskRecord(true,m_taskSeqName,m_fillContent);
     fnWriteDB();
     return true;
 }
@@ -109,7 +113,7 @@ void HGTaskEditWidget::onCellClicked(int row,int column){
     m_index=row;
     m_tableW->selectRow(row);
     if (row >= int(m_fillContent.size())) return;
-    Task task=RWDb::getTaskSFromMap(m_fillContent[row]);
+    Task task = TaskManager::instance().get().getTaskSFromMap(m_fillContent[row]);
     emit taskInfoWShow(task);
 }
 void HGTaskEditWidget::slotUpdateRunStatus(){
@@ -175,7 +179,32 @@ void HGTaskEditWidget::displayTaskInfo(int type,Task task){
     case TASK_CREATE:
     {
         int count = m_fillContent.size();
-        std::map<std::string, std::string> fillContent = RWDb::getTaskMap(count + 1, task);
+        std::map<std::string, std::string> fillContent = TaskManager::instance().get().getTaskMap(count + 1, 
+                                                                                                      task.sampleName,
+                                                                                                      task.testFlow,
+                                                                                                      task.testMethod,
+                                                                                                      task.runStatus,
+                                                                                                      task.testChannel,
+                                                                                                      task.content,
+                                                                                                      task.sampleInput,
+                                                                                                      task.getSampleMethod,
+                                                                                                      task.targetElement,
+                                                                                                      task.unit,
+                                                                                                      task.standard1Condition,
+                                                                                                      task.standard2Condition,
+                                                                                                      task.standard1,
+                                                                                                      task.standard2,
+                                                                                                      task.getSamplePump,
+                                                                                                      task.workingMode,
+                                                                                                      task.interval,
+                                                                                                      task.flowoftask,
+                                                                                                      task.method,
+                                                                                                      task.blank,
+                                                                                                      task.sampleDetectStrategy,
+                                                                                                      task.circleNo,
+                                                                                                      task.batchNo,
+                                                                                                      task.serailNo,
+                                                                                                      task.detectStatus);
         m_fillContent.push_back(fillContent);
         fnDisplayTaskInfo(count, fillContent);
         break;
@@ -183,10 +212,35 @@ void HGTaskEditWidget::displayTaskInfo(int type,Task task){
     case TASK_RECTIFY:
     {
         if (m_index < 0 || m_index >= int(m_fillContent.size())){
-            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
             return;
         }
-        std::map<std::string,std::string> fillContent=RWDb::getTaskMap(m_index+1,task);
+        std::map<std::string,std::string> fillContent=TaskManager::instance().get().getTaskMap(m_index+1,
+                                                                                                  task.sampleName,
+                                                                                                  task.testFlow,
+                                                                                                  task.testMethod,
+                                                                                                  task.runStatus,
+                                                                                                  task.testChannel,
+                                                                                                  task.content,
+                                                                                                  task.sampleInput,
+                                                                                                  task.getSampleMethod,
+                                                                                                  task.targetElement,
+                                                                                                  task.unit,
+                                                                                                  task.standard1Condition,
+                                                                                                  task.standard2Condition,
+                                                                                                  task.standard1,
+                                                                                                  task.standard2,
+                                                                                                  task.getSamplePump,
+                                                                                                  task.workingMode,
+                                                                                                  task.interval,
+                                                                                                  task.flowoftask,
+                                                                                                  task.method,
+                                                                                                  task.blank,
+                                                                                                  task.sampleDetectStrategy,
+                                                                                                  task.circleNo,
+                                                                                                  task.batchNo,
+                                                                                                  task.serailNo,
+                                                                                                  task.detectStatus);
         m_fillContent[m_index]=fillContent;
         for (auto content : fillContent)
         {
@@ -220,7 +274,7 @@ void HGTaskEditWidget::slotUpTask(){
     }
     else
     {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
     }
 }
 void HGTaskEditWidget::slotDownTask(){
@@ -232,7 +286,7 @@ void HGTaskEditWidget::slotDownTask(){
     }
     else
     {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
     }
 }
 void HGTaskEditWidget::slotOpenSequence(){
@@ -244,9 +298,9 @@ void HGTaskEditWidget::slotOpenSequence(){
 
     QListWidget* listW=new QListWidget(&dialog);
     QPushButton* okbtn=new QPushButton(&dialog);
-    okbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Ok")));//"确定");
+    okbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Ok")));//"确定");
     QPushButton* cancelbtn=new QPushButton(&dialog);
-    cancelbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Cancel")));//"取消");
+    cancelbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Cancel")));//"取消");
     connect(okbtn,&QPushButton::clicked,[&](){
        if (listW->count()!=0) tableName=listW->currentItem()->text().toStdString();
        dialog.close();
@@ -254,7 +308,7 @@ void HGTaskEditWidget::slotOpenSequence(){
     connect(cancelbtn,&QPushButton::clicked,[&](){
         dialog.close();
     });
-    std::vector<std::string> names=RWDb::getAllTables(TaskSequenceDBName);
+    std::vector<std::string> names=TaskManager::instance().get().getAllTables(TaskSequenceDBName);
     for (const auto &name:names){
         listW->addItem(QString::fromStdString(name));
     }
@@ -272,7 +326,7 @@ void HGTaskEditWidget::slotOpenSequence(){
         m_fillContent.clear();
         m_tableW->clearContents();
         m_tableW->setRowCount(0);
-        m_fillContent=RWDb::readTaskInfo(m_taskSeqName);
+        m_fillContent=TaskManager::instance().get().readTaskInfo(m_taskSeqName);
         for (int index=0;index<int(m_fillContent.size());index++){
            fnDisplayTaskInfo(index,m_fillContent[index]);
         }
@@ -285,16 +339,16 @@ void HGTaskEditWidget::slotSaveSequence(){
     bool coverFlag=false;
     // list squence 
     QDialog dialog(this);
-    dialog.setWindowTitle(QString::fromStdString(loadTranslation(m_lang,"InputSaveName")));//"请输入保存名称");
+    dialog.setWindowTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"InputSaveName")));//"请输入保存名称");
     dialog.setWindowModality(Qt::ApplicationModal);
 
     QLineEdit* saveNameEdit=new QLineEdit(&dialog);
-    saveNameEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"InputSaveName")));
-    QPushButton* coverBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"OverwriteFile"))/*"覆盖当前文件"*/,&dialog);
+    saveNameEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"InputSaveName")));
+    QPushButton* coverBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"OverwriteFile"))/*"覆盖当前文件"*/,&dialog);
     QPushButton* okbtn=new QPushButton(&dialog);
-    okbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Ok")));//"确定");
+    okbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Ok")));//"确定");
     QPushButton* cancelbtn=new QPushButton(&dialog);
-    cancelbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Cancel")));//"取消");
+    cancelbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Cancel")));//"取消");
     connect(coverBtn,&QPushButton::clicked,[&](){
         tableName=m_taskSeqName; // HgOnlinePlatformModule::getTaskSeqName();
         saveNameEdit->setText(QString::fromStdString(tableName));
@@ -319,7 +373,7 @@ void HGTaskEditWidget::slotSaveSequence(){
     dialog.exec();
 
     if (tableName!=""){
-        RWDb::writeTaskRecord(coverFlag,m_taskSeqName,m_fillContent);
+        TaskManager::instance().get().writeTaskRecord(coverFlag,m_taskSeqName,m_fillContent);
     }
 }
 
@@ -346,22 +400,22 @@ void HGTaskEditWidget::slotDeleteTask()
     }
     else
     {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
     }
 }
 void HGTaskEditWidget::fnWriteDB(){
     if (m_startFlag)
-        RWDb::setTaskRunFlag("true");
+        TaskManager::instance().get().setTaskRunFlag("true");
     else 
-        RWDb::setTaskRunFlag("false");
+        TaskManager::instance().get().setTaskRunFlag("false");
 }
 void HGTaskEditWidget::fnReadDB(){
-    if (RWDb::getTaskRunFlag()=="true") m_startFlag=true;
+    if (TaskManager::instance().get().getTaskRunFlag()=="true") m_startFlag=true;
     else m_startFlag=false;
 }
 void HGTaskEditWidget::slotStartSequence(){
     if (m_index < 0 || m_index >= int(m_fillContent.size())){
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
         return;
     }
 #ifdef ENABLE_CAS6
@@ -377,7 +431,7 @@ void HGTaskEditWidget::slotStartSequence(){
     }
     printf("param:%s\n",paramstr.c_str());
     std::map<std::vector<uint8_t>,std::vector<uint8_t>> sendMethodInfo;
-    std::map<std::string, std::string> wparam = getParamMap(paramstr);
+    std::map<std::string, std::string> wparam = SvcFactory::CreateCommonService()->GetParamMap(paramstr);
     for (const auto &pair : gMapSendMethod)
     {
         if (wparam.find(pair.first) == wparam.end())
@@ -391,14 +445,14 @@ void HGTaskEditWidget::slotStartSequence(){
     setMethodInfoToMCU(sendMethodInfo);
 #else
     if (!m_deviceOnlineFlag) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelfCheckNoPass")));//"设备自检未通过，请根据提示排查!");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelfCheckNoPass")));//"设备自检未通过，请根据提示排查!");
         return;
     }
     if (m_restartFlag)
     {
         std::string tableName=getStandardCurTime();
-        RWDb::setTaskRunRecordDataDB(tableName);
-        RWDb::insertTaskRunInfo(tableName,m_taskSeqName);
+        TaskManager::instance().get().setTaskRunRecordDataDB(tableName);
+        TaskManager::instance().get().insertTaskRunInfo(tableName,m_taskSeqName);
     }
     m_startFlag=!m_startFlag;
     m_restartFlag=false;
@@ -420,7 +474,7 @@ void HGTaskEditWidget::slotPauseSequence(){
     if (!m_startFlag) return;
     m_restartFlag=true;
     // resetTaskSequence();
-    RWDb::setTaskRunRecordDataDB("");
+    TaskManager::instance().get().setTaskRunRecordDataDB("");
     m_startFlag=false;
     m_startLabel->changePixmap(getPath("/resources/V1/@1xif-play-alt-2 1.png"),24);
     m_pauseLabel->setEnabled(false);

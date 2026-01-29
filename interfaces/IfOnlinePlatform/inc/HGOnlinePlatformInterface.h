@@ -6,23 +6,9 @@
 #include <string>
 #include <map>
 #include <vector>
-#include "rwDb.h"
 #include "hgonlinerwDB.h"
 #include "hgthreadManage.h"
 #include "hgonlineplatformmodule.h"
-#include "HGExactTime.h"
-#include "HGMacroData.h"
-#include "hgcommonutility.h"
-#include "task.h"
-#include "flow.h"
-#include "method.h"
-#include "hgxml.h"
-#include "hgtxt.h"
-#include "hgpdf.h"
-#include "hgcsv.h"
-#include "hgserial.h"
-#include "hgprinter.h"
-#include "hglogservice.h"
 #include "HGAuthorityService.h"
 
 
@@ -95,9 +81,6 @@ void setRequestData();
 int getTaskCount();
 Task getTaskInfo(const int &taskIndex);
 
-// config
-bool loadConfig(std::string curPath);
-void saveConfig();
 
 
 

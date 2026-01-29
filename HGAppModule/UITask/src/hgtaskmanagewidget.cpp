@@ -1,10 +1,12 @@
 #include "hgtaskmanagewidget.h"
+#include "loginterface.h"
+#include "SvcFactory.h"
 
 HGTaskManageWidget::HGTaskManageWidget(std::string lang,const std::string& taskSeqName,QWidget *parent) : QWidget(parent),
 m_lang(lang),
 m_taskSeqName(taskSeqName)
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"TaskSequence"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"TaskSequence"));
     // updateFlowInfo();
 
     m_taskEditW=NULL;
@@ -34,12 +36,18 @@ bool HGTaskManageWidget::closeWindow()
 {
     if (m_taskEditW){
         if (m_taskEditW->closeWindow()){
-            SAFE_DELETE(m_taskEditW);
+            if (m_taskEditW){
+                delete m_taskEditW;
+                m_taskEditW=nullptr;
+            }
         }
     }
     if (m_taskInfoW){
         if (m_taskInfoW->closeWindow()){
-            SAFE_DELETE(m_taskInfoW);
+            if (m_taskInfoW){
+                delete m_taskInfoW;
+                m_taskInfoW=nullptr;
+            }
         }
     }
     return true;

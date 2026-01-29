@@ -1,6 +1,11 @@
 #include "displayandlightwidget.h"
 #include "common.h"
 #include <QToolTip>
+#include "loginterface.h"
+#include "SystemDataManager.h"
+#include "SvcFactory.h"
+
+using namespace HGMACHINE;
 
 
 DisplayAndLightWidget::DisplayAndLightWidget(std::string lang,QWidget *parent) : BaseWidget(parent),
@@ -8,12 +13,12 @@ DisplayAndLightWidget::DisplayAndLightWidget(std::string lang,QWidget *parent) :
     m_deviceName(""),
     m_lang(lang)
 {
-    m_resolutionLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Resolution")));//"显示器分辨率");
-    m_autoRectifyLightLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"AutoLight")));//"自动调整亮度");
-    m_lightLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Brightness")));//"亮度");
+    m_resolutionLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Resolution")));//"显示器分辨率");
+    m_autoRectifyLightLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AutoLight")));//"自动调整亮度");
+    m_lightLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Brightness")));//"亮度");
 
     m_resolutionComboBox=new QComboBox();//(推荐)
-    std::vector<std::string> resolutionList=listResolutions(m_deviceName);
+    std::vector<std::string> resolutionList=SvcFactory::CreateCommonService()->ListResolutions(m_deviceName);
     m_resolutionComboBox->addItem("1920x1080");
     m_resolutionComboBox->addItem("2560x1600");
     m_resolutionComboBox->addItem("1920x1440");
@@ -34,7 +39,7 @@ DisplayAndLightWidget::DisplayAndLightWidget(std::string lang,QWidget *parent) :
     connect(m_resolutionComboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(slotResolutionChanged(int)));
 
     m_autoRectifyLightImg=new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xIOS开关_enable.png"),
-        loadTranslation(m_lang,"On"));//"开");
+        SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"On"));//"开");
     connect(m_autoRectifyLightImg,SIGNAL(clickImgLabel()),this,SLOT(clickEnableAutoRectifyLight()));
     m_lightSlider=new QSlider(Qt::Horizontal);
     m_lightSlider->setRange(0,100);
@@ -68,30 +73,30 @@ bool DisplayAndLightWidget::closeWindow()
 }
 void DisplayAndLightWidget::fnReadDB()
 {
-    if (GlobalSingleton::instance().getSystemInfo("显示器分辨率")!=""){
-        m_resolutionComboBox->setCurrentText(QString::fromStdString(GlobalSingleton::instance().getSystemInfo("显示器分辨率")));
+    if (SystemDataManager::instance().get().getSystemInfo("显示器分辨率")!=""){
+        m_resolutionComboBox->setCurrentText(QString::fromStdString(SystemDataManager::instance().get().getSystemInfo("显示器分辨率")));
     } else m_resolutionComboBox->setCurrentIndex(-1);
-    m_autoRectifyLightFlag=(GlobalSingleton::instance().getSystemInfo("自动调整亮度")=="true"?true:false);
+    m_autoRectifyLightFlag=(SystemDataManager::instance().get().getSystemInfo("自动调整亮度")=="true"?true:false);
 
-    if (GlobalSingleton::instance().getSystemInfo("亮度")!="") 
-        m_lightSlider->setValue(std::stoi(GlobalSingleton::instance().getSystemInfo("亮度")));
+    if (SystemDataManager::instance().get().getSystemInfo("亮度")!="") 
+        m_lightSlider->setValue(std::stoi(SystemDataManager::instance().get().getSystemInfo("亮度")));
     else m_lightSlider->setValue(0);
     setControlStatus();
 }
 void DisplayAndLightWidget::fnWriteDB()
 {
-    GlobalSingleton::instance().setSystemInfo("显示器分辨率",m_resolutionComboBox->currentText().toStdString());
-    GlobalSingleton::instance().setSystemInfo("自动调整亮度",m_autoRectifyLightFlag?"true":"false");
-    GlobalSingleton::instance().setSystemInfo("亮度",std::to_string(m_lightSlider->value()));
+    SystemDataManager::instance().get().setSystemInfo("显示器分辨率",m_resolutionComboBox->currentText().toStdString());
+    SystemDataManager::instance().get().setSystemInfo("自动调整亮度",m_autoRectifyLightFlag?"true":"false");
+    SystemDataManager::instance().get().setSystemInfo("亮度",std::to_string(m_lightSlider->value()));
 }
 void DisplayAndLightWidget::setControlStatus()
 {
     if (!m_autoRectifyLightFlag){
         m_autoRectifyLightImg->setImg(getPath("/resources/V1/@1xIOS开关.png"));
-        m_autoRectifyLightImg->getTextLabel()->setText(QString::fromStdString(loadTranslation(m_lang,"Off")));//"关");
+        m_autoRectifyLightImg->getTextLabel()->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Off")));//"关");
     } else {
         m_autoRectifyLightImg->setImg(getPath("/resources/V1/@1xIOS开关_enable.png"));
-        m_autoRectifyLightImg->getTextLabel()->setText(QString::fromStdString(loadTranslation(m_lang,"On")));//"开");
+        m_autoRectifyLightImg->getTextLabel()->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"On")));//"开");
     }
     m_lightSlider->setEnabled(!m_autoRectifyLightFlag);
 }
@@ -107,10 +112,10 @@ void DisplayAndLightWidget::slotLightChanged(int value)
 
     if (result == 0) {
         printf("Brightness set successfully!\n");
-        RWDb::writeAuditTrailLog("setLight:["+std::to_string(value)+"] successfully");
+        LOG_IF.writeAuditTrailLog("setLight:["+std::to_string(value)+"] successfully");
     } else {
         printf("Failed to set brightness.\n");
-        RWDb::writeAuditTrailLog("setLight:["+std::to_string(value)+"] failed");
+        LOG_IF.writeAuditTrailLog("setLight:["+std::to_string(value)+"] failed");
     }
 }
 void DisplayAndLightWidget::slotResolutionChanged(int index)
@@ -127,24 +132,24 @@ void DisplayAndLightWidget::slotResolutionChanged(int index)
 
     if (result == 0) {
         printf("Resolution changed successfully!\n");
-        RWDb::writeAuditTrailLog("setResolution:["+resolution+"] successfully");
+        LOG_IF.writeAuditTrailLog("setResolution:["+resolution+"] successfully");
     } else {
         printf("Failed to change resolution.\n");
-        RWDb::writeAuditTrailLog("setResolution:["+resolution+"] failed");
+        LOG_IF.writeAuditTrailLog("setResolution:["+resolution+"] failed");
     }
 }
 
 void DisplayAndLightWidget::clickEnableAutoRectifyLight()
 {
     m_autoRectifyLightFlag=!m_autoRectifyLightFlag;
-    RWDb::writeAuditTrailLog(m_autoRectifyLightFlag?("打开"+m_autoRectifyLightLabel->text().toStdString()): \
+    LOG_IF.writeAuditTrailLog(m_autoRectifyLightFlag?("打开"+m_autoRectifyLightLabel->text().toStdString()): \
         "关闭"+m_autoRectifyLightLabel->text().toStdString());
     setControlStatus();
 }
 void DisplayAndLightWidget::setLanguage(std::string lang){
     m_lang=lang;
-    m_resolutionLabel->setText(QString::fromStdString(loadTranslation(m_lang,"Resolution")));//"显示器分辨率");
-    m_autoRectifyLightLabel->setText(QString::fromStdString(loadTranslation(m_lang,"AutoLight")));//"自动调整亮度");
-    m_lightLabel->setText(QString::fromStdString(loadTranslation(m_lang,"Brightness")));//"亮度");
+    m_resolutionLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Resolution")));//"显示器分辨率");
+    m_autoRectifyLightLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AutoLight")));//"自动调整亮度");
+    m_lightLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Brightness")));//"亮度");
 
 }

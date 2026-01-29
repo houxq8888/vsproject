@@ -10,6 +10,9 @@
 #include <QFileDialog>
 #include "HGAuthorityService.h"
 #include "hgthreadManage.h"
+#include "loginterface.h"
+#include "SvcFactory.h"
+#include "UserAuditManager.h"
 
 
 using namespace HGMACHINE;
@@ -44,14 +47,14 @@ HGOnlineMainWidget::HGOnlineMainWidget(QWidget *parent)
 
 ///////////---interface-------
     QString basePath = qApp->applicationDirPath();
-    GlobalSingleton::instance().setSystemInfo("basePath", basePath.toStdString());
+    SystemDataManager::instance().get().setSystemInfo("basePath", basePath.toStdString());
     HGOnlineRWDB::writeSerialPortInfo(listAvailableSerialPorts());
-    GlobalSingleton::instance().loadUsersInfo();
+    UserAuditManager::instance().get().loadUsersInfo();
     createThread();
     startThread();
 ///////////---interface-------
 
-    m_language=GlobalSingleton::instance().getSystemInfo("显示语言");
+    m_language=SystemDataManager::instance().get().getSystemInfo("显示语言");
     m_language= (m_language=="English"?"en":"zh");
 
     m_leftIndex = 0;
@@ -96,8 +99,8 @@ HGOnlineMainWidget::HGOnlineMainWidget(QWidget *parent)
     m_soundLabel->setVisible(true);
     connect(m_soundLabel,SIGNAL(leftClicked()),this,SLOT(clickSound()));
 
-    if (GlobalSingleton::instance().getSystemInfo("声音报警") == "true"&&
-        GlobalSingleton::instance().getSystemInfo("声音value")!="0") {
+    if (SystemDataManager::instance().get().getSystemInfo("声音报警") == "true"&&
+        SystemDataManager::instance().get().getSystemInfo("声音value")!="0") {
         m_soundFlag=true;
         m_soundLabel->setPixmap(QPixmap(basePath+"/resources/V1/@sound-open-main.png").scaled(55,55,Qt::KeepAspectRatio,Qt::SmoothTransformation));
     } else {
@@ -140,11 +143,11 @@ HGOnlineMainWidget::~HGOnlineMainWidget()
 
 }
 void HGOnlineMainWidget::slotLoginOn(UserInfoS userInfo){
-    if (GlobalSingleton::instance().getSystemInfo("免密登录") == "true"){
+    if (SystemDataManager::instance().get().getSystemInfo("免密登录") == "true"){
         m_loginFlag=true;
         m_loginAuthority=SYSTEM_MANAGER;
         fnInitSoftwarePage();
-        RWDb::writeAuditTrailLog("免密登录成功");
+        LOG_IF.writeAuditTrailLog("免密登录成功");
     }
     else
     {
@@ -154,7 +157,7 @@ void HGOnlineMainWidget::slotLoginOn(UserInfoS userInfo){
         fnInitSoftwarePage();
         m_loginAuthority = (HGOnlineRWDB::readLoginAuthority());
     }
-    GlobalSingleton::instance().loadUserGroupInfo();
+    UserAuditManager::instance().get().loadUserGroupInfo();
 }
 void HGOnlineMainWidget::fnInitSoftwarePage()
 {
@@ -162,7 +165,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
 
     m_deviceLabel = new HGQLabel();
     m_deviceLabel->setParent(this);
-    m_deviceLabel->setText(QString::fromStdString(loadTranslation(m_language, "Device"/*"设备"*/)));//
+    m_deviceLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language, "Device"/*"设备"*/)));//
     QFont font=m_deviceLabel->font();
     font.setPointSize(fontSize);
     m_deviceLabel->setFont(font);
@@ -172,7 +175,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
 
     m_mainPageLabel = new HGQLabel();
     m_mainPageLabel->setParent(this);
-    m_mainPageLabel->setText(QString::fromStdString(loadTranslation(m_language,"MainPage")));//主页"
+    m_mainPageLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"MainPage")));//主页"
     font=m_mainPageLabel->font();
     font.setPointSize(fontSize);
     m_mainPageLabel->setFont(font);
@@ -182,7 +185,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
 
     m_dataLabel = new HGQLabel();
     m_dataLabel->setParent(this);
-    m_dataLabel->setText(QString::fromStdString(loadTranslation(m_language,"Data"))); // "数据");
+    m_dataLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"Data"))); // "数据");
     font=m_dataLabel->font();
     font.setPointSize(fontSize);
     m_dataLabel->setFont(font);
@@ -193,7 +196,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
 
     m_maintenanceLabel = new HGQLabel();
     m_maintenanceLabel->setParent(this);
-    m_maintenanceLabel->setText(QString::fromStdString(loadTranslation(m_language,"Maintenance"))); //"维护");
+    m_maintenanceLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"Maintenance"))); //"维护");
     font=m_maintenanceLabel->font();
     font.setPointSize(fontSize);
     m_maintenanceLabel->setFont(font);
@@ -204,7 +207,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_systemSetLabel = new HGQLabel();
     m_systemSetLabel->setParent(this);
     m_systemSetLabel->setObjectName("SystemManage");
-    m_systemSetLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_systemSetLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_systemSetLabel->objectName().toStdString())));//"系统设置");
     font=m_systemSetLabel->font();
     font.setPointSize(fontSize);
@@ -216,7 +219,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_deviceManageLabel = new HGQLabel();
     m_deviceManageLabel->setParent(this);
     m_deviceManageLabel->setObjectName("DeviceManage");
-    m_deviceManageLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_deviceManageLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_deviceManageLabel->objectName().toStdString())));//"设备管理");
     font=m_deviceManageLabel->font();
     font.setPointSize(fontSize);
@@ -228,7 +231,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_channelSetLabel = new HGQLabel();
     m_channelSetLabel->setObjectName("ChannelSet");
     m_channelSetLabel->setParent(this);
-    m_channelSetLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_channelSetLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_channelSetLabel->objectName().toStdString())));//"通道配置");
     font=m_channelSetLabel->font();
     font.setPointSize(fontSize);
@@ -240,7 +243,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_reagentManageLabel = new HGQLabel();
     m_reagentManageLabel->setParent(this);
     m_reagentManageLabel->setObjectName("ReagentManage");
-    m_reagentManageLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_reagentManageLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_reagentManageLabel->objectName().toStdString())));//"试剂管理");
     font=m_reagentManageLabel->font();
     font.setPointSize(fontSize);
@@ -252,7 +255,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_runningLabel = new HGQLabel();
     m_runningLabel->setParent(this);
     m_runningLabel->setObjectName("RunningStatus");
-    m_runningLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_runningLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_runningLabel->objectName().toStdString())));//"运行状态");
     font=m_runningLabel->font();
     font.setPointSize(fontSize);
@@ -264,7 +267,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_taskManageLabel = new HGQLabel();
     m_taskManageLabel->setParent(this);
     m_taskManageLabel->setObjectName("TaskSequence");
-    m_taskManageLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_taskManageLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_taskManageLabel->objectName().toStdString())));//"任务序列");
     font=m_taskManageLabel->font();
     font.setPointSize(fontSize);
@@ -276,7 +279,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_flowLabel = new HGQLabel();
     m_flowLabel->setParent(this);
     m_flowLabel->setObjectName("Flow");
-    m_flowLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_flowLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_flowLabel->objectName().toStdString())));//"流程");
     font=m_flowLabel->font();
     font.setPointSize(fontSize);
@@ -288,7 +291,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_methodManageLabel = new HGQLabel();
     m_methodManageLabel->setParent(this);
     m_methodManageLabel->setObjectName("Method");
-    m_methodManageLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_methodManageLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_methodManageLabel->objectName().toStdString())));//"方法");
     font=m_methodManageLabel->font();
     font.setPointSize(fontSize);
@@ -300,7 +303,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_analysisRecordLabel = new HGQLabel();
     m_analysisRecordLabel->setParent(this);
     m_analysisRecordLabel->setObjectName("AnalysisRecord");
-    m_analysisRecordLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_analysisRecordLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_analysisRecordLabel->objectName().toStdString())));//"分析记录");
     font=m_analysisRecordLabel->font();
     font.setPointSize(fontSize);
@@ -312,7 +315,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_warningLabel = new HGQLabel();
     m_warningLabel->setParent(this);
     m_warningLabel->setObjectName("WarningInfo");
-    m_warningLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_warningLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_warningLabel->objectName().toStdString())));//"报警信息");
     font=m_warningLabel->font();
     font.setPointSize(fontSize);
@@ -324,7 +327,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_logLabel = new HGQLabel();
     m_logLabel->setParent(this);
     m_logLabel->setObjectName("Log");
-    m_logLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_logLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_logLabel->objectName().toStdString())));//"日志");
     font=m_logLabel->font();
     font.setPointSize(fontSize);
@@ -336,7 +339,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_deviceMaintenanceLabel = new HGQLabel();
     m_deviceMaintenanceLabel->setParent(this);
     m_deviceMaintenanceLabel->setObjectName("DeviceMaintenance");
-    m_deviceMaintenanceLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_deviceMaintenanceLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_deviceMaintenanceLabel->objectName().toStdString())));//"设备维护");
     font=m_deviceMaintenanceLabel->font();
     font.setPointSize(fontSize);
@@ -348,7 +351,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_exceptionHandleLabel = new HGQLabel();
     m_exceptionHandleLabel->setParent(this);
     m_exceptionHandleLabel->setObjectName("ExceptionHandle");
-    m_exceptionHandleLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_exceptionHandleLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_exceptionHandleLabel->objectName().toStdString())));
     font=m_exceptionHandleLabel->font();
     font.setPointSize(fontSize);
@@ -360,7 +363,7 @@ void HGOnlineMainWidget::fnInitSoftwarePage()
     m_materialManageLabel = new HGQLabel();
     m_materialManageLabel->setParent(this);
     m_materialManageLabel->setObjectName("MaterialManage");
-    m_materialManageLabel->setText(QString::fromStdString(loadTranslation(m_language,
+    m_materialManageLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,
         m_materialManageLabel->objectName().toStdString())));//"物料管理");
     font=m_materialManageLabel->font();
     font.setPointSize(fontSize);
@@ -575,7 +578,7 @@ void HGOnlineMainWidget::slotDeviceLabelleftClicked(){
     
 }
 void HGOnlineMainWidget::slotMainPageLabelleftClicked(){
-    if (GlobalSingleton::instance().getSystemInfo("AuthorityStatus")!="true") {
+    if (SystemDataManager::instance().get().getSystemInfo("AuthorityStatus")!="true") {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QObject::tr("软件没有授权，或者授权过期!"));
         return;
     }
@@ -615,7 +618,7 @@ void HGOnlineMainWidget::slotMainPageLabelleftClicked(){
 }
 void HGOnlineMainWidget::slotDataLabelleftClicked()
 {
-    if (GlobalSingleton::instance().getSystemInfo("AuthorityStatus")!="true") {
+    if (SystemDataManager::instance().get().getSystemInfo("AuthorityStatus")!="true") {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "软件没有授权，或者授权过期!");
         return;
     }
@@ -655,7 +658,7 @@ void HGOnlineMainWidget::slotDataLabelleftClicked()
 }
 void HGOnlineMainWidget::slotMaintenanceLabelleftClicked()
 {
-    if (GlobalSingleton::instance().getSystemInfo("AuthorityStatus")!="true") {
+    if (SystemDataManager::instance().get().getSystemInfo("AuthorityStatus")!="true") {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "软件没有授权，或者授权过期!");
         return;
     }
@@ -710,7 +713,7 @@ void HGOnlineMainWidget::slotSystemSetLabelleftClicked()
 }
 void HGOnlineMainWidget::slotDeviceManageLabelleftClicked()
 {
-    if (GlobalSingleton::instance().getSystemInfo("AuthorityStatus")!="true") {
+    if (SystemDataManager::instance().get().getSystemInfo("AuthorityStatus")!="true") {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "软件没有授权，或者授权过期!");
         return;
     }
@@ -733,7 +736,7 @@ void HGOnlineMainWidget::slotDeviceManageLabelleftClicked()
 }
 void HGOnlineMainWidget::slotChannelSetLabelleftClicked()
 {
-    if (GlobalSingleton::instance().getSystemInfo("AuthorityStatus")!="true") {
+    if (SystemDataManager::instance().get().getSystemInfo("AuthorityStatus")!="true") {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "软件没有授权，或者授权过期!");
         return;
     }
@@ -754,7 +757,7 @@ void HGOnlineMainWidget::slotChannelSetLabelleftClicked()
 }
 void HGOnlineMainWidget::slotReagentManageLabelleftClicked()
 {
-    if (GlobalSingleton::instance().getSystemInfo("AuthorityStatus")!="true") {
+    if (SystemDataManager::instance().get().getSystemInfo("AuthorityStatus")!="true") {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "软件没有授权，或者授权过期!");
         return;
     }
@@ -786,24 +789,24 @@ void HGOnlineMainWidget::slotUpdateSoundVolumn(int volumn)
 void HGOnlineMainWidget::slotUpdateLanguage(std::string lang)
 {
     m_language=lang;
-    m_deviceLabel->setText(QString::fromStdString(loadTranslation(m_language, "Device"/*"设备"*/)));
-    m_mainPageLabel->setText(QString::fromStdString(loadTranslation(m_language,"MainPage")));
-    m_dataLabel->setText(QString::fromStdString(loadTranslation(m_language,"Data"))); 
-    m_maintenanceLabel->setText(QString::fromStdString(loadTranslation(m_language,"Maintenance")));
-    m_systemSetLabel->setText(QString::fromStdString(loadTranslation(m_language,"SystemManage")));
-    m_deviceManageLabel->setText(QString::fromStdString(loadTranslation(m_language,"DeviceManage")));
-    m_channelSetLabel->setText(QString::fromStdString(loadTranslation(m_language,"ChannelSet")));
-    m_reagentManageLabel->setText(QString::fromStdString(loadTranslation(m_language,"ReagentManage")));
-    m_runningLabel->setText(QString::fromStdString(loadTranslation(m_language,"RunningStatus")));
-    m_taskManageLabel->setText(QString::fromStdString(loadTranslation(m_language,"TaskSequence")));
-    m_flowLabel->setText(QString::fromStdString(loadTranslation(m_language,"Flow")));
-    m_methodManageLabel->setText(QString::fromStdString(loadTranslation(m_language,"Method")));
-    m_analysisRecordLabel->setText(QString::fromStdString(loadTranslation(m_language,"AnalysisRecord")));
-    m_warningLabel->setText(QString::fromStdString(loadTranslation(m_language,"WarningInfo")));
-    m_logLabel->setText(QString::fromStdString(loadTranslation(m_language,"Log")));
-    m_deviceMaintenanceLabel->setText(QString::fromStdString(loadTranslation(m_language,"DeviceMaintenance")));
-    m_exceptionHandleLabel->setText(QString::fromStdString(loadTranslation(m_language,"ExceptionHandle")));
-    m_materialManageLabel->setText(QString::fromStdString(loadTranslation(m_language,"MaterialManage")));
+    m_deviceLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language, "Device"/*"设备"*/)));
+    m_mainPageLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"MainPage")));
+    m_dataLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"Data"))); 
+    m_maintenanceLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"Maintenance")));
+    m_systemSetLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"SystemManage")));
+    m_deviceManageLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"DeviceManage")));
+    m_channelSetLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"ChannelSet")));
+    m_reagentManageLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"ReagentManage")));
+    m_runningLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"RunningStatus")));
+    m_taskManageLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"TaskSequence")));
+    m_flowLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"Flow")));
+    m_methodManageLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"Method")));
+    m_analysisRecordLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"AnalysisRecord")));
+    m_warningLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"WarningInfo")));
+    m_logLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"Log")));
+    m_deviceMaintenanceLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"DeviceMaintenance")));
+    m_exceptionHandleLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"ExceptionHandle")));
+    m_materialManageLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"MaterialManage")));
 
 
 }
@@ -815,10 +818,10 @@ void HGOnlineMainWidget::clickRelogin(){
     m_loginW->setFixedSize(m_width, m_height);
     m_loginW->show();
 
-    std::string loginName=GlobalSingleton::instance().getSystemInfo("loginName");
-    int index=GlobalSingleton::instance().getUserFieldIndex(loginName);
-    GlobalSingleton::instance().addUserField(index,"QuitTime",getStandardCurTime()+';');
-    RWDb::writeAuditTrailLog(loginName+" quit");
+    std::string loginName=SystemDataManager::instance().get().getSystemInfo("loginName");
+    int index=UserAuditManager::instance().get().getUserFieldIndex(loginName);
+    UserAuditManager::instance().get().addUserField(index,"QuitTime",getStandardCurTime()+';');
+    LOG_IF.writeAuditTrailLog(loginName+" quit");
 
     qRegisterMetaType<UserInfoS>("UserInfoS");
     connect(m_loginW, SIGNAL(loginOn(UserInfoS)), this, SLOT(slotLoginOn(UserInfoS)));
@@ -827,20 +830,20 @@ void HGOnlineMainWidget::clickCurlogin()
 {
     if (!m_loginFlag) return;
     std::string userName=(m_userInfoS.username==""?  \
-        loadTranslation(m_language,"NoPassLogin") : 
-        (loadTranslation(m_language,"UserNo")+"["+m_userInfoS.userno+"]," \
-        +loadTranslation(m_language,"UserName")+"["+m_userInfoS.username+"]," \
-        +loadTranslation(m_language,"Authority")+"["+loadTranslation(m_language, m_userInfoS.authority)+"]"));
+        SvcFactory::CreateConfigService()->LoadTranslation(m_language,"NoPassLogin") : 
+        (SvcFactory::CreateConfigService()->LoadTranslation(m_language,"UserNo")+"["+m_userInfoS.userno+"]," \
+        +SvcFactory::CreateConfigService()->LoadTranslation(m_language,"UserName")+"["+m_userInfoS.username+"]," \
+        +SvcFactory::CreateConfigService()->LoadTranslation(m_language,"Authority")+"["+SvcFactory::CreateConfigService()->LoadTranslation(m_language, m_userInfoS.authority)+"]"));
     QMessageBox::information(this, QString::fromStdString(HG_DEVICE_NAME), 
         "当前用户："+QString::fromStdString(userName));
 }
 void HGOnlineMainWidget::clickDownloadDB(){
     QDialog dialog(this);
-    dialog.setWindowTitle(QString::fromStdString(loadTranslation(m_language,"SelectDBFile")));//"选择要录入的db文件");
+    dialog.setWindowTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"SelectDBFile")));//"选择要录入的db文件");
     dialog.setWindowModality(Qt::ApplicationModal);
     QString dbFileName;
-    QLabel* title=new QLabel(QString::fromStdString(loadTranslation(m_language,"SelectDBFileToCopy")));//"选择下列哪些表需要复制");
-    QLabel* titleRight=new QLabel(QString::fromStdString(loadTranslation(m_language,"MigrateDBFile")));//"需要移植的表");
+    QLabel* title=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"SelectDBFileToCopy")));//"选择下列哪些表需要复制");
+    QLabel* titleRight=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"MigrateDBFile")));//"需要移植的表");
     QListWidget* listW=new QListWidget(&dialog);
     QPushButton* insertBtn=new QPushButton(&dialog);
     insertBtn->setText(">>");
@@ -848,11 +851,11 @@ void HGOnlineMainWidget::clickDownloadDB(){
     backBtn->setText("<<");
     QListWidget* listWRight=new QListWidget(&dialog);
     QPushButton* searchbtn=new QPushButton(&dialog);
-    searchbtn->setText(QString::fromStdString(loadTranslation(m_language,"Search")));//"浏览");
+    searchbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"Search")));//"浏览");
     QPushButton* okbtn=new QPushButton(&dialog);
-    okbtn->setText(QString::fromStdString(loadTranslation(m_language,"Ok")));//"确定");
+    okbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"Ok")));//"确定");
     QPushButton* cancelbtn=new QPushButton(&dialog);
-    cancelbtn->setText(QString::fromStdString(loadTranslation(m_language,"Cancel")));//"取消");
+    cancelbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_language,"Cancel")));//"取消");
     connect(searchbtn,&QPushButton::clicked,[&](){
         listW->clear();
         listWRight->clear();
@@ -945,7 +948,7 @@ void HGOnlineMainWidget::clickSound()
         setflag=false;
     }
     if (!setflag){
-        GlobalSingleton::instance().setSystemInfo("声音value", m_soundFlag?"50":"0");
+        SystemDataManager::instance().get().setSystemInfo("声音value", m_soundFlag?"50":"0");
     }  else  m_systemSetW->setWarnSoundVolumnMute(!m_soundFlag);
 }
 void HGOnlineMainWidget::clickEscape()
@@ -964,15 +967,15 @@ void HGOnlineMainWidget::clickEscape()
     printf("set device from lpc manage offline");
     RWDb::setTaskRunRecordDataDB("");
 
-    GlobalSingleton::instance().setSystemInfo("lastLoginTime", getStandardCurTime());
+    SystemDataManager::instance().get().setSystemInfo("lastLoginTime", getStandardCurTime());
 
-    std::string loginName=GlobalSingleton::instance().getSystemInfo("loginName");
-    int index = GlobalSingleton::instance().getUserFieldIndex(loginName);
-    GlobalSingleton::instance().addUserField(index,"QuitTime",getStandardCurTime()+';');
-    RWDb::writeAuditTrailLog(GlobalSingleton::instance().getSystemInfo("loginName")+" quit");
-    GlobalSingleton::instance().setSystemInfo("loginName", "");
-    GlobalSingleton::instance().setSystemInfo("authority","");
-    GlobalSingleton::instance().saveAll();
+    std::string loginName=SystemDataManager::instance().get().getSystemInfo("loginName");
+    int index = UserAuditManager::instance().get().getUserFieldIndex(loginName);
+    UserAuditManager::instance().get().addUserField(index,"QuitTime",getStandardCurTime()+';');
+    LOG_IF.writeAuditTrailLog(SystemDataManager::instance().get().getSystemInfo("loginName")+" quit");
+    SystemDataManager::instance().get().setSystemInfo("loginName", "");
+    SystemDataManager::instance().get().setSystemInfo("authority","");
+    UserAuditManager::instance().get().saveAll();
     closeDB();
     remove(PARENT_PID_FILE);  // 退出时删除父进程 PID 文件
     this->close();
@@ -1158,81 +1161,126 @@ void HGOnlineMainWidget::fnCloseWindow()
 {
     if (m_systemSetW){
         if (m_systemSetW->closeWindow()){
-            SAFE_DELETE(m_systemSetW);
+            if (m_systemSetW) {
+                delete (m_systemSetW);
+                m_systemSetW = nullptr;
+            }
         } 
     } else if (m_deviceManageW){
         if (m_deviceManageW->closeWindow()){
-            SAFE_DELETE(m_deviceManageW);
+            if (m_deviceManageW) {
+                delete (m_deviceManageW);
+                m_deviceManageW = nullptr;
+            }
         }
     } else if (m_channelSetW){
         if (m_channelSetW->closeWindow()){
-            SAFE_DELETE(m_channelSetW);
+            if (m_channelSetW) {
+                delete (m_channelSetW);
+                m_channelSetW = nullptr;
+            }
         }
     } else if (m_reagentManageW){
         if (m_reagentManageW->closeWindow()){
-            SAFE_DELETE(m_reagentManageW);
+            if (m_reagentManageW) {
+                delete (m_reagentManageW);
+                m_reagentManageW = nullptr;
+            }
         }
     } else if (m_runningW)
     {
         if (m_runningW->closeWindow())
         {
-            SAFE_DELETE(m_runningW);
+            if (m_runningW) {
+                delete (m_runningW);
+                m_runningW = nullptr;
+            }
         }
     } else if (m_taskManageW)
     {
         if (m_taskManageW->closeWindow())
         {
-            SAFE_DELETE(m_taskManageW);
+            if (m_taskManageW) {
+                delete (m_taskManageW);
+                m_taskManageW = nullptr;
+            }
         }
     } else if (m_flowW)
     {
         if (m_flowW->closeWindow())
         {
-            SAFE_DELETE(m_flowW);
+            if (m_flowW) {
+                delete (m_flowW);
+                m_flowW = nullptr;
+            }
         }
     } else if (m_methodManageW)
     {
         if (m_methodManageW->closeWindow())
         {
-            SAFE_DELETE(m_methodManageW);
+            if (m_methodManageW) {
+                delete (m_methodManageW);
+                m_methodManageW = nullptr;
+            }
         }
     } else if (m_analysisRecordW)
     {
         if (m_analysisRecordW->closeWindow())
         {
-            SAFE_DELETE(m_analysisRecordW);
+            if (m_analysisRecordW) {
+                delete (m_analysisRecordW);
+                m_analysisRecordW = nullptr;
+            }
         }
     } else if (m_warningW)
     {
         if (m_warningW->closeWindow())
         {
-            SAFE_DELETE(m_warningW);
+            if (m_warningW) {
+                delete (m_warningW);
+                m_warningW = nullptr;
+            }
         }
     } else if (m_logW)
     {
         if (m_logW->closeWindow())
         {
-            SAFE_DELETE(m_logW);
+            if (m_logW) {
+                delete (m_logW);
+                m_logW = nullptr;
+            }
         }
     } else if (m_deviceMaintenanceW)
     {
         if (m_deviceMaintenanceW->closeWindow())
         {
-            SAFE_DELETE(m_deviceMaintenanceW);
+            if (m_deviceMaintenanceW) {
+                delete (m_deviceMaintenanceW);
+                m_deviceMaintenanceW = nullptr;
+            }
         }
     } else if (m_exceptionHandleW){
         if (m_exceptionHandleW->closeWindow()){
-            SAFE_DELETE(m_exceptionHandleW);
+            if (m_exceptionHandleW) {
+                delete (m_exceptionHandleW);
+                m_exceptionHandleW = nullptr;
+            }
         }
     } else if (m_materialManageW)
     {
         if (m_materialManageW->closeWindow())
         {
-            SAFE_DELETE(m_materialManageW);
+            if (m_materialManageW) {
+                delete (m_materialManageW);
+                m_materialManageW = nullptr;
+            }
         }
     } else if (m_loginW){
         if (m_loginW->closeWindow()){
-            SAFE_DELETE(m_loginW);
+            if (m_loginW) {
+                delete (m_loginW);
+                m_loginW = nullptr;
+            }
         }
     }
 }

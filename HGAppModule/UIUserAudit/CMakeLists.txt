@@ -5,14 +5,14 @@ file(GLOB MOC_HEADERS "inc/*.h")
 # Define Qt libraries based on platform and compilation environment
 if (PLATFORM STREQUAL "x64")
     # Linux native compilation - Qt6
-        set(QT_LIBRARIES
+    set(QT_LIBRARIES
         Qt6::Gui
         Qt6::Core
         Qt6::Widgets
         Qt6::Charts
         Qt6::PrintSupport
     )
-    # Qt6 uses automatic MOC, no need for qt5_wrap_cpp
+    # Qt6 uses automatic MOC, no need for qt6_wrap_cpp
     qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
         set(CMAKE_AUTOMOC ON)
         set(CMAKE_AUTOUIC ON)
@@ -20,34 +20,22 @@ if (PLATFORM STREQUAL "x64")
         # 确保所有包含Q_OBJECT的头文件都被MOC处理
         set_property(SOURCE ${MOC_HEADERS} PROPERTY SKIP_AUTOMOC FALSE)
 elseif (PLATFORM STREQUAL "win32")
-    if(WIN32)
-        # Windows native compilation - Qt6
-        set(QT_LIBRARIES
-            Qt6::Gui
-            Qt6::Core
-            Qt6::Widgets
-            Qt6::Charts
-            Qt6::PrintSupport
-        )
-        # Qt6 uses automatic MOC, but also need explicit MOC processing for static libraries
-        set(CMAKE_AUTOMOC ON)
-        set(CMAKE_AUTOUIC ON)
-        set(CMAKE_AUTORCC ON)
-        # 确保所有包含Q_OBJECT的头文件都被MOC处理
-        set_property(SOURCE ${MOC_HEADERS} PROPERTY SKIP_AUTOMOC FALSE)
-        # 显式调用qt6_wrap_cpp确保MOC文件正确生成
-        qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
-    else()
-        # Linux cross-compilation for Windows - Qt5
-        set(QT_LIBRARIES
-            Qt5::Gui
-            Qt5::Core
-            Qt5::Widgets
-            Qt5::Charts
-            Qt5::PrintSupport
-        )
-        qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
-    endif()
+    # Windows native compilation - Qt6
+    set(QT_LIBRARIES
+        Qt6::Gui
+        Qt6::Core
+        Qt6::Widgets
+        Qt6::Charts
+        Qt6::PrintSupport
+    )
+    # Qt6 uses automatic MOC, but also need explicit MOC processing for static libraries
+    set(CMAKE_AUTOMOC ON)
+    set(CMAKE_AUTOUIC ON)
+    set(CMAKE_AUTORCC ON)
+    # 确保所有包含Q_OBJECT的头文件都被MOC处理
+    set_property(SOURCE ${MOC_HEADERS} PROPERTY SKIP_AUTOMOC FALSE)
+    # 显式调用qt6_wrap_cpp确保MOC文件正确生成
+    qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 endif()
 
 HG_CMAKE_ADD_MODULE(UIUserAudit inc src 
@@ -67,70 +55,22 @@ if (BUILD_SHARED_LIBS)
     if (WIN32)
     else()
         HG_CMAKE_MODULE_DEPEND_PUB(
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
-            HGAuthorityService
-            HGCommunicateService
-            HGImageAlgorithmService
-            HGSecurityService
-            HGBaseAppModule
-            ALSA::ALSA
-            ${OpenCV_LIBRARIES}
-            ${OpencvFreeType_LIBRARY}
-            ${LOG4CPLUS_LIBRARIES}
-            ${CUPS_LIBRARY}
-            ${XLSXIO_READ_LIBRARY}
-            ${XLSXIO_WRITE_LIBRARY}
-            ${HARU_LIBRARY}
-            ${ZeroMQ_LIBRARY}
-            ${MQTT_LIBRARYS}
-            ${LIB_SERIALPORT_LIBRARY}
-            ${LIB_MOSQUITT_LIBRARY}
-            ${PULSE_LIBRARIES}
-            ${LIBSSH_LIBRARIES}
-            ${AVFORMAT_LIBRARIES}
-            ${AVCODEC_LIBRARIES}
-            ${AVUTIL_LIBRARIES}
-            ${SWSCALE_LIBRARIES}
-            ${Boost_LIBRARIES}
-            OpenSSL::Crypto
+            HGUIBaseCore
+            HGIfLog
+            HGIfUserAudit
+            HGIfSecurity
+            HGServiceInterfaces
+            HGIfSystemData
             ${QT_LIBRARIES}
         )
         HG_CMAKE_ADD_SHARED(HGUIUserAudit inc src ${MOC_SRCS})
         HG_CMAKE_MODULE_DEPEND(
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
-            HGAuthorityService
-            HGCommunicateService
-            HGImageAlgorithmService
-            HGSecurityService
-            HGBaseAppModule
-            ALSA::ALSA
-            ${OpenCV_LIBRARIES}
-            ${OpencvFreeType_LIBRARY}
-            ${LOG4CPLUS_LIBRARIES}
-            ${CUPS_LIBRARY}
-            ${XLSXIO_READ_LIBRARY}
-            ${XLSXIO_WRITE_LIBRARY}
-            ${HARU_LIBRARY}
-            ${ZeroMQ_LIBRARY}
-            ${MQTT_LIBRARYS}
-            ${LIB_SERIALPORT_LIBRARY}
-            ${LIB_MOSQUITT_LIBRARY}
-            ${PULSE_LIBRARIES}
-            ${LIBSSH_LIBRARIES}
-            ${AVFORMAT_LIBRARIES}
-            ${AVCODEC_LIBRARIES}
-            ${AVUTIL_LIBRARIES}
-            ${SWSCALE_LIBRARIES}
-            ${Boost_LIBRARIES}
-            OpenSSL::Crypto
+            HGUIBaseCore
+            HGIfLog
+            HGIfUserAudit
+            HGIfSecurity
+            HGServiceInterfaces
+            HGIfSystemData
             ${QT_LIBRARIES}
         )
     endif()

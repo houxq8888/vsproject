@@ -2,6 +2,8 @@
 #include <QGraphicsRectItem>
 #include <QButtonGroup>
 #include "common.h"
+#include "loginterface.h"
+#include "SvcFactory.h"
 
 std::vector<std::string> chartContent={"Spectral","FlowProgress","InTimeResult"};
 std::vector<curColorStruct> curveType={
@@ -21,7 +23,7 @@ HGRunningChartWidget::HGRunningChartWidget(std::string lang,QWidget *parent) : Q
     m_dragDialog(nullptr),
     m_displayDialog(nullptr)
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"RunningStatus"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"RunningStatus"));
     m_layout=new QGridLayout();
     m_layout->setVerticalSpacing(0);
 
@@ -78,7 +80,10 @@ HGRunningChartWidget::~HGRunningChartWidget()
 }
 void HGRunningChartWidget::slotDisplayType(){
     if (m_dragDialog!=NULL) {
-        SAFE_DELETE(m_dragDialog);
+        if (m_dragDialog) {
+            delete (m_dragDialog);
+            m_dragDialog = nullptr;
+        }
         return;
     }
     m_dragDialog=new DraggableDialog(this);
@@ -89,8 +94,8 @@ void HGRunningChartWidget::slotDisplayType(){
 
     for (auto name:chartContent){
         if (m_displayLabels[name].label.flag)
-            m_displayLabels[name].label.label=new LabelWithImg(IMGLEFT,12,getPath("/resources/V1/@1xze-certificate 1.png"),loadTranslation(m_lang,name));
-        else m_displayLabels[name].label.label=new LabelWithImg(IMGLEFT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),loadTranslation(m_lang,name));
+            m_displayLabels[name].label.label=new LabelWithImg(IMGLEFT,12,getPath("/resources/V1/@1xze-certificate 1.png"),SvcFactory::CreateConfigService()->LoadTranslation(m_lang,name));
+        else m_displayLabels[name].label.label=new LabelWithImg(IMGLEFT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),SvcFactory::CreateConfigService()->LoadTranslation(m_lang,name));
     }
 
     layout->addWidget(nameLabel);
@@ -104,7 +109,10 @@ void HGRunningChartWidget::slotDisplayType(){
 }
 void HGRunningChartWidget::slotInTimeDisplayType(){
     if (m_displayDialog!=NULL) {
-        SAFE_DELETE(m_displayDialog);
+        if (m_displayDialog) {
+            delete (m_displayDialog);
+            m_displayDialog = nullptr;
+        }
         return;
     }
     m_displayDialog=new DraggableDialog(this);
@@ -124,7 +132,7 @@ void HGRunningChartWidget::slotInTimeDisplayType(){
         layout->addWidget(it.second.label);
     }
 
-    QLabel* intervalLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"CaptureInterval")));
+    QLabel* intervalLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"CaptureInterval")));
     QComboBox* intervalCombo=new QComboBox();
     intervalCombo->addItem("100 s");
     layout->addWidget(intervalLabel);

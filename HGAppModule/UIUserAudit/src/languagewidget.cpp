@@ -3,6 +3,10 @@
 #include <QTranslator>
 #include <QApplication>
 #include "common.h"
+#include "loginterface.h"
+#include "SystemDataManager.h"
+
+using namespace HGMACHINE;
 
 
 enum {
@@ -41,13 +45,13 @@ bool LanguageWidget::closeWindow()
 }
 void LanguageWidget::fnReadDB()
 {
-    if (GlobalSingleton::instance().getSystemInfo("显示语言")!=""){
-        m_languageComboBox->setCurrentText(QString::fromStdString(GlobalSingleton::instance().getSystemInfo("显示语言")));
+    if (SystemDataManager::instance().get().getSystemInfo("显示语言")!=""){
+        m_languageComboBox->setCurrentText(QString::fromStdString(SystemDataManager::instance().get().getSystemInfo("显示语言")));
     } else m_languageComboBox->setCurrentIndex(-1);
 }
 void LanguageWidget::fnWriteDB()
 {
-    GlobalSingleton::instance().setSystemInfo("显示语言", m_languageComboBox->currentText().toStdString());
+    SystemDataManager::instance().get().setSystemInfo("显示语言", m_languageComboBox->currentText().toStdString());
 }
 void LanguageWidget::switchLanguage(int index)
 {
@@ -55,12 +59,12 @@ void LanguageWidget::switchLanguage(int index)
     switch (index){
         case LANGUAGE_CHINESE:
         m_languageLabel->setText("显示语言");
-        RWDb::writeAuditTrailLog("切换语言为简体中文");
+        LOG_IF.writeAuditTrailLog("切换语言为简体中文");
         emit updateLanguage("zh");
         break;
         case LANGUAGE_ENGLISH:
         m_languageLabel->setText("Language");
-        RWDb::writeAuditTrailLog("切换语言为English");
+        LOG_IF.writeAuditTrailLog("切换语言为English");
         emit updateLanguage("en");
         break;
         default: break;

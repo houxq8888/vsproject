@@ -1,44 +1,46 @@
 #include "hgsharedfilewidget.h"
 #include <QFileDialog>
+#include "SvcFactory.h"
+#include "CommunicateAdapter.h"
 
 
 HGSharedFileWidget::HGSharedFileWidget(std::string name,QWidget *parent)
     : QWidget(parent)
 {
-    m_uploader=nullptr;
+    m_communicate=nullptr;
     m_lang = name; 
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
     m_baselayout=new QGridLayout();
     m_advancedLayout=new QGridLayout();
-    m_baseGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"BaseSet")));
-    m_advancedGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"advanceSet")));
+    m_baseGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"BaseSet")));
+    m_advancedGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"advanceSet")));
     m_baseGroup->setLayout(m_baselayout);
     m_advancedGroup->setLayout(m_advancedLayout);
 
-    m_interfaceLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Interface")));
+    m_interfaceLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Interface")));
     m_interfaceComboBox=new QComboBox();
     m_interfaceComboBox->addItems({"Wifi"});
-    m_encodeTypeLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Encode")));
+    m_encodeTypeLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Encode")));
     m_encodeTypeComboBox=new QComboBox();
     m_encodeTypeComboBox->addItems({"AES","MD5"});
     m_encodeTypeComboBox->setCurrentIndex(0);
     // connect(m_encodeTypeComboBox,&QComboBox::currentIndexChanged,this,&HGEBalanceWidget::fnChangeParam);
-    m_outputEnableLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Output")));
+    m_outputEnableLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Output")));
     m_outputEnableComboBox=new QComboBox();
-    m_outputEnableComboBox->addItems({QString::fromStdString(loadTranslation(m_lang,"On")),
-            QString::fromStdString(loadTranslation(m_lang,"Off"))});
+    m_outputEnableComboBox->addItems({QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"On")),
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Off"))});
     m_outputEnableComboBox->setCurrentIndex(0);
-    m_ipaddressLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"IPAddress")));
+    m_ipaddressLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"IPAddress")));
     m_ipaddressEdit=new QLineEdit();
-    m_usernameLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"User")));
+    m_usernameLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"User")));
     m_usernameEdit=new QLineEdit();
-    m_passwdLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Password")));
+    m_passwdLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Password")));
     m_passwdEdit=new QLineEdit();
-    m_savepathLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"SavePath")));
+    m_savepathLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SavePath")));
     m_savepathEdit=new QLineEdit();
-    m_connectBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Connect")));
-    m_sendFileBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Send")));
+    m_connectBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Connect")));
+    m_sendFileBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Send")));
     connect(m_connectBtn,&QPushButton::clicked,this,&HGSharedFileWidget::slotConnectShared);
     connect(m_sendFileBtn,&QPushButton::clicked,this,&HGSharedFileWidget::slotSendFile);
 
@@ -65,7 +67,10 @@ HGSharedFileWidget::HGSharedFileWidget(std::string name,QWidget *parent)
     m_layout->addWidget(m_advancedGroup,1,0);
 }
 HGSharedFileWidget::~HGSharedFileWidget(){
-
+    if (m_communicate) {
+        delete m_communicate;
+        m_communicate = nullptr;
+    }
 }
 bool HGSharedFileWidget::closeWindow(){
     return true;
@@ -84,24 +89,30 @@ bool HGSharedFileWidget::eventFilter(QObject* obj,QEvent* event){
 }
 void HGSharedFileWidget::slotConnectShared()
 {
-    if (m_uploader == nullptr)
+    if (m_communicate == nullptr)
     {
-        m_uploader = new SshUploader(m_ipaddressEdit->text().toStdString(),
-                                     22, m_usernameEdit->text().toStdString(),
-                                     m_passwdEdit->text().toStdString());
-        if (!m_uploader->connect())
+        m_communicate = new HGMACHINE::CommunicateAdapter();
+        m_communicate->initialize();
+        if (!m_communicate->sshConnect(m_ipaddressEdit->text().toStdString(),
+                                        22,
+                                        m_usernameEdit->text().toStdString(),
+                                        m_passwdEdit->text().toStdString()))
         {
             std::cerr << "failed to connect SSH server\n";
+            delete m_communicate;
+            m_communicate = nullptr;
             return;
         }
-        m_connectBtn->setText(QString::fromStdString(loadTranslation(m_lang, "Disconnect")));
+        m_connectBtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "Disconnect")));
     }
     else
     {
-        if (!m_uploader->disconnect())
+        if (!m_communicate->sshDisconnect())
         {
-            m_connectBtn->setText(QString::fromStdString(loadTranslation(m_lang, "Connect")));
+            m_connectBtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "Connect")));
         }
+        delete m_communicate;
+        m_communicate = nullptr;
     }
 }
 void HGSharedFileWidget::slotSendFile(){
@@ -121,7 +132,7 @@ void HGSharedFileWidget::slotSendFile(){
     std::cout << "文件名（无扩展名）: " << base_name << std::endl;
     std::cout << "扩展名: " << extension << std::endl;
 
-    if (!m_uploader->uploadFile(file_path, m_savepathEdit->text().toStdString() + filename))
+    if (!m_communicate->sshUploadFile(file_path, m_savepathEdit->text().toStdString() + filename))
     {
         std::cerr << "file upload failed\n";
         return;

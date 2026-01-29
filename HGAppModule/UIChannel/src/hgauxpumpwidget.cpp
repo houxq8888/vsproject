@@ -32,7 +32,10 @@ m_lang(lang)
 bool HGAuxPumpWidget::closeWindow(){
     if (m_manipulateW){
         if (m_manipulateW->closeWindow()){
-            SAFE_DELETE(m_manipulateW);
+            if (m_manipulateW) {
+                delete (m_manipulateW);
+                m_manipulateW = nullptr;
+            }
         }
     }
     return true;

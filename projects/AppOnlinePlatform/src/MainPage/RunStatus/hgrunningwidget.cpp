@@ -3,15 +3,17 @@
 #include <QMessageBox>
 #include <QButtonGroup>
 #include "common.h"
+#include "loginterface.h"
+#include "SvcFactory.h"
 
 HGRunningWidget::HGRunningWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
 m_curChannelIndex(1)
 {
-    std::string enterStr=loadTranslation(m_lang,"Enter");
-    std::string runningStr=loadTranslation(m_lang,"RunningStatus");
+    std::string enterStr=SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter");
+    std::string runningStr=SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"RunningStatus");
 
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"RunningStatus"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"RunningStatus"));
 
     m_layout=new QGridLayout();
     m_layout->setVerticalSpacing(0);
@@ -48,14 +50,14 @@ m_curChannelIndex(1)
         #endif
     }
 
-    m_radioBtnChannel1 = new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),loadTranslation(m_lang,"Channel")+std::to_string(1));
+    m_radioBtnChannel1 = new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Channel")+std::to_string(1));
     connect(m_radioBtnChannel1,SIGNAL(clickLeftName(std::string)),this,SLOT(slotLabelClicked(std::string)));
     #ifdef ENABLE_CAS6
 
     #else
-    m_radioBtnChannel2 = new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),loadTranslation(m_lang,"Channel")+std::to_string(2));
-    m_radioBtnChannel3 = new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),loadTranslation(m_lang,"Channel")+std::to_string(3));
-    m_radioBtnChannel4 = new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),loadTranslation(m_lang,"Channel")+std::to_string(4));
+    m_radioBtnChannel2 = new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Channel")+std::to_string(2));
+    m_radioBtnChannel3 = new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Channel")+std::to_string(3));
+    m_radioBtnChannel4 = new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Channel")+std::to_string(4));
     
     connect(m_radioBtnChannel2,SIGNAL(clickLeftName(std::string)),this,SLOT(slotLabelClicked(std::string)));
     connect(m_radioBtnChannel3,SIGNAL(clickLeftName(std::string)),this,SLOT(slotLabelClicked(std::string)));
@@ -160,8 +162,8 @@ void HGRunningWidget::fnInitChartType()
     QButtonGroup *btnGroup=new QButtonGroup();
     btnGroup->setExclusive(true);
 
-    m_deviceStatusBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"DeviceStatus")));
-    m_chartBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"SpectralData")));
+    m_deviceStatusBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DeviceStatus")));
+    m_chartBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SpectralData")));
     btnGroup->addButton(m_deviceStatusBtn);
     btnGroup->addButton(m_chartBtn);
     m_deviceStatusBtn->setCheckable(true);
@@ -205,7 +207,7 @@ void HGRunningWidget::fnInitChartType()
 }
 void HGRunningWidget::slotLabelClicked(std::string name)
 {
-    std::string channelname=loadTranslation(m_lang,"Channel");
+    std::string channelname=SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Channel");
     std::string number=name.substr(name.find_first_of(channelname)+channelname.length());
     int inumber=std::atoi(number.c_str());
     m_curChannelIndex=inumber;
@@ -268,14 +270,14 @@ void HGRunningWidget::setRunningMethodInfo(const QString& strstatus){
 }
 void HGRunningWidget::slotStart(){
     if (getConnectWithMCUStatus()!=LINK_ONLINE) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"NotConnectWithMCU")));
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"NotConnectWithMCU")));
         return;
     }
     // emit signalRunning();
 #ifdef ENABLE_CAS6
     int taskCount=getTaskCount();
     if (taskCount<=0) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"NoTaskToDetect")));
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"NoTaskToDetect")));
         return;
     }
     setStartRunningTaskSequence(true);

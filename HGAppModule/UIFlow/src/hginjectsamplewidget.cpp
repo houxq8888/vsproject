@@ -1,6 +1,7 @@
 #include "hginjectsamplewidget.h"
 #include <sstream>
 #include "common.h"
+#include "SvcFactory.h"
 
 HGInjectSampleWidget::HGInjectSampleWidget(std::string lang,std::string param,std::string name,QWidget *parent) : QWidget(parent),
 m_lang(lang)
@@ -31,7 +32,7 @@ m_lang(lang)
         m_actionPortCombo->addItem(QString::fromStdString(lowerPCPortNames[i]));
     }
 
-    std::map<std::string,std::string> wparam=getParamMap(m_param);
+    std::map<std::string,std::string> wparam=SvcFactory::CreateCommonService()->GetParamMap(m_param);
     m_quyangmoshiCombo->setCurrentText(QString::fromStdString(wparam["取样模式"]));
     setMode();
     connect(m_quyangmoshiCombo,&QComboBox::currentTextChanged,[=](QString str){

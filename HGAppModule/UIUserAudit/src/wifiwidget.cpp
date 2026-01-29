@@ -1,6 +1,6 @@
 #include "wifiwidget.h"
 #include "common.h"
-WifiWidget::WifiWidget(std::string lang,WifiNetwork info,QWidget *parent)
+WifiWidget::WifiWidget(std::string lang,ServiceInterfaces::WifiNetwork info,QWidget *parent)
     :QWidget(parent),
     m_label(nullptr),
     m_isExpand(true),

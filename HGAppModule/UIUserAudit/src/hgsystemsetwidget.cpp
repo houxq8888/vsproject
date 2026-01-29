@@ -3,6 +3,12 @@
 #include <QDebug>
 #include "common.h"
 #include "myToolBox.h"
+#include "loginterface.h"
+#include "UserAuditManager.h"
+#include "SvcFactory.h"
+#include "SystemDataManager.h"
+
+using namespace HGMACHINE;
 
 
 HGSystemSetWidget::HGSystemSetWidget(std::string lang,QWidget *parent) : QWidget(parent),
@@ -10,19 +16,19 @@ HGSystemSetWidget::HGSystemSetWidget(std::string lang,QWidget *parent) : QWidget
     m_lang(lang),
     m_userListW(nullptr)
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"SystemManage"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SystemManage"));
 
-    permissionInfo = GlobalSingleton::instance().getAuthorityDetail();
+    permissionInfo = UserAuditManager::instance().get().getAuthorityDetail();
     
     m_isNoPwdLogin=false;
     m_trackLogFlag=false;
     m_debugModeFlag=false;
 
-    if (GlobalSingleton::instance().getSystemInfo("免密登录")=="true") m_isNoPwdLogin=true;
+    if (SystemDataManager::instance().get().getSystemInfo("免密登录")=="true") m_isNoPwdLogin=true;
     else m_isNoPwdLogin=false;
-    if (GlobalSingleton::instance().getSystemInfo("debug")=="true") m_debugModeFlag=true;
+    if (SystemDataManager::instance().get().getSystemInfo("debug")=="true") m_debugModeFlag=true;
     else m_debugModeFlag=false;
-    if (GlobalSingleton::instance().getSystemInfo("track")=="true") m_trackLogFlag=true;
+    if (SystemDataManager::instance().get().getSystemInfo("track")=="true") m_trackLogFlag=true;
     else m_trackLogFlag=false;
 
     m_toolBox=nullptr;
@@ -43,17 +49,17 @@ HGSystemSetWidget::HGSystemSetWidget(std::string lang,QWidget *parent) : QWidget
     this->setLayout(m_layout);
 
     m_inputEdit=new QLineEdit();
-    m_inputEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input"))); //"请输入");
+    m_inputEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input"))); //"请输入");
     m_searchLabel=new HGQLabel(false,getPath("/resources/V1/@1xmb-search 1.png"));
 
     m_deviceInfoLabel=new LabelWithImg(IMGLEFT,20,getPath("/resources/V1/@1xarcoDesign-home 1.png"),
-        (loadTranslation(m_lang,"DeviceInfo")));//"设备信息");
+        (SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DeviceInfo")));//"设备信息");
     m_systemSetLabel=new LabelWithImg(IMGLEFT,20,getPath("/resources/V1/@1xze-setting-o 1.png"),
-        (loadTranslation(m_lang,"SystemSet")));//"系统设置");
+        (SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SystemSet")));//"系统设置");
     m_searchBeforeLabel=new LabelWithImg(IMGLEFT,20,getPath("/resources/V1/@1xze-friends 1.png"),
-        (loadTranslation(m_lang,"Date from")));//"追溯管理");
+        (SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Date from")));//"追溯管理");
     m_serviceInfoLabel=new LabelWithImg(IMGLEFT,20,getPath("/resources/V1/@1xiconPark-picture-one 1.png"),
-        (loadTranslation(m_lang,"ServiceInfo")));//"服务信息");
+        (SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ServiceInfo")));//"服务信息");
     connect(m_deviceInfoLabel,SIGNAL(clickLeftButton()),this,SLOT(slotClickDeviceInfo()));
     connect(m_systemSetLabel,SIGNAL(clickLeftButton()),this,SLOT(slotClickSystemSet()));
     connect(m_searchBeforeLabel,SIGNAL(clickLeftButton()),this,SLOT(slotClickSearchBefore()));
@@ -105,69 +111,129 @@ bool HGSystemSetWidget::closeWindow()
 {
     if (m_toolBox){
         if (m_toolBox->closeWindow()){
-            SAFE_DELETE(m_toolBox);
+            if (m_toolBox){
+                delete m_toolBox;
+                m_toolBox=nullptr;
+            }
         }
     }
     if (m_deviceInfoW){
         if (m_deviceInfoW->closeWindow()){
-            SAFE_DELETE(m_deviceInfoW);
+            if (m_deviceInfoW){
+                delete m_deviceInfoW;
+                m_deviceInfoW=nullptr;
+            }
         } 
     } 
     if (m_softwareInfoW){
         if (m_softwareInfoW->closeWindow()){
-            SAFE_DELETE(m_softwareInfoW);
+            if (m_softwareInfoW){
+                delete m_softwareInfoW;
+                m_softwareInfoW=nullptr;
+            }
         } 
     }
     if (m_userRegisterW){
         if (m_userRegisterW->closeWindow()){
-            SAFE_DELETE(m_userRegisterW);
+            if (m_userRegisterW){
+                delete m_userRegisterW;
+                m_userRegisterW=nullptr;
+            }
         }
     }
     if (m_userListW){
         if (m_userListW->closeWindow()){
-            SAFE_DELETE(m_userListW);
+            if (m_userListW){
+                delete m_userListW;
+                m_userListW=nullptr;
+            }
         }
     }
     if (m_serviceInfoW){
         if (m_serviceInfoW->closeWindow()){
-            SAFE_DELETE(m_serviceInfoW);
+            if (m_serviceInfoW){
+                delete m_serviceInfoW;
+                m_serviceInfoW=nullptr;
+            }
         }
     }
     {
         if (m_isNoPwdLogin) {
-            GlobalSingleton::instance().setSystemInfo("免密登录", "true");
+            SystemDataManager::instance().get().setSystemInfo("免密登录", "true");
         }
-        else GlobalSingleton::instance().setSystemInfo("免密登录", "false");
-        if (m_debugModeFlag) GlobalSingleton::instance().setSystemInfo("debug","true");
-        else GlobalSingleton::instance().setSystemInfo("debug","false");
-        if (m_trackLogFlag) GlobalSingleton::instance().setSystemInfo("track","true");
-        else GlobalSingleton::instance().setSystemInfo("track","false");
-        GlobalSingleton::instance().saveSystemInfo();
-        SAFE_DELETE(m_loginStatusLabel);
-        SAFE_DELETE(m_debugModelLabel);
-        SAFE_DELETE(m_trackLogLabel);
-        SAFE_DELETE(m_debugModeWarnLabel);
-        SAFE_DELETE(m_trackLogWarnLabel);
-        SAFE_DELETE(m_lockLabel);
-        SAFE_DELETE(m_hline);
-        SAFE_DELETE(m_hline1);
+        else SystemDataManager::instance().get().setSystemInfo("免密登录", "false");
+        if (m_debugModeFlag) SystemDataManager::instance().get().setSystemInfo("debug","true");
+        else SystemDataManager::instance().get().setSystemInfo("debug","false");
+        if (m_trackLogFlag) SystemDataManager::instance().get().setSystemInfo("track","true");
+        else SystemDataManager::instance().get().setSystemInfo("track","false");
+        SystemDataManager::instance().get().saveSystemInfo();
+        if (m_loginStatusLabel);{
+            delete m_loginStatusLabel;
+            m_loginStatusLabel=nullptr;
+        }
+        if (m_debugModelLabel);{
+            delete m_debugModelLabel;
+            m_debugModelLabel=nullptr;
+        }
+        if (m_trackLogLabel);{
+            delete m_trackLogLabel;
+            m_trackLogLabel=nullptr;
+        }
+        if (m_debugModeWarnLabel);{
+            delete m_debugModeWarnLabel;
+            m_debugModeWarnLabel=nullptr;
+        }
+        if (m_trackLogWarnLabel);{
+            delete m_trackLogWarnLabel;
+            m_trackLogWarnLabel=nullptr;
+        }
+        if (m_lockLabel);{
+            delete m_lockLabel;
+            m_lockLabel=nullptr;
+        }
+        if (m_hline);{
+            delete m_hline;
+            m_hline=nullptr;
+        }
+        if (m_hline1);{
+            delete m_hline1;
+            m_hline1=nullptr;
+        }
     }
     
     return true;
 }
 HGSystemSetWidget::~HGSystemSetWidget()
 {
-    SAFE_DELETE(m_deviceInfoW);
-    SAFE_DELETE(m_softwareInfoW);
-    SAFE_DELETE(m_toolBox);
-    SAFE_DELETE(m_userRegisterW);
-    SAFE_DELETE(m_userListW);
-    SAFE_DELETE(m_serviceInfoW);
+    if (m_deviceInfoW);{
+        delete m_deviceInfoW;
+        m_deviceInfoW=nullptr;
+    }
+    if (m_softwareInfoW);{
+        delete m_softwareInfoW;
+        m_softwareInfoW=nullptr;
+    }
+    if (m_toolBox);{
+        delete m_toolBox;
+        m_toolBox=nullptr;
+    }
+    if (m_userRegisterW);{
+        delete m_userRegisterW;
+        m_userRegisterW=nullptr;
+    }
+    if (m_userListW);{
+        delete m_userListW;
+        m_userListW=nullptr;
+    }
+    if (m_serviceInfoW);{
+        delete m_serviceInfoW;
+        m_serviceInfoW=nullptr;
+    }
 }
 void HGSystemSetWidget::slotClickDeviceInfo(){
     closeWindow();
     std::string text=m_deviceInfoLabel->getTextLabel()->text().toStdString();
-    std::string name=findTranslationKey(m_lang, text);
+    std::string name=SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, text);
     // if (!isPermitted(HGOnlineRWDB::readAuthorityInfo(),HGOnlineRWDB::readLoginName(),name)){
     //     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "无此权限，请联系管理员开通！");
     //     return;
@@ -188,14 +254,14 @@ bool HGSystemSetWidget::isToolBoxNull()
 }
 
 void HGSystemSetWidget::slotClickSystemSet(){
-    if (GlobalSingleton::instance().getSystemInfo("AuthorityStatus")!="true") {
+    if (SystemDataManager::instance().get().getSystemInfo("AuthorityStatus")!="true") {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "软件没有授权，或者授权过期!");
         return;
     }
 
     closeWindow();
 
-    std::string name=findTranslationKey(m_lang, m_systemSetLabel->getTextLabel()->text().toStdString());
+    std::string name=SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, m_systemSetLabel->getTextLabel()->text().toStdString());
     // if (!isPermitted(HGOnlineRWDB::readAuthorityInfo(),HGOnlineRWDB::readLoginName(),name)){
     //     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "无此权限，请联系管理员开通！");
     //     return;
@@ -251,10 +317,10 @@ void HGSystemSetWidget::slotClickSystemSet(){
             printf("basePtr is not pointing to a Derived object.\n");
         }
         m_toolBox->setLanguage(m_lang);
-        m_deviceInfoLabel->setLabelText(loadTranslation(m_lang,"DeviceInfo"));//"设备信息");
-        m_systemSetLabel->setLabelText(loadTranslation(m_lang,"SystemSet"));
-        m_searchBeforeLabel->setLabelText(loadTranslation(m_lang,"Date from"));//"追溯管理");
-        m_serviceInfoLabel->setLabelText(loadTranslation(m_lang,"ServiceInfo"));//"服务信息");
+        m_deviceInfoLabel->setLabelText(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DeviceInfo"));//"设备信息");
+        m_systemSetLabel->setLabelText(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SystemSet"));
+        m_searchBeforeLabel->setLabelText(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Date from"));//"追溯管理");
+        m_serviceInfoLabel->setLabelText(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ServiceInfo"));//"服务信息");
         emit updateLanguage(lang);
     });
 
@@ -274,12 +340,12 @@ void HGSystemSetWidget::setWarnSoundVolumnMute(const bool &flag){
     }
 }
 void HGSystemSetWidget::slotClickSearchBefore(){
-    if (GlobalSingleton::instance().getSystemInfo("AuthorityStatus")!="true") {
+    if (SystemDataManager::instance().get().getSystemInfo("AuthorityStatus")!="true") {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "软件没有授权，或者授权过期!");
         return;
     }
     closeWindow();
-    std::string name=findTranslationKey(m_lang, m_searchBeforeLabel->getTextLabel()->text().toStdString());
+    std::string name=SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, m_searchBeforeLabel->getTextLabel()->text().toStdString());
     // if (!isPermitted(HGOnlineRWDB::readAuthorityInfo(),HGOnlineRWDB::readLoginName(),name)){
     //     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "无此权限，请联系管理员开通！");
     //     return;
@@ -288,41 +354,41 @@ void HGSystemSetWidget::slotClickSearchBefore(){
     connect(m_userRegisterW,SIGNAL(registerUserManage()),this,SLOT(slotEnterUserManage()));
     
 
-    m_lockLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Lock")));//"已锁死");
+    m_lockLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Lock")));//"已锁死");
     
     if (!m_isNoPwdLogin){
         m_loginStatusLabel=new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xIOS开关.png"),
-            loadTranslation(m_lang,"NoPassLogin"));
+            SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"NoPassLogin"));
     } else {
         m_loginStatusLabel=new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xIOS开关_enable.png"),
-            loadTranslation(m_lang,"NoPassLogin"));
+            SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"NoPassLogin"));
     }
     connect(m_loginStatusLabel,SIGNAL(clickImgLabel()),this,SLOT(clickNoWdLogin()));
 
     if (!m_trackLogFlag){
         m_trackLogLabel=new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xIOS开关.png"),
-            loadTranslation(m_lang,"AuditTrail"));
+            SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AuditTrail"));
         m_lockLabel->setVisible(false);
     } else {
         m_trackLogLabel=new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xIOS开关_enable.png"),
-            loadTranslation(m_lang,"AuditTrail"));//"审计追踪");
+            SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AuditTrail"));//"审计追踪");
         m_lockLabel->setVisible(true);
     }
     connect(m_trackLogLabel,SIGNAL(clickImgLabel()),this,SLOT(clickTrackLog()));
 
     if (!m_debugModeFlag){
         m_debugModelLabel=new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xIOS开关.png"),
-            loadTranslation(m_lang,"Debug"));
+            SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Debug"));
     } else {
         m_debugModelLabel=new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xIOS开关_enable.png"),
-            loadTranslation(m_lang,"Debug"));
+            SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Debug"));
     }
     connect(m_debugModelLabel,SIGNAL(clickImgLabel()),this,SLOT(clickDebugMode()));
     
     m_trackLogWarnLabel=new LabelWithImg(IMGLEFT,12,getPath("/resources/V1/@1xriLine-rocket-2-line 1.png"),
-        loadTranslation(m_lang,"OpenCanClose"));//打开后不可关闭!");
+        SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"OpenCanClose"));//打开后不可关闭!
     m_debugModeWarnLabel=new LabelWithImg(IMGLEFT,12,getPath("/resources/V1/@1xriLine-rocket-2-line 1.png"),
-        loadTranslation(m_lang,"DebugInformation"));//"初期调试时使用!");
+        SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DebugInformation"));//"初期调试时使用!"
 
     m_hline=new QFrame;
     m_hline->setFrameShape(QFrame::HLine);
@@ -388,7 +454,10 @@ void HGSystemSetWidget::slotBackToSystemSet()
     m_layout->removeWidget(m_userListW);
     if (m_userListW){
         if (m_userListW->closeWindow()){
-            SAFE_DELETE(m_userListW);
+            if (m_userListW){
+                delete m_userListW;
+                m_userListW=nullptr;
+            }
         }
     }
     m_layout->addWidget(m_userRegisterW,0,3,2,3);
@@ -409,8 +478,8 @@ void HGSystemSetWidget::clickTrackLog(){
     m_trackLogFlag=!m_trackLogFlag;
     if (!m_trackLogFlag){
         m_trackLogLabel->setImg(getPath("/resources/V1/@1xIOS开关.png"));
-        GlobalSingleton::instance().setSystemInfo("track", "false");
-        RWDb::writeAuditTrailLog("审计追踪关闭");
+        SystemDataManager::instance().get().setSystemInfo("track", "false");
+        LOG_IF.writeAuditTrailLog("审计追踪关闭");
     }
     else
     {
@@ -423,16 +492,16 @@ void HGSystemSetWidget::clickTrackLog(){
         m_trackLogLabel->setImg(getPath("/resources/V1/@1xIOS开关_enable.png"));
         // QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
         //                      "开启免密登录后，不需要用户名和密码，所有用户都可以登入，请确认！");
-        GlobalSingleton::instance().setSystemInfo("track", "true");
-        RWDb::writeAuditTrailLog("审计追踪开启");
+        SystemDataManager::instance().get().setSystemInfo("track", "true");
+        LOG_IF.writeAuditTrailLog("审计追踪开启");
     }
 }
 void HGSystemSetWidget::clickDebugMode(){
     m_debugModeFlag=!m_debugModeFlag;
     if (!m_debugModeFlag){
         m_debugModelLabel->setImg(getPath("/resources/V1/@1xIOS开关.png"));
-        RWDb::writeAuditTrailLog("调试模式关闭");
-        GlobalSingleton::instance().setSystemInfo("debug", "false");
+        LOG_IF.writeAuditTrailLog("调试模式关闭");
+        SystemDataManager::instance().get().setSystemInfo("debug", "false");
     }
     else
     {
@@ -445,8 +514,8 @@ void HGSystemSetWidget::clickDebugMode(){
         m_debugModelLabel->setImg(getPath("/resources/V1/@1xIOS开关_enable.png"));
         // QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
         //                      "开启免密登录后，不需要用户名和密码，所有用户都可以登入，请确认！");
-        RWDb::writeAuditTrailLog("调试模式开启");
-        GlobalSingleton::instance().setSystemInfo("debug", "true");
+        LOG_IF.writeAuditTrailLog("调试模式开启");
+        SystemDataManager::instance().get().setSystemInfo("debug", "true");
     }
 }
 void HGSystemSetWidget::clickNoWdLogin()
@@ -454,8 +523,8 @@ void HGSystemSetWidget::clickNoWdLogin()
     m_isNoPwdLogin=!m_isNoPwdLogin;
     if (!m_isNoPwdLogin){
         m_loginStatusLabel->setImg(getPath("/resources/V1/@1xIOS开关.png"));
-        RWDb::writeAuditTrailLog("免密登录关闭");
-        GlobalSingleton::instance().setSystemInfo("免密登录", "false");
+        LOG_IF.writeAuditTrailLog("免密登录关闭");
+        SystemDataManager::instance().get().setSystemInfo("免密登录", "false");
     }
     else
     {
@@ -468,17 +537,17 @@ void HGSystemSetWidget::clickNoWdLogin()
         m_loginStatusLabel->setImg(getPath("/resources/V1/@1xIOS开关_enable.png"));
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
                              "开启免密登录后，不需要用户名和密码，所有用户都可以登入，请确认！");
-        RWDb::writeAuditTrailLog("免密登录开启");
-        GlobalSingleton::instance().setSystemInfo("免密登录", "true");
+        LOG_IF.writeAuditTrailLog("免密登录开启");
+        SystemDataManager::instance().get().setSystemInfo("免密登录", "true");
     }
 }
 void HGSystemSetWidget::slotClickDServiceInfo(){
-    if (GlobalSingleton::instance().getSystemInfo("AuthorityStatus")!="true") {
+    if (SystemDataManager::instance().get().getSystemInfo("AuthorityStatus")!="true") {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "软件没有授权，或者授权过期!");
         return;
     }
     closeWindow();
-    std::string name=findTranslationKey(m_lang, m_serviceInfoLabel->getTextLabel()->text().toStdString());
+    std::string name=SvcFactory::CreateConfigService()->FindTranslationKey(m_lang, m_serviceInfoLabel->getTextLabel()->text().toStdString());
     // if (!isPermitted(HGOnlineRWDB::readAuthorityInfo(),HGOnlineRWDB::readLoginName(),name)){
     //     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "无此权限，请联系管理员开通！");
     //     return;

@@ -1,9 +1,9 @@
 #include "HGDashboardWidget.h"
 #include <QDebug>
 #include <QFileDialog>
-#include "HGLogService.h"
+#include "loginterface.h"
 #include "hgcommonutility.h"
-#include <QDesktopWidget>
+#include <QScreen>
 #include "hgcomwithmqtt.h"
 #include "dashboardRWDB.h"
 #include <curl/curl.h>
@@ -15,6 +15,14 @@
 #include <regex>
 #include <sstream>
 #include "systemusage.h"
+#include "RangeConfigDialog.h"
+#include "CommDialog.h"
+#include <QSettings>
+#include <QMessageBox>
+#include <QInputDialog>
+#include <QMenu>
+
+#define ADMIN_PASSWORD "admin"
 // #include <QWebEngineView>
 // #include <QWebEngineSettings>
 #include "maplabel.h"
@@ -53,7 +61,7 @@ bool parseTH(const std::string &data, THData &out) {
     // 检查 "th=" 和 "#" 是否有效
     if (posStart == std::string::npos || posEnd == std::string::npos || posEnd <= posStart + 3) {
         printf("decode TH failed: invalid format or no valid data between 'th=' and '#'\n");
-        HGLogService::getLogInstance(LOG_PATH)->logout("decode TH failed: invalid format or no valid data between 'th=' and '#'\n",LOGERROR);
+        LOG_IF.logError("decode TH failed: invalid format or no valid data between 'th=' and '#'\n");
         return false;
     }
 
@@ -67,17 +75,17 @@ bool parseTH(const std::string &data, THData &out) {
     while (std::getline(ss, tempStr, ',')) {
         try {
             printf("th: %s\n", tempStr.c_str());
-            HGLogService::getLogInstance(LOG_PATH)->logout("decode TH: " + tempStr,LOGINFO);
+            LOG_IF.logInfo("decode TH: " + tempStr);
             numbers.push_back(std::stof(tempStr)); // 转换为 float
         } catch (const std::invalid_argument& e) {
             std::ostringstream errorMsg;
             errorMsg << "decode stof TH failed: " << e.what();
             printf("decode stof TH failed: %s\n", e.what());
-            HGLogService::getLogInstance(LOG_PATH)->logout(errorMsg.str(),LOGERROR);
+            LOG_IF.logError(errorMsg.str());
             return false; // 转换失败
         } catch (const std::out_of_range& e) {
             printf("decode stof TH failed: out of range\n");
-            HGLogService::getLogInstance(LOG_PATH)->logout("decode stof TH failed: out of range",LOGERROR);
+            LOG_IF.logError("decode stof TH failed: out of range");
             return false; // 转换失败
         }
     }
@@ -85,7 +93,7 @@ bool parseTH(const std::string &data, THData &out) {
     // 确保我们解析到了两个数值
     if (numbers.size() != 2) {
         printf("decode TH failed: expected 2 values, got %zu\n", numbers.size());
-        HGLogService::getLogInstance(LOG_PATH)->logout("decode TH failed: expected 2 values, got " + std::to_string(numbers.size()),LOGERROR);
+        LOG_IF.logError("decode TH failed: expected 2 values, got " + std::to_string(numbers.size()));
         return false;
     }
 
@@ -255,28 +263,41 @@ HGDashboardWidget::HGDashboardWidget(QWidget *parent)
     m_ElectricalConductivity2Range.max=14;
     m_vlRange.min=0.01;
     m_vlRange.max=999.99;
+    
+    m_commConfig.mqttHost = "5.tcp.cpolar.cn";
+    m_commConfig.mqttPort = 14519;
+    m_commConfig.mqttUsername = "jwp9Gz8CQhr4DLiCPURT";
+    m_commConfig.mqttPassword = "";
+    m_commConfig.tuzhuangIP = CAN_IP_TUZHUANG;
+    m_commConfig.tuzhuangPort = CAN_PORT_TUZHUANG;
+    m_commConfig.didingIP = CAN_IP_DIDING;
+    m_commConfig.didingPort = CAN_PORT_DIDING;
+    m_commConfig.shuifenIP = CAN_IP_SHUIFEN;
+    m_commConfig.shuifenPort = CAN_PORT_SHUIFEN;
+    
+    loadCommConfig();
+    
     std::ostringstream logtext;
     std::vector<std::map<std::string,std::string>> ipLists=getWirelessIP(); // 获取 wlo1 的 IP
     std::string ip="192.168.1.131";
     for (int i=0;i<int(ipLists.size());i++){
         for (const auto &kv : ipLists[i]) {
             logtext<<"face: "<<kv.first<<" : "<<kv.second<<std::endl;
-            HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+            LOG_IF.logInfo(logtext.str());
             std::cout<<"face: "<<kv.first<<" : "<<kv.second<<std::endl;
             if (kv.first == "ens33" || kv.first == "wlo1") ip=kv.second;
         }
     }
     logtext.str("");
     logtext<<"ip: "<<ip;
-    HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+    LOG_IF.logInfo(logtext.str());
     std::cout<<"ip: "<<ip<<std::endl;
-    // m_mqttclient=new HgComWithLibMQTT(ip,"jwp9Gz8CQhr4DLiCPURT",1883);
-    m_mqttclient=new HgComWithLibMQTT("5.tcp.cpolar.cn","jwp9Gz8CQhr4DLiCPURT",14519);
+    m_mqttclient=new HgComWithLibMQTT(m_commConfig.mqttHost.toStdString(), m_commConfig.mqttUsername.toStdString(), m_commConfig.mqttPort);
     m_mqttclient->start();
 
-    m_socketServer = new HgComWithSocket(SOCKET_Mode::SERVER, CAN_IP_TUZHUANG, CAN_PORT_TUZHUANG);
-    m_socketServerDiding = new HgComWithSocket(SOCKET_Mode::SERVER, CAN_IP_DIDING, CAN_PORT_DIDING);
-    m_socketServerShuifen = new HgComWithSocket(SOCKET_Mode::SERVER, CAN_IP_SHUIFEN, CAN_PORT_SHUIFEN);
+    m_socketServer = new HgComWithSocket(SOCKET_Mode::SERVER, m_commConfig.tuzhuangIP.toStdString(), m_commConfig.tuzhuangPort);
+    m_socketServerDiding = new HgComWithSocket(SOCKET_Mode::SERVER, m_commConfig.didingIP.toStdString(), m_commConfig.didingPort);
+    m_socketServerShuifen = new HgComWithSocket(SOCKET_Mode::SERVER, m_commConfig.shuifenIP.toStdString(), m_commConfig.shuifenPort);
 
     DashboardRWDB::openDB();
 
@@ -320,8 +341,22 @@ HGDashboardWidget::HGDashboardWidget(QWidget *parent)
     std::ostringstream timestr;
     timestr << currentTime.tm_year << "-" << currentTime.tm_mon << "-" << currentTime.tm_mday;
     m_timeLabel=new QLabel(QString::fromStdString(timestr.str()));
+    m_timeLabel->setStyleSheet(
+        "QLabel {"
+        "   color: white;"
+        "   font-family: 黑体;"
+        "   font-size: 14px;"
+        "   font-weight: bold;"
+        "}"
+    );
+    m_timeLabel->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(m_timeLabel, &QLabel::customContextMenuRequested, this, [this](const QPoint& pos) {
+        QMenu menu(this);
+        QAction* adminAction = menu.addAction("管理员配置");
+        connect(adminAction, &QAction::triggered, this, &HGDashboardWidget::onAdminConfig);
+        menu.exec(m_timeLabel->mapToGlobal(pos));
+    });
     m_timeLabel->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
-    m_timeLabel->setStyleSheet("QLabel{color:white;font-weight:bold;font-family:黑体;}");
     m_timeLabel->setFont(font);
 
     timestr.str("");
@@ -404,12 +439,14 @@ HGDashboardWidget::HGDashboardWidget(QWidget *parent)
         m_tableW[i]->horizontalHeader()->setVisible(true);
         m_tableW[i]->setShowGrid(false);
         m_tableW[i]->setEditTriggers(QAbstractItemView::NoEditTriggers);
-        m_tableW[i]->setSelectionMode(QAbstractItemView::NoSelection);
+        m_tableW[i]->setSelectionMode(QAbstractItemView::SingleSelection);
         m_tableW[i]->setFocusPolicy(Qt::NoFocus);
         m_tableW[i]->horizontalHeader()->setStyleSheet("QHeaderView::section{color:rgb(0,176,240);}");
         m_tableW[i]->setFont(font);
         m_tableW[i]->horizontalHeader()->setFont(font);
         m_tableW[i]->setFixedSize(m_width * 0.9,m_height*0.3);
+
+        connect(m_tableW[i], &QTableWidget::cellClicked, this, &HGDashboardWidget::onTableCellClicked);
 
         // 设置背景透明
         m_tableW[i]->setStyleSheet("QTableWidget { background: transparent; }"
@@ -439,10 +476,12 @@ HGDashboardWidget::HGDashboardWidget(QWidget *parent)
         if (firstColumnNames.size() > 0 && secondColumnNames.size() > 0) 
             fillTableData(i,firstColumnNames,secondColumnNames);
     }
+    
+    loadRangeConfig();
 
     // 设置窗口背景颜色
     QPalette palette = this->palette();
-    palette.setColor(QPalette::Background, QColor(0,50,126));  // 设置为 RGB 颜色
+    palette.setColor(QPalette::Window, QColor(0,50,126));  // 设置为 RGB 颜色
     this->setAutoFillBackground(true);  // 自动填充背景
     this->setPalette(palette);
 
@@ -556,7 +595,7 @@ HGDashboardWidget::HGDashboardWidget(QWidget *parent)
             std::ostringstream logtext;
             logtext << "socket tuzhuang start error\n";
             printf(logtext.str().c_str());
-            HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
+            LOG_IF.logError(logtext.str());
         } 
     }).detach();
     // diding
@@ -566,7 +605,7 @@ HGDashboardWidget::HGDashboardWidget(QWidget *parent)
             std::ostringstream logtext;
             logtext << "socket diding start error\n";
             printf(logtext.str().c_str());
-            HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
+            LOG_IF.logError(logtext.str());
         }
     }).detach();
     // shuifen
@@ -576,7 +615,7 @@ HGDashboardWidget::HGDashboardWidget(QWidget *parent)
             std::ostringstream logtext;
             logtext << "socket shuifen start error\n";
             printf(logtext.str().c_str());
-            HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGERROR);
+            LOG_IF.logError(logtext.str());
         }
     }).detach();
 
@@ -642,6 +681,8 @@ HGDashboardWidget::HGDashboardWidget(QWidget *parent)
 
 HGDashboardWidget::~HGDashboardWidget()
 {
+    saveRangeConfig();
+    saveCommConfig();
     DashboardRWDB::closeDB(); 
     m_socketServer->stop();
     m_socketServerDiding->stop();
@@ -1020,9 +1061,9 @@ std::vector<MResultValue> parseMResultValue(const std::string &data, const std::
         std::cout << "value = " << resultValue.value << std::endl;
         std::cout << "time = " << resultValue.time << std::endl;
 
-        HGLogService::getLogInstance(LOG_PATH)->logout("name = " + resultValue.name,LOGINFO);
-        HGLogService::getLogInstance(LOG_PATH)->logout("value = " + std::to_string(resultValue.value),LOGINFO);
-        HGLogService::getLogInstance(LOG_PATH)->logout("time = " + resultValue.time,LOGINFO);
+        LOG_IF.logInfo("name = " + resultValue.name);
+        LOG_IF.logInfo("value = " + std::to_string(resultValue.value));
+        LOG_IF.logInfo("time = " + resultValue.time);
         results.push_back(resultValue);
 
         // 更新搜索位置，跳到下一个可能的匹配
@@ -1031,7 +1072,7 @@ std::vector<MResultValue> parseMResultValue(const std::string &data, const std::
 
     if (results.empty()) {
         std::cout << "No match found for input: " << input << std::endl;
-        HGLogService::getLogInstance(LOG_PATH)->logout("No match found for input: " + input,LOGERROR);
+        LOG_IF.logError("No match found for input: " + input);
     }
 
     return results;
@@ -1150,7 +1191,7 @@ void HGDashboardWidget::fnSlotListenTimerOut()
         if (ret > 0)
         {
             std::cout << "Server reply ["<<i<<"]: ";
-            HGLogService::getLogInstance(LOG_PATH)->logout("Server reply ["+std::to_string(i)+"]: ",LOGINFO);
+            LOG_IF.logInfo("Server reply ["+std::to_string(i)+"]: ");
             for (int i = 0; i < int(reply.size()); i++)
             {
                 std::cout << std::hex << std::setw(2) << std::setfill('0')
@@ -1159,7 +1200,7 @@ void HGDashboardWidget::fnSlotListenTimerOut()
             std::cout << std::dec << std::endl;
             std::string asciiStr = bytesToAscii(reply.data(), reply.size());
             std::cout << "ASCII output ["<<i<<"]: " << asciiStr << std::endl;
-            HGLogService::getLogInstance(LOG_PATH)->logout("ASCII output ["+std::to_string(i)+"]: " + asciiStr,LOGINFO);
+            LOG_IF.logInfo("ASCII output ["+std::to_string(i)+"]: " + asciiStr);
 
             THData th;
             std::string cValue;
@@ -1168,13 +1209,13 @@ void HGDashboardWidget::fnSlotListenTimerOut()
             {
 
                 printf("parseth temp and humidity: %.2f,%.2f\n",th.temperature,th.humidity);
-                HGLogService::getLogInstance(LOG_PATH)->logout("parseth temp and humidity: "+std::to_string(th.temperature)+","+std::to_string(th.humidity),LOGINFO);
+                LOG_IF.logInfo("parseth temp and humidity: "+std::to_string(th.temperature)+","+std::to_string(th.humidity));
                 std::ostringstream ss;
                 ss << th.temperature << "°C, " << th.humidity << "%";
                 m_rightTimeLabel->setText(QString::fromStdString(ss.str()));
             } else {
                 printf("parse TH error\n");
-                HGLogService::getLogInstance(LOG_PATH)->logout("parse TH error",LOGERROR);
+                LOG_IF.logError("parse TH error");
             }
             // 仪器状态
             std::vector<std::string> dictkey; // 字典
@@ -1284,7 +1325,8 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                 dataInfo.ts = getStandardCurTime();
                 dataInfo.value = std::to_string(v);
                 dataInfo.color = QColor(179, 255, 251);
-                if (v > m_vlRange.max || v < m_vlRange.min)
+                Range range = getConfiguredRange(i, row);
+                if (v > range.max || v < range.min)
                 {
                     dataInfo.status = "❌不合格";
                     dataInfo.iconpath = m_basePath + "/LOGO/ng.png";
@@ -1314,7 +1356,8 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                 msg["value"]=std::to_string(v.value);
                 if (dataType==TUZHUANG){
                     if (v.name=="m31"){
-                        if (v.value > m_Alkalinity1Range.max || v.value < m_Alkalinity1Range.min){
+                        Range range = getConfiguredRange(TUZHUANG, 0);
+                        if (v.value > range.max || v.value < range.min){
                             dataInfo.status = "❌不合格";
                             dataInfo.iconpath = m_basePath + "/LOGO/ng.png";
                         } else {
@@ -1324,7 +1367,8 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                         m_Alkalinity1Curve->fnUpdateData(msg);
                         mresultIndex=0;
                     } else if (v.name=="m61"){
-                        if (v.value > m_Alkalinity2Range.max || v.value < m_Alkalinity2Range.min){
+                        Range range = getConfiguredRange(TUZHUANG, 1);
+                        if (v.value > range.max || v.value < range.min){
                             dataInfo.status = "❌不合格";
                             dataInfo.iconpath = m_basePath + "/LOGO/ng.png";
                         } else {
@@ -1336,7 +1380,8 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                     }
                 } else if (dataType==SHUIFEN){
                     if (v.name=="m31"){
-                        if (v.value > m_shuifenChannel1Range.max || v.value < m_shuifenChannel1Range.min){
+                        Range range = getConfiguredRange(SHUIFEN, 0);
+                        if (v.value > range.max || v.value < range.min){
                             dataInfo.status = "❌不合格";
                             dataInfo.iconpath = m_basePath + "/LOGO/ng.png";
                         } else {
@@ -1346,7 +1391,8 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                         m_shuifenChannel1Curve->fnUpdateData(msg);
                         mresultIndex=0;
                     } else if (v.name=="m61"){
-                        if (v.value > m_shuifenChannel2Range.max || v.value < m_shuifenChannel2Range.min){
+                        Range range = getConfiguredRange(SHUIFEN, 1);
+                        if (v.value > range.max || v.value < range.min){
                             dataInfo.status = "❌不合格";
                             dataInfo.iconpath = m_basePath + "/LOGO/ng.png";
                         } else {
@@ -1358,7 +1404,8 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                     }
                 } else if (dataType==DIDING){
                     if (v.name=="m11"){
-                        if (v.value > m_didingChannel1Range.max || v.value < m_didingChannel1Range.min){
+                        Range range = getConfiguredRange(DIDING, 0);
+                        if (v.value > range.max || v.value < range.min){
                             dataInfo.status = "❌不合格";
                             dataInfo.iconpath = m_basePath + "/LOGO/ng.png";
                         } else {
@@ -1368,7 +1415,8 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                         m_didingChannel1Curve->fnUpdateData(msg);
                         mresultIndex=0;
                     } else if (v.name=="m31"){
-                        if (v.value > m_didingChannel2Range.max || v.value < m_didingChannel2Range.min){
+                        Range range = getConfiguredRange(DIDING, 1);
+                        if (v.value > range.max || v.value < range.min){
                             dataInfo.status = "❌不合格";
                             dataInfo.iconpath = m_basePath + "/LOGO/ng.png";
                         } else {
@@ -1378,7 +1426,8 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                         m_didingChannel2Curve->fnUpdateData(msg);
                         mresultIndex=1;
                     } else if (v.name=="m41"){
-                        if (v.value > m_didingChannel3Range.max || v.value < m_didingChannel3Range.min){
+                        Range range = getConfiguredRange(DIDING, 2);
+                        if (v.value > range.max || v.value < range.min){
                             dataInfo.status = "❌不合格";
                             dataInfo.iconpath = m_basePath + "/LOGO/ng.png";
                         } else {
@@ -1388,7 +1437,8 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                         m_didingChannel3Curve->fnUpdateData(msg);
                         mresultIndex=2;
                     } else if (v.name=="m61"){
-                        if (v.value > m_didingChannel4Range.max || v.value < m_didingChannel4Range.min){
+                        Range range = getConfiguredRange(DIDING, 3);
+                        if (v.value > range.max || v.value < range.min){
                             dataInfo.status = "❌不合格";
                             dataInfo.iconpath = m_basePath + "/LOGO/ng.png";
                         } else {
@@ -1459,7 +1509,8 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                     dataInfo.ts = dbmsg.at("ts");
                     dataInfo.value = kv.second;
                     dataInfo.color = QColor(179, 255, 251);
-                    if (value > m_Alkalinity1Range.max || value < m_Alkalinity1Range.min)
+                    Range range = getConfiguredRange(TUZHUANG, 0);
+                    if (value > range.max || value < range.min)
                     {
                         dataInfo.status = "❌不合格";
                         dataInfo.iconpath = m_basePath + "/LOGO/ng.png";
@@ -1478,7 +1529,8 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                     dataInfo.ts = dbmsg.at("ts");
                     dataInfo.value = kv.second;
                     dataInfo.color = QColor(179, 255, 251);
-                    if (value > m_Alkalinity2Range.max || value < m_Alkalinity2Range.min)
+                    Range range = getConfiguredRange(TUZHUANG, 1);
+                    if (value > range.max || value < range.min)
                     {
                         dataInfo.status = "❌不合格";
                         dataInfo.iconpath = m_basePath + "/LOGO/ng.png";
@@ -1540,7 +1592,8 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                     dataInfo.ts = dbmsg.at("ts");
                     dataInfo.value = kv.second;
                     dataInfo.color = QColor(179, 255, 251);
-                    if (value > m_ElectricalConductivity1Range.max || value < m_ElectricalConductivity1Range.min)
+                    Range range = getConfiguredRange(TUZHUANG, 2);
+                    if (value > range.max || value < range.min)
                     {
                         dataInfo.status = "❌不合格";
                         dataInfo.iconpath = m_basePath + "/LOGO/ng.png";
@@ -1649,7 +1702,7 @@ void HGDashboardWidget::fnSlotListenTimerOut()
                 }
 
                 logtext<<"msg key:"<<kv.first<<",value:"<<kv.second<<",";
-                HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+                LOG_IF.logInfo(logtext.str());
                 // std::cout << kv.first << " : " << kv.second << ",";
             }
             // std::cout<<std::endl;
@@ -2232,4 +2285,276 @@ bool HGDashboardWidget::eventFilter(QObject* obj,QEvent* event){
         }
     }
     return QWidget::eventFilter(obj,event);
+}
+
+void HGDashboardWidget::loadRangeConfig()
+{
+    QString configPath = qApp->applicationDirPath() + "/range_config.ini";
+    QSettings settings(configPath, QSettings::IniFormat);
+    
+    settings.beginGroup("Ranges");
+    QStringList keys = settings.allKeys();
+    for (const QString& key : keys) {
+        QStringList rangeStr = settings.value(key).toString().split(",");
+        if (rangeStr.size() == 2) {
+            Range range;
+            range.min = rangeStr[0].toFloat();
+            range.max = rangeStr[1].toFloat();
+            m_rangeConfigMap[key] = range;
+        }
+    }
+    settings.endGroup();
+    
+    settings.beginGroup("ItemNames");
+    keys = settings.allKeys();
+    for (const QString& key : keys) {
+        m_itemNameMap[key] = settings.value(key).toString();
+    }
+    settings.endGroup();
+    
+    LOG_IF.logInfo("Range config loaded from: " + configPath.toStdString());
+    
+    for (int tableType = 0; tableType < 3; tableType++) {
+        if (m_tableW[tableType]) {
+            for (int row = 0; row < m_tableW[tableType]->rowCount(); row++) {
+                updateRangeDisplay(tableType, row);
+                updateItemNameDisplay(tableType, row);
+            }
+        }
+    }
+}
+
+void HGDashboardWidget::saveRangeConfig()
+{
+    QString configPath = qApp->applicationDirPath() + "/range_config.ini";
+    QSettings settings(configPath, QSettings::IniFormat);
+    
+    settings.beginGroup("Ranges");
+    for (auto it = m_rangeConfigMap.begin(); it != m_rangeConfigMap.end(); ++it) {
+        QString rangeStr = QString("%1,%2").arg(it.value().min).arg(it.value().max);
+        settings.setValue(it.key(), rangeStr);
+    }
+    settings.endGroup();
+    
+    settings.beginGroup("ItemNames");
+    for (auto it = m_itemNameMap.begin(); it != m_itemNameMap.end(); ++it) {
+        settings.setValue(it.key(), it.value());
+    }
+    settings.endGroup();
+    
+    settings.sync();
+    
+    LOG_IF.logInfo("Range config saved to: " + configPath.toStdString());
+}
+
+void HGDashboardWidget::onTableCellClicked(int row, int column)
+{
+    QTableWidget* table = qobject_cast<QTableWidget*>(sender());
+    if (!table) return;
+    
+    int tableType = -1;
+    for (int i = 0; i < 3; i++) {
+        if (table == m_tableW[i]) {
+            tableType = i;
+            break;
+        }
+    }
+    
+    if (tableType == -1) return;
+    
+    if (column == 0 || column == 1) {
+        QString key = getRangeKey(tableType, row);
+        QString itemName = m_itemNameMap.value(key, "");
+        
+        if (itemName.isEmpty()) {
+            QTableWidgetItem* item = table->item(row, 0);
+            if (item) {
+                itemName = item->text();
+                m_itemNameMap[key] = itemName;
+            }
+        }
+        
+        Range currentRange;
+        if (m_rangeConfigMap.contains(key)) {
+            currentRange = m_rangeConfigMap[key];
+        } else {
+            Range* defaultRange = getRangeForItem(tableType, row);
+            if (defaultRange) {
+                currentRange = *defaultRange;
+            } else {
+                currentRange.min = 0;
+                currentRange.max = 100;
+            }
+        }
+        
+        RangeConfigDialog dialog(itemName, currentRange, this);
+        if (dialog.exec() == QDialog::Accepted) {
+            Range newRange = dialog.getRange();
+            QString newItemName = dialog.getItemName();
+            
+            m_rangeConfigMap[key] = newRange;
+            
+            if (dialog.isNameModified()) {
+                m_itemNameMap[key] = newItemName;
+                updateItemNameDisplay(tableType, row);
+            }
+            
+            saveRangeConfig();
+            updateRangeDisplay(tableType, row);
+            
+            LOG_IF.logInfo("Range and name updated for " + newItemName.toStdString() + ": " + 
+                          QString("%1-%2").arg(newRange.min).arg(newRange.max).toStdString());
+        }
+    }
+}
+
+Range* HGDashboardWidget::getRangeForItem(int tableType, int row)
+{
+    switch (tableType) {
+        case TUZHUANG:
+            switch (row) {
+                case 0: return &m_didingChannel1Range;
+                case 1: return &m_didingChannel2Range;
+                case 2: return &m_ElectricalConductivity1Range;
+                case 3: return &m_Alkalinity1Range;
+                case 4: return &m_vlRange;
+            }
+            break;
+        case DIDING:
+            switch (row) {
+                case 0: return &m_didingChannel1Range;
+                case 1: return &m_didingChannel2Range;
+                case 2: return &m_didingChannel3Range;
+                case 3: return &m_didingChannel4Range;
+            }
+            break;
+        case SHUIFEN:
+            switch (row) {
+                case 0: return &m_shuifenChannel1Range;
+                case 1: return &m_shuifenChannel2Range;
+            }
+            break;
+    }
+    return nullptr;
+}
+
+QString HGDashboardWidget::getRangeKey(int tableType, int row)
+{
+    QString tablePrefix;
+    switch (tableType) {
+        case TUZHUANG: tablePrefix = "TUZHUANG"; break;
+        case DIDING: tablePrefix = "DIDING"; break;
+        case SHUIFEN: tablePrefix = "SHUIFEN"; break;
+    }
+    return QString("%1_ROW%2").arg(tablePrefix).arg(row);
+}
+
+void HGDashboardWidget::updateRangeDisplay(int tableType, int row)
+{
+    QString key = getRangeKey(tableType, row);
+    if (m_rangeConfigMap.contains(key)) {
+        Range range = m_rangeConfigMap[key];
+        QString rangeText = QString("%1-%2").arg(range.min).arg(range.max);
+        QTableWidgetItem* item = m_tableW[tableType]->item(row, 1);
+        if (item) {
+            item->setText(rangeText);
+        }
+    }
+}
+
+void HGDashboardWidget::updateItemNameDisplay(int tableType, int row)
+{
+    QString key = getRangeKey(tableType, row);
+    if (m_itemNameMap.contains(key)) {
+        QString itemName = m_itemNameMap[key];
+        QTableWidgetItem* item = m_tableW[tableType]->item(row, 0);
+        if (item) {
+            item->setText(itemName);
+        }
+    }
+}
+
+Range HGDashboardWidget::getConfiguredRange(int tableType, int row)
+{
+    QString key = getRangeKey(tableType, row);
+    if (m_rangeConfigMap.contains(key)) {
+        return m_rangeConfigMap[key];
+    }
+    
+    Range* defaultRange = getRangeForItem(tableType, row);
+    if (defaultRange) {
+        return *defaultRange;
+    }
+    
+    Range range;
+    range.min = 0;
+    range.max = 100;
+    return range;
+}
+
+void HGDashboardWidget::loadCommConfig()
+{
+    QString configPath = qApp->applicationDirPath() + "/range_config.ini";
+    QSettings settings(configPath, QSettings::IniFormat);
+    
+    settings.beginGroup("CommConfig");
+    m_commConfig.mqttHost = settings.value("mqttHost", m_commConfig.mqttHost).toString();
+    m_commConfig.mqttPort = settings.value("mqttPort", m_commConfig.mqttPort).toInt();
+    m_commConfig.mqttUsername = settings.value("mqttUsername", m_commConfig.mqttUsername).toString();
+    m_commConfig.mqttPassword = settings.value("mqttPassword", m_commConfig.mqttPassword).toString();
+    m_commConfig.tuzhuangIP = settings.value("tuzhuangIP", m_commConfig.tuzhuangIP).toString();
+    m_commConfig.tuzhuangPort = settings.value("tuzhuangPort", m_commConfig.tuzhuangPort).toInt();
+    m_commConfig.didingIP = settings.value("didingIP", m_commConfig.didingIP).toString();
+    m_commConfig.didingPort = settings.value("didingPort", m_commConfig.didingPort).toInt();
+    m_commConfig.shuifenIP = settings.value("shuifenIP", m_commConfig.shuifenIP).toString();
+    m_commConfig.shuifenPort = settings.value("shuifenPort", m_commConfig.shuifenPort).toInt();
+    settings.endGroup();
+    
+    LOG_IF.logInfo("Comm config loaded from: " + configPath.toStdString());
+}
+
+void HGDashboardWidget::saveCommConfig()
+{
+    QString configPath = qApp->applicationDirPath() + "/range_config.ini";
+    QSettings settings(configPath, QSettings::IniFormat);
+    
+    settings.beginGroup("CommConfig");
+    settings.setValue("mqttHost", m_commConfig.mqttHost);
+    settings.setValue("mqttPort", m_commConfig.mqttPort);
+    settings.setValue("mqttUsername", m_commConfig.mqttUsername);
+    settings.setValue("mqttPassword", m_commConfig.mqttPassword);
+    settings.setValue("tuzhuangIP", m_commConfig.tuzhuangIP);
+    settings.setValue("tuzhuangPort", m_commConfig.tuzhuangPort);
+    settings.setValue("didingIP", m_commConfig.didingIP);
+    settings.setValue("didingPort", m_commConfig.didingPort);
+    settings.setValue("shuifenIP", m_commConfig.shuifenIP);
+    settings.setValue("shuifenPort", m_commConfig.shuifenPort);
+    settings.endGroup();
+    
+    settings.sync();
+    
+    LOG_IF.logInfo("Comm config saved to: " + configPath.toStdString());
+}
+
+void HGDashboardWidget::onAdminConfig()
+{
+    bool ok;
+    QString password = QInputDialog::getText(this, "管理员验证", "请输入管理员密码:", QLineEdit::Password, "", &ok);
+    
+    if (!ok) return;
+    
+    if (password != ADMIN_PASSWORD) {
+        QMessageBox::warning(this, "密码错误", "管理员密码错误！");
+        return;
+    }
+    
+    CommDialog dialog(m_commConfig, this);
+    if (dialog.exec() == QDialog::Accepted) {
+        m_commConfig = dialog.getConfig();
+        saveCommConfig();
+        
+        QMessageBox::information(this, "提示", "通讯配置已保存，需要重启应用才能生效！");
+        
+        LOG_IF.logInfo("Comm config updated by admin");
+    }
 }

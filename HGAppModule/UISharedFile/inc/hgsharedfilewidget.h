@@ -13,7 +13,7 @@
 #include <QTextEdit>
 #include "mykeyboard.h"
 #include "common.h"
-#include "hgcomwithssh.h"
+#include "ICommunicate.h"
 
 
 class HGSharedFileWidget : public QWidget
@@ -49,7 +49,7 @@ private:
     QPushButton* m_connectBtn, *m_sendFileBtn;
 
 private:
-    SshUploader* m_uploader;
+    HGMACHINE::ICommunicate* m_communicate;
 };
 
 #endif // HGSHAREDFILEWIDGET_H

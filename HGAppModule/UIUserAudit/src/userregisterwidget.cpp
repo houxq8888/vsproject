@@ -2,14 +2,17 @@
 #include "common.h"
 #include <QShortcut>
 #include <QMessageBox>
-#include "globalsingleton.h"
+#include "UserAuditManager.h"
 #include "SvcFactory.h"
+#include "loginterface.h"
+#include "SystemDataManager.h"
 
+using namespace HGMACHINE;
 
 UserRegisterWidget::UserRegisterWidget(std::string lang,bool isNoPwdLogin,QWidget *parent) : QWidget(parent),
 m_lang(lang)
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Date from"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Date from"));
     m_isNoPwdLogin=isNoPwdLogin;
     fnInit();
 }
@@ -18,26 +21,26 @@ void UserRegisterWidget::fnInit()
     m_layout=new QGridLayout();
     m_widgetLayout=new QGridLayout();
     this->setLayout(m_widgetLayout);
-    m_groupBox=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"UserManage")),this);
+    m_groupBox=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UserManage")),this);
     m_groupBox->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
 
     m_groupBox->setLayout(m_layout);
 
     m_userLabel=new QLabel();
-    m_userLabel->setText(QString::fromStdString(loadTranslation(m_lang,"UserAccount")));
+    m_userLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UserAccount")));
     m_userEdit=new QLineEdit();
-    m_userEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
+    m_userEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));
     connect(m_userEdit,SIGNAL(textChanged(QString)),this,SLOT(slotGetUserName(QString)));
 
 
     m_passwdLabel=new QLabel();
-    m_passwdLabel->setText(QString::fromStdString(loadTranslation(m_lang,"Password")));//"密码");
+    m_passwdLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Password")));//"密码");
     m_passwdEdit=new QLineEdit();
-    m_passwdEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
+    m_passwdEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));
     m_passwdEdit->setEchoMode(QLineEdit::PasswordEchoOnEdit);
     connect(m_passwdEdit,SIGNAL(textChanged(QString)),this,SLOT(slotGetUserPwd(QString)));
 
-    m_registerBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Login")));
+    m_registerBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Login")));
     QShortcut *shortcut=new QShortcut(QKeySequence(Qt::Key_Return),this);
     connect(shortcut,&QShortcut::activated,m_registerBtn,&QPushButton::click);
     connect(m_registerBtn,        SIGNAL(clicked()),this,SLOT(clickRegister()));
@@ -55,13 +58,13 @@ void UserRegisterWidget::fnInit()
 }
 bool UserRegisterWidget::closeWindow()
 {
-    GlobalSingleton::instance().saveUsersInfo();
+    UserAuditManager::instance().get().saveUsersInfo();
     return true;
 }
 void UserRegisterWidget::clickRegister()
 {
-    std::vector<std::string> authorities = splitStr(GlobalSingleton::instance().getSystemInfo("authority"),';');
-    if(GlobalSingleton::instance().getSystemInfo("免密登录")=="true")
+    std::vector<std::string> authorities = SvcFactory::CreateCommonService()->SplitString(SystemDataManager::instance().get().getSystemInfo("authority"),';');
+    if(SystemDataManager::instance().get().getSystemInfo("免密登录")=="true")
     { 
         emit registerUserManage();
         return;
@@ -76,24 +79,24 @@ void UserRegisterWidget::clickRegister()
             QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),"系统登录账户没有权限访问，请在此页面输入超级管理员/管理员/厂家账号，才可进入！");
             return;
         } else if (userName!="") {
-            std::string authority=GlobalSingleton::instance().getUserAuthority(userName);
+            std::string authority=UserAuditManager::instance().get().getUserAuthority(userName);
             if (authority.find("Manager")==std::string::npos &&
                 authority.find("SystemManager")==std::string::npos &&
                 authority.find("所有权限")==std::string::npos)
             {
                 QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
                     "输入账户["+QString::fromStdString(userName)+"]没有权限访问，请在此页面输入超级管理员/管理员/厂家账号，才可进入！");
-                RWDb::writeAuditTrailLog("输入账户["+userName+"]没有权限访问，请在此页面输入超级管理员/管理员/厂家账号，才可进入！");
+                LOG_IF.writeAuditTrailLog("输入账户["+userName+"]没有权限访问，请在此页面输入超级管理员/管理员/厂家账号，才可进入！");
                 return;
             } else {
-                GlobalSingleton::instance().setSystemInfo("enterUsersManageName", userName);
-                GlobalSingleton::instance().setSystemInfo("enterUsersManageAuthority", authority);
+                SystemDataManager::instance().get().setSystemInfo("enterUsersManageName", userName);
+                SystemDataManager::instance().get().setSystemInfo("enterUsersManageAuthority", authority);
             }
         }
     } else {
-        RWDb::writeAuditTrailLog("系统登录账户有用户组管理权限，可进入");
-        GlobalSingleton::instance().setSystemInfo("enterUsersManageName", GlobalSingleton::instance().getSystemInfo("loginName"));
-        GlobalSingleton::instance().setSystemInfo("enterUsersManageAuthority", GlobalSingleton::instance().getSystemInfo("authority"));
+        LOG_IF.writeAuditTrailLog("系统登录账户有用户组管理权限，可进入");
+        SystemDataManager::instance().get().setSystemInfo("enterUsersManageName", SystemDataManager::instance().get().getSystemInfo("loginName"));
+        SystemDataManager::instance().get().setSystemInfo("enterUsersManageAuthority", SystemDataManager::instance().get().getSystemInfo("authority"));
 
         emit registerUserManage();
         return;
@@ -101,7 +104,7 @@ void UserRegisterWidget::clickRegister()
 
     bool found=false;
     bool passwdFlag=false;
-    std::vector<std::map<std::string,std::string>> userInfos=GlobalSingleton::instance().getUsersInfo();
+    std::vector<std::map<std::string,std::string>> userInfos=UserAuditManager::instance().get().getUsersInfo();
     std::string userNo,userAuthority,maxWrongPasswdCnt;
     int index=-1;
 
@@ -114,7 +117,7 @@ void UserRegisterWidget::clickRegister()
                 if (userInfos[i]["AccountManagement"] == "Disable")
                 {
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(userName)+"该用户已禁用！");
-                    RWDb::writeAuditTrailLog(userName+ "已禁用！");
+                    LOG_IF.writeAuditTrailLog(userName+ "已禁用！");
                     return;
                 }
                 else
@@ -130,23 +133,23 @@ void UserRegisterWidget::clickRegister()
                         int minutes = int(countsecond / 60.0 + 0.5);
                         if (minutes < 30){
                             QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "该用户已被锁，剩余时间：" + QString::number(30-minutes) + "分钟！");
-                            RWDb::writeAuditTrailLog(userName+ "该用户已被锁，剩余时间：" + std::to_string(30-minutes) + "分钟！");
+                            LOG_IF.writeAuditTrailLog(userName+ "该用户已被锁，剩余时间：" + std::to_string(30-minutes) + "分钟！");
                             return;
                         } else {
                             QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "该用户已解锁");
-                            RWDb::writeAuditTrailLog(userName+ "该用户已解锁");
+                            LOG_IF.writeAuditTrailLog(userName+ "该用户已解锁");
                         }
                     }        
                 }
             }
             maxWrongPasswdCnt=userInfos[i]["PasswdInputLimitCount"];
             index=i;
-            GlobalSingleton::instance().setUserField(index,"AccountManagement","Enable");
+            UserAuditManager::instance().get().setUserField(index,"AccountManagement","Enable");
 
             if (userPwd == "")
             {
                 QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "请输入密码！");
-                RWDb::writeAuditTrailLog("请输入密码！");
+                LOG_IF.writeAuditTrailLog("请输入密码！");
                 return;
             }
             if (userInfos[i]["Password"] == userPwd)
@@ -164,7 +167,7 @@ void UserRegisterWidget::clickRegister()
     if (!found)
     {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "用户不存在！");
-        RWDb::writeAuditTrailLog(userName+"用户不存在！");
+        LOG_IF.writeAuditTrailLog(userName+"用户不存在！");
         return;
     }
     else
@@ -175,14 +178,14 @@ void UserRegisterWidget::clickRegister()
             if (wrongPasswdCnt > std::atoi(maxWrongPasswdCnt.c_str()))
             {
                 QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "密码输入错误次数已达上限[" + QString::number(wrongPasswdCnt) + "],账户已锁定，请30分钟后再试!");
-                RWDb::writeAuditTrailLog(userName+ "密码输入错误次数已达上限[" + std::to_string(wrongPasswdCnt) + "],账户已锁定，请30分钟后再试!");
-                GlobalSingleton::instance().setUserField(index,"AccountManagement","Locked");
-                GlobalSingleton::instance().addUserField(index,"AccountManagement", "["+SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec()+"]");
+                LOG_IF.writeAuditTrailLog(userName+ "密码输入错误次数已达上限[" + std::to_string(wrongPasswdCnt) + "],账户已锁定，请30分钟后再试!");
+                UserAuditManager::instance().get().setUserField(index,"AccountManagement","Locked");
+                UserAuditManager::instance().get().addUserField(index,"AccountManagement", "["+SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec()+"]");
                 wrongPasswdCnt = 0;
                 return;
             }else {
                 QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), "密码错误！");
-                RWDb::writeAuditTrailLog(userName+ "密码错误！");
+                LOG_IF.writeAuditTrailLog(userName+ "密码错误！");
                 return;
             }
         }
@@ -192,7 +195,7 @@ void UserRegisterWidget::clickRegister()
         }
     }
 
-    RWDb::writeAuditTrailLog(userName+" 进入用户管理页面");
+    LOG_IF.writeAuditTrailLog(userName+" 进入用户管理页面");
     emit registerUserManage();
 }
 

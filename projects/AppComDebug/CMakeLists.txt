@@ -4,7 +4,7 @@ set(CMAKE_AUTORCC ON) # rc
 
 file(GLOB MOC_HEADERS "inc/*.h")
 
-qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 
 HG_CMAKE_ADD_MODULE(AppComDebug inc src ${MOC_SRCS})
 
@@ -13,25 +13,11 @@ target_compile_definitions(AppComDebug PUBLIC
      -DENV_APP_NAME=\"HGAppComDebug\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
-    HGLowerPC
-    HGCommon
-    HGConfig
-    HGCommunicateService
-    ${ZXING_LIBRARY}
-    ${OpenCV_LIBRARIES}
-    ${LOG4CPLUS_LIBRARIES}
-    ${MQTT_LIBRARYS}
-    ${LIB_MOSQUITT_LIBRARY}
-    ${LIB_SERIALPORT_LIBRARY}
-    ${VSOMEIP_LIBRARIES}
-    ${ZeroMQ_LIBRARY}
-    ${PULSE_LIBRARIES}
-    ${LIBSSH_LIBRARIES}
-    /usr/lib/x86_64-linux-gnu/libpulse.so
-    /usr/lib/x86_64-linux-gnu/libpulse-simple.so
-    Qt5::Gui
-    Qt5::Core
-    Qt5::Widgets
+    Qt6::Gui
+    Qt6::Core
+    Qt6::Widgets
+    HGIfSerial
+    HGIfLog
 )
 
 

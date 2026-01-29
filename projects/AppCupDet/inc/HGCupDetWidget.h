@@ -13,9 +13,9 @@
 #include <QTimer>
 #include <QWidget>
 #include <QLineEdit>
-#include "hgcapture2dfromusb.h"
-#include "HGMacroData.h"
-#include "hgsavedatatodb.h"
+#include "CameraControlInterface.h"
+#include "HGCupDetInterface.h"
+#include "ITime.h"
 
 using namespace HGMACHINE;
 
@@ -65,14 +65,14 @@ private:
     QLabel* m_scaleLabel;
     QLineEdit* m_scaleEdit;
 
-    HGCapture2DFromUSB m_capture2DFromUSB;
+    CameraControlInterface* m_cameraControl;
+    HGCupDetInterface* m_cupDet;
+    ITime* m_timeService;
 
     QString m_basePath;
     QString m_scanPath;
 
     std::vector<std::string> m_fileLists;
-
-    HGSaveDataToDB *m_saveDataToDB;
 
     int m_index;
 

@@ -2,35 +2,16 @@
 #include "common.h"
 #include <iostream>
 #include <QApplication>
-
-#define CONFIG_DIR "/config"
-
-bool loadConfig(std::string curPath){
-    std::string configPath=curPath+CONFIG_DIR;
-    HGMkDir(configPath);
-    std::string path=configPath+"/config.xml";
-    bool valid=isFileExist(path);
-    if (!valid){
-        FileConfig::createConfigFile(path,"V6");
-    } else {
-        FileConfig::loadConfigFile(path);
-    }
-    FileConfig::setDirPath(curPath);
-    return true;
-}
-void saveConfig(){
-    FileConfig::saveConfigFile("V6");
-}
+#include "SvcFactory.h"
 
 
 int main(int argc, char *argv[]){
     try {
         QApplication app(argc, argv);
         QString basePath = qApp->applicationDirPath();
-        std::string dbDir = basePath.toStdString()+"/database";
-        HGMkDir(dbDir);
-        loadConfig(basePath.toStdString());
-        saveConfig();
+        SvcFactory::CreateFrameService()->loadConfig(basePath.toStdString());
+        SvcFactory::CreateFrameService()->saveConfig();
+        
         std::vector<std::string> names={
             "时间~电压","水质量~电压","时间~水质量","时间~电解速率"
         };

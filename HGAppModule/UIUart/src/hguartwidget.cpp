@@ -1,65 +1,73 @@
 #include "hguartwidget.h"
+#include "SvcFactory.h"
+#include "SerialAdapter.h"
 
 HGUartWidget::HGUartWidget(std::string lang,QWidget *parent)
     : QWidget(parent)
 { 
     m_lang = lang;
-    m_serialPort=new HGSerial();
+    m_serialPort=new HGMACHINE::SerialAdapter();
     m_layout=new QGridLayout;
     this->setLayout(m_layout);
     m_baseLayout=new QGridLayout;
-    m_baseGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"BaseSet")));
+    m_baseGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"BaseSet")));
     m_baseGroup->setLayout(m_baseLayout);
     m_advanceLayout=new QGridLayout;
-    m_advanceGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"advanceSet")));
+    m_advanceGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"advanceSet")));
     m_advanceGroup->setLayout(m_advanceLayout);
 
-    m_comSelectLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"comSelect")));
+    m_comSelectLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"comSelect")));
     m_comSelectComboBox=new QComboBox;
-    std::vector<std::string> coms=listAvailableSerialPorts();
+    std::vector<std::string> coms=m_serialPort->listAvailableSerialPorts();
     for (auto com : coms){
         m_comSelectComboBox->addItem(QString::fromStdString(com));
     }
-    m_baudrateLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"baudrate")));
+    m_baudrateLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"baudrate")));
     m_baudrateComboBox=new QComboBox;
     m_baudrateComboBox->addItems({"110","300","600","1200","2400","4800","9600","14400","19200","38400","56000","57600","115200","128000","230400","256000","460800","921600","1000000","2000000","Customize"});
-    m_dataBitsLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"dataBits")));
+    m_dataBitsLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"dataBits")));
     m_dataBitsComboBox=new QComboBox;
     m_dataBitsComboBox->addItems({"8","7","6","5"});
-    m_stopBitsLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"stopBits")));
+    m_stopBitsLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"stopBits")));
     m_stopBitsComboBox=new QComboBox;
     m_stopBitsComboBox->addItems({"1","1.5","2"});
-    m_parityLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"parity")));
+    m_parityLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"parity")));
     m_parityComboBox=new QComboBox;
     m_parityComboBox->addItems({"none","odd","even","mark","space"});
-    m_flowControlLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"flowControl")));
+    m_flowControlLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"flowControl")));
     m_flowControlComboBox=new QComboBox;
     m_flowControlComboBox->addItems({"off","hardware","software"});
-    m_openButton=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"openCom")));
+    m_openButton=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"openCom")));
 
     m_receiveTextEdit=new QTextEdit;
     m_receiveTextEdit->setReadOnly(true);
-    m_captureLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"captureCode")));
+    m_captureLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"captureCode")));
     m_captureLineEdit=new QLineEdit;
-    m_enterCheck=new QCheckBox(QString::fromStdString(loadTranslation(m_lang,"enter")));
-    m_returnCheck=new QCheckBox(QString::fromStdString(loadTranslation(m_lang,"Return")));
-    m_sendButton=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"sendCaptureCode")));
+    m_enterCheck=new QCheckBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"enter")));
+    m_returnCheck=new QCheckBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Return")));
+    m_sendButton=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"sendCaptureCode")));
 
     connect(m_openButton,&QPushButton::clicked,this,[=](){ 
         if (m_serialPort->isOpened()){
             m_serialPort->close();
-            m_openButton->setText(QString::fromStdString(loadTranslation(m_lang,"openCom")));
+            m_openButton->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"openCom")));
         }
         else{
             std::string portName=m_comSelectComboBox->currentText().toStdString();
             unsigned int speed=m_baudrateComboBox->currentText().toInt();
             int bits=m_dataBitsComboBox->currentIndex()+5;
-            char event=m_parityComboBox->currentIndex()+'0';
-            int stop=m_stopBitsComboBox->currentIndex()+1;
-            m_serialPort->setParam(portName,speed,bits,m_parityComboBox->currentText().toStdString()[0],m_stopBitsComboBox->currentIndex()+1);
+            char event=m_parityComboBox->currentText().toStdString()[0];
+            int stop=m_stopBitsComboBox->currentIndex();
+            
+            m_serialPort->setPortName(portName);
+            m_serialPort->setBaudRate(speed);
+            m_serialPort->setDataBits(bits);
+            m_serialPort->setParity(event);
+            m_serialPort->setStopBits(stop);
+            
             m_serialPort->open();
             if (m_serialPort->isOpened()){
-                m_openButton->setText(QString::fromStdString(loadTranslation(m_lang,"closeCom")));
+                m_openButton->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"closeCom")));
             }
         }
     });

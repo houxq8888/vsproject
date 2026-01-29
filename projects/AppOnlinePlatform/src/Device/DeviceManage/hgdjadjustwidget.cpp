@@ -1,5 +1,6 @@
 #include "hgdjadjustwidget.h"
 #include "common.h"
+#include "SvcFactory.h"
 
 HGDJAdjustWidget::HGDJAdjustWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang)
@@ -23,7 +24,7 @@ m_lang(lang)
     m_voltageUnitEdit=new QLineEdit();
     m_standardUnitEdit=new QLineEdit();
     m_curTempEdit=new QLineEdit();
-    m_curTempEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
+    m_curTempEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));
     m_ddAdjustEdit=new QLineEdit();
     m_adjustDSEdit=new QLineEdit();
     m_voltageEdit=new QLineEdit();

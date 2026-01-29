@@ -10,6 +10,10 @@
 #include <QTimer>
 #include <QListWidget>
 #include "common.h"
+#include "TaskManager.h"
+#include "HGCommonTypes.h"
+
+using namespace HGMACHINE;
 
 class HGTaskEditWidget : public QWidget
 {

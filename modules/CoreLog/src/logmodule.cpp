@@ -12,22 +12,38 @@ namespace HGMACHINE {
 class LogModule::Impl {
 public:
     std::unique_ptr<HGMACHINE::HGLogService> m_logService;
+    std::string m_dbPath;
+    bool m_dbInitialized;
+    
     Impl() 
         : m_logService(std::make_unique<HGMACHINE::HGLogService>())
+        , m_dbInitialized(false)
     {
     }
 
     bool initialize(const std::string& dbPath) {
         m_logService->logInit();
         if (!dbPath.empty()) {
+            m_dbPath = dbPath;
             RWDb::openDB(dbPath);
+            m_dbInitialized = true;
         }
         return true;
     }
 
     void shutdown() {
         m_logService->logDeInit();
-        RWDb::closeDB();
+        if (m_dbInitialized) {
+            RWDb::closeDB();
+            m_dbInitialized = false;
+        }
+    }
+
+    void ensureDatabaseOpen() {
+        if (!m_dbInitialized && !m_dbPath.empty()) {
+            RWDb::openDB(m_dbPath);
+            m_dbInitialized = true;
+        }
     }
 
     void logInfo(const std::string& content) {
@@ -52,6 +68,7 @@ public:
 
     std::vector<std::map<std::string, std::string>> getAuditTrailLogs(
         const std::string& tableName) {
+        ensureDatabaseOpen();
         return RWDb::readAuditTrailLog(tableName);
     }
 
@@ -119,6 +136,7 @@ public:
         int page,
         int pageSize,
         int* totalCount) {
+        ensureDatabaseOpen();
         HGExactTime timeFromObj, timeToObj;
         if (!timeFrom.empty()) {
             timeFromObj = parseTimeString(timeFrom);
@@ -131,12 +149,14 @@ public:
     }
 
     int getLogCount(const std::string& tableName) {
+        ensureDatabaseOpen();
         return RWDb::readAuditTrailLogCount(tableName);
     }
 
     int getSearchLogCount(const std::string& keyword,
                           const std::string& timeFrom,
                           const std::string& timeTo) {
+        ensureDatabaseOpen();
         HGExactTime timeFromObj, timeToObj;
         if (!timeFrom.empty()) {
             timeFromObj = parseTimeString(timeFrom);
@@ -148,7 +168,13 @@ public:
     }
 
     std::vector<std::string> getLogTableNames() {
+        ensureDatabaseOpen();
         return RWDb::getAllAuditLogTables();
+    }
+
+    void writeAuditTrailLog(const std::string& logContent) {
+        ensureDatabaseOpen();
+        RWDb::writeAuditTrailLog(logContent);
     }
 
     bool saveLogsToFile(const std::vector<std::map<std::string, std::string>>& logs,
@@ -238,6 +264,10 @@ bool LogModule::saveLogsToFile(const std::vector<std::map<std::string, std::stri
                                const std::string& filePath,
                                const std::string& format) {
     return m_impl->saveLogsToFile(logs, filePath, format);
+}
+
+void LogModule::writeAuditTrailLog(const std::string& logContent) {
+    m_impl->writeAuditTrailLog(logContent);
 }
 
 }

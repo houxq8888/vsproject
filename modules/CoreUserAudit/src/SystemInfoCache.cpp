@@ -1,0 +1,100 @@
+#include "SystemInfoCache.h"
+#include "rwDb.h"
+
+namespace HGMACHINE {
+
+bool SystemInfoCache::load() {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    if (!m_loaded) {
+        m_data = {
+            {"authority",""},
+            {"loginName", ""},
+            {"enterUsersManageAuthority", ""},
+            {"enterUsersManageName", ""},
+            {"免密登录", ""},
+            {"debug", ""},
+            {"track", ""},
+            {"loginNames",""},
+            {"userGroupName",""},
+            {"用户标识",""},
+            {"服务商", ""},
+            {"客服专员", ""},
+            {"激活码",""},
+            {"授权日期", ""},
+            {"授权期限", ""},
+            {"AuthorityStatus", ""},
+            {"设备名称", ""},
+            {"设备型号", ""},
+            {"设备编号", ""},
+            {"当前版本", ""},
+            {"出厂日期", ""},
+            {"basePath", ""},
+            {"lastLoginTime", ""},
+            {"自动设置时区", ""},
+            {"时区", ""},
+            {"自动设置时间", ""},
+            {"手动设置日期和时间", ""},
+            {"显示器分辨率", ""},
+            {"自动调整亮度", ""},
+            {"亮度", ""},
+            {"显示语言", ""},
+            {"声音报警", ""},
+            {"声音value", ""},
+            {"灯光报警", ""},
+            {"WLAN", ""},
+            {"CameraType", ""},
+            {"CameraName", ""},
+            {"CameraTemplateName", ""},
+            {"CameraScore", ""},
+            {"ROIX1", ""},
+            {"ROIY1", ""},
+            {"ROIX2", ""},
+            {"ROIY2", ""},
+        };
+        RWDb::readSingleInfo(SYSTEMINFODBNAME, m_data);
+        m_loaded = true;
+    }
+    return m_loaded;
+}
+
+bool SystemInfoCache::save() {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    if (m_dirty) {
+        RWDb::recordSingleInfo(SYSTEMINFODBNAME, m_data);
+        m_dirty = false;
+    }
+    return !m_dirty;
+}
+
+void SystemInfoCache::setValue(const std::string &key, const std::string &value) {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    m_data[key] = value;
+    m_dirty = true;
+}
+
+void SystemInfoCache::addValue(const std::string &key, const std::string &value) {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    m_data[key] = value;
+    m_dirty = true;
+}
+
+void SystemInfoCache::delValue(const std::string &key, const std::string &value) {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    auto it = m_data.find(key);
+    if (it != m_data.end()) {
+        m_data.erase(it);
+        m_dirty = true;
+    }
+}
+
+const std::string &SystemInfoCache::getValue(const std::string &key) const {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    static const std::string emptyString = "";
+    auto it = m_data.find(key);
+    if (it != m_data.end()) {
+        return it->second;
+    }
+    return emptyString;
+}
+
+}

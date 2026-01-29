@@ -17,16 +17,10 @@
 #include "rectitem.h"
 #include <QGraphicsScene>
 #include "mygraphicsview.h"
-#include "opencv2/opencv.hpp"
+#include "HGCommonTypes.h"
+#include "CameraRecognizeInterface.h"
 
-typedef struct tagCameraRecognizeInfo
-{
-    std::string cameraType;
-    std::string cameraName;
-    std::string templatePath;
-    float score;
-    HGRect2D roi;
-}CameraRecognizeInfo;
+
 
 class HGCameraRecognizeWidget : public QWidget
 {
@@ -36,13 +30,13 @@ public:
     bool closeWindow();
     ~HGCameraRecognizeWidget();
     void outEnableDb();
-    CameraRecognizeInfo getCameraRecognizeInfo();
+    HGMACHINE::CameraRecognizeInfo getCameraRecognizeInfo();
     bool getCameraExist();
 
 signals:
     void emitCameraInfo(std::string,std::string);
     void emitTemplateName(std::string,float);
-    void emitROI(HGRect2D);
+    void emitROI(HGMACHINE::HGRect2D);
   
 
 private slots:
@@ -80,9 +74,10 @@ private:
 
     QLabel* m_scoreLabel,*m_tempLabel;
     QLineEdit* m_scoreEdit,*m_tempEdit;
-    HGRect2D m_roiRect;
+    HGMACHINE::HGRect2D m_roiRect;
     
-    // 跟踪当前打开的摄像头状态
+    HGMACHINE::CameraRecognizeInterface* m_cameraRecognize;
+    
     std::string m_currentCameraType;
     std::string m_currentCameraName;
 };

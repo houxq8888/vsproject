@@ -2,6 +2,10 @@
 #include <QHeaderView>
 #include "common.h"
 #include <QToolTip>
+#include "AnalysisRecordManager.h"
+#include "SvcFactory.h"
+
+using namespace HGMACHINE;
 
 HGDisplayRecordWidget::HGDisplayRecordWidget(std::string lang,QWidget *parent) : QWidget(parent),
     m_lang(lang)
@@ -11,7 +15,7 @@ HGDisplayRecordWidget::HGDisplayRecordWidget(std::string lang,QWidget *parent) :
     m_inputsearchConditionW=NULL;
     m_inputsearchConditionW=new HGInputSearchConditionWidget(HG_MAX_SEARCH_RANGE,m_lang);
 
-    m_manipulateGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"manipulate")));//"操作");
+    m_manipulateGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"manipulate")));//"操作");
     m_manipulateGroup->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
     m_manipulateLayout=new QGridLayout();
 
@@ -19,10 +23,10 @@ HGDisplayRecordWidget::HGDisplayRecordWidget(std::string lang,QWidget *parent) :
     m_deleteLabel=new HGQLabel(false,getPath("/resources/V1/@1xif-bin 1.png"));
     m_saveLabel=new HGQLabel(false,getPath("/resources/V1/@1xmb-save 1.png"));
  
-    m_multipleChooseBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"MultiChoose")));//"多选");
-    m_displayBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Scan")));//"查看");
-    m_staticBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Statistics")));//"统计");
-    m_printBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Print")));//"打印");
+    m_multipleChooseBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"MultiChoose")));//"多选");
+    m_displayBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Scan")));//"查看");
+    m_staticBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Statistics")));//"统计");
+    m_printBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Print")));//"打印");
 
     
     QStringList headers;
@@ -75,7 +79,7 @@ HGDisplayRecordWidget::HGDisplayRecordWidget(std::string lang,QWidget *parent) :
     onTimerTimeout();
 }
 void HGDisplayRecordWidget::onTimerTimeout(){
-    std::vector<std::map<std::string,std::string>> taskInfos=RWDb::getTaskRunInfo();
+    std::vector<std::map<std::string,std::string>> taskInfos=AnalysisRecordManager::instance().get().getTaskRunInfo();
     m_taskInfos.clear();
     m_taskInfos=taskInfos;
     if (int(taskInfos.size()) <= 0) return;
@@ -118,7 +122,10 @@ bool HGDisplayRecordWidget::closeWindow()
 {
     if (m_inputsearchConditionW){
         if (m_inputsearchConditionW->closeWindow()){
-            SAFE_DELETE(m_inputsearchConditionW);
+            if (m_inputsearchConditionW) {
+                delete (m_inputsearchConditionW);
+                m_inputsearchConditionW = nullptr;
+            }
         }
     }
     return true;

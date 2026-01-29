@@ -14,7 +14,7 @@ if (PLATFORM STREQUAL "x64" OR PLATFORM STREQUAL "x64_release")
         Qt6::Charts
         Qt6::PrintSupport
     )
-    # Qt6 uses automatic MOC, no need for qt5_wrap_cpp
+    # Qt6 uses automatic MOC, no need for qt6_wrap_cpp
     set(CMAKE_AUTOMOC ON)
     set(CMAKE_AUTOUIC ON)
     set(CMAKE_AUTORCC ON)
@@ -28,7 +28,7 @@ elseif (PLATFORM STREQUAL "win32")
             Qt6::Charts
             Qt6::PrintSupport
         )
-        # Qt6 uses automatic MOC, no need for qt5_wrap_cpp
+        # Qt6 uses automatic MOC, no need for qt6_wrap_cpp
         set(CMAKE_AUTOMOC ON)
         set(CMAKE_AUTOUIC ON)
         set(CMAKE_AUTORCC ON)
@@ -41,7 +41,7 @@ elseif (PLATFORM STREQUAL "win32")
             Qt6::Charts
             Qt6::PrintSupport
         )
-        # Qt6 uses automatic MOC, no need for qt5_wrap_cpp
+        # Qt6 uses automatic MOC, no need for qt6_wrap_cpp
         set(CMAKE_AUTOMOC ON)
         set(CMAKE_AUTOUIC ON)
         set(CMAKE_AUTORCC ON)

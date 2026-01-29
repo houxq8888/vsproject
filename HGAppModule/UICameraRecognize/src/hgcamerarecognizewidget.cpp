@@ -4,12 +4,14 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include "opencv2/opencv.hpp"
-#include "config.h"
+#include "SvcFactory.h"
+#include "SystemDataManager.h"
 
 
 using namespace HGMACHINE;
 HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,bool outDB,QWidget *parent)
     : QWidget(parent),
+    m_cameraRecognize(new CameraRecognizeInterface()),
     m_currentCameraType(""),
     m_currentCameraName("")
 {
@@ -17,7 +19,7 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,bool outDB,QWi
     m_lang = name; 
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
-    m_wholeGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Whole")));
+    m_wholeGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Whole")));
     m_wholeGroup->setCheckable(true);
     m_wholeGroup->setChecked(false);
     m_wholeLayout=new QGridLayout(m_wholeGroup);
@@ -25,16 +27,16 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,bool outDB,QWi
 
     m_setLayout=new QGridLayout();
     m_manipulateLayout=new QGridLayout();
-    m_setGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Set")));
-    m_manipulateGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Display")));
+    m_setGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Set")));
+    m_manipulateGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Display")));
     m_setGroup->setLayout(m_setLayout);
     m_manipulateGroup->setLayout(m_manipulateLayout);
 
-    m_deviceNameLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"DeviceName")));
+    m_deviceNameLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DeviceName")));
     m_deviceNameComboBox=new QComboBox();
     connect(m_deviceNameComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),this,&HGCameraRecognizeWidget::fnChangeParam);
 
-    m_interfaceLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Interface")));
+    m_interfaceLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Interface")));
     m_interfaceComboBox=new QComboBox();
     m_interfaceComboBox->addItems({"USB","IP"});
     m_interfaceComboBox->setCurrentIndex(0);
@@ -54,12 +56,12 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,bool outDB,QWi
     m_view->setDragMode(QGraphicsView::ScrollHandDrag);
     m_view->setCursor(Qt::OpenHandCursor);
 
-    m_captureBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Capture")));
-    m_selectBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Select")));
-    m_saveTemplateBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"SaveTemplate")));
-    m_recognizeBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Recognize")));
-    m_saveToROIBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"SaveToROI")));
-    m_saveBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Save")));
+    m_captureBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Capture")));
+    m_selectBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Select")));
+    m_saveTemplateBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SaveTemplate")));
+    m_recognizeBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Recognize")));
+    m_saveToROIBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SaveToROI")));
+    m_saveBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Save")));
 
     QPixmap templatepixmap(QString::fromStdString(getPath("/resources/@template.png")));
     QPixmap scaledPixmap=templatepixmap.scaled(200,200,Qt::KeepAspectRatio,Qt::SmoothTransformation);
@@ -77,13 +79,13 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,bool outDB,QWi
     m_tempEdit->setReadOnly(true);
     m_tempEdit->installEventFilter(this);
 
-    m_step1Group=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Step1")));
+    m_step1Group=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Step1")));
     m_step1Layout=new QGridLayout(m_step1Group);
-    m_step2Group=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Step2")));
+    m_step2Group=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Step2")));
     m_step2Layout=new QGridLayout(m_step2Group);
-    m_step3Group=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Step3")));
+    m_step3Group=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Step3")));
     m_step3Layout=new QGridLayout(m_step3Group);
-    m_step4Group=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Step4")));
+    m_step4Group=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Step4")));
     m_step4Layout=new QGridLayout(m_step4Group);
 
     connect(m_captureBtn,&QPushButton::clicked,this,[=](){
@@ -105,14 +107,14 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,bool outDB,QWi
         
         std::string cameraType = cameraTypeQStr.toStdString();
         std::string cameraName = cameraNameQStr.toStdString();
-        openCamera(cameraType, cameraName);
+        m_cameraRecognize->openCamera(cameraType, cameraName);
         
         // 更新当前摄像头状态
         m_currentCameraType = cameraType;
         m_currentCameraName = cameraName;
         
         // 获取图像
-        image=getImgOneShotMat(cameraType, cameraName);
+        image=m_cameraRecognize->getImgOneShot(cameraType, cameraName);
 
         // 检查图像是否获取成功
         if (image.empty()) {
@@ -217,10 +219,10 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,bool outDB,QWi
             });
             return;
         }
-        GlobalSingleton::instance().setSystemInfo("ROIX1",std::to_string(m_roiRect.x1));
-        GlobalSingleton::instance().setSystemInfo("ROIY1",std::to_string(m_roiRect.y1));
-        GlobalSingleton::instance().setSystemInfo("ROIX2",std::to_string(m_roiRect.x2));
-        GlobalSingleton::instance().setSystemInfo("ROIY2",std::to_string(m_roiRect.y2));
+        SystemDataManager::instance().get().setSystemInfo("ROIX1",std::to_string(m_roiRect.x1));
+        SystemDataManager::instance().get().setSystemInfo("ROIY1",std::to_string(m_roiRect.y1));
+        SystemDataManager::instance().get().setSystemInfo("ROIX2",std::to_string(m_roiRect.x2));
+        SystemDataManager::instance().get().setSystemInfo("ROIY2",std::to_string(m_roiRect.y2));
     });
     connect(m_saveTemplateBtn,&QPushButton::clicked,this,[=](){
         if (!(image.data && image.cols > 0 && image.rows > 0)){
@@ -257,7 +259,7 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,bool outDB,QWi
             return;
         }
         
-        std::string templateName=saveCameraTemplateMat(image,roiRect);
+        std::string templateName=m_cameraRecognize->saveCameraTemplate(image, roiRect.x1, roiRect.y1, roiRect.x2 - roiRect.x1, roiRect.y2 - roiRect.y1);
         if (templateName=="failed"){
             // 使用QTimer::singleShot确保在主线程中安全显示对话框
             QTimer::singleShot(0, this, [this]() {
@@ -342,7 +344,7 @@ HGCameraRecognizeWidget::HGCameraRecognizeWidget(std::string name,bool outDB,QWi
             });
             return;
         }
-        MatchResult2D matchResult=recognizeCameraTemplate(img,roiToUse,score,filePathQStr.toStdString());
+        MatchResult2D matchResult=m_cameraRecognize->recognizeCameraTemplate(image, roiToUse.x1, roiToUse.y1, roiToUse.x2 - roiToUse.x1, roiToUse.y2 - roiToUse.y1, score, filePathQStr.toStdString());
         if (!matchResult.flag){
             // 使用QTimer::singleShot确保在主线程中安全显示对话框
             QTimer::singleShot(0, this, [this]() {
@@ -437,9 +439,10 @@ void HGCameraRecognizeWidget::setChildrenEnabled(QWidget* parent,bool enabled){
     }
 }
 HGCameraRecognizeWidget::~HGCameraRecognizeWidget(){
-    // 关闭当前打开的摄像头（如果有）
+    delete m_cameraRecognize;
+    
     if (!m_currentCameraType.empty() && !m_currentCameraName.empty()) {
-        closeCamera(m_currentCameraType, m_currentCameraName);
+        m_cameraRecognize->closeCamera(m_currentCameraType, m_currentCameraName);
         qDebug() << "Closed camera in destructor:" << QString::fromStdString(m_currentCameraType) 
                  << "-" << QString::fromStdString(m_currentCameraName);
     }
@@ -469,41 +472,29 @@ bool HGCameraRecognizeWidget::closeWindow(){
 }
 void HGCameraRecognizeWidget::outEnableDb(){
     QString basePath=qApp->applicationDirPath();
-    std::string dbDir=basePath.toStdString()+"/database";
-    HGMkDir(dbDir);
-
-    std::string configPath=basePath.toStdString()+"/config";
-    HGMkDir(configPath);
-    std::string path=configPath+"/config.xml";
-    bool valid=isFileExist(path);
-    if (!valid){
-        FileConfig::createConfigFile(path,"CameraInterface");
-    } else {
-        FileConfig::loadConfigFile(path);
-    }
-    FileConfig::setDirPath(basePath.toStdString());
-    FileConfig::saveConfigFile("CameraInterface");
-    RWDb::openDB(basePath.toStdString());
+    SvcFactory::CreateFrameService()->loadConfig(basePath.toStdString());
+    SvcFactory::CreateFrameService()->saveConfig();
+    // RWDb::openDB(basePath.toStdString());
 }
 void HGCameraRecognizeWidget::fnReadDB(){
-    m_currentCameraType=GlobalSingleton::instance().getSystemInfo("CameraType");
-    m_currentCameraName=GlobalSingleton::instance().getSystemInfo("CameraName");
-    m_roiRect.x1=std::atoi(GlobalSingleton::instance().getSystemInfo("ROIX1").c_str());
-    m_roiRect.y1=std::atoi(GlobalSingleton::instance().getSystemInfo("ROIY1").c_str());
-    m_roiRect.x2=std::atoi(GlobalSingleton::instance().getSystemInfo("ROIX2").c_str());
-    m_roiRect.y2=std::atoi(GlobalSingleton::instance().getSystemInfo("ROIY2").c_str());
+    m_currentCameraType=SystemDataManager::instance().get().getSystemInfo("CameraType");
+    m_currentCameraName=SystemDataManager::instance().get().getSystemInfo("CameraName");
+    m_roiRect.x1=std::atoi(SystemDataManager::instance().get().getSystemInfo("ROIX1").c_str());
+    m_roiRect.y1=std::atoi(SystemDataManager::instance().get().getSystemInfo("ROIY1").c_str());
+    m_roiRect.x2=std::atoi(SystemDataManager::instance().get().getSystemInfo("ROIX2").c_str());
+    m_roiRect.y2=std::atoi(SystemDataManager::instance().get().getSystemInfo("ROIY2").c_str());
     m_interfaceComboBox->setCurrentText(QString::fromStdString(m_currentCameraType));
     m_deviceNameComboBox->setCurrentText(QString::fromStdString(m_currentCameraName));
-    m_scoreEdit->setText(QString::fromStdString(GlobalSingleton::instance().getSystemInfo("CameraScore")));
-    m_tempEdit->setText(QString::fromStdString(GlobalSingleton::instance().getSystemInfo("CameraTemplateName")));
+    m_scoreEdit->setText(QString::fromStdString(SystemDataManager::instance().get().getSystemInfo("CameraScore")));
+    m_tempEdit->setText(QString::fromStdString(SystemDataManager::instance().get().getSystemInfo("CameraTemplateName")));
 }
 CameraRecognizeInfo HGCameraRecognizeWidget::getCameraRecognizeInfo(){
     fnReadDB();
     CameraRecognizeInfo info;
     info.cameraType=m_currentCameraType;
     info.cameraName=m_currentCameraName;
-    info.score=std::stof(GlobalSingleton::instance().getSystemInfo("CameraScore"));
-    info.templatePath=GlobalSingleton::instance().getSystemInfo("CameraTemplateName");
+    info.score=std::stof(SystemDataManager::instance().get().getSystemInfo("CameraScore"));
+    info.templatePath=SystemDataManager::instance().get().getSystemInfo("CameraTemplateName");
     info.roi.x1=m_roiRect.x1;
     info.roi.y1=m_roiRect.y1;
     info.roi.x2=m_roiRect.x2;
@@ -511,21 +502,21 @@ CameraRecognizeInfo HGCameraRecognizeWidget::getCameraRecognizeInfo(){
     return info;
 }
 void HGCameraRecognizeWidget::fnWriteDB(){
-    GlobalSingleton::instance().setSystemInfo("CameraType",m_currentCameraType);
-    GlobalSingleton::instance().setSystemInfo("CameraName",m_currentCameraName);
+    SystemDataManager::instance().get().setSystemInfo("CameraType",m_currentCameraType);
+    SystemDataManager::instance().get().setSystemInfo("CameraName",m_currentCameraName);
     QString scoreStr = m_scoreEdit->text();
     QString templateNameStr = m_tempEdit->text();
     if (!scoreStr.isEmpty()) {
-        GlobalSingleton::instance().setSystemInfo("CameraScore",scoreStr.toStdString());
+        SystemDataManager::instance().get().setSystemInfo("CameraScore",scoreStr.toStdString());
     }
     if (!templateNameStr.isEmpty()) {
-        GlobalSingleton::instance().setSystemInfo("CameraTemplateName",templateNameStr.toStdString());
+        SystemDataManager::instance().get().setSystemInfo("CameraTemplateName",templateNameStr.toStdString());
     }
-    GlobalSingleton::instance().saveSystemInfo();
+    SystemDataManager::instance().get().saveSystemInfo();
 }
 void HGCameraRecognizeWidget::fnReFetchCameraList(){
     if (!m_currentCameraType.empty() && !m_currentCameraName.empty()) {
-        closeCamera(m_currentCameraType, m_currentCameraName);
+        m_cameraRecognize->closeCamera(m_currentCameraType, m_currentCameraName);
         qDebug() << "Closed previous camera:" << QString::fromStdString(m_currentCameraType) 
                  << "-" << QString::fromStdString(m_currentCameraName);
     }
@@ -536,7 +527,7 @@ void HGCameraRecognizeWidget::fnReFetchCameraList(){
         qDebug() << "Interface type is empty, cannot get camera list";
         return;
     }
-    std::vector<std::string> listCameras=getCameraList(interfaceType.toStdString());
+    std::vector<std::string> listCameras=m_cameraRecognize->getCameraList(interfaceType.toStdString());
     for (auto item:listCameras){
         m_deviceNameComboBox->addItem(QString::fromStdString(item));
     }
@@ -548,7 +539,7 @@ bool HGCameraRecognizeWidget::getCameraExist(){
 void HGCameraRecognizeWidget::fnChangeParam(){
     // 关闭当前打开的摄像头（如果有）
     if (!m_currentCameraType.empty() && !m_currentCameraName.empty()) {
-        closeCamera(m_currentCameraType, m_currentCameraName);
+        m_cameraRecognize->closeCamera(m_currentCameraType, m_currentCameraName);
         qDebug() << "Closed previous camera:" << QString::fromStdString(m_currentCameraType) 
                  << "-" << QString::fromStdString(m_currentCameraName);
     }

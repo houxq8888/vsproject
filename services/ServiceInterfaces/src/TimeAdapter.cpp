@@ -1,5 +1,6 @@
 #include "TimeAdapter.h"
 #include "HGExactTime.h"
+#include <chrono>
 
 TimeAdapter::TimeAdapter() {
 }
@@ -47,4 +48,31 @@ void TimeAdapter::SetSystemTime(int year, int month, int day, int hour, int minu
 
 int TimeAdapter::GetTimeDifferenceInSeconds(const std::string& timeStr) {
     return HGExactTime::fasterThanThirtyMimutes(timeStr);
+}
+
+double TimeAdapter::GetElapsedMilliseconds(const TimeInfo& start, const TimeInfo& end) {
+    int minToSec = 60;
+    int hourToMin = 60;
+    int dayToHour = 24;
+    int monthToDay = 30;
+    int yearToMonth = 12;
+    double startTime = 0.0;
+    startTime = (start.year * yearToMonth * monthToDay * dayToHour * hourToMin * minToSec + 
+            start.month * monthToDay * dayToHour * hourToMin * minToSec +
+            start.day * dayToHour * hourToMin * minToSec + 
+            start.hour * hourToMin * minToSec + 
+            start.minute * minToSec + 
+            start.second + 
+            start.millisecond / 1000.0 + start.microsecond / 1000000.0);
+
+    double endTime = 0.0;
+    endTime = (end.year * yearToMonth * monthToDay * dayToHour * hourToMin * minToSec + 
+            end.month * monthToDay * dayToHour * hourToMin * minToSec +
+            end.day * dayToHour * hourToMin * minToSec + 
+            end.hour * hourToMin * minToSec + 
+            end.minute * minToSec + 
+            end.second + 
+            end.millisecond / 1000.0 + end.microsecond / 1000000.0);    
+    double elapsed = (endTime - startTime) * 1000; // millisec
+    return elapsed;
 }

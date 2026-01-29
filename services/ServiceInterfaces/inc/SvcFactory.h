@@ -7,10 +7,7 @@
 #include "ISvcLog.h"
 #include "ISvcFrame.h"
 #include "ITime.h"
-#include "IUserDataAccess.h"
-#include "ISystemDataAccess.h"
-#include "IAuthorityDataAccess.h"
-#include "IDataChartDataAccess.h"
+#include "IDatabaseManager.h"
 #include <memory>
 
 class SvcFactory {
@@ -21,11 +18,7 @@ public:
     static std::shared_ptr<ISvcLog> CreateLogService();
     static std::shared_ptr<ISvcFrame> CreateFrameService();
     static std::shared_ptr<ITime> CreateTimeService();
-    
-    static std::shared_ptr<IUserDataAccess> CreateUserDataAccess();
-    static std::shared_ptr<ISystemDataAccess> CreateSystemDataAccess();
-    static std::shared_ptr<IAuthorityDataAccess> CreateAuthorityDataAccess();
-    static std::shared_ptr<IDataChartDataAccess> CreateDataChartDataAccess();
+    static std::shared_ptr<IDatabaseManager> CreateDatabaseManager();
 };
 
 #endif // SVC_FACTORY_H

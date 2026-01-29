@@ -33,6 +33,8 @@ public:
     
     bool Exists(const std::string& key) const override;
     std::vector<std::string> GetAllKeys() const override;
+
+    void SaveImage(const HGMACHINE::HGImg2D& mat, const std::string &path) override;
 };
 
 #endif // SVC_SAVE_ADAPTER_H

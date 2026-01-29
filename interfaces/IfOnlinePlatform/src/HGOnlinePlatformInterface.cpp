@@ -1,25 +1,16 @@
 #include "HGOnlinePlatformInterface.h"
 #include "hgonlineplatformmodule.h"
-#include "hgsavedatatodb.h"
-#include "hgcommonutility.h"
 #include "hgthreadManage.h"
 #include <map>
 #include <thread>
 #include "hgonlinerwDB.h"
 #include <iomanip>
-#include "styleALT.h"
-#include "hgserial.h"
-#include "hgsecurity.h"
-#include "HGMacroData.h"
-#include "HGLogService.h"
-#include "hgcommonutility.h"
+#include "SvcFactory.h"
 
 
 namespace HGMACHINE {
 HgThreadManage *hgThreadManage=NULL;
 StyleALT *style=NULL;
-
-#define CONFIG_DIR "/config"
 
 template<typename K,typename V>
 std::pair<bool, K> findKeyByValue(const std::map<K,V>& m,const V& value){
@@ -101,7 +92,10 @@ std::string curDeviceParamDBName(){
 void stopThread(){
     if (hgThreadManage==NULL) return;
     hgThreadManage->stopThread();
-    SAFE_DELETE(hgThreadManage);
+    if (hgThreadManage) {
+        delete (hgThreadManage);
+        hgThreadManage = nullptr;
+    }
 }
 int getLinkStatus(){
     int linkStatus=LINK_UNKNOWN;
@@ -279,10 +273,10 @@ void makeCurSample()
     std::map<std::string, std::string> taskInfo = getCurRunningTaskInfo();
     std::map<std::vector<uint8_t>, std::vector<uint8_t>> sendMethodInfo;
     printf("cirlce no:%s\n",taskInfo["circleNo"].c_str());
-    HGLogService::getLogInstance(LOG_PATH)->logout("circle no:"+taskInfo["circleNo"],LOGINFO);
+    LOG_IF.logInfo("circle no:"+taskInfo["circleNo"]);
     std::string paramstr = taskInfo["param"];
     int circleNo = std::atoi(taskInfo["circleNo"].c_str());
-    std::map<std::string, std::string> wparam = getParamMap(paramstr);
+    std::map<std::string, std::string> wparam = SvcFactory::CreateCommonService()->GetParamMap(paramstr);
     for (const auto &pair : gMapSendMethod)
     {
         if (wparam.find(pair.first) == wparam.end())
@@ -335,23 +329,6 @@ Task getTaskInfo(const int &taskIndex){
         return hgThreadManage->getCurTaskInfo(taskIndex);
     } else return Task();
 }
-// config
-bool loadConfig(std::string curPath){
-    std::string configPath=curPath+CONFIG_DIR;
-    HGMkDir(configPath);
-    std::string path=configPath+"/config.xml";
-    bool valid=isFileExist(path);
-    if (!valid){
-        FileConfig::createConfigFile(path,"ALT");
-    } else {
-        FileConfig::loadConfigFile(path);
-    }
-    FileConfig::setDirPath(curPath);
-    return true;
-}
-void saveConfig(){
-    FileConfig::saveConfigFile("ALT");
-}
 
 
 void changeUserLoginAndQuitTime(const std::string &userNo, const std::string &key)
@@ -367,7 +344,7 @@ void changeUserLoginAndQuitTime(const std::string &userNo, const std::string &ke
         }
     }
     if (index==-1) return;
-    userInfos[index][key]+=(getStandardCurTime()+";");
+    userInfos[index][key]+=(SvcFactory::CreateCommonService()->GetStandardCurTime()+";");
     HGOnlineRWDB::writeUserInfo(userInfos[index]);
 }
 

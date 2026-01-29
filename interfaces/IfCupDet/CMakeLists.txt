@@ -3,30 +3,25 @@ set(LIBRARY_VERSION_MINOR 0)
 set(LIBRARY_VERSION_PATCH 0)
 
 
-HG_CMAKE_ADD_MODULE(IfCupDet inc src)
+HG_CMAKE_ADD_MODULE(IfCupDet inc src ../../)
 
 
 HG_CMAKE_MODULE_DEPEND_PUB( 
     HGCoreCupDet
-    HGSvcImageAlgorithm
-    HGBaseCommon
-    HGSvcError
-    ${ZXING_LIBRARY}
-    ${OpenCV_LIBRARIES}
+    HGServiceInterfaces
 )
 if (PLATFORM STREQUAL "x64")
-HG_CMAKE_ADD_SHARED(HGIfCupDet inc src)
+HG_CMAKE_ADD_SHARED(HGIfCupDet inc src
+    ../../
+)
 
 HG_CMAKE_MODULE_DEPEND(
     HGCoreCupDet
-    HGSvcImageAlgorithm
-    HGBaseCommon
-    HGSvcError
-    ${ZXING_LIBRARY}
-    ${OpenCV_LIBRARIES}
+    HGServiceInterfaces
 )
 elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_ADD_STATIC(HGIfCupDet inc src
+    ../../
     ../../services/BaseCommon/inc                                 ../../services/BaseCommon/src
     ../../services/BaseConfig/inc                                 ../../services/BaseConfig/src    
     ../../services/AtomService/SvcImageAlgorithm/inc              ../../services/AtomService/SvcImageAlgorithm/src

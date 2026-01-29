@@ -12,7 +12,7 @@ if (PLATFORM STREQUAL "x64")
         Qt6::Charts
         Qt6::PrintSupport
     )
-    # Qt6 uses automatic MOC, no need for qt5_wrap_cpp
+    # Qt6 uses automatic MOC, no need for qt6_wrap_cpp
     qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
     set(CMAKE_AUTOMOC ON)
     set(CMAKE_AUTOUIC ON)
@@ -44,6 +44,7 @@ HG_CMAKE_ADD_MODULE(UICameraRecognize inc src
 # 添加pluginInterface头文件路径
 target_include_directories(UICameraRecognize PUBLIC 
     ${CMAKE_SOURCE_DIR}/pluginInterface/inc
+    ${CMAKE_SOURCE_DIR}../
 )
 target_compile_definitions(UICameraRecognize PUBLIC
      -DENV_CFG_FILE=\"\"
@@ -54,35 +55,23 @@ if (BUILD_SHARED_LIBS)
     if(WIN32)
     else()
         HG_CMAKE_MODULE_DEPEND_PUB(
-        PluginInterface
-        HGHwLowerPC
-        HGBaseCommon
-        HGBaseConfig
-        HGSvcSave
-        HGSvcFrame
-        HGSvcSecurity
-        HGIfCameraRecognize
-        HGUIBaseApp
-        ${ZXING_LIBRARY}
-        ${OpenCV_LIBRARIES}
-        ${QT_LIBRARIES}
-    )
+            HGUIBaseCore
+            HGIfCameraRecognize
+            HGServiceInterfaces
+            HGIfSystemData
+            ${OpenCV_LIBRARIES}
+            ${QT_LIBRARIES}
+        )
 
-    HG_CMAKE_ADD_SHARED(HGUICameraRecognize inc src ${MOC_SRCS})
-    HG_CMAKE_MODULE_DEPEND(
-        PluginInterface
-        HGHwLowerPC
-        HGBaseCommon
-        HGBaseConfig
-        HGSvcSave
-        HGSvcFrame
-        HGSvcSecurity
-        HGIfCameraRecognize
-        HGUIBaseApp
-        ${ZXING_LIBRARY}
-        ${OpenCV_LIBRARIES}
-        ${QT_LIBRARIES}
-    )
+        HG_CMAKE_ADD_SHARED(HGUICameraRecognize inc src ${MOC_SRCS})
+        HG_CMAKE_MODULE_DEPEND(
+            HGUIBaseCore
+            HGIfCameraRecognize
+            HGServiceInterfaces
+            HGIfSystemData
+            ${OpenCV_LIBRARIES}
+            ${QT_LIBRARIES}
+        )
     endif()
 endif()
 

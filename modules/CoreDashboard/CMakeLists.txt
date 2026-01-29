@@ -10,6 +10,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGBaseCommon
     HGBaseConfig
     HGSvcSave
+    HGSvcLog
     HGSvcCommunicate
     ${LOG4CPLUS_LIBRARIES}
     ${MQTT_LIBRARYS}
@@ -34,6 +35,7 @@ HG_CMAKE_MODULE_DEPEND(
     HGBaseCommon
     HGBaseConfig
     HGSvcSave
+    HGSvcLog
     HGSvcCommunicate
     ${LOG4CPLUS_LIBRARIES}
     ${MQTT_LIBRARYS}

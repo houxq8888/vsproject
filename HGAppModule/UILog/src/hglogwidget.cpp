@@ -204,68 +204,68 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
         }
         case 1:
         {
-            std::vector<ServiceInterfaces::FileInfo> fileList;
-            SvcFactory::CreateCommonService()->GetFilesNoBytes("/app/log/",".log",fileList);
-            // printf("log count:%d\n",int(fileList.size()));
-            // 按创建时间排序（从旧到新）
-            std::sort(fileList.begin(), fileList.end(), [](const ServiceInterfaces::FileInfo& a, const ServiceInterfaces::FileInfo& b) {
-                return a.createtime < b.createtime;
-            });
-            bool beyondMaxFileCount=false;
-            if (fileList.size() > 100){
-                if (m_searchCondition.isInit()){
-                    beyondMaxFileCount=true;
-                    QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                                     QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"TooManagLogFiles")));
-                    return;
-                }
-            }
-            // printf("search fileList\n");
-            for (int i = int(fileList.size()-1); i < int(fileList.size()); i++)
-            {
-                if (beyondMaxFileCount)
-                {
-                    int timepos = fileList[i].filename.find_last_of("/");
-                    std::string filename = fileList[i].filename.substr(timepos + 1, fileList[i].filename.length() - timepos - 1);
-                    timepos = filename.find_first_of("_");
-                    std::string timestr = filename.substr(0, timepos);
-                    TimeInfo testTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
-                    testTimer.year = atoi(timestr.substr(0, 4).c_str());
-                    testTimer.month = atoi(timestr.substr(4, 2).c_str());
-                    testTimer.day = atoi(timestr.substr(6, 2).c_str());
-                    testTimer.hour = 0;
-                    testTimer.minute = 0;
-                    testTimer.second = 0;
+            // std::vector<ServiceInterfaces::FileInfo> fileList;
+            // SvcFactory::CreateCommonService()->GetFilesNoBytes("/app/log/",".log",fileList);
+            // // printf("log count:%d\n",int(fileList.size()));
+            // // 按创建时间排序（从旧到新）
+            // std::sort(fileList.begin(), fileList.end(), [](const ServiceInterfaces::FileInfo& a, const ServiceInterfaces::FileInfo& b) {
+            //     return a.createtime < b.createtime;
+            // });
+            // bool beyondMaxFileCount=false;
+            // if (fileList.size() > 100){
+            //     if (m_searchCondition.isInit()){
+            //         beyondMaxFileCount=true;
+            //         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+            //                          QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"TooManagLogFiles")));
+            //         return;
+            //     }
+            // }
+            // // printf("search fileList\n");
+            // for (int i = int(fileList.size()-1); i < int(fileList.size()); i++)
+            // {
+            //     if (beyondMaxFileCount)
+            //     {
+            //         int timepos = fileList[i].filename.find_last_of("/");
+            //         std::string filename = fileList[i].filename.substr(timepos + 1, fileList[i].filename.length() - timepos - 1);
+            //         timepos = filename.find_first_of("_");
+            //         std::string timestr = filename.substr(0, timepos);
+            //         TimeInfo testTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
+            //         testTimer.year = atoi(timestr.substr(0, 4).c_str());
+            //         testTimer.month = atoi(timestr.substr(4, 2).c_str());
+            //         testTimer.day = atoi(timestr.substr(6, 2).c_str());
+            //         testTimer.hour = 0;
+            //         testTimer.minute = 0;
+            //         testTimer.second = 0;
 
-                    if (testTimer < m_searchCondition.timeFrom)
-                        continue;
-                    if (testTimer > m_searchCondition.timeTo)
-                        continue;
-                }
-                std::ifstream file(fileList[i].filename); // 打开文件
-                if (!file.is_open())
-                { // 检查文件是否成功打开
-                    // std::cerr << "无法打开文件: " << filename << std::endl;
-                    continue;
-                }
+            //         if (testTimer < m_searchCondition.timeFrom)
+            //             continue;
+            //         if (testTimer > m_searchCondition.timeTo)
+            //             continue;
+            //     }
+            //     std::ifstream file(fileList[i].filename); // 打开文件
+            //     if (!file.is_open())
+            //     { // 检查文件是否成功打开
+            //         // std::cerr << "无法打开文件: " << filename << std::endl;
+            //         continue;
+            //     }
 
-                std::string line;
-                while (std::getline(file, line))
-                {                                   // 逐行读取文件
-                    if (m_searchCondition.key.length()>0){
-                        if (line.find(m_searchCondition.key)==std::string::npos &&
-                            GlobalSingleton::instance().getSystemInfo("loginName").find(m_searchCondition.key)!=std::string::npos)
-                            continue;
-                    } 
-                    m_tableW->insertRow(m_tableW->rowCount());
-                    int pos=line.find_first_of(">");
-                    m_tableW->setItem(m_tableW->rowCount()-1, 0, new QTableWidgetItem(QString::fromStdString(line.substr(0,pos-1))));
-                    m_tableW->setItem(m_tableW->rowCount()-1, 1, new QTableWidgetItem(QString::fromStdString(line.substr(pos+1,line.length()-pos-1))));
-                    m_tableW->setItem(m_tableW->rowCount()-1, 2, new QTableWidgetItem(QString::fromStdString(GlobalSingleton::instance().getSystemInfo("loginName"))));
-                }
+            //     std::string line;
+            //     while (std::getline(file, line))
+            //     {                                   // 逐行读取文件
+            //         if (m_searchCondition.key.length()>0){
+            //             if (line.find(m_searchCondition.key)==std::string::npos &&
+            //                 GlobalSingleton::instance().getSystemInfo("loginName").find(m_searchCondition.key)!=std::string::npos)
+            //                 continue;
+            //         } 
+            //         m_tableW->insertRow(m_tableW->rowCount());
+            //         int pos=line.find_first_of(">");
+            //         m_tableW->setItem(m_tableW->rowCount()-1, 0, new QTableWidgetItem(QString::fromStdString(line.substr(0,pos-1))));
+            //         m_tableW->setItem(m_tableW->rowCount()-1, 1, new QTableWidgetItem(QString::fromStdString(line.substr(pos+1,line.length()-pos-1))));
+            //         m_tableW->setItem(m_tableW->rowCount()-1, 2, new QTableWidgetItem(QString::fromStdString(GlobalSingleton::instance().getSystemInfo("loginName"))));
+            //     }
 
-                file.close(); // 关闭文件
-            }
+            //     file.close(); // 关闭文件
+            // }
             break;
         }
         default:{
@@ -411,7 +411,7 @@ void HGLogWidget::slotSaveSearchLog(){
             }
             logList.push_back(log);
         }
-        std::string outlogPath=SvcFactory::CreateConfigService()->GetDirPath()+"/outlog/";
+        std::string outlogPath=SvcFactory::CreateFrameService()->GetDirPath()+"/outlog/";
         SvcFactory::CreateCommonService()->CreateDirectory(outlogPath);
         std::string syncslice = SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec();
         std::string logname=outlogPath+syncslice;

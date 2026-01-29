@@ -1,7 +1,11 @@
 #include "CameraRecognizeInterface.h"
-#include "hgcommonutility.h"
-#include "hgcupdet.h"
-#include "rwDb.h"
+#include "CameraControlInterface.h"
+#include "HGCupDetInterface.h"
+#include "ISvcError.h"
+#include "SvcErrorAdapter.h"
+#include <chrono>
+#include <sstream>
+#include <iomanip>
 
 namespace HGMACHINE{
 
@@ -13,19 +17,26 @@ public:
         delete m_cupDet;
     }
 
-    ErrorInfo m_lastError;
+    SvcErrorAdapter m_lastError;
 
-    void setError(ErrorCode code, const std::string& message) {
-        m_lastError.set(code, message);
+    void setError(HGErrorCode code, HGErrorSeverity severity, const std::string& message) {
+        m_lastError.set(code, severity, message);
     }
 
     void clearError() {
         m_lastError.clear();
     }
 
-    void propagateError(const ErrorInfo& error) {
-        if (error.hasError()) {
-            m_lastError = error;
+    void propagateError() {
+        if (m_cameraControl->hasError()) {
+            m_lastError.set(HGErrorCode::CAMERA_CONTROL_CAMERA_NOT_FOUND, 
+                          HGErrorSeverity::ERROR,
+                          m_cameraControl->getErrorMessage());
+        }
+        if (m_cupDet->hasError()) {
+            m_lastError.set(HGErrorCode::HG_CUP_DET_DETECTION_FAILED, 
+                          HGErrorSeverity::ERROR,
+                          m_cupDet->getErrorMessage());
         }
     }
 
@@ -34,10 +45,11 @@ public:
         
         try {
             auto result = m_cameraControl->getCameraList(type);
-            propagateError(m_cameraControl->getLastError());
+            propagateError();
             return result;
         } catch (const std::exception& e) {
-            setError(ErrorCode::CameraControl_CAMERA_NOT_FOUND, 
+            setError(HGErrorCode::CAMERA_CONTROL_CAMERA_NOT_FOUND, 
+                    HGErrorSeverity::ERROR,
                     std::string("Failed to get camera list: ") + e.what());
             return std::vector<std::string>();
         }
@@ -48,9 +60,10 @@ public:
         
         try {
             m_cameraControl->openCamera(type, name);
-            propagateError(m_cameraControl->getLastError());
+            propagateError();
         } catch (const std::exception& e) {
-            setError(ErrorCode::CameraControl_CAMERA_OPEN_FAILED, 
+            setError(HGErrorCode::CAMERA_CONTROL_CAMERA_OPEN_FAILED, 
+                    HGErrorSeverity::ERROR,
                     std::string("Failed to open camera: ") + e.what());
         }
     }
@@ -60,61 +73,51 @@ public:
         
         try {
             m_cameraControl->closeCamera(type, name);
-            propagateError(m_cameraControl->getLastError());
+            propagateError();
         } catch (const std::exception& e) {
-            setError(ErrorCode::CameraControl_CAMERA_CLOSE_FAILED, 
+            setError(HGErrorCode::CAMERA_CONTROL_CAMERA_CLOSE_FAILED, 
+                    HGErrorSeverity::ERROR,
                     std::string("Failed to close camera: ") + e.what());
         }
     }
 
-    HGImg2D getImgOneShot(const std::string &type, const std::string& name) {
+    cv::Mat getImgOneShot(const std::string &type, const std::string& name) {
         clearError();
         
         try {
             auto result = m_cameraControl->getImgOneShot(type, name);
-            propagateError(m_cameraControl->getLastError());
+            propagateError();
             return result;
         } catch (const std::exception& e) {
-            setError(ErrorCode::CameraControl_GET_FRAME_FAILED, 
-                    std::string("Failed to get image: ") + e.what());
-            return HGImg2D();
-        }
-    }
-
-    cv::Mat getImgOneShotMat(const std::string &type, const std::string& name) {
-        clearError();
-        
-        try {
-            auto result = m_cameraControl->getImgOneShotMat(type, name);
-            propagateError(m_cameraControl->getLastError());
-            return result;
-        } catch (const std::exception& e) {
-            setError(ErrorCode::CameraControl_GET_FRAME_FAILED, 
+            setError(HGErrorCode::CAMERA_CONTROL_GET_FRAME_FAILED, 
+                    HGErrorSeverity::ERROR,
                     std::string("Failed to get image: ") + e.what());
             return cv::Mat();
         }
     }
 
-    void detCupExistence(const HGImg2D &img, const HGRect2D &roi) {
+    void detCupExistence(const cv::Mat &img, int x, int y, int width, int height) {
         clearError();
         
         try {
-            m_cupDet->detCupExistence(img, roi);
-            propagateError(m_cupDet->getLastError());
+            m_cupDet->detCupExistence(img, x, y, width, height);
+            propagateError();
         } catch (const std::exception& e) {
-            setError(ErrorCode::HGCupDet_DETECTION_FAILED, 
+            setError(HGErrorCode::HG_CUP_DET_DETECTION_FAILED, 
+                    HGErrorSeverity::ERROR,
                     std::string("Detection failed: ") + e.what());
         }
     }
 
-    void detCircle(const HGImg2D &img, const HGRect2D &roi) {
+    void detCircle(const cv::Mat &img, int x, int y, int width, int height) {
         clearError();
         
         try {
-            m_cupDet->detCircle(img, roi);
-            propagateError(m_cupDet->getLastError());
+            m_cupDet->detCircle(img, x, y, width, height);
+            propagateError();
         } catch (const std::exception& e) {
-            setError(ErrorCode::HGCupDet_DETECTION_FAILED, 
+            setError(HGErrorCode::HG_CUP_DET_DETECTION_FAILED, 
+                    HGErrorSeverity::ERROR,
                     std::string("Detection failed: ") + e.what());
         }
     }
@@ -124,7 +127,7 @@ public:
         return m_cupDet->getAbsenseFlag();
     }
 
-    HGImg2D getDst() {
+    cv::Mat getDst() {
         clearError();
         return m_cupDet->getDst();
     }
@@ -134,105 +137,73 @@ public:
         return m_cupDet->getTargetPosX();
     }
 
-    std::string saveCameraTemplate(const HGImg2D& img, const HGRect2D& rect) {
+    std::string saveCameraTemplate(const cv::Mat& img, int x, int y, int width, int height) {
         clearError();
         
         try {
-            HGMkDir(RWDb::readCurDirPath()+"/template");
-            cv::Mat mat(img.height,img.width,img.type,(uchar*)img.data);
-            int x = static_cast<int>(rect.x1);
-            int y = static_cast<int>(rect.y1);
-            int width = static_cast<int>(rect.x2 - rect.x1);
-            int height = static_cast<int>(rect.y2 - rect.y1);
-            
-            if (x < 0) x = 0;
-            if (y < 0) y = 0;
-            if (x + width > mat.cols) width = mat.cols - x;
-            if (y + height > mat.rows) height = mat.rows - y;
-            
-            if (width <= 0 || height <= 0) {
-                setError(ErrorCode::CameraRecognize_TEMPLATE_SAVE_FAILED, "Invalid template dimensions");
-                return "failed";
-            }
-            
-            cv::Mat roi = mat(cv::Rect(x, y, width, height));
-            std::string name=RWDb::readCurDirPath()+"/template/"+"default"+getFileNameFromTime()+".bmp";
-            
-            if (!cv::imwrite(name.c_str(),roi)) {
-                setError(ErrorCode::CameraRecognize_TEMPLATE_SAVE_FAILED, "Failed to save template file");
-                return "failed";
-            }
-            
-            return name;
+            std::string result = m_cupDet->saveTemplate(img, x, y, width, height, "template");
+            propagateError();
+            return result;
         } catch (const std::exception& e) {
-            setError(ErrorCode::CameraRecognize_TEMPLATE_SAVE_FAILED, 
+            setError(HGErrorCode::CAMERA_RECOGNIZE_TEMPLATE_SAVE_FAILED, 
+                    HGErrorSeverity::ERROR,
                     std::string("Failed to save template: ") + e.what());
             return "failed";
         }
     }
 
-    std::string saveCameraTemplateMat(const cv::Mat& img, const HGRect2D& rect) {
+    std::string saveCameraTemplateMat(const cv::Mat& img, int x, int y, int width, int height) {
         clearError();
         
         try {
-            HGMkDir(RWDb::readCurDirPath()+"/template");
             if (img.empty()) {
-                setError(ErrorCode::CameraRecognize_TEMPLATE_SAVE_FAILED, "Input image is empty");
+                setError(HGErrorCode::CAMERA_RECOGNIZE_TEMPLATE_SAVE_FAILED, 
+                        HGErrorSeverity::ERROR,
+                        "Input image is empty");
                 return "failed";
             }
             
-            cv::Mat mat=img.clone();
+            cv::Mat mat = img.clone();
             
             if (mat.channels() == 3) {
                 cv::cvtColor(mat, mat, cv::COLOR_BGR2RGB);
             }
             
-            cv::Mat roi = mat(cv::Rect(rect.x1,rect.y1,rect.x2-rect.x1,rect.y2-rect.y1));
-            if (roi.empty()) {
-                setError(ErrorCode::CameraRecognize_TEMPLATE_SAVE_FAILED, "Invalid template ROI");
-                return "failed";
-            }
-            
-            std::string name=RWDb::readCurDirPath()+"/template/"+"default"+getFileNameFromTime()+".bmp";
-            
-            if (!cv::imwrite(name.c_str(),roi)) {
-                setError(ErrorCode::CameraRecognize_TEMPLATE_SAVE_FAILED, "Failed to save template file");
-                return "failed";
-            }
-            
-            return name;
+            std::string result = m_cupDet->saveTemplate(mat, x, y, width, height, "template");
+            propagateError();
+            return result;
         } catch (const std::exception& e) {
-            setError(ErrorCode::CameraRecognize_TEMPLATE_SAVE_FAILED, 
+            setError(HGErrorCode::CAMERA_RECOGNIZE_TEMPLATE_SAVE_FAILED, 
+                    HGErrorSeverity::ERROR,
                     std::string("Failed to save template: ") + e.what());
             return "failed";
         }
     }
 
-    MatchResult2D recognizeCameraTemplate(const HGImg2D& img, const std::string &templateName) {
+    MatchResult2D recognizeCameraTemplate(const cv::Mat& img, int x, int y, int width, int height, const float& score, const std::string &templateName) {
         clearError();
         
         MatchResult2D result;
         
         try {
-            HGCupDet hgcupDet;
-            
             if (templateName==""){
-                hgcupDet.detCupExistence(img,HGRect2D(0,0,img.width-1,img.height-1));
-                result.flag = hgcupDet.getAbsenseFlag();
-                result.dst = hgcupDet.getDst();
+                m_cupDet->detCupExistence(img, x, y, width, height);
+                propagateError();
+                result.flag = m_cupDet->getAbsenseFlag();
+                result.score = result.flag ? 1.0f : 0.0f;
                 result.name = templateName;
-                result.score = (result.flag?1:0);
             } else {
-                hgcupDet.matchTemplate(img,HGRect2D(0,0,img.width-1,img.height-1),templateName);
-                result.flag = hgcupDet.getMatchFlag();
-                result.dst = hgcupDet.getDst();
+                m_cupDet->matchTemplate(img, x, y, width, height, templateName);
+                propagateError();
+                result.flag = m_cupDet->getMatchFlag();
+                result.score = m_cupDet->getMatchScore();
                 result.name = templateName;
-                result.score = hgcupDet.getMatchScore();
-                result.rect = hgcupDet.getRect();
-                result.dstMat = hgcupDet.getDstMat();
+                result.rect = m_cupDet->getRect();
+                result.dstMat = m_cupDet->getDst();
             }
         } catch (const std::exception& e) {
-            setError(ErrorCode::CameraRecognize_RECOGNITION_FAILED, 
+            setError(HGErrorCode::CAMERA_RECOGNIZE_RECOGNITION_FAILED, 
+                    HGErrorSeverity::ERROR,
                     std::string("Recognition failed: ") + e.what());
             result.flag = false;
             result.score = 0.0f;
@@ -241,37 +212,30 @@ public:
         return result;
     }
 
-    MatchResult2D recognizeCameraTemplateMat(const cv::Mat& img, const HGRect2D &rect, const float &score, const std::string &templateName) {
+    MatchResult2D recognizeCameraTemplateMat(const cv::Mat& img, int x, int y, int width, int height, const float &score, const std::string &templateName) {
         clearError();
         
         MatchResult2D result;
         
         try {
-            HGImg2D hgImg;
-            hgImg.data = img.data;
-            hgImg.width = img.cols;
-            hgImg.height = img.rows;
-            hgImg.type = img.type();
-            
-            HGCupDet hgcupDet;
-            
             if (templateName==""){
-                hgcupDet.detCupExistence(hgImg,HGRect2D(0,0,hgImg.width-1,hgImg.height-1));
-                result.flag = hgcupDet.getAbsenseFlag();
-                result.dst = hgcupDet.getDst();
+                m_cupDet->detCupExistence(img, x, y, width, height);
+                propagateError();
+                result.flag = m_cupDet->getAbsenseFlag();
+                result.score = result.flag ? 1.0f : 0.0f;
                 result.name = templateName;
-                result.score = (result.flag?1:0);
             } else {
-                hgcupDet.matchTemplate(hgImg,HGRect2D(0,0,hgImg.width-1,hgImg.height-1),templateName);
-                result.flag = hgcupDet.getMatchFlag();
-                result.dst = hgcupDet.getDst();
+                m_cupDet->matchTemplate(img, x, y, width, height, templateName);
+                propagateError();
+                result.flag = m_cupDet->getMatchFlag();
+                result.score = m_cupDet->getMatchScore();
                 result.name = templateName;
-                result.score = hgcupDet.getMatchScore();
-                result.rect = hgcupDet.getRect();
-                result.dstMat = hgcupDet.getDstMat();
+                result.rect = m_cupDet->getRect();  
+                result.dstMat = m_cupDet->getDst();
             }
         } catch (const std::exception& e) {
-            setError(ErrorCode::CameraRecognize_RECOGNITION_FAILED, 
+            setError(HGErrorCode::CAMERA_RECOGNIZE_RECOGNITION_FAILED, 
+                    HGErrorSeverity::ERROR,
                     std::string("Recognition failed: ") + e.what());
             result.flag = false;
             result.score = 0.0f;
@@ -304,27 +268,23 @@ void CameraRecognizeInterface::closeCamera(const std::string &type, const std::s
     m_impl->closeCamera(type, name);
 }
 
-HGImg2D CameraRecognizeInterface::getImgOneShot(const std::string &type, const std::string& name) {
+cv::Mat CameraRecognizeInterface::getImgOneShot(const std::string &type, const std::string& name) {
     return m_impl->getImgOneShot(type, name);
 }
 
-cv::Mat CameraRecognizeInterface::getImgOneShotMat(const std::string &type, const std::string& name) {
-    return m_impl->getImgOneShotMat(type, name);
+void CameraRecognizeInterface::detCupExistence(const cv::Mat &img, int x, int y, int width, int height) {
+    m_impl->detCupExistence(img, x, y, width, height);
 }
 
-void CameraRecognizeInterface::detCupExistence(const HGImg2D &img, const HGRect2D &roi) {
-    m_impl->detCupExistence(img, roi);
-}
-
-void CameraRecognizeInterface::detCircle(const HGImg2D &img, const HGRect2D &roi) {
-    m_impl->detCircle(img, roi);
+void CameraRecognizeInterface::detCircle(const cv::Mat &img, int x, int y, int width, int height) {
+    m_impl->detCircle(img, x, y, width, height);
 }
 
 bool CameraRecognizeInterface::getAbsenseFlag() {
     return m_impl->getAbsenseFlag();
 }
 
-HGImg2D CameraRecognizeInterface::getDst() {
+cv::Mat CameraRecognizeInterface::getDst() {
     return m_impl->getDst();
 }
 
@@ -332,24 +292,43 @@ int CameraRecognizeInterface::getTargetPosX() {
     return m_impl->getTargetPosX();
 }
 
-std::string CameraRecognizeInterface::saveCameraTemplate(const HGImg2D& img, const HGRect2D& rect) {
-    return m_impl->saveCameraTemplate(img, rect);
+std::string CameraRecognizeInterface::saveCameraTemplate(const cv::Mat& img, int x, int y, int width, int height) {
+    return m_impl->saveCameraTemplate(img, x, y, width, height);
 }
 
-std::string CameraRecognizeInterface::saveCameraTemplateMat(const cv::Mat& img, const HGRect2D& rect) {
-    return m_impl->saveCameraTemplateMat(img, rect);
+std::string CameraRecognizeInterface::saveCameraTemplateMat(const cv::Mat& img, int x, int y, int width, int height) {
+    return m_impl->saveCameraTemplateMat(img, x, y, width, height);
 }
 
-MatchResult2D CameraRecognizeInterface::recognizeCameraTemplate(const HGImg2D& img, const HGRect2D& rect, const float& score, const std::string &templateName) {
-    return m_impl->recognizeCameraTemplate(img, templateName);
+MatchResult2D CameraRecognizeInterface::recognizeCameraTemplate(const cv::Mat& img, int x, int y, int width, int height, const float& score, const std::string &templateName) {
+    return m_impl->recognizeCameraTemplate(img, x, y, width, height, score, templateName);
 }
 
-MatchResult2D CameraRecognizeInterface::recognizeCameraTemplateMat(const cv::Mat& img, const HGRect2D &rect, const float &score, const std::string &templateName) {
-    return m_impl->recognizeCameraTemplateMat(img, rect, score, templateName);
+MatchResult2D CameraRecognizeInterface::recognizeCameraTemplateMat(const cv::Mat& img, int x, int y, int width, int height, const float &score, const std::string &templateName) {
+    return m_impl->recognizeCameraTemplateMat(img, x, y, width, height, score, templateName);
 }
 
-ErrorInfo CameraRecognizeInterface::getLastError() const {
-    return m_impl->m_lastError;
+bool CameraRecognizeInterface::hasError() const {
+    return m_impl->m_lastError.hasError();
+}
+
+std::string CameraRecognizeInterface::getErrorMessage() const {
+    return m_impl->m_lastError.toString();
+}
+
+HGErrorDetail CameraRecognizeInterface::getErrorDetail() const {
+    HGErrorDetail detail;
+    detail.code = static_cast<int>(m_impl->m_lastError.code());
+    detail.category = errorCodeToString(m_impl->m_lastError.code());
+    detail.message = m_impl->m_lastError.message();
+    
+    auto now = std::chrono::system_clock::now();
+    auto time_t = std::chrono::system_clock::to_time_t(now);
+    std::stringstream ss;
+    ss << std::put_time(std::localtime(&time_t), "%Y-%m-%d %H:%M:%S");
+    detail.timestamp = ss.str();
+    
+    return detail;
 }
 
 void CameraRecognizeInterface::clearError() {

@@ -5,10 +5,13 @@
 #include <QGraphicsOpacityEffect>
 #include <QPrinter>
 #include <QMessageBox>
-#include "hgcomwithssh.h"
-#include "PrinterManager.h"
 #include "SvcFactory.h"
+#include "loginterface.h"
+#include "SystemDataManager.h"
+#include "PrinterAdapter.h"
+#include "CommunicateAdapter.h"
 
+using namespace HGMACHINE;
 
 HGPrintWidget::HGPrintWidget(std::string lang,std::string printTitle,std::vector<std::string> printOptions,QWidget *parent) : QWidget(parent),
     m_lang(lang),
@@ -17,6 +20,9 @@ HGPrintWidget::HGPrintWidget(std::string lang,std::string printTitle,std::vector
     m_okBtn(nullptr),
     m_printTitle(printTitle)
 {
+    m_communicate=nullptr;
+    m_printer = new PrinterAdapter();
+    m_printer->initialize();
     // for (int i=0;i<int(printOptions.size());i++){
     //     PrintOption po;
     //     po.key=printOptions[i];
@@ -31,13 +37,13 @@ HGPrintWidget::HGPrintWidget(std::string lang,std::string printTitle,std::vector
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
 
-    m_printGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Print")));
+    m_printGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Print")));
     m_printGroup->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
     m_printLayout=new QGridLayout();
 
-    m_backBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Back")));
+    m_backBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Back")));
 
-    m_numberLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"PageNumber")));
+    m_numberLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"PageNumber")));
     m_pageNumberSpinBox=new QSpinBox();
     m_pageNumberSpinBox->setRange(1,999);
     m_printerLabel=new HGQLabel();
@@ -46,17 +52,17 @@ HGPrintWidget::HGPrintWidget(std::string lang,std::string printTitle,std::vector
     connect(m_printerLabel,SIGNAL(leftClicked()),this,SLOT(slotPrintClicked()));
 
 
-    m_printerGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Printer")));
-    m_printInfoGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"PrintInfo")));
+    m_printerGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Printer")));
+    m_printInfoGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"PrintInfo")));
     m_printerLayout=new QGridLayout();
     m_printerGroup->setLayout(m_printerLayout);
     m_printInfoLayout=new QGridLayout();
     m_printInfoGroup->setLayout(m_printInfoLayout);
 
-    m_paperSizeLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"PaperSize")));
-    m_eSignCheckBox=new QCheckBox(QString::fromStdString(loadTranslation(m_lang,"EleSign")));
+    m_paperSizeLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"PaperSize")));
+    m_eSignCheckBox=new QCheckBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"EleSign")));
     m_printerComboBox=new QComboBox();
-    std::vector<std::string> printerList=getPrinerList();
+    std::vector<std::string> printerList = m_printer->getPrinterList();
     printerList.push_back("网络");
     for (int i=0;i<int(printerList.size());i++){
         m_printerComboBox->addItem(QIcon(QString::fromStdString(getPath("/resources/V1/@print_ready.png"))),
@@ -67,22 +73,22 @@ HGPrintWidget::HGPrintWidget(std::string lang,std::string printTitle,std::vector
     m_paperSizeComboBox=new QComboBox();
     m_paperSizeComboBox->addItems({"A4","Letter","B5","A5","B6","A6","Executive","16K","自定义尺寸"});
 
-    m_reportTemplateLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"ReportTemplate")));
+    m_reportTemplateLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ReportTemplate")));
     m_reportTemplateComboBox=new QComboBox();
-    m_reportTemplateComboBox->addItems({QString::fromStdString(loadTranslation(m_lang,"Default"))});
+    m_reportTemplateComboBox->addItems({QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Default"))});
 
-    m_drawChartTypeLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"DrawChartType")));
+    m_drawChartTypeLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DrawChartType")));
     m_drawChartTypeComboBox=new QComboBox();
-    m_drawChartTypeComboBox->addItems({QString::fromStdString(loadTranslation(m_lang,"Mesh"))});
-    m_chartScaleLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"ChartScale")));
+    m_drawChartTypeComboBox->addItems({QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Mesh"))});
+    m_chartScaleLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ChartScale")));
     m_chartScaleComboBox=new QComboBox();
     m_chartScaleComboBox->addItems({"Auto"});
    
     connect(m_eSignCheckBox, &QCheckBox::toggled, [this](bool checked) {
         if (checked){
             m_handWritingWidget=new HGHandWritingWidget();
-            m_clearBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Clear")));
-            m_okBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Ok")));
+            m_clearBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Clear")));
+            m_okBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Ok")));
             m_printLayout->addWidget(m_handWritingWidget,5,1,1,1);
             m_printLayout->addWidget(m_clearBtn,5,2,1,1);
             m_printLayout->addWidget(m_okBtn,6,2,1,1);
@@ -100,7 +106,7 @@ HGPrintWidget::HGPrintWidget(std::string lang,std::string printTitle,std::vector
                     effect->setOpacity(1.0); // 50% 透明
                     overlayItem->setGraphicsEffect(effect);
                     scene->addItem(overlayItem);
-                    RWDb::writeAuditTrailLog("add eSign");
+                    LOG_IF.writeAuditTrailLog("add eSign");
                     // emit signalESignPix(pixmap);
                 }           
             });
@@ -112,11 +118,17 @@ HGPrintWidget::HGPrintWidget(std::string lang,std::string printTitle,std::vector
             }
             if (m_clearBtn!=nullptr){
                 m_printLayout->removeWidget(m_clearBtn);
-                SAFE_DELETE(m_clearBtn);
+                if (m_clearBtn!=nullptr){
+                    delete m_clearBtn;
+                    m_clearBtn=nullptr;
+                }
             }
             if (m_okBtn!=nullptr){
                 m_printLayout->removeWidget(m_okBtn);
-                SAFE_DELETE(m_okBtn);
+                if (m_okBtn!=nullptr){
+                    delete m_okBtn;
+                    m_okBtn=nullptr;
+                }
             }
         }
     });
@@ -164,14 +176,24 @@ bool HGPrintWidget::closeWindow()
 {
     if (m_handWritingWidget!=nullptr){
         if (m_handWritingWidget->closeWindow()){
-            SAFE_DELETE(m_handWritingWidget);
+            if (m_handWritingWidget!=nullptr){
+                delete m_handWritingWidget;
+                m_handWritingWidget=nullptr;
+            }
         }
     }
     return true;
 }
 HGPrintWidget::~HGPrintWidget()
 {
-    
+    if (m_communicate) {
+        delete m_communicate;
+        m_communicate = nullptr;
+    }
+    if (m_printer) {
+        delete m_printer;
+        m_printer = nullptr;
+    }
 }
 void HGPrintWidget::setPrintData(const std::vector<InPrintOption> &printData){
     m_printOptions.clear();
@@ -324,8 +346,8 @@ void HGPrintWidget::slotPrintClicked()
     int copyNum = m_pageNumberSpinBox->value();
     std::string paperSize = m_paperSizeComboBox->currentText().toStdString();
 
-    std::string reportPath = FileConfig::getDirPath() + "/report/";
-    HGMkDir(reportPath);
+    std::string reportPath = SvcFactory::CreateFrameService()->GetDirPath() + "/report/";
+    SvcFactory::CreateCommonService()->CreateDirectory(reportPath);
     std::string syncslice = SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec();
     std::string filename = reportPath + syncslice + ".pdf";
 
@@ -344,7 +366,7 @@ void HGPrintWidget::slotPrintClicked()
     else if (paperSize == "Executive") printer.setPageSize(QPageSize(QPageSize::Executive));
     else if (paperSize == "16K" || paperSize == ""){
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                             QString::fromStdString(loadTranslation(m_lang, "PaperSizeError")));
+                             QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "PaperSizeError")));
         return;
     }
     printer.setFullPage(true);
@@ -382,19 +404,23 @@ void HGPrintWidget::slotPrintClicked()
     painter.end();
     if (printerName == "网络")
     {
-        SshUploader uploader(GlobalSingleton::instance().getSystemInfo("NetworkIP1") + "." +
-                                 GlobalSingleton::instance().getSystemInfo("NetworkIP2") + "." +
-                                 GlobalSingleton::instance().getSystemInfo("NetworkIP3") + "." +
-                                 GlobalSingleton::instance().getSystemInfo("NetworkIP4"),
-                             22, GlobalSingleton::instance().getSystemInfo("NetworkLoginName"),
-                             GlobalSingleton::instance().getSystemInfo("NetworkLoginPasswd"));
-        if (!uploader.connect())
-        {
-            std::cerr << "failed to connect SSH server\n";
-            return;
+        if (m_communicate==nullptr){
+            m_communicate=new HGMACHINE::CommunicateAdapter();
+            m_communicate->initialize();
+            std::string host = SystemDataManager::instance().get().getSystemInfo("NetworkIP1") + "." +
+                                SystemDataManager::instance().get().getSystemInfo("NetworkIP2") + "." +
+                                SystemDataManager::instance().get().getSystemInfo("NetworkIP3") + "." +
+                                SystemDataManager::instance().get().getSystemInfo("NetworkIP4");
+            std::string username = SystemDataManager::instance().get().getSystemInfo("NetworkLoginName");
+            std::string password = SystemDataManager::instance().get().getSystemInfo("NetworkLoginPasswd");
+            if (!m_communicate->sshConnect(host, 22, username, password)){
+                std::cerr << "failed to connect SSH server\n";
+                delete m_communicate;
+                m_communicate = nullptr;
+                return;
+            }
         }
-        if (!uploader.uploadFile(filename, GlobalSingleton::instance().getSystemInfo("NetworkSavePath") + syncslice + ".pdf"))
-        {
+        if (!m_communicate->sshUploadFile(filename, SystemDataManager::instance().get().getSystemInfo("NetworkSavePath") + syncslice + ".pdf")){
             std::cerr << "file upload failed\n";
             return;
         }
@@ -407,26 +433,21 @@ void HGPrintWidget::slotPrintClicked()
         if (PrinterManager::printPdfWithPDFtoPrinter(filename))
         {
             QMessageBox::information(this, QString::fromStdString(HG_DEVICE_NAME),
-                                     QString::fromStdString(loadTranslation(m_lang, "PrintSuccess")));
+                                     QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "PrintSuccess")));
         }
         else
         {
             QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                                 QString::fromStdString(loadTranslation(m_lang, "PrintError")));
+                                 QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "PrintError")));
         }
 #else
-        PrintInfo printInfo;
-        printInfo.copyNum = copyNum;
-        printInfo.filePath = filename;
-        printInfo.printerName = printerName;
-        printInfo.pageSize = paperSize;
-        int ret = printFile(printInfo);
-        if (ret < 0)
+        bool ret = m_printer->printFile(filename, printerName, copyNum, paperSize);
+        if (!ret)
         {
             QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                                 QString::fromStdString(loadTranslation(m_lang, "PrintError")));
+                                 QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "PrintError")));
         }
 #endif
     }
-    RWDb::writeAuditTrailLog("print " + filename);
+    LOG_IF.writeAuditTrailLog("print " + filename);
 }

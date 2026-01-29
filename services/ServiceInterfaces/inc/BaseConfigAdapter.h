@@ -32,13 +32,11 @@ public:
     bool LoadConfig() override;
     
     std::string LoadTranslation(const std::string& language, const std::string& key) override;
-    
-    std::map<std::string, std::string> GetParamMap(const std::string& param) override;
-    
-    std::string GetDirPath() const override;
+    std::string FindTranslationKey(const std::string& language, const std::string& key) ;
+
     int SaveTableToTxt(const std::vector<std::map<std::string, std::string>>& content, const std::string& savename) override;
     int SaveTableToCsv(const std::vector<std::map<std::string, std::string>>& content, const std::string& savename) override;
     int SaveTableToPdf(const std::vector<std::map<std::string, std::string>>& content, const std::string& savename, const std::string& charset) override;
 };
 
-#endif // BASE_CONFIG_ADAPTER_H
+#endif // BASE_CONFIG_ADAPTER_H 

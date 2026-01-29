@@ -6,12 +6,14 @@
 #include "hgxlsx.hpp"
 #include "HGAuthorityService.h"
 #include "HGOnlinePlatformInterface.h"
+#include "loginterface.h"
+#include "SvcFactory.h"
 
 HGMaterialManageWidget::HGMaterialManageWidget(int loginAuthority,std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
 m_loginAuthority(loginAuthority)
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"MaterialManage"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"MaterialManage"));
     m_materialInfos.clear();
     m_markLabel1=new QLabel("*");
     m_markLabel1->setStyleSheet("color: red;");
@@ -21,46 +23,46 @@ m_loginAuthority(loginAuthority)
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
 
-    m_infoGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"MaterialInfo")));//"物料信息");
+    m_infoGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"MaterialInfo")));//"物料信息");
     m_infoLayout=new QGridLayout();
     m_infoGroup->setLayout(m_infoLayout);
 
-    m_searchLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"KeyWord")));//"关键词");
+    m_searchLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"KeyWord")));//"关键词");
     m_searchEdit=new QLineEdit();
-    m_searchEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));//"请输入");
+    m_searchEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));//"请输入");
 
     m_searchHGLabel=new HGQLabel(false,getPath("/resources/V1/@1xmb-search 1.png"));
 
-    m_materialNumberLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"MaterialNo")));//"物料编号");
+    m_materialNumberLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"MaterialNo")));//"物料编号");
     m_materialNumberEdit=new QLineEdit();
-    m_materialNumberEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));//"请输入");
+    m_materialNumberEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));//"请输入");
 
-    m_getNumberLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Amount")));//"数量");
+    m_getNumberLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Amount")));//"数量");
     m_getNumberEdit=new QLineEdit();
-    m_getNumberEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));//"请输入");
+    m_getNumberEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));//"请输入");
 
     m_openLabel=new HGQLabel(false,getPath("/resources/V1/@1xantOutline-folder-open 1.png"));
     m_saveLabel=new HGQLabel(false,getPath("/resources/V1/@1xmb-save 1.png"));
     m_deleteLabel=new HGQLabel(false,getPath("/resources/V1/@1xif-ui-delete 1.png"));
 
-    m_inputCabinBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Insert")));//"入库");
-    m_getMaterialBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Receive")));//"领用");
+    m_inputCabinBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Insert")));//"入库");
+    m_getMaterialBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Receive")));//"领用");
     connect(m_inputCabinBtn,&QPushButton::clicked,this,[=](){
         if (!(m_loginAuthority==SOFTWARE_MANAGER||m_loginAuthority==SYSTEM_MANAGER)) {
             QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"NoPermission")));
+                QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"NoPermission")));
             return;
         }
         if (m_materialNumberEdit->text().isEmpty()){
             QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"PleaseInput"))+
-                QString::fromStdString(loadTranslation(m_lang,"MaterialNo")));
+                QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"PleaseInput"))+
+                QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"MaterialNo")));
             return;
         }
         if (m_getNumberEdit->text().isEmpty()){
             QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"PleaseInput"))+
-                QString::fromStdString(loadTranslation(m_lang,"Amount")));
+                QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"PleaseInput"))+
+                QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Amount")));
             return;
         }
         std::string materialNo=m_materialNumberEdit->text().toStdString();
@@ -96,7 +98,7 @@ m_loginAuthority(loginAuthority)
         int getQuantity=std::atoi(m_getNumberEdit->text().toStdString().c_str());
         if (getQuantity > availableQuantity){
             QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"MaxGetQuantity"))+
+                QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"MaxGetQuantity"))+
                 QString::number(availableQuantity)+"!");
             return;
         }
@@ -106,14 +108,14 @@ m_loginAuthority(loginAuthority)
     });
 
     m_tableW=new QTableWidget(0,8);
-    QStringList headers={QString::fromStdString(loadTranslation(m_lang,"MaterialNo")),
-        QString::fromStdString(loadTranslation(m_lang,"MaterialName")),
-        QString::fromStdString(loadTranslation(m_lang,"Specification")),
-        QString::fromStdString(loadTranslation(m_lang,"MaterialDescription")),
-        QString::fromStdString(loadTranslation(m_lang,"ReserveQuantity")),
-        QString::fromStdString(loadTranslation(m_lang,"AvailableQuantity")),
-        QString::fromStdString(loadTranslation(m_lang,"MaterialManaqer")),
-        QString::fromStdString(loadTranslation(m_lang,"Recipient"))
+    QStringList headers={QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"MaterialNo")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"MaterialName")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Specification")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"MaterialDescription")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ReserveQuantity")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AvailableQuantity")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"MaterialManaqer")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Recipient"))
     };
     m_tableW->setHorizontalHeaderLabels(headers);
     m_tableW->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -188,7 +190,7 @@ void HGMaterialManageWidget::fnDisplayMaterialInfo(int count,std::map<std::strin
    
     for (auto content : fillContent)
     {
-        QString name=QString::fromStdString(loadTranslation(m_lang,content.first));
+        QString name=QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,content.first));
         int nameColIndex = getColumnIndexByName(m_tableW, name);
         if (nameColIndex < 0 || nameColIndex >= m_tableW->columnCount())
             continue;
@@ -203,7 +205,7 @@ void HGMaterialManageWidget::fnDisplayMaterialInfo(int count,std::map<std::strin
 void HGMaterialManageWidget::slotSearch(){
     if (m_searchEdit->text().isEmpty()){
         QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-            QString::fromStdString(loadTranslation(m_lang,"PleaseInputSearchContent")));
+            QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"PleaseInputSearchContent")));
         return;
     }
     for (int row=0;row<m_tableW->rowCount();row++){
@@ -231,7 +233,7 @@ void HGMaterialManageWidget::slotOpenXLSX(){
     for (int i=0;i<int(data.size());i++){
         if (i==0){
             for (int j=0;j<int(data[i].size());j++){
-                headers.append(QString::fromStdString(loadTranslation(m_lang,data[i][j])));
+                headers.append(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,data[i][j])));
             }
         } else {
             m_materialInfos.push_back(std::map<std::string,std::string>());
@@ -247,7 +249,7 @@ void HGMaterialManageWidget::slotOpenXLSX(){
     }
 }
 void HGMaterialManageWidget::slotSaveXLSX(){
-    std::string outMaterialPath=HgOnlinePlatformModule::getDirPath()+"/outmaterial/";
+    std::string outMaterialPath=SvcFactory::CreateFrameService()->GetDirPath()+"/outmaterial/";
     HGMkDir(outMaterialPath);
     HGExactTime curTime = HGExactTime::currentTime();
     std::string syncslice = curTime.toStringFromYearToSec();
@@ -270,7 +272,7 @@ void HGMaterialManageWidget::slotDeleteRecord(){
     int row = getSelectedRow(m_tableW);
     if (row >= m_tableW->rowCount()) return;
     if (row==-1) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
         return;
     }
     HGOnlineRWDB::deleteRecord(MATERIALINFODBNAME,"MaterialNo",m_materialInfos[row]["MaterialNo"]);

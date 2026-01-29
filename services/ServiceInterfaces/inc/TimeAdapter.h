@@ -19,6 +19,7 @@ public:
     std::string GetCurrentTimeFromYearToSecAndZone() override;
     void SetSystemTime(int year, int month, int day, int hour, int minute, int second) override;
     int GetTimeDifferenceInSeconds(const std::string& timeStr) override;
+    double GetElapsedMilliseconds(const TimeInfo& start, const TimeInfo& end) override;
 };
 
 #endif // TIME_ADAPTER_H

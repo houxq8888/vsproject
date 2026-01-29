@@ -1,14 +1,16 @@
 #ifndef HGCUPDET_H
 #define HGCUPDET_H
 
-#include "hgplasticcupabsensedetect.h"
 #include "HGCupDet_global.h"
-#include "HGMacroData.h"
+#include "HGCommonTypes.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
 namespace HGMACHINE {
+
+class HGPlasticCupAbsenseDetect;
 
 class HGCupDet
 {
@@ -28,9 +30,10 @@ public:
     cv::Mat getDstMat() {return m_dstMat;};
     HGRect2D getRect() {return m_rect;};
     int getTargetPosX();
+    std::string saveTemplate(const cv::Mat& img, int x, int y, int width, int height, const std::string& templateDir = "template");
 
 private:
-    HGPlasticCupAbsenseDetect m_plasticAbsenseDet;
+    HGPlasticCupAbsenseDetect* m_plasticAbsenseDet;
     bool m_absenseFlag;
     bool m_matchFlag;
     float m_matchScore;

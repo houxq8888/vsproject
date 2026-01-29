@@ -17,7 +17,7 @@ public:
     std::string GetTempPath() const override;
     std::string GetConfigPath() const override;
     
-    bool CreateDirectory(const std::string& path) override;
+    int CreateDirectory(const std::string& path) override;
     bool DirectoryExists(const std::string& path) const override;
     bool FileExists(const std::string& path) const override;
     
@@ -28,12 +28,21 @@ public:
     bool CopyFile(const std::string& source, const std::string& destination) override;
     
     void SafeDelete(void* ptr) override;
-    
+    std::string GetStandardCurTime() override;
+    void SetTimezone(const std::string& timezone) override; 
+    std::vector<std::string> ListResolutions(std::string &deviceName) override;
+    std::vector<ServiceInterfaces::WifiNetwork> ScanWifiNetworks() override;
+    void SetVolume(long volume) override;
+    void PlaySound(const std::string& filename) override;
+    std::string CheckPasswordStrengthToString(const std::string &password) override;
+    std::map<std::string, std::string> GetParamMap(const std::string& param) override;
     
     std::vector<std::string> SplitString(const std::string& str, char delimiter) override;
     std::string TrimString(const std::string& str) override;
     std::string ToLowerString(const std::string& str) override;
     std::string ToUpperString(const std::string& str) override;
+    
+    bool GetUSBDevices(uint16_t vendorID, uint16_t productID) override;
     
 };
 

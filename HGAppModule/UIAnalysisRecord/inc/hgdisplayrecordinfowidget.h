@@ -40,7 +40,7 @@ private:
     QTableWidget *m_tableW;
     
     std::map<std::string,recordLabel> m_recordLabels;
-
+    std::vector<std::string> m_allRecordNames;
     DraggableDialog *m_dragDialog;
     std::string m_lang;
 };

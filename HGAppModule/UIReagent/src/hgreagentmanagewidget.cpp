@@ -6,11 +6,16 @@
 #include <QMessageBox>
 #include "common.h"
 #include <QLineEdit>
+#include "loginterface.h"
+#include "SvcFactory.h"
+#include "ReagentManager.h"
+
+using namespace HGMACHINE;
 
 HGReagentManageWidget::HGReagentManageWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang)
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"ReagentManage"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ReagentManage"));
     m_whichW=-1;
     m_curReagentRow=-1;
     m_reagentS.clear();
@@ -28,8 +33,8 @@ m_lang(lang)
     connect(m_okHGLabel,SIGNAL(leftClicked()),this,SLOT(slotOkReagent()));
 
   
-    m_didingjiLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"Titrant")));//"滴定剂");
-    m_biaodingBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Calibration")));//"标定");
+    m_didingjiLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Titrant")));//"滴定剂");
+    m_biaodingBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Calibration")));//"标定");
     connect(m_biaodingBtn,SIGNAL(clicked()),this,SLOT(slotBiaodingClicked()));
 
     m_layout=new QGridLayout();
@@ -100,7 +105,7 @@ void HGReagentManageWidget::slotClickLinkDevice(){
     }
     else
     {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
     }
 }
 bool HGReagentManageWidget::closeWindow()
@@ -118,12 +123,12 @@ void HGReagentManageWidget::onCellClicked(int row,int column){
 
     for (auto device : m_reagentS[row].linkDevices){
         std::map<std::string,std::string> reagentSInfo;
-        reagentSInfo=RWDb::getMapFromDevices(device.second);
+        reagentSInfo=ReagentManager::instance().get().getMapFromDevices(device.second);
         fnDisplayReagentDeviceInfo(device.first,reagentSInfo);
     }
     int addRow=m_deviceTableW->rowCount();
     m_deviceTableW->insertRow(addRow);
-    m_linkDeviceBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"AddLineDevice")));//"添加关联设备");
+    m_linkDeviceBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AddLineDevice")));//"添加关联设备");
     m_linkDeviceBtn->setFocusPolicy(Qt::NoFocus);
     m_linkDeviceBtn->setStyleSheet("color: red;");
     m_deviceTableW->setCellWidget(addRow,0,m_linkDeviceBtn);
@@ -152,7 +157,7 @@ void HGReagentManageWidget::onCellChanged(int row,int column){
     else if (fieldName=="试剂余量") m_reagentS[row].reagentRemainAmount=text;
     else if (fieldName=="当前状态") m_reagentS[row].currentState=text;
 
-    std::vector<std::string> reagentNoEditName=RWDb::getReagentNoEditName();
+    std::vector<std::string> reagentNoEditName=ReagentManager::instance().get().getReagentNoEditName();
     if (std::find(reagentNoEditName.begin(),reagentNoEditName.end(),fieldName)!=reagentNoEditName.end())
     {
         if (!(m_tableWidget->item(row,column)->flags() & Qt::ItemIsEditable)) return;
@@ -170,7 +175,7 @@ void HGReagentManageWidget::onDeviceCellChanged(int row,int column){
     else if(fieldName=="选择") m_reagentS[m_curReagentRow].linkDevices[row].choice=text;
     m_reagentS[m_curReagentRow].linkDevices[row].index=row+1;
    
-    std::vector<std::string> reagentLinkDeviceNoEditName=RWDb::getReagentLinkDeviceNoEditName();
+    std::vector<std::string> reagentLinkDeviceNoEditName=ReagentManager::instance().get().getReagentLinkDeviceNoEditName();
     if (std::find(reagentLinkDeviceNoEditName.begin(),reagentLinkDeviceNoEditName.end(),
         fieldName)!=reagentLinkDeviceNoEditName.end())
     {
@@ -191,7 +196,7 @@ void HGReagentManageWidget::fnDisplayReagentInfo(int count,std::map<std::string,
         if (nameColIndex<0||nameColIndex>=m_tableWidget->columnCount())
             continue;
         m_tableWidget->setItem(count,nameColIndex,new QTableWidgetItem(QString::fromStdString(content.second)));
-        std::vector<std::string> reagentNoEditName=RWDb::getReagentNoEditName();
+        std::vector<std::string> reagentNoEditName=ReagentManager::instance().get().getReagentNoEditName();
         if (std::find(reagentNoEditName.begin(),reagentNoEditName.end(),content.first)!=reagentNoEditName.end())
         {
             m_tableWidget->item(count,nameColIndex)->setFlags(m_tableWidget->item(count,nameColIndex)->flags() & ~Qt::ItemIsEditable);
@@ -206,7 +211,7 @@ void HGReagentManageWidget::fnDisplayReagentDeviceInfo(int count,std::map<std::s
         if (nameColIndex<0||nameColIndex>=m_deviceTableW->columnCount())
             continue;
         m_deviceTableW->setItem(count,nameColIndex,new QTableWidgetItem(QString::fromStdString(content.second)));
-        std::vector<std::string> reagentLinkDeviceNoEditName=RWDb::getReagentLinkDeviceNoEditName();
+        std::vector<std::string> reagentLinkDeviceNoEditName=ReagentManager::instance().get().getReagentLinkDeviceNoEditName();
         if (std::find(reagentLinkDeviceNoEditName.begin(),reagentLinkDeviceNoEditName.end(),content.first)!=reagentLinkDeviceNoEditName.end())
         {
             m_deviceTableW->item(count,nameColIndex)->setFlags(m_deviceTableW->item(count,nameColIndex)->flags() & ~Qt::ItemIsEditable);
@@ -228,16 +233,16 @@ void HGReagentManageWidget::loadReagent(){
     m_tableWidget->setRowCount(0);
     m_deviceTableW->clearContents();
     m_deviceTableW->setRowCount(0);
-    m_reagentS=RWDb::readReagentInfo("");
+    m_reagentS=ReagentManager::instance().get().readReagentInfo("");
 
     for (int index=0;index<int(m_reagentS.size());index++){
-        std::map<std::string,std::string> fillContent=RWDb::getMapFromReagent(m_reagentS[index]);
+        std::map<std::string,std::string> fillContent=ReagentManager::instance().get().getMapFromReagent(m_reagentS[index]);
         fnDisplayReagentInfo(index,fillContent);
     }
     m_tableWidget->insertRow(m_reagentS.size());
 
     int addRow=m_tableWidget->rowCount()-1;
-    m_addBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"AddLine")));//"添加行");
+    m_addBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AddLine")));//"添加行");
     m_addBtn->setStyleSheet("color: red;");
     m_tableWidget->setCellWidget(addRow,0,m_addBtn);
     connect(m_addBtn,SIGNAL(clicked()),this,SLOT(slotClickAdd()));
@@ -247,14 +252,14 @@ void HGReagentManageWidget::slotOpenReagent(){
     std::string tableName="";
     // list squence 
     QDialog dialog(this);
-    dialog.setWindowTitle(QString::fromStdString(loadTranslation(m_lang,"SelectReagentManage")));//"选择要执行的试剂管理");
+    dialog.setWindowTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectReagentManage")));//"选择要执行的试剂管理");
     dialog.setWindowModality(Qt::ApplicationModal);
 
     QListWidget* listW=new QListWidget(&dialog);
     QPushButton* okbtn=new QPushButton(&dialog);
-    okbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Ok")));//"确定");
+    okbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Ok")));//"确定");
     QPushButton* cancelbtn=new QPushButton(&dialog);
-    cancelbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Cancel")));//"取消");
+    cancelbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Cancel")));//"取消");
     connect(okbtn,&QPushButton::clicked,[&](){
        if (listW->count()!=0) tableName=listW->currentItem()->text().toStdString();
        dialog.close();
@@ -262,7 +267,7 @@ void HGReagentManageWidget::slotOpenReagent(){
     connect(cancelbtn,&QPushButton::clicked,[&](){
         dialog.close();
     });
-    std::vector<std::string> names=RWDb::getAllTables(ReagentDBName);
+    std::vector<std::string> names=ReagentManager::instance().get().getAllTables(ReagentDBName);
     for (const auto &name:names){
         if (name.find(ReagentLinkDeviceDBName)!=std::string::npos) continue;
         listW->addItem(QString::fromStdString(name));
@@ -330,16 +335,16 @@ void HGReagentManageWidget::slotSaveReagent(){
     bool coverFlag=false;
     // list squence 
     QDialog dialog(this);
-    dialog.setWindowTitle(QString::fromStdString(loadTranslation(m_lang,"InputSaveName")));//"请输入保存名称");
+    dialog.setWindowTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"InputSaveName")));//"请输入保存名称");
     dialog.setWindowModality(Qt::ApplicationModal);
 
     QLineEdit* saveNameEdit=new QLineEdit(&dialog);
-    saveNameEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"InputSaveName")));//"请输入保存名称");
-    QPushButton* coverBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"OverwriteFile"))/*"覆盖当前文件"*/,&dialog);
+    saveNameEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"InputSaveName")));//"请输入保存名称");
+    QPushButton* coverBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"OverwriteFile"))/*"覆盖当前文件"*/,&dialog);
     QPushButton* okbtn=new QPushButton(&dialog);
-    okbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Ok")));//"确定");
+    okbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Ok")));//"确定");
     QPushButton* cancelbtn=new QPushButton(&dialog);
-    cancelbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Cancel")));//"取消");
+    cancelbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Cancel")));//"取消");
     connect(coverBtn,&QPushButton::clicked,[&](){
         tableName=""; // HgOnlinePlatformModule::getReagentName();
         saveNameEdit->setText(QString::fromStdString(tableName));
@@ -364,7 +369,7 @@ void HGReagentManageWidget::slotSaveReagent(){
     dialog.exec();
 
     if (tableName!=""){
-        RWDb::writeReagentRecord(coverFlag,"",m_reagentS);
+        ReagentManager::instance().get().writeReagentRecord(coverFlag,"",m_reagentS);
         m_tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     }
 }
@@ -380,7 +385,7 @@ void HGReagentManageWidget::slotAddReagent()
     // m_deviceTableW->insertRow(0);
 
     int addRow=m_tableWidget->rowCount()-1;
-    m_addBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"AddLine")));//"添加行");
+    m_addBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AddLine")));//"添加行");
     m_addBtn->setStyleSheet("color: red;");
     m_tableWidget->setCellWidget(addRow,0,m_addBtn);
     connect(m_addBtn,SIGNAL(clicked()),this,SLOT(slotClickAdd()));
@@ -428,7 +433,7 @@ void HGReagentManageWidget::fnDeleteDevice(){
     }
     else
     {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
     }
 }
 void HGReagentManageWidget::fnDeleteReagent(){
@@ -454,7 +459,7 @@ void HGReagentManageWidget::fnDeleteReagent(){
     }
     else
     {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
     }
 }
 void HGReagentManageWidget::slotEditReagent()

@@ -8,7 +8,7 @@
 #include "hgonlinerwDB.h"
 #include "hgcommonutility.h"
 #include <sstream>
-#include "HGLogService.h"
+#include "hglogservice.h"
 
 
 namespace HGMACHINE
@@ -39,14 +39,14 @@ namespace HGMACHINE
         {
             std::ostringstream logtext;
             logtext<<"pos:"<<pos;
-            HGLogService::getLogInstance(HGLogService::getLogPath())->logout(logtext.str(),LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
 
             std::string canIdSTR = param.substr(0, pos);
             std::string indexStr = param.substr(pos + 1, param.length() - pos - 1);
 
             logtext.str("");
             logtext<<"canId:"<<canIdSTR<<",index:"<<indexStr;
-            HGLogService::getLogInstance(HGLogService::getLogPath())->logout(logtext.str(),LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
 
             int canIDInt=std::atoi(canIdSTR.c_str());
             if (canIDInt<0||canIDInt>255) canId = 0;
@@ -128,7 +128,7 @@ namespace HGMACHINE
         {
             StepOfFlow step = steps[i];
             std::map<std::string, std::string> wparam = getParamMap(step.param);
-            HGLogService::getLogInstance(HGLogService::getLogPath())->logout(step.name, LOGINFO);
+            HGLogService::getInstance(HGLogService::getLogPath())->logInfo(step.name);
             std::string actionPort = wparam["执行端口"];
             uint8_t canId,curFaceTypeIndex;
             uint16_t type;
@@ -216,7 +216,7 @@ namespace HGMACHINE
                 logtext << "mode:" << upperToLower.GetSample[stepCount[step.name]].mode << \
                     ",speed:" << upperToLower.GetSample[stepCount[step.name]].speed << \
                     ",time:" << upperToLower.GetSample[stepCount[step.name]].time;
-                HGLogService::getLogInstance(HGLogService::getLogPath())->logout("quyang", LOGINFO);
+                HGLogService::getInstance(HGLogService::getLogPath())->logInfo("quyang");
                 upperToLower.GetSample[stepCount[step.name]].index = static_cast<uint8_t>(i);
                 time = std::atoi(wparam["时长"].c_str());
                 if (time < 0 || time > 65535)

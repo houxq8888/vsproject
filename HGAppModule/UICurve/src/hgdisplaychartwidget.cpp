@@ -4,14 +4,13 @@
 #include <iostream>
 #include <QDateTime>
 #include "common.h"
-#include "datachartinfocache.h"
+#include "loginterface.h"
 #include "SvcFactory.h"
+#include "ChartDataManager.h"
 
+using namespace HGMACHINE;
 #define MAX_POINT_COUNT 10
 
-// 使用HGBaseAppModuleStatic中已经定义的全局变量
-extern std::vector<std::string> displayNames;
-extern std::vector<std::string> recordInTimeNames;
 
 
 HGDisplayChartWidget::HGDisplayChartWidget(std::string lang,const std::vector<std::string> &names,QWidget *parent) : QWidget(parent), 
@@ -73,14 +72,18 @@ HGDisplayChartWidget::HGDisplayChartWidget(std::string lang,const std::vector<st
                                       QColor(255, 192, 203),  // 粉色
                                       QColor(165, 42, 42),    // 棕色
                                       QColor(0, 255, 0)};     // 浅绿色
+    
+    m_allDisplayNames = ChartDataManager::instance().get().getDisplayNames();
+    m_allRecordInTimeNames = ChartDataManager::instance().get().getRecordInTimeNames();
+    
     // 为每个显示名称分配固定颜色（通过索引取模确保颜色循环使用）
     int colorIndex = 0;
-    for (const auto& name : displayNames){
+    for (const auto& name : m_allDisplayNames){
         displayColors[name] = predefinedColors[colorIndex % predefinedColors.size()];
         colorIndex++;
     }
     try {
-        for (const auto& name : displayNames) {
+        for (const auto& name : m_allDisplayNames) {
             if (std::find(m_displayNames.begin(),m_displayNames.end(),name)==m_displayNames.end()) continue;
             m_displayLabels[name] = recordLabelWithSeries();
             m_displayLabels[name].seriesLine = new QLineSeries();
@@ -91,7 +94,7 @@ HGDisplayChartWidget::HGDisplayChartWidget(std::string lang,const std::vector<st
             m_displayLabels[name].seriesBar->setName(QString::fromStdString(name));
         }
 
-        for (const auto& name : recordInTimeNames) {
+        for (const auto& name : m_allRecordInTimeNames) {
             m_recordLabels[name] = recordLabel();
         }
 
@@ -148,7 +151,7 @@ HGDisplayChartWidget::HGDisplayChartWidget(std::string lang,const std::vector<st
         connect(m_timer, &QTimer::timeout, this, &HGDisplayChartWidget::slotUpdateChart);
         // m_timer->start(1000);
 
-        for (const auto& name : displayNames) {
+        for (const auto& name : m_allDisplayNames) {
             if (std::find(m_displayNames.begin(),m_displayNames.end(),name)==m_displayNames.end()) continue;
             fnUpdateDisplay(m_displayLabels[name].label.flag, name);
         }
@@ -160,7 +163,7 @@ HGDisplayChartWidget::HGDisplayChartWidget(std::string lang,const std::vector<st
         ss<< "Error initializing HGDisplayChartWidget: " << e.what();
         // Windows平台下禁用HGLogService，因为没有编译出对应的库
 #ifdef __linux__
-        HGLogService::getLogInstance(LOG_PATH)->logout(ss.str(),LOGERROR);
+        LOG_IF.logError(ss.str());
 #else
         // Windows平台下使用标准输出或空操作
         std::cerr << ss.str() << std::endl;
@@ -169,25 +172,25 @@ HGDisplayChartWidget::HGDisplayChartWidget(std::string lang,const std::vector<st
 }
 
 void HGDisplayChartWidget::fnWriteDB(){
-    for (auto name:displayNames){
+    for (auto name:m_allDisplayNames){
         if (std::find(m_displayNames.begin(),m_displayNames.end(),name)==m_displayNames.end()) continue;
-        if (m_displayLabels[name].label.flag) GlobalSingleton::instance().setDataChartInfo(name, "true");
-        else GlobalSingleton::instance().setDataChartInfo(name,"false");
+        if (m_displayLabels[name].label.flag) ChartDataManager::instance().get().setValue(name, "true");
+        else ChartDataManager::instance().get().setValue(name,"false");
     }
-    for (auto name:recordInTimeNames){
-        if (m_recordLabels[name].flag) GlobalSingleton::instance().setDataChartInfo(name,"true");
-        else GlobalSingleton::instance().setDataChartInfo(name,"false");
+    for (auto name:m_allRecordInTimeNames){
+        if (m_recordLabels[name].flag) ChartDataManager::instance().get().setValue(name, "true");
+        else ChartDataManager::instance().get().setValue(name,"false");
     }
-    GlobalSingleton::instance().saveDataChartInfo();
+    ChartDataManager::instance().get().save();
 }
 void HGDisplayChartWidget::fnReadDB(){
-    for (auto name:displayNames){
+    for (auto name:m_allDisplayNames){
         if (std::find(m_displayNames.begin(),m_displayNames.end(),name)==m_displayNames.end()) continue;
-        if (GlobalSingleton::instance().getDataChartInfo(name)=="true") m_displayLabels[name].label.flag=true;
+        if (ChartDataManager::instance().get().getValue(name)=="true") m_displayLabels[name].label.flag=true;
         else m_displayLabels[name].label.flag=false;
     }
-    for (auto name:recordInTimeNames){
-        if (GlobalSingleton::instance().getDataChartInfo(name)=="true") m_recordLabels[name].flag=true;
+    for (auto name:m_allRecordInTimeNames){
+        if (ChartDataManager::instance().get().getValue(name)=="true") m_recordLabels[name].flag=true;
         else m_recordLabels[name].flag=false;
     }
 }
@@ -210,18 +213,21 @@ void HGDisplayChartWidget::clearChart(){
 }
 void HGDisplayChartWidget::slotExportData(){
     std::vector<std::map<std::string,std::string>> logList;
-    std::string outlogPath=FileConfig::getDirPath()+"/outlog/";
-    HGMkDir(outlogPath);
+    std::string outlogPath=SvcFactory::CreateFrameService()->GetDirPath()+"/outlog/";
+    SvcFactory::CreateCommonService()->CreateDirectory(outlogPath);
     std::string syncslice = SvcFactory::CreateTimeService()->GetCurrentTimeFromYearToSec();
     std::string logname = outlogPath+syncslice;
     logname+=".csv";
     // logList=RWDb::readSampleDetectInfo();
-    saveTableToCsv(logList,logname);
+    SvcFactory::CreateConfigService()->SaveTableToCsv(logList,logname);
 }
 void HGDisplayChartWidget::slotDisplayType(){
     if (m_dragDialog!=NULL) {
         fnWriteDB();
-        SAFE_DELETE(m_dragDialog);
+        if (m_dragDialog){
+            delete m_dragDialog;
+            m_dragDialog = nullptr;
+        }
         return;
     }
     m_dragDialog=new DraggableDialog(this);
@@ -229,9 +235,9 @@ void HGDisplayChartWidget::slotDisplayType(){
     QVBoxLayout* layout=new QVBoxLayout(m_dragDialog);
 
     LabelWithImg* nameLabel=new LabelWithImg(IMGTOP,12,getPath("/resources/V1/@1xze-bars 1.png"),
-        loadTranslation(m_lang,"DisplayMethod"));//"显示方式");  
+        SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DisplayMethod"));//"显示方式");  
 
-    for (auto name:displayNames){
+    for (auto name:m_allDisplayNames){
         if (std::find(m_displayNames.begin(),m_displayNames.end(),name)==m_displayNames.end()) continue;
         if (m_displayLabels[name].label.flag)
             m_displayLabels[name].label.label=new LabelWithImg(IMGLEFT,12,getPath("/resources/V1/@1xze-certificate 1.png"),name);
@@ -249,7 +255,10 @@ void HGDisplayChartWidget::slotDisplayType(){
 }
 void HGDisplayChartWidget::slotInTimeDisplayType(){
     if (m_displayDialog!=NULL) {
-        SAFE_DELETE(m_displayDialog);
+        if (m_displayDialog){
+            delete m_displayDialog;
+            m_displayDialog = nullptr;
+        }
         return;
     }
     m_displayDialog=new DraggableDialog(this);
@@ -257,9 +266,9 @@ void HGDisplayChartWidget::slotInTimeDisplayType(){
     QVBoxLayout* layout=new QVBoxLayout(m_displayDialog);
 
     LabelWithImg* nameLabel=new LabelWithImg(IMGTOP,12,getPath("/resources/V1/@1xze-apps-o 1.png"),
-        loadTranslation(m_lang,"RealTimeDisplay"));//"实时显示");  
+        SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"RealTimeDisplay"));//"实时显示");  
  
-    for (auto name:recordInTimeNames){
+    for (auto name:m_allRecordInTimeNames){
         if (m_recordLabels[name].flag)
             m_recordLabels[name].label=new LabelWithImg(IMGLEFT,12,getPath("/resources/V1/@1xze-certificate 1.png"),name);
         else m_recordLabels[name].label=new LabelWithImg(IMGLEFT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),name);
@@ -520,11 +529,11 @@ void HGDisplayChartWidget::fnUpdateDisplay(bool flag,std::string name){
     }
 }
 void HGDisplayChartWidget::fnCreateBarChart(){
-    m_chart->setTitle(QString::fromStdString(loadTranslation(m_lang,"Bar")));//"柱状图");
+    m_chart->setTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Bar")));//"柱状图");
 }
 void HGDisplayChartWidget::fnCreateLineChart()
 {
-    m_chart->setTitle(QString::fromStdString(loadTranslation(m_lang,"Line")));//"折线图");
+    m_chart->setTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Line")));//"折线图");
 }
 void HGDisplayChartWidget::drawTimeAndSignal(const std::string &name,const std::vector<std::map<std::string,std::string>> &dataInfos){
     int minY = 0.0, maxY = 0.0;
@@ -848,7 +857,7 @@ void HGDisplayChartWidget::showTestInfo(const std::string &dbName)
     // {
     //     m_xAxisTime->remove(label); // 移除每个标签
     // }
-    // for (auto name : displayNames)
+    // for (auto name : m_allDisplayNames)
     // {
     //     if (m_displayLabels[name].label.flag)
     //     {
@@ -885,7 +894,7 @@ void HGDisplayChartWidget::fnUpdateChartData(const std::map<std::string,std::str
     if (dataInfos.find("电压")!=dataInfos.end()) voltage = std::stof(dataInfos.at("电压").c_str());
     m_voltages.push_back(voltage);
 
-    for (auto name : displayNames)
+    for (auto name : m_allDisplayNames)
     {
         if (std::find(m_displayNames.begin(),m_displayNames.end(),name)==m_displayNames.end()) continue;
         if (m_displayLabels[name].label.flag)
@@ -942,7 +951,10 @@ void HGDisplayChartWidget::mousePressEvent(QMouseEvent *event)
         if (!m_displayTypeLabel->geometry().contains(event->pos())){
             if (m_dragDialog!=NULL){
                 fnWriteDB();
-                SAFE_DELETE(m_dragDialog);
+                if (m_dragDialog){
+                    delete m_dragDialog;
+                    m_dragDialog = nullptr;
+                }
             }
             return;
         }
@@ -954,7 +966,10 @@ void HGDisplayChartWidget::onChartClicked(const QPoint& pos)
     if (!m_displayTypeLabel->geometry().contains(pos)){
         if (m_dragDialog!=NULL){
             fnWriteDB();
-            SAFE_DELETE(m_dragDialog);
+            if (m_displayDialog){
+                delete m_displayDialog;
+                m_displayDialog = nullptr;
+            }
         }
     }
 }
@@ -983,7 +998,7 @@ int HGDisplayChartWidget::isLabelExist(QCategoryAxis *axis, const QString &label
         {
             axis->remove(label); // 移除每个标签
         }
-        for (auto name : displayNames)
+        for (auto name : m_allDisplayNames)
         {
             if (std::find(m_displayNames.begin(),m_displayNames.end(),name)==m_displayNames.end()) continue;
             if (m_displayLabels[name].label.flag)

@@ -7,14 +7,12 @@ HG_CMAKE_ADD_MODULE(SvcInteractive inc src)
 
 HG_CMAKE_MODULE_DEPEND_PUB( 
     HGBaseCommon
-    ${ZXING_LIBRARY}
 )
 
 HG_CMAKE_ADD_SHARED(HGSvcInteractive inc src)
 
 HG_CMAKE_MODULE_DEPEND(
     HGBaseCommon
-    ${ZXING_LIBRARY}
 )
 set_target_properties(HGSvcInteractive PROPERTIES 
     VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}

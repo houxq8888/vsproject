@@ -1,6 +1,7 @@
 #include "hgkulunwaterwidget.h"
 #include "common.h"
 #include <QHeaderView>
+#include "SvcFactory.h"
 
 HGKulunWaterWidget::HGKulunWaterWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang)
@@ -340,7 +341,7 @@ void HGKulunWaterWidget::setDriftParam()
 void HGKulunWaterWidget::setParam(std::string param){
     setControlText(m_layout,param);
     // setControlText(m_dataProcessLayout,param);
-    std::map<std::string,std::string> wparam=getParamMap(param);
+    std::map<std::string,std::string> wparam=SvcFactory::CreateCommonService()->GetParamMap(param);
     if (wparam["漂移扣除"]=="true"){
         m_driftflag=true;
         m_driftLabel->setImg(getPath("/resources/V1/@1xIOS开关_enable.png"));
@@ -404,7 +405,7 @@ void HGKulunWaterWidget::setParam(std::string param){
 std::map<std::string,std::vector<uint8_t>> HGKulunWaterWidget::getSendMethodInfo(){
     std::map<std::string,std::vector<uint8_t>> sendMethodInfo;
     std::string paramstr=getParamStr();
-    std::map<std::string,std::string> wparam=getParamMap(paramstr);
+    std::map<std::string,std::string> wparam=SvcFactory::CreateCommonService()->GetParamMap(paramstr);
     #ifdef ENABLE_CAS6
     for (const auto& pair : gMapSendMethod){
         if (wparam.find(pair.first) == wparam.end()) continue;

@@ -4,14 +4,13 @@
     @author XiaoQin.Hou
 */
 #include "styleALT.h"
-#include "HGMacroData.h"
 #include "hgcommonutility.h"
 #include "hgxml.h"
 #include <sstream>
 #include "hgonlinerwDB.h"
 #include <vector>
 #include <map>
-#include "HGLogService.h"
+#include "hglogservice.h"
 
 namespace HGMACHINE {
         StyleALT::StyleALT(int type, std::string dbName)
@@ -118,7 +117,7 @@ namespace HGMACHINE {
                 result.push_back(m_taskArr[i]->selfCheck());
 
                 logtext<<"device status:"<<result[i];
-                HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+                HGLogService::getInstance(HGLogService::getLogPath())->logInfo(logtext.str());
             }
             return result;
         }

@@ -1,9 +1,9 @@
 #include "myToolBox.h"
 #include "common.h"
 #include "warningwidget.h"
-#include "hgxml.h"
+#include "SvcFactory.h"
 
-using namespace HGMACHINE;
+
 
 MyToolBox::MyToolBox(QWidget *parent) :
     QWidget(parent),
@@ -150,7 +150,7 @@ bool ToolPage::closeWindow()
 void ToolPage::addWidget(const std::string &lang, const std::string &title, BaseWidget *widget)
 {
     m_title=title;
-    m_pPushButtonFold->setText(QString::fromStdString(loadTranslation(lang,title)));
+    m_pPushButtonFold->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(lang,title)));
     m_pContentVBoxLayout->addWidget(widget);
     connect(widget,&BaseWidget::signalSoundVolumn,[=](int volumn){
         emit signalSoundVolumn(volumn);
@@ -206,7 +206,7 @@ void ToolPage::expand()
     m_bIsExpanded = true;
 }
 void ToolPage::setLanguage(std::string lang){
-    m_pPushButtonFold->setText(QString::fromStdString(loadTranslation(lang,m_title)));
+    m_pPushButtonFold->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(lang,m_title)));
 }
 void ToolPage::collapse()
 {

@@ -4,7 +4,7 @@ set(CMAKE_AUTORCC ON) # rc
 
 file(GLOB MOC_HEADERS "inc/*.h")
 
-qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 
 HG_CMAKE_ADD_MODULE(AppCupDet inc src ${MOC_SRCS})
 
@@ -14,18 +14,14 @@ target_compile_definitions(AppCupDet PUBLIC
      -DENV_APP_NAME=\"HGAppCupDet\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
-    HGCupDetInterface
-    HGSensor
-    HGCommon
-    HGSaveService
-    HGImageAlgorithmService
-    ${ZXING_LIBRARY}
+    HGIfCupDet
+    HGIfCameraControl
+    HGIfLog
+    HGServiceInterfaces
+    Qt6::Gui
+    Qt6::Core
+    Qt6::Widgets
     ${OpenCV_LIBRARIES}
-    ${OpencvFreeType_LIBRARY}
-    ${LOG4CPLUS_LIBRARIES}
-    Qt5::Gui
-    Qt5::Core
-    Qt5::Widgets
 )
 
 HG_CMAKE_ADD_EXE(HGAppCupDet main.cpp)

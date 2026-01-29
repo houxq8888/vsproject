@@ -19,7 +19,30 @@
 #include "hginjectsamplewidget.h"
 #include <QEvent>
 #include "common.h"
+#include "IFlow.h"
+#include <string>
+#include <vector>
 
+namespace HGMACHINE {
+
+struct StepOfFlow {
+    int index;
+    std::string name;
+    std::string param;
+    std::string nameOfSameStep;
+    int indexOfSameStep;
+};
+
+struct FlowOfTask {
+    std::string indexStr;
+    std::string name;
+    std::string type;
+    std::string createTime;
+    std::string dbName;
+    std::vector<StepOfFlow> steps;
+};
+
+}
 
 class HGFlowInfoWidget : public QWidget
 {

@@ -12,7 +12,7 @@ if (PLATFORM STREQUAL "x64")
         Qt6::Charts
         Qt6::PrintSupport
     )
-    # Qt6 uses automatic MOC, no need for qt5_wrap_cpp
+    # Qt6 uses automatic MOC, no need for qt6_wrap_cpp
     qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
         set(CMAKE_AUTOMOC ON)
         set(CMAKE_AUTOUIC ON)
@@ -60,7 +60,6 @@ if (BUILD_SHARED_LIBS)
             PluginInterface
             HGUIBaseCore
             HGServiceInterfaces
-            ${OpenCV_LIBRARIES}
             ${QT_LIBRARIES}
         )
 
@@ -69,7 +68,6 @@ if (BUILD_SHARED_LIBS)
             PluginInterface
             HGUIBaseCore
             HGServiceInterfaces
-            ${OpenCV_LIBRARIES}
             ${QT_LIBRARIES}
         )
     endif()

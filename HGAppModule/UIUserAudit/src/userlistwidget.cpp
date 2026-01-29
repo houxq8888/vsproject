@@ -3,7 +3,9 @@
 #include <QMessageBox>
 #include "common.h"
 #include <QDialog>
-#include "globalsingleton.h"
+#include "UserAuditManager.h"
+#include "SvcFactory.h"
+
 
 
 UserListWidget::UserListWidget(std::string lang,const std::vector<std::string>& authority,QWidget *parent) : QWidget(parent),
@@ -19,7 +21,7 @@ void UserListWidget::fnInit()
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
 
-    m_backBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Back")));
+    m_backBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Back")));
     connect(m_backBtn,SIGNAL(clicked()),this,SLOT(clickBack()));
 
     m_authorityW=new AuthorityWidget(m_lang,m_whole_authority);
@@ -42,11 +44,17 @@ bool UserListWidget::closeWindow()
     bool result = true;
     if (m_userW){
         result &= m_userW->closeWindow();
-        SAFE_DELETE(m_userW);
+        if (m_userW){
+            delete m_userW;
+            m_userW=nullptr;
+        }
     }
     if (m_authorityW){
         result &= m_authorityW->closeWindow();
-        SAFE_DELETE(m_authorityW);
+        if (m_authorityW){
+            delete m_authorityW;
+            m_authorityW=nullptr;
+        }
     }
     return result;
 }
@@ -65,9 +73,24 @@ void UserListWidget::clickBack()
 
 UserListWidget::~UserListWidget()
 {
-    SAFE_DELETE(m_tabWidget);
-    SAFE_DELETE(m_layout);
-    SAFE_DELETE(m_backBtn);
-    SAFE_DELETE(m_userW);
-    SAFE_DELETE(m_authorityW);
+    if (m_tabWidget);{
+        delete m_tabWidget;
+        m_tabWidget=nullptr;
+    }
+    if (m_layout);{
+        delete m_layout;
+        m_layout=nullptr;
+    }
+    if (m_backBtn);{
+        delete m_backBtn;
+        m_backBtn=nullptr;
+    }
+    if (m_userW);{
+        delete m_userW;
+        m_userW=nullptr;
+    }
+    if (m_authorityW);{
+        delete m_authorityW;
+        m_authorityW=nullptr;
+    }
 }

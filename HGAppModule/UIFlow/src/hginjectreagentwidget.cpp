@@ -1,6 +1,7 @@
 #include "hginjectreagentwidget.h"
 #include "common.h"
 #include <sstream>
+#include "SvcFactory.h"
 
 HGinjectReagentWidget::HGinjectReagentWidget(std::string lang,std::string param,std::string name,QWidget *parent) : QWidget(parent),
 m_lang(lang)
@@ -24,7 +25,7 @@ m_lang(lang)
     // for (auto mode:injectReagentMode){
     //     m_zhurumoshiCombo->addItem(QString::fromStdString(mode.second));
     // }
-    std::map<std::string,std::string> wparam=getParamMap(m_param);
+    std::map<std::string,std::string> wparam=SvcFactory::CreateCommonService()->GetParamMap(m_param);
     m_zhurumoshiCombo->setCurrentText(QString::fromStdString(wparam["注入模式"]));
     setMode();
 

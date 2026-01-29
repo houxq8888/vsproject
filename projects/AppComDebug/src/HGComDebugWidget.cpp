@@ -1,10 +1,9 @@
 #include "HGComDebugWidget.h"
-#include "hgserial.h"
+#include "SerialAdapter.h"
 #include <sstream>
 #include <iomanip>
 #include <iostream>
-#include "HGLogService.h"
-#include "hgcommonutility.h"
+#include "loginterface.h"
 
 using namespace HGMACHINE;
 

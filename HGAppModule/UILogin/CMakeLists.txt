@@ -12,7 +12,7 @@ if (PLATFORM STREQUAL "x64")
         Qt6::Charts
         Qt6::PrintSupport
     )
-    # Qt6 uses automatic MOC, no need for qt5_wrap_cpp
+    # Qt6 uses automatic MOC, no need for qt6_wrap_cpp
     qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
         set(CMAKE_AUTOMOC ON)
         set(CMAKE_AUTOUIC ON)
@@ -55,79 +55,22 @@ if (BUILD_SHARED_LIBS)
     else()
         HG_CMAKE_MODULE_DEPEND_PUB(
             PluginInterface
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
-            HGAuthorityService
-            HGCommunicateService
-            HGImageAlgorithmService
-            HGBaseAppModule
-            HGSecurityService
-            ${ZXING_LIBRARY}
-            ALSA::ALSA
-            ${OpenCV_LIBRARIES}
-            ${OpencvFreeType_LIBRARY}
-            ${LOG4CPLUS_LIBRARIES}
-            ${CUPS_LIBRARY}
-            ${XLSXIO_READ_LIBRARY}
-            ${XLSXIO_WRITE_LIBRARY}
-            ${HARU_LIBRARY}
-            ${ZeroMQ_LIBRARY}
-            ${MQTT_LIBRARYS}
-            ${LIB_SERIALPORT_LIBRARY}
-            ${LIB_MOSQUITT_LIBRARY}
-            ${PULSE_LIBRARIES}
-            ${LIBSSH_LIBRARIES}
-            ${AVFORMAT_LIBRARIES}
-            ${AVCODEC_LIBRARIES}
-            ${AVUTIL_LIBRARIES}
-            ${SWSCALE_LIBRARIES}
-            ${Boost_LIBRARIES}
-            OpenSSL::Crypto
+            HGUIBaseCore
+            HGIfLog
+            HGIfUserAudit
+            HGServiceInterfaces
+            HGIfSystemData
             ${QT_LIBRARIES}
         )
 
         HG_CMAKE_ADD_SHARED(HGUILogin inc src ${MOC_SRCS})
         HG_CMAKE_MODULE_DEPEND(
             PluginInterface
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
-            HGAuthorityService
-            HGCommunicateService
-            HGImageAlgorithmService
-            HGBaseAppModule
-            HGSecurityService
-            # HGOnlinePlatformModule
-            # HGOnlinePlatformInterface
-            # SQLite::SQLite3
-            ${ZXING_LIBRARY}
-            ALSA::ALSA
-            ${OpenCV_LIBRARIES}
-            ${OpencvFreeType_LIBRARY}
-            ${LOG4CPLUS_LIBRARIES}
-            ${CUPS_LIBRARY}
-            ${XLSXIO_READ_LIBRARY}
-            ${XLSXIO_WRITE_LIBRARY}
-            ${HARU_LIBRARY}
-            ${ZeroMQ_LIBRARY}
-            ${MQTT_LIBRARYS}
-            ${LIB_SERIALPORT_LIBRARY}
-            ${LIB_MOSQUITT_LIBRARY}
-            ${PULSE_LIBRARIES}
-            ${LIBSSH_LIBRARIES}
-            ${AVFORMAT_LIBRARIES}
-            ${AVCODEC_LIBRARIES}
-            ${AVUTIL_LIBRARIES}
-            ${SWSCALE_LIBRARIES}
-            ${Boost_LIBRARIES}
-            # /usr/lib/x86_64-linux-gnu/libpulse.so
-            # /usr/lib/x86_64-linux-gnu/libpulse-simple.so
-            OpenSSL::Crypto
+            HGUIBaseCore
+            HGIfLog
+            HGIfUserAudit
+            HGServiceInterfaces
+            HGIfSystemData
             ${QT_LIBRARIES}
         )
     endif()
@@ -177,8 +120,8 @@ if (BUILD_EXECUTABLE)
     )
 
     include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-    # 添加HGBaseAppModule的头文件路径
-    include_directories("${CMAKE_SOURCE_DIR}/HGBaseAppModule/inc")
+    # 添加HGUIBaseCore的头文件路径
+    include_directories("${CMAKE_SOURCE_DIR}/HGUIBaseCore/inc")
     if (WIN32)
         # Windows平台只需要HGV6Interface库和基础依赖
         # 注意：libHGBaseAppModuleStatic.a必须在libPackFunInterface.a之前，因为前者依赖后者的符号

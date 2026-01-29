@@ -1,11 +1,12 @@
 #include "hgchannelsetwidget.h"
 #include "common.h"
+#include "loginterface.h"
 
 
 HGChannelSetWidget::HGChannelSetWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang)
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"ChannelSet"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"ChannelSet"));
     m_channelEditW=NULL;
     m_channelModuleEditW=NULL;
     m_moduleListW=NULL;
@@ -40,17 +41,26 @@ bool HGChannelSetWidget::closeWindow()
 {
     if (m_channelEditW){
         if (m_channelEditW->closeWindow()){
-            SAFE_DELETE(m_channelEditW);
+            if (m_channelEditW) {
+                delete (m_channelEditW);
+                m_channelEditW = nullptr;
+            }
         }
     }
     if (m_moduleListW){
         if (m_moduleListW->closeWindow()){
-            SAFE_DELETE(m_moduleListW);
+            if (m_moduleListW) {
+                delete (m_moduleListW);
+                m_moduleListW = nullptr;
+            }
         }
     }
     if (m_channelModuleEditW){
         if (m_channelModuleEditW->closeWindow()){
-            SAFE_DELETE(m_channelModuleEditW);
+            if (m_channelModuleEditW) {
+                delete (m_channelModuleEditW);
+                m_channelModuleEditW = nullptr;
+            }
         }
     }
     return true;

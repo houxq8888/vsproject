@@ -1,8 +1,11 @@
 #include "hgmethodmanagewidget.h"
+#include "loginterface.h"
+#include "SvcFactory.h"
+
 HGMethodManageWidget::HGMethodManageWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang)
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Method"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Method"));
     m_methodlistW=NULL;
     m_methodlistW=new HGMethodListWidget(m_lang);
 
@@ -78,7 +81,7 @@ void HGMethodManageWidget::slotSaveMethod(){
     std::ostringstream ss;
     ss<<"param:"<<param;
     #ifdef __linux__
-    HGLogService::getLogInstance(LOG_PATH)->logout(ss.str(),LOGINFO);
+    LOG_IF.logInfo(ss.str());
     #else
     printf("param:%s\n",param.c_str());
     #endif

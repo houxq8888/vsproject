@@ -6,10 +6,9 @@
 #include <string>
 #include <map>
 #include <vector>
-#include "HGMacroData.h"
-#include "opencv2/opencv.hpp"
+#include <opencv2/opencv.hpp>
 #include "CameraControlInterface_global.h"
-#include "HGError.h"
+#include "HGCommonTypes.h"
 
 namespace HGMACHINE{
 
@@ -21,11 +20,12 @@ public:
 
     std::vector<std::string> getCameraList(const std::string& type);
     void openCamera(const std::string &type="USB", const std::string& name="video=0");
-    HGImg2D getImgOneShot(const std::string &type="USB", const std::string& name="video=0");
-    cv::Mat getImgOneShotMat(const std::string &type="USB", const std::string& name="video=0");
+    cv::Mat getImgOneShot(const std::string &type="USB", const std::string& name="video=0");
     void closeCamera(const std::string &type="USB", const std::string& name="video=0");
 
-    ErrorInfo getLastError() const;
+    bool hasError() const;
+    std::string getErrorMessage() const;
+    HGErrorDetail getErrorDetail() const;
     void clearError();
 
 private:

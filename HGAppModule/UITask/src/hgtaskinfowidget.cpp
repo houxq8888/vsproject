@@ -2,6 +2,7 @@
 #include <sstream>
 #include <QButtonGroup>
 #include "common.h"
+#include "SvcFactory.h"
 
 HGTaskInfoWidget::HGTaskInfoWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang)
@@ -12,9 +13,9 @@ m_lang(lang)
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
 
-    m_rectifyBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Rectify")));//"修改");
-    m_saveBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Save")));//"保存");
-    m_createBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"New")));//"新建");
+    m_rectifyBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Rectify")));//"修改");
+    m_saveBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Save")));//"保存");
+    m_createBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"New")));//"新建");
     connect(m_rectifyBtn,       SIGNAL(clicked()),this,SLOT(clickRectifyTask()));
     connect(m_saveBtn,          SIGNAL(clicked()),this,SLOT(clickSaveTask()));
     connect(m_createBtn,        SIGNAL(clicked()),this,SLOT(clickCreateTask()));
@@ -43,7 +44,7 @@ m_lang(lang)
     m_sampleNoLabel=new QLabel("样品编号");
     m_sampleNoEdit=new QLineEdit();
     m_weightLabel=new QLabel("重量");
-    m_getWeightBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"GetWeight")));
+    m_getWeightBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"GetWeight")));
     m_weightEdit=new QLineEdit();
     m_weightUnitLabel=new QLabel("g");
     m_statusLabel=new QLabel("状态");
@@ -159,7 +160,7 @@ m_lang(lang)
 
     
     m_addFactorLabel=new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xze-add-o 1.png"),
-        loadTranslation(m_lang,"AddElement"));//"添加目标成分");
+        SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AddElement"));//"添加目标成分");
     connect(m_addFactorLabel,SIGNAL(clickImgLabel()),this,SLOT(clickAddFactor()));
 
     m_layout->addWidget(m_sampleInputLabel,0,0,1,2);

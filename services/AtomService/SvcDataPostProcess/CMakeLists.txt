@@ -8,9 +8,6 @@ HG_CMAKE_ADD_MODULE(SvcDataPostProcess inc src)
 HG_CMAKE_MODULE_DEPEND_PUB( 
     
 )
-HG_CMAKE_MODULE_DEPEND_PRI( 
-    
-)
 HG_CMAKE_ADD_SHARED(HGSvcDataPostProcess inc src)
 
 HG_CMAKE_MODULE_DEPEND(

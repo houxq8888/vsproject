@@ -1,5 +1,6 @@
 #include "hgddadjustwidget.h"
 #include "common.h"
+#include "SvcFactory.h"
 
 HGDDAdjustWidget::HGDDAdjustWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang)
@@ -32,7 +33,7 @@ m_lang(lang)
     m_unitCombo=new QComboBox();
     m_unitCombo->addItems({"ml"});
     m_adjustTempEdit=new QLineEdit();
-    m_adjustTempEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
+    m_adjustTempEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));
 
     m_adjustTimeEdit=new QLineEdit();
     m_adjustCircleEdit=new QLineEdit();

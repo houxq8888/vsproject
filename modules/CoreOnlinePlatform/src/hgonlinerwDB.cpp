@@ -2,8 +2,7 @@
 #include <vector>
 #include <sstream>
 #include <iomanip>
-#include "HGLogService.h"
-#include "hgserial.h"
+#include "hglogservice.h"
 #include "hgonlineplatformmodule.h"
 #include "HGExactTime.h"
 #include "hgcommonutility.h"
@@ -487,7 +486,7 @@ std::map<std::string,std::map<std::string,std::vector<DeviceName>>> gDeviceNames
         printf("%s\n", resSS.str().c_str());
 
 
-        HGLogService::getLogInstance(HGLogService::getLogPath())->logout(resSS.str(),LOGINFO);
+        HGLogService::getInstance(HGLogService::getLogPath())->logInfo(resSS.str());
 
         writeDeviceDataInfo(dbName, returnContents[dbName]);
         return returnContents[dbName];

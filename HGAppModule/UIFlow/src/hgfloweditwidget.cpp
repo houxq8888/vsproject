@@ -6,14 +6,18 @@
 #include "common.h"
 #include <QLineEdit>
 #include <QMessageBox>
-#include <sstream>
+#include "hgjson.h"
+#include "SvcFactory.h"
+#include "FlowManager.h"
+
+using namespace HGMACHINE;
 
 HGFlowEditWidget::HGFlowEditWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang)
 {
     m_index=-1;
     m_fillContent.clear();
-    m_editGroupBox=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Flow")));//"流程");
+    m_editGroupBox=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Flow")));//"流程");
     m_editlayout=new QGridLayout();
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
@@ -57,7 +61,7 @@ m_lang(lang)
 
     m_layout->addWidget(m_editGroupBox,0,0);
 
-    m_fillContent=RWDb::readFlowInfo();
+    m_fillContent=FlowManager::instance().get().readFlowInfo();
     for (int index=0;index<int(m_fillContent.size());index++){
         fnDisplayFlowInfo(index,m_fillContent[index]);
         QComboBox* typeCombo=new QComboBox();
@@ -78,8 +82,9 @@ void HGFlowEditWidget::onCellClicked(int row,int column){
     m_curCol=column;
     m_curRow=row;
     if (row >= int(m_fillContent.size())) return;
+    std::string flowJson = FlowManager::instance().get().readFlowOfTask(m_fillContent[row]["DBName"]);
     FlowOfTask flow;
-    flow=RWDb::readFlowOfTask(m_fillContent[row]["DBName"]);
+    HGJson::deserialize(flowJson, flow);
     emit flowInfoWShow(flow);
 }
 void HGFlowEditWidget::fnDisplayFlowInfo(int count,std::map<std::string,std::string> fillContent){
@@ -150,26 +155,26 @@ void HGFlowEditWidget::slotSaveFlow(){
     if (row >= m_tableW->rowCount()) return;
     m_tableW->setEditTriggers(QAbstractItemView::NoEditTriggers);
     if (row==-1) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
         return;
     }
     std::string tableName="";
     bool coverFlag=false;
     // list flow 
     QDialog dialog(this);
-    dialog.setWindowTitle(QString::fromStdString(loadTranslation(m_lang,"InputSaveName")));//"请输入保存名称");
+    dialog.setWindowTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"InputSaveName")));//"请输入保存名称");
     dialog.setWindowModality(Qt::ApplicationModal);
 
     QListWidget* listW=new QListWidget(&dialog);
     QLineEdit* saveNameEdit=new QLineEdit(&dialog);
-    saveNameEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"InputSaveName")));//"请输入保存名称");
-    QPushButton* coverBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"OverwriteFile"))/*"覆盖原文件"*/,&dialog);
+    saveNameEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"InputSaveName")));//"请输入保存名称");
+    QPushButton* coverBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"OverwriteFile"))/*"覆盖原文件"*/,&dialog);
     QPushButton* okbtn=new QPushButton(&dialog);
-    okbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Ok")));//"确定");
+    okbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Ok")));//"确定");
     QPushButton* cancelbtn=new QPushButton(&dialog);
-    cancelbtn->setText(QString::fromStdString(loadTranslation(m_lang,"Cancel")));//"取消");
+    cancelbtn->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Cancel")));//"取消");
 
-    std::vector<std::string> names=RWDb::getAllTables(FlowDBName);
+    std::vector<std::string> names=FlowManager::instance().get().getAllTables(FlowDBName);
 
     int selectRow=row, coverRow=-1;
     std::string selectIndex=m_fillContent[row]["序号"];
@@ -231,14 +236,14 @@ void HGFlowEditWidget::slotSaveFlow(){
         m_fillContent[row]["DBName"]=tableName;
         if (coverRow!=-1&&coverFlag&&selectRow!=coverRow){
             // delete 
-            RWDb::deleteRecord(FLOWMANAGEDBNAME,"序号",coverIndex);
+            FlowManager::instance().get().deleteRecord(FLOWMANAGEDBNAME,"序号",coverIndex);
             m_fillContent.erase(m_fillContent.begin()+coverRow);
             m_tableW->removeRow(coverRow);
             for (int i=0;i<m_tableW->rowCount();i++){
                 m_tableW->item(i,0)->setText(QString("%1").arg(i+1));
                 m_fillContent[i]["序号"]=std::to_string(i+1);
             }
-            RWDb::clearFlowManageRecord();
+            FlowManager::instance().get().clearFlowManageRecord();
         }
         for (int i=0;i<m_tableW->rowCount();++i){
             QComboBox* combox=qobject_cast<QComboBox*>(m_tableW->cellWidget(i,2));
@@ -247,7 +252,7 @@ void HGFlowEditWidget::slotSaveFlow(){
                 m_fillContent[i]["类型"]=selectedValue;
             }
             m_fillContent[i]["名称"]=m_tableW->item(i,1)->text().toStdString();
-            RWDb::writeFlowManageRecord(m_fillContent[i]);
+            FlowManager::instance().get().writeFlowManageRecord(m_fillContent[i]);
         }
         emit saveSignal();
     }
@@ -262,15 +267,15 @@ void HGFlowEditWidget::saveSteps(std::vector<StepOfFlow> steps){
     m_flow.type=m_tableW->item(row,2)->text().toStdString();
 
     std::vector<std::map<std::string,std::string>> infoS;
-    infoS=RWDb::getFlowStepMap(m_flow);
-    RWDb::writeFlowRecord(m_flow.dbName,m_coverFlag,infoS);
+    infoS=FlowManager::instance().get().getFlowStepMap(m_flow);
+    FlowManager::instance().get().writeFlowRecord(m_flow.dbName,m_coverFlag,infoS);
 }
 void HGFlowEditWidget::slotDeleteFlow(){
     int row = getSelectedRow(m_tableW);
     if (row >= m_tableW->rowCount()) return;
     m_tableW->setEditTriggers(QAbstractItemView::NoEditTriggers);
     if (row==-1) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
         return;
     }
     if (row != -1)
@@ -283,29 +288,29 @@ void HGFlowEditWidget::slotDeleteFlow(){
                                                       QMessageBox::Yes | QMessageBox::No))
         {
             int index=std::stoi(m_tableW->item(row,0)->text().toStdString());
-            RWDb::deleteRecord(FLOWMANAGEDBNAME,"序号",m_tableW->item(row,0)->text().toStdString());
+            FlowManager::instance().get().deleteRecord(FLOWMANAGEDBNAME,"序号",m_tableW->item(row,0)->text().toStdString());
             std::ostringstream logtext;
             logtext<<"delete db:"<<m_fillContent[row]["DBName"];
             #ifdef __linux__
-            HGLogService::getLogInstance(LOG_PATH)->logout(logtext.str(),LOGINFO);
+            HGLogService::getInstance(LOG_PATH)->logInfo(logtext.str());
             #endif
             printf("delete db:%s\n",m_fillContent[row]["DBName"].c_str());
-            RWDb::deleteDB(m_fillContent[row]["DBName"]);
+            FlowManager::instance().get().deleteDB(m_fillContent[row]["DBName"]);
             m_fillContent.erase(m_fillContent.begin()+index-1);
             m_tableW->removeRow(row);
             for (int i=0;i<m_tableW->rowCount();i++){
                 m_tableW->item(i,0)->setText(QString("%1").arg(i+1));
                 m_fillContent[i]["序号"]=std::to_string(i+1);
             }
-            RWDb::clearFlowManageRecord();
+            FlowManager::instance().get().clearFlowManageRecord();
             for (const auto &info:m_fillContent){
-                RWDb::writeFlowManageRecord(info);
+                FlowManager::instance().get().writeFlowManageRecord(info);
             } 
         }
     }
     else
     {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
     }
 }
 bool HGFlowEditWidget::isSelectedRow(){
@@ -319,12 +324,12 @@ void HGFlowEditWidget::slotAddFlow(){
     m_flow.indexStr=std::to_string(index+1);
     m_flow.createTime=getStandardCurTime();
 
-    std::map<std::string,std::string> infoS=RWDb::getFlowMap(index+1,m_flow);
+    std::map<std::string,std::string> infoS=FlowManager::instance().get().getFlowMap(index+1,m_flow);
     m_fillContent.push_back(infoS);
     fnDisplayFlowInfo(index,m_fillContent[index]);
     m_tableW->setEditTriggers(QAbstractItemView::AllEditTriggers);
 
-    RWDb::writeFlowManageRecord(infoS);
+    FlowManager::instance().get().writeFlowManageRecord(infoS);
 
     setTableWColNoEdit(m_tableW,0);
     setTableWColNoEdit(m_tableW,3);

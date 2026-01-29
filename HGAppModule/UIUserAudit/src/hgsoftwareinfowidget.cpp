@@ -1,7 +1,12 @@
 #include "hgsoftwareinfowidget.h"
 #include <QMessageBox>
 #include "common.h"
+#include "loginterface.h"
+#include "SystemDataManager.h"
 #include "SvcFactory.h"
+#include "securityinterface.h"
+
+using namespace HGMACHINE;
 
 HGSoftwareInfoWidget::HGSoftwareInfoWidget(std::string lang,QWidget *parent) : QWidget(parent),
     // m_loginAuthority(HGOnlineRWDB::readLoginAuthority()),
@@ -17,32 +22,32 @@ void HGSoftwareInfoWidget::fnInit()
     m_layout=new QGridLayout();
     m_widgetLayout=new QGridLayout();
     this->setLayout(m_widgetLayout);
-    m_groupBox=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Software"))/*"应用软件"*/,this);
+    m_groupBox=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Software"))/*"应用软件"*/,this);
     m_groupBox->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
 
     m_groupBox->setLayout(m_layout);
 
     m_productIDQLabel=new QLabel();
-    m_productIDQLabel->setText(QString::fromStdString(loadTranslation(m_lang,"ActionCode")));//"激活码");
+    m_productIDQLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ActionCode")));//"激活码");
     m_productIDEdit=new QLineEdit();
-    m_productIDEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));//"请输入");
+    m_productIDEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));//"请输入");
     // m_productIDEdit->setEchoMode(QLineEdit::Password);
 
     m_productKeyQLabel=new QLabel();
-    m_productKeyQLabel->setText(QString::fromStdString(loadTranslation(m_lang,"ValidityPeriod")));//"有效期限");
+    m_productKeyQLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ValidityPeriod")));//"有效期限");
     m_productKeyEdit=new QLineEdit();
-    m_productKeyEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));//"请输入");
+    m_productKeyEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));//"请输入");
     m_productKeyEdit->installEventFilter(this);
 
-    m_enableBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Activate")));//"激活");
+    m_enableBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Activate")));//"激活");
     connect(m_enableBtn,        SIGNAL(clicked()),this,SLOT(clickEnable()));
 
     if (!m_isEnable){
         m_enableStatusLabel=new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"),
-            loadTranslation(m_lang,"Unactivated"));//"未激活");
+            SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Unactivated"));//"未激活");
     } else {
         m_enableStatusLabel=new LabelWithImg(IMGRIGHT,12,getPath("/resources/V1/@1xze-certificate 1.png"),
-            loadTranslation(m_lang,"Activated"));//"已激活");
+            SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Activated"));//"已激活");
     }
 
     m_layout->addWidget(m_productIDQLabel,0,0,1,3);
@@ -56,16 +61,46 @@ void HGSoftwareInfoWidget::fnInit()
 }
 HGSoftwareInfoWidget::~HGSoftwareInfoWidget()
 {
-    SAFE_DELETE(m_layout);
-    SAFE_DELETE(m_widgetLayout);
-    SAFE_DELETE(m_groupBox);
-    SAFE_DELETE(m_productIDQLabel);
-    SAFE_DELETE(m_productIDEdit);
-    SAFE_DELETE(m_productKeyQLabel);
-    SAFE_DELETE(m_productKeyEdit);
-    SAFE_DELETE(m_enableBtn);
-    SAFE_DELETE(m_enableStatusLabel);
-    SAFE_DELETE(m_authorityDeadLineCtrl);
+    if (m_layout){
+        delete m_authorityDeadLineCtrl;
+        m_authorityDeadLineCtrl=NULL;
+    }
+    if (m_widgetLayout){
+        delete m_authorityDeadLineCtrl;
+        m_authorityDeadLineCtrl=NULL;
+    }
+    if (m_groupBox){
+        delete m_authorityDeadLineCtrl;
+        m_authorityDeadLineCtrl=NULL;
+    }
+    if (m_productIDQLabel){
+        delete m_authorityDeadLineCtrl;
+        m_authorityDeadLineCtrl=NULL;
+    }
+    if (m_productIDEdit){
+        delete m_authorityDeadLineCtrl;
+        m_authorityDeadLineCtrl=NULL;
+    }
+    if (m_productKeyQLabel){
+        delete m_authorityDeadLineCtrl;
+        m_authorityDeadLineCtrl=NULL;
+    }
+    if (m_productKeyEdit){
+        delete m_authorityDeadLineCtrl;
+        m_authorityDeadLineCtrl=NULL;
+    }
+    if (m_enableBtn){
+        delete m_authorityDeadLineCtrl;
+        m_authorityDeadLineCtrl=NULL;
+    }
+    if (m_enableStatusLabel){
+        delete m_authorityDeadLineCtrl;
+        m_authorityDeadLineCtrl=NULL;
+    }
+    if (m_authorityDeadLineCtrl){
+        delete m_authorityDeadLineCtrl;
+        m_authorityDeadLineCtrl=NULL;
+    }
 }
 
 bool HGSoftwareInfoWidget::closeWindow()
@@ -77,99 +112,99 @@ void HGSoftwareInfoWidget::clickEnable()
     fnWriteDB();
 }
 void HGSoftwareInfoWidget::fnWriteDB(){
-    GlobalSingleton::instance().setSystemInfo("激活码",m_productIDEdit->text().toStdString());
-    if (isRightAuthority(GlobalSingleton::instance().getSystemInfo("激活码")))
+    SystemDataManager::instance().get().setSystemInfo("激活码",m_productIDEdit->text().toStdString());
+    if (SECURITY_IF.isRightAuthority(SystemDataManager::instance().get().getSystemInfo("激活码")))
     {
         TimeInfo curTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
         std::ostringstream curTimeS;
         curTimeS << curTimer.year << curTimer.month << curTimer.day;
     
-        GlobalSingleton::instance().setSystemInfo("授权日期", curTimeS.str());
-        GlobalSingleton::instance().setSystemInfo("授权期限", m_productKeyEdit->text().toStdString());
-        GlobalSingleton::instance().setSystemInfo("AuthorityStatus","true");
+        SystemDataManager::instance().get().setSystemInfo("授权日期", curTimeS.str());
+        SystemDataManager::instance().get().setSystemInfo("授权期限", m_productKeyEdit->text().toStdString());
+        SystemDataManager::instance().get().setSystemInfo("AuthorityStatus","true");
         curTimeS.str("");
-        curTimeS<<"激活成功，期限["<<GlobalSingleton::instance().getSystemInfo("授权日期")<<",";
-        if (GlobalSingleton::instance().getSystemInfo("授权期限")==""){
+        curTimeS<<"激活成功，期限["<<SystemDataManager::instance().get().getSystemInfo("授权日期")<<",";
+        if (SystemDataManager::instance().get().getSystemInfo("授权期限")==""){
             curTimeS<<"长期]";
         } else {
-            curTimeS<<GlobalSingleton::instance().getSystemInfo("授权期限")<<"]";
+            curTimeS<<SystemDataManager::instance().get().getSystemInfo("授权期限")<<"]";
         }
 
         m_enableStatusLabel->setImg(getPath("/resources/V1/@1xze-certificate 1.png")); // ,"已激活");
-        m_enableStatusLabel->setLabelText((loadTranslation(m_lang,"Activated")));//"已激活");
+        m_enableStatusLabel->setLabelText((SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Activated")));//"已激活");
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
                              QString::fromStdString(curTimeS.str()));
-        RWDb::writeAuditTrailLog(curTimeS.str());
+        LOG_IF.writeAuditTrailLog(curTimeS.str());
     } else
     {
         m_enableStatusLabel->setImg(getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"));//,"未激活");
-        m_enableStatusLabel->setLabelText((loadTranslation(m_lang,"Unactivated")));//"未激活");
-        GlobalSingleton::instance().setSystemInfo("AuthorityStatus","false");
+        m_enableStatusLabel->setLabelText((SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Unactivated")));//"未激活");
+        SystemDataManager::instance().get().setSystemInfo("AuthorityStatus","false");
 
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                             QString::fromStdString(loadTranslation(m_lang,"AuthorityUnactivate")));//"授权码不正确，激活失败！");
-        RWDb::writeAuditTrailLog(loadTranslation(m_lang,"AuthorityUnactivate"));
+                             QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AuthorityUnactivate")));//"授权码不正确，激活失败！");
+        LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"AuthorityUnactivate"));
     }
 
-    GlobalSingleton::instance().saveSystemInfo();
+    SystemDataManager::instance().get().saveSystemInfo();
 }
 void HGSoftwareInfoWidget::fnReadDB(){
-    m_productIDEdit->setText(QString::fromStdString(GlobalSingleton::instance().getSystemInfo("激活码")));
-    if (isRightAuthority(GlobalSingleton::instance().getSystemInfo("激活码")))
+    m_productIDEdit->setText(QString::fromStdString(SystemDataManager::instance().get().getSystemInfo("激活码")));
+    if (SECURITY_IF.isRightAuthority(SystemDataManager::instance().get().getSystemInfo("激活码")))
     {
-        m_productKeyEdit->setText(QString::fromStdString(GlobalSingleton::instance().getSystemInfo("授权期限")));
-        if (GlobalSingleton::instance().getSystemInfo("授权期限") == "长期")
+        m_productKeyEdit->setText(QString::fromStdString(SystemDataManager::instance().get().getSystemInfo("授权期限")));
+        if (SystemDataManager::instance().get().getSystemInfo("授权期限") == "长期")
         {
             m_enableStatusLabel->setImg(getPath("/resources/V1/@1xze-certificate 1.png")); // ,"已激活");
-            m_enableStatusLabel->setLabelText(loadTranslation(m_lang,"Activated"));//"已激活");
+            m_enableStatusLabel->setLabelText(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Activated"));//"已激活");
             m_isEnable=true;
         }
         else
         {
             TimeInfo curTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
             TimeInfo deadlineTimer = SvcFactory::CreateTimeService()->GetCurrentTime();
-            if (GlobalSingleton::instance().getSystemInfo("授权期限").length() >= 8) {
-                deadlineTimer.tm_year = atoi(GlobalSingleton::instance().getSystemInfo("授权期限").substr(0, 4).c_str());
-                deadlineTimer.tm_mon = atoi(GlobalSingleton::instance().getSystemInfo("授权期限").substr(4, 2).c_str());
-                deadlineTimer.tm_mday = atoi(GlobalSingleton::instance().getSystemInfo("授权期限").substr(6, 2).c_str());
+            if (SystemDataManager::instance().get().getSystemInfo("授权期限").length() >= 8) {
+                deadlineTimer.year = atoi(SystemDataManager::instance().get().getSystemInfo("授权期限").substr(0, 4).c_str());
+                deadlineTimer.month = atoi(SystemDataManager::instance().get().getSystemInfo("授权期限").substr(4, 2).c_str());
+                deadlineTimer.day = atoi(SystemDataManager::instance().get().getSystemInfo("授权期限").substr(6, 2).c_str());
             }
             if (curTimer > deadlineTimer)
             {
                 m_isEnable = false;
                 m_enableStatusLabel->setImg(getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png")); //,"未激活,授权过期");
-                m_enableStatusLabel->setLabelText(loadTranslation(m_lang,"UnactivatedAndExpired"));//"未激活,授权过期");
+                m_enableStatusLabel->setLabelText(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UnactivatedAndExpired"));//"未激活,授权过期");
             }
             else
             {
-                deadlineTimer.tm_mday-=7;
-                if ((deadlineTimer.tm_mday-7) <= 0){
-                    if (deadlineTimer.tm_mon<=1){
-                        deadlineTimer.tm_year--;
-                        deadlineTimer.tm_mon=12;
-                        deadlineTimer.tm_mday=31-(7-deadlineTimer.tm_mday);
+                deadlineTimer.day-=7;
+                if ((deadlineTimer.day-7) <= 0){
+                    if (deadlineTimer.month<=1){
+                        deadlineTimer.year--;
+                        deadlineTimer.month=12;
+                        deadlineTimer.day=31-(7-deadlineTimer.day);
                     } else {
-                        deadlineTimer.tm_mon--;
-                        if (deadlineTimer.tm_mon==1||deadlineTimer.tm_mon==3||deadlineTimer.tm_mon==5||deadlineTimer.tm_mon==7||deadlineTimer.tm_mon==8||deadlineTimer.tm_mon==10||deadlineTimer.tm_mon==12)
+                        deadlineTimer.month--;
+                        if (deadlineTimer.month==1||deadlineTimer.month==3||deadlineTimer.month==5||deadlineTimer.month==7||deadlineTimer.month==8||deadlineTimer.month==10||deadlineTimer.month==12)
                         {
-                            deadlineTimer.tm_mday=31-(7-deadlineTimer.tm_mday);
-                        } else if (deadlineTimer.tm_mon==4||deadlineTimer.tm_mon==6||deadlineTimer.tm_mon==9||deadlineTimer.tm_mon==11){
-                            deadlineTimer.tm_mday=30-(7-deadlineTimer.tm_mday);
+                            deadlineTimer.day=31-(7-deadlineTimer.day);
+                        } else if (deadlineTimer.month==4||deadlineTimer.month==6||deadlineTimer.month==9||deadlineTimer.month==11){
+                            deadlineTimer.day=30-(7-deadlineTimer.day);
                         } else {
-                            if ((deadlineTimer.tm_year%4==0&&deadlineTimer.tm_year%100!=0)||deadlineTimer.tm_year%400==0)
-                                deadlineTimer.tm_mday=29-(7-deadlineTimer.tm_mday);
+                            if ((deadlineTimer.year%4==0&&deadlineTimer.year%100!=0)||deadlineTimer.year%400==0)
+                                deadlineTimer.day=29-(7-deadlineTimer.day);
                             else
-                                deadlineTimer.tm_mday=28-(7-deadlineTimer.tm_mday);
+                                deadlineTimer.day=28-(7-deadlineTimer.day);
                         }
                     }
                 }
                 if (curTimer>deadlineTimer){
                     m_isEnable = true;
                     m_enableStatusLabel->setImg(getPath("/resources/V1/@1xze-certificate 1.png")); // ,"已激活");
-                    m_enableStatusLabel->setLabelText(loadTranslation(m_lang,"ActivatedAndOnlyOneWeek"));//"已激活[距离截止日期只剩最后一周，请及时续期]");
+                    m_enableStatusLabel->setLabelText(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"ActivatedAndOnlyOneWeek"));//"已激活[距离截止日期只剩最后一周，请及时续期]");
                 } else {
                     m_isEnable = true;
                     m_enableStatusLabel->setImg(getPath("/resources/V1/@1xze-certificate 1.png")); // ,"已激活");
-                    m_enableStatusLabel->setLabelText(loadTranslation(m_lang,"Activated"));//"已激活");
+                    m_enableStatusLabel->setLabelText(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Activated"));//"已激活");
                 }
             }
         }
@@ -178,9 +213,9 @@ void HGSoftwareInfoWidget::fnReadDB(){
     {
         m_isEnable=false;
         m_enableStatusLabel->setImg(getPath("/resources/V1/@1xmd-radio_button_unchecked 1.png"));//,"未激活");
-        m_enableStatusLabel->setLabelText(loadTranslation(m_lang,"Unactivated"));//"未激活");
+        m_enableStatusLabel->setLabelText(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Unactivated"));//"未激活");
     }
-    GlobalSingleton::instance().setSystemInfo("AuthorityStatus", (m_isEnable?"true":"false"));
+    SystemDataManager::instance().get().setSystemInfo("AuthorityStatus", (m_isEnable?"true":"false"));
 }
 bool HGSoftwareInfoWidget::eventFilter(QObject* obj,QEvent* event)
 {
@@ -190,7 +225,7 @@ bool HGSoftwareInfoWidget::eventFilter(QObject* obj,QEvent* event)
             if (obj==m_productKeyEdit){
                 // if (!isPermitted(m_loginAuthority,"设备信息")){
                 //     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), 
-                //         QString::fromStdString(loadTranslation(m_lang,"NoPermission"))); //"无此权限，请联系管理员开通！");
+                //         QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"NoPermission"))); //"无此权限，请联系管理员开通！");
                 //     return QWidget::eventFilter(obj,event);
                 // }
                 m_authorityDeadLineCtrl=new KBTimeEdit(true);

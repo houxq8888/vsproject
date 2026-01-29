@@ -1,5 +1,6 @@
 #include "hgchannelmoduleeditwidget.h"
 #include "common.h"
+#include "SvcFactory.h"
 
 
 HGChannelModuleEditWidget::HGChannelModuleEditWidget(std::string lang,QWidget *parent) : QWidget(parent),
@@ -10,9 +11,9 @@ m_lang(lang)
     m_swirlWs.clear();
     m_phDDWs.clear();
     m_ddModuleWs.clear();
-    m_cancelBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Cancel")));//"取消");
-    m_okBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Ok")));//"确定");
-    m_applyBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Apply")));//"应用");
+    m_cancelBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Cancel")));//"取消");
+    m_okBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Ok")));//"确定");
+    m_applyBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Apply")));//"应用");
 
     connect(m_cancelBtn,SIGNAL(clicked()),this,SLOT(slotCancel()));
     connect(m_okBtn,SIGNAL(clicked()),this,SLOT(slotOk()));
@@ -23,7 +24,7 @@ m_lang(lang)
     
     m_toolBox=new QToolBox();
     m_toolBox->addItem(m_channelCombo,QIcon(QString::fromStdString(getPath("/resources/V1/@1xze-arrow 1.png"))),
-        QString::fromStdString(loadTranslation(m_lang,"SetChannel")));//"配置通道");
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SetChannel")));//"配置通道");
     connect(m_toolBox,SIGNAL(currentChanged(int)),this,SLOT(togglePage(int)));
 
     m_toolBox->setStyleSheet(R"(
@@ -52,35 +53,50 @@ bool HGChannelModuleEditWidget::closeWindow()
     for (auto &widget:m_phDDWs){
         if (widget.second){
             if (widget.second->closeWindow()){
-                SAFE_DELETE(widget.second);
+                if (widget.second) {
+                    delete (widget.second);
+                    widget.second = nullptr;
+                }
             }
         }
     }
     for (auto &widget:m_ddModuleWs){
         if (widget.second){
             if (widget.second->closeWindow()){
-                SAFE_DELETE(widget.second);
+                if (widget.second) {
+                    delete (widget.second);
+                    widget.second = nullptr;
+                }
             }
         }
     }
     for (auto &widget:m_swirlWs){
         if (widget.second){
             if (widget.second->closeWindow()){
-                SAFE_DELETE(widget.second);
+                if (widget.second) {
+                    delete (widget.second);
+                    widget.second = nullptr;
+                }
             }
         }
     }
     for (auto &widget:m_auxPumpWs){
         if (widget.second){
             if (widget.second->closeWindow()){
-                SAFE_DELETE(widget.second);
+                if (widget.second) {
+                    delete (widget.second);
+                    widget.second = nullptr;
+                }
             }
         }
     }
     for (auto &widget:m_eleBalanceWs){
         if (widget.second){
             if (widget.second->closeWindow()){
-                SAFE_DELETE(widget.second);
+                if (widget.second) {
+                    delete (widget.second);
+                    widget.second = nullptr;
+                }
             }
         }
     }

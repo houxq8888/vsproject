@@ -12,7 +12,28 @@
 #include "hgauxpumpwidget.h"
 #include "hgelebalancewidget.h"
 #include "common.h"
+#include "IChannel.h"
+#include <string>
+#include <vector>
 
+namespace HGMACHINE {
+
+struct ModuleOfChannel {
+    int index;
+    std::string name;
+    std::string param;
+    std::string nameOfSameModule;
+    int indexOfSameModule;
+    std::string typeName;
+};
+
+struct Channel {
+    int channel;
+    std::string dbName;
+    std::vector<ModuleOfChannel> modules;
+};
+
+}
 
 class HGChannelModuleEditWidget : public QWidget
 {

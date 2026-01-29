@@ -12,7 +12,7 @@ if (PLATFORM STREQUAL "x64")
         Qt6::Charts
         Qt6::PrintSupport
     )
-    # Qt6 uses automatic MOC, no need for qt5_wrap_cpp
+    # Qt6 uses automatic MOC, no need for qt6_wrap_cpp
     qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
         set(CMAKE_AUTOMOC ON)
         set(CMAKE_AUTOUIC ON)
@@ -57,49 +57,21 @@ if (BUILD_SHARED_LIBS)
     if(WIN32)
     else()
         HG_CMAKE_MODULE_DEPEND_PUB(
-            HGBaseAppModule
-            HGFrameService
-            HGSaveService
-            HGSecurityService
             PluginInterface
-            HGCommon
-            HGConfig
-            HGLowerPC
+            HGUIBaseCore
+            HGServiceInterfaces
+            HGIfLog
+            HGIfChartData
             ${QT_LIBRARIES}
         )
         HG_CMAKE_ADD_SHARED(HGUICurve inc src ${MOC_SRCS})
         # Linux平台需要完整的依赖链
         HG_CMAKE_MODULE_DEPEND(
             PluginInterface
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGFrameService
-            HGSaveService
-            HGSecurityService
-            HGBaseAppModule
-            ALSA::ALSA
-            ${OpenCV_LIBRARIES}
-            ${OpencvFreeType_LIBRARY}
-            ${LOG4CPLUS_LIBRARIES}
-            ${CUPS_LIBRARY}
-            ${XLSXIO_READ_LIBRARY}
-            ${XLSXIO_WRITE_LIBRARY}
-            ${HARU_LIBRARY}
-            ${ZeroMQ_LIBRARY}
-            ${MQTT_LIBRARYS}
-            ${LIB_SERIALPORT_LIBRARY}
-            ${LIB_MOSQUITT_LIBRARY}
-            ${PULSE_LIBRARIES}
-            ${LIBSSH_LIBRARIES}
-            ${AVFORMAT_LIBRARIES}
-            ${AVCODEC_LIBRARIES}
-            ${AVUTIL_LIBRARIES}
-            ${SWSCALE_LIBRARIES}
-            ${Boost_LIBRARIES}
-            /usr/lib/x86_64-linux-gnu/libpulse.so
-            /usr/lib/x86_64-linux-gnu/libpulse-simple.so
-            OpenSSL::Crypto
+            HGUIBaseCore
+            HGServiceInterfaces
+            HGIfLog
+            HGIfChartData
             ${QT_LIBRARIES}
         )
     endif()
@@ -107,7 +79,11 @@ endif()
 
 if (BUILD_STATIC_LIBS)
     if (WIN32)
-        HG_CMAKE_ADD_STATIC(HGUICurveStatic inc src ${MOC_SRCS})
+        HG_CMAKE_ADD_STATIC(HGUICurveStatic inc src ${MOC_SRCS}
+            ${CMAKE_SOURCE_DIR}/../../interfaces/IfChartData/inc
+            ${CMAKE_SOURCE_DIR}/../../interfaces/IfChartData/src
+            ${CMAKE_SOURCE_DIR}/../../modules/CoreChartData/inc
+            ${CMAKE_SOURCE_DIR}/../../modules/CoreChartData/src)
         # Windows平台只需要HGV6Interface库和基础依赖
         target_include_directories(HGUICurveStatic PUBLIC 
             ${CMAKE_SOURCE_DIR}/pluginInterface/inc

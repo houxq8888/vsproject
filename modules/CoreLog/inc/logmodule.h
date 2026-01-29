@@ -49,6 +49,8 @@ public:
     bool saveLogsToFile(const std::vector<std::map<std::string, std::string>>& logs,
                        const std::string& filePath,
                        const std::string& format);
+    
+    void writeAuditTrailLog(const std::string& logContent);
 
 private:
     class Impl;

@@ -87,7 +87,10 @@ m_lang(lang)
 bool HGBackUnitWidget::closeWindow(){
     if (m_ddAdjustW){
         if (m_ddAdjustW->closeWindow()){
-            SAFE_DELETE(m_ddAdjustW);
+            if (m_ddAdjustW) {
+                delete (m_ddAdjustW);
+                m_ddAdjustW = nullptr;
+            }
         }
     }
     return true;

@@ -13,22 +13,14 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGBaseConfig
     HGSvcFrame
     HGSvcLog
-    ${LOG4CPLUS_LIBRARIES}
     ${VSOMEIP_LIBRARIES}
     ${ZeroMQ_LIBRARY}
-    # ${MQTT_LIBRARYS}
+    ${MQTT_LIBRARYS}
     ${LIB_MOSQUITT_LIBRARY}
-    ${PULSE_LIBRARIES}
     ${LIBSSH_LIBRARIES}
-    ${LIB_SERIALPORT_LIBRARY}
-    ${AVFORMAT_LIBRARIES}
-    ${AVCODEC_LIBRARIES}
-    ${AVUTIL_LIBRARIES}
-    ${SWSCALE_LIBRARIES}
-    ${HARU_LIBRARY}
-    ${CUPS_LIBRARY}
-    ${XLSXIO_READ_LIBRARY}
-    ${XLSXIO_WRITE_LIBRARY}
+    ${OpenCV_LIBRARIES}  
+    /usr/lib/x86_64-linux-gnu/libpulse.so
+    /usr/lib/x86_64-linux-gnu/libpulse-simple.so
 )
 
 if (PLATFORM STREQUAL "x64")
@@ -40,23 +32,14 @@ HG_CMAKE_MODULE_DEPEND(
     HGBaseConfig
     HGSvcFrame
     HGSvcLog
-    ${LOG4CPLUS_LIBRARIES}
     ${VSOMEIP_LIBRARIES}
     ${ZeroMQ_LIBRARY}
     ${MQTT_LIBRARYS}
     ${LIB_MOSQUITT_LIBRARY}
-    ${PULSE_LIBRARIES}
     ${LIBSSH_LIBRARIES}
-    ${LIB_SERIALPORT_LIBRARY}
-    ${AVFORMAT_LIBRARIES}
-    ${AVCODEC_LIBRARIES}
-    ${AVUTIL_LIBRARIES}
-    ${SWSCALE_LIBRARIES}
-    ${OpenCV_LIBRARIES}
-    ${HARU_LIBRARY}
-    ${CUPS_LIBRARY}
-    ${XLSXIO_READ_LIBRARY}
-    ${XLSXIO_WRITE_LIBRARY}
+    ${OpenCV_LIBRARIES}  
+    /usr/lib/x86_64-linux-gnu/libpulse.so
+    /usr/lib/x86_64-linux-gnu/libpulse-simple.so
 )
 
 elseif (PLATFORM STREQUAL "win32")
@@ -71,6 +54,9 @@ HG_CMAKE_MODULE_DEPEND(
     ${MQTT_LIBRARYS}
     ${LIB_MOSQUITT_LIBRARY}
     ${LIBSSH_LIBRARIES}
+    ${OpenCV_LIBRARIES} 
+    /usr/lib/x86_64-linux-gnu/libpulse.so
+    /usr/lib/x86_64-linux-gnu/libpulse-simple.so
 )
 
 endif()

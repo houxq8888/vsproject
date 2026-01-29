@@ -10,6 +10,9 @@
 #include <QComboBox>
 #include <QKeyEvent>
 #include "common.h"
+#include "MethodManager.h"
+
+using namespace HGMACHINE;
 
 class HGMethodEditWidget : public QWidget
 {
@@ -48,7 +51,12 @@ private:
     QTableWidget* m_tableW;
     QComboBox* m_typeCombo;
 
-    Method m_method;
+    std::string m_methodIndexStr;
+    std::string m_methodName;
+    std::string m_methodType;
+    std::string m_methodCreateTime;
+    std::string m_methodDbName;
+    std::string m_methodParam;
     std::vector<std::map<std::string,std::string>> m_fillContent;
     int m_index,m_curCol,m_curRow;
 

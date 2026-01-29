@@ -20,27 +20,42 @@ m_lang(lang)
 bool HGMethodInfoWidget::closeWindow(){
     if (m_lightCalibMW){
         if (m_lightCalibMW->closeWindow()){
-            SAFE_DELETE(m_lightCalibMW);
+            if (m_lightCalibMW){
+                delete m_lightCalibMW;
+                m_lightCalibMW=nullptr;
+            }
         }
     } 
     if (m_dianweiDDMW){
         if (m_dianweiDDMW->closeWindow()){
-            SAFE_DELETE(m_dianweiDDMW);
+            if (m_dianweiDDMW){
+                delete m_dianweiDDMW;
+                m_dianweiDDMW=nullptr;
+            }
         }
     } 
     if (m_colorDDMW){
         if (m_colorDDMW->closeWindow()){
-            SAFE_DELETE(m_colorDDMW);
+            if (m_colorDDMW){
+                delete m_colorDDMW;
+                m_colorDDMW=nullptr;
+            }
         }
     } 
     if (m_kulunWaterMW){
         if (m_kulunWaterMW->closeWindow()){
-            SAFE_DELETE(m_kulunWaterMW);
+            if (m_kulunWaterMW){
+                delete m_kulunWaterMW;
+                m_kulunWaterMW=nullptr;
+            }
         }
     } 
     if (m_rongliangMW){
         if (m_rongliangMW->closeWindow()){
-            SAFE_DELETE(m_rongliangMW);
+            if (m_rongliangMW){
+                delete m_rongliangMW;
+                m_rongliangMW=nullptr;
+            }
         }
     }
     return true;

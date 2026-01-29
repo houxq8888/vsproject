@@ -6,13 +6,13 @@ file(GLOB MOC_HEADERS "inc/*.h")
 if (PLATFORM STREQUAL "x64")
     # Linux native compilation - Qt5
     set(QT_LIBRARIES
-        Qt5::Gui
-        Qt5::Core
-        Qt5::Widgets
-        Qt5::Charts
-        Qt5::PrintSupport
+        Qt6::Gui
+        Qt6::Core
+        Qt6::Widgets
+        Qt6::Charts
+        Qt6::PrintSupport
     )
-    qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+    qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
 elseif (PLATFORM STREQUAL "win32")
     if(WIN32)
         # Windows native compilation - Qt6
@@ -34,13 +34,13 @@ elseif (PLATFORM STREQUAL "win32")
     else()
         # Linux cross-compilation for Windows - Qt5
         set(QT_LIBRARIES
-            Qt5::Gui
-            Qt5::Core
-            Qt5::Widgets
-            Qt5::Charts
-            Qt5::PrintSupport
+            Qt6::Gui
+            Qt6::Core
+            Qt6::Widgets
+            Qt6::Charts
+            Qt6::PrintSupport
         )
-        qt5_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+        qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
     endif()
 endif()
 
@@ -52,20 +52,12 @@ target_compile_definitions(TestPlugin PUBLIC
      -DENV_APP_NAME=\"HGTestPlugin\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
-    Qt5::Gui
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::UiPlugin
-    Qt5::Designer
+    ${QT_LIBRARIES}
 )
 
 HG_CMAKE_ADD_SHARED(HGTestPlugin inc src ${MOC_SRCS})
 HG_CMAKE_MODULE_DEPEND(
-    Qt5::Gui
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::UiPlugin
-    Qt5::Designer
+    ${QT_LIBRARIES}
 )
 # HG_CMAKE_ADD_EXE(HGTestPlugin main.cpp)
 

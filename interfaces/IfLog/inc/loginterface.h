@@ -49,6 +49,10 @@ public:
     bool saveLogsToFile(const std::vector<std::map<std::string, std::string>>& logs,
                        const std::string& filePath,
                        const std::string& format);
+    
+    void writeAuditTrailLog(const std::string& logContent);
+
+    static LogInterface& instance();
 
 private:
     class Impl;
@@ -56,5 +60,7 @@ private:
 };
 
 }
+
+#define LOG_IF HGMACHINE::LogInterface::instance()
 
 #endif // LOGINTERFACE_H

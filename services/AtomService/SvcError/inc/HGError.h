@@ -68,6 +68,26 @@ enum class ErrorCategory {
     IMAGE_CAPTURE_FAILED = 6003,
     IMAGE_ANALYSIS_FAILED = 6004,
     
+    // 相机控制错误 (6100-6199)
+    CAMERA_CONTROL_ERROR_BASE = 6100,
+    CAMERA_CONTROL_INVALID_CAMERA_TYPE = 6101,
+    CAMERA_CONTROL_INVALID_CAMERA_NAME = 6102,
+    CAMERA_CONTROL_CAMERA_NOT_FOUND = 6103,
+    CAMERA_CONTROL_CAMERA_OPEN_FAILED = 6104,
+    CAMERA_CONTROL_CAMERA_CLOSE_FAILED = 6105,
+    CAMERA_CONTROL_GET_FRAME_FAILED = 6106,
+    
+    // 相机识别错误 (6200-6299)
+    CAMERA_RECOGNIZE_ERROR_BASE = 6200,
+    CAMERA_RECOGNIZE_TEMPLATE_SAVE_FAILED = 6201,
+    CAMERA_RECOGNIZE_RECOGNITION_FAILED = 6202,
+    
+    // 杯子检测错误 (6300-6399)
+    HG_CUP_DET_ERROR_BASE = 6300,
+    HG_CUP_DET_DETECTION_FAILED = 6301,
+    HG_CUP_DET_INVALID_IMAGE = 6302,
+    HG_CUP_DET_INVALID_ROI = 6303,
+    
     // 用户界面错误 (7000-7999)
     UI_ERROR_BASE = 7000,
     UI_INIT_FAILED = 7001,
@@ -149,6 +169,28 @@ inline std::string errorCategoryToString(ErrorCategory code) {
             return "Image capture failed";
         case ErrorCategory::IMAGE_ANALYSIS_FAILED:
             return "Image analysis failed";
+        case ErrorCategory::CAMERA_CONTROL_INVALID_CAMERA_TYPE:
+            return "Invalid camera type";
+        case ErrorCategory::CAMERA_CONTROL_INVALID_CAMERA_NAME:
+            return "Invalid camera name";
+        case ErrorCategory::CAMERA_CONTROL_CAMERA_NOT_FOUND:
+            return "Camera not found";
+        case ErrorCategory::CAMERA_CONTROL_CAMERA_OPEN_FAILED:
+            return "Camera open failed";
+        case ErrorCategory::CAMERA_CONTROL_CAMERA_CLOSE_FAILED:
+            return "Camera close failed";
+        case ErrorCategory::CAMERA_CONTROL_GET_FRAME_FAILED:
+            return "Get frame failed";
+        case ErrorCategory::CAMERA_RECOGNIZE_TEMPLATE_SAVE_FAILED:
+            return "Template save failed";
+        case ErrorCategory::CAMERA_RECOGNIZE_RECOGNITION_FAILED:
+            return "Recognition failed";
+        case ErrorCategory::HG_CUP_DET_DETECTION_FAILED:
+            return "Cup detection failed";
+        case ErrorCategory::HG_CUP_DET_INVALID_IMAGE:
+            return "Invalid image";
+        case ErrorCategory::HG_CUP_DET_INVALID_ROI:
+            return "Invalid ROI";
         case ErrorCategory::UI_INIT_FAILED:
             return "UI initialization failed";
         case ErrorCategory::UI_RESOURCE_NOT_FOUND:

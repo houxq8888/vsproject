@@ -1,5 +1,6 @@
 #include "hgddjicalibrationwidget.h"
 #include "common.h"
+#include "SvcFactory.h"
 
 HGDDjiCalibrationWidget::HGDDjiCalibrationWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang)
@@ -34,13 +35,13 @@ m_lang(lang)
     m_unitCombo->addItems({"1"});
 
     m_otherEdit=new QLineEdit();
-    m_otherEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));//"请输入");
+    m_otherEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));//"请输入");
     m_cubeEdit=new QLineEdit();
-    m_cubeEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
+    m_cubeEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));
     m_nongduEdit=new QLineEdit();
-    m_nongduEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
+    m_nongduEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));
     m_ddMethodEdit=new QLineEdit();
-    m_ddMethodEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
+    m_ddMethodEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));
 
     m_injectBtn=new QPushButton("注液");
     m_backBtn=new QPushButton("回液");

@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include "HGCommonTypes.h"
 
 class ISvcSave {
 public:
@@ -26,6 +27,7 @@ public:
     
     virtual bool Exists(const std::string& key) const = 0;
     virtual std::vector<std::string> GetAllKeys() const = 0;
+    virtual void SaveImage(const HGMACHINE::HGImg2D& mat, const std::string &path) = 0;
 };
 
 #endif // I_SVC_SAVE_H

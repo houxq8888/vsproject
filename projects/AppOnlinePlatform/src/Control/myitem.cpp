@@ -8,6 +8,7 @@
 #include "hgxml.h"
 #include "common.h"
 #include <QToolTip>
+#include "SvcFactory.h"
 
 using namespace HGMACHINE;
 
@@ -128,7 +129,7 @@ MyRectangleItem::MyRectangleItem(QRectF rect, std::string title,std::string lang
     // setOpacity(0.0);
 }
 void MyRectangleItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event) {
-    QToolTip::showText(event->screenPos(), QString::fromStdString(loadTranslation(m_lang,m_title)));
+    QToolTip::showText(event->screenPos(), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,m_title)));
     QGraphicsItem::hoverEnterEvent(event);
 }
 void MyRectangleItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
@@ -154,7 +155,7 @@ void MyRectangleItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
     // 绘制矩形
     painter->drawRect(boundingRect());
 
-    QString text=QString::fromStdString(loadTranslation(m_lang,m_title));
+    QString text=QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,m_title));
     // 计算文字的宽度和高度
     int textWidth = painter->fontMetrics().horizontalAdvance(text);
     int textHeight = painter->fontMetrics().height();
@@ -184,7 +185,7 @@ void MyRectangleItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event) {
     QMenu contextMenu;
 
     // 添加菜单项
-    QAction *action1 = contextMenu.addAction(QString::fromStdString(loadTranslation(m_lang,"Swirl")));
+    QAction *action1 = contextMenu.addAction(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Swirl")));
 
     // 执行用户选择的菜单项
     QAction *selectedAction = contextMenu.exec(event->screenPos());

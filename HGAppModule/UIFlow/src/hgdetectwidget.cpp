@@ -1,6 +1,9 @@
 #include "hgdetectwidget.h"
 #include "common.h"
 #include <sstream>
+#include "MethodManager.h"
+
+using namespace HGMACHINE;
 
 HGDetectWidget::HGDetectWidget(std::string lang,std::string name,QWidget *parent) : QWidget(parent),
 m_lang(lang)
@@ -40,7 +43,7 @@ m_lang(lang)
     m_testMethodCombo=new QComboBox();
     m_actionTimeLabel=new QLabel("时长");
     m_actionTimeEdit=new QLineEdit();
-    std::vector<std::string> names =RWDb::getMethodNames();
+    std::vector<std::string> names =MethodManager::instance().get().getMethodNames();
     for (int i=0;i<int(names.size());i++){
         m_testMethodCombo->addItem(QString::fromStdString(names[i]));
     }

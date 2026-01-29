@@ -7,13 +7,14 @@
 #include <QRadioButton>
 #include "labelwithimg.h"
 #include "common.h"
+#include "SvcFactory.h"
 
 
 class WifiWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit WifiWidget(std::string,WifiNetwork info,QWidget *parent = nullptr);
+    explicit WifiWidget(std::string,ServiceInterfaces::WifiNetwork info,QWidget *parent = nullptr);
     ~WifiWidget();
 
     bool closeWindow();

@@ -1,5 +1,10 @@
 #include "hgdeviceinfowidget.h"
 #include "common.h"
+#include "loginterface.h"
+#include "SystemDataManager.h"
+#include "SvcFactory.h"
+
+using namespace HGMACHINE;
 
 
 HGDeviceInfoWidget::HGDeviceInfoWidget(std::string lang,QWidget *parent) : QWidget(parent),
@@ -17,18 +22,18 @@ void HGDeviceInfoWidget::fnInit()
     m_widgetLayout=new QGridLayout();
     this->setLayout(m_widgetLayout);
     /*"设备信息"*/
-    m_groupBox=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"DeviceInfo")),this);
+    m_groupBox=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DeviceInfo")),this);
     m_groupBox->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
     m_groupBox->setLayout(m_layout);
     m_deviceNameQLabel=new QLabel();
-    m_deviceNameQLabel->setText(QString::fromStdString(loadTranslation(m_lang,"DeviceName"))/*"设备名称"*/);
+    m_deviceNameQLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DeviceName"))/*"设备名称"*/);
     m_deviceNameEdit=new QLineEdit();
     // m_deviceNameEdit->setPlaceholderText("请输入");
     m_deviceNameEdit->setReadOnly(true);
     connect(m_deviceNameEdit,SIGNAL(textChanged(QString)),this,SLOT(slotGetDeviceName(QString)));
 
     m_deviceTypeQLabel=new QLabel();
-    m_deviceTypeQLabel->setText(QString::fromStdString(loadTranslation(m_lang,"DeviceType")));//"设备型号");
+    m_deviceTypeQLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DeviceType")));//"设备型号");
     m_deviceTypeEdit=new QLineEdit();
     // m_deviceTypeEdit->setPlaceholderText("请输入");
     m_deviceTypeEdit->setReadOnly(true);
@@ -36,15 +41,15 @@ void HGDeviceInfoWidget::fnInit()
 
 
     m_deviceNumberQLabel=new QLabel();
-    m_deviceNumberQLabel->setText(QString::fromStdString(loadTranslation(m_lang,"DeviceNumber")));//"设备编号");
+    m_deviceNumberQLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"DeviceNumber")));//"设备编号");
     m_deviceNumberEdit=new QLineEdit();
-    m_deviceNumberEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));//"请输入");
+    m_deviceNumberEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));//"请输入");
     m_deviceNumberEdit->installEventFilter(this);
     connect(m_deviceNumberEdit,SIGNAL(textChanged(QString)),this,SLOT(slotGetDeviceNumber(QString)));
 
 
     m_curVersionQLabel=new QLabel();
-    m_curVersionQLabel->setText(QString::fromStdString(loadTranslation(m_lang,"CurVersion")));//"当前版本");
+    m_curVersionQLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"CurVersion")));//"当前版本");
     m_curVersionEdit=new QLineEdit();
     // m_curVersionEdit->setPlaceholderText("请输入");
     m_curVersionEdit->setReadOnly(true);
@@ -52,18 +57,18 @@ void HGDeviceInfoWidget::fnInit()
 
 
     m_initDateQLabel=new QLabel();
-    m_initDateQLabel->setText(QString::fromStdString(loadTranslation(m_lang,"FactoryDate")));//"出厂日期");
+    m_initDateQLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"FactoryDate")));//"出厂日期");
     m_initDateEdit=new QLineEdit();
-    m_initDateEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));//"请输入");
+    m_initDateEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));//"请输入");
     m_initDateEdit->installEventFilter(this);
     connect(m_initDateEdit,SIGNAL(textChanged(QString)),this,SLOT(slotGetInitDate(QString)));
 
     m_firmwareLabel=new QLabel();
-    m_firmwareLabel->setText(QString::fromStdString(loadTranslation(m_lang,"FirmwareVersion")));
+    m_firmwareLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"FirmwareVersion")));//"固件版本");
     m_firmwareEdit=new QLineEdit();
-    m_firmwareEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));//"请输入");
+    m_firmwareEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Input")));//"请输入");
     m_firmwareEdit->installEventFilter(this);
-    m_updateVersionBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"UpdateFirmware")));
+    m_updateVersionBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"UpdateFirmware")));
     connect(m_updateVersionBtn,SIGNAL(clicked()),this,SLOT(slotUpgradeFirmware()));
 
     m_layout->addWidget(m_deviceNameQLabel,0,0);
@@ -90,24 +95,78 @@ bool HGDeviceInfoWidget::closeWindow()
 }
 HGDeviceInfoWidget::~HGDeviceInfoWidget()
 {
-    SAFE_DELETE(m_layout);
-    SAFE_DELETE(m_widgetLayout);
-    SAFE_DELETE(m_groupBox);
-    SAFE_DELETE(m_deviceNameQLabel);
-    SAFE_DELETE(m_deviceNameEdit);
-    SAFE_DELETE(m_deviceTypeQLabel);
-    SAFE_DELETE(m_deviceTypeEdit);
-    SAFE_DELETE(m_deviceNumberQLabel);
-    SAFE_DELETE(m_deviceNumberEdit);
-    SAFE_DELETE(m_curVersionQLabel);
-    SAFE_DELETE(m_curVersionEdit);
-    SAFE_DELETE(m_initDateQLabel);
-    SAFE_DELETE(m_initDateEdit);
-    SAFE_DELETE(m_firmwareLabel);
-    SAFE_DELETE(m_firmwareEdit);
-    SAFE_DELETE(m_updateVersionBtn);
-    SAFE_DELETE(m_machineTimeCtrl);
-    SAFE_DELETE(m_deviceNumberCtrl);
+    if (m_layout) {
+        delete (m_layout);
+        m_layout = nullptr;
+    }
+    if (m_widgetLayout) {
+        delete (m_widgetLayout);
+        m_widgetLayout = nullptr;
+    }
+    if (m_groupBox) {
+        delete (m_groupBox);
+        m_groupBox = nullptr;
+    }
+    if (m_deviceNameQLabel) {
+        delete (m_deviceNameQLabel);
+        m_deviceNameQLabel = nullptr;
+    }
+    if (m_deviceNameEdit) {
+        delete (m_deviceNameEdit);
+        m_deviceNameEdit = nullptr;
+    }
+    if (m_deviceTypeQLabel) {
+        delete (m_deviceTypeQLabel);
+        m_deviceTypeQLabel = nullptr;
+    }
+    if (m_deviceTypeEdit) {
+        delete (m_deviceTypeEdit);
+        m_deviceTypeEdit = nullptr;
+    }
+    if (m_deviceNumberQLabel) {
+        delete (m_deviceNumberQLabel);
+        m_deviceNumberQLabel = nullptr;
+    }
+    if (m_deviceNumberEdit) {
+        delete (m_deviceNumberEdit);
+        m_deviceNumberEdit = nullptr;
+    }
+    if (m_curVersionQLabel) {
+        delete (m_curVersionQLabel);
+        m_curVersionQLabel = nullptr;
+    }
+    if (m_curVersionEdit) {
+        delete (m_curVersionEdit);
+        m_curVersionEdit = nullptr;
+    }
+    if (m_initDateQLabel) {
+        delete (m_initDateQLabel);
+        m_initDateQLabel = nullptr;
+    }
+    if (m_initDateEdit) {
+        delete (m_initDateEdit);
+        m_initDateEdit = nullptr;
+    }
+    if (m_firmwareLabel) {
+        delete (m_firmwareLabel);
+        m_firmwareLabel = nullptr;
+    }
+    if (m_firmwareEdit) {
+        delete (m_firmwareEdit);
+        m_firmwareEdit = nullptr;
+    }
+    if (m_updateVersionBtn) {
+        delete (m_updateVersionBtn);
+        m_updateVersionBtn = nullptr;
+    }
+    if (m_machineTimeCtrl) {
+        delete (m_machineTimeCtrl);
+        m_machineTimeCtrl = nullptr;
+    }
+    if (m_deviceNumberCtrl) {
+        delete (m_deviceNumberCtrl);
+        m_deviceNumberCtrl = nullptr;
+    }
 }
 
 bool HGDeviceInfoWidget::eventFilter(QObject* obj,QEvent* event)
@@ -116,7 +175,10 @@ bool HGDeviceInfoWidget::eventFilter(QObject* obj,QEvent* event)
         QMouseEvent* mouseEvent=static_cast<QMouseEvent*>(event);
         if (mouseEvent->button() == Qt::LeftButton){
             if (obj==m_initDateEdit){
-                SAFE_DELETE(m_machineTimeCtrl);
+                if (m_machineTimeCtrl){
+                    delete m_machineTimeCtrl;
+                    m_machineTimeCtrl=NULL;
+                }
                 m_machineTimeCtrl=new KBTimeEdit(false);
                 int passPosX = m_initDateEdit->mapToGlobal(QPoint(0,0)).x();
                 int passPosY = m_initDateEdit->mapToGlobal(QPoint(0,0)).y() + m_initDateEdit->height();
@@ -154,13 +216,13 @@ bool HGDeviceInfoWidget::eventFilter(QObject* obj,QEvent* event)
 void HGDeviceInfoWidget::slotMachineDate(QString text){
     std::ostringstream ss;
     ss<<m_initDateQLabel->text().toStdString()<<":["<<m_initDateEdit->text().toStdString()<<"]->"<<text.toStdString();
-    RWDb::writeAuditTrailLog(ss.str());
+    LOG_IF.writeAuditTrailLog(ss.str());
     m_initDateEdit->setText(text);
 }
 void HGDeviceInfoWidget::slotDeviceNumber(QString text){
     std::ostringstream ss;
     ss<<m_deviceNumberQLabel->text().toStdString()<<":["<<m_deviceNumberEdit->text().toStdString()<<"]->"<<text.toStdString();
-    RWDb::writeAuditTrailLog(ss.str());
+    LOG_IF.writeAuditTrailLog(ss.str());
     m_deviceNumberEdit->setText(text);
 }
 void HGDeviceInfoWidget::slotFirmwareVersion(QString text){
@@ -169,7 +231,7 @@ void HGDeviceInfoWidget::slotFirmwareVersion(QString text){
 void HGDeviceInfoWidget::slotUpgradeFirmware(){
     std::ostringstream ss;
     ss<<m_firmwareLabel->text().toStdString()<<":["<<m_firmwareEdit->text().toStdString()<<"] upgrade";
-    RWDb::writeAuditTrailLog(ss.str());
+    LOG_IF.writeAuditTrailLog(ss.str());
 }
 void HGDeviceInfoWidget::slotGetDeviceName(QString text){
     // fnWriteDB();
@@ -189,18 +251,18 @@ void HGDeviceInfoWidget::slotGetInitDate(QString text){
 }
 
 void HGDeviceInfoWidget::fnWriteDB(){
-    GlobalSingleton::instance().setSystemInfo("设备名称", m_deviceNameEdit->text().toStdString());
-    GlobalSingleton::instance().setSystemInfo("设备型号", m_deviceTypeEdit->text().toStdString());
-    GlobalSingleton::instance().setSystemInfo("设备编号", m_deviceNumberEdit->text().toStdString());
-    GlobalSingleton::instance().setSystemInfo("当前版本", m_curVersionEdit->text().toStdString());
-    GlobalSingleton::instance().setSystemInfo("出厂日期", m_initDateEdit->text().toStdString());
+    SystemDataManager::instance().get().setSystemInfo("设备名称", m_deviceNameEdit->text().toStdString());
+    SystemDataManager::instance().get().setSystemInfo("设备型号", m_deviceTypeEdit->text().toStdString());
+    SystemDataManager::instance().get().setSystemInfo("设备编号", m_deviceNumberEdit->text().toStdString());
+    SystemDataManager::instance().get().setSystemInfo("当前版本", m_curVersionEdit->text().toStdString());
+    SystemDataManager::instance().get().setSystemInfo("出厂日期", m_initDateEdit->text().toStdString());
 
-    GlobalSingleton::instance().saveSystemInfo();
+    SystemDataManager::instance().get().saveSystemInfo();
 }
 void HGDeviceInfoWidget::fnReadDB(){
     m_deviceTypeEdit->setText(HG_DEVICE_MODEL);
-    m_deviceNumberEdit->setText(QString::fromStdString(GlobalSingleton::instance().getSystemInfo("设备编号")));
+    m_deviceNumberEdit->setText(QString::fromStdString(SystemDataManager::instance().get().getSystemInfo("设备编号")));
     // m_curVersionEdit->setText(HG_SOFTWARE_VERSION);
     // m_deviceNameEdit->setText(HG_DEVICE_NAME);
-    m_initDateEdit->setText(QString::fromStdString(GlobalSingleton::instance().getSystemInfo("出厂日期")));
+    m_initDateEdit->setText(QString::fromStdString(SystemDataManager::instance().get().getSystemInfo("出厂日期")));
 }

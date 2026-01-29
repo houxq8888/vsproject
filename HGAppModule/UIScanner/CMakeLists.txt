@@ -12,7 +12,7 @@ if (PLATFORM STREQUAL "x64")
         Qt6::Charts
         Qt6::PrintSupport
     )
-    # Qt6 uses automatic MOC, no need for qt5_wrap_cpp
+    # Qt6 uses automatic MOC, no need for qt6_wrap_cpp
     qt6_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
         set(CMAKE_AUTOMOC ON)
         set(CMAKE_AUTOUIC ON)
@@ -56,82 +56,18 @@ if (BUILD_SHARED_LIBS)
     if(WIN32)
     else()
         HG_CMAKE_MODULE_DEPEND_PUB(
-            PluginInterface
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
-            HGAuthorityService
-            HGCommunicateService
-            HGImageAlgorithmService
-            HGSecurityService
-            HGBaseAppModule
-            ${ZXING_LIBRARY}
-            ALSA::ALSA
-            ${OpenCV_LIBRARIES}
-            ${OpencvFreeType_LIBRARY}
-            ${LOG4CPLUS_LIBRARIES}
-            ${CUPS_LIBRARY}
-            ${XLSXIO_READ_LIBRARY}
-            ${XLSXIO_WRITE_LIBRARY}
-            ${HARU_LIBRARY}
-            ${ZeroMQ_LIBRARY}
-            ${MQTT_LIBRARYS}
-            ${LIB_SERIALPORT_LIBRARY}
-            ${LIB_MOSQUITT_LIBRARY}
-            ${PULSE_LIBRARIES}
-            ${LIBSSH_LIBRARIES}
-            ${AVFORMAT_LIBRARIES}
-            ${AVCODEC_LIBRARIES}
-            ${AVUTIL_LIBRARIES}
-            ${SWSCALE_LIBRARIES}
-            ${Boost_LIBRARIES}
-            ${USB_LIBRARY}
-            /usr/lib/x86_64-linux-gnu/libpulse.so
-            /usr/lib/x86_64-linux-gnu/libpulse-simple.so
-            OpenSSL::Crypto
+            HGServiceInterfaces
+            HGUIBaseCore
+            HGIfScanner
             ${QT_LIBRARIES}
         )
 
         HG_CMAKE_ADD_SHARED(HGUIScanner inc src ${MOC_SRCS})
         # HG_CMAKE_ADD_STATIC(HGUIScanner inc src ${MOC_SRCS})
         HG_CMAKE_MODULE_DEPEND(
-            PluginInterface
-            HGLowerPC
-            HGCommon
-            HGConfig
-            HGSaveService
-            HGFrameService
-            HGAuthorityService
-            HGCommunicateService
-            HGImageAlgorithmService
-            HGSecurityService
-            HGBaseAppModule
-            ${ZXING_LIBRARY}
-            ${USB_LIBRARY}
-            ALSA::ALSA
-            ${OpenCV_LIBRARIES}
-            ${OpencvFreeType_LIBRARY}
-            ${LOG4CPLUS_LIBRARIES}
-            ${CUPS_LIBRARY}
-            ${XLSXIO_READ_LIBRARY}
-            ${XLSXIO_WRITE_LIBRARY}
-            ${HARU_LIBRARY}
-            ${ZeroMQ_LIBRARY}
-            ${MQTT_LIBRARYS}
-            ${LIB_SERIALPORT_LIBRARY}
-            ${LIB_MOSQUITT_LIBRARY}
-            ${PULSE_LIBRARIES}
-            ${LIBSSH_LIBRARIES}
-            ${AVFORMAT_LIBRARIES}
-            ${AVCODEC_LIBRARIES}
-            ${AVUTIL_LIBRARIES}
-            ${SWSCALE_LIBRARIES}
-            ${Boost_LIBRARIES}
-            /usr/lib/x86_64-linux-gnu/libpulse.so
-            /usr/lib/x86_64-linux-gnu/libpulse-simple.so
-            OpenSSL::Crypto
+            HGServiceInterfaces
+            HGUIBaseCore
+            HGIfScanner
             ${QT_LIBRARIES}
         )
     endif()

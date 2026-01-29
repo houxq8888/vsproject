@@ -3,30 +3,25 @@ set(LIBRARY_VERSION_MINOR 0)
 set(LIBRARY_VERSION_PATCH 0)
 
 
-HG_CMAKE_ADD_MODULE(IfCameraControl inc src)
+HG_CMAKE_ADD_MODULE(IfCameraControl inc src ../../)
 
 
 HG_CMAKE_MODULE_DEPEND_PUB( 
-    HGBaseCommon
-    HGSvcImageAlgorithm
-    HGBaseConfig
     HGHwSensor
-    HGSvcError
-    ${OpenCV_LIBRARIES}
+    HGServiceInterfaces
 )
 if (PLATFORM STREQUAL "x64")
-HG_CMAKE_ADD_SHARED(HGIfCameraControl inc src)
+HG_CMAKE_ADD_SHARED(HGIfCameraControl inc src
+    ../../
+)
 
 HG_CMAKE_MODULE_DEPEND(
-    HGBaseCommon
-    HGSvcImageAlgorithm
-    HGBaseConfig
     HGHwSensor
-    HGSvcError
-    ${OpenCV_LIBRARIES}
+    HGServiceInterfaces
 )
 elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_ADD_STATIC(HGIfCameraControl inc src 
+    ../../
     ../../services/BaseCommon/inc                                   ../../services/BaseCommon/src
     ../../services/BaseConfig/inc                                   ../../services/BaseConfig/src
     ../../services/AtomService/SvcImageAlgorithm/inc      ../../services/AtomService/SvcImageAlgorithm/src

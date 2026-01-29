@@ -3,11 +3,13 @@
 #include "common.h"
 #include <QMessageBox>
 #include <QDialog>
+#include "loginterface.h"
+#include "SvcFactory.h"
 
 HGErrorCodeWidget::HGErrorCodeWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang)
 {
-    RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"WarningInfo"));
+    LOG_IF.writeAuditTrailLog(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Enter")+SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"WarningInfo"));
     m_searchCondition.Clear();
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
@@ -26,7 +28,7 @@ m_lang(lang)
     m_rightGroup=new QGroupBox("");
     m_rightGroup->setLayout(m_rightlayout);
 
-    m_manipulateGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"manipulate")));//"操作");
+    m_manipulateGroup=new QGroupBox(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"manipulate")));//"操作");
     m_manipulateGroup->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
     m_manipulateLayout=new QGridLayout();
 
@@ -36,14 +38,14 @@ m_lang(lang)
     connect(m_saveLabel,SIGNAL(leftClicked()),this,SLOT(slotSaveSearchWarn()));
     // connect(m_deleteLabel,SIGNAL(leftClicked()),this,SLOT(slotDeleteSearchWarn()));
 
-    // m_displayBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Scan")));//"查看");
+    // m_displayBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Scan")));//"查看");
 
     m_tableW=new QTableWidget(0,5);
-    QStringList headers={QString::fromStdString(loadTranslation(m_lang,"Time")),
-        QString::fromStdString(loadTranslation(m_lang,"WarnType")),
-        QString::fromStdString(loadTranslation(m_lang,"WarnContent")),
-        QString::fromStdString(loadTranslation(m_lang,"Value")),
-        QString::fromStdString(loadTranslation(m_lang,"Operator"))};
+    QStringList headers={QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Time")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"WarnType")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"WarnContent")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Value")),
+        QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Operator"))};
     m_tableW->setHorizontalHeaderLabels(headers);
     m_tableW->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     m_tableW->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
@@ -68,8 +70,8 @@ m_lang(lang)
     m_horsplitter->setStyleSheet("QSplitter::handle{background-color:lightgray;}");
 
     m_infoLabel=new QLabel();
-    m_infoLabel->setText(QString::fromStdString(loadTranslation(m_lang,"Detail")));//"详细信息")
-    m_helpBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Help")));
+    m_infoLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Detail")));//"详细信息")
+    m_helpBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Help")));
     connect(m_helpBtn,&QPushButton::clicked,[&](){
         emit signalJumpToExceptionPage();
     });
@@ -88,7 +90,10 @@ bool HGErrorCodeWidget::closeWindow()
 {
     if (m_inputsearchConditionW){
         if (m_inputsearchConditionW->closeWindow()){
-            SAFE_DELETE(m_inputsearchConditionW);
+            if (m_inputsearchConditionW) {
+                delete (m_inputsearchConditionW);
+                m_inputsearchConditionW = nullptr;
+            }
         }
     }
     return true;
@@ -105,21 +110,21 @@ void HGErrorCodeWidget::slotDeleteSearchWarn(){
     int row = getSelectedRow(m_tableW);
     if (row >= m_tableW->rowCount()) return;
     if (row==-1) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(loadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME), QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"SelectOneRecord")));//"请选中一条记录！");
         return;
     }
 }
 void HGErrorCodeWidget::slotSaveSearchWarn(){
     if (m_tableW->rowCount()==0){
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                             QString::fromStdString(loadTranslation(m_lang,"NoData")));
+                             QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"NoData")));
         return;
     }
 
     QDialog dialog(this);
-    dialog.setWindowTitle(QString::fromStdString(loadTranslation(m_lang,"InputSaveName")));
+    dialog.setWindowTitle(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"InputSaveName")));
     dialog.setWindowModality(Qt::ApplicationModal);
-    QLabel* saveLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"LogSaveType")));
+    QLabel* saveLabel=new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"LogSaveType")));
     QComboBox* saveCombox=new QComboBox();
     saveCombox->addItems({"txt","csv","pdf"});
     enum {
@@ -131,16 +136,16 @@ void HGErrorCodeWidget::slotSaveSearchWarn(){
     connect(saveCombox,&QComboBox::currentTextChanged,[&](QString text){
         if (text=="txt"){
             logsavetype=SAVE_TEXT;
-            // saveLabel->setText(QString::fromStdString(loadTranslation(m_lang,"LogSaveName")));
+            // saveLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"LogSaveName")));
         }else if (text=="csv"){
             logsavetype=SAVE_CSV;
         } else{
             logsavetype=SAVE_PDF;
-            // saveLabel->setText(QString::fromStdString(loadTranslation(m_lang,"LogSaveName")));
+            // saveLabel->setText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"LogSaveName")));
         }
     });
-    QPushButton *okBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Ok")));
-    QPushButton *cancelBtn=new QPushButton(QString::fromStdString(loadTranslation(m_lang,"Cancel")));
+    QPushButton *okBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Ok")));
+    QPushButton *cancelBtn=new QPushButton(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang,"Cancel")));
     connect(okBtn,&QPushButton::clicked,[&](){
         std::vector<std::map<std::string,std::string>> logList;
         for (int i=0;i<m_tableW->rowCount();i++){
@@ -150,8 +155,8 @@ void HGErrorCodeWidget::slotSaveSearchWarn(){
             }
             logList.push_back(log);
         }
-        std::string outlogPath=HgOnlinePlatformModule::getDirPath()+"/outlog/";
-        HGMkDir(outlogPath);
+        std::string outlogPath=SvcFactory::CreateFrameService()->GetDirPath()+"/outlog/";
+        SvcFactory::CreateCommonService()->CreateDirectory(outlogPath);
         HGExactTime curTime = HGExactTime::currentTime();
         std::string syncslice = curTime.toStringFromYearToSec();
         std::string logname=outlogPath+syncslice;
@@ -198,7 +203,7 @@ void HGErrorCodeWidget::fnReadDB()
         if (m_searchCondition.isInit())
         {
             QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                                 QString::fromStdString(loadTranslation(m_lang, "TooManagLogFiles")));
+                                 QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "TooManagLogFiles")));
             return;
         }
     }
@@ -208,7 +213,7 @@ void HGErrorCodeWidget::fnReadDB()
         m_tableW->insertRow(i);
         for (auto info : loginfos[i])
         {
-            int nameColIndex = getColumnIndexByName(m_tableW, QString::fromStdString(loadTranslation(m_lang, info.first)));
+            int nameColIndex = getColumnIndexByName(m_tableW, QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, info.first)));
             if (nameColIndex < 0 || nameColIndex >= m_tableW->columnCount())
                 continue;
             m_tableW->setItem(i, nameColIndex, new QTableWidgetItem(QString::fromStdString(info.second)));

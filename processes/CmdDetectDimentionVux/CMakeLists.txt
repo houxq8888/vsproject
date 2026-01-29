@@ -5,11 +5,7 @@ target_compile_definitions(CmdDetectDimentionVux PUBLIC
      -DENV_APP_NAME=\"HGCmdDetectDimentionVux\")
 
 HG_CMAKE_MODULE_DEPEND_PUB(
-    HGCommon
-    ${OpenCV_LIBRARIES}
-    ${LOG4CPLUS_LIBRARIES}
-    ${ZXING_LIBRARY}
-    HXQDetectDimentionVuxInterface
+    HGIfDetectDimentionVux
 )
 
 

@@ -1,10 +1,10 @@
 #ifndef HGCUPDETINTERFACE_H
 #define HGCUPDETINTERFACE_H
 
-#include "HGMacroData.h"
 #include "HGCupDetInterface_global.h"
 #include <string>
-#include "HGError.h"
+#include <opencv2/opencv.hpp>
+#include "HGCommonTypes.h"
 
 namespace HGMACHINE {
 
@@ -14,13 +14,20 @@ public:
     HGCupDetInterface();
     ~HGCupDetInterface();
 
-    void detCupExistence(const HGImg2D &img, const HGRect2D &roi);
-    void detCircle(const HGImg2D &img, const HGRect2D &roi);
+    void detCupExistence(const cv::Mat &img, int x, int y, int width, int height);
+    void detCircle(const cv::Mat &img, int x, int y, int width, int height);
+    void matchTemplate(const cv::Mat &img, int x, int y, int width, int height, const std::string &templateName);
     bool getAbsenseFlag();
-    HGImg2D getDst();
+    float getMatchScore();
+    bool getMatchFlag();
+    HGRect2D getRect();
+    cv::Mat getDst();
     int getTargetPosX();
+    std::string saveTemplate(const cv::Mat& img, int x, int y, int width, int height, const std::string& templateDir = "template");
 
-    ErrorInfo getLastError() const;
+    bool hasError() const;
+    std::string getErrorMessage() const;
+    HGErrorDetail getErrorDetail() const;
     void clearError();
 
 private:

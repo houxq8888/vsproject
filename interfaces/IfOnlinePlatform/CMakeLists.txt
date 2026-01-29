@@ -7,51 +7,15 @@ HG_CMAKE_ADD_MODULE(IfOnlinePlatform inc src)
 
 
 HG_CMAKE_MODULE_DEPEND_PUB( 
-    HGBaseCommon
     HGCoreOnlinePlatform
-    HGHwLowerPC
-    HGBaseConfig
-    HGSvcFrame
-    HGSvcSecurity
-    HGSvcCommunicate
-    HGSvcAuthority
-    HGSvcSave
-    ${ZXING_LIBRARY}
-    ${OpenCV_LIBRARIES}
-    ${LOG4CPLUS_LIBRARIES}
-    ${MQTT_LIBRARYS}
-    ${AVFORMAT_LIBRARIES}
-    ${AVCODEC_LIBRARIES}
-    ${AVUTIL_LIBRARIES}
-    ${SWSCALE_LIBRARIES}
-    OpenSSL::Crypto
-    /usr/lib/x86_64-linux-gnu/libpulse.so
-    /usr/lib/x86_64-linux-gnu/libpulse-simple.so
+    HGServiceInterfaces
 )
 
 HG_CMAKE_ADD_SHARED(HGIfOnlinePlatform inc src)
 
 HG_CMAKE_MODULE_DEPEND(
-    HGBaseCommon
     HGCoreOnlinePlatform
-    HGHwLowerPC
-    HGBaseConfig
-    HGSvcFrame
-    HGSvcSecurity
-    HGSvcCommunicate
-    HGSvcAuthority
-    HGSvcSave
-    ${ZXING_LIBRARY}
-    ${LOG4CPLUS_LIBRARIES}  
-    ${OpenCV_LIBRARIES}
-    ${MQTT_LIBRARYS}
-    ${AVFORMAT_LIBRARIES}
-    ${AVCODEC_LIBRARIES}
-    ${AVUTIL_LIBRARIES}
-    ${SWSCALE_LIBRARIES}
-    OpenSSL::Crypto
-    /usr/lib/x86_64-linux-gnu/libpulse.so
-    /usr/lib/x86_64-linux-gnu/libpulse-simple.so
+    HGServiceInterfaces
 )
 set_target_properties(HGIfOnlinePlatform PROPERTIES 
     VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}
