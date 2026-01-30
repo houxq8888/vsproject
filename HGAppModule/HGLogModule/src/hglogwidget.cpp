@@ -5,6 +5,7 @@
 #include <fstream>
 #include <algorithm>
 #include <QMessageBox>
+#include <set>
 
 
 HGLogWidget::HGLogWidget(std::string lang,QWidget *parent) : QWidget(parent),
@@ -13,7 +14,11 @@ m_curDisplayIndex(-1),
 m_isSearching(false),
 m_searchResultPageIndex(0),
 m_searchResultPageSize(100),
-m_searchResultTotalPages(0)
+m_searchResultTotalPages(0),
+m_currentSortColumn(-1),
+m_currentSortOrder(Qt::AscendingOrder),
+m_filterColumn(-1),
+m_filterValue("")
 {
     RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Log"));
     m_auditLogTableNames = RWDb::getAllAuditLogTables();
@@ -59,6 +64,10 @@ m_searchResultTotalPages(0)
     m_tableW->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     m_tableW->resizeRowsToContents();
     m_tableW->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    m_tableW->setSortingEnabled(true);
+    m_tableW->horizontalHeader()->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(m_tableW->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(slotHeaderClicked(int)));
+    connect(m_tableW->horizontalHeader(), SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(slotHeaderCustomContextMenuRequested(QPoint)));
     
     m_logTypeLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"LogType")));//"日志类型");
     m_logTypeComboBox=new QComboBox();
@@ -564,6 +573,170 @@ void HGLogWidget::slotSearchResultPageChanged(){
         } else {
             QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
                              "已经是第一页");
+        }
+    }
+}
+void HGLogWidget::slotHeaderClicked(int column){
+    if (m_currentSortColumn == column){
+        m_currentSortOrder = (m_currentSortOrder == Qt::AscendingOrder) ? Qt::DescendingOrder : Qt::AscendingOrder;
+    } else {
+        m_currentSortColumn = column;
+        m_currentSortOrder = Qt::AscendingOrder;
+    }
+    
+    if (m_isSearching && !m_searchResults.empty()){
+        std::string sortKey;
+        switch(column){
+            case 0: sortKey = "Time"; break;
+            case 1: sortKey = "LogContent"; break;
+            case 2: sortKey = "Operator"; break;
+            default: return;
+        }
+        
+        std::sort(m_searchResults.begin(), m_searchResults.end(),
+            [sortKey, this](const std::map<std::string,std::string>& a, const std::map<std::string,std::string>& b) {
+                auto itA = a.find(sortKey);
+                auto itB = b.find(sortKey);
+                if (itA == a.end() || itB == b.end()) return false;
+                
+                if (m_currentSortOrder == Qt::AscendingOrder){
+                    return itA->second < itB->second;
+                } else {
+                    return itA->second > itB->second;
+                }
+            });
+        
+        displaySearchResults(m_searchResultPageIndex);
+    } else {
+        m_tableW->sortByColumn(column, m_currentSortOrder);
+    }
+    
+    m_tableW->horizontalHeader()->setSortIndicator(column, m_currentSortOrder);
+}
+void HGLogWidget::slotHeaderCustomContextMenuRequested(const QPoint& pos){
+    int column = m_tableW->horizontalHeader()->logicalIndexAt(pos);
+    if (column < 0) return;
+    
+    QMenu menu(this);
+    
+    QAction* sortAscAction = menu.addAction("升序排序");
+    QAction* sortDescAction = menu.addAction("降序排序");
+    menu.addSeparator();
+    
+    std::set<std::string> uniqueValues;
+    std::string sortKey;
+    switch(column){
+        case 0: sortKey = "Time"; break;
+        case 1: sortKey = "LogContent"; break;
+        case 2: sortKey = "Operator"; break;
+        default: return;
+    }
+    
+    if (m_isSearching && !m_searchResults.empty()){
+        for (const auto& row : m_searchResults){
+            auto it = row.find(sortKey);
+            if (it != row.end()){
+                uniqueValues.insert(it->second);
+            }
+        }
+    } else {
+        for (int row = 0; row < m_tableW->rowCount(); row++){
+            QTableWidgetItem* item = m_tableW->item(row, column);
+            if (item){
+                uniqueValues.insert(item->text().toStdString());
+            }
+        }
+    }
+    
+    QMenu* filterMenu = menu.addMenu("筛选");
+    QAction* clearFilterAction = filterMenu->addAction("清除筛选");
+    filterMenu->addSeparator();
+    
+    int count = 0;
+    const int MAX_FILTER_ITEMS = 50;
+    for (const auto& value : uniqueValues){
+        if (count >= MAX_FILTER_ITEMS) break;
+        QAction* action = filterMenu->addAction(QString::fromStdString(value));
+        action->setData(column);
+        connect(action, SIGNAL(triggered()), this, SLOT(slotFilterTriggered()));
+        count++;
+    }
+    
+    if (uniqueValues.size() > MAX_FILTER_ITEMS){
+        filterMenu->addAction("... (更多值未显示)")->setEnabled(false);
+    }
+    
+    QAction* selectedAction = menu.exec(m_tableW->horizontalHeader()->mapToGlobal(pos));
+    
+    if (selectedAction == sortAscAction){
+        m_currentSortColumn = column;
+        m_currentSortOrder = Qt::AscendingOrder;
+        slotHeaderClicked(column);
+    } else if (selectedAction == sortDescAction){
+        m_currentSortColumn = column;
+        m_currentSortOrder = Qt::DescendingOrder;
+        slotHeaderClicked(column);
+    } else if (selectedAction == clearFilterAction){
+        slotClearFilter();
+    }
+}
+void HGLogWidget::slotFilterTriggered(){
+    QAction* action = qobject_cast<QAction*>(sender());
+    if (!action) return;
+    
+    int column = action->data().toInt();
+    std::string filterValue = action->text().toStdString();
+    
+    m_filterColumn = column;
+    m_filterValue = filterValue;
+    
+    if (m_isSearching && !m_originalSearchResults.empty()){
+        m_searchResults = m_originalSearchResults;
+    }
+    
+    std::string sortKey;
+    switch(column){
+        case 0: sortKey = "Time"; break;
+        case 1: sortKey = "LogContent"; break;
+        case 2: sortKey = "Operator"; break;
+        default: return;
+    }
+    
+    if (m_isSearching && !m_searchResults.empty()){
+        if (m_originalSearchResults.empty()){
+            m_originalSearchResults = m_searchResults;
+        }
+        
+        std::vector<std::map<std::string,std::string>> filtered;
+        for (const auto& row : m_searchResults){
+            auto it = row.find(sortKey);
+            if (it != row.end() && it->second == filterValue){
+                filtered.push_back(row);
+            }
+        }
+        m_searchResults = filtered;
+        m_searchResultTotalPages = (m_searchResults.size() + m_searchResultPageSize - 1) / m_searchResultPageSize;
+        displaySearchResults(0);
+    } else {
+        for (int row = 0; row < m_tableW->rowCount(); row++){
+            QTableWidgetItem* item = m_tableW->item(row, column);
+            bool match = (item && item->text().toStdString() == filterValue);
+            m_tableW->setRowHidden(row, !match);
+        }
+    }
+}
+void HGLogWidget::slotClearFilter(){
+    m_filterColumn = -1;
+    m_filterValue = "";
+    
+    if (m_isSearching && !m_originalSearchResults.empty()){
+        m_searchResults = m_originalSearchResults;
+        m_originalSearchResults.clear();
+        m_searchResultTotalPages = (m_searchResults.size() + m_searchResultPageSize - 1) / m_searchResultPageSize;
+        displaySearchResults(0);
+    } else {
+        for (int row = 0; row < m_tableW->rowCount(); row++){
+            m_tableW->setRowHidden(row, false);
         }
     }
 }

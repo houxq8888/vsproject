@@ -67,7 +67,6 @@ private:
     KBTimeEdit* m_timeEditFrom,*m_timeEditTo;
     KBCharEdit* m_keyEditCtrl;
 
-    QLabel*m_markLabel1,*m_markLabel2;
     int m_maxRange;
 
 };

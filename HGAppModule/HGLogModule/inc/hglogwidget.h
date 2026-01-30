@@ -11,6 +11,8 @@
 #include <QComboBox>
 #include <QLineEdit>
 #include "hginputsearchconditionwidget.h"
+#include <QMenu>
+#include <QAction>
 
 class HGLogWidget : public QWidget
 {
@@ -33,6 +35,10 @@ private slots:
     void slotPre();
     void slotClearSearch();
     void slotSearchResultPageChanged();
+    void slotHeaderClicked(int column);
+    void slotHeaderCustomContextMenuRequested(const QPoint& pos);
+    void slotFilterTriggered();
+    void slotClearFilter();
 
 private:
     void fnReadDB(const std::string &tableName);
@@ -68,6 +74,13 @@ private:
 
     HGQLabel* m_searchResultNextLabel, *m_searchResultPreLabel;
     QLabel* m_searchResultPageLabel;
+
+    int m_currentSortColumn;
+    Qt::SortOrder m_currentSortOrder;
+
+    int m_filterColumn;
+    std::string m_filterValue;
+    std::vector<std::map<std::string,std::string>> m_originalSearchResults;
 };
 
 #endif // HGLOGWIDGET_H
