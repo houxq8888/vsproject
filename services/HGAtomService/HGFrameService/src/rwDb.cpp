@@ -447,6 +447,34 @@ std::string RWDb::getMethodName(const std::string &flowName){
         }
         return logOpera.readRecord(readTableName, infoS);
     }
+    std::vector<std::map<std::string,std::string>> RWDb::readAuditTrailLogWithCondition(
+        const std::string &tableName,
+        const std::string &keyword,
+        const std::string &timeFrom,
+        const std::string &timeTo)
+    {
+        std::vector<std::map<std::string,std::string>> result;
+        if (tableName.empty()){
+            return result;
+        }
+        
+        std::string sql = "SELECT Operator, Time, LogContent FROM " + tableName + " WHERE 1=1";
+        
+        if (!keyword.empty()){
+            sql += " AND (Operator LIKE '%" + keyword + "%' OR LogContent LIKE '%" + keyword + "%')";
+        }
+        
+        if (!timeFrom.empty() && !timeTo.empty()){
+            sql += " AND Time BETWEEN '" + timeFrom + "' AND '" + timeTo + "'";
+        } else if (!timeFrom.empty()){
+            sql += " AND Time >= '" + timeFrom + "'";
+        } else if (!timeTo.empty()){
+            sql += " AND Time <= '" + timeTo + "'";
+        }
+        
+        logOpera.readData(sql, result);
+        return result;
+    }
     std::vector<std::map<std::string, std::string>> RWDb::readRecord(std::string dbName, std::map<std::string, std::string> &infoS)
     {
         return dbOpera.readRecord(dbName, infoS);

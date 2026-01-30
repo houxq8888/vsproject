@@ -32,10 +32,15 @@ private slots:
     void slotNext();
     void slotPre();
     void slotClearSearch();
+    void slotSearchResultPageChanged();
 
 private:
     void fnReadDB(const std::string &tableName);
     int getTableNameIndex(const std::string& dbName);
+    void searchAllLogs();
+    void displaySearchResults(int pageIndex);
+    void highlightKeyword(QTableWidgetItem* item, const std::string& keyword);
+    std::string highlightText(const std::string& text, const std::string& keyword);
 
 private:
     QLabel* m_pageLabel;
@@ -54,6 +59,15 @@ private:
     std::map<std::string, int> m_logContentMap;
     int m_curDisplayIndex;
     std::vector<std::string> m_auditLogTableNames;
+
+    bool m_isSearching;
+    std::vector<std::map<std::string,std::string>> m_searchResults;
+    int m_searchResultPageIndex;
+    int m_searchResultPageSize;
+    int m_searchResultTotalPages;
+
+    HGQLabel* m_searchResultNextLabel, *m_searchResultPreLabel;
+    QLabel* m_searchResultPageLabel;
 };
 
 #endif // HGLOGWIDGET_H
