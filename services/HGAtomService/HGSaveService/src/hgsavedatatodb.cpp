@@ -465,6 +465,25 @@ void HGSaveDataToDB::writeRecord(std::string tableName,
     }
     writeData(sql.str());
 }
+
+bool HGSaveDataToDB::createIndex(std::string tableName, std::string indexName, std::string columnName)
+{
+    if (!isTableExist(tableName)) {
+        return false;
+    }
+    
+    std::ostringstream sql;
+    sql << "CREATE INDEX IF NOT EXISTS " << indexName << " ON " << tableName << " (" << columnName << ");";
+    
+    bool result = writeData(sql.str());
+    if (!result) {
+        printf("create index %s on %s fail\n", indexName.c_str(), tableName.c_str());
+    }
+    // else printf("create index %s on %s success\n", indexName.c_str(), tableName.c_str());
+    
+    return result;
+}
+
 std::vector<std::map<std::string,std::string>> HGSaveDataToDB::readRecord(std::string tableName, std::map<std::string,std::string> &infoS){
     std::vector<std::map<std::string,std::string>> pkCols = getTableInfo(tableName);
     std::string keyname="";

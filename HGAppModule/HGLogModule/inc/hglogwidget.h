@@ -36,6 +36,10 @@ private slots:
 private:
     void fnReadDB(const std::string &tableName);
     int getTableNameIndex(const std::string& dbName);
+    void fnSearchAllLogs();
+    void fnDisplaySearchResults(int page = 0);
+    std::vector<std::map<std::string, std::string>> fnSearchLogsInAllTables();
+    void highlightSearchResults();
 
 private:
     QLabel* m_pageLabel;
@@ -54,6 +58,13 @@ private:
     std::map<std::string, int> m_logContentMap;
     int m_curDisplayIndex;
     std::vector<std::string> m_auditLogTableNames;
+    
+    // 全库搜索相关
+    std::vector<std::map<std::string, std::string>> m_allSearchResults;
+    int m_currentSearchPage;
+    int m_totalSearchPages;
+    static const int RESULTS_PER_PAGE = 1000;  // 每页显示的结果数
+    bool m_isGlobalSearch;  // 是否正在进行全库搜索
 };
 
 #endif // HGLOGWIDGET_H

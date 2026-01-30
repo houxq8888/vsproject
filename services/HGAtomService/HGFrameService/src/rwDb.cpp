@@ -3,6 +3,8 @@
 #include <iomanip>
 #include <memory>
 #include <sstream>
+#include <algorithm>
+#include <regex>
 #include "hgcommonutility.h"
 #include "config.h"
 #include "hglog4cplus.h"
@@ -691,6 +693,17 @@ std::string RWDb::getTaskRunRecordDataDB(){
             }
         }
         logOpera.writeRecord(dbName, "Time", infoS);
+        
+        // 为新创建的表添加索引以提高搜索性能
+        if (info["lastAuditTrailDB"] != dbName) {
+            // 为Time字段创建索引
+            logOpera.createIndex(dbName, "idx_audit_time", "Time");
+            // 为Operator字段创建索引
+            logOpera.createIndex(dbName, "idx_audit_operator", "Operator");
+            // 为LogContent字段创建索引
+            logOpera.createIndex(dbName, "idx_audit_content", "LogContent");
+        }
+        
         info["lastAuditTrailDB"]=dbName;
         logOpera.recordSingleInfo(AUDITTRAILDBRECORD,info);
     }
@@ -1149,5 +1162,233 @@ void RWDb::writeScannerInfo(const std::map<std::string,std::string> &info){
         }
         dbOpera.readSingleInfo(ScannerDBName,info);
         return info;
+    }
+
+    // 分页读取审计日志
+    std::vector<std::map<std::string,std::string>> RWDb::readAuditTrailLogPaged(const std::string &tableName, int page, int pageSize) {
+        std::map<std::string,std::string> info;
+        info["lastAuditTrailDB"]="";
+        logOpera.readSingleInfo(AUDITTRAILDBRECORD,info);
+
+        std::map<std::string,std::string> infoS = {
+            {"Operator",""},
+            {"Time",""},
+            {"LogContent",""}
+        };
+        std::string readTableName="";
+        if (tableName != ""){
+            readTableName = tableName;
+        } else {
+            readTableName = info["lastAuditTrailDB"];
+        }
+        
+        // 获取表的主键
+        std::vector<std::map<std::string,std::string>> pkCols = logOpera.getTableInfo(readTableName);
+        std::string keyname="";
+        for (int i=0;i<int(pkCols.size());i++) {
+            if (pkCols[i]["pk"] == "1"){
+                keyname=pkCols[i]["name"];
+                break;
+            }
+        }
+        
+        // 构建分页查询SQL
+        std::ostringstream sql;
+        sql<<"SELECT ";
+        for (auto info:infoS){
+            sql<<info.first<<",";
+        }
+        std::string sqlstr= sql.str().substr(0,sql.str().find_last_of(","));
+        sql.str("");
+        sql<<sqlstr<<" FROM "<<readTableName<<" ORDER BY CAST("<<keyname<<" AS INTEGER) DESC LIMIT "<<pageSize<<" OFFSET "<<(page * pageSize);
+        
+        std::vector<std::map<std::string,std::string>> infos;
+        if (!logOpera.readData(sql.str(),infos))
+        {
+            sql.str("");
+            sql<<HGSAVESERVICENAME<<"paged read failed";
+            printf("%s\n",sql.str().c_str());
+        } 
+        return infos;
+    }
+
+    // 在所有审计日志表中搜索
+    std::vector<std::map<std::string,std::string>> RWDb::searchAuditTrailLogs(const std::string &keyword, const HGExactTime &timeFrom, const HGExactTime &timeTo) {
+        std::vector<std::map<std::string,std::string>> allResults;
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        
+        // 遍历所有审计日志表
+        for (const auto& tableName : tableNames) {
+            // 构建搜索条件
+            std::map<std::string,std::string> infoS = {
+                {"Operator",""},
+                {"Time",""},
+                {"LogContent",""}
+            };
+            
+            // 获取表的主键
+            std::vector<std::map<std::string,std::string>> pkCols = logOpera.getTableInfo(tableName);
+            std::string keyname="";
+            for (int i=0;i<int(pkCols.size());i++) {
+                if (pkCols[i]["pk"] == "1"){
+                    keyname=pkCols[i]["name"];
+                    break;
+                }
+            }
+            
+            // 构建搜索SQL
+            std::ostringstream sql;
+            sql<<"SELECT ";
+            for (auto info:infoS){
+                sql<<info.first<<",";
+            }
+            std::string sqlstr= sql.str().substr(0,sql.str().find_last_of(","));
+            sql.str("");
+            sql<<sqlstr<<" FROM "<<tableName<<" WHERE ";
+            
+            // 添加时间条件
+            if (timeFrom.tm_year > 0 && timeTo.tm_year > 0) {
+                char fromTime[20], toTime[20];
+                sprintf(fromTime, "%04d-%02d-%02d 00:00:00", timeFrom.tm_year, timeFrom.tm_mon, timeFrom.tm_mday);
+                sprintf(toTime, "%04d-%02d-%02d 23:59:59", timeTo.tm_year, timeTo.tm_mon, timeTo.tm_mday);
+                sql<<"Time BETWEEN '"<<fromTime<<"' AND '"<<toTime<<"' ";
+                
+                if (!keyword.empty()) {
+                    sql<<"AND ";
+                }
+            }
+            
+            // 添加关键词条件
+            if (!keyword.empty()) {
+                sql<<"(Operator LIKE '%"<<keyword<<"%' OR LogContent LIKE '%"<<keyword<<"%' OR Time LIKE '%"<<keyword<<"%')";
+            }
+            
+            sql<<" ORDER BY CAST("<<keyname<<" AS INTEGER) DESC";
+            
+            // 执行查询
+            std::vector<std::map<std::string,std::string>> tableResults;
+            if (logOpera.readData(sql.str(), tableResults)) {
+                // 将结果添加到总结果中
+                allResults.insert(allResults.end(), tableResults.begin(), tableResults.end());
+            }
+        }
+        
+        return allResults;
+    }
+
+    // 高效搜索运行日志
+    std::vector<std::map<std::string,std::string>> RWDb::searchRunLogs(const std::string &keyword, const HGExactTime &timeFrom, const HGExactTime &timeTo) {
+        std::vector<std::map<std::string,std::string>> allResults;
+        
+        // 获取所有日志文件
+        std::vector<FileInfo> fileList;
+        HGGetFilesNoBytes("/app/log/", ".log", fileList);
+        
+        // 按创建时间排序（从旧到新）
+        std::sort(fileList.begin(), fileList.end(), [](const FileInfo& a, const FileInfo& b) {
+            return a.createtime < b.createtime;
+        });
+        
+        // 预编译正则表达式以提高性能
+        std::regex keywordRegex;
+        bool hasKeyword = !keyword.empty();
+        if (hasKeyword) {
+            try {
+                keywordRegex = std::regex(keyword, std::regex_constants::icase);
+            } catch (...) {
+                // 如果正则表达式无效，则使用简单的字符串匹配
+                hasKeyword = false;
+            }
+        }
+        
+        // 处理日志文件
+        for (int i = 0; i < static_cast<int>(fileList.size()); i++) {
+            const auto& file = fileList[i];
+            
+            // 时间过滤 - 快速检查文件名中的日期
+            bool matchTime = true;
+            if (timeFrom.tm_year > 0 && timeTo.tm_year > 0) {
+                int timepos = file.filename.find_last_of("/");
+                std::string filename = file.filename.substr(timepos + 1, file.filename.length() - timepos - 1);
+                timepos = filename.find_first_of("_");
+                std::string timestr = filename.substr(0, timepos);
+                
+                if (timestr.length() >= 8) {
+                    int year = atoi(timestr.substr(0, 4).c_str());
+                    int month = atoi(timestr.substr(4, 2).c_str());
+                    int day = atoi(timestr.substr(6, 2).c_str());
+                    
+                    // 检查文件日期是否在范围内
+                    if (year < timeFrom.tm_year || year > timeTo.tm_year ||
+                        (year == timeFrom.tm_year && month < timeFrom.tm_mon) ||
+                        (year == timeTo.tm_year && month > timeTo.tm_mon) ||
+                        (year == timeFrom.tm_year && month == timeFrom.tm_mon && day < timeFrom.tm_mday) ||
+                        (year == timeTo.tm_year && month == timeTo.tm_mon && day > timeTo.tm_mday)) {
+                        matchTime = false;
+                    }
+                }
+            }
+            
+            if (!matchTime) continue;
+            
+            // 读取文件内容并搜索关键词
+            std::ifstream logFile(file.filename);
+            if (!logFile.is_open()) continue;
+            
+            std::string line;
+            while (std::getline(logFile, line)) {
+                // 关键词过滤
+                if (!keyword.empty()) {
+                    bool found = false;
+                    if (hasKeyword) {
+                        found = std::regex_search(line, keywordRegex);
+                    } else {
+                        found = (line.find(keyword) != std::string::npos);
+                    }
+                    
+                    if (!found) continue;
+                }
+                
+                // 解析行内容
+                std::map<std::string, std::string> logEntry;
+                logEntry["LogContent"] = line;
+                
+                // 尝试从日志行中提取时间戳
+                std::smatch timeMatch;
+                std::regex timeRegex(R"((\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}))");
+                if (std::regex_search(line, timeMatch, timeRegex)) {
+                    logEntry["Time"] = timeMatch[1].str();
+                } else {
+                    logEntry["Time"] = "";
+                }
+                
+                logEntry["Operator"] = "System";
+                
+                // 添加结果到总结果中
+                allResults.push_back(logEntry);
+            }
+        }
+        
+        // 按时间排序结果
+        std::sort(allResults.begin(), allResults.end(), [](const std::map<std::string, std::string>& a, const std::map<std::string, std::string>& b) {
+            return a.at("Time") > b.at("Time");
+        });
+        
+        return allResults;
+    }
+
+    // 为所有审计日志表创建索引以提高搜索性能
+    void RWDb::createIndexesForAllAuditTables()
+    {
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        
+        for (const auto& tableName : tableNames) {
+            // 为Time字段创建索引
+            logOpera.createIndex(tableName, "idx_audit_time", "Time");
+            // 为Operator字段创建索引
+            logOpera.createIndex(tableName, "idx_audit_operator", "Operator");
+            // 为LogContent字段创建索引
+            logOpera.createIndex(tableName, "idx_audit_content", "LogContent");
+        }
     }
 }

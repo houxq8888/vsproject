@@ -158,6 +158,15 @@ public:
                      const std::map<std::string,std::string> &infoS);
 
     /**
+     * @brief 为指定表的字段创建索引以提高查询性能。
+     * @param tableName 表名。
+     * @param indexName 索引名称。
+     * @param columnName 要创建索引的字段名。
+     * @return 是否创建成功。
+     */
+    bool createIndex(std::string tableName, std::string indexName, std::string columnName);
+
+    /**
      * @brief 读取满足条件的多条记录。
      * @param tableName 表名。
      * @param infoS 查询条件（字段名及值）。
