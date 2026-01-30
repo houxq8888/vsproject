@@ -1,10 +1,17 @@
+cmake_minimum_required(VERSION 3.16)
 project(HGLogModule VERSION 1.1.1)
+
+# 包含项目宏定义
+include("../../cmake/project_macro.cmake")
+
+# 查找Qt6包
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui Charts PrintSupport)
 
 file(GLOB MOC_HEADERS "inc/*.h")
 
 # Define Qt libraries based on platform and compilation environment
 if (PLATFORM STREQUAL "x64")
-    # Linux native compilation - Qt5
+    # Linux native compilation - Qt6
     set(QT_LIBRARIES
         Qt5::Gui
         Qt5::Core

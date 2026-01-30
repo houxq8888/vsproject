@@ -8,11 +8,17 @@
 
 HGLogWidget::HGLogWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
-m_curDisplayIndex(-1)
+m_curDisplayIndex(-1),
+m_currentSearchPage(0),
+m_totalSearchPages(0),
+m_isGlobalSearch(false)
 {
     RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Log"));
     m_auditLogTableNames = RWDb::getAllAuditLogTables();
     m_searchCondition.Clear();
+    
+    // 为所有审计日志表创建索引以提高搜索性能
+    RWDb::createIndexesForAllAuditTables();
 
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
@@ -84,26 +90,50 @@ HGLogWidget::~HGLogWidget()
     
 }
 void HGLogWidget::slotNext(){
-    if (m_curDisplayIndex < 0) return;
-    if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
-    else {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                         "已经是最后一页");
-        m_curDisplayIndex=m_auditLogTableNames.size()-1;
+    if (m_isGlobalSearch) {
+        // 全库搜索结果的下一页
+        if (m_currentSearchPage < m_totalSearchPages - 1) {
+            m_currentSearchPage++;
+            fnDisplaySearchResults(m_currentSearchPage);
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是最后一页");
+        }
+    } else {
+        // 原有的分页逻辑
+        if (m_curDisplayIndex < 0) return;
+        if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
+        else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是最后一页");
+            m_curDisplayIndex=m_auditLogTableNames.size()-1;
+        }
+        std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
+        fnReadDB(dbName);
     }
-    std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
-    fnReadDB(dbName);
 }
 void HGLogWidget::slotPre(){
-    if (m_curDisplayIndex < 0) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                         "已经是第一页");
-        m_curDisplayIndex=0;
+    if (m_isGlobalSearch) {
+        // 全库搜索结果的上一页
+        if (m_currentSearchPage > 0) {
+            m_currentSearchPage--;
+            fnDisplaySearchResults(m_currentSearchPage);
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是第一页");
+        }
     } else {
-        m_curDisplayIndex--;
+        // 原有的分页逻辑
+        if (m_curDisplayIndex < 0) {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是第一页");
+            m_curDisplayIndex=0;
+        } else {
+            m_curDisplayIndex--;
+        }
+        std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
+        fnReadDB(dbName);
     }
-    std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
-    fnReadDB(dbName);
 }
 int HGLogWidget::getTableNameIndex(const std::string &tableName){
     for (int i=0;i<int(m_auditLogTableNames.size());i++){
@@ -300,11 +330,23 @@ void HGLogWidget::slotTimeTo(QString text){
     m_searchCondition.timeTo.tm_sec = 59;
 }
 void HGLogWidget::slotSearch(){
-    m_tableW->setRowCount(0);
-    fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+    // 如果有搜索条件，则执行全库搜索
+    if (!m_searchCondition.isInit()) {
+        m_isGlobalSearch = true;
+        fnSearchAllLogs();
+    } else {
+        // 否则只搜索当前页
+        m_isGlobalSearch = false;
+        m_tableW->setRowCount(0);
+        fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+    }
 }
 void HGLogWidget::slotClearSearch(){ 
     m_searchCondition.Clear();
+    m_isGlobalSearch = false;
+    m_allSearchResults.clear();
+    m_currentSearchPage = 0;
+    m_totalSearchPages = 0;
     fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
 }
 void HGLogWidget::slotSaveSearchLog(){
@@ -387,4 +429,120 @@ void HGLogWidget::slotSaveSearchLog(){
     layout->addWidget(cancelBtn,1,1);
     dialog.setLayout(layout);
     dialog.exec();
+}
+
+// 全库搜索功能实现
+void HGLogWidget::fnSearchAllLogs()
+{
+    // 显示搜索进度提示
+    m_tableW->setRowCount(0);
+    m_tableW->insertRow(0);
+    m_tableW->setItem(0, 0, new QTableWidgetItem("正在搜索所有日志，请稍候..."));
+    m_tableW->setItem(0, 1, new QTableWidgetItem(""));
+    m_tableW->setItem(0, 2, new QTableWidgetItem(""));
+    
+    // 处理UI事件，确保提示信息显示
+    QApplication::processEvents();
+    
+    // 执行搜索
+    m_allSearchResults = fnSearchLogsInAllTables();
+    
+    // 计算总页数
+    m_totalSearchPages = (m_allSearchResults.size() + RESULTS_PER_PAGE - 1) / RESULTS_PER_PAGE;
+    m_currentSearchPage = 0;
+    
+    // 显示第一页结果
+    fnDisplaySearchResults(0);
+}
+
+// 在所有日志表中搜索
+std::vector<std::map<std::string, std::string>> HGLogWidget::fnSearchLogsInAllTables()
+{
+    std::vector<std::map<std::string, std::string>> allResults;
+    
+    // 根据日志类型执行不同的搜索
+    if (m_logTypeComboBox->currentIndex() == 0) {
+        // 审计日志搜索 - 使用优化后的搜索方法
+        allResults = RWDb::searchAuditTrailLogs(m_searchCondition.key, m_searchCondition.timeFrom, m_searchCondition.timeTo);
+    } else if (m_logTypeComboBox->currentIndex() == 1) {
+        // 运行日志搜索 - 使用优化后的搜索方法
+        allResults = RWDb::searchRunLogs(m_searchCondition.key, m_searchCondition.timeFrom, m_searchCondition.timeTo);
+    }
+    
+    return allResults;
+}
+
+// 显示搜索结果的指定页
+void HGLogWidget::fnDisplaySearchResults(int page)
+{
+    if (page < 0 || page >= m_totalSearchPages) {
+        return;
+    }
+    
+    m_tableW->setRowCount(0);
+    m_tableW->setUpdatesEnabled(false);
+    
+    // 计算当前页的起始和结束索引
+    int startIndex = page * RESULTS_PER_PAGE;
+    int endIndex = std::min(startIndex + RESULTS_PER_PAGE, (int)m_allSearchResults.size());
+    
+    // 设置表格行数
+    int rowCount = endIndex - startIndex;
+    m_tableW->setRowCount(rowCount);
+    
+    // 填充表格数据
+    for (int i = startIndex; i < endIndex; i++) {
+        const auto& log = m_allSearchResults[i];
+        int row = i - startIndex;
+        
+        for (const auto& field : log) {
+            int colIndex = m_logContentMap[field.first];
+            if (colIndex >= 0 && colIndex < m_tableW->columnCount()) {
+                QTableWidgetItem* item = new QTableWidgetItem(QString::fromStdString(field.second));
+                m_tableW->setItem(row, colIndex, item);
+            }
+        }
+    }
+    
+    // 更新页标签
+    if (m_isGlobalSearch) {
+        m_pageLabel->setText(QString("搜索结果 第%1页/共%2页").arg(m_currentSearchPage + 1).arg(m_totalSearchPages));
+    } else {
+        m_pageLabel->setText("第"+QString::number(m_curDisplayIndex+1)+"页");
+    }
+    
+    m_tableW->setUpdatesEnabled(true);
+    
+    // 高亮显示关键词
+    if (!m_searchCondition.key.empty()) {
+        highlightSearchResults();
+    }
+}
+
+// 高亮显示搜索结果中的关键词
+void HGLogWidget::highlightSearchResults()
+{
+    if (m_searchCondition.key.empty()) return;
+    
+    QString keyword = QString::fromStdString(m_searchCondition.key);
+    QTextCharFormat highlightFormat;
+    highlightFormat.setBackground(QColor(255, 255, 0)); // 黄色背景
+    
+    // 遍历表格中的所有单元格
+    for (int row = 0; row < m_tableW->rowCount(); row++) {
+        for (int col = 0; col < m_tableW->columnCount(); col++) {
+            QTableWidgetItem* item = m_tableW->item(row, col);
+            if (!item) continue;
+            
+            QString text = item->text();
+            if (text.contains(keyword, Qt::CaseInsensitive)) {
+                // 使用HTML标记高亮关键词
+                QString highlightedText = text;
+                highlightedText.replace(keyword, 
+                    QString("<span style=\"background-color: yellow;\">%1</span>").arg(keyword), 
+                    Qt::CaseInsensitive);
+                item->setText(highlightedText);
+            }
+        }
+    }
 }

@@ -2,6 +2,7 @@
 #define RWDB_H
 
 #include "hgsavedatatodb.h"
+#include "hgcommonutility.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -759,6 +760,17 @@ namespace HGMACHINE{
             static void writeAuditTrailLog(const std::string &logContent);
             static int readAuditTrailLogCount(const std::string &tableName="");
             static void deleteAuditTrail();
+            
+            // 新增：支持分页读取审计日志
+            static std::vector<std::map<std::string,std::string>> readAuditTrailLogPaged(const std::string &tableName="", int page = 0, int pageSize = 1000);
+            // 新增：在所有审计日志表中搜索
+            static std::vector<std::map<std::string,std::string>> searchAuditTrailLogs(const std::string &keyword, const HGExactTime &timeFrom, const HGExactTime &timeTo);
+            
+            // 新增：高效搜索运行日志
+            static std::vector<std::map<std::string,std::string>> searchRunLogs(const std::string &keyword, const HGExactTime &timeFrom, const HGExactTime &timeTo);
+            
+            // 新增：为所有审计日志表创建索引以提高搜索性能
+            static void createIndexesForAllAuditTables();
 
 
             //-------------------------serial port------------------------------//
