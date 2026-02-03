@@ -4,11 +4,15 @@
 #include <fstream>
 #include <algorithm>
 #include <QMessageBox>
+#include <QApplication>
+#include <ctime>
 
 
 HGLogWidget::HGLogWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
-m_curDisplayIndex(-1)
+m_curDisplayIndex(-1),
+m_searchResultCurrentPage(0),
+m_isInSearchMode(false)
 {
     RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Log"));
     m_auditLogTableNames = RWDb::getAllAuditLogTables();
@@ -84,20 +88,47 @@ HGLogWidget::~HGLogWidget()
     
 }
 void HGLogWidget::slotNext(){
+    // 搜索模式下的分页
+    if (m_isInSearchMode) {
+        int totalPages = (m_searchResults.size() + SEARCH_RESULTS_PER_PAGE - 1) / SEARCH_RESULTS_PER_PAGE;
+        if (m_searchResultCurrentPage < totalPages - 1) {
+            m_searchResultCurrentPage++;
+            displaySearchResultsPage(m_searchResultCurrentPage);
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             QString::fromStdString(loadTranslation(m_lang, "LastPage")));
+        }
+        return;
+    }
+    
+    // 普通模式下的分页
     if (m_curDisplayIndex < 0) return;
     if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
     else {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                         "已经是最后一页");
+                         QString::fromStdString(loadTranslation(m_lang, "LastPage")));
         m_curDisplayIndex=m_auditLogTableNames.size()-1;
     }
     std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
     fnReadDB(dbName);
 }
 void HGLogWidget::slotPre(){
+    // 搜索模式下的分页
+    if (m_isInSearchMode) {
+        if (m_searchResultCurrentPage > 0) {
+            m_searchResultCurrentPage--;
+            displaySearchResultsPage(m_searchResultCurrentPage);
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             QString::fromStdString(loadTranslation(m_lang, "FirstPage")));
+        }
+        return;
+    }
+    
+    // 普通模式下的分页
     if (m_curDisplayIndex < 0) {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                         "已经是第一页");
+                         QString::fromStdString(loadTranslation(m_lang, "FirstPage")));
         m_curDisplayIndex=0;
     } else {
         m_curDisplayIndex--;
@@ -300,11 +331,22 @@ void HGLogWidget::slotTimeTo(QString text){
     m_searchCondition.timeTo.tm_sec = 59;
 }
 void HGLogWidget::slotSearch(){
-    m_tableW->setRowCount(0);
-    fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+    // 如果有搜索条件，执行全库搜索
+    if (!m_searchCondition.isInit()) {
+        performGlobalSearch();
+    } else {
+        // 没有搜索条件，恢复普通模式
+        m_isInSearchMode = false;
+        m_searchResults.clear();
+        m_tableW->setRowCount(0);
+        fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+    }
 }
 void HGLogWidget::slotClearSearch(){ 
     m_searchCondition.Clear();
+    m_isInSearchMode = false;
+    m_searchResults.clear();
+    m_searchResultCurrentPage = 0;
     fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
 }
 void HGLogWidget::slotSaveSearchLog(){
@@ -387,4 +429,288 @@ void HGLogWidget::slotSaveSearchLog(){
     layout->addWidget(cancelBtn,1,1);
     dialog.setLayout(layout);
     dialog.exec();
+}
+
+// 检查日志条目是否匹配搜索条件
+bool HGLogWidget::matchSearchCondition(const std::map<std::string, std::string>& logEntry)
+{
+    // 检查时间范围
+    if (m_searchCondition.timeRangeFrom != "" || m_searchCondition.timeRangeTo != "") {
+        std::string timeStr = logEntry.at("Time");
+        TIME_STRUECT timeS;
+        decodeStandardTime(timeStr, timeS);
+        
+        // 将日志日期转换为整数格式进行比较 (YYYYMMDD)
+        int logDateInt = timeS.year * 10000 + timeS.month * 100 + timeS.day;
+        
+        if (m_searchCondition.timeRangeFrom != "") {
+            int fromDateInt = atoi(m_searchCondition.timeRangeFrom.c_str());
+            if (logDateInt < fromDateInt)
+                return false;
+        }
+        
+        if (m_searchCondition.timeRangeTo != "") {
+            int toDateInt = atoi(m_searchCondition.timeRangeTo.c_str());
+            if (logDateInt > toDateInt)
+                return false;
+        }
+    }
+    
+    // 检查关键词
+    if (m_searchCondition.key != "") {
+        bool found = false;
+        auto it = logEntry.find("Time");
+        if (it != logEntry.end() && it->second.find(m_searchCondition.key) != std::string::npos)
+            found = true;
+        
+        it = logEntry.find("Operator");
+        if (it != logEntry.end() && it->second.find(m_searchCondition.key) != std::string::npos)
+            found = true;
+        
+        it = logEntry.find("LogContent");
+        if (it != logEntry.end() && it->second.find(m_searchCondition.key) != std::string::npos)
+            found = true;
+        
+        if (!found)
+            return false;
+    }
+    
+    return true;
+}
+
+// 搜索单个表 - 使用 SQL 条件查询优化性能
+std::vector<SearchResult> HGLogWidget::searchTableWithCondition(const std::string& tableName)
+{
+    std::vector<SearchResult> results;
+    
+    // 格式化时间为 SQL 格式 (YYYY-MM-DD HH:MM:SS)
+    std::string timeFromStr = "";
+    std::string timeToStr = "";
+    
+    if (!m_searchCondition.timeRangeFrom.empty()) {
+        timeFromStr = m_searchCondition.timeRangeFrom.substr(0, 4) + "-" +
+                      m_searchCondition.timeRangeFrom.substr(4, 2) + "-" +
+                      m_searchCondition.timeRangeFrom.substr(6, 2) + " 00:00:00";
+    }
+    
+    if (!m_searchCondition.timeRangeTo.empty()) {
+        timeToStr = m_searchCondition.timeRangeTo.substr(0, 4) + "-" +
+                    m_searchCondition.timeRangeTo.substr(4, 2) + "-" +
+                    m_searchCondition.timeRangeTo.substr(6, 2) + " 23:59:59";
+    }
+    
+    // 使用优化的 SQL 查询方法
+    std::vector<std::map<std::string, std::string>> loginfos = 
+        RWDb::readAuditTrailLogWithCondition(
+            tableName,
+            timeFromStr,
+            timeToStr,
+            m_searchCondition.key,
+            5000  // 每表最多返回 5000 条
+        );
+    
+    // 转换为 SearchResult
+    for (const auto& logEntry : loginfos) {
+        SearchResult result;
+        result.tableName = tableName;
+        result.time = logEntry.at("Time");
+        result.logContent = logEntry.at("LogContent");
+        result.oper = logEntry.at("Operator");
+        results.push_back(result);
+    }
+    
+    return results;
+}
+
+// 搜索所有表 - 优化版本
+std::vector<SearchResult> HGLogWidget::searchAllTablesWithCondition()
+{
+    std::vector<SearchResult> allResults;
+    const int MAX_TOTAL_RESULTS = 10000;  // 最大总结果数限制
+    
+    // 从最新的表开始搜索
+    for (int i = int(m_auditLogTableNames.size()) - 1; i >= 0; i--) {
+        std::vector<SearchResult> tableResults = searchTableWithCondition(m_auditLogTableNames[i]);
+        allResults.insert(allResults.end(), tableResults.begin(), tableResults.end());
+        
+        // 如果已经收集足够的结果，提前退出
+        if (allResults.size() >= MAX_TOTAL_RESULTS) {
+            allResults.resize(MAX_TOTAL_RESULTS);
+            break;
+        }
+        
+        // 每处理完一个表，更新 UI 防止卡顿
+        if (i % 5 == 0) {
+            QApplication::processEvents();
+        }
+    }
+    
+    return allResults;
+}
+
+// 创建带高亮的 QLabel
+QLabel* HGLogWidget::createHighlightLabel(const std::string& text, const std::string& keyword)
+{
+    QString qText = QString::fromStdString(text);
+    
+    QLabel* label = new QLabel();
+    label->setTextInteractionFlags(Qt::TextSelectableByMouse);
+    
+    if (keyword.empty() || text.empty()) {
+        label->setText(qText);
+        return label;
+    }
+    
+    QString qKeyword = QString::fromStdString(keyword);
+    
+    // 快速检查是否包含关键词（不区分大小写）
+    if (!qText.contains(qKeyword, Qt::CaseInsensitive)) {
+        label->setText(qText);
+        return label;
+    }
+    
+    // 使用富文本实现高亮
+    QString result;
+    result.reserve(qText.length() + 100);  // 预分配内存
+    
+    int lastPos = 0;
+    int pos = 0;
+    
+    while ((pos = qText.indexOf(qKeyword, lastPos, Qt::CaseInsensitive)) != -1) {
+        // 添加前面的普通文本
+        result.append(qText.mid(lastPos, pos - lastPos));
+        // 添加高亮的文本
+        result.append("<span style='background-color: yellow;'>");
+        result.append(qText.mid(pos, qKeyword.length()));
+        result.append("</span>");
+        // 更新位置
+        lastPos = pos + qKeyword.length();
+    }
+    result.append(qText.mid(lastPos));
+    
+    label->setText(result);
+    return label;
+}
+
+// 显示搜索结果页 - 优化版本
+void HGLogWidget::displaySearchResultsPage(int pageIndex)
+{
+    // 使用更细粒度的更新控制
+    m_tableW->setVisible(false);
+    
+    // 清除所有 cell widget
+    for (int i = 0; i < m_tableW->rowCount(); i++) {
+        for (int j = 0; j < m_tableW->columnCount(); j++) {
+            QWidget* widget = m_tableW->cellWidget(i, j);
+            if (widget) {
+                delete widget;
+            }
+        }
+    }
+    m_tableW->clearContents();
+    
+    int totalResults = m_searchResults.size();
+    int totalPages = (totalResults + SEARCH_RESULTS_PER_PAGE - 1) / SEARCH_RESULTS_PER_PAGE;
+    
+    if (pageIndex < 0 || pageIndex >= totalPages) {
+        m_tableW->setRowCount(0);
+        m_tableW->setVisible(true);
+        return;
+    }
+    
+    int startIndex = pageIndex * SEARCH_RESULTS_PER_PAGE;
+    int endIndex = std::min(startIndex + SEARCH_RESULTS_PER_PAGE, totalResults);
+    int rowCount = endIndex - startIndex;
+    
+    // 预设置行数
+    m_tableW->setRowCount(rowCount);
+    
+    // 批量创建和设置 cell widgets
+    const std::string& keyword = m_searchCondition.key;
+    
+    for (int i = 0; i < rowCount; i++) {
+        const SearchResult& result = m_searchResults[startIndex + i];
+        
+        // 时间列 - 使用 QLabel 显示富文本高亮
+        QLabel* timeLabel = createHighlightLabel(result.time, keyword);
+        timeLabel->setAlignment(Qt::AlignCenter);
+        m_tableW->setCellWidget(i, 0, timeLabel);
+        
+        // 日志内容列 - 使用 QLabel 显示富文本高亮
+        QLabel* contentLabel = createHighlightLabel(result.logContent, keyword);
+        contentLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        m_tableW->setCellWidget(i, 1, contentLabel);
+        
+        // 操作员列 - 使用 QLabel 显示富文本高亮
+        QLabel* operLabel = createHighlightLabel(result.oper, keyword);
+        operLabel->setAlignment(Qt::AlignCenter);
+        m_tableW->setCellWidget(i, 2, operLabel);
+        
+        // 每处理 20 行更新一次 UI，防止界面卡顿
+        if (i % 20 == 0 && i > 0) {
+            QApplication::processEvents();
+        }
+    }
+    
+    // 更新页码显示
+    m_pageLabel->setText(QString("%1/%2 (%3)")
+        .arg(pageIndex + 1)
+        .arg(totalPages)
+        .arg(totalResults));
+    
+    m_tableW->setVisible(true);
+}
+
+// 执行全局搜索 - 优化版本
+void HGLogWidget::performGlobalSearch()
+{
+    if (m_searchCondition.isInit()) {
+        return;
+    }
+    
+    // 设置搜索模式
+    m_isInSearchMode = true;
+    m_searchResultCurrentPage = 0;
+    m_searchResults.clear();
+    
+    // 显示搜索中提示并禁用按钮防止重复点击
+    m_pageLabel->setText(QString::fromStdString(loadTranslation(m_lang, "Searching")) + "...");
+    m_nextLabel->setEnabled(false);
+    m_preLabel->setEnabled(false);
+    QApplication::processEvents();
+    
+    // 记录开始时间（使用 time_t）
+    time_t startTimeT = time(nullptr);
+    
+    // 执行搜索
+    m_searchResults = searchAllTablesWithCondition();
+    
+    // 计算耗时
+    time_t endTimeT = time(nullptr);
+    double searchTimeMs = difftime(endTimeT, startTimeT) * 1000.0;
+    
+    // 恢复按钮状态
+    m_nextLabel->setEnabled(true);
+    m_preLabel->setEnabled(true);
+    
+    // 显示第一页结果
+    if (!m_searchResults.empty()) {
+        displaySearchResultsPage(0);
+        
+        // 如果搜索耗时较长，显示提示
+        if (searchTimeMs > 5000) {
+            QString msg = QString::fromStdString(loadTranslation(m_lang, "SearchComplete"))
+                + QString(" %1s, %2 ")
+                    .arg(searchTimeMs / 1000.0, 0, 'f', 2)
+                    .arg(m_searchResults.size())
+                + QString::fromStdString(loadTranslation(m_lang, "Records"));
+            // 可选：显示状态提示
+        }
+    } else {
+        m_tableW->clearContents();
+        m_tableW->setRowCount(0);
+        m_pageLabel->setText("0/0");
+        QMessageBox::information(this, QString::fromStdString(HG_DEVICE_NAME),
+                                QString::fromStdString(loadTranslation(m_lang, "NoSearchResults")));
+    }
 }
