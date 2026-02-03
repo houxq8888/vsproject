@@ -447,6 +447,59 @@ std::string RWDb::getMethodName(const std::string &flowName){
         }
         return logOpera.readRecord(readTableName, infoS);
     }
+
+    std::vector<std::map<std::string,std::string>> RWDb::readAuditTrailLogWithCondition(
+        const std::string &tableName,
+        const std::string &timeFrom,
+        const std::string &timeTo,
+        const std::string &keyword,
+        int limit)
+    {
+        std::vector<std::map<std::string,std::string>> results;
+        
+        if (tableName.empty()) {
+            return results;
+        }
+        
+        // 构建 SQL 查询
+        // 注意：数据库存储的时间格式是 YYYY-MM-DD_HH:MM:SS 时区
+        // 所以时间条件需要转换为这种格式
+        std::ostringstream sql;
+        sql << "SELECT Time, Operator, LogContent FROM " << tableName << " WHERE 1=1";
+        
+        // 添加时间条件 - 使用 SUBSTR 提取日期部分进行比较 (前10个字符是 YYYY-MM-DD)
+        if (!timeFrom.empty()) {
+            // 将 YYYY-MM-DD HH:MM:SS 转换为 YYYY-MM-DD 进行比较
+            std::string dateFrom = timeFrom.substr(0, 10);
+            sql << " AND SUBSTR(Time, 1, 10) >= '" << dateFrom << "'";
+        }
+        if (!timeTo.empty()) {
+            // 将 YYYY-MM-DD HH:MM:SS 转换为 YYYY-MM-DD 进行比较
+            std::string dateTo = timeTo.substr(0, 10);
+            sql << " AND SUBSTR(Time, 1, 10) <= '" << dateTo << "'";
+        }
+        
+        // 添加关键词条件（使用 LIKE 进行模糊匹配）
+        if (!keyword.empty()) {
+            sql << " AND (Time LIKE '%" << keyword << "%' OR "
+                << "Operator LIKE '%" << keyword << "%' OR "
+                << "LogContent LIKE '%" << keyword << "%')";
+        }
+        
+        // 按时间倒序排列
+        sql << " ORDER BY Time DESC";
+        
+        // 添加限制
+        if (limit > 0) {
+            sql << " LIMIT " << limit;
+        }
+        
+        // 执行查询
+        logOpera.readData(sql.str(), results);
+        
+        return results;
+    }
+
     std::vector<std::map<std::string, std::string>> RWDb::readRecord(std::string dbName, std::map<std::string, std::string> &infoS)
     {
         return dbOpera.readRecord(dbName, infoS);
