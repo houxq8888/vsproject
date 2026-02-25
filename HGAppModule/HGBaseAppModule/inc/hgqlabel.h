@@ -1,4 +1,4 @@
-﻿/*
+/*
 **
 **	版权:	
 **
@@ -36,6 +36,7 @@ public:
     ~HGQLabel();
     QString getLabelText();
     void changePixmap(const std::string &imgPath,int size);
+    void changePixmapFlipped(const std::string &imgPath, int size, bool flipVer);
     void init();
 protected:
     virtual void mousePressEvent(QMouseEvent *event);

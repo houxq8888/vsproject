@@ -10,11 +10,6 @@ HGInputSearchConditionWidget::HGInputSearchConditionWidget(const int& maxRange,s
     m_layout=new QGridLayout();
     this->setLayout(m_layout);
 
-    m_markLabel1=new QLabel("*");
-    m_markLabel2=new QLabel("*");
-    m_markLabel1->setStyleSheet("color: red;");
-    m_markLabel2->setStyleSheet("color: red;");
-
     m_searchGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Search")));//"查询");
     m_searchGroup->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
     m_searchLayout=new QGridLayout();
@@ -49,10 +44,8 @@ HGInputSearchConditionWidget::HGInputSearchConditionWidget(const int& maxRange,s
     
     m_searchLayout->addWidget(m_timeRangeLabel,1,0);
     m_searchLayout->addWidget(m_timeRangeFromEdit,1,1);
-    m_searchLayout->addWidget(m_markLabel1,1,2);
     m_searchLayout->addWidget(m_timeRangeLabel1,2,0);
     m_searchLayout->addWidget(m_timeRangeToEdit,2,1);
-    m_searchLayout->addWidget(m_markLabel2,2,2);
     m_searchLayout->addWidget(m_searchLabel,0,2);
     m_searchLayout->addWidget(m_clearSearchLabel,1,3);
     m_searchGroup->setLayout(m_searchLayout);
@@ -193,15 +186,10 @@ void HGInputSearchConditionWidget::slotClearSearch(){
 }
 void HGInputSearchConditionWidget::slotSearch(){
     emit signalKeyWord(m_keyEdit->text());
-    if (m_timeRangeFromEdit->text()!="" && m_timeRangeToEdit->text()!=""){
+    if (m_keyEdit->text()!="" || (m_timeRangeFromEdit->text()!="" && m_timeRangeToEdit->text()!="")){
         emit signalSearch();
     } else {
         QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-            QString::fromStdString(loadTranslation(m_lang,"Pleaseinputalltheparameters")));
-        if (m_timeRangeFromEdit->text()==""){
-            m_timeRangeFromEdit->setFocus();
-        } else if (m_timeRangeToEdit->text()==""){
-            m_timeRangeToEdit->setFocus();
-        }
+            QString::fromStdString(loadTranslation(m_lang,"PleaseinputKeyWordOrTimeRange")));
     }
 }

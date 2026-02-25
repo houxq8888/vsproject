@@ -1,6 +1,5 @@
 #include "hglogwidget.h"
 #include <QHeaderView>
-#include <QTransform>
 #include "common.h"
 #include <fstream>
 #include <algorithm>
@@ -319,8 +318,7 @@ void HGLogWidget::slotTimeTo(QString text){
     m_searchCondition.timeTo.tm_sec = 59;
 }
 void HGLogWidget::slotSearch(){
-    if (m_searchCondition.isInit()){
-        fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+    if (m_searchCondition.key.empty() && m_searchCondition.timeRangeFrom.empty()){
         return;
     }
     
@@ -359,16 +357,13 @@ void HGLogWidget::slotSearchPagePre(){
 
 void HGLogWidget::slotToggleSortOrder(){
     m_sortAscending = !m_sortAscending;
-    QPixmap pixmap(QString::fromStdString(getPath("/resources/V1/@1xze-arrow-down 1.png")));
     if (m_sortAscending) {
-        QTransform transform;
-        transform.scale(1,-1);
-        pixmap = pixmap.transformed(transform);
+        m_sortLabel->changePixmapFlipped(getPath("/resources/V1/@1xze-arrow-down 1.png"), 32, true);
         m_sortLabel->setToolTip("点击切换排序（当前：升序）");
     } else {
+        m_sortLabel->changePixmap(getPath("/resources/V1/@1xze-arrow-down 1.png"), 32);
         m_sortLabel->setToolTip("点击切换排序（当前：降序）");
     }
-    m_sortLabel->setPixmap(pixmap.scaled(QSize(32,32),Qt::KeepAspectRatio,Qt::SmoothTransformation));
     if (m_isSearching) {
         m_searchPageIndex = 0;
         fnDisplaySearchResults();
