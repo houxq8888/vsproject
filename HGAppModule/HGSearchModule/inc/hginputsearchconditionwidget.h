@@ -23,6 +23,8 @@ typedef struct tagSearchCondition
         key="";
         timeRangeFrom="";
         timeRangeTo="";
+        timeFrom.tm_year = 0;
+        timeTo.tm_year = 0;
     }
     bool isInit(){
         if (key==""&&timeRangeFrom==""&&timeRangeTo=="")

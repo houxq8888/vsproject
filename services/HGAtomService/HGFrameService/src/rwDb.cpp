@@ -430,6 +430,33 @@ std::string RWDb::getMethodName(const std::string &flowName){
         }
         return tableNames;
     }
+    bool RWDb::getAuditLogTableTimeRange(const std::vector<std::string>& tableNames, HGExactTime& outMin, HGExactTime& outMax){
+        if (tableNames.empty()) return false;
+        
+        std::vector<std::string> sortedNames = tableNames;
+        std::sort(sortedNames.begin(), sortedNames.end());
+        
+        std::string minDate = sortedNames[0].substr(sortedNames[0].find("_") + 1);
+        std::string maxDate = sortedNames.back().substr(sortedNames.back().find("_") + 1);
+        
+        outMin.tm_year = atoi(minDate.substr(0, 4).c_str());
+        outMin.tm_mon = atoi(minDate.substr(4, 2).c_str());
+        outMin.tm_mday = atoi(minDate.substr(6, 2).c_str());
+        outMin.tm_hour = 0;
+        outMin.tm_min = 0;
+        outMin.tm_sec = 0;
+        outMin.tm_microsec = 0;
+        
+        outMax.tm_year = atoi(maxDate.substr(0, 4).c_str());
+        outMax.tm_mon = atoi(maxDate.substr(4, 2).c_str());
+        outMax.tm_mday = atoi(maxDate.substr(6, 2).c_str());
+        outMax.tm_hour = 23;
+        outMax.tm_min = 59;
+        outMax.tm_sec = 59;
+        outMax.tm_microsec = 999999;
+        
+        return true;
+    }
     std::vector<std::map<std::string,std::string>> RWDb::readAuditTrailLog(const std::string &tableName){
         std::map<std::string,std::string> info;
         info["lastAuditTrailDB"]="";
@@ -654,45 +681,26 @@ std::string RWDb::getTaskRunRecordDataDB(){
         }
     }
 
-    int RWDb::searchAuditTrailLogCount(const std::string &keyword, const HGExactTime& timeFrom, const HGExactTime& timeTo){
-        std::vector<std::string> tableNames = getAllAuditLogTables();
-        if (tableNames.empty()) return 0;
-        
-        int totalCount = 0;
-        for (const auto& tableName : tableNames){
-            std::string sql = "SELECT COUNT(*) as cnt FROM " + tableName + " WHERE 1=1";
-            
-            if (!keyword.empty()){
-                sql += " AND (Operator LIKE '%" + keyword + "%' OR LogContent LIKE '%" + keyword + "%')";
-            }
-            
-            if (timeFrom.tm_year > 1900){
-                sql += " AND Time >= '" + timeFrom.toStringFromYearToSecAndZone() + "'";
-            }
-            if (timeTo.tm_year > 1900){
-                sql += " AND Time <= '" + timeTo.toStringFromYearToSecAndZone() + "'";
-            }
-            
-            std::vector<std::map<std::string,std::string>> result;
-            if (logOpera.readData(sql, result)){
-                if (!result.empty()){
-                    totalCount += std::atoi(result[0]["cnt"].c_str());
-                }
-            }
-        }
-        return totalCount;
-    }
-
     std::vector<std::map<std::string,std::string>> RWDb::searchAuditTrailLog(
         const std::string &keyword, 
         const HGExactTime& timeFrom, 
         const HGExactTime& timeTo, 
         int pageIndex, 
         int pageSize,
-        bool ascending)
+        bool ascending,
+        int& outTotalCount)
     {
         std::vector<std::string> tableNames = getAllAuditLogTables();
-        if (tableNames.empty()) return {};
+        if (tableNames.empty()) {
+            outTotalCount = 0;
+            return {};
+        }
+        
+        HGExactTime minTableTime, maxTableTime;
+        bool hasTableTimeRange = getAuditLogTableTimeRange(tableNames, minTableTime, maxTableTime);
+        
+        HGExactTime effectiveFrom = (timeFrom.tm_year > 1900) ? timeFrom : minTableTime;
+        HGExactTime effectiveTo = (timeTo.tm_year > 1900) ? timeTo : maxTableTime;
         
         if (ascending) {
             std::sort(tableNames.begin(), tableNames.end(), std::less<std::string>());
@@ -701,63 +709,110 @@ std::string RWDb::getTaskRunRecordDataDB(){
         }
         
         std::vector<std::map<std::string,std::string>> allResults;
-        allResults.reserve(pageSize * 2);
+        allResults.reserve(pageSize * 3);
         
-        std::string orderSql = ascending ? " ORDER BY Time ASC" : " ORDER BY Time DESC";
+        std::vector<int> tableCounts;
+        tableCounts.reserve(tableNames.size());
         
-        for (const auto& tableName : tableNames){
-            std::string sql = "SELECT Operator, Time, LogContent FROM " + tableName + " WHERE 1=1";
-            
-            if (!keyword.empty()){
-                sql += " AND (Operator LIKE '%" + keyword + "%' OR LogContent LIKE '%" + keyword + "%')";
-            }
-            
-            if (timeFrom.tm_year > 1900){
-                sql += " AND Time >= '" + timeFrom.toStringFromYearToSecAndZone() + "'";
-            }
-            if (timeTo.tm_year > 1900){
-                sql += " AND Time <= '" + timeTo.toStringFromYearToSecAndZone() + "'";
-            }
-            
-            sql += orderSql;
-            
-            std::vector<std::map<std::string,std::string>> tableResult;
-            if (logOpera.readData(sql, tableResult)){
-                for (auto& row : tableResult){
-                    allResults.push_back(row);
+        std::string timeFromStr, timeToStr;
+        if (timeFrom.tm_year > 1900) {
+            timeFromStr = timeFrom.toStringFromYearToSecAndZone();
+        }
+        if (timeTo.tm_year > 1900) {
+            timeToStr = timeTo.toStringFromYearToSecAndZone();
+        }
+        
+        for (const auto& tableName : tableNames) {
+            std::string tableDate = tableName.substr(tableName.find("_") + 1);
+            if (hasTableTimeRange && !timeFromStr.empty() && !timeToStr.empty()) {
+                std::string tableStart = tableDate + " 00:00:00";
+                std::string tableEnd = tableDate + " 23:59:59";
+                if (tableEnd < timeFromStr || tableStart > timeToStr) {
+                    tableCounts.push_back(0);
+                    continue;
                 }
             }
             
-            if (allResults.size() > static_cast<size_t>((pageIndex + 1) * pageSize + pageSize)){
-                break;
+            std::string countSql = "SELECT COUNT(*) as cnt FROM " + tableName + " WHERE 1=1";
+            if (!keyword.empty()) {
+                countSql += " AND (Operator LIKE '%" + keyword + "%' OR LogContent LIKE '%" + keyword + "%')";
+            }
+            if (!timeFromStr.empty()) {
+                countSql += " AND Time >= '" + timeFromStr + "'";
+            }
+            if (!timeToStr.empty()) {
+                countSql += " AND Time <= '" + timeToStr + "'";
+            }
+            
+            std::vector<std::map<std::string,std::string>> countResult;
+            int tableCount = 0;
+            if (logOpera.readData(countSql, countResult) && !countResult.empty()) {
+                tableCount = std::atoi(countResult[0]["cnt"].c_str());
+            }
+            tableCounts.push_back(tableCount);
+            
+            if (tableCount == 0) continue;
+            
+            size_t currentTotalBefore = allResults.size();
+            size_t skipBefore = static_cast<size_t>(pageIndex * pageSize);
+            size_t needAfter = static_cast<size_t>((pageIndex + 1) * pageSize);
+            
+            if (currentTotalBefore >= needAfter) {
+                continue;
+            }
+            
+            int offset = 0;
+            int limit = tableCount;
+            if (currentTotalBefore < skipBefore) {
+                if (currentTotalBefore + tableCount <= skipBefore) {
+                    continue;
+                }
+                offset = skipBefore - currentTotalBefore;
+                limit = tableCount - offset;
+            }
+            if (currentTotalBefore + tableCount > needAfter) {
+                limit = needAfter - currentTotalBefore;
+            }
+            
+            std::string sql = "SELECT Operator, Time, LogContent FROM " + tableName + " WHERE 1=1";
+            if (!keyword.empty()) {
+                sql += " AND (Operator LIKE '%" + keyword + "%' OR LogContent LIKE '%" + keyword + "%')";
+            }
+            if (!timeFromStr.empty()) {
+                sql += " AND Time >= '" + timeFromStr + "'";
+            }
+            if (!timeToStr.empty()) {
+                sql += " AND Time <= '" + timeToStr + "'";
+            }
+            sql += ascending ? " ORDER BY Time ASC" : " ORDER BY Time DESC";
+            sql += " LIMIT " + std::to_string(offset) + ", " + std::to_string(limit);
+            
+            std::vector<std::map<std::string,std::string>> tableResult;
+            if (logOpera.readData(sql, tableResult)) {
+                for (auto& row : tableResult) {
+                    allResults.push_back(std::move(row));
+                }
             }
         }
         
-        if (ascending) {
-            std::sort(allResults.begin(), allResults.end(), [](const auto& a, const auto& b) {
-                return a.at("Time") < b.at("Time");
-            });
-        } else {
-            std::sort(allResults.begin(), allResults.end(), [](const auto& a, const auto& b) {
-                return a.at("Time") > b.at("Time");
-            });
+        outTotalCount = 0;
+        for (int cnt : tableCounts) {
+            outTotalCount += cnt;
         }
         
-        size_t startIdx = static_cast<size_t>(pageIndex * pageSize);
-        size_t endIdx = startIdx + pageSize;
-        
-        if (startIdx >= allResults.size()){
-            return {};
+        if (allResults.size() > 1) {
+            if (ascending) {
+                std::sort(allResults.begin(), allResults.end(), [](const auto& a, const auto& b) {
+                    return a.at("Time") < b.at("Time");
+                });
+            } else {
+                std::sort(allResults.begin(), allResults.end(), [](const auto& a, const auto& b) {
+                    return a.at("Time") > b.at("Time");
+                });
+            }
         }
         
-        if (endIdx > allResults.size()){
-            endIdx = allResults.size();
-        }
-        
-        return std::vector<std::map<std::string,std::string>>(
-            allResults.begin() + startIdx,
-            allResults.begin() + endIdx
-        );
+        return allResults;
     }
 
     void RWDb::writeAuditTrailLog(const std::string &logContent)

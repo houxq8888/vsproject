@@ -45,6 +45,7 @@ private:
 
 private:
     QLabel* m_pageLabel;
+    QLabel* m_elapsedTimeLabel;
     HGQLabel *m_saveLabel, *m_exportLabel;
     HGQLabel* m_nextLabel, *m_preLabel;
     QGroupBox *m_manipulateGroup;
