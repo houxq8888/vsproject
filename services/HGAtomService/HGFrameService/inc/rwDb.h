@@ -759,6 +759,27 @@ namespace HGMACHINE{
             static void writeAuditTrailLog(const std::string &logContent);
             static int readAuditTrailLogCount(const std::string &tableName="");
             static void deleteAuditTrail();
+            
+            // 全库搜索审计日志（带分页）
+            // keyword: 搜索关键词（为空则不过滤关键词）
+            // timeFrom: 开始时间（格式：YYYYMMDDHHMMSS，为空则不过滤时间）
+            // timeTo: 结束时间（格式：YYYYMMDDHHMMSS，为空则不过滤时间）
+            // offset: 分页偏移量
+            // limit: 每页记录数
+            // totalCount: 输出总记录数
+            static std::vector<std::map<std::string,std::string>> searchAuditTrailLog(
+                const std::string& keyword,
+                const std::string& timeFrom,
+                const std::string& timeTo,
+                int offset,
+                int limit,
+                int& totalCount);
+            
+            // 获取搜索结果的计数（用于分页）
+            static int countAuditTrailLogSearch(
+                const std::string& keyword,
+                const std::string& timeFrom,
+                const std::string& timeTo);
 
 
             //-------------------------serial port------------------------------//
