@@ -447,6 +447,165 @@ std::string RWDb::getMethodName(const std::string &flowName){
         }
         return logOpera.readRecord(readTableName, infoS);
     }
+
+    // 全库搜索审计日志（带分页）- 优化版本
+    // 时间格式：YYYY-MM-DD（数据库中存储格式为 YYYY-MM-DD_HH:MM:SS 时区）
+    std::vector<std::map<std::string,std::string>> RWDb::searchAuditTrailLog(
+        const std::string& keyword,
+        const std::string& timeFrom,
+        const std::string& timeTo,
+        int offset,
+        int limit,
+        int& totalCount)
+    {
+        std::vector<std::map<std::string,std::string>> allResults;
+        totalCount = 0;
+        
+        // 获取所有审计日志表
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        
+        // 构建时间过滤条件
+        bool hasTimeFilter = (!timeFrom.empty() && !timeTo.empty());
+        bool hasKeyword = !keyword.empty();
+        
+        // 预估总记录数，用于提前退出
+        if (offset == 0) {
+            // 只在第一页时计算总数
+            totalCount = countAuditTrailLogSearch(keyword, timeFrom, timeTo);
+        } else {
+            // 非第一页时，使用估计值或从缓存获取
+            totalCount = -1; // 标记为未知，由调用方处理
+        }
+        
+        // 遍历所有表收集匹配的记录
+        // 从最新的表开始搜索（表名通常按时间排序）
+        for (auto it = tableNames.rbegin(); it != tableNames.rend() && static_cast<int>(allResults.size()) < offset + limit; ++it) {
+            const auto& tableName = *it;
+            std::vector<std::map<std::string,std::string>> records;
+            
+            if (hasTimeFilter) {
+                // 使用时间范围查询 - 数据库时间格式为 YYYY-MM-DD_HH:MM:SS 时区
+                // 使用 LIKE 进行日期前缀匹配
+                std::ostringstream sql;
+                sql << "SELECT * FROM " << tableName 
+                    << " WHERE (Time LIKE '" << timeFrom << "_%' OR Time >= '" << timeFrom << "')"
+                    << " AND (Time LIKE '" << timeTo << "_%' OR Time <= '" << timeTo << " 23:59:59%')";
+                
+                if (hasKeyword) {
+                    sql << " AND (Operator LIKE '%" << keyword << "%' OR "
+                        << "LogContent LIKE '%" << keyword << "%')";
+                }
+                
+                sql << " ORDER BY Time DESC";
+                logOpera.readData(sql.str(), records);
+            } else if (hasKeyword) {
+                // 只按关键词搜索
+                std::ostringstream sql;
+                sql << "SELECT * FROM " << tableName 
+                    << " WHERE Operator LIKE '%" << keyword << "%' OR "
+                    << "LogContent LIKE '%" << keyword << "%'"
+                    << " ORDER BY Time DESC";
+                logOpera.readData(sql.str(), records);
+            } else {
+                // 无过滤条件，使用LIMIT限制返回数量
+                std::ostringstream sql;
+                sql << "SELECT * FROM " << tableName 
+                    << " ORDER BY Time DESC";
+                // 添加LIMIT避免读取过多数据
+                if (limit > 0) {
+                    sql << " LIMIT " << (offset + limit);
+                }
+                logOpera.readData(sql.str(), records);
+            }
+            
+            // 添加到总结果
+            for (auto& record : records) {
+                allResults.push_back(std::move(record));
+            }
+            
+            // 如果已经收集足够的数据，提前退出
+            if (static_cast<int>(allResults.size()) >= offset + limit) {
+                break;
+            }
+        }
+        
+        // 如果总数未知，使用当前收集的数量
+        if (totalCount < 0) {
+            totalCount = static_cast<int>(allResults.size());
+        }
+        
+        // 分页处理
+        std::vector<std::map<std::string,std::string>> pagedResults;
+        int startIdx = std::min(offset, static_cast<int>(allResults.size()));
+        int endIdx = std::min(offset + limit, static_cast<int>(allResults.size()));
+        
+        for (int i = startIdx; i < endIdx; i++) {
+            pagedResults.push_back(std::move(allResults[i]));
+        }
+        
+        return pagedResults;
+    }
+
+    // 获取搜索结果的计数（用于分页）- 优化版本
+    // 时间格式：YYYY-MM-DD（数据库中存储格式为 YYYY-MM-DD_HH:MM:SS 时区）
+    int RWDb::countAuditTrailLogSearch(
+        const std::string& keyword,
+        const std::string& timeFrom,
+        const std::string& timeTo)
+    {
+        int totalCount = 0;
+        
+        // 获取所有审计日志表
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        
+        // 构建时间过滤条件
+        bool hasTimeFilter = (!timeFrom.empty() && !timeTo.empty());
+        bool hasKeyword = !keyword.empty();
+        
+        // 遍历所有表统计匹配的记录数
+        for (const auto& tableName : tableNames) {
+            // 快速路径：无过滤条件时直接使用countOfTable
+            if (!hasTimeFilter && !hasKeyword) {
+                totalCount += logOpera.countOfTable(tableName);
+                continue;
+            }
+            
+            std::vector<std::map<std::string,std::string>> records;
+            std::ostringstream sql;
+            
+            // 构建COUNT查询
+            sql << "SELECT COUNT(*) as count FROM " << tableName;
+            
+            bool hasWhere = false;
+            
+            if (hasTimeFilter) {
+                // 使用时间范围查询 - 数据库时间格式为 YYYY-MM-DD_HH:MM:SS 时区
+                // 使用 LIKE 进行日期前缀匹配
+                sql << " WHERE (Time LIKE '" << timeFrom << "_%' OR Time >= '" << timeFrom << "')"
+                    << " AND (Time LIKE '" << timeTo << "_%' OR Time <= '" << timeTo << " 23:59:59%')";
+                hasWhere = true;
+            }
+            
+            if (hasKeyword) {
+                if (hasWhere) {
+                    sql << " AND (Operator LIKE '%" << keyword << "%' OR "
+                        << "LogContent LIKE '%" << keyword << "%')";
+                } else {
+                    sql << " WHERE (Operator LIKE '%" << keyword << "%' OR "
+                        << "LogContent LIKE '%" << keyword << "%')";
+                }
+            }
+            
+            if (logOpera.readData(sql.str(), records)) {
+                if (!records.empty()) {
+                    totalCount += std::atoi(records[0]["count"].c_str());
+                }
+            }
+        }
+        
+        return totalCount;
+    }
+
     std::vector<std::map<std::string, std::string>> RWDb::readRecord(std::string dbName, std::map<std::string, std::string> &infoS)
     {
         return dbOpera.readRecord(dbName, infoS);
