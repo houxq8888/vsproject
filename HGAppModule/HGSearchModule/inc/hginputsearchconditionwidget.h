@@ -23,6 +23,8 @@ typedef struct tagSearchCondition
         key="";
         timeRangeFrom="";
         timeRangeTo="";
+        timeFrom.tm_year = 0;
+        timeTo.tm_year = 0;
     }
     bool isInit(){
         if (key==""&&timeRangeFrom==""&&timeRangeTo=="")
@@ -67,7 +69,6 @@ private:
     KBTimeEdit* m_timeEditFrom,*m_timeEditTo;
     KBCharEdit* m_keyEditCtrl;
 
-    QLabel*m_markLabel1,*m_markLabel2;
     int m_maxRange;
 
 };

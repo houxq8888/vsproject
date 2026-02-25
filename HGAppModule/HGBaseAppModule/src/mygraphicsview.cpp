@@ -246,7 +246,7 @@ void MyGraphicsView::showImageGray(int x,int y,int gray)
 }
 QRectF MyGraphicsView::getSelectROI()
 {
-    qDebug() << "MyGraphicsView::getSelectROI - currentRectItem:" << currentRectItem << ", scene:" << this->scene();
+    // qDebug() << "MyGraphicsView::getSelectROI - currentRectItem:" << currentRectItem << ", scene:" << this->scene();
     if (currentRectItem && this->scene() && this->scene()->items().contains(currentRectItem)){
         qDebug() << "MyGraphicsView::getSelectROI - Item found in scene, calculating ROI";
         m_selectROI=currentRectItem->mapToScene(currentRectItem->boundingRect()).boundingRect();
@@ -260,7 +260,7 @@ QRectF MyGraphicsView::getSelectROI()
 
 void MyGraphicsView::clearRectItem()
 {
-    qDebug() << "MyGraphicsView::clearRectItem - Starting, currentRectItem:" << currentRectItem << ", scene:" << this->scene();
+    // qDebug() << "MyGraphicsView::clearRectItem - Starting, currentRectItem:" << currentRectItem << ", scene:" << this->scene();
     
     // 先停止任何正在进行的绘制操作
     isDrawing = false;

@@ -4,11 +4,17 @@
 #include <fstream>
 #include <algorithm>
 #include <QMessageBox>
+#include <chrono>
 
 
 HGLogWidget::HGLogWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
-m_curDisplayIndex(-1)
+m_curDisplayIndex(-1),
+m_isSearching(false),
+m_sortAscending(false),
+m_searchTotalCount(0),
+m_searchPageIndex(0),
+m_searchPageSize(200)
 {
     RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Log"));
     m_auditLogTableNames = RWDb::getAllAuditLogTables();
@@ -31,6 +37,8 @@ m_curDisplayIndex(-1)
 
     // m_exportLabel=new HGQLabel(false,getPath("/resources/V1/@1xiconPark-export 1.png"));
     m_pageLabel=new QLabel("第"+QString::number(m_curDisplayIndex)+"页");
+    m_elapsedTimeLabel=new QLabel("");
+    m_elapsedTimeLabel->setStyleSheet("color: gray;");
     m_saveLabel=new HGQLabel(false,getPath("/resources/V1/@1xmb-save 1.png")); 
     m_nextLabel=new HGQLabel(false,getPath("/resources/V1/@1xze-arrow 1.png")); 
     m_preLabel=new HGQLabel(false,getPath("/resources/V1/@1xze-arrow-left 1.png")); 
@@ -56,10 +64,16 @@ m_curDisplayIndex(-1)
     slotLogTypeChanged(0);
 
     // m_manipulateLayout->addWidget(m_exportLabel,0,1);
+    m_sortLabel=new HGQLabel(false,getPath("/resources/V1/@1xze-arrow-down 1.png")); 
+    connect(m_sortLabel,SIGNAL(leftClicked()),this,SLOT(slotToggleSortOrder()));
+    m_sortLabel->setToolTip("点击切换排序（当前：降序）");
+
     m_manipulateLayout->addWidget(m_saveLabel,0,2);
     m_manipulateLayout->addWidget(m_preLabel,0,3);
     m_manipulateLayout->addWidget(m_nextLabel,0,4);
     m_manipulateLayout->addWidget(m_pageLabel,0,5);
+    m_manipulateLayout->addWidget(m_sortLabel,0,6);
+    m_manipulateLayout->addWidget(m_elapsedTimeLabel,0,7);
     m_manipulateLayout->addWidget(m_tableW,1,0,1,10);
     m_manipulateGroup->setLayout(m_manipulateLayout);
 
@@ -84,6 +98,10 @@ HGLogWidget::~HGLogWidget()
     
 }
 void HGLogWidget::slotNext(){
+    if (m_isSearching){
+        slotSearchPageNext();
+        return;
+    }
     if (m_curDisplayIndex < 0) return;
     if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
     else {
@@ -95,6 +113,10 @@ void HGLogWidget::slotNext(){
     fnReadDB(dbName);
 }
 void HGLogWidget::slotPre(){
+    if (m_isSearching){
+        slotSearchPagePre();
+        return;
+    }
     if (m_curDisplayIndex < 0) {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
                          "已经是第一页");
@@ -300,13 +322,135 @@ void HGLogWidget::slotTimeTo(QString text){
     m_searchCondition.timeTo.tm_sec = 59;
 }
 void HGLogWidget::slotSearch(){
-    m_tableW->setRowCount(0);
-    fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+    if (m_searchCondition.key.empty() && m_searchCondition.timeRangeFrom.empty() && m_searchCondition.timeRangeTo.empty()){
+        return;
+    }
+    
+    m_isSearching = true;
+    m_searchPageIndex = 0;
+    fnDisplaySearchResults();
 }
 void HGLogWidget::slotClearSearch(){ 
     m_searchCondition.Clear();
+    m_isSearching = false;
+    m_searchTotalCount = 0;
+    m_searchPageIndex = 0;
     fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
 }
+void HGLogWidget::slotSearchPageNext(){
+    int maxPage = (m_searchTotalCount + m_searchPageSize - 1) / m_searchPageSize;
+    if (m_searchPageIndex >= maxPage - 1){
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                         "已经是最后一页");
+        return;
+    }
+    m_searchPageIndex++;
+    fnDisplaySearchResults();
+}
+
+void HGLogWidget::slotSearchPagePre(){
+    if (m_searchPageIndex <= 0){
+        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                         "已经是第一页");
+        return;
+    }
+    m_searchPageIndex--;
+    fnDisplaySearchResults();
+}
+
+void HGLogWidget::slotToggleSortOrder(){
+    m_sortAscending = !m_sortAscending;
+    if (m_sortAscending) {
+        m_sortLabel->changePixmapFlipped(getPath("/resources/V1/@1xze-arrow-down 1.png"), 32, true);
+        m_sortLabel->setToolTip("点击切换排序（当前：升序）");
+    } else {
+        m_sortLabel->changePixmap(getPath("/resources/V1/@1xze-arrow-down 1.png"), 32);
+        m_sortLabel->setToolTip("点击切换排序（当前：降序）");
+    }
+    if (m_isSearching) {
+        m_searchPageIndex = 0;
+        fnDisplaySearchResults();
+    }
+}
+
+QString HGLogWidget::highlightKeywordHtml(const QString& text, const QString& keyword){
+    if (keyword.isEmpty() || text.isEmpty()) return text;
+    
+    QString result = text;
+    int pos = 0;
+    int keywordLen = keyword.length();
+    
+    while ((pos = result.indexOf(keyword, pos, Qt::CaseInsensitive)) != -1) {
+        QString found = result.mid(pos, keywordLen);
+        result.replace(pos, keywordLen, "<span style=\"background-color:yellow;\">" + found + "</span>");
+        pos += keywordLen + 44;
+    }
+    
+    return result;
+}
+
+void HGLogWidget::fnDisplaySearchResults(){
+    auto start = std::chrono::high_resolution_clock::now();
+    
+    int totalCount = 0;
+    std::vector<std::map<std::string,std::string>> loginfos = RWDb::searchAuditTrailLog(
+        m_searchCondition.key, 
+        m_searchCondition.timeFrom, 
+        m_searchCondition.timeTo, 
+        m_searchPageIndex, 
+        m_searchPageSize,
+        m_sortAscending,
+        totalCount);
+    
+    m_searchTotalCount = totalCount;
+    auto searchEnd = std::chrono::high_resolution_clock::now();
+    
+    m_tableW->setRowCount(0);
+    m_tableW->setUpdatesEnabled(false);
+    m_tableW->setRowCount(loginfos.size());
+    
+    QString qkeyword = QString::fromStdString(m_searchCondition.key);
+    
+    for (size_t i = 0; i < loginfos.size(); i++){
+        m_tableW->setItem(i, 0, new QTableWidgetItem(QString::fromStdString(loginfos[i]["Time"])));
+        
+        if (!m_searchCondition.key.empty()){
+            QString contentHtml = highlightKeywordHtml(QString::fromStdString(loginfos[i]["LogContent"]), qkeyword);
+            QString operatorHtml = highlightKeywordHtml(QString::fromStdString(loginfos[i]["Operator"]), qkeyword);
+            
+            QLabel* contentLabel = new QLabel(contentHtml);
+            contentLabel->setWordWrap(true);
+            contentLabel->setContentsMargins(2, 2, 2, 2);
+            m_tableW->setCellWidget(i, 1, contentLabel);
+            
+            QLabel* operatorLabel = new QLabel(operatorHtml);
+            operatorLabel->setWordWrap(true);
+            operatorLabel->setContentsMargins(2, 2, 2, 2);
+            m_tableW->setCellWidget(i, 2, operatorLabel);
+        } else {
+            m_tableW->setItem(i, 1, new QTableWidgetItem(QString::fromStdString(loginfos[i]["LogContent"])));
+            m_tableW->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(loginfos[i]["Operator"])));
+        }
+    }
+    
+    m_tableW->setUpdatesEnabled(true);
+    
+    auto displayEnd = std::chrono::high_resolution_clock::now();
+    auto searchMs = std::chrono::duration_cast<std::chrono::milliseconds>(searchEnd - start).count();
+    auto displayMs = std::chrono::duration_cast<std::chrono::milliseconds>(displayEnd - searchEnd).count();
+    auto totalMs = std::chrono::duration_cast<std::chrono::milliseconds>(displayEnd - start).count();
+    
+    int totalPage = (m_searchTotalCount + m_searchPageSize - 1) / m_searchPageSize;
+    m_pageLabel->setText(QString("搜索结果 %1/%2页 共%3条")
+        .arg(m_searchPageIndex + 1)
+        .arg(totalPage > 0 ? totalPage : 1)
+        .arg(m_searchTotalCount));
+    m_elapsedTimeLabel->setText(QString("搜索:%1ms 显示:%2ms 总计:%3ms")
+        .arg(searchMs).arg(displayMs).arg(totalMs));
+}
+
+
+
 void HGLogWidget::slotSaveSearchLog(){
     if (m_tableW->rowCount()==0){
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),

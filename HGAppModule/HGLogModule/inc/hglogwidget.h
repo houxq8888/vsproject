@@ -10,6 +10,7 @@
 #include <QGridLayout>
 #include <QComboBox>
 #include <QLineEdit>
+#include <QString>
 #include "hginputsearchconditionwidget.h"
 
 class HGLogWidget : public QWidget
@@ -32,13 +33,19 @@ private slots:
     void slotNext();
     void slotPre();
     void slotClearSearch();
+    void slotSearchPageNext();
+    void slotSearchPagePre();
+    void slotToggleSortOrder();
 
 private:
     void fnReadDB(const std::string &tableName);
+    void fnDisplaySearchResults();
     int getTableNameIndex(const std::string& dbName);
+    QString highlightKeywordHtml(const QString& text, const QString& keyword);
 
 private:
     QLabel* m_pageLabel;
+    QLabel* m_elapsedTimeLabel;
     HGQLabel *m_saveLabel, *m_exportLabel;
     HGQLabel* m_nextLabel, *m_preLabel;
     QGroupBox *m_manipulateGroup;
@@ -50,10 +57,16 @@ private:
     std::string m_lang;
 
     SearchCondition m_searchCondition;
+    bool m_isSearching;
+    bool m_sortAscending;
+    int m_searchTotalCount;
+    int m_searchPageIndex;
+    int m_searchPageSize;
     
     std::map<std::string, int> m_logContentMap;
     int m_curDisplayIndex;
     std::vector<std::string> m_auditLogTableNames;
+    HGQLabel* m_sortLabel;
 };
 
 #endif // HGLOGWIDGET_H

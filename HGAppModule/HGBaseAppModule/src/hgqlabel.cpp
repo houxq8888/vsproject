@@ -1,4 +1,4 @@
-﻿/*
+/*
     @file   hgqlabel.cpp
     @brief  Implementation file
     @author XiaoQin.Hou
@@ -24,6 +24,16 @@ HGQLabel::HGQLabel(bool flipVer,const std::string &imgPath,QWidget* parent):QLab
 void HGQLabel::changePixmap(const std::string &imgPath,int size)
 {
     pixmap.load(QString::fromStdString(imgPath));
+    setPixmap(pixmap.scaled(QSize(size,size),Qt::KeepAspectRatio,Qt::SmoothTransformation));
+}
+void HGQLabel::changePixmapFlipped(const std::string &imgPath, int size, bool flipVer)
+{
+    pixmap.load(QString::fromStdString(imgPath));
+    if (flipVer) {
+        QTransform transform;
+        transform.scale(1,-1);
+        pixmap = pixmap.transformed(transform);
+    }
     setPixmap(pixmap.scaled(QSize(size,size),Qt::KeepAspectRatio,Qt::SmoothTransformation));
 }
 void HGQLabel::init()
