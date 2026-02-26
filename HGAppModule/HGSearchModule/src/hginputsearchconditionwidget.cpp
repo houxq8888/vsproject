@@ -49,10 +49,8 @@ HGInputSearchConditionWidget::HGInputSearchConditionWidget(const int& maxRange,s
     
     m_searchLayout->addWidget(m_timeRangeLabel,1,0);
     m_searchLayout->addWidget(m_timeRangeFromEdit,1,1);
-    m_searchLayout->addWidget(m_markLabel1,1,2);
     m_searchLayout->addWidget(m_timeRangeLabel1,2,0);
     m_searchLayout->addWidget(m_timeRangeToEdit,2,1);
-    m_searchLayout->addWidget(m_markLabel2,2,2);
     m_searchLayout->addWidget(m_searchLabel,0,2);
     m_searchLayout->addWidget(m_clearSearchLabel,1,3);
     m_searchGroup->setLayout(m_searchLayout);
@@ -108,77 +106,10 @@ bool HGInputSearchConditionWidget::eventFilter(QObject* obj,QEvent* event){
     return QWidget::eventFilter(obj,event);
 }
 void HGInputSearchConditionWidget::slotTimeFrom(QString text){
-    if (m_timeRangeToEdit->text()!=""){
-        HGExactTime timeFrom=HGExactTime::currentTime();
-        timeFrom.tm_year = atoi(text.toStdString().substr(0, 4).c_str());
-        timeFrom.tm_mon = atoi(text.toStdString().substr(4, 2).c_str());
-        timeFrom.tm_mday = atoi(text.toStdString().substr(6, 2).c_str());
-        HGExactTime timeTo=HGExactTime::currentTime();
-        timeTo.tm_year = atoi(m_timeRangeToEdit->text().toStdString().substr(0, 4).c_str());
-        timeTo.tm_mon = atoi(m_timeRangeToEdit->text().toStdString().substr(4, 2).c_str());
-        timeTo.tm_mday = atoi(m_timeRangeToEdit->text().toStdString().substr(6, 2).c_str());
-
-        HGExactTime preTimeFrom=HGExactTime::currentTime();
-        preTimeFrom.tm_year=timeFrom.tm_year;
-        preTimeFrom.tm_mon=timeFrom.tm_mon;
-        preTimeFrom.tm_mday=timeFrom.tm_mday;
-        preTimeFrom += m_maxRange;
-
-        if (timeFrom>=timeTo){
-            QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"Theendtimeisearlierthanstarttime")));
-            m_timeRangeFromEdit->clear();
-            m_timeRangeFromEdit->setFocus();
-            return;
-        } else if (preTimeFrom<timeTo){
-            QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"Theendtimeisearlierthanstarttimeoutofmaxrange"))+
-                    QString::fromStdString(std::to_string(m_maxRange)));
-            m_timeRangeFromEdit->clear();
-            m_timeRangeFromEdit->setFocus();
-            return;
-        } else {
-
-        }
-    }
     m_timeRangeFromEdit->setText(text);
     emit signalTimeFrom(text);
 }
 void HGInputSearchConditionWidget::slotTimeTo(QString text){
-
-    if (m_timeRangeFromEdit->text()!=""){
-        HGExactTime timeFrom=HGExactTime::currentTime();
-        timeFrom.tm_year = atoi(m_timeRangeFromEdit->text().toStdString().substr(0, 4).c_str());
-        timeFrom.tm_mon = atoi(m_timeRangeFromEdit->text().toStdString().substr(4, 2).c_str());
-        timeFrom.tm_mday = atoi(m_timeRangeFromEdit->text().toStdString().substr(6, 2).c_str());
-        HGExactTime timeTo=HGExactTime::currentTime();
-        timeTo.tm_year = atoi(text.toStdString().substr(0, 4).c_str());
-        timeTo.tm_mon = atoi(text.toStdString().substr(4, 2).c_str());
-        timeTo.tm_mday = atoi(text.toStdString().substr(6, 2).c_str());
-        HGExactTime preTimeFrom=HGExactTime::currentTime();
-        preTimeFrom.tm_year=timeFrom.tm_year;
-        preTimeFrom.tm_mon=timeFrom.tm_mon;
-        preTimeFrom.tm_mday=timeFrom.tm_mday;
-        preTimeFrom += m_maxRange;
-
-        if ((timeFrom>=timeTo)){
-            QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"Theendtimeisearlierthanstarttime")));
-            
-            m_timeRangeToEdit->clear();
-            m_timeRangeToEdit->setFocus();
-            return;
-        } else if (preTimeFrom<timeTo){
-            QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-                QString::fromStdString(loadTranslation(m_lang,"Theendtimeisearlierthanstarttimeoutofmaxrange"))+
-                    QString::fromStdString(std::to_string(m_maxRange))+"天");
-            m_timeRangeToEdit->clear();
-            m_timeRangeToEdit->setFocus();
-            return;
-        } else {
-
-        }
-    }
     m_timeRangeToEdit->setText(text);
     emit signalTimeTo(text);
 }
@@ -193,15 +124,5 @@ void HGInputSearchConditionWidget::slotClearSearch(){
 }
 void HGInputSearchConditionWidget::slotSearch(){
     emit signalKeyWord(m_keyEdit->text());
-    if (m_timeRangeFromEdit->text()!="" && m_timeRangeToEdit->text()!=""){
-        emit signalSearch();
-    } else {
-        QMessageBox::warning(this,QString::fromStdString(HG_DEVICE_NAME),
-            QString::fromStdString(loadTranslation(m_lang,"Pleaseinputalltheparameters")));
-        if (m_timeRangeFromEdit->text()==""){
-            m_timeRangeFromEdit->setFocus();
-        } else if (m_timeRangeToEdit->text()==""){
-            m_timeRangeToEdit->setFocus();
-        }
-    }
+    emit signalSearch();
 }

@@ -21,6 +21,7 @@ public:
     ~HGLogWidget();
 
 signals:
+    void searchCompleted(int totalCount);
 
 private slots:
     void slotLogTypeChanged(int);
@@ -32,19 +33,28 @@ private slots:
     void slotNext();
     void slotPre();
     void slotClearSearch();
+    void slotSearchFinished();
+    void slotSortOrderChanged(int);
 
 private:
     void fnReadDB(const std::string &tableName);
     int getTableNameIndex(const std::string& dbName);
+    void fnSearchAllLogs();
+    void fnDisplaySearchResults(int offset);
+    void highlightKeyword(QTableWidgetItem* item, const QString& keyword);
+    void updatePageLabel();
 
 private:
     QLabel* m_pageLabel;
+    QLabel* m_timeCostLabel;
     HGQLabel *m_saveLabel, *m_exportLabel;
     HGQLabel* m_nextLabel, *m_preLabel;
     QGroupBox *m_manipulateGroup;
     QGridLayout *m_manipulateLayout, *m_layout;
     QLabel* m_logTypeLabel;
+    QLabel* m_sortLabel;
     QComboBox* m_logTypeComboBox;
+    QComboBox* m_sortComboBox;
     HGInputSearchConditionWidget* m_inputsearchConditionW;
     QTableWidget* m_tableW;
     std::string m_lang;
@@ -54,6 +64,14 @@ private:
     std::map<std::string, int> m_logContentMap;
     int m_curDisplayIndex;
     std::vector<std::string> m_auditLogTableNames;
+    
+    bool m_isSearchMode;
+    int m_searchTotalCount;
+    int m_searchCurrentPage;
+    int m_pageSize;
+    bool m_sortDescending;
+    HGExactTime m_logMinTime;
+    HGExactTime m_logMaxTime;
 };
 
 #endif // HGLOGWIDGET_H
