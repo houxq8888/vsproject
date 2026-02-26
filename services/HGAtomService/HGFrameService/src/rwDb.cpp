@@ -6,6 +6,7 @@
 #include "hgcommonutility.h"
 #include "config.h"
 #include "hglog4cplus.h"
+#include <algorithm>
 
 namespace HGMACHINE{
     std::vector<std::string> userInfoName={
@@ -694,6 +695,147 @@ std::string RWDb::getTaskRunRecordDataDB(){
         info["lastAuditTrailDB"]=dbName;
         logOpera.recordSingleInfo(AUDITTRAILDBRECORD,info);
     }
+
+    int RWDb::searchAllAuditTrailLogCount(const std::string &keyword,
+        const HGExactTime &timeFrom, const HGExactTime &timeTo)
+    {
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        int totalCount = 0;
+        
+        char fromStr[16], toStr[16];
+        snprintf(fromStr, sizeof(fromStr), "%04d-%02d-%02d", 
+                 timeFrom.tm_year, timeFrom.tm_mon, timeFrom.tm_mday);
+        snprintf(toStr, sizeof(toStr), "%04d-%02d-%02d", 
+                 timeTo.tm_year, timeTo.tm_mon, timeTo.tm_mday);
+        
+        for (const auto &tableName : tableNames) {
+            std::string sql = "SELECT COUNT(*) as cnt FROM " + tableName + 
+                " WHERE Time >= '" + std::string(fromStr) + "' AND Time <= '" + std::string(toStr) + "_23:59:59'";
+            
+            if (!keyword.empty()) {
+                sql += " AND (Time LIKE '%" + keyword + "%' OR Operator LIKE '%" + keyword + 
+                       "%' OR LogContent LIKE '%" + keyword + "%')";
+            }
+            
+            std::vector<std::map<std::string,std::string>> results;
+            logOpera.readData(sql, results);
+            if (!results.empty()) {
+                totalCount += std::stoi(results[0]["cnt"]);
+            }
+        }
+        return totalCount;
+    }
+
+    std::vector<std::map<std::string,std::string>> RWDb::searchAllAuditTrailLog(
+        const std::string &keyword,
+        const HGExactTime &timeFrom, 
+        const HGExactTime &timeTo,
+        int offset, 
+        int limit,
+        bool sortDescending)
+    {
+        std::vector<std::map<std::string,std::string>> results;
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        
+        char fromStr[16], toStr[16];
+        snprintf(fromStr, sizeof(fromStr), "%04d-%02d-%02d", 
+                 timeFrom.tm_year, timeFrom.tm_mon, timeFrom.tm_mday);
+        snprintf(toStr, sizeof(toStr), "%04d-%02d-%02d", 
+                 timeTo.tm_year, timeTo.tm_mon, timeTo.tm_mday);
+        
+        std::vector<std::map<std::string,std::string>> allMatches;
+        
+        for (const auto &tableName : tableNames) {
+            std::string sql = "SELECT Time, Operator, LogContent FROM " + tableName + 
+                " WHERE Time >= '" + std::string(fromStr) + "' AND Time <= '" + std::string(toStr) + "_23:59:59'";
+            
+            if (!keyword.empty()) {
+                sql += " AND (Time LIKE '%" + keyword + "%' OR Operator LIKE '%" + keyword + 
+                       "%' OR LogContent LIKE '%" + keyword + "%')";
+            }
+            
+            std::vector<std::map<std::string,std::string>> tableResults;
+            logOpera.readData(sql, tableResults);
+            
+            for (auto& record : tableResults) {
+                allMatches.push_back(record);
+            }
+        }
+        
+        if (sortDescending) {
+            std::sort(allMatches.begin(), allMatches.end(), 
+                [](const std::map<std::string,std::string> &a, 
+                   const std::map<std::string,std::string> &b) {
+                    auto itA = a.find("Time");
+                    auto itB = b.find("Time");
+                    if (itA != a.end() && itB != b.end()) {
+                        return itA->second > itB->second;
+                    }
+                    return false;
+                });
+        } else {
+            std::sort(allMatches.begin(), allMatches.end(), 
+                [](const std::map<std::string,std::string> &a, 
+                   const std::map<std::string,std::string> &b) {
+                    auto itA = a.find("Time");
+                    auto itB = b.find("Time");
+                    if (itA != a.end() && itB != b.end()) {
+                        return itA->second < itB->second;
+                    }
+                    return false;
+                });
+        }
+        
+        int endIdx = std::min(offset + limit, (int)allMatches.size());
+        for (int i = offset; i < endIdx; i++) {
+            results.push_back(allMatches[i]);
+        }
+        
+        return results;
+    }
+
+    void RWDb::getAuditTrailLogDateRange(HGExactTime &minTime, HGExactTime &maxTime){
+        minTime.tm_year = 2000;
+        minTime.tm_mon = 1;
+        minTime.tm_mday = 1;
+        maxTime = HGExactTime::currentTime();
+        
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        if (tableNames.empty()) return;
+        
+        std::string minDateStr = "";
+        std::string maxDateStr = "";
+        
+        for (const auto &tableName : tableNames) {
+            std::string sql = "SELECT MIN(Time) as minTime, MAX(Time) as maxTime FROM " + tableName;
+            std::vector<std::map<std::string,std::string>> results;
+            logOpera.readData(sql, results);
+            if (!results.empty()) {
+                if (results[0]["minTime"] < minDateStr || minDateStr.empty()) {
+                    minDateStr = results[0]["minTime"];
+                }
+                if (results[0]["maxTime"] > maxDateStr || maxDateStr.empty()) {
+                    maxDateStr = results[0]["maxTime"];
+                }
+            }
+        }
+        
+        if (!minDateStr.empty()) {
+            TIME_STRUECT timeS;
+            decodeStandardTime(minDateStr, timeS);
+            minTime.tm_year = timeS.year;
+            minTime.tm_mon = timeS.month;
+            minTime.tm_mday = timeS.day;
+        }
+        if (!maxDateStr.empty()) {
+            TIME_STRUECT timeS;
+            decodeStandardTime(maxDateStr, timeS);
+            maxTime.tm_year = timeS.year;
+            maxTime.tm_mon = timeS.month;
+            maxTime.tm_mday = timeS.day;
+        }
+    }
+
     void RWDb::writeSerialPortInfo(const std::vector<std::string> &serialPorts)
     {
         std::map<std::string, std::string> info;
