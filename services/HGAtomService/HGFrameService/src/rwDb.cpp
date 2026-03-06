@@ -447,6 +447,142 @@ std::string RWDb::getMethodName(const std::string &flowName){
         }
         return logOpera.readRecord(readTableName, infoS);
     }
+
+    std::vector<std::map<std::string,std::string>> RWDb::searchAuditTrailLogAllTables(
+        const std::string &keyword,
+        const HGExactTime &timeFrom,
+        const HGExactTime &timeTo,
+        int &totalCount)
+    {
+        std::vector<std::map<std::string,std::string>> allResults;
+        totalCount = 0;
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        
+        std::reverse(tableNames.begin(), tableNames.end());
+        
+        for (const auto &tableName : tableNames) {
+            auto logs = readAuditTrailLog(tableName);
+            std::reverse(logs.begin(), logs.end());
+            
+            for (auto &log : logs) {
+                bool match = true;
+                
+                if (!keyword.empty()) {
+                    bool hasKeyword = log["Time"].find(keyword) != std::string::npos ||
+                                     log["Operator"].find(keyword) != std::string::npos ||
+                                     log["LogContent"].find(keyword) != std::string::npos;
+                    if (!hasKeyword) {
+                        match = false;
+                    }
+                }
+                
+                if (match && timeFrom.tm_year != 0 && timeFrom.tm_mon != 0 && timeFrom.tm_mday != 0) {
+                    HGExactTime logTime;
+                    TIME_STRUECT timeS;
+                    decodeStandardTime(log["Time"], timeS);
+                    logTime.tm_year = timeS.year;
+                    logTime.tm_mon = timeS.month;
+                    logTime.tm_mday = timeS.day;
+                    if (logTime < timeFrom) {
+                        match = false;
+                    }
+                }
+                
+                if (match && timeTo.tm_year != 0 && timeTo.tm_mon != 0 && timeTo.tm_mday != 0) {
+                    HGExactTime logTime;
+                    TIME_STRUECT timeS;
+                    decodeStandardTime(log["Time"], timeS);
+                    logTime.tm_year = timeS.year;
+                    logTime.tm_mon = timeS.month;
+                    logTime.tm_mday = timeS.day;
+                    if (logTime > timeTo) {
+                        match = false;
+                    }
+                }
+                
+                if (match) {
+                    allResults.push_back(log);
+                    totalCount++;
+                }
+            }
+        }
+        
+        return allResults;
+    }
+
+    std::vector<std::map<std::string,std::string>> RWDb::searchAuditTrailLogAllTablesPage(
+        const std::string &keyword,
+        const HGExactTime &timeFrom,
+        const HGExactTime &timeTo,
+        int pageIndex,
+        int pageSize,
+        int &totalCount)
+    {
+        std::vector<std::map<std::string,std::string>> pageResults;
+        totalCount = 0;
+        int startIndex = pageIndex * pageSize;
+        int endIndex = startIndex + pageSize;
+        int currentIndex = 0;
+        
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        std::reverse(tableNames.begin(), tableNames.end());
+        
+        for (const auto &tableName : tableNames) {
+            auto logs = readAuditTrailLog(tableName);
+            std::reverse(logs.begin(), logs.end());
+            
+            for (auto &log : logs) {
+                bool match = true;
+                
+                if (!keyword.empty()) {
+                    bool hasKeyword = log["Time"].find(keyword) != std::string::npos ||
+                                     log["Operator"].find(keyword) != std::string::npos ||
+                                     log["LogContent"].find(keyword) != std::string::npos;
+                    if (!hasKeyword) {
+                        match = false;
+                    }
+                }
+                
+                if (match && timeFrom.tm_year != 0 && timeFrom.tm_mon != 0 && timeFrom.tm_mday != 0) {
+                    HGExactTime logTime;
+                    TIME_STRUECT timeS;
+                    decodeStandardTime(log["Time"], timeS);
+                    logTime.tm_year = timeS.year;
+                    logTime.tm_mon = timeS.month;
+                    logTime.tm_mday = timeS.day;
+                    if (logTime < timeFrom) {
+                        match = false;
+                    }
+                }
+                
+                if (match && timeTo.tm_year != 0 && timeTo.tm_mon != 0 && timeTo.tm_mday != 0) {
+                    HGExactTime logTime;
+                    TIME_STRUECT timeS;
+                    decodeStandardTime(log["Time"], timeS);
+                    logTime.tm_year = timeS.year;
+                    logTime.tm_mon = timeS.month;
+                    logTime.tm_mday = timeS.day;
+                    if (logTime > timeTo) {
+                        match = false;
+                    }
+                }
+                
+                if (match) {
+                    if (currentIndex >= startIndex && currentIndex < endIndex) {
+                        pageResults.push_back(log);
+                    }
+                    totalCount++;
+                    currentIndex++;
+                    
+                    if (currentIndex >= endIndex && pageResults.size() > 0) {
+                        return pageResults;
+                    }
+                }
+            }
+        }
+        
+        return pageResults;
+    }
     std::vector<std::map<std::string, std::string>> RWDb::readRecord(std::string dbName, std::map<std::string, std::string> &infoS)
     {
         return dbOpera.readRecord(dbName, infoS);

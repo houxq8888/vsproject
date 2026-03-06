@@ -35,7 +35,9 @@ private slots:
 
 private:
     void fnReadDB(const std::string &tableName);
+    void fnSearchAndDisplay();
     int getTableNameIndex(const std::string& dbName);
+    QString highlightKeyword(const QString& text, const QString& keyword);
 
 private:
     QLabel* m_pageLabel;
@@ -54,6 +56,11 @@ private:
     std::map<std::string, int> m_logContentMap;
     int m_curDisplayIndex;
     std::vector<std::string> m_auditLogTableNames;
+    
+    bool m_isSearching;
+    int m_searchPageIndex;
+    int m_searchTotalCount;
+    const int m_pageSize = 100;
 };
 
 #endif // HGLOGWIDGET_H

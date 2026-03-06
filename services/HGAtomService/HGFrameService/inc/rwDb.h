@@ -755,6 +755,18 @@ namespace HGMACHINE{
 
             //-------------------------audit log -----------------------------//
             static std::vector<std::map<std::string,std::string>> readAuditTrailLog(const std::string &tableName="");
+            static std::vector<std::map<std::string,std::string>> searchAuditTrailLogAllTables(
+                const std::string &keyword,
+                const HGExactTime &timeFrom,
+                const HGExactTime &timeTo,
+                int &totalCount);
+            static std::vector<std::map<std::string,std::string>> searchAuditTrailLogAllTablesPage(
+                const std::string &keyword,
+                const HGExactTime &timeFrom,
+                const HGExactTime &timeTo,
+                int pageIndex,
+                int pageSize,
+                int &totalCount);
             static std::vector<std::string> getAllAuditLogTables();
             static void writeAuditTrailLog(const std::string &logContent);
             static int readAuditTrailLogCount(const std::string &tableName="");

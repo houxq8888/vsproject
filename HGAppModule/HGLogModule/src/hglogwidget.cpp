@@ -1,5 +1,6 @@
 #include "hglogwidget.h"
 #include <QHeaderView>
+#include <QLabel>
 #include "common.h"
 #include <fstream>
 #include <algorithm>
@@ -8,7 +9,10 @@
 
 HGLogWidget::HGLogWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
-m_curDisplayIndex(-1)
+m_curDisplayIndex(-1),
+m_isSearching(false),
+m_searchPageIndex(0),
+m_searchTotalCount(0)
 {
     RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Log"));
     m_auditLogTableNames = RWDb::getAllAuditLogTables();
@@ -84,26 +88,47 @@ HGLogWidget::~HGLogWidget()
     
 }
 void HGLogWidget::slotNext(){
-    if (m_curDisplayIndex < 0) return;
-    if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
-    else {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                         "已经是最后一页");
-        m_curDisplayIndex=m_auditLogTableNames.size()-1;
+    if (m_isSearching) {
+        int totalPages = (m_searchTotalCount + m_pageSize - 1) / m_pageSize;
+        if (m_searchPageIndex < totalPages - 1) {
+            m_searchPageIndex++;
+            fnSearchAndDisplay();
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是最后一页");
+        }
+    } else {
+        if (m_curDisplayIndex < 0) return;
+        if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
+        else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是最后一页");
+            m_curDisplayIndex=m_auditLogTableNames.size()-1;
+        }
+        std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
+        fnReadDB(dbName);
     }
-    std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
-    fnReadDB(dbName);
 }
 void HGLogWidget::slotPre(){
-    if (m_curDisplayIndex < 0) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                         "已经是第一页");
-        m_curDisplayIndex=0;
+    if (m_isSearching) {
+        if (m_searchPageIndex > 0) {
+            m_searchPageIndex--;
+            fnSearchAndDisplay();
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是第一页");
+        }
     } else {
-        m_curDisplayIndex--;
+        if (m_curDisplayIndex < 0) {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                         "已经是第一页");
+            m_curDisplayIndex=0;
+        } else {
+            m_curDisplayIndex--;
+        }
+        std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
+        fnReadDB(dbName);
     }
-    std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
-    fnReadDB(dbName);
 }
 int HGLogWidget::getTableNameIndex(const std::string &tableName){
     for (int i=0;i<int(m_auditLogTableNames.size());i++){
@@ -300,12 +325,84 @@ void HGLogWidget::slotTimeTo(QString text){
     m_searchCondition.timeTo.tm_sec = 59;
 }
 void HGLogWidget::slotSearch(){
-    m_tableW->setRowCount(0);
-    fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+    m_isSearching = true;
+    m_searchPageIndex = 0;
+    fnSearchAndDisplay();
 }
+
 void HGLogWidget::slotClearSearch(){ 
     m_searchCondition.Clear();
+    m_isSearching = false;
+    m_searchPageIndex = 0;
+    m_searchTotalCount = 0;
     fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+}
+
+void HGLogWidget::fnSearchAndDisplay() {
+    m_tableW->setRowCount(0);
+    m_tableW->setUpdatesEnabled(false);
+    
+    int totalCount = 0;
+    auto currentPageResults = RWDb::searchAuditTrailLogAllTablesPage(
+        m_searchCondition.key,
+        m_searchCondition.timeFrom,
+        m_searchCondition.timeTo,
+        m_searchPageIndex,
+        m_pageSize,
+        totalCount
+    );
+    
+    m_searchTotalCount = totalCount;
+    
+    m_tableW->setRowCount(currentPageResults.size());
+    
+    QString keyword = QString::fromStdString(m_searchCondition.key);
+    
+    for (int row = 0; row < int(currentPageResults.size()); ++row) {
+        const auto &logInfo = currentPageResults[row];
+        for (auto info : logInfo) {
+            int col = m_logContentMap[info.first];
+            if (col < 0 || col >= m_tableW->columnCount())
+                continue;
+            
+            QString text = QString::fromStdString(info.second);
+            
+            if (!keyword.isEmpty()) {
+                QLabel *label = new QLabel();
+                label->setTextFormat(Qt::RichText);
+                label->setText(highlightKeyword(text, keyword));
+                label->setWordWrap(true);
+                m_tableW->setCellWidget(row, col, label);
+            } else {
+                m_tableW->setItem(row, col, new QTableWidgetItem(text));
+            }
+        }
+    }
+    
+    int totalPages = (m_searchTotalCount + m_pageSize - 1) / m_pageSize;
+    m_pageLabel->setText(QString("第%1/%2页，共%3条").arg(m_searchPageIndex + 1).arg(totalPages).arg(m_searchTotalCount));
+    
+    m_tableW->setUpdatesEnabled(true);
+}
+
+QString HGLogWidget::highlightKeyword(const QString& text, const QString& keyword) {
+    if (keyword.isEmpty()) return text;
+    
+    QString result;
+    int lastIndex = 0;
+    int index = 0;
+    
+    while ((index = text.indexOf(keyword, lastIndex, Qt::CaseInsensitive)) != -1) {
+        result += text.mid(lastIndex, index - lastIndex);
+        result += "<span style='background-color: yellow; color: red;'>";
+        result += text.mid(index, keyword.length());
+        result += "</span>";
+        lastIndex = index + keyword.length();
+    }
+    
+    result += text.mid(lastIndex);
+    
+    return result;
 }
 void HGLogWidget::slotSaveSearchLog(){
     if (m_tableW->rowCount()==0){
