@@ -8,7 +8,11 @@
 
 HGLogWidget::HGLogWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
-m_curDisplayIndex(-1)
+m_curDisplayIndex(-1),
+m_curSearchPage(0),
+m_searchPageSize(1000),
+m_isSearchMode(false),
+m_searchResultCount(0)
 {
     RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Log"));
     m_auditLogTableNames = RWDb::getAllAuditLogTables();
@@ -83,27 +87,50 @@ HGLogWidget::~HGLogWidget()
 {
     
 }
-void HGLogWidget::slotNext(){
-    if (m_curDisplayIndex < 0) return;
-    if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
-    else {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                         "已经是最后一页");
-        m_curDisplayIndex=m_auditLogTableNames.size()-1;
-    }
-    std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
-    fnReadDB(dbName);
-}
-void HGLogWidget::slotPre(){
-    if (m_curDisplayIndex < 0) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                         "已经是第一页");
-        m_curDisplayIndex=0;
+void HGLogWidget::slotNext(){    
+    if (m_isSearchMode) {
+        int totalResults = m_searchResults.size();
+        int totalPages = (totalResults + m_searchPageSize - 1) / m_searchPageSize;
+        
+        if (m_curSearchPage < totalPages - 1) {
+            m_curSearchPage++;
+            displaySearchResults();
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             QString::fromStdString(loadTranslation(m_lang,"AlreadyLastPage")));
+        }
     } else {
-        m_curDisplayIndex--;
+        if (m_curDisplayIndex < 0) return;
+        if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
+        else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             QString::fromStdString(loadTranslation(m_lang,"AlreadyLastPage")));
+            m_curDisplayIndex=m_auditLogTableNames.size()-1;
+        }
+        std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
+        fnReadDB(dbName);
     }
-    std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
-    fnReadDB(dbName);
+}
+void HGLogWidget::slotPre(){    
+    if (m_isSearchMode) {
+        if (m_curSearchPage > 0) {
+            m_curSearchPage--;
+            displaySearchResults();
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             QString::fromStdString(loadTranslation(m_lang,"AlreadyFirstPage")));
+        }
+    } else {
+        if (m_curDisplayIndex < 0) {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             QString::fromStdString(loadTranslation(m_lang,"AlreadyFirstPage")));
+            m_curDisplayIndex=0;
+        } else {
+            m_curDisplayIndex--;
+        }
+        std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
+        fnReadDB(dbName);
+    }
 }
 int HGLogWidget::getTableNameIndex(const std::string &tableName){
     for (int i=0;i<int(m_auditLogTableNames.size());i++){
@@ -299,12 +326,27 @@ void HGLogWidget::slotTimeTo(QString text){
     m_searchCondition.timeTo.tm_min = 59;
     m_searchCondition.timeTo.tm_sec = 59;
 }
-void HGLogWidget::slotSearch(){
-    m_tableW->setRowCount(0);
-    fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
-}
+void HGLogWidget::slotSearch(){    m_tableW->setRowCount(0);    m_isSearchMode = true;    m_curSearchPage = 0;    m_searchResults.clear();    
+    // 获取搜索结果总数    m_searchResultCount = RWDb::searchAuditTrailLogCount(m_searchCondition.key, m_searchCondition.timeFrom, m_searchCondition.timeTo);    
+    // 显示第一页搜索结果    displaySearchResults();}
+void HGLogWidget::displaySearchResults(){    m_tableW->setRowCount(0);    m_tableW->setUpdatesEnabled(false);    
+    int totalResults = m_searchResultCount;    int totalPages = (totalResults + m_searchPageSize - 1) / m_searchPageSize;    
+    if (m_curSearchPage >= totalPages) {        m_curSearchPage = std::max(0, totalPages - 1);    }    
+    // Update page label    m_pageLabel->setText(QString::fromStdString(loadTranslation(m_lang,"Page")) + 
+                        QString::number(m_curSearchPage + 1) + "/" + QString::number(totalPages));    
+    // Calculate offset for current page    int offset = m_curSearchPage * m_searchPageSize;    
+    // Get current page data    m_searchResults = RWDb::searchAuditTrailLog(m_searchCondition.key, m_searchCondition.timeFrom, m_searchCondition.timeTo, offset, m_searchPageSize);    
+    // Display results for current page    int rowIndex = 0;    for (const auto& loginfo : m_searchResults) {        m_tableW->insertRow(rowIndex);        
+        // Time column        QTableWidgetItem* timeItem = new QTableWidgetItem(QString::fromStdString(loginfo["Time"]));        m_tableW->setItem(rowIndex, 0, timeItem);        
+        // Log content column with keyword highlighting        std::string logContent = loginfo["LogContent"];        QString logContentQStr = QString::fromStdString(logContent);        if (!m_searchCondition.key.empty()) {            // Highlight keyword            QString keyword = QString::fromStdString(m_searchCondition.key);            int pos = 0;            while ((pos = logContentQStr.indexOf(keyword, pos, Qt::CaseInsensitive)) != -1) {                logContentQStr.insert(pos, "<font color='red'>");                pos += keyword.length() + 17; // 17 is the length of "<font color='red'>"                logContentQStr.insert(pos, "</font>");                pos += 7; // 7 is the length of "</font>"            }        }        // 创建一个QTextEdit来显示富文本        QTextEdit* contentEdit = new QTextEdit();        contentEdit->setHtml(logContentQStr);        contentEdit->setReadOnly(true);        contentEdit->setFrameStyle(QFrame::NoFrame);        contentEdit->setAlignment(Qt::AlignLeft | Qt::AlignTop);        m_tableW->setCellWidget(rowIndex, 1, contentEdit);        
+        // Operator column        QTableWidgetItem* operatorItem = new QTableWidgetItem(QString::fromStdString(loginfo["Operator"]));        m_tableW->setItem(rowIndex, 2, operatorItem);        
+        rowIndex++;    }    
+    m_tableW->setUpdatesEnabled(true);    m_tableW->resizeRowsToContents();}
+
 void HGLogWidget::slotClearSearch(){ 
     m_searchCondition.Clear();
+    m_isSearchMode = false;
+    m_searchResults.clear();
     fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
 }
 void HGLogWidget::slotSaveSearchLog(){
