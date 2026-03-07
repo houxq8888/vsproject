@@ -4,6 +4,7 @@
 #include <fstream>
 #include <algorithm>
 #include <QMessageBox>
+#include <QTextEdit>
 
 
 HGLogWidget::HGLogWidget(std::string lang,QWidget *parent) : QWidget(parent),
@@ -365,11 +366,11 @@ void HGLogWidget::displaySearchResults(){
         m_tableW->insertRow(rowIndex);
         
         // Time column
-        QTableWidgetItem* timeItem = new QTableWidgetItem(QString::fromStdString(loginfo["Time"]));
+        QTableWidgetItem* timeItem = new QTableWidgetItem(QString::fromStdString(loginfo.at("Time")));
         m_tableW->setItem(rowIndex, 0, timeItem);
         
         // Log content column with keyword highlighting
-        std::string logContent = loginfo["LogContent"];
+        std::string logContent = loginfo.at("LogContent");
         QString logContentQStr = QString::fromStdString(logContent);
         if (!m_searchCondition.key.empty()) {
             // Highlight keyword
@@ -391,7 +392,7 @@ void HGLogWidget::displaySearchResults(){
         m_tableW->setCellWidget(rowIndex, 1, contentEdit);
         
         // Operator column
-        QTableWidgetItem* operatorItem = new QTableWidgetItem(QString::fromStdString(loginfo["Operator"]));
+        QTableWidgetItem* operatorItem = new QTableWidgetItem(QString::fromStdString(loginfo.at("Operator")));
         m_tableW->setItem(rowIndex, 2, operatorItem);
         
         rowIndex++;

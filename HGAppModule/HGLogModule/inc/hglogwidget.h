@@ -35,6 +35,7 @@ private slots:
 
 private:
     void fnReadDB(const std::string &tableName);
+    void displaySearchResults();
     int getTableNameIndex(const std::string& dbName);
 
 private:

@@ -721,6 +721,8 @@ namespace HGMACHINE{
     #define LOG_DB_PATH "/database/HGLog.db"
 
     class RWDb{
+        friend class SearchTask;
+        friend class CountTask;
         public:
             RWDb();
             ~RWDb();
