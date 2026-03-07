@@ -39,9 +39,17 @@ HGInputSearchConditionWidget::HGInputSearchConditionWidget(const int& maxRange,s
     m_timeRangeToEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
     m_timeRangeToEdit->installEventFilter(this);
 
-    m_searchLabel=new HGQLabel(false,getPath("/resources/V1/@1xmb-search 1.png"));
+    // 搜索按钮 - 使用文字按钮（图片文件可能缺失）
+    m_searchLabel=new HGQLabel(this);
+    m_searchLabel->setText("🔍搜索");
+    m_searchLabel->setStyleSheet("QLabel { background-color: #4CAF50; color: white; padding: 5px 10px; border-radius: 3px; font-size: 12px; }");
+    m_searchLabel->setAlignment(Qt::AlignCenter);
     connect(m_searchLabel,SIGNAL(leftClicked()),this,SLOT(slotSearch()));
-    m_clearSearchLabel=new HGQLabel(false,getPath("/resources/V1/@1xarcoDesign-stop 1.png"));
+    // 清除按钮 - 使用文字按钮（图片文件可能缺失）
+    m_clearSearchLabel=new HGQLabel(this);
+    m_clearSearchLabel->setText("清除");
+    m_clearSearchLabel->setStyleSheet("QLabel { background-color: #f44336; color: white; padding: 5px 10px; border-radius: 3px; font-size: 12px; }");
+    m_clearSearchLabel->setAlignment(Qt::AlignCenter);
     connect(m_clearSearchLabel,SIGNAL(leftClicked()),this,SLOT(slotClearSearch()));
 
     m_searchLayout->addWidget(m_keyLabel, 0,0);

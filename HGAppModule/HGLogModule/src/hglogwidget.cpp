@@ -57,13 +57,20 @@ m_searchTotalCount(0)
 
     // m_exportLabel=new HGQLabel(false,getPath("/resources/V1/@1xiconPark-export 1.png"));
     m_pageLabel=new QLabel("第"+QString::number(m_curDisplayIndex)+"页");
-    m_saveLabel=new HGQLabel(false,getPath("/resources/V1/@1xmb-save 1.png")); 
-    m_nextLabel=new HGQLabel(false,getPath("/resources/V1/@1xze-arrow 1.png")); 
-    m_preLabel=new HGQLabel(false,getPath("/resources/V1/@1xze-arrow-left 1.png")); 
-    // 硬编码按钮文字（独立测试用）
-    m_saveLabel->setText("保存");
+    // 使用普通构造函数创建按钮，避免图片加载问题
+    m_saveLabel=new HGQLabel(this); 
+    m_nextLabel=new HGQLabel(this); 
+    m_preLabel=new HGQLabel(this); 
+    // 硬编码按钮文字和样式（独立测试用）
+    m_saveLabel->setText("💾保存");
+    m_saveLabel->setStyleSheet("QLabel { background-color: #2196F3; color: white; padding: 5px 10px; border-radius: 3px; font-size: 12px; }");
+    m_saveLabel->setAlignment(Qt::AlignCenter);
     m_nextLabel->setText("下一页▶");
+    m_nextLabel->setStyleSheet("QLabel { background-color: #2196F3; color: white; padding: 5px 10px; border-radius: 3px; font-size: 12px; }");
+    m_nextLabel->setAlignment(Qt::AlignCenter);
     m_preLabel->setText("◀上一页");
+    m_preLabel->setStyleSheet("QLabel { background-color: #2196F3; color: white; padding: 5px 10px; border-radius: 3px; font-size: 12px; }");
+    m_preLabel->setAlignment(Qt::AlignCenter);
     connect(m_saveLabel,SIGNAL(leftClicked()),this,SLOT(slotSaveSearchLog()));
     connect(m_nextLabel,SIGNAL(leftClicked()),this,SLOT(slotNext()));
     connect(m_preLabel,SIGNAL(leftClicked()),this,SLOT(slotPre()));
