@@ -6,8 +6,132 @@
 #include "hgcommonutility.h"
 #include "config.h"
 #include "hglog4cplus.h"
+#include <QThreadPool>
+#include <QRunnable>
+#include <QMutex>
+#include <QMutexLocker>
 
 namespace HGMACHINE{
+    // 并行搜索任务类
+    class SearchTask : public QRunnable {
+    public:
+        SearchTask(const std::string &tableName, const std::string &keyword, 
+                   const HGExactTime &timeFrom, const HGExactTime &timeTo, 
+                   std::vector<std::map<std::string,std::string>> *results, 
+                   QMutex *mutex) : 
+            m_tableName(tableName), m_keyword(keyword), m_timeFrom(timeFrom), 
+            m_timeTo(timeTo), m_results(results), m_mutex(mutex) {}
+        
+        void run() override {
+            std::ostringstream sql;
+            sql << "SELECT Operator, Time, LogContent FROM " << m_tableName << " WHERE 1=1";
+            
+            // 添加时间范围条件
+            std::string timeFromStr = std::to_string(m_timeFrom.tm_year) + "-" + 
+                                     (m_timeFrom.tm_mon < 10 ? "0" : "") + std::to_string(m_timeFrom.tm_mon) + "-" + 
+                                     (m_timeFrom.tm_mday < 10 ? "0" : "") + std::to_string(m_timeFrom.tm_mday) + " " + 
+                                     (m_timeFrom.tm_hour < 10 ? "0" : "") + std::to_string(m_timeFrom.tm_hour) + ":" + 
+                                     (m_timeFrom.tm_min < 10 ? "0" : "") + std::to_string(m_timeFrom.tm_min) + ":" + 
+                                     (m_timeFrom.tm_sec < 10 ? "0" : "") + std::to_string(m_timeFrom.tm_sec);
+            
+            std::string timeToStr = std::to_string(m_timeTo.tm_year) + "-" + 
+                                   (m_timeTo.tm_mon < 10 ? "0" : "") + std::to_string(m_timeTo.tm_mon) + "-" + 
+                                   (m_timeTo.tm_mday < 10 ? "0" : "") + std::to_string(m_timeTo.tm_mday) + " " + 
+                                   (m_timeTo.tm_hour < 10 ? "0" : "") + std::to_string(m_timeTo.tm_hour) + ":" + 
+                                   (m_timeTo.tm_min < 10 ? "0" : "") + std::to_string(m_timeTo.tm_min) + ":" + 
+                                   (m_timeTo.tm_sec < 10 ? "0" : "") + std::to_string(m_timeTo.tm_sec);
+            
+            sql << " AND Time >= '" << timeFromStr << "'";
+            sql << " AND Time <= '" << timeToStr << "'";
+            
+            // 添加关键词条件
+            if (!m_keyword.empty()) {
+                sql << " AND (Time LIKE '%" << m_keyword << "%'";
+                sql << " OR Operator LIKE '%" << m_keyword << "%'";
+                sql << " OR LogContent LIKE '%" << m_keyword << "%')";
+            }
+            
+            // 排序
+            sql << " ORDER BY Time DESC";
+            
+            // 执行查询
+            std::vector<std::map<std::string,std::string>> logInfos;
+            // 使用静态成员logOpera，不创建新的数据库连接
+            RWDb::logOpera.readData(sql.str(), logInfos);
+            
+            // 添加到结果中
+            QMutexLocker locker(m_mutex);
+            m_results->insert(m_results->end(), logInfos.begin(), logInfos.end());
+        }
+        
+    private:
+        std::string m_tableName;
+        std::string m_keyword;
+        HGExactTime m_timeFrom;
+        HGExactTime m_timeTo;
+        std::vector<std::map<std::string,std::string>> *m_results;
+        QMutex *m_mutex;
+    };
+
+    // 并行计数任务类
+    class CountTask : public QRunnable {
+    public:
+        CountTask(const std::string &tableName, const std::string &keyword, 
+                  const HGExactTime &timeFrom, const HGExactTime &timeTo, 
+                  int *count, QMutex *mutex) : 
+            m_tableName(tableName), m_keyword(keyword), m_timeFrom(timeFrom), 
+            m_timeTo(timeTo), m_count(count), m_mutex(mutex) {}
+        
+        void run() override {
+            std::ostringstream sql;
+            sql << "SELECT COUNT(*) FROM " << m_tableName << " WHERE 1=1";
+            
+            // 添加时间范围条件
+            std::string timeFromStr = std::to_string(m_timeFrom.tm_year) + "-" + 
+                                     (m_timeFrom.tm_mon < 10 ? "0" : "") + std::to_string(m_timeFrom.tm_mon) + "-" + 
+                                     (m_timeFrom.tm_mday < 10 ? "0" : "") + std::to_string(m_timeFrom.tm_mday) + " " + 
+                                     (m_timeFrom.tm_hour < 10 ? "0" : "") + std::to_string(m_timeFrom.tm_hour) + ":" + 
+                                     (m_timeFrom.tm_min < 10 ? "0" : "") + std::to_string(m_timeFrom.tm_min) + ":" + 
+                                     (m_timeFrom.tm_sec < 10 ? "0" : "") + std::to_string(m_timeFrom.tm_sec);
+            
+            std::string timeToStr = std::to_string(m_timeTo.tm_year) + "-" + 
+                                   (m_timeTo.tm_mon < 10 ? "0" : "") + std::to_string(m_timeTo.tm_mon) + "-" + 
+                                   (m_timeTo.tm_mday < 10 ? "0" : "") + std::to_string(m_timeTo.tm_mday) + " " + 
+                                   (m_timeTo.tm_hour < 10 ? "0" : "") + std::to_string(m_timeTo.tm_hour) + ":" + 
+                                   (m_timeTo.tm_min < 10 ? "0" : "") + std::to_string(m_timeTo.tm_min) + ":" + 
+                                   (m_timeTo.tm_sec < 10 ? "0" : "") + std::to_string(m_timeTo.tm_sec);
+            
+            sql << " AND Time >= '" << timeFromStr << "'";
+            sql << " AND Time <= '" << timeToStr << "'";
+            
+            // 添加关键词条件
+            if (!m_keyword.empty()) {
+                sql << " AND (Time LIKE '%" << m_keyword << "%'";
+                sql << " OR Operator LIKE '%" << m_keyword << "%'";
+                sql << " OR LogContent LIKE '%" << m_keyword << "%')";
+            }
+            
+            // 执行查询
+            std::vector<std::map<std::string,std::string>> result;
+            // 使用静态成员logOpera，不创建新的数据库连接
+            RWDb::logOpera.readData(sql.str(), result);
+            
+            if (!result.empty() && !result[0].empty()) {
+                int tableCount = std::stoi(result[0].begin()->second);
+                QMutexLocker locker(m_mutex);
+                *m_count += tableCount;
+            }
+        }
+        
+    private:
+        std::string m_tableName;
+        std::string m_keyword;
+        HGExactTime m_timeFrom;
+        HGExactTime m_timeTo;
+        int *m_count;
+        QMutex *m_mutex;
+    };
+
     std::vector<std::string> userInfoName={
     "UserNo",
     "UserAccount",
@@ -430,23 +554,79 @@ std::string RWDb::getMethodName(const std::string &flowName){
         return tableNames;
     }
     std::vector<std::map<std::string,std::string>> RWDb::readAuditTrailLog(const std::string &tableName){
-        std::map<std::string,std::string> info;
-        info["lastAuditTrailDB"]="";
-        logOpera.readSingleInfo(AUDITTRAILDBRECORD,info);
-
-        std::map<std::string,std::string> infoS = {
-            {"Operator",""},
-            {"Time",""},
-            {"LogContent",""}
-        };
-        std::string readTableName="";
-        if (tableName != ""){
-            readTableName = tableName;
-        } else {
-            readTableName = info["lastAuditTrailDB"];
-        }
-        return logOpera.readRecord(readTableName, infoS);
+    std::map<std::string,std::string> info;
+    info["lastAuditTrailDB"]="";
+    logOpera.readSingleInfo(AUDITTRAILDBRECORD,info);
+    std::map<std::string,std::string> infoS = {
+        {"Operator",""},
+        {"Time",""},
+        {"LogContent",""}
+    };
+    std::string readTableName="";
+    if (tableName != ""){
+        readTableName = tableName;
+    } else {
+        readTableName = info["lastAuditTrailDB"];
     }
+    return logOpera.readRecord(readTableName, infoS);
+}
+
+std::vector<std::map<std::string,std::string>> RWDb::searchAuditTrailLog(const std::string &keyword, 
+                                                                          const HGExactTime &timeFrom, 
+                                                                          const HGExactTime &timeTo, 
+                                                                          int offset, 
+                                                                          int limit){
+    std::vector<std::string> auditLogTables = getAllAuditLogTables();
+    std::vector<std::map<std::string,std::string>> allResults;
+    QMutex mutex;
+    QThreadPool pool;
+    pool.setMaxThreadCount(4); // 设置最大线程数
+    
+    // 创建并行搜索任务
+    for (const auto& tableName : auditLogTables) {
+        SearchTask *task = new SearchTask(tableName, keyword, timeFrom, timeTo, &allResults, &mutex);
+        pool.start(task);
+    }
+    
+    // 等待所有任务完成
+    pool.waitForDone();
+    
+    // 排序结果（按时间降序）
+    std::sort(allResults.begin(), allResults.end(), [](const std::map<std::string,std::string>& a, const std::map<std::string,std::string>& b) {
+        return a.at("Time") > b.at("Time");
+    });
+    
+    // 分页
+    std::vector<std::map<std::string,std::string>> paginatedResults;
+    int startIndex = offset;
+    int endIndex = std::min(offset + limit, (int)allResults.size());
+    for (int i = startIndex; i < endIndex; i++) {
+        paginatedResults.push_back(allResults[i]);
+    }
+    
+    return paginatedResults;
+}
+
+int RWDb::searchAuditTrailLogCount(const std::string &keyword, 
+                                     const HGExactTime &timeFrom, 
+                                     const HGExactTime &timeTo){
+    std::vector<std::string> auditLogTables = getAllAuditLogTables();
+    int count = 0;
+    QMutex mutex;
+    QThreadPool pool;
+    pool.setMaxThreadCount(4); // 设置最大线程数
+    
+    // 创建并行计数任务
+    for (const auto& tableName : auditLogTables) {
+        CountTask *task = new CountTask(tableName, keyword, timeFrom, timeTo, &count, &mutex);
+        pool.start(task);
+    }
+    
+    // 等待所有任务完成
+    pool.waitForDone();
+    
+    return count;
+}
     std::vector<std::map<std::string, std::string>> RWDb::readRecord(std::string dbName, std::map<std::string, std::string> &infoS)
     {
         return dbOpera.readRecord(dbName, infoS);
@@ -1032,7 +1212,7 @@ void RWDb::copyTable(const std::string& sourceDBName,
             }
             dbOperatorTemp.closeDB();
             for (auto deviceTableName:reagentDeviceTableNameCount){
-                bool flag=dbOpera.copyTable(sourceDBName,deviceTableName.first);
+                dbOpera.copyTable(sourceDBName,deviceTableName.first);
             }
         }
         else if (tableName.find("TaskSequence_") != std::string::npos)

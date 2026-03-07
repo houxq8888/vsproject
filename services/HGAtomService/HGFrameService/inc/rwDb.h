@@ -2,6 +2,7 @@
 #define RWDB_H
 
 #include "hgsavedatatodb.h"
+#include "HGExactTime.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -720,6 +721,8 @@ namespace HGMACHINE{
     #define LOG_DB_PATH "/database/HGLog.db"
 
     class RWDb{
+        friend class SearchTask;
+        friend class CountTask;
         public:
             RWDb();
             ~RWDb();
@@ -727,6 +730,10 @@ namespace HGMACHINE{
             static void openDB(const std::string &basePath);
             static void closeDB();
             static void clearDB(const std::string& tableName);
+            
+            // 友元类声明，允许访问protected成员
+            friend class SearchTask;
+            friend class CountTask;
 
             //------------------------base -----------------------------//
             static std::string readCurDirPath();
@@ -759,6 +766,16 @@ namespace HGMACHINE{
             static void writeAuditTrailLog(const std::string &logContent);
             static int readAuditTrailLogCount(const std::string &tableName="");
             static void deleteAuditTrail();
+            
+            // 支持分页搜索所有审计日志表
+            static std::vector<std::map<std::string,std::string>> searchAuditTrailLog(const std::string &keyword, 
+                                                                                    const HGExactTime &timeFrom, 
+                                                                                    const HGExactTime &timeTo, 
+                                                                                    int offset, 
+                                                                                    int limit);
+            static int searchAuditTrailLogCount(const std::string &keyword, 
+                                               const HGExactTime &timeFrom, 
+                                               const HGExactTime &timeTo);
 
 
             //-------------------------serial port------------------------------//

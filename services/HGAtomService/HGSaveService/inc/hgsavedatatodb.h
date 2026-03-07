@@ -165,6 +165,19 @@ public:
      */
     std::vector<std::map<std::string,std::string>> readRecord(std::string tableName,
                                                               std::map<std::string,std::string> &infoS);
+    
+    /**
+     * @brief 读取满足条件的多条记录，支持分页。
+     * @param tableName 表名。
+     * @param infoS 查询条件（字段名及值）。
+     * @param offset 偏移量。
+     * @param limit 限制条数。
+     * @return 满足条件的记录列表。
+     */
+    std::vector<std::map<std::string,std::string>> readRecordWithLimit(std::string tableName,
+                                                                       std::map<std::string,std::string> &infoS,
+                                                                       int offset,
+                                                                       int limit);
 
     /**
      * @brief 删除表中满足条件的记录。

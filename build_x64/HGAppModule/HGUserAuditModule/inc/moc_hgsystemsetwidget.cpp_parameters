@@ -1,0 +1,13 @@
+-I/usr/include/libpinyin-2.6.1
+-I/usr/include/glib-2.0
+-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+-I/usr/include/opencv4
+-I/usr/include/freetype2
+-I/usr/include/x86_64-linux-gnu/qt5
+-I/usr/include/x86_64-linux-gnu/qt5/QtWidgets
+-I/usr/include/x86_64-linux-gnu/qt5/QtGui
+-I/usr/include/x86_64-linux-gnu/qt5/QtCore
+-I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+-o
+/home/wurui/Desktop/project/vsproject/build_x64/HGAppModule/HGUserAuditModule/inc/moc_hgsystemsetwidget.cpp
+/home/wurui/Desktop/project/vsproject/HGAppModule/HGUserAuditModule/inc/hgsystemsetwidget.h

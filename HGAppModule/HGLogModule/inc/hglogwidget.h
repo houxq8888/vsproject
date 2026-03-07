@@ -35,6 +35,7 @@ private slots:
 
 private:
     void fnReadDB(const std::string &tableName);
+    void displaySearchResults();
     int getTableNameIndex(const std::string& dbName);
 
 private:
@@ -54,6 +55,13 @@ private:
     std::map<std::string, int> m_logContentMap;
     int m_curDisplayIndex;
     std::vector<std::string> m_auditLogTableNames;
+    
+    // Search results and pagination
+    std::vector<std::map<std::string, std::string>> m_searchResults;
+    int m_curSearchPage;
+    int m_searchPageSize;
+    bool m_isSearchMode;
+    int m_searchResultCount;
 };
 
 #endif // HGLOGWIDGET_H
