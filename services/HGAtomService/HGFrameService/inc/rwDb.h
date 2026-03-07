@@ -759,7 +759,6 @@ namespace HGMACHINE{
             static void writeAuditTrailLog(const std::string &logContent);
             static int readAuditTrailLogCount(const std::string &tableName="");
             static void deleteAuditTrail();
-            static std::vector<std::map<std::string,std::string>> searchAuditTrailLog(const std::string &keyword, const HGExactTime &timeFrom, const HGExactTime &timeTo);
 
 
             //-------------------------serial port------------------------------//

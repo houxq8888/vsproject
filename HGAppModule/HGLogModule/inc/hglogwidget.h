@@ -54,13 +54,6 @@ private:
     std::map<std::string, int> m_logContentMap;
     int m_curDisplayIndex;
     std::vector<std::string> m_auditLogTableNames;
-    
-    // 搜索结果相关
-    std::vector<std::map<std::string,std::string>> m_searchResults;
-    int m_curSearchPage;
-    int m_totalSearchPages;
-    const int PAGE_SIZE = 100; // 每页显示100条记录
-    bool m_isSearchMode; // 是否处于搜索模式
 };
 
 #endif // HGLOGWIDGET_H

@@ -13,7 +13,7 @@ LabelWithImg::LabelWithImg(int imgPos,int fontSize,const std::string& imgPath, c
     if (imgPath != "")
     {
         QPixmap pixmap(QString::fromStdString(imgPath));
-        if (pixmap.width() / pixmap.height() == 1)
+        if (pixmap.height() > 0 && pixmap.width() / pixmap.height() == 1)
         {
             m_imgLabel->setPixmap(pixmap.scaled(QSize(35, 35), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }

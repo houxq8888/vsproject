@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<V6 Version="1.0">
+    <AppVersion>1.0.0</AppVersion>
+    <AppName></AppName>
+    <TaskSeqName>TaskSequence</TaskSeqName>
+    <ReagentName></ReagentName>
+    <DirPath>/home/wurui/Desktop/project/vsproject/build_x64/HGAppModule/HGLogModule</DirPath>
+    <ComPort></ComPort>
+    <ScannerVendorID>0x0000</ScannerVendorID>
+    <ScannerProductID>0x0000</ScannerProductID>
+</V6>

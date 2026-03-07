@@ -63,6 +63,7 @@ if (BUILD_SHARED_LIBS)
             PluginInterface
             HGLowerPC
             HGCommon
+            HGConfig
             HGSaveService
             HGFrameService
             HGAuthorityService
@@ -100,6 +101,7 @@ if (BUILD_SHARED_LIBS)
             PluginInterface
             HGLowerPC
             HGCommon
+            HGConfig
             HGSaveService
             HGFrameService
             HGAuthorityService

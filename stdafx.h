@@ -37,52 +37,30 @@
 #endif
 
 // 系统相关
-#ifdef _WIN32
-    #include <windows.h>
-    #include <io.h>
-    #include <direct.h>
-#else
-    #include <sys/types.h>
-    #include <sys/stat.h>
-    #include <unistd.h>
-    #include <fcntl.h>
-    #include <dirent.h>
-#endif
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <dirent.h>
 
 // 网络相关
-#ifdef _WIN32
-    #include <winsock2.h>
-    #include <ws2tcpip.h>
-    #pragma comment(lib, "ws2_32.lib")
-#else
-    #include <sys/socket.h>
-    #include <netinet/in.h>
-    #include <arpa/inet.h>
-    #include <netdb.h>
-    #include <sys/ioctl.h>
-    #include <poll.h>
-    #include <sys/epoll.h>
-#endif
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <sys/ioctl.h>
+#include <poll.h>
+#include <sys/epoll.h>
 
 // 进程和线程相关
-#ifdef _WIN32
-    #include <process.h>
-    #include <signal.h>
-#else
-    #include <pthread.h>
-    #include <signal.h>
-    #include <sys/wait.h>
-#endif
+#include <pthread.h>
+#include <signal.h>
+#include <sys/wait.h>
 
 // 文件系统相关
-#ifdef _WIN32
-    #include <sys/timeb.h>
-    #include <winsock2.h>
-#else
-    #include <sys/mman.h>
-    #include <sys/time.h>
-    #include <sys/select.h>
-#endif
+#include <sys/mman.h>
+#include <sys/time.h>
+#include <sys/select.h>
 
 // 数学库（仅在C++模式下包含）
 #ifdef __cplusplus
