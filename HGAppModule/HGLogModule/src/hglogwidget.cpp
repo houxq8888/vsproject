@@ -51,7 +51,7 @@ m_searchTotalCount(0)
     connect(m_inputsearchConditionW,SIGNAL(signalSearch()),this,SLOT(slotSearch()));
     connect(m_inputsearchConditionW,SIGNAL(signalClearSearch()),this,SLOT(slotClearSearch()));
 
-    m_manipulateGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"manipulate")));//"操作");
+    m_manipulateGroup=new QGroupBox("操作");
     m_manipulateGroup->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
     m_manipulateLayout=new QGridLayout();
 
@@ -60,12 +60,16 @@ m_searchTotalCount(0)
     m_saveLabel=new HGQLabel(false,getPath("/resources/V1/@1xmb-save 1.png")); 
     m_nextLabel=new HGQLabel(false,getPath("/resources/V1/@1xze-arrow 1.png")); 
     m_preLabel=new HGQLabel(false,getPath("/resources/V1/@1xze-arrow-left 1.png")); 
+    // 硬编码按钮文字（独立测试用）
+    m_saveLabel->setText("保存");
+    m_nextLabel->setText("下一页▶");
+    m_preLabel->setText("◀上一页");
     connect(m_saveLabel,SIGNAL(leftClicked()),this,SLOT(slotSaveSearchLog()));
     connect(m_nextLabel,SIGNAL(leftClicked()),this,SLOT(slotNext()));
     connect(m_preLabel,SIGNAL(leftClicked()),this,SLOT(slotPre()));
 
     m_tableW=new QTableWidget(0,3);
-    QStringList headers={"时间",/*,"通道","采样电位","日志类型",*/"日志内容","操作员"};
+    QStringList headers={"时间","日志内容","操作员"};
     m_tableW->setHorizontalHeaderLabels(headers);
     m_tableW->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     m_tableW->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
@@ -73,10 +77,9 @@ m_searchTotalCount(0)
     m_tableW->resizeRowsToContents();
     m_tableW->setEditTriggers(QAbstractItemView::NoEditTriggers);
     
-    m_logTypeLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"LogType")));//"日志类型");
+    m_logTypeLabel=new QLabel("日志类型");
     m_logTypeComboBox=new QComboBox();
-    m_logTypeComboBox->addItems({QString::fromStdString(loadTranslation(m_lang,"AuditTrail")),
-                                 QString::fromStdString(loadTranslation(m_lang,"RunLog"))});
+    m_logTypeComboBox->addItems({"审计日志", "运行日志"});
     m_logTypeComboBox->setCurrentIndex(0);
     connect(m_logTypeComboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(slotLogTypeChanged(int)));
     slotLogTypeChanged(0);

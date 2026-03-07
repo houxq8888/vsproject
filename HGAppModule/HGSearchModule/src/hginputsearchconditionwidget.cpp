@@ -15,25 +15,25 @@ HGInputSearchConditionWidget::HGInputSearchConditionWidget(const int& maxRange,s
     m_markLabel1->setStyleSheet("color: red;");
     m_markLabel2->setStyleSheet("color: red;");
 
-    m_searchGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Search")));//"查询");
+    m_searchGroup=new QGroupBox("查询");
     m_searchGroup->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
     m_searchLayout=new QGridLayout();
 
     QFont font;
     font.setPointSize(10);
-    m_keyLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"KeyWord")));//"关键词");
+    m_keyLabel=new QLabel("关键词");
     m_keyLabel->setFont(font);
     m_keyEdit=new QLineEdit();
-    m_keyEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
+    m_keyEdit->setPlaceholderText("请输入");
     m_keyEdit->installEventFilter(this);
 
-    m_timeRangeLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"TimeFrom")));//"时间范围 从");
+    m_timeRangeLabel=new QLabel("时间从");
     m_timeRangeLabel->setFont(font);
     m_timeRangeFromEdit=new QLineEdit();
     m_timeRangeFromEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
     m_timeRangeFromEdit->installEventFilter(this);
 
-    m_timeRangeLabel1=new QLabel(QString::fromStdString(loadTranslation(m_lang,"To")));//"至");
+    m_timeRangeLabel1=new QLabel("至");
     m_timeRangeLabel1->setFont(font);
     m_timeRangeToEdit=new QLineEdit();
     m_timeRangeToEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
