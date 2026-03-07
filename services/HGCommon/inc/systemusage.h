@@ -46,8 +46,8 @@ public:
 private:
     
     // 静态变量，用于保存上次的CPU和内存使用数据，以便增量计算
-    static inline long prevBytesReceived = 0, prevBytesSent = 0;
-    static inline long prevReadBytes = 0, prevWriteBytes = 0;
+    static long prevBytesReceived, prevBytesSent;
+    static long prevReadBytes, prevWriteBytes;
 
     // 获取当前网络统计数据
     static NetworkStats getNetworkStats();

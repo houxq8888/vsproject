@@ -3,6 +3,8 @@
 #include <iomanip>
 #include <memory>
 #include <sstream>
+#include <thread>
+#include <mutex>
 #include "hgcommonutility.h"
 #include "config.h"
 #include "hglog4cplus.h"
@@ -446,6 +448,75 @@ std::string RWDb::getMethodName(const std::string &flowName){
             readTableName = info["lastAuditTrailDB"];
         }
         return logOpera.readRecord(readTableName, infoS);
+    }
+
+    std::vector<std::map<std::string,std::string>> RWDb::searchAuditTrailLog(const std::string &keyword, const HGExactTime &timeFrom, const HGExactTime &timeTo){
+        std::vector<std::map<std::string,std::string>> allResults;
+        std::vector<std::string> allTables = getAllAuditLogTables();
+        std::vector<std::thread> threads;
+        std::mutex resultsMutex;
+        
+        // 为每个表创建一个线程进行搜索
+        for (const std::string &tableName : allTables) {
+            threads.emplace_back([&, tableName]() {
+                std::map<std::string,std::string> infoS = {
+                    {"Operator",""},
+                    {"Time",""},
+                    {"LogContent",""}
+                };
+                std::vector<std::map<std::string,std::string>> tableResults = logOpera.readRecord(tableName, infoS);
+                std::vector<std::map<std::string,std::string>> filteredResults;
+                
+                for (auto &record : tableResults) {
+                    // 检查时间范围
+                    std::string timeStr = record["Time"];
+                    HGExactTime recordTime = HGExactTime::currentTime();
+                    TIME_STRUECT timeS;
+                    decodeStandardTime(timeStr, timeS);
+                    recordTime.tm_year = timeS.year;
+                    recordTime.tm_mon = timeS.month;
+                    recordTime.tm_mday = timeS.day;
+                    recordTime.tm_hour = timeS.hour;
+                    recordTime.tm_min = timeS.minute;
+                    recordTime.tm_sec = timeS.second;
+                    
+                    if (recordTime < timeFrom || recordTime > timeTo) {
+                        continue;
+                    }
+                    
+                    // 检查关键词
+                    if (!keyword.empty()) {
+                        bool found = false;
+                        if (record["Time"].find(keyword) != std::string::npos ||
+                            record["Operator"].find(keyword) != std::string::npos ||
+                            record["LogContent"].find(keyword) != std::string::npos) {
+                            found = true;
+                        }
+                        if (!found) {
+                            continue;
+                        }
+                    }
+                    
+                    filteredResults.push_back(record);
+                }
+                
+                // 将结果添加到全局结果中
+                std::lock_guard<std::mutex> lock(resultsMutex);
+                allResults.insert(allResults.end(), filteredResults.begin(), filteredResults.end());
+            });
+        }
+        
+        // 等待所有线程完成
+        for (auto &thread : threads) {
+            thread.join();
+        }
+        
+        // 按时间排序（从新到旧）
+        std::sort(allResults.begin(), allResults.end(), [](const std::map<std::string,std::string> &a, const std::map<std::string,std::string> &b) {
+            return a["Time"] > b["Time"];
+        });
+        
+        return allResults;
     }
     std::vector<std::map<std::string, std::string>> RWDb::readRecord(std::string dbName, std::map<std::string, std::string> &infoS)
     {

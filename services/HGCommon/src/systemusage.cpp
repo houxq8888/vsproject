@@ -1,8 +1,17 @@
 #include "systemusage.h"
 #include <iostream>
-#include <libusb-1.0/libusb.h>
+// #include <libusb-1.0/libusb.h>
+
+// 初始化静态成员变量
+long SystemUsage::prevBytesReceived = 0;
+long SystemUsage::prevBytesSent = 0;
+long SystemUsage::prevReadBytes = 0;
+long SystemUsage::prevWriteBytes = 0;
 
 bool SystemUsage::getUSBDevices(const uint16_t &vendorID, const uint16_t &productID) {
+    // 暂时返回 false，因为缺少 libusb 库
+    return false;
+    /*
     bool flag =false;
     libusb_context *context=nullptr;
     libusb_device **list=nullptr;
@@ -41,6 +50,7 @@ bool SystemUsage::getUSBDevices(const uint16_t &vendorID, const uint16_t &produc
     // 退出 libusb
     libusb_exit(context);
     return flag;
+    */
 }
     double SystemUsage::getCpuUsage() {
         #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)

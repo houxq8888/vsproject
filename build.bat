@@ -2,58 +2,23 @@
 chcp 65001 >nul
 setlocal enabledelayedexpansion
 
-:: Auto detect Qt installation path
-echo Detecting Qt installation path...
-set "QT_PATH="
-set "MINGW_PATH="
-
-:: Check common Qt installation paths
-for %%d in (C D E F) do (
-    if exist "%%d:\Qt\6.9.1\mingw_64\bin\qmake.exe" (
-        set "QT_PATH=%%d:\Qt\6.9.1\mingw_64"
-        goto :found_qt
-    )
-    if exist "%%d:\Qt\6.7.0\mingw_64\bin\qmake.exe" (
-        set "QT_PATH=%%d:\Qt\6.7.0\mingw_64"
-        goto :found_qt
-    )
-    if exist "%%d:\Qt\6.6.0\mingw_64\bin\qmake.exe" (
-        set "QT_PATH=%%d:\Qt\6.6.0\mingw_64"
-        goto :found_qt
-    )
-)
-
-:: If auto detection fails, prompt user to set manually
-:not_found
-echo Error: Qt installation path not found
-echo.
-echo Please set Qt path manually:
-echo 1. Edit this file and modify QT_PATH variable
-echo 2. Or set system environment variable QT_DIR
-echo.
-echo Example: set QT_PATH=D:\Qt\6.9.1\mingw_64
-echo.
-exit /b 1
+:: Set Qt installation path manually
+echo Setting Qt installation path...
+set "QT_PATH=E:\program\Qt\Qt5.14.2\5.14.2\mingw73_32"
+set "MINGW_PATH=E:\program\Qt\Qt5.14.2\Tools\mingw730_32"
 
 :found_qt
 echo Found Qt path: %QT_PATH%
 
-:: Detect Mingw path
-if exist "%QT_PATH%\..\Tools\mingw1310_64\bin\gcc.exe" (
-    set "MINGW_PATH=%QT_PATH%\..\Tools\mingw1310_64"
-) else if exist "%QT_PATH%\..\Tools\mingw1120_64\bin\gcc.exe" (
-    set "MINGW_PATH=%QT_PATH%\..\Tools\mingw1120_64"
-) else if exist "%QT_PATH%\..\Tools\mingw810_64\bin\gcc.exe" (
-    set "MINGW_PATH=%QT_PATH%\..\Tools\mingw810_64"
-) else (
-    echo Warning: Mingw toolchain not found, using default path
-    set "MINGW_PATH=%QT_PATH%"
-)
+:: Set Mingw path manually
+echo Setting Mingw path...
+set "MINGW_PATH=E:\program\Qt\Qt5.14.2\Tools\mingw730_32"
 
 echo Using Mingw path: %MINGW_PATH%
 
 :: Set environment variables
 set "PATH=%MINGW_PATH%\bin;%QT_PATH%\bin;%PATH%"
+set "CMAKE_MAKE_PROGRAM=%MINGW_PATH%\bin\mingw32-make.exe"
 
 :: Set build directory
 set "BUILD_DIR=build"
@@ -79,13 +44,13 @@ echo ========================================
 
 :: Configure CMake
 echo Configuring CMake...
-"D:\Qt\Tools\CMake_64\bin\cmake.exe" ^
+cmake.exe ^
     -G "MinGW Makefiles" ^
     -DCMAKE_PREFIX_PATH="%QT_PATH%" ^
     -DCMAKE_C_COMPILER="%MINGW_PATH%\bin\gcc.exe" ^
     -DCMAKE_CXX_COMPILER="%MINGW_PATH%\bin\g++.exe" ^
     -DCMAKE_BUILD_TYPE=Release ^
-    -DHG_PROJECT_ROOT_FS="d:\virtualMachine\github\vsproject" ^
+    -DHG_PROJECT_ROOT_FS="d:/project/code-model-compare" ^
     -DPLATFORM="win32" ^
     "%SOURCE_DIR%\.." > build_log.txt 2>&1
 
@@ -98,7 +63,7 @@ if %errorlevel% neq 0 (
 
 :: Build project
 echo Building project...
-"%MINGW_PATH%\bin\mingw32-make.exe" -j4 >> build_log.txt 2>&1
+"%MINGW_PATH%\bin\mingw32-make.exe" -j4 LogModule >> build_log.txt 2>&1
 
 if %errorlevel% neq 0 (
     echo Build failed!

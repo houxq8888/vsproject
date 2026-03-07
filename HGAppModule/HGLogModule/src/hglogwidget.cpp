@@ -1,5 +1,10 @@
 #include "hglogwidget.h"
 #include <QHeaderView>
+#include <QRunnable>
+#include <QThreadPool>
+#include <QFuture>
+#include <QtConcurrent>
+#include <QFutureWatcher>
 #include "common.h"
 #include <fstream>
 #include <algorithm>
@@ -8,7 +13,10 @@
 
 HGLogWidget::HGLogWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
-m_curDisplayIndex(-1)
+m_curDisplayIndex(-1),
+m_curSearchPage(0),
+m_totalSearchPages(0),
+m_isSearchMode(false)
 {
     RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Log"));
     m_auditLogTableNames = RWDb::getAllAuditLogTables();
@@ -83,27 +91,51 @@ HGLogWidget::~HGLogWidget()
 {
     
 }
-void HGLogWidget::slotNext(){
-    if (m_curDisplayIndex < 0) return;
-    if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
-    else {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                         "已经是最后一页");
-        m_curDisplayIndex=m_auditLogTableNames.size()-1;
-    }
-    std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
-    fnReadDB(dbName);
-}
-void HGLogWidget::slotPre(){
-    if (m_curDisplayIndex < 0) {
-        QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
-                         "已经是第一页");
-        m_curDisplayIndex=0;
+void HGLogWidget::slotNext(){    if (m_isSearchMode) {
+        // 搜索模式下的分页
+        if (m_curSearchPage < m_totalSearchPages - 1) {
+            m_curSearchPage++;
+            displaySearchPage();
+            m_pageLabel->setText("搜索结果: 第" + QString::number(m_curSearchPage + 1) + "页, 共" + QString::number(m_totalSearchPages) + "页");
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是最后一页");
+        }
     } else {
-        m_curDisplayIndex--;
+        // 普通模式下的分页
+        if (m_curDisplayIndex < 0) return;
+        if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
+        else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是最后一页");
+            m_curDisplayIndex=m_auditLogTableNames.size()-1;
+        }
+        std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
+        fnReadDB(dbName);
     }
-    std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
-    fnReadDB(dbName);
+}
+void HGLogWidget::slotPre(){    if (m_isSearchMode) {
+        // 搜索模式下的分页
+        if (m_curSearchPage > 0) {
+            m_curSearchPage--;
+            displaySearchPage();
+            m_pageLabel->setText("搜索结果: 第" + QString::number(m_curSearchPage + 1) + "页, 共" + QString::number(m_totalSearchPages) + "页");
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是第一页");
+        }
+    } else {
+        // 普通模式下的分页
+        if (m_curDisplayIndex < 0) {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是第一页");
+            m_curDisplayIndex=0;
+        } else {
+            m_curDisplayIndex--;
+        }
+        std::string dbName=m_auditLogTableNames[m_curDisplayIndex];
+        fnReadDB(dbName);
+    }
 }
 int HGLogWidget::getTableNameIndex(const std::string &tableName){
     for (int i=0;i<int(m_auditLogTableNames.size());i++){
@@ -240,12 +272,18 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
     }
     m_tableW->setUpdatesEnabled(true);   // 恢复更新
 }
-void HGLogWidget::slotLogTypeChanged(int index){
-    m_tableW->clear();
+void HGLogWidget::slotLogTypeChanged(int index){    m_tableW->clear();
     m_tableW->setRowCount(0);
     m_logContentMap["Time"]=0;
     m_logContentMap["LogContent"]=1;
     m_logContentMap["Operator"]=2;
+    
+    // 退出搜索模式
+    m_isSearchMode = false;
+    m_curSearchPage = 0;
+    m_totalSearchPages = 0;
+    m_searchResults.clear();
+    
     switch (index){
         case 0:{
         QStringList headers={QString::fromStdString(loadTranslation(m_lang,"Time")),
@@ -299,13 +337,99 @@ void HGLogWidget::slotTimeTo(QString text){
     m_searchCondition.timeTo.tm_min = 59;
     m_searchCondition.timeTo.tm_sec = 59;
 }
-void HGLogWidget::slotSearch(){
-    m_tableW->setRowCount(0);
-    fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+void HGLogWidget::slotSearch(){    m_tableW->setRowCount(0);
+    m_pageLabel->setText("正在搜索...");
+    
+    // 保存搜索条件
+    SearchCondition searchCondition = m_searchCondition;
+    
+    // 使用QtConcurrent进行异步搜索
+    QFuture<std::vector<std::map<std::string,std::string>>> future = QtConcurrent::run([searchCondition]() {
+        return RWDb::searchAuditTrailLog(
+            searchCondition.key,
+            searchCondition.timeFrom,
+            searchCondition.timeTo
+        );
+    });
+    
+    // 连接搜索完成的信号
+    QFutureWatcher<std::vector<std::map<std::string,std::string>>> *watcher = new QFutureWatcher<std::vector<std::map<std::string,std::string>>>(this);
+    connect(watcher, &QFutureWatcher<std::vector<std::map<std::string,std::string>>>::finished, [this, watcher]() {
+        m_searchResults = watcher->result();
+        
+        // 计算总页数
+        m_totalSearchPages = (m_searchResults.size() + PAGE_SIZE - 1) / PAGE_SIZE;
+        m_curSearchPage = 0;
+        m_isSearchMode = true;
+        
+        // 显示第一页结果
+        displaySearchPage();
+        
+        // 更新分页信息
+        m_pageLabel->setText("搜索结果: 第" + QString::number(m_curSearchPage + 1) + "页, 共" + QString::number(m_totalSearchPages) + "页");
+        
+        watcher->deleteLater();
+    });
+    
+    watcher->setFuture(future);
 }
 void HGLogWidget::slotClearSearch(){ 
     m_searchCondition.Clear();
+    m_isSearchMode = false;
+    m_curSearchPage = 0;
+    m_totalSearchPages = 0;
+    m_searchResults.clear();
     fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+}
+
+void HGLogWidget::displaySearchPage(){ 
+    m_tableW->setRowCount(0);
+    m_tableW->setUpdatesEnabled(false);
+    
+    // 计算当前页的起始和结束索引
+    int startIndex = m_curSearchPage * PAGE_SIZE;
+    int endIndex = std::min(startIndex + PAGE_SIZE, (int)m_searchResults.size());
+    
+    // 显示当前页的记录
+    for (int i = startIndex; i < endIndex; i++) {
+        const auto &record = m_searchResults[i];
+        int row = m_tableW->rowCount();
+        m_tableW->insertRow(row);
+        
+        for (const auto &info : record) {
+            auto it = m_logContentMap.find(info.first);
+            if (it != m_logContentMap.end()) {
+                int col = it->second;
+                QString text = QString::fromStdString(info.second);
+                
+                // 高亮关键词
+                if (!m_searchCondition.key.empty()) {
+                    QString keyword = QString::fromStdString(m_searchCondition.key);
+                    int pos = 0;
+                    while ((pos = text.indexOf(keyword, pos, Qt::CaseInsensitive)) != -1) {
+                        text.insert(pos, "<font color='red'>");
+                        pos += keyword.length() + 19; // 19 is the length of "<font color='red'>"
+                        text.insert(pos, "</font>");
+                        pos += 7; // 7 is the length of "</font>"
+                    }
+                    
+                    // 使用QTextEdit作为单元格内容，支持HTML
+                    QTextEdit *textEdit = new QTextEdit();
+                    textEdit->setHtml(text);
+                    textEdit->setReadOnly(true);
+                    textEdit->setFrameShape(QFrame::NoFrame);
+                    textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+                    textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+                    textEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+                    m_tableW->setCellWidget(row, col, textEdit);
+                } else {
+                    m_tableW->setItem(row, col, new QTableWidgetItem(text));
+                }
+            }
+        }
+    }
+    
+    m_tableW->setUpdatesEnabled(true);
 }
 void HGLogWidget::slotSaveSearchLog(){
     if (m_tableW->rowCount()==0){
