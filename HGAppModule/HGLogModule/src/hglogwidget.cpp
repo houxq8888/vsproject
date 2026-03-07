@@ -230,9 +230,14 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
         case 0:
         {
             const int MAXROW = 1000;
-            m_tableW->setRowCount(MAXROW);
             start =HGExactTime::currentTime();
             int auditTrailLogCount=RWDb::readAuditTrailLogCount(tableName);
+            printf("fnReadDB: tableName=%s, auditTrailLogCount=%d\n", tableName.c_str(), auditTrailLogCount);
+            printf("fnReadDB: isInit=%d, key=%s, timeFrom=%s, timeTo=%s\n", 
+                   m_searchCondition.isInit(), 
+                   m_searchCondition.key.c_str(),
+                   m_searchCondition.timeRangeFrom.c_str(),
+                   m_searchCondition.timeRangeTo.c_str());
             if (auditTrailLogCount > 10000){
                 if (m_searchCondition.isInit()){
                     QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
@@ -241,21 +246,40 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
                 }
             }
             loginfos=RWDb::readAuditTrailLog(tableName);
+            printf("fnReadDB: loginfos.size()=%zu\n", loginfos.size());
             getTableNameIndex(tableName);
             m_isSearchMode = false;
             updatePageLabel();
             int traillogIndex = 0;
-            m_tableW->setRowCount(MAXROW > int(loginfos.size()) ? MAXROW : int(loginfos.size()));
             QString keyword = QString::fromStdString(m_searchCondition.key);
+            
+            // 辅助函数：从日志时间字符串解析日期
+            // 支持格式: "2026-03-08 00:39:45 CST" 或 "2026-03-08T00:39:45"
+            auto parseLogTime = [](const std::string& timeStr, HGExactTime& outTime) -> bool {
+                if (timeStr.length() < 10) return false;
+                // 格式: YYYY-MM-DD HH:MM:SS ...
+                //       0123456789012345678
+                try {
+                    outTime.tm_year = std::stoi(timeStr.substr(0, 4));
+                    outTime.tm_mon = std::stoi(timeStr.substr(5, 2));
+                    outTime.tm_mday = std::stoi(timeStr.substr(8, 2));
+                    return true;
+                } catch (...) {
+                    return false;
+                }
+            };
+            
+            // 先计算过滤后的数量，以便正确设置行数
+            std::vector<std::map<std::string,std::string>> filteredLogs;
             for (int i =int(loginfos.size())-1;i>=0;i--){
                 if (!m_searchCondition.isInit()){
                     std::string timeStr = loginfos[i]["Time"];
                     HGExactTime testTimer = HGExactTime::currentTime();
-                    TIME_STRUECT timeS;
-                    decodeStandardTime(timeStr, timeS);
-                    testTimer.tm_year = timeS.year; 
-                    testTimer.tm_mon = timeS.month; 
-                    testTimer.tm_mday = timeS.day; 
+                    if (!parseLogTime(timeStr, testTimer)) {
+                        // 时间解析失败，跳过过滤，直接显示
+                        filteredLogs.push_back(loginfos[i]);
+                        continue;
+                    }
                     if (testTimer < m_searchCondition.timeFrom)
                         continue;
                     if (testTimer > m_searchCondition.timeTo)
@@ -269,7 +293,16 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
                         }
                     }
                 }
-                for (auto info:loginfos[i]){
+                filteredLogs.push_back(loginfos[i]);
+            }
+            
+            // 设置正确的行数
+            m_tableW->setRowCount(filteredLogs.size());
+            printf("fnReadDB: filteredLogs.size()=%zu\n", filteredLogs.size());
+            
+            // 填充数据
+            for (const auto& log : filteredLogs){
+                for (const auto& info : log){
                     int nameColIndex=m_logContentMap[info.first];
                     if (nameColIndex<0||nameColIndex>=m_tableW->columnCount())
                         continue;
@@ -279,6 +312,7 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
                 }
                 traillogIndex++;
             }
+            printf("fnReadDB: traillogIndex=%d\n", traillogIndex);
             break;
         }
         case 1:
