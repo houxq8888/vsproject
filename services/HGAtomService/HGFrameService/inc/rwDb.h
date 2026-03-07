@@ -728,6 +728,10 @@ namespace HGMACHINE{
             static void openDB(const std::string &basePath);
             static void closeDB();
             static void clearDB(const std::string& tableName);
+            
+            // 友元类声明，允许访问protected成员
+            friend class SearchTask;
+            friend class CountTask;
 
             //------------------------base -----------------------------//
             static std::string readCurDirPath();
