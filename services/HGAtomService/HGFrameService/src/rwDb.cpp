@@ -593,7 +593,7 @@ std::vector<std::map<std::string,std::string>> RWDb::searchAuditTrailLog(const s
     
     // 排序结果（按时间降序）
     std::sort(allResults.begin(), allResults.end(), [](const std::map<std::string,std::string>& a, const std::map<std::string,std::string>& b) {
-        return a["Time"] > b["Time"];
+        return a.at("Time") > b.at("Time");
     });
     
     // 分页
