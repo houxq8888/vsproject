@@ -5,10 +5,36 @@
 #include <algorithm>
 #include <QMessageBox>
 
+// 辅助函数：高亮文本中的关键词
+static QString highlightKeyword(const QString& text, const QString& keyword) {
+    if (keyword.isEmpty()) return text;
+    
+    QString result = text;
+    QString lowerText = text.toLower();
+    QString lowerKeyword = keyword.toLower();
+    
+    int pos = 0;
+    while ((pos = lowerText.indexOf(lowerKeyword, pos)) != -1) {
+        // 在找到的位置插入高亮标记
+        QString before = result.left(pos);
+        QString match = result.mid(pos, keyword.length());
+        QString after = result.mid(pos + keyword.length());
+        
+        result = before + "[【" + match + "】]" + after;
+        
+        // 更新搜索位置（跳过插入的标记）
+        pos += keyword.length() + 6; // 6是标记的长度 [【 和 】]
+        lowerText = result.toLower();
+    }
+    return result;
+}
 
 HGLogWidget::HGLogWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
-m_curDisplayIndex(-1)
+m_curDisplayIndex(-1),
+m_isSearchMode(false),
+m_searchCurrentPage(0),
+m_searchTotalCount(0)
 {
     RWDb::writeAuditTrailLog(loadTranslation(m_lang,"Enter")+loadTranslation(m_lang,"Log"));
     m_auditLogTableNames = RWDb::getAllAuditLogTables();
@@ -84,6 +110,20 @@ HGLogWidget::~HGLogWidget()
     
 }
 void HGLogWidget::slotNext(){
+    if (m_isSearchMode) {
+        // 搜索模式下的分页
+        int totalPages = (m_searchTotalCount + PAGE_SIZE - 1) / PAGE_SIZE;
+        if (m_searchCurrentPage < totalPages - 1) {
+            m_searchCurrentPage++;
+            fnSearchAuditLog();
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是最后一页");
+        }
+        return;
+    }
+    
+    // 普通模式下的分页
     if (m_curDisplayIndex < 0) return;
     if (m_curDisplayIndex < int(m_auditLogTableNames.size())-1) m_curDisplayIndex++;
     else {
@@ -95,6 +135,19 @@ void HGLogWidget::slotNext(){
     fnReadDB(dbName);
 }
 void HGLogWidget::slotPre(){
+    if (m_isSearchMode) {
+        // 搜索模式下的分页
+        if (m_searchCurrentPage > 0) {
+            m_searchCurrentPage--;
+            fnSearchAuditLog();
+        } else {
+            QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
+                             "已经是第一页");
+        }
+        return;
+    }
+    
+    // 普通模式下的分页
     if (m_curDisplayIndex < 0) {
         QMessageBox::warning(this, QString::fromStdString(HG_DEVICE_NAME),
                          "已经是第一页");
@@ -114,6 +167,59 @@ int HGLogWidget::getTableNameIndex(const std::string &tableName){
     }
     if (tableName=="") m_curDisplayIndex=m_auditLogTableNames.size()-1;
     return m_curDisplayIndex;
+}
+
+void HGLogWidget::updatePageLabel() {
+    if (m_isSearchMode) {
+        int totalPages = (m_searchTotalCount + PAGE_SIZE - 1) / PAGE_SIZE;
+        if (totalPages == 0) totalPages = 1;
+        m_pageLabel->setText(QString("第%1/%2页 (共%3条)")
+            .arg(m_searchCurrentPage + 1)
+            .arg(totalPages)
+            .arg(m_searchTotalCount));
+    } else {
+        m_pageLabel->setText(QString("第%1页").arg(m_curDisplayIndex + 1));
+    }
+}
+
+void HGLogWidget::fnSearchAuditLog() {
+    m_tableW->setRowCount(0);
+    m_tableW->setUpdatesEnabled(false);
+    
+    int totalCount = 0;
+    std::vector<std::map<std::string,std::string>> results = RWDb::searchAuditTrailLog(
+        m_searchCondition.key,
+        m_searchCondition.timeRangeFrom,
+        m_searchCondition.timeRangeTo,
+        m_searchCurrentPage,
+        PAGE_SIZE,
+        totalCount);
+    
+    m_searchTotalCount = totalCount;
+    fnDisplaySearchResults(results);
+    updatePageLabel();
+    
+    m_tableW->setUpdatesEnabled(true);
+}
+
+void HGLogWidget::fnDisplaySearchResults(const std::vector<std::map<std::string,std::string>>& results) {
+    m_tableW->setRowCount(results.size());
+    
+    QString keyword = QString::fromStdString(m_searchCondition.key);
+    
+    for (int i = 0; i < int(results.size()); i++) {
+        // 时间列 - 高亮关键词
+        QString timeText = QString::fromStdString(results[i].at("Time"));
+        m_tableW->setItem(i, 0, new QTableWidgetItem(highlightKeyword(timeText, keyword)));
+        
+        // 日志内容列 - 高亮关键词
+        QString contentText = QString::fromStdString(results[i].at("LogContent"));
+        m_tableW->setItem(i, 1, new QTableWidgetItem(highlightKeyword(contentText, keyword)));
+        
+        // 操作员列 - 高亮关键词
+        QString operatorText = QString::fromStdString(results[i].at("Operator"));
+        m_tableW->setItem(i, 2, new QTableWidgetItem(highlightKeyword(operatorText, keyword)));
+    }
 }
 void HGLogWidget::fnReadDB(const std::string &tableName){
     m_tableW->setRowCount(0);
@@ -136,9 +242,11 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
             }
             loginfos=RWDb::readAuditTrailLog(tableName);
             getTableNameIndex(tableName);
-            m_pageLabel->setText("第"+QString::number(m_curDisplayIndex+1)+"页");
+            m_isSearchMode = false;
+            updatePageLabel();
             int traillogIndex = 0;
             m_tableW->setRowCount(MAXROW > int(loginfos.size()) ? MAXROW : int(loginfos.size()));
+            QString keyword = QString::fromStdString(m_searchCondition.key);
             for (int i =int(loginfos.size())-1;i>=0;i--){
                 if (!m_searchCondition.isInit()){
                     std::string timeStr = loginfos[i]["Time"];
@@ -165,7 +273,9 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
                     int nameColIndex=m_logContentMap[info.first];
                     if (nameColIndex<0||nameColIndex>=m_tableW->columnCount())
                         continue;
-                    m_tableW->setItem(traillogIndex,nameColIndex,new QTableWidgetItem(QString::fromStdString(info.second)));
+                    QString text = QString::fromStdString(info.second);
+                    m_tableW->setItem(traillogIndex,nameColIndex,
+                        new QTableWidgetItem(highlightKeyword(text, keyword)));
                 }
                 traillogIndex++;
             }
@@ -300,11 +410,23 @@ void HGLogWidget::slotTimeTo(QString text){
     m_searchCondition.timeTo.tm_sec = 59;
 }
 void HGLogWidget::slotSearch(){
-    m_tableW->setRowCount(0);
-    fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+    // 只有在审计日志模式下才使用全局搜索
+    if (m_logTypeComboBox->currentIndex() == 0) {
+        m_isSearchMode = true;
+        m_searchCurrentPage = 0;
+        fnSearchAuditLog();
+    } else {
+        // RunLog模式下使用原有逻辑
+        m_isSearchMode = false;
+        m_tableW->setRowCount(0);
+        fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
+    }
 }
 void HGLogWidget::slotClearSearch(){ 
     m_searchCondition.Clear();
+    m_isSearchMode = false;
+    m_searchCurrentPage = 0;
+    m_searchTotalCount = 0;
     fnReadDB(m_auditLogTableNames[m_curDisplayIndex]);
 }
 void HGLogWidget::slotSaveSearchLog(){
