@@ -2,6 +2,7 @@
 #define RWDB_H
 
 #include "hgsavedatatodb.h"
+#include "HGExactTime.h"
 
 #ifdef __cplusplus
 extern "C" {
