@@ -4,8 +4,9 @@
 #include <fstream>
 #include <algorithm>
 #include <QMessageBox>
+#include <QLabel>
 
-// 辅助函数：高亮文本中的关键词（使用特殊Unicode字符包围）
+// 辅助函数：高亮文本中的关键词（返回HTML格式）
 static QString highlightKeyword(const QString& text, const QString& keyword) {
     if (keyword.isEmpty()) return text;
     
@@ -14,17 +15,19 @@ static QString highlightKeyword(const QString& text, const QString& keyword) {
     QString lowerKeyword = keyword.toLower();
     
     int pos = 0;
+    int offset = 0;
     while ((pos = lowerText.indexOf(lowerKeyword, pos)) != -1) {
-        // 使用特殊字符包围关键词，使其更明显
-        // ▶ 关键词 ◀ 这样的标记
-        QString before = result.left(pos);
-        QString match = result.mid(pos, keyword.length());
-        QString after = result.mid(pos + keyword.length());
+        int actualPos = pos + offset;
+        QString before = result.left(actualPos);
+        QString match = result.mid(actualPos, keyword.length());
+        QString after = result.mid(actualPos + keyword.length());
         
-        result = before + "【" + match + "】" + after;
+        // 使用HTML样式高亮
+        QString highlighted = "<span style='background-color: #FFEB3B; color: #D32F2F; font-weight: bold;'>&#8203;" + match + "&#8203;</span>";
+        result = before + highlighted + after;
         
-        // 更新搜索位置（跳过插入的标记）
-        pos += keyword.length() + 2; // 2是标记的长度 【 和 】
+        offset += highlighted.length() - keyword.length();
+        pos += keyword.length();
         lowerText = result.toLower();
     }
     return result;
@@ -219,21 +222,21 @@ void HGLogWidget::fnDisplaySearchResults(const std::vector<std::map<std::string,
     QString keyword = QString::fromStdString(m_searchCondition.key);
     
     for (int i = 0; i < int(results.size()); i++) {
-        // 时间列
+        // 时间列 - 使用QTableWidgetItem
         QString timeText = QString::fromStdString(results[i].at("Time"));
         QTableWidgetItem* timeItem = new QTableWidgetItem(timeText);
         m_tableW->setItem(i, 0, timeItem);
         
-        // 日志内容列 - 高亮关键词
+        // 日志内容列 - 使用QLabel支持HTML高亮
         QString contentText = QString::fromStdString(results[i].at("LogContent"));
-        QTableWidgetItem* contentItem = new QTableWidgetItem(highlightKeyword(contentText, keyword));
-        // 如果包含关键词，设置黄色背景
-        if (!keyword.isEmpty() && contentText.toLower().contains(keyword.toLower())) {
-            contentItem->setBackground(QBrush(QColor(255, 235, 59)));  // 黄色背景
-        }
-        m_tableW->setItem(i, 1, contentItem);
+        QLabel* contentLabel = new QLabel();
+        contentLabel->setTextFormat(Qt::RichText);
+        contentLabel->setText(highlightKeyword(contentText, keyword));
+        contentLabel->setWordWrap(true);
+        contentLabel->setStyleSheet("QLabel { padding: 2px; }");
+        m_tableW->setCellWidget(i, 1, contentLabel);
         
-        // 操作员列
+        // 操作员列 - 使用QTableWidgetItem
         QString operatorText = QString::fromStdString(results[i].at("Operator"));
         QTableWidgetItem* operatorItem = new QTableWidgetItem(operatorText);
         m_tableW->setItem(i, 2, operatorItem);
@@ -327,8 +330,18 @@ void HGLogWidget::fnReadDB(const std::string &tableName){
                     if (nameColIndex<0||nameColIndex>=m_tableW->columnCount())
                         continue;
                     QString text = QString::fromStdString(info.second);
-                    m_tableW->setItem(traillogIndex,nameColIndex,
-                        new QTableWidgetItem(highlightKeyword(text, keyword)));
+                    
+                    // 日志内容列使用QLabel支持HTML高亮
+                    if (nameColIndex == 1 && !keyword.isEmpty()) {
+                        QLabel* label = new QLabel();
+                        label->setTextFormat(Qt::RichText);
+                        label->setText(highlightKeyword(text, keyword));
+                        label->setWordWrap(true);
+                        label->setStyleSheet("QLabel { padding: 2px; }");
+                        m_tableW->setCellWidget(traillogIndex, nameColIndex, label);
+                    } else {
+                        m_tableW->setItem(traillogIndex, nameColIndex, new QTableWidgetItem(text));
+                    }
                 }
                 traillogIndex++;
             }
