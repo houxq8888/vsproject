@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <QMessageBox>
 
-// 辅助函数：高亮文本中的关键词（使用HTML样式）
+// 辅助函数：高亮文本中的关键词（使用特殊Unicode字符包围）
 static QString highlightKeyword(const QString& text, const QString& keyword) {
     if (keyword.isEmpty()) return text;
     
@@ -14,24 +14,17 @@ static QString highlightKeyword(const QString& text, const QString& keyword) {
     QString lowerKeyword = keyword.toLower();
     
     int pos = 0;
-    int offset = 0;  // 记录由于插入HTML标签导致的偏移
     while ((pos = lowerText.indexOf(lowerKeyword, pos)) != -1) {
-        // 计算实际位置（考虑之前插入的HTML标签）
-        int actualPos = pos + offset;
+        // 使用特殊字符包围关键词，使其更明显
+        // ▶ 关键词 ◀ 这样的标记
+        QString before = result.left(pos);
+        QString match = result.mid(pos, keyword.length());
+        QString after = result.mid(pos + keyword.length());
         
-        QString before = result.left(actualPos);
-        QString match = result.mid(actualPos, keyword.length());
-        QString after = result.mid(actualPos + keyword.length());
+        result = before + "【" + match + "】" + after;
         
-        // 使用HTML样式高亮（黄色背景，红色文字）
-        QString highlighted = "<span style='background-color: #FFEB3B; color: #D32F2F; font-weight: bold; padding: 1px 2px; border-radius: 2px;'>" + match + "</span>";
-        result = before + highlighted + after;
-        
-        // 更新偏移量（HTML标签的长度 - 原关键词长度）
-        offset += highlighted.length() - keyword.length();
-        
-        // 继续搜索
-        pos += keyword.length();
+        // 更新搜索位置（跳过插入的标记）
+        pos += keyword.length() + 2; // 2是标记的长度 【 和 】
         lowerText = result.toLower();
     }
     return result;
@@ -226,18 +219,27 @@ void HGLogWidget::fnDisplaySearchResults(const std::vector<std::map<std::string,
     QString keyword = QString::fromStdString(m_searchCondition.key);
     
     for (int i = 0; i < int(results.size()); i++) {
-        // 时间列 - 高亮关键词
+        // 时间列
         QString timeText = QString::fromStdString(results[i].at("Time"));
-        m_tableW->setItem(i, 0, new QTableWidgetItem(highlightKeyword(timeText, keyword)));
+        QTableWidgetItem* timeItem = new QTableWidgetItem(timeText);
+        m_tableW->setItem(i, 0, timeItem);
         
         // 日志内容列 - 高亮关键词
         QString contentText = QString::fromStdString(results[i].at("LogContent"));
-        m_tableW->setItem(i, 1, new QTableWidgetItem(highlightKeyword(contentText, keyword)));
+        QTableWidgetItem* contentItem = new QTableWidgetItem(highlightKeyword(contentText, keyword));
+        // 如果包含关键词，设置黄色背景
+        if (!keyword.isEmpty() && contentText.toLower().contains(keyword.toLower())) {
+            contentItem->setBackground(QBrush(QColor(255, 235, 59)));  // 黄色背景
+        }
+        m_tableW->setItem(i, 1, contentItem);
         
-        // 操作员列 - 高亮关键词
+        // 操作员列
         QString operatorText = QString::fromStdString(results[i].at("Operator"));
-        m_tableW->setItem(i, 2, new QTableWidgetItem(highlightKeyword(operatorText, keyword)));
+        QTableWidgetItem* operatorItem = new QTableWidgetItem(operatorText);
+        m_tableW->setItem(i, 2, operatorItem);
     }
+    
+    m_tableW->setWordWrap(true);
 }
 void HGLogWidget::fnReadDB(const std::string &tableName){
     m_tableW->setRowCount(0);
