@@ -16,11 +16,8 @@ HG_CMAKE_MODULE_DEPEND(
     ${OpenCV_LIBRARIES}
 )
 
-set(SQLCIPHER_INCLUDE_DIR /usr/local/include/sqlcipher)
-set(SQLCIPHER_LIBRARY /usr/lib/x86_64-linux-gnu/libsqlcipher.so)
-
-target_include_directories(HGSaveService PRIVATE ${SQLCIPHER_INCLUDE_DIR})
-target_link_libraries(HGSaveService PRIVATE ${SQLCIPHER_LIBRARY})
+target_include_directories(HGSaveService PRIVATE ${SQLCIPHER_INCLUDE_DIRS})
+target_link_libraries(HGSaveService PRIVATE ${SQLCIPHER_LIBRARIES})
 
 elseif (PLATFORM STREQUAL "win32")
 HG_CMAKE_MODULE_DEPEND_PUB( 

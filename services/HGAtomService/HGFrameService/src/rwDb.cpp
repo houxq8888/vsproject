@@ -433,7 +433,23 @@ std::string RWDb::getMethodName(const std::string &flowName){
         }
         return tableNames;
     }
-    std::vector<std::map<std::string,std::string>> RWDb::readAuditTrailLog(const std::string &tableName){    std::map<std::string,std::string> info;    info["lastAuditTrailDB"]="";    logOpera.readSingleInfo(AUDITTRAILDBRECORD,info);    std::map<std::string,std::string> infoS = {        {"Operator",""},        {"Time",""},        {"LogContent",""}    };    std::string readTableName="";    if (tableName != ""){        readTableName = tableName;    } else {        readTableName = info["lastAuditTrailDB"];    }    return logOpera.readRecord(readTableName, infoS);}
+    std::vector<std::map<std::string,std::string>> RWDb::readAuditTrailLog(const std::string &tableName){
+    std::map<std::string,std::string> info;
+    info["lastAuditTrailDB"]="";
+    logOpera.readSingleInfo(AUDITTRAILDBRECORD,info);
+    std::map<std::string,std::string> infoS = {
+        {"Operator",""},
+        {"Time",""},
+        {"LogContent",""}
+    };
+    std::string readTableName="";
+    if (tableName != ""){
+        readTableName = tableName;
+    } else {
+        readTableName = info["lastAuditTrailDB"];
+    }
+    return logOpera.readRecord(readTableName, infoS);
+}
 
 // 并行搜索任务类
 class SearchTask : public QRunnable {
@@ -479,10 +495,8 @@ public:
         
         // 执行查询
         std::vector<std::map<std::string,std::string>> logInfos;
-        HGSaveDataToDB logOpera;
-        logOpera.openDB("/database/HGLog.db");
-        logOpera.readData(sql.str(), logInfos);
-        logOpera.closeDB();
+        // 使用静态成员logOpera，不创建新的数据库连接
+        RWDb::logOpera.readData(sql.str(), logInfos);
         
         // 添加到结果中
         QMutexLocker locker(m_mutex);
@@ -538,10 +552,8 @@ public:
         
         // 执行查询
         std::vector<std::map<std::string,std::string>> result;
-        HGSaveDataToDB logOpera;
-        logOpera.openDB("/database/HGLog.db");
-        logOpera.readData(sql.str(), result);
-        logOpera.closeDB();
+        // 使用静态成员logOpera，不创建新的数据库连接
+        RWDb::logOpera.readData(sql.str(), result);
         
         if (!result.empty() && !result[0].empty()) {
             int tableCount = std::stoi(result[0].begin()->second);
