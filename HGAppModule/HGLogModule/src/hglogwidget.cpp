@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <QMessageBox>
 
-// 辅助函数：高亮文本中的关键词
+// 辅助函数：高亮文本中的关键词（使用HTML样式）
 static QString highlightKeyword(const QString& text, const QString& keyword) {
     if (keyword.isEmpty()) return text;
     
@@ -14,16 +14,24 @@ static QString highlightKeyword(const QString& text, const QString& keyword) {
     QString lowerKeyword = keyword.toLower();
     
     int pos = 0;
+    int offset = 0;  // 记录由于插入HTML标签导致的偏移
     while ((pos = lowerText.indexOf(lowerKeyword, pos)) != -1) {
-        // 在找到的位置插入高亮标记
-        QString before = result.left(pos);
-        QString match = result.mid(pos, keyword.length());
-        QString after = result.mid(pos + keyword.length());
+        // 计算实际位置（考虑之前插入的HTML标签）
+        int actualPos = pos + offset;
         
-        result = before + "[【" + match + "】]" + after;
+        QString before = result.left(actualPos);
+        QString match = result.mid(actualPos, keyword.length());
+        QString after = result.mid(actualPos + keyword.length());
         
-        // 更新搜索位置（跳过插入的标记）
-        pos += keyword.length() + 6; // 6是标记的长度 [【 和 】]
+        // 使用HTML样式高亮（黄色背景，红色文字）
+        QString highlighted = "<span style='background-color: #FFEB3B; color: #D32F2F; font-weight: bold; padding: 1px 2px; border-radius: 2px;'>" + match + "</span>";
+        result = before + highlighted + after;
+        
+        // 更新偏移量（HTML标签的长度 - 原关键词长度）
+        offset += highlighted.length() - keyword.length();
+        
+        // 继续搜索
+        pos += keyword.length();
         lowerText = result.toLower();
     }
     return result;
