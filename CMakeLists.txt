@@ -260,7 +260,7 @@ else ()
         # add_subdirectory(projects/HGComDebugApp)
         add_subdirectory(projects/HGOnlinePlatformApp)
         add_subdirectory(projects/HGDashboardApp)
-        add_subdirectory(projects/CloudApp)
+	#add_subdirectory(projects/CloudApp)
         add_subdirectory(projects/ProductFlow)
         # add_subdirectory(projects/MyCefTest)
 

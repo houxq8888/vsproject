@@ -15,33 +15,41 @@ HGInputSearchConditionWidget::HGInputSearchConditionWidget(const int& maxRange,s
     m_markLabel1->setStyleSheet("color: red;");
     m_markLabel2->setStyleSheet("color: red;");
 
-    m_searchGroup=new QGroupBox(QString::fromStdString(loadTranslation(m_lang,"Search")));//"查询");
+    m_searchGroup=new QGroupBox("查询");
     m_searchGroup->setStyleSheet("QGroupBox { font-size: 12pt; font-weight:bold;}");
     m_searchLayout=new QGridLayout();
 
     QFont font;
     font.setPointSize(10);
-    m_keyLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"KeyWord")));//"关键词");
+    m_keyLabel=new QLabel("关键词");
     m_keyLabel->setFont(font);
     m_keyEdit=new QLineEdit();
-    m_keyEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
+    m_keyEdit->setPlaceholderText("请输入");
     m_keyEdit->installEventFilter(this);
 
-    m_timeRangeLabel=new QLabel(QString::fromStdString(loadTranslation(m_lang,"TimeFrom")));//"时间范围 从");
+    m_timeRangeLabel=new QLabel("时间从");
     m_timeRangeLabel->setFont(font);
     m_timeRangeFromEdit=new QLineEdit();
     m_timeRangeFromEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
     m_timeRangeFromEdit->installEventFilter(this);
 
-    m_timeRangeLabel1=new QLabel(QString::fromStdString(loadTranslation(m_lang,"To")));//"至");
+    m_timeRangeLabel1=new QLabel("至");
     m_timeRangeLabel1->setFont(font);
     m_timeRangeToEdit=new QLineEdit();
     m_timeRangeToEdit->setPlaceholderText(QString::fromStdString(loadTranslation(m_lang,"Input")));
     m_timeRangeToEdit->installEventFilter(this);
 
-    m_searchLabel=new HGQLabel(false,getPath("/resources/V1/@1xmb-search 1.png"));
+    // 搜索按钮 - 使用文字按钮（图片文件可能缺失）
+    m_searchLabel=new HGQLabel(this);
+    m_searchLabel->setText("🔍搜索");
+    m_searchLabel->setStyleSheet("QLabel { background-color: #4CAF50; color: white; padding: 5px 10px; border-radius: 3px; font-size: 12px; }");
+    m_searchLabel->setAlignment(Qt::AlignCenter);
     connect(m_searchLabel,SIGNAL(leftClicked()),this,SLOT(slotSearch()));
-    m_clearSearchLabel=new HGQLabel(false,getPath("/resources/V1/@1xarcoDesign-stop 1.png"));
+    // 清除按钮 - 使用文字按钮（图片文件可能缺失）
+    m_clearSearchLabel=new HGQLabel(this);
+    m_clearSearchLabel->setText("清除");
+    m_clearSearchLabel->setStyleSheet("QLabel { background-color: #f44336; color: white; padding: 5px 10px; border-radius: 3px; font-size: 12px; }");
+    m_clearSearchLabel->setAlignment(Qt::AlignCenter);
     connect(m_clearSearchLabel,SIGNAL(leftClicked()),this,SLOT(slotClearSearch()));
 
     m_searchLayout->addWidget(m_keyLabel, 0,0);

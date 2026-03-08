@@ -447,6 +447,182 @@ std::string RWDb::getMethodName(const std::string &flowName){
         }
         return logOpera.readRecord(readTableName, infoS);
     }
+
+    // 辅助函数：检查时间是否在范围内（性能优化版本）
+    static bool isTimeInRangeFast(const std::string& timeStr, const std::string& timeFrom, const std::string& timeTo) {
+        if (timeFrom.empty() && timeTo.empty()) return true;
+        // timeStr格式: 2025-03-07 10:30:45
+        // timeFrom/timeTo格式: 20250307
+        if (timeStr.length() < 10) return true;
+        
+        // 直接比较，避免创建临时字符串
+        // timeStr: 2025-03-07...
+        //          0123456789
+        // 比较年: 0-3
+        // 比较月: 5-6
+        // 比较日: 8-9
+        
+        if (!timeFrom.empty()) {
+            // 比较年
+            for (int i = 0; i < 4; i++) {
+                if (timeStr[i] < timeFrom[i]) return false;
+                if (timeStr[i] > timeFrom[i]) break;
+            }
+            // 如果年相等，比较月
+            if (timeStr[0] == timeFrom[0] && timeStr[1] == timeFrom[1] && 
+                timeStr[2] == timeFrom[2] && timeStr[3] == timeFrom[3]) {
+                // 月的第一位在timeStr[5]，第二位在timeStr[6]
+                // timeFrom的月从索引4开始
+                if (timeStr[5] < timeFrom[4]) return false;
+                if (timeStr[5] == timeFrom[4] && timeStr[6] < timeFrom[5]) return false;
+                // 如果月也相等，比较日
+                if (timeStr[5] == timeFrom[4] && timeStr[6] == timeFrom[5]) {
+                    if (timeStr[8] < timeFrom[6]) return false;
+                    if (timeStr[8] == timeFrom[6] && timeStr[9] < timeFrom[7]) return false;
+                }
+            }
+        }
+        
+        if (!timeTo.empty()) {
+            // 比较年
+            for (int i = 0; i < 4; i++) {
+                if (timeStr[i] > timeTo[i]) return false;
+                if (timeStr[i] < timeTo[i]) break;
+            }
+            // 如果年相等，比较月
+            if (timeStr[0] == timeTo[0] && timeStr[1] == timeTo[1] && 
+                timeStr[2] == timeTo[2] && timeStr[3] == timeTo[3]) {
+                if (timeStr[5] > timeTo[4]) return false;
+                if (timeStr[5] == timeTo[4] && timeStr[6] > timeTo[5]) return false;
+                // 如果月也相等，比较日
+                if (timeStr[5] == timeTo[4] && timeStr[6] == timeTo[5]) {
+                    if (timeStr[8] > timeTo[6]) return false;
+                    if (timeStr[8] == timeTo[6] && timeStr[9] > timeTo[7]) return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    // 辅助函数：检查关键词是否匹配（性能优化版本，不创建小写副本）
+    static bool isKeywordMatchFast(const std::map<std::string,std::string>& record, const std::string& keyword) {
+        if (keyword.empty()) return true;
+        
+        // 大小写不敏感查找
+        auto caseInsensitiveFind = [](const std::string& text, const std::string& pattern) -> bool {
+            if (pattern.empty()) return true;
+            if (text.length() < pattern.length()) return false;
+            
+            for (size_t i = 0; i <= text.length() - pattern.length(); i++) {
+                bool match = true;
+                for (size_t j = 0; j < pattern.length(); j++) {
+                    if (std::tolower(text[i + j]) != std::tolower(pattern[j])) {
+                        match = false;
+                        break;
+                    }
+                }
+                if (match) return true;
+            }
+            return false;
+        };
+        
+        // 检查Time
+        auto it = record.find("Time");
+        if (it != record.end() && caseInsensitiveFind(it->second, keyword)) return true;
+        
+        // 检查Operator
+        it = record.find("Operator");
+        if (it != record.end() && caseInsensitiveFind(it->second, keyword)) return true;
+        
+        // 检查LogContent
+        it = record.find("LogContent");
+        if (it != record.end() && caseInsensitiveFind(it->second, keyword)) return true;
+        
+        return false;
+    }
+
+    int RWDb::searchAuditTrailLogCount(
+        const std::string& keyword,
+        const std::string& timeFrom,
+        const std::string& timeTo) {
+        
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        int totalCount = 0;
+        
+        std::map<std::string,std::string> infoS = {
+            {"Operator",""},
+            {"Time",""},
+            {"LogContent",""}
+        };
+        
+        for (const auto& tableName : tableNames) {
+            std::vector<std::map<std::string,std::string>> records = logOpera.readRecord(tableName, infoS);
+            for (const auto& record : records) {
+                auto it = record.find("Time");
+                if (it != record.end() && 
+                    isTimeInRangeFast(it->second, timeFrom, timeTo) &&
+                    isKeywordMatchFast(record, keyword)) {
+                    totalCount++;
+                }
+            }
+        }
+        return totalCount;
+    }
+
+    std::vector<std::map<std::string,std::string>> RWDb::searchAuditTrailLog(
+        const std::string& keyword,
+        const std::string& timeFrom,
+        const std::string& timeTo,
+        int pageIndex,
+        int pageSize,
+        int& totalCount) {
+        
+        std::vector<std::map<std::string,std::string>> result;
+        result.reserve(pageSize); // 预分配内存
+        
+        std::vector<std::string> tableNames = getAllAuditLogTables();
+        
+        // 按时间排序表名（最新的表在后面）
+        std::sort(tableNames.begin(), tableNames.end());
+        
+        std::map<std::string,std::string> infoS = {
+            {"Operator",""},
+            {"Time",""},
+            {"LogContent",""}
+        };
+        
+        totalCount = 0;
+        int startIndex = pageIndex * pageSize;
+        int endIndex = startIndex + pageSize;
+        int currentIndex = 0;
+        bool foundAllNeeded = false;
+        
+        // 倒序遍历表（从最新的表开始）
+        for (auto it = tableNames.rbegin(); it != tableNames.rend() && !foundAllNeeded; ++it) {
+            std::vector<std::map<std::string,std::string>> records = logOpera.readRecord(*it, infoS);
+            
+            // 倒序遍历记录（最新的记录在后面）
+            for (auto rit = records.rbegin(); rit != records.rend(); ++rit) {
+                auto timeIt = rit->find("Time");
+                if (timeIt != rit->end() && 
+                    isTimeInRangeFast(timeIt->second, timeFrom, timeTo) &&
+                    isKeywordMatchFast(*rit, keyword)) {
+                    
+                    if (currentIndex >= startIndex && currentIndex < endIndex) {
+                        result.push_back(*rit);
+                        if ((int)result.size() >= pageSize) {
+                            // 继续计数但不保存记录
+                            foundAllNeeded = true;
+                        }
+                    }
+                    currentIndex++;
+                }
+            }
+        }
+        
+        totalCount = currentIndex;
+        return result;
+    }
     std::vector<std::map<std::string, std::string>> RWDb::readRecord(std::string dbName, std::map<std::string, std::string> &infoS)
     {
         return dbOpera.readRecord(dbName, infoS);
