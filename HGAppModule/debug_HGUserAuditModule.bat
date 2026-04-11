@@ -9,7 +9,7 @@ echo.
 echo 1. 检查调试环境...
 
 REM 检查Qt路径
-set QT_DIR=D:\Qt\6.9.1\mingw_64
+set QT_DIR=C:\Qt\6.9.3\mingw_64
 if not exist "%QT_DIR%" (
     echo 错误: Qt路径不存在: %QT_DIR%
     echo 请检查Qt安装路径
@@ -20,7 +20,7 @@ if not exist "%QT_DIR%" (
 echo ✓ Qt路径: %QT_DIR%
 
 REM 检查MinGW路径
-set MINGW_DIR=D:\Qt\Tools\mingw1310_64
+set MINGW_DIR=C:\Qt\Tools\mingw1310_64
 if not exist "%MINGW_DIR%" (
     echo 错误: MinGW路径不存在: %MINGW_DIR%
     echo 请检查MinGW安装路径
@@ -37,7 +37,7 @@ echo.
 echo 2. 编译调试版本...
 
 REM 进入HGAppModule目录
-cd /d "d:\virtualMachine\github\vsproject\HGAppModule"
+cd /d "C:\virtualMachine\github\vsproject\HGAppModule"
 
 REM 使用windows_build.bat编译调试版本
 echo 执行: windows_build.bat --debug --module HGUserAuditModule --clean
@@ -59,7 +59,7 @@ echo.
 echo 3. 生成调试配置...
 
 REM 创建调试配置文件
-cd /d "d:\virtualMachine\github\vsproject"
+cd /d "C:\virtualMachine\github\vsproject"
 
 set DEBUG_CONFIG_FILE=HGUserAuditModule_debug.vscode\launch.json
 
@@ -80,7 +80,7 @@ echo       "cwd": "${workspaceFolder}/HGAppModule/windows_build/deploy",
 echo       "environment": [],
 echo       "externalConsole": true,
 echo       "MIMode": "gdb",
-echo       "miDebuggerPath": "D:\\Qt\\Tools\\mingw1310_64\\bin\\gdb.exe",
+echo       "miDebuggerPath": "C:\\Qt\\Tools\\mingw1310_64\\bin\\gdb.exe",
 echo       "setupCommands": [
 echo         {
 echo           "description": "为 gdb 启用整齐打印",
@@ -108,7 +108,7 @@ echo       "type": "shell",
 echo       "command": "cmd",
 echo       "args": [
 echo         "/c",
-echo         "cd /d d:\\virtualMachine\\github\\vsproject\\HGAppModule && windows_build.bat --debug --module HGUserAuditModule --incremental"
+echo         "cd /d C:\\virtualMachine\\github\\vsproject\\HGAppModule && windows_build.bat --debug --module HGUserAuditModule --incremental"
 echo       ],
 echo       "group": "build",
 echo       "presentation": {

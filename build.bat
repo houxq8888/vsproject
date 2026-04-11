@@ -4,13 +4,13 @@ setlocal enabledelayedexpansion
 
 :: Auto detect Qt installation path
 echo Detecting Qt installation path...
-set "QT_PATH="
-set "MINGW_PATH="
+set "QT_PATH=C:\Qt\6.9.3\mingw_64"
+set "MINGW_PATH=%QT_PATH%\..\Tools\mingw1310_64"
 
 :: Check common Qt installation paths
 for %%d in (C D E F) do (
-    if exist "%%d:\Qt\6.9.1\mingw_64\bin\qmake.exe" (
-        set "QT_PATH=%%d:\Qt\6.9.1\mingw_64"
+    if exist "%%d:\Qt\6.9.3\mingw_64\bin\qmake.exe" (
+        set "QT_PATH=%%d:\Qt\6.9.3\mingw_64"
         goto :found_qt
     )
     if exist "%%d:\Qt\6.7.0\mingw_64\bin\qmake.exe" (
@@ -31,7 +31,7 @@ echo Please set Qt path manually:
 echo 1. Edit this file and modify QT_PATH variable
 echo 2. Or set system environment variable QT_DIR
 echo.
-echo Example: set QT_PATH=D:\Qt\6.9.1\mingw_64
+echo Example: set QT_PATH=C:\Qt\6.9.3\mingw_64
 echo.
 exit /b 1
 
@@ -79,15 +79,15 @@ echo ========================================
 
 :: Configure CMake
 echo Configuring CMake...
-"D:\Qt\Tools\CMake_64\bin\cmake.exe" ^
+"C:\Qt\Tools\CMake_64\bin\cmake.exe" ^
     -G "MinGW Makefiles" ^
     -DCMAKE_PREFIX_PATH="%QT_PATH%" ^
     -DCMAKE_C_COMPILER="%MINGW_PATH%\bin\gcc.exe" ^
     -DCMAKE_CXX_COMPILER="%MINGW_PATH%\bin\g++.exe" ^
     -DCMAKE_BUILD_TYPE=Release ^
-    -DHG_PROJECT_ROOT_FS="d:\virtualMachine\github\vsproject" ^
+    -DHG_PROJECT_ROOT_FS="c:\Users\liguitao\myjob\vsproject" ^
     -DPLATFORM="win32" ^
-    "%SOURCE_DIR%\.." > build_log.txt 2>&1
+    "%SOURCE_DIR%" > build_log.txt 2>&1
 
 if %errorlevel% neq 0 (
     echo CMake configuration failed!

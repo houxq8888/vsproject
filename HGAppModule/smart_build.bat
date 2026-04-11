@@ -189,11 +189,11 @@ echo ===============================================
 echo.
 
 REM Set Qt installation path
-set QT_DIR=D:\Qt\6.9.1\mingw_64
+set QT_DIR=C:\Qt\6.9.3\mingw_64
 echo Qt路径: %QT_DIR%
 
 REM Configure MinGW environment
-set MINGW_DIR=D:\Qt\Tools\mingw1310_64
+set MINGW_DIR=C:\Qt\Tools\mingw1310_64
 echo MinGW路径: %MINGW_DIR%
 set PATH=%MINGW_DIR%\bin;%PATH%
 
@@ -327,10 +327,10 @@ REM 智能模块检测和编译函数
     
     REM Run CMake configuration
     echo 运行CMake配置...
-    "D:\Qt\Tools\CMake_64\bin\cmake.exe" -G "MinGW Makefiles" ^
+    "C:\Qt\Tools\CMake_64\bin\cmake.exe" -G "MinGW Makefiles" ^
       -DCMAKE_PREFIX_PATH="%QT_DIR%" ^
       -DCMAKE_BUILD_TYPE=%BUILD_TYPE% ^
-      -DHG_PROJECT_ROOT_FS="d:\virtualMachine\github\vsproject" ^
+      -DHG_PROJECT_ROOT_FS="C:\virtualMachine\github\vsproject" ^
       -DPLATFORM="win32" ^
       %CMAKE_MODULE_ARGS% ^
       -DBUILD_EXECUTABLE=%BUILD_EXECUTABLE% ^

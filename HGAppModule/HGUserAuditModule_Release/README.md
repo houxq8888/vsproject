@@ -52,7 +52,7 @@ HGUserAuditModuleRun.exe
 ## 版本信息
 - 版本：1.0.0
 - 构建时间：2025年12月
-- Qt版本：6.9.1
+- Qt版本：6.9.3
 
 ---
 *HGUserAuditModule - 专业的用户行为审计解决方案*

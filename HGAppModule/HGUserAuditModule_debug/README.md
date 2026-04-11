@@ -12,7 +12,7 @@
 ### 方法一：使用Visual Studio Code调试（推荐）
 
 1. **打开VS Code**
-2. **打开文件夹**: `d:\virtualMachine\github\vsproject\HGUserAuditModule_debug`
+2. **打开文件夹**: `C:\virtualMachine\github\vsproject\HGUserAuditModule_debug`
 3. **设置断点**: 在`authoritywidget.cpp`第1050行或其他需要调试的代码行设置断点
 4. **开始调试**: 按`F5`或选择"运行和调试"开始调试
 5. **单步调试**:
@@ -26,11 +26,11 @@
 1. **打开命令提示符**
 2. **进入部署目录**:
    ```cmd
-   cd /d "d:\virtualMachine\github\vsproject\HGAppModule\windows_build\deploy"
+   cd /d "C:\virtualMachine\github\vsproject\HGAppModule\windows_build\deploy"
    ```
 3. **启动GDB调试**:
    ```cmd
-   "D:\Qt\Tools\mingw1310_64\bin\gdb.exe" HGUserAuditModuleRun.exe
+   "C:\Qt\Tools\mingw1310_64\bin\gdb.exe" HGUserAuditModuleRun.exe
    ```
 4. **常用GDB命令**:
    ```gdb
@@ -60,7 +60,7 @@
 ### 方法三：使用Qt Creator调试
 
 1. **打开Qt Creator**
-2. **打开项目**: `d:\virtualMachine\github\vsproject\HGAppModule\CMakeLists.txt`
+2. **打开项目**: `C:\virtualMachine\github\vsproject\HGAppModule\CMakeLists.txt`
 3. **配置Kit**: 选择MinGW Debug配置
 4. **构建项目**: 构建HGUserAuditModuleRun目标
 5. **开始调试**: 点击调试按钮开始单步调试
@@ -90,7 +90,7 @@
 如果需要重新编译调试版本，可以使用以下命令：
 
 ```cmd
-cd /d "d:\virtualMachine\github\vsproject\HGAppModule"
+cd /d "C:\virtualMachine\github\vsproject\HGAppModule"
 windows_build.bat --debug --module HGUserAuditModule --clean
 ```
 
@@ -104,7 +104,7 @@ windows_build.bat --debug --module HGUserAuditModule --clean
 ## 常见问题解决
 
 ### 调试器无法启动
-- 检查GDB路径是否正确：`D:\Qt\Tools\mingw1310_64\bin\gdb.exe`
+- 检查GDB路径是否正确：`C:\Qt\Tools\mingw1310_64\bin\gdb.exe`
 - 确保调试版本已正确编译
 
 ### 断点不生效

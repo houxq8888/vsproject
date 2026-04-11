@@ -129,26 +129,9 @@ else()
     
     # 添加PluginInterface模块
     add_subdirectory(pluginInterface)
-    # 传统编译模式 - 编译所有模块
-    message(STATUS "使用传统编译模式 - 编译所有模块")
-    
-    # 添加所有模块
-  #  add_subdirectory(HGCurveModule)
-  #  add_subdirectory(HGSearchModule)
-  #  add_subdirectory(HGLogModule)
-  #  add_subdirectory(HGUserAuditModule)
-  #  add_subdirectory(HGUartModule)
- #   add_subdirectory(HGLoginModule)
- #   add_subdirectory(HGEBalanceModule)
- #   add_subdirectory(HGSharedFileModule)
-  #  add_subdirectory(HGScannerModule)
- #   add_subdirectory(HGMethodModule)
-  #  add_subdirectory(HGTaskModule)
- #   add_subdirectory(HGFlowModule)
-  #  add_subdirectory(HGChannelModule)
-  #  add_subdirectory(HGReagentModule)
-  #  add_subdirectory(HGAnalysisRecordModule)
-  #  add_subdirectory(HGPrintModule)
-    add_subdirectory(HGCameraRecognizeModule)
-  #  add_subdirectory(HGExceptionHandleModule)
+    # 添加HGSearchModule模块
+    add_subdirectory(HGSearchModule)
+    # 添加HGLogModule模块
+    add_subdirectory(HGLogModule)
+    message(STATUS "使用传统编译模式 - 编译HGBaseAppModule, HGSearchModule, HGLogModule")
 endif()
