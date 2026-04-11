@@ -1,11 +1,11 @@
 HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj: \
- D:\virtualMachine\github\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/mygraphicsview.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsView \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsview.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qtguiglobal.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qglobal.h \
+ C:\Users\liguitao\myjob\vsproject\HGAppModule\HGBaseAppModule\src\mygraphicsview.cpp \
+ C:/Users/liguitao/myjob/vsproject/HGAppModule/HGBaseAppModule/inc/mygraphicsview.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QGraphicsView \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qgraphicsview.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qtguiglobal.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qglobal.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/type_traits \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -44,32 +44,32 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/errno.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_abs.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdbool.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtcoreglobal.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtversionchecks.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtconfiginclude.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtcoreglobal.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtversionchecks.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtconfiginclude.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/version \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qconfig.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtcore-config.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtconfigmacros.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtdeprecationdefinitions.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qcompilerdetection.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qprocessordetection.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qsystemdetection.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtcoreexports.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtdeprecationmarkers.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtclasshelpermacros.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtpreprocessorsupport.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qassert.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtnoop.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtypes.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtversion.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtypeinfo.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qcontainerfwd.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qconfig.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtcore-config.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtconfigmacros.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtdeprecationdefinitions.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qcompilerdetection.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qprocessordetection.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qsystemdetection.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtcoreexports.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtdeprecationmarkers.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtclasshelpermacros.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qassert.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtnoop.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtypes.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtversion.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtypeinfo.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qcontainerfwd.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qsysinfo.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qlogging.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qflags.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qcompare_impl.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qsysinfo.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qlogging.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qflags.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qcompare_impl.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algobase.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functexcept.h \
@@ -96,19 +96,19 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_construct.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_algorithm_defs.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/execution_defs.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qatomic.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qbasicatomic.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qatomic_cxx11.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qgenericatomic.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qyieldcpu.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qatomic.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qbasicatomic.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qatomic_cxx11.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qgenericatomic.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qyieldcpu.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_base.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_lockfree_defines.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qconstructormacros.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qdarwinhelpers.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qexceptionhandling.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qforeach.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qttypetraits.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qconstructormacros.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qdarwinhelpers.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qexceptionhandling.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qforeach.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qttypetraits.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/optional \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/exception \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception_ptr.h \
@@ -124,11 +124,11 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/variant \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/parse_numbers.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qfunctionpointer.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qglobalstatic.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qmalloc.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qminmax.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qnumeric.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qfunctionpointer.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qglobalstatic.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qmalloc.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qminmax.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qnumeric.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/math.h \
@@ -145,24 +145,24 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/poly_hermite.tcc \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/poly_laguerre.tcc \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/riemann_zeta.tcc \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qoverload.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qswap.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtenvironmentvariables.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtresource.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qttranslation.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qversiontagging.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qtgui-config.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qtguiexports.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qmetatype.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qbytearray.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qrefcount.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qnamespace.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qcompare.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qstdlibdetection.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qcomparehelpers.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/q20type_traits.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qoverload.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qswap.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtenvironmentvariables.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtresource.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qttranslation.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qversiontagging.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qtgui-config.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qtguiexports.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qtwidgets-config.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qmetatype.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qbytearray.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qrefcount.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qnamespace.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qcompare.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qstdlibdetection.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qcomparehelpers.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/q20type_traits.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/functional \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_function.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h \
@@ -190,15 +190,15 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/array \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/compare \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtmetamacros.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qarraydata.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qpair.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtmetamacros.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qarraydata.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qpair.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/string.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sec_api/string_s.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qarraydatapointer.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qarraydataops.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qcontainertools_impl.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qxptype_traits.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qarraydatapointer.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qarraydataops.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qcontainertools_impl.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qxptype_traits.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstring \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stream_iterator.h \
@@ -269,46 +269,46 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/shared_ptr_atomic.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/auto_ptr.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_memory_defs.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/q20memory.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/q20functional.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/q20memory.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/q17memory.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qbytearrayalgorithms.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdarg.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/stdarg.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qbytearrayview.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qstringfwd.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qdatastream.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qscopedpointer.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qiodevicebase.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qfloat16.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qhashfunctions.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qstring.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qchar.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qstringview.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qstringliteral.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qstringalgorithms.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qlatin1stringview.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qanystringview.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qutf8stringview.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qstringtokenizer.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qstringbuilder.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qstringconverter.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qstringconverter_base.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qbytearrayview.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qstringfwd.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qdatastream.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qscopedpointer.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qiodevicebase.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qfloat16.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qhashfunctions.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qstring.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qchar.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qstringview.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qstringliteral.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qstringalgorithms.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qlatin1stringview.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qanystringview.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qutf8stringview.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qstringtokenizer.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qstringbuilder.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qstringconverter.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qstringconverter_base.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/numeric \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_numeric.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_numeric_defs.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qmath.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qalgorithms.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtformat_impl.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qiterable.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qmetacontainer.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qcontainerinfo.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtaggedpointer.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qobjectdefs.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qobjectdefs_impl.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qfunctionaltools_impl.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qscopeguard.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qmath.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qalgorithms.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtformat_impl.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qiterable.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qmetacontainer.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qcontainerinfo.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtaggedpointer.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qobjectdefs.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qobjectdefs_impl.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qfunctionaltools_impl.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qscopeguard.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/list \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_list.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/list.tcc \
@@ -316,183 +316,183 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tree.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_map.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multimap.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpainter.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qrect.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qmargins.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/q23utility.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/q20utility.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qsize.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qpoint.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpixmap.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpaintdevice.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs_win.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qcolor.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qrgb.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qstringlist.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qlist.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qiterator.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qbytearraylist.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qstringmatcher.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qrgba64.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qshareddata.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qimage.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpixelformat.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qtransform.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpolygon.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qregion.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qspan.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpainter.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qrect.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qmargins.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/q23utility.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/q20utility.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qsize.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qpoint.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpixmap.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpaintdevice.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qwindowdefs.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qwindowdefs_win.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qcolor.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qrgb.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qstringlist.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qlist.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qiterator.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qbytearraylist.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qstringmatcher.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qrgba64.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qshareddata.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qimage.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpixelformat.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qtransform.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpolygon.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qregion.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qspan.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cassert \
- D:/Qt/6.9.1/mingw_64/include/QtCore/q20iterator.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qline.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qtextoption.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpen.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qbrush.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qfontinfo.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qfont.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qendian.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qfontvariableaxis.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qfontmetrics.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qscrollarea.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qobject.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qobject_impl.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qbindingstorage.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/q20iterator.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qline.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qtextoption.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpen.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qbrush.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qfontinfo.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qfont.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qendian.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qfontvariableaxis.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qfontmetrics.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qscrollarea.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qframe.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qwidget.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qobject.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qobject_impl.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qbindingstorage.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/chrono \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/chrono.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qaction.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qkeysequence.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qicon.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qvariant.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtextstream.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qcontiguouscache.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qaction.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qkeysequence.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qicon.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qvariant.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qdebug.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtextstream.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qcontiguouscache.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/climits \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qsharedpointer.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qsharedpointer_impl.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qsharedpointer.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qsharedpointer_impl.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qmap.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qshareddata_impl.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qset.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qhash.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qvarlengtharray.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpalette.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qsizepolicy.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qcursor.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qbitmap.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsscene.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qcoreevent.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qbasictimer.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qeventloop.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qdeadlinetimer.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qelapsedtimer.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qiodevice.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qurl.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qeventpoint.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qvector2d.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qvectornd.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpointingdevice.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qinputdevice.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qscreen.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QList \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qlist.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QObject \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qobject.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QRect \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qrect.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QSize \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qsize.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QSizeF \
- D:/Qt/6.9.1/mingw_64/include/QtGui/QTransform \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qtransform.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qnativeinterface.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qscreen_platform.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qguiapplication.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qcoreapplication.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qinputmethod.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qlocale.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qguiapplication_platform.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QPoint \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qpoint.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QMenu \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qmenu.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/QActionGroup \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qactiongroup.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/QAction \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qaction.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QLine \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qline.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QFrame \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/QPixmap \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpixmap.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QSize \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QDebug \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QTimer \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qtimer.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsScene \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsscene.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QRectF \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qmap.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qshareddata_impl.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qset.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qhash.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qvarlengtharray.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpalette.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qsizepolicy.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qcursor.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qbitmap.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qgraphicsscene.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/QMouseEvent \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qevent.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qcoreevent.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qbasictimer.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qeventloop.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qelapsedtimer.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qiodevice.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qurl.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qeventpoint.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qvector2d.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qvectornd.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpointingdevice.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qinputdevice.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qscreen.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QList \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qlist.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QObject \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qobject.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QRect \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qrect.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QSize \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qsize.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QSizeF \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/QTransform \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qtransform.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qnativeinterface.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qscreen_platform.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qguiapplication.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qcoreapplication.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qinputmethod.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qlocale.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QPoint \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qpoint.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QMenu \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qmenu.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/QActionGroup \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qactiongroup.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/QAction \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qaction.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QLine \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qline.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QFrame \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qframe.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/QPixmap \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpixmap.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QSize \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QDebug \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qdebug.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QTimer \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qtimer.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QGraphicsScene \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qgraphicsscene.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QRectF \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/math.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/rectellipseitem.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsEllipseItem \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsitem.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpainterpath.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsLineItem \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QPointer \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qpointer.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsTextItem \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QObject \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicssceneevent.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/QPainter \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpainter.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QStyle \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qstyle.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qstyleoption.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qvalidator.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qregularexpression.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qslider.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractslider.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qstyle.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabbar.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabwidget.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qrubberband.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qabstractitemmodel.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/QPen \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpen.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/QBrush \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qbrush.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/QCursor \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qcursor.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QtMath \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qmath.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/rectitem.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QRect \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QPushButton \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qpushbutton.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractbutton.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QLabel \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qlabel.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qpicture.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/qtextdocument.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QApplication \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qapplication.h \
+ C:/Users/liguitao/myjob/vsproject/HGAppModule/HGBaseAppModule/inc/rectellipseitem.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QGraphicsEllipseItem \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qgraphicsitem.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpainterpath.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QGraphicsLineItem \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QPointer \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qpointer.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QGraphicsTextItem \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QObject \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qgraphicssceneevent.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/QPainter \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpainter.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QStyle \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qstyle.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qstyleoption.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qvalidator.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qregularexpression.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qslider.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractslider.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qstyle.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qtabbar.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qtabwidget.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qrubberband.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qabstractitemmodel.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/QPen \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpen.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/QBrush \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qbrush.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/QCursor \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qcursor.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QtMath \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qmath.h \
+ C:/Users/liguitao/myjob/vsproject/HGAppModule/HGBaseAppModule/inc/rectitem.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QRect \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QPushButton \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qpushbutton.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QLabel \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qlabel.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qpicture.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/qtextdocument.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QApplication \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qapplication.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
@@ -507,37 +507,37 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/common.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QTableWidget \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtablewidget.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtableview.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractitemview.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qitemselectionmodel.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qstyleoption.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QListWidget \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qlistwidget.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qlistview.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGridLayout \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgridlayout.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qlayout.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qlayoutitem.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qboxlayout.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgridlayout.h \
+ C:/Users/liguitao/myjob/vsproject/HGAppModule/HGBaseAppModule/inc/common.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QTableWidget \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qtablewidget.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qtableview.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractitemview.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qitemselectionmodel.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qstyleoption.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QListWidget \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qlistwidget.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qlistview.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QGridLayout \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qgridlayout.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qlayout.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qboxlayout.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qgridlayout.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QToolBox \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtoolbox.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/labelwithimg.h \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/QWidget \
- D:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QModelIndex \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qabstractitemmodel.h \
- D:/Qt/6.9.1/mingw_64/include/QtGui/QResizeEvent \
- D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h \
- D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h \
- D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QToolBox \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qtoolbox.h \
+ C:/Users/liguitao/myjob/vsproject/HGAppModule/HGBaseAppModule/inc/labelwithimg.h \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/QWidget \
+ D:/Qt/6.9.3/mingw_64/include/QtWidgets/qwidget.h \
+ C:/Users/liguitao/myjob/vsproject/HGAppModule/HGBaseAppModule/inc/hgqlabel.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QModelIndex \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qabstractitemmodel.h \
+ D:/Qt/6.9.3/mingw_64/include/QtGui/QResizeEvent \
+ C:/Users/liguitao/myjob/vsproject/services/HGAtomService/HGFrameService/inc/rwDb.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGAtomService/HGSaveService/inc/hgsavedatatodb.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGAtomService/HGSaveService/inc/HGSaveService_global.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/direct.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/io.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/iphlpapi.h \
@@ -798,94 +798,94 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/ifdef.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/tcpestats.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/netioapi.h \
- D:/virtualMachine/github/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/sqlcipher/sqlite3.h \
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h \
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGCommon_global.h \
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/hgcommonutility.h \
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGExactTime.h \
- D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgxml.h \
- D:/virtualMachine/github/vsproject/services/HGConfig/inc/HGConfig_global.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGAtomService/HGSaveService/inc/SQLite.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/sqlcipher/sqlite3.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGCommon/inc/HGExactTime.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGCommon/inc/HGCommon_global.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGCommon/inc/hgcommonutility.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGCommon/inc/HGExactTime.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGConfig/inc/hgxml.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGConfig/inc/HGConfig_global.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/shlwapi.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/shtypes.h \
- D:/virtualMachine/github/vsproject/services/HGConfig/inc/tinyxml2.h \
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/hglog4cplus.h \
- D:/virtualMachine/github/vsproject/services/HGCommon/inc/HGMacroData.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/opencv.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/opencv_modules.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvdef.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/version.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/hal/interface.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cv_cpu_dispatch.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/base.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvstd.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvstd_wrapper.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/neon_utils.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/vsx_utils.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/check.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/traits.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/matx.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/saturate.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/fast_math.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/types.hpp \
+ C:/Users/liguitao/myjob/vsproject/services/HGConfig/inc/tinyxml2.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGCommon/inc/hglog4cplus.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGCommon/inc/HGMacroData.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/opencv.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/opencv_modules.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/cvdef.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/version.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/hal/interface.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/cv_cpu_dispatch.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/base.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/cvstd.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/cvstd_wrapper.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/neon_utils.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/vsx_utils.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/check.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/traits.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/matx.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/saturate.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/fast_math.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/types.hpp \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cfloat \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/float.h \
  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/float.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/mat.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/bufferpool.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/mat.inl.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/persistence.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/operations.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvstd.inl.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/mat.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/bufferpool.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/mat.inl.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/persistence.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/operations.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/cvstd.inl.hpp \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/complex \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/utility.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/utility.hpp \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_mutex.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/optim.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/ovx.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cvdef.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/calib3d.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/features2d.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/miniflann.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/defines.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/config.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/affine.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dnn.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/async.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/version.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dict.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/layer.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dnn.inl.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/utils/inference_engine.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/dnn/dnn.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/flann_base.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/general.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/matrix.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/params.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/any.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/defines.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/saving.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/nn_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/result_set.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/all_indices.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/kdtree_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/dynamic_bitset.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/dist.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/heap.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/allocator.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/random.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/kdtree_single_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/kmeans_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/logger.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/composite_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/linear_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/hierarchical_clustering_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/lsh_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/lsh_table.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/optim.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/ovx.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/cvdef.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/calib3d.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/features2d.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/miniflann.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/defines.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/config.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/affine.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/dnn.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/dnn/dnn.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/async.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/dnn/version.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/dnn/dict.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/dnn/layer.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/dnn/dnn.inl.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/dnn/utils/inference_engine.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/dnn/dnn.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/flann_base.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/general.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/matrix.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/params.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/any.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/defines.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/saving.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/nn_index.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/result_set.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/all_indices.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/kdtree_index.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/dynamic_bitset.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/dist.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/heap.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/allocator.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/random.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/kdtree_single_index.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/kmeans_index.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/logger.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/composite_index.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/linear_index.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/hierarchical_clustering_index.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/lsh_index.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/lsh_table.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/locale \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.h \
@@ -895,93 +895,93 @@ HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/src/mygraphicsview.cpp.obj:
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.tcc \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_conv.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/quoted_string.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/autotuned_index.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/ground_truth.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/index_testing.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/timer.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/flann/sampling.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/highgui.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/imgcodecs.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/videoio.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/imgproc.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/imgproc/segmentation.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/ml.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/ml/ml.inl.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/objdetect.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/objdetect/detection_based_tracker.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/objdetect/face.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/photo.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/warpers.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/warpers.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cuda.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cuda_types.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/core/cuda.inl.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/warpers_inl.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/warpers.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/matchers.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/motion_estimators.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/matchers.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/util.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/util_inl.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/autotuned_index.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/ground_truth.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/index_testing.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/timer.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/flann/sampling.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/highgui.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/imgcodecs.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/videoio.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/imgproc.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/imgproc/segmentation.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/ml.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/ml/ml.inl.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/objdetect.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/objdetect/detection_based_tracker.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/objdetect/face.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/photo.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/warpers.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/warpers.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/cuda.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/cuda_types.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/core/cuda.inl.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/warpers_inl.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/warpers.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/matchers.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/motion_estimators.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/matchers.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/util.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/util_inl.hpp \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/queue \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/camera.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/exposure_compensate.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/seam_finders.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/blenders.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/stitching/detail/camera.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/video.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/video/tracking.hpp \
- D:/virtualMachine/github/vsproject/3rdparty/include/opencv2/video/background_segm.hpp \
- D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgprinter.h \
- D:/virtualMachine/github/vsproject/services/HGAtomService/HGFrameService/inc/config.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/camera.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/exposure_compensate.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/seam_finders.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/blenders.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/stitching/detail/camera.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/video.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/video/tracking.hpp \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/opencv2/video/background_segm.hpp \
+ C:/Users/liguitao/myjob/vsproject/services/HGHardware/HGLowerPC/inc/hgprinter.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGAtomService/HGFrameService/inc/config.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
  D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
- D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgtxt.h \
- D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgcsv.h \
- D:/virtualMachine/github/vsproject/services/HGConfig/inc/hgpdf.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_config.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_version.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_consts.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_doc.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_catalog.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_objects.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_encoder.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_streams.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_list.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_error.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_types.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_mmgr.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_encrypt.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_image.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_pages.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_gstate.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_font.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_fontdef.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_ext_gstate.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_outline.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/hpdf_pdfa.h \
- D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/CSerialPort/SerialPort.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/CSerialPort/SerialPort_global.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/CSerialPort/SerialPortListener.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/CSerialPort/SerialPortInfo.h \
- D:/virtualMachine/github/vsproject/3rdparty/include/CSerialPort/SerialPortListener.h \
- D:/virtualMachine/github/vsproject/services/HGHardware/HGLowerPC/inc/HGLowerPC_global.h \
- D:/virtualMachine/github/vsproject/services/HGAtomService/HGSecurityService/inc/hgsecurity.h \
- D:/virtualMachine/github/vsproject/services/HGAtomService/HGSecurityService/inc/HGSecurityService_global.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/globalsingleton.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/systeminfocache.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/datachartinfocache.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/authorityinfocache.h \
- D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/QDateTime \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qdatetime.h \
- D:/Qt/6.9.1/mingw_64/include/QtCore/qcalendar.h
+ C:/Users/liguitao/myjob/vsproject/services/HGConfig/inc/hgtxt.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGConfig/inc/hgcsv.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGConfig/inc/hgpdf.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_config.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_version.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_consts.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_doc.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_catalog.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_objects.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_encoder.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_streams.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_list.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_error.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_types.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_mmgr.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_encrypt.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_image.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_pages.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_gstate.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_font.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_fontdef.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_ext_gstate.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_outline.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/hpdf_pdfa.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGHardware/HGLowerPC/inc/hgserial.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/CSerialPort/SerialPort.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/CSerialPort/SerialPort_global.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/CSerialPort/SerialPortListener.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/CSerialPort/SerialPortInfo.h \
+ C:/Users/liguitao/myjob/vsproject/3rdparty/include/CSerialPort/SerialPortListener.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGHardware/HGLowerPC/inc/HGLowerPC_global.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGAtomService/HGSecurityService/inc/hgsecurity.h \
+ C:/Users/liguitao/myjob/vsproject/services/HGAtomService/HGSecurityService/inc/HGSecurityService_global.h \
+ C:/Users/liguitao/myjob/vsproject/HGAppModule/HGBaseAppModule/inc/globalsingleton.h \
+ C:/Users/liguitao/myjob/vsproject/HGAppModule/HGBaseAppModule/inc/systeminfocache.h \
+ C:/Users/liguitao/myjob/vsproject/HGAppModule/HGBaseAppModule/inc/datachartinfocache.h \
+ C:/Users/liguitao/myjob/vsproject/HGAppModule/HGBaseAppModule/inc/authorityinfocache.h \
+ C:/Users/liguitao/myjob/vsproject/HGAppModule/HGBaseAppModule/inc/usersinfocache.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/QDateTime \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qdatetime.h \
+ D:/Qt/6.9.3/mingw_64/include/QtCore/qcalendar.h

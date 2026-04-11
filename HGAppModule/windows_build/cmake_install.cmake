@@ -1,4 +1,4 @@
-# Install script for directory: D:/virtualMachine/github/vsproject/HGAppModule
+# Install script for directory: C:/Users/liguitao/myjob/vsproject/HGAppModule
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Release")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -39,19 +39,35 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/cmake_install.cmake")
+  include("C:/Users/liguitao/myjob/vsproject/HGAppModule/windows_build/HGBaseAppModule/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/pluginInterface/cmake_install.cmake")
+  include("C:/Users/liguitao/myjob/vsproject/HGAppModule/windows_build/pluginInterface/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGCameraRecognizeModule/cmake_install.cmake")
+  include("C:/Users/liguitao/myjob/vsproject/HGAppModule/windows_build/HGSearchModule/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/liguitao/myjob/vsproject/HGAppModule/windows_build/HGLogModule/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/liguitao/myjob/vsproject/HGAppModule/windows_build/HGCameraRecognizeModule/cmake_install.cmake")
+endif()
+
+string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+       "${CMAKE_INSTALL_MANIFEST_FILES}")
+if(CMAKE_INSTALL_LOCAL_ONLY)
+  file(WRITE "C:/Users/liguitao/myjob/vsproject/HGAppModule/windows_build/install_local_manifest.txt"
+     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
+endif()
 if(CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_COMPONENT MATCHES "^[a-zA-Z0-9_.+-]+$")
     set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
@@ -65,8 +81,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/liguitao/myjob/vsproject/HGAppModule/windows_build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

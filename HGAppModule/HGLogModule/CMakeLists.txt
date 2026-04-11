@@ -22,6 +22,7 @@ elseif (PLATFORM STREQUAL "win32")
             Qt6::Widgets
             Qt6::Charts
             Qt6::PrintSupport
+            Qt6::Concurrent
         )
         # Qt6 uses automatic MOC, but also need explicit MOC processing for static libraries
         set(CMAKE_AUTOMOC ON)

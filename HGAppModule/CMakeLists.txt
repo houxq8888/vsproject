@@ -95,7 +95,7 @@ link_directories(
 )
 
 # 设置模块构建选项
-option(BUILD_EXECUTABLE "Build modules as executable" OFF)
+option(BUILD_EXECUTABLE "Build modules as executable" ON)
 option(BUILD_SHARED_LIBS "Build modules as shared libraries" OFF)
 option(BUILD_STATIC_LIBS "Build modules as static libraries" ON)
 
@@ -134,8 +134,8 @@ else()
     
     # 添加所有模块
   #  add_subdirectory(HGCurveModule)
-  #  add_subdirectory(HGSearchModule)
-  #  add_subdirectory(HGLogModule)
+  add_subdirectory(HGSearchModule)
+    add_subdirectory(HGLogModule)
   #  add_subdirectory(HGUserAuditModule)
   #  add_subdirectory(HGUartModule)
  #   add_subdirectory(HGLoginModule)
