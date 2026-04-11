@@ -192,6 +192,7 @@ echo   - HGCameraRecognizeModule: 摄像头识别模块
 echo   - HGAnalysisRecordModule: 分析记录模块
 echo   - HGBaseAppModule: 基础应用模块
 echo   - HGUserAuditModule: 用户审计模块
+echo   - HGLogModule: 日志模块
 echo   - HGBaseAppModule,HGUserAuditModule: 同时编译基础应用和用户审计模块
 echo.
 echo 示例:
@@ -223,11 +224,11 @@ echo ===============================================
 echo.
 
 REM Set Qt installation path
-set QT_DIR=D:\Qt\6.9.1\mingw_64
+set QT_DIR=C:\Qt\6.9.3\mingw_64
 echo Qt路径: %QT_DIR%
 
 REM Configure MinGW environment
-set MINGW_DIR=D:\Qt\Tools\mingw1310_64
+set MINGW_DIR=C:\Qt\Tools\mingw1310_64
 echo MinGW路径: %MINGW_DIR%
 set PATH=%MINGW_DIR%\bin;%PATH%
 
@@ -284,6 +285,8 @@ if "%BUILD_MODULE%"=="ALL" (
     set CMAKE_MODULE_ARGS=-DBUILD_HGBASEAPPMODULE_ONLY=ON
 ) else if "%BUILD_MODULE%"=="HGUserAuditModule" (
     set CMAKE_MODULE_ARGS=-DBUILD_HGUSERAUDITMODULE_ONLY=ON
+) else if "%BUILD_MODULE%"=="HGLogModule" (
+    set CMAKE_MODULE_ARGS=-DBUILD_HGLOGMODULE_ONLY=ON
 ) else if "%BUILD_MODULE%"=="HGBaseAppModule,HGUserAuditModule" (
     set CMAKE_MODULE_ARGS=-DBUILD_HGBASEAPPMODULE_ONLY=ON -DBUILD_HGUSERAUDITMODULE_ONLY=ON
 ) else (
@@ -292,10 +295,10 @@ if "%BUILD_MODULE%"=="ALL" (
     exit /b 1
 )
 
-"D:\Qt\Tools\CMake_64\bin\cmake.exe" -G "MinGW Makefiles" ^
+"C:\Qt\Tools\CMake_64\bin\cmake.exe" -G "MinGW Makefiles" ^
   -DCMAKE_PREFIX_PATH="%QT_DIR%" ^
   -DCMAKE_BUILD_TYPE=%BUILD_TYPE% ^
-  -DHG_PROJECT_ROOT_FS="d:\virtualMachine\github\vsproject" ^
+  -DHG_PROJECT_ROOT_FS="c:\Users\liguitao\myjob\vsproject" ^
   -DPLATFORM="win32" ^
   %CMAKE_MODULE_ARGS% ^
   -DBUILD_EXECUTABLE=%BUILD_EXECUTABLE% ^
@@ -333,6 +336,9 @@ if "%BUILD_MODULE%"=="ALL" (
 ) else if "%BUILD_MODULE%"=="HGUserAuditModule" (
     set MAKE_TARGET=HGUserAuditModuleStatic HGUserAuditModuleRun
     set MODULE_NAME=HGUserAuditModule
+) else if "%BUILD_MODULE%"=="HGLogModule" (
+    set MAKE_TARGET=HGLogModuleStatic HGLogModuleRun
+    set MODULE_NAME=HGLogModule
 ) else if "%BUILD_MODULE%"=="HGBaseAppModule,HGUserAuditModule" (
     set MAKE_TARGET=HGBaseAppModuleStatic HGUserAuditModuleStatic HGUserAuditModuleRun
     set MODULE_NAME=HGBaseAppModule和HGUserAuditModule

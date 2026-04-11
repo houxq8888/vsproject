@@ -1,4 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/HGBaseAppModuleStatic_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/HGBaseAppModuleStatic_autogen.dir/ParseCache.txt"
+  "HGBaseAppModuleStatic_autogen"
   "CMakeFiles/HGBaseAppModuleStatic.dir/HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.obj"
   "CMakeFiles/HGBaseAppModuleStatic.dir/HGBaseAppModuleStatic_autogen/mocs_compilation.cpp.obj.d"
   "CMakeFiles/HGBaseAppModuleStatic.dir/inc/moc_DragDialog.cpp.obj"
@@ -73,9 +76,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/HGBaseAppModuleStatic.dir/src/systeminfocache.cpp.obj.d"
   "CMakeFiles/HGBaseAppModuleStatic.dir/src/usersinfocache.cpp.obj"
   "CMakeFiles/HGBaseAppModuleStatic.dir/src/usersinfocache.cpp.obj.d"
-  "CMakeFiles/HGBaseAppModuleStatic_autogen.dir/AutogenUsed.txt"
-  "CMakeFiles/HGBaseAppModuleStatic_autogen.dir/ParseCache.txt"
-  "HGBaseAppModuleStatic_autogen"
   "HGBaseAppModuleStatic_autogen/mocs_compilation.cpp"
   "HGBaseAppModuleStatic_autogen/timestamp"
   "inc/moc_DragDialog.cpp"

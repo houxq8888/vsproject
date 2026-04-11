@@ -7,7 +7,7 @@
       "command": "cmd",
       "args": [
         "/c",
-        "cd /d d:\\virtualMachine\\github\\vsproject\\HGAppModule && windows_build.bat --debug --module HGUserAuditModule --incremental"
+        "cd /d C:\\virtualMachine\\github\\vsproject\\HGAppModule && windows_build.bat --debug --module HGUserAuditModule --incremental"
       ],
       "group": "build",
       "presentation": {

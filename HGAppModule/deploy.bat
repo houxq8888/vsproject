@@ -13,7 +13,7 @@ REM 设置默认参数
 set MODULE_NAME=HGUserAuditModule
 set BUILD_DIR=windows_build
 set DEPLOY_DIR=%MODULE_NAME%_Release
-set QT_DIR=D:\Qt\6.9.1\mingw_64
+set QT_DIR=C:\Qt\6.9.3\mingw_64
 
 REM 解析命令行参数
 :parse_args
@@ -73,7 +73,7 @@ echo 选项:
 echo   --module NAME     指定要部署的模块名 (默认: HGUserAuditModule)
 echo   --build-dir DIR   指定构建目录 (默认: windows_build)
 echo   --deploy-dir DIR  指定部署目录 (默认: 模块名_Release)
-echo   --qt-dir DIR      指定Qt安装目录 (默认: D:\Qt\6.9.1\mingw_64)
+echo   --qt-dir DIR      指定Qt安装目录 (默认: C:\Qt\6.9.3\mingw_64)
 echo   --help           显示此帮助信息
 echo.
 echo 示例:
@@ -214,7 +214,7 @@ echo. >> "%DEPLOY_DIR%\README.md"
 echo ## 部署信息 >> "%DEPLOY_DIR%\README.md"
 echo - 部署时间: %date% %time% >> "%DEPLOY_DIR%\README.md"
 echo - 模块名称: %MODULE_NAME% >> "%DEPLOY_DIR%\README.md"
-echo - Qt版本: 6.9.1 >> "%DEPLOY_DIR%\README.md"
+echo - Qt版本: 6.9.3 >> "%DEPLOY_DIR%\README.md"
 echo. >> "%DEPLOY_DIR%\README.md"
 echo --- >> "%DEPLOY_DIR%\README.md"
 echo *%MODULE_NAME% - 专业的模块解决方案* >> "%DEPLOY_DIR%\README.md"
