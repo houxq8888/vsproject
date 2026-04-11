@@ -1,4 +1,4 @@
-# Install script for directory: D:/virtualMachine/github/vsproject/HGAppModule/HGBaseAppModule
+# Install script for directory: C:/Users/liguitao/myjob/vsproject/HGAppModule/HGBaseAppModule
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Release")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -39,17 +39,23 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "D:/virtualMachine/github/vsproject/HGAppModule/hg_pub/win32/lib/libHGBaseAppModuleStatic.a")
+   "C:/Users/liguitao/myjob/vsproject/HGAppModule/hg_pub/win32/lib/libHGBaseAppModuleStatic.a")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "D:/virtualMachine/github/vsproject/HGAppModule/hg_pub/win32/lib" TYPE STATIC_LIBRARY FILES "D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/libHGBaseAppModuleStatic.a")
+  file(INSTALL DESTINATION "C:/Users/liguitao/myjob/vsproject/HGAppModule/hg_pub/win32/lib" TYPE STATIC_LIBRARY FILES "C:/Users/liguitao/myjob/vsproject/HGAppModule/windows_build/HGBaseAppModule/libHGBaseAppModuleStatic.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("D:/virtualMachine/github/vsproject/HGAppModule/windows_build/HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  include("C:/Users/liguitao/myjob/vsproject/HGAppModule/windows_build/HGBaseAppModule/CMakeFiles/HGBaseAppModuleStatic.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
 endif()
 
+string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+       "${CMAKE_INSTALL_MANIFEST_FILES}")
+if(CMAKE_INSTALL_LOCAL_ONLY)
+  file(WRITE "C:/Users/liguitao/myjob/vsproject/HGAppModule/windows_build/HGBaseAppModule/install_local_manifest.txt"
+     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
+endif()
