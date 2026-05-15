@@ -1,6 +1,7 @@
 #include "CoreFlow.h"
-#include "rwDb.h"
+#include "rwFlowDb.h"
 #include "rwMethodDb.h"
+#include "DatabaseManagerAdapter.h"
 #include "hgjson.h"
 #include "json.hpp"
 
@@ -49,10 +50,15 @@ void from_json(const json& j, FlowOfTask& p) {
 class CoreFlow::Impl {
 public:
     Impl() {
+        m_dbManager = &DatabaseManagerAdapter::instance();
     }
     
     ~Impl() {
     }
+    
+    DatabaseManagerAdapter* m_dbManager;
+    RWFlowDb m_rwFlowDb;
+    RWMethodDb m_rwMethodDb;
 };
 
 CoreFlow::CoreFlow() : m_impl(new Impl()) {
@@ -63,6 +69,10 @@ CoreFlow::~CoreFlow() {
 }
 
 bool CoreFlow::initialize() {
+    if (m_impl->m_dbManager && !m_impl->m_dbManager->IsConnected()) {
+        std::string basePath = RWDb::readCurDirPath();
+        RWDb::openDB(basePath);
+    }
     return true;
 }
 
@@ -70,11 +80,11 @@ void CoreFlow::shutdown() {
 }
 
 std::vector<std::map<std::string, std::string>> CoreFlow::readFlowInfo() {
-    return RWDb::readFlowInfo();
+    return m_impl->m_rwFlowDb.readFlowInfo();
 }
 
 std::string CoreFlow::readFlowOfTask(const std::string& dbName) {
-    FlowOfTask flow = RWDb::readFlowOfTask(dbName);
+    FlowOfTask flow = m_impl->m_rwFlowDb.readFlowOfTask(dbName);
     return HGJson::serialize(flow);
 }
 
@@ -83,16 +93,16 @@ std::vector<std::string> CoreFlow::getAllTables(const std::string& dbName) {
 }
 
 std::vector<std::string> CoreFlow::getMethodNames() {
-    return RWMethodDb::getMethodNames();
+    return m_impl->m_rwMethodDb.getMethodNames();
 }
 
 void CoreFlow::writeFlowManageRecord(const std::map<std::string, std::string>& info) {
-    RWDb::writeFlowManageRecord(info);
+    m_impl->m_rwFlowDb.writeFlowManageRecord(info);
 }
 
 void CoreFlow::writeFlowRecord(const std::string& dbName, bool coverFlag, 
                                const std::vector<std::map<std::string, std::string>>& info) {
-    RWDb::writeFlowRecord(dbName, coverFlag, info);
+    m_impl->m_rwFlowDb.writeFlowRecord(dbName, coverFlag, info);
 }
 
 void CoreFlow::deleteRecord(const std::string& tableName, const std::string& key, 
@@ -105,7 +115,7 @@ void CoreFlow::deleteDB(const std::string& dbName) {
 }
 
 void CoreFlow::clearFlowManageRecord() {
-    RWDb::clearFlowManageRecord();
+    m_impl->m_rwFlowDb.clearFlowManageRecord();
 }
 
 std::map<std::string, std::string> CoreFlow::getFlowMap(int index, 
@@ -120,7 +130,7 @@ std::map<std::string, std::string> CoreFlow::getFlowMap(int index,
     flowoftask.type = type;
     flowoftask.createTime = createTime;
     flowoftask.dbName = dbName;
-    return RWDb::getFlowMap(index, flowoftask);
+    return m_impl->m_rwFlowDb.getFlowMap(index, flowoftask);
 }
 
 std::vector<std::map<std::string, std::string>> CoreFlow::getFlowStepMap(const std::string& indexStr,
@@ -145,5 +155,5 @@ std::vector<std::map<std::string, std::string>> CoreFlow::getFlowStepMap(const s
         stepOfFlow.indexOfSameStep = std::stoi(step.at("indexOfSameStep"));
         flowoftask.steps.push_back(stepOfFlow);
     }
-    return RWDb::getFlowStepMap(flowoftask);
+    return m_impl->m_rwFlowDb.getFlowStepMap(flowoftask);
 }

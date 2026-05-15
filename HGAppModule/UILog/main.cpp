@@ -4,10 +4,6 @@
 #include "common.h"
 #include "SvcFactory.h"
 
-void openDB(const std::string&dbName){
-    // RWDb::openDB(dbName);
-}
-
 int main(int argc, char *argv[]){
     try {
         QApplication app(argc, argv);

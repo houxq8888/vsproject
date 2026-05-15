@@ -163,7 +163,12 @@ namespace HGMACHINE{
             static void writeUserInfo(const std::map<std::string,std::string> &infoS);
             static void writeUserGroupInfo(const std::map<std::string,std::string> &infoS);
             static void deleteUserGroupInfo(const std::string &value);
-
+            static std::vector<std::map<std::string,std::string>> searchUserFromKeyword(const std::string& key);
+            static std::vector<std::map<std::string,std::string>> searchUserFromKeywordWithHighlight(
+                const std::string& key, 
+                int pageIndex = 0, 
+                int pageSize = 50, 
+                int* totalCount = nullptr);
             //-------------------------audit log -----------------------------//
             static std::vector<std::map<std::string,std::string>> readAuditTrailLog(const std::string &tableName="");
             static std::vector<std::string> getAllAuditLogTables();

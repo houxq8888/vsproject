@@ -27,9 +27,9 @@ void CoreAnalysisRecord::shutdown() {
 }
 
 std::string CoreAnalysisRecord::getTaskRunFlag() {
-    return RWDb::getTaskRunFlag();
+    return ""; //RWDb::getTaskRunFlag();
 }
 
 std::vector<std::map<std::string, std::string>> CoreAnalysisRecord::getTaskRunInfo() {
-    return RWDb::getTaskRunInfo();
+    return std::vector<std::map<std::string,std::string>>{}; //RWDb::getTaskRunInfo();
 }

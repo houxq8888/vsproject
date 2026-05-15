@@ -8,6 +8,7 @@ HG_CMAKE_MODULE_DEPEND_PUB(
     HGBaseCommon
     HGSvcFrame
     HGSvcSave
+    HGServiceInterfaces
 )
 
 if (PLATFORM STREQUAL "x64")
@@ -17,6 +18,7 @@ if (PLATFORM STREQUAL "x64")
         HGBaseCommon
         HGSvcFrame
         HGSvcSave
+        HGServiceInterfaces
     )
 elseif (PLATFORM STREQUAL "win32")
     HG_CMAKE_ADD_STATIC(HGCoreMethod inc src

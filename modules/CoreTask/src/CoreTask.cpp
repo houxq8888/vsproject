@@ -1,5 +1,6 @@
 #include "CoreTask.h"
-#include "rwDb.h"
+#include "rwTaskDb.h"
+#include "DatabaseManagerAdapter.h"
 #include "hgjson.h"
 
 using namespace HGMACHINE;
@@ -7,10 +8,14 @@ using namespace HGMACHINE;
 class CoreTask::Impl {
 public:
     Impl() {
+        m_dbManager = &DatabaseManagerAdapter::instance();
     }
     
     ~Impl() {
     }
+    
+    DatabaseManagerAdapter* m_dbManager;
+    RWTaskDb m_rwTaskDb;
 };
 
 CoreTask::CoreTask() : m_impl(new Impl()) {
@@ -21,6 +26,10 @@ CoreTask::~CoreTask() {
 }
 
 bool CoreTask::initialize() {
+    if (m_impl->m_dbManager && !m_impl->m_dbManager->IsConnected()) {
+        std::string basePath = RWDb::readCurDirPath();
+        RWDb::openDB(basePath);
+    }
     return true;
 }
 
@@ -28,12 +37,44 @@ void CoreTask::shutdown() {
 }
 
 std::vector<std::map<std::string, std::string>> CoreTask::readTaskInfo(const std::string& taskSeqName) {
-    return RWDb::readTaskInfo(taskSeqName);
+    return m_impl->m_rwTaskDb.readTaskInfo(taskSeqName);
 }
 
 void CoreTask::writeTaskRecord(bool coverFlag, const std::string& tableName, 
-                               const std::vector<std::map<std::string, std::string>>& infoSS) {
-    RWDb::writeTaskRecord(coverFlag, tableName, infoSS);
+                               const std::vector<std::map<std::string, std::string>>& info) {
+    m_impl->m_rwTaskDb.writeTaskRecord(coverFlag, tableName, info);
+}
+
+void CoreTask::insertTaskRunInfo(const std::string& startTime, const std::string& tableName) {
+    m_impl->m_rwTaskDb.insertTaskRunInfo(startTime, tableName);
+}
+
+std::string CoreTask::getTaskRunFlag() {
+    return m_impl->m_rwTaskDb.getTaskRunFlag();
+}
+
+std::vector<std::map<std::string, std::string>> CoreTask::getTaskRunInfo() {
+    return m_impl->m_rwTaskDb.getTaskRunInfo();
+}
+
+void CoreTask::setTaskRunRecordDataDB(const std::string& dbName) {
+    m_impl->m_rwTaskDb.setTaskRunRecordDataDB(dbName);
+}
+
+std::string CoreTask::getTaskRunRecordDataDB() {
+    return m_impl->m_rwTaskDb.getTaskRunRecordDataDB();
+}
+
+void CoreTask::setTaskRunFlag(std::string flag) {
+    m_impl->m_rwTaskDb.setTaskRunFlag(flag);
+}
+
+void CoreTask::resetTaskRunFlag() {
+    m_impl->m_rwTaskDb.resetTaskRunFlag();
+}
+
+void CoreTask::resetTaskRunStatus(const std::string& tableName) {
+    m_impl->m_rwTaskDb.resetTaskRunStatus(tableName);
 }
 
 std::map<std::string, std::string> CoreTask::getTaskMap(int index, 
@@ -91,11 +132,31 @@ std::map<std::string, std::string> CoreTask::getTaskMap(int index,
     task.interval = interval;
     task.getSamplePump = getSamplePump;
     #endif
-    return RWDb::getTaskMap(index, task);
+    return m_impl->m_rwTaskDb.getTaskMap(index, task);
 }
 
-Task CoreTask::getTaskSFromMap(const std::map<std::string, std::string>& infoS) {
-    return RWDb::getTaskSFromMap(infoS);
+TaskInfo CoreTask::getTaskFromMap(const std::map<std::string, std::string>& info) {
+    Task task = m_impl->m_rwTaskDb.getTaskFromMap(info);
+    TaskInfo taskInfo;
+    taskInfo.seq = task.seq;
+    taskInfo.sampleSource = task.sampleSource;
+    taskInfo.sampleMethod = task.sampleMethod;
+    taskInfo.sampleName = task.sampleName;
+    taskInfo.targetComponent = task.targetComponent;
+    taskInfo.sampleTotal = task.sampleTotal;
+    taskInfo.unit = task.unit;
+    taskInfo.condition1 = task.condition1;
+    taskInfo.value1 = task.value1;
+    taskInfo.condition2 = task.condition2;
+    taskInfo.value2 = task.value2;
+    taskInfo.channel = task.channel;
+    taskInfo.flow = task.flow;
+    taskInfo.method = task.method;
+    taskInfo.workMode = task.workMode;
+    taskInfo.intervalTime = task.intervalTime;
+    taskInfo.samplePipeline = task.samplePipeline;
+    taskInfo.status = task.status;
+    return taskInfo;
 }
 
 std::vector<std::string> CoreTask::getAllTables(const std::string& dbName) {
@@ -108,24 +169,4 @@ std::vector<std::string> CoreTask::getFlowNames() {
 
 std::string CoreTask::getMethodName(const std::string& flowName) {
     return RWDb::getMethodName(flowName);
-}
-
-void CoreTask::setTaskRunFlag(const std::string& flag) {
-    RWDb::setTaskRunFlag(flag);
-}
-
-std::string CoreTask::getTaskRunFlag() {
-    return RWDb::getTaskRunFlag();
-}
-
-void CoreTask::resetTaskRunFlag() {
-    RWDb::resetTaskRunFlag();
-}
-
-void CoreTask::setTaskRunRecordDataDB(const std::string& dbName) {
-    RWDb::setTaskRunRecordDataDB(dbName);
-}
-
-void CoreTask::insertTaskRunInfo(const std::string& startTime, const std::string& tableName) {
-    RWDb::insertTaskRunInfo(startTime, tableName);
 }

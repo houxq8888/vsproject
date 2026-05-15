@@ -13,13 +13,18 @@ using namespace HGMACHINE;
 
 UserWidget::UserWidget(std::string lang,QWidget *parent) : QWidget(parent),
 m_lang(lang),
-m_userInfoEditWidget(nullptr)
+m_userInfoEditWidget(nullptr),
+m_searchLineEdit(nullptr),
+m_searchLabel(nullptr),
+m_searchWidget(nullptr),
+m_searchLayout(nullptr)
 {
     std::string enterUsersManageName=SystemDataManager::instance().get().getSystemInfo("enterUsersManageName");
     std::string authority = UserAuditManager::instance().get().getUserAuthority(enterUsersManageName);
     permissionInfo = UserAuditManager::instance().get().getAuthorityDetail(authority);
 
     fnInit();
+    fnSetupSearchWidget();
     fnReadDB();
 }
 void UserWidget::fnInit()
@@ -67,12 +72,21 @@ void UserWidget::fnAddUserListW()
     m_userLayout->addWidget(m_deleteUserLabel,0,6);
     m_userLayout->addWidget(m_editUserLabel,0,7);
     m_userLayout->addWidget(m_scanUserLabel,0,8);
-    m_userLayout->addWidget(m_userManageTableW,1,0,1,8);
+    
+    // Add search widget
+    if (m_searchWidget) {
+        m_userLayout->addWidget(m_searchWidget, 1, 0, 1, 8);
+        m_userLayout->addWidget(m_userManageTableW, 2, 0, 1, 8);
+    } else {
+        m_userLayout->addWidget(m_userManageTableW, 1, 0, 1, 8);
+    }
+    
     m_userManageLabel->show();
     m_newUserLabel->show();
     m_deleteUserLabel->show();
     m_editUserLabel->show();
     m_scanUserLabel->show();
+    if (m_searchWidget) m_searchWidget->show();
     m_userManageTableW->show();
 }
 bool UserWidget::closeWindow()
@@ -437,5 +451,153 @@ UserWidget::~UserWidget()
     if (m_userInfoEditWidget);{
         delete m_userInfoEditWidget;
         m_userInfoEditWidget=nullptr;
+    }
+    if (m_searchWidget) {
+        delete m_searchWidget;
+        m_searchWidget = nullptr;
+    }
+}
+
+// Setup search widget
+void UserWidget::fnSetupSearchWidget()
+{
+    m_searchWidget = new QWidget();
+    m_searchLayout = new QGridLayout(m_searchWidget);
+    
+    m_searchLabel = new QLabel(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "Search")));
+    m_searchLineEdit = new QLineEdit();
+    m_searchLineEdit->setPlaceholderText(QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, "EnterKeyword")));
+    
+    m_searchLayout->addWidget(m_searchLabel, 0, 0);
+    m_searchLayout->addWidget(m_searchLineEdit, 0, 1);
+    
+    // Connect search signal
+    connect(m_searchLineEdit, &QLineEdit::textChanged, this, &UserWidget::onSearchTextChanged);
+    
+    // Initialize highlight colors
+    m_highlightColors << QColor(255, 255, 0, 127);  // Yellow with transparency
+}
+
+// Handle search text change
+void UserWidget::onSearchTextChanged(const QString &text)
+{
+    m_currentSearchText = text;
+    if (text.isEmpty()) {
+        clearHighlights();
+        fnFillUserList();  // Reset to full list
+    } else {
+        highlightSearchResults(text);
+    }
+}
+
+// Highlight search results
+void UserWidget::highlightSearchResults(const QString &text)
+{
+    if (text.isEmpty()) {
+        fnFillUserList();
+        return;
+    }
+    
+    // Use the enhanced search function with highlighting
+    std::string searchText = text.toStdString();
+    std::vector<std::map<std::string, std::string>> searchResults;
+    
+    // Get all users and filter locally for better performance
+    std::vector<std::map<std::string, std::string>> allUsers = UserAuditManager::instance().get().getUsersInfo();
+    
+    // Filter users based on search criteria
+    for (const auto& user : allUsers) {
+        bool match = false;
+        for (const auto& field : user) {
+            QString fieldValue = QString::fromStdString(field.second);
+            if (fieldValue.contains(text, Qt::CaseInsensitive)) {
+                match = true;
+                break;
+            }
+        }
+        if (match) {
+            searchResults.push_back(user);
+        }
+    }
+    
+    // Clear table and repopulate with search results
+    m_userManageTableW->setRowCount(0);
+    
+    for (int i = 0; i < int(searchResults.size()); i++) {
+        if (searchResults[i]["Authority"].find("所有权限")!=std::string::npos 
+            && searchResults[i]["UserAccount"].find("XXXXX")!=std::string::npos)
+            continue;
+            
+        m_userManageTableW->insertRow(m_userManageTableW->rowCount());
+        
+        for (auto content : searchResults[i]) {
+            QString name = QString::fromStdString(SvcFactory::CreateConfigService()->LoadTranslation(m_lang, content.first));
+            int nameColIndex = getColumnIndexByName(m_userManageTableW, name);
+            if (nameColIndex < 0 || nameColIndex >= m_userManageTableW->columnCount())
+                continue;
+                
+            QString displayText = QString::fromStdString(content.second);
+            
+            // Apply highlighting for Authority and AccountManagement fields
+            if (content.first == "Authority" || content.first == "AccountManagement") {
+                std::vector<std::string> authorities = SvcFactory::CreateCommonService()->SplitString(content.second, ';');
+                std::string temp = "";
+                for (int j = 0; j < int(authorities.size()); j++) {
+                    temp += SvcFactory::CreateConfigService()->LoadTranslation(m_lang, authorities[j]) + ';';
+                }
+                displayText = QString::fromStdString(temp);
+            }
+            
+            // Highlight search text
+            if (!text.isEmpty()) {
+                QString highlightedText = displayText;
+                highlightedText.replace(text, QString("<span style='background-color:yellow;'>%1</span>").arg(text), Qt::CaseInsensitive);
+                
+                QTableWidgetItem* item = new QTableWidgetItem();
+                item->setText(displayText);  // Keep original text for data
+                item->setToolTip(highlightedText);  // Show highlighted text in tooltip
+                
+                m_userManageTableW->setItem(m_userManageTableW->rowCount() - 1, nameColIndex, item);
+            } else {
+                m_userManageTableW->setItem(m_userManageTableW->rowCount() - 1, nameColIndex, 
+                    new QTableWidgetItem(displayText));
+            }
+        }
+    }
+}
+
+// Clear highlights
+void UserWidget::clearHighlights()
+{
+    for (int row = 0; row < m_userManageTableW->rowCount(); row++) {
+        for (int col = 0; col < m_userManageTableW->columnCount(); col++) {
+            QTableWidgetItem* item = m_userManageTableW->item(row, col);
+            if (item) {
+                // Reset tooltip to remove highlighting
+                item->setToolTip(item->text());
+            }
+        }
+    }
+}
+
+// Filter table based on search text
+void UserWidget::filterTable(const QString &text)
+{
+    if (text.isEmpty()) {
+        fnFillUserList();
+        return;
+    }
+    
+    // Hide rows that don't match the search criteria
+    for (int row = 0; row < m_userManageTableW->rowCount(); row++) {
+        bool match = false;
+        for (int col = 0; col < m_userManageTableW->columnCount(); col++) {
+            QTableWidgetItem* item = m_userManageTableW->item(row, col);
+            if (item && item->text().contains(text, Qt::CaseInsensitive)) {
+                match = true;
+                break;
+            }
+        }
+        m_userManageTableW->setRowHidden(row, !match);
     }
 }

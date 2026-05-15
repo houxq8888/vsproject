@@ -8,145 +8,143 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-namespace HGMACHINE{
+
+namespace HGMACHINE {
     
-    typedef struct tagStepOfFlow{
+    typedef struct tagStepOfFlow {
         int index;
         std::string name;
         std::string param;
         std::string nameOfSameStep;
         int indexOfSameStep;
-        tagStepOfFlow(){
+        
+        tagStepOfFlow() {
             Clear();
         }
-        void Clear(){
-            index=-1;
-            name="";
-            param="";
-            nameOfSameStep="";
-            indexOfSameStep=-1;
+        
+        void Clear() {
+            index = 0;
+            name = "";
+            param = "";
+            nameOfSameStep = "";
+            indexOfSameStep = 0;
         }
-        bool operator==(const tagStepOfFlow& obj) const{
-            bool ret=false;
-            if (index==obj.index &&
-                name==obj.name &&
-                param==obj.param &&
-                nameOfSameStep==obj.nameOfSameStep &&
-                indexOfSameStep==obj.indexOfSameStep)
-            {
-                ret=true;
-            }
-            return ret;
+        
+        bool operator==(const tagStepOfFlow& obj) const {
+            return index == obj.index &&
+                   name == obj.name &&
+                   param == obj.param &&
+                   nameOfSameStep == obj.nameOfSameStep &&
+                   indexOfSameStep == obj.indexOfSameStep;
         }
-        tagStepOfFlow(const tagStepOfFlow& obj){
+        
+        tagStepOfFlow(const tagStepOfFlow& obj) {
             Copy(obj);
         }
-        void Copy(const tagStepOfFlow& obj){
-            index=obj.index;
-            name=obj.name;
-            param=obj.param;
-            nameOfSameStep=obj.nameOfSameStep;
-            indexOfSameStep=obj.indexOfSameStep;
+        
+        void Copy(const tagStepOfFlow& obj) {
+            index = obj.index;
+            name = obj.name;
+            param = obj.param;
+            nameOfSameStep = obj.nameOfSameStep;
+            indexOfSameStep = obj.indexOfSameStep;
         }
-        tagStepOfFlow& operator=(const tagStepOfFlow& obj){
+        
+        tagStepOfFlow& operator=(const tagStepOfFlow& obj) {
             Copy(obj);
             return *this;
         }
-        bool operator!=(const tagStepOfFlow& obj)const
-        {
-            return (!(*this==obj));
+        
+        bool operator!=(const tagStepOfFlow& obj) const {
+            return !(*this == obj);
         }
-        tagStepOfFlow* Clone() const
-        {
-            return (new tagStepOfFlow(*this));
+        
+        tagStepOfFlow* Clone() const {
+            return new tagStepOfFlow(*this);
         }
     } StepOfFlow, *PStepOfFlow;
-
-    typedef struct tagFlowOfTask{
+    
+    typedef struct tagFlowOfTask {
         std::string indexStr;
         std::string name;
         std::string type;
         std::string createTime;
         std::string dbName;
         std::vector<StepOfFlow> steps;
-        tagFlowOfTask(){
+        
+        tagFlowOfTask() {
             Clear();
         }
-        void Clear(){
-            indexStr="";
-            name="";
-            type="";
-            createTime="";
-            dbName="";
+        
+        void Clear() {
+            indexStr = "";
+            name = "";
+            type = "";
+            createTime = "";
+            dbName = "";
             steps.clear();
         }
-        bool operator==(const tagFlowOfTask& obj) const{
-            bool ret=false;
-            if (indexStr==obj.indexStr &&
-                name==obj.name &&
-                type==obj.type &&
-                createTime==obj.createTime &&
-                dbName==obj.dbName && 
-                steps==obj.steps)
-            {
-                ret=true;
-            }
-            return ret;
+        
+        bool operator==(const tagFlowOfTask& obj) const {
+            return indexStr == obj.indexStr &&
+                   name == obj.name &&
+                   type == obj.type &&
+                   createTime == obj.createTime &&
+                   dbName == obj.dbName &&
+                   steps == obj.steps;
         }
-        tagFlowOfTask(const tagFlowOfTask& obj){
+        
+        tagFlowOfTask(const tagFlowOfTask& obj) {
             Copy(obj);
         }
-        void Copy(const tagFlowOfTask& obj){
-            indexStr=obj.indexStr;
-            name=obj.name;
-            type=obj.type;
-            createTime=obj.createTime;
-            dbName=obj.dbName;
-            steps.clear();
-            for (int i=0;i<int(obj.steps.size());i++)
-            {
-                steps.push_back(obj.steps[i]);
-            }
+        
+        void Copy(const tagFlowOfTask& obj) {
+            indexStr = obj.indexStr;
+            name = obj.name;
+            type = obj.type;
+            createTime = obj.createTime;
+            dbName = obj.dbName;
+            steps = obj.steps;
         }
-        tagFlowOfTask& operator=(const tagFlowOfTask& obj){
+        
+        tagFlowOfTask& operator=(const tagFlowOfTask& obj) {
             Copy(obj);
             return *this;
         }
-        bool operator!=(const tagFlowOfTask& obj)const
-        {
-            return (!(*this==obj));
+        
+        bool operator!=(const tagFlowOfTask& obj) const {
+            return !(*this == obj);
         }
-        tagFlowOfTask* Clone() const
-        {
-            return (new tagFlowOfTask(*this));
+        
+        tagFlowOfTask* Clone() const {
+            return new tagFlowOfTask(*this);
         }
-    } FlowOfTask,*PFlowOfTask;
+    } FlowOfTask, *PFlowOfTask;
 
-    #define FLOWMANAGEDBNAME "FlowInfo"
+    #define FLOWMANAGENAME "FlowInfo"
     #define FlowDBName "Flow"
 
     class RWFlowDb {
-        public:
-            RWFlowDb();
-            ~RWFlowDb();
+    public:
+        RWFlowDb();
+        ~RWFlowDb();
 
-           
-            //-------------------------flow-------------------------------------//
-            static std::vector<std::map<std::string,std::string>> getFlowStepMap(FlowOfTask flow);
-            static std::map<std::string,std::string> getFlowMap(int index,FlowOfTask flow);
-            static std::vector<std::map<std::string, std::string>> readFlowInfo();
-            static FlowOfTask readFlowOfTask(std::string dbName);
-            static std::vector<std::string> getFlowNames();
-            static void clearFlowManageRecord();
-            static std::string decodeFlowDBName(const std::string &flowName);
-            static void writeFlowManageRecord(const std::map<std::string,std::string> &infoS);
-            static void writeFlowRecord(std::string dbName,bool coverFlag,const std::vector<std::map<std::string,std::string>> &infoSS);  
-
-
-        protected:
+        std::vector<std::map<std::string, std::string>> getFlowStepMap(FlowOfTask flow);
+        std::map<std::string, std::string> getFlowMap(int index, FlowOfTask flow);
+        std::vector<std::map<std::string, std::string>> readFlowInfo();
+        FlowOfTask readFlowOfTask(std::string dbName);
+        std::vector<std::string> getFlowNames();
+        void clearFlowManageRecord();
+        std::string decodeFlowDBName(const std::string& flowName);
+        void writeFlowManageRecord(const std::map<std::string, std::string>& infoS);
+        void writeFlowRecord(std::string dbName, bool coverFlag, const std::vector<std::map<std::string, std::string>>& infoSS);
+        
+    protected:
     };
 }
+
 #ifdef __cplusplus
 }
 #endif
+
 #endif // RWFLOWDB_H

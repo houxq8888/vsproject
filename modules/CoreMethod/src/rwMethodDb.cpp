@@ -9,7 +9,7 @@ namespace HGMACHINE {
         std::map<std::string,std::string> info;
         info["序号"]="";
         info["参数"]="";
-        fillContent=readRecord(dbName,info);
+        fillContent=RWDb::readRecord(dbName,info);
         if (fillContent.size()>0){
             method.param=fillContent[0]["参数"];
         }

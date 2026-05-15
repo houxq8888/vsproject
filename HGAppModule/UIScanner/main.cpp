@@ -12,7 +12,6 @@ int main(int argc, char *argv[]){
         QString basePath = qApp->applicationDirPath();
         SvcFactory::CreateFrameService()->loadConfig(basePath.toStdString());
         SvcFactory::CreateFrameService()->saveConfig();
-        // RWDb::openDB(basePath.toStdString());
 
         ScannerWidget w("zh");
         w.show();

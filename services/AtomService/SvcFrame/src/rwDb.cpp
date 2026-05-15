@@ -4,6 +4,7 @@
 #include <memory>
 #include <sstream>
 #include <cstdio>
+#include <algorithm>
 #include "hgcommonutility.h"
 #include "config.h"
 #include "hglogservice.h"
@@ -367,104 +368,104 @@ const std::vector<std::string> reagentLinkDeviceName={
 
 void RWDb::copyTable(const std::string& sourceDBName,
             const std::string &targetDbName,const std::string &tableName){
-    if (targetDbName==(RWDb::readCurDirPath()+DATABASE_PATH+DB_PATH)){
-        bool flag = dbOpera.copyTable(sourceDBName, tableName);
-#if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+//     if (targetDbName==(RWDb::readCurDirPath()+DATABASE_PATH+DB_PATH)){
+//         bool flag = dbOpera.copyTable(sourceDBName, tableName);
+// #if defined(_MSC_VER) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 
-#else
-        if (flag)
-        {
-            HGLogService::getInstance(HGLogService::getLogPath())->logInfo("copy table " + tableName + " success");
-        }
-        else
-        {
-            HGLogService::getInstance(HGLogService::getLogPath())->logError("copy table " + tableName + " fail");
-        }
-#endif
-        std::vector<std::map<std::string, std::string>> fillContent;
-        std::map<std::string, std::string> infoS;
-        if (tableName.find("Flow_") != std::string::npos)
-        {
-            HGSaveDataToDB dbOperatorTemp;
-            dbOperatorTemp.openDB(sourceDBName);
-            for (int i = 0; i < int(flowInfoName.size()); i++)
-            {
-                infoS[flowInfoName[i]] = "";
-            }
-            fillContent = dbOperatorTemp.readRecord(FLOWMANAGEDBNAME, infoS);
+// #else
+//         if (flag)
+//         {
+//             HGLogService::getInstance(HGLogService::getLogPath())->logInfo("copy table " + tableName + " success");
+//         }
+//         else
+//         {
+//             HGLogService::getInstance(HGLogService::getLogPath())->logError("copy table " + tableName + " fail");
+//         }
+// #endif
+//         std::vector<std::map<std::string, std::string>> fillContent;
+//         std::map<std::string, std::string> infoS;
+//         if (tableName.find("Flow_") != std::string::npos)
+//         {
+//             HGSaveDataToDB dbOperatorTemp;
+//             dbOperatorTemp.openDB(sourceDBName);
+//             for (int i = 0; i < int(flowInfoName.size()); i++)
+//             {
+//                 infoS[flowInfoName[i]] = "";
+//             }
+//             fillContent = dbOperatorTemp.readRecord(FLOWMANAGEDBNAME, infoS);
 
-            for (int i = 0; i < int(fillContent.size()); i++)
-            {
-                if (fillContent[i]["DBName"] == tableName)
-                {
-                    fillContent[i]["序号"] = std::to_string(readFlowInfo().size() + 1);
-                    dbOpera.writeRecord(FLOWMANAGEDBNAME, "序号", fillContent[i]);
-                }
-            }
+//             for (int i = 0; i < int(fillContent.size()); i++)
+//             {
+//                 if (fillContent[i]["DBName"] == tableName)
+//                 {
+//                     fillContent[i]["序号"] = std::to_string(readFlowInfo().size() + 1);
+//                     dbOpera.writeRecord(FLOWMANAGEDBNAME, "序号", fillContent[i]);
+//                 }
+//             }
 
-            dbOpera.sortTable(FLOWMANAGEDBNAME,"序号");
-            dbOperatorTemp.closeDB();
-        }else if (tableName.find("Channel_") != std::string::npos)
-        {
-            HGSaveDataToDB dbOperatorTemp;
-            dbOperatorTemp.openDB(sourceDBName);
-            for (int i=0;i<int(channelInfoName.size());i++){
-                infoS[channelInfoName[i]]="";
-            }
+//             dbOpera.sortTable(FLOWMANAGEDBNAME,"序号");
+//             dbOperatorTemp.closeDB();
+//         }else if (tableName.find("Channel_") != std::string::npos)
+//         {
+//             HGSaveDataToDB dbOperatorTemp;
+//             dbOperatorTemp.openDB(sourceDBName);
+//             for (int i=0;i<int(channelInfoName.size());i++){
+//                 infoS[channelInfoName[i]]="";
+//             }
             
-            fillContent = dbOperatorTemp.readRecord(CHANNELMANAGENAME, infoS);
+//             fillContent = dbOperatorTemp.readRecord(CHANNELMANAGENAME, infoS);
 
-            for (int i = 0; i < int(fillContent.size()); i++)
-            {
-                if (fillContent[i]["DBName"] == tableName)
-                {
-                    fillContent[i]["序号"] = std::to_string(readChannelInfo().size() + 1);
-                    dbOpera.writeRecord(CHANNELMANAGENAME, "序号", fillContent[i]);
-                }
-            }
-            dbOpera.sortTable(CHANNELMANAGENAME,"序号");
-            dbOperatorTemp.closeDB();
-        }else if (tableName.find("Method_") != std::string::npos)
-        {
-            HGSaveDataToDB dbOperatorTemp;
-            dbOperatorTemp.openDB(sourceDBName);
-            for (int i = 0; i < int(methodInfoName.size()); i++)
-            {
-                infoS[methodInfoName[i]] = "";
-            }
-            fillContent =dbOperatorTemp.readRecord(METHODMANAGENAME, infoS);
-            for (int i = 0; i < int(fillContent.size()); i++)
-            {
-                if (fillContent[i]["DBName"] == tableName)
-                {
-                    fillContent[i]["序号"] = std::to_string(readMethodInfo().size() + 1);
-                    dbOpera.writeRecord(METHODMANAGENAME, "序号", fillContent[i]);
-                }
-            }
-            dbOpera.sortTable(METHODMANAGENAME,"序号");
-            dbOperatorTemp.closeDB();
-        }else if (tableName.find("Reagent_") != std::string::npos)
-        {
-            HGSaveDataToDB dbOperatorTemp;
-            dbOperatorTemp.openDB(sourceDBName);
-            std::vector<REAGENT> reagents;
-            for (int i=0;i<int(reagentInfoName.size());i++){
-                infoS[reagentInfoName[i]]="";
-            }
-            fillContent=dbOperatorTemp.readRecord(tableName,infoS);
-            std::map<std::string,int> reagentDeviceTableNameCount;
-            for (int i=0;i<int(fillContent.size());i++){
-                reagentDeviceTableNameCount[fillContent[i]["DBName"]]=1;
-            }
-            dbOperatorTemp.closeDB();
-            for (auto deviceTableName:reagentDeviceTableNameCount){
-                bool flag=dbOpera.copyTable(sourceDBName,deviceTableName.first);
-            }
-        }
-        else if (tableName.find("TaskSequence_") != std::string::npos)
-        { // nothing
-        }
-    }
+//             for (int i = 0; i < int(fillContent.size()); i++)
+//             {
+//                 if (fillContent[i]["DBName"] == tableName)
+//                 {
+//                     fillContent[i]["序号"] = std::to_string(readChannelInfo().size() + 1);
+//                     dbOpera.writeRecord(CHANNELMANAGENAME, "序号", fillContent[i]);
+//                 }
+//             }
+//             dbOpera.sortTable(CHANNELMANAGENAME,"序号");
+//             dbOperatorTemp.closeDB();
+//         }else if (tableName.find("Method_") != std::string::npos)
+//         {
+//             HGSaveDataToDB dbOperatorTemp;
+//             dbOperatorTemp.openDB(sourceDBName);
+//             for (int i = 0; i < int(methodInfoName.size()); i++)
+//             {
+//                 infoS[methodInfoName[i]] = "";
+//             }
+//             fillContent =dbOperatorTemp.readRecord(METHODMANAGENAME, infoS);
+//             for (int i = 0; i < int(fillContent.size()); i++)
+//             {
+//                 if (fillContent[i]["DBName"] == tableName)
+//                 {
+//                     fillContent[i]["序号"] = std::to_string(readMethodInfo().size() + 1);
+//                     dbOpera.writeRecord(METHODMANAGENAME, "序号", fillContent[i]);
+//                 }
+//             }
+//             dbOpera.sortTable(METHODMANAGENAME,"序号");
+//             dbOperatorTemp.closeDB();
+//         }else if (tableName.find("Reagent_") != std::string::npos)
+//         {
+//             HGSaveDataToDB dbOperatorTemp;
+//             dbOperatorTemp.openDB(sourceDBName);
+//             std::vector<REAGENT> reagents;
+//             for (int i=0;i<int(reagentInfoName.size());i++){
+//                 infoS[reagentInfoName[i]]="";
+//             }
+//             fillContent=dbOperatorTemp.readRecord(tableName,infoS);
+//             std::map<std::string,int> reagentDeviceTableNameCount;
+//             for (int i=0;i<int(fillContent.size());i++){
+//                 reagentDeviceTableNameCount[fillContent[i]["DBName"]]=1;
+//             }
+//             dbOperatorTemp.closeDB();
+//             for (auto deviceTableName:reagentDeviceTableNameCount){
+//                 bool flag=dbOpera.copyTable(sourceDBName,deviceTableName.first);
+//             }
+//         }
+//         else if (tableName.find("TaskSequence_") != std::string::npos)
+//         { // nothing
+//         }
+//     }
 }
 
 
@@ -655,6 +656,138 @@ int RWDb::searchAuditTrailLogCount(
     }
     
     return count;
+}
+std::vector<std::map<std::string,std::string>> RWDb::searchUserFromKeyword(const std::string& key){
+    std::vector<std::map<std::string,std::string>> allResults;
+    std::ostringstream sql;
+    sql << "SELECT * FROM " << USERINFODBNAME;
+    
+    std::vector<std::string> conditions;
+    if (!key.empty()){
+        conditions.push_back("(AccountManagement LIKE '%" + key + 
+                            "%' OR Authority LIKE '%" + key + 
+                            "%' OR UserJob LIKE '%" + key +
+                            "%' OR Department LIKE '%" + key + 
+                            "%' OR Username LIKE '%" + key + 
+                            "%' OR UserAccount LIKE '%" + key +
+                            "%' OR UserNo LIKE '%" + key + 
+                            "%')");
+    }
+
+    if (!conditions.empty()){
+        sql << " WHERE ";
+        for (size_t i = 0;i<conditions.size();i++){
+            sql << conditions[i];
+            if (i < conditions.size()- 1){
+                sql << " AND ";
+            }
+        }
+    }
+    sql << ";";
+    std::vector<std::map<std::string,std::string>> searchUserInfos;
+    if (!dbOpera.readData(sql.str(),searchUserInfos)){
+        return allResults;
+    }
+    allResults=searchUserInfos;
+    return allResults;
+}
+
+std::vector<std::map<std::string,std::string>> RWDb::searchUserFromKeywordWithHighlight(
+    const std::string& key, 
+    int pageIndex, 
+    int pageSize, 
+    int* totalCount)
+{
+    std::vector<std::map<std::string,std::string>> allResults;
+    
+    // 首先获取总记录数
+    std::ostringstream countSql;
+    countSql << "SELECT COUNT(*) as count FROM " << USERINFODBNAME;
+    
+    std::vector<std::string> conditions;
+    if (!key.empty()){
+        conditions.push_back("(AccountManagement LIKE '%" + key + 
+                            "%' OR Authority LIKE '%" + key + 
+                            "%' OR UserJob LIKE '%" + key +
+                            "%' OR Department LIKE '%" + key + 
+                            "%' OR Username LIKE '%" + key + 
+                            "%' OR UserAccount LIKE '%" + key +
+                            "%' OR UserNo LIKE '%" + key + 
+                            "%')");
+    }
+
+    if (!conditions.empty()){
+        countSql << " WHERE ";
+        for (size_t i = 0;i<conditions.size();i++){
+            countSql << conditions[i];
+            if (i < conditions.size()- 1){
+                countSql << " AND ";
+            }
+        }
+    }
+    
+    std::vector<std::map<std::string,std::string>> countResult;
+    if (dbOpera.readData(countSql.str(), countResult) && !countResult.empty()) {
+        if (totalCount) {
+            *totalCount = std::atoi(countResult[0]["count"].c_str());
+        }
+    } else {
+        if (totalCount) *totalCount = 0;
+        return allResults;
+    }
+    
+    // 获取分页数据
+    std::ostringstream dataSql;
+    dataSql << "SELECT * FROM " << USERINFODBNAME;
+    
+    if (!conditions.empty()){
+        dataSql << " WHERE ";
+        for (size_t i = 0;i<conditions.size();i++){
+            dataSql << conditions[i];
+            if (i < conditions.size()- 1){
+                dataSql << " AND ";
+            }
+        }
+    }
+    
+    // 添加分页
+    dataSql << " LIMIT " << pageSize << " OFFSET " << (pageIndex * pageSize);
+    
+    std::vector<std::map<std::string,std::string>> searchUserInfos;
+    if (!dbOpera.readData(dataSql.str(), searchUserInfos)){
+        return allResults;
+    }
+    
+    // 处理高亮显示
+    if (!key.empty()) {
+        for (auto& userInfo : searchUserInfos) {
+            for (auto& field : userInfo) {
+                // 在匹配的关键词前后添加高亮标记
+                std::string& value = field.second;
+                size_t pos = 0;
+                std::string lowerValue = value;
+                std::string lowerKey = key;
+                
+                // 转换为小写进行不区分大小写的搜索
+                std::transform(lowerValue.begin(), lowerValue.end(), lowerValue.begin(), ::tolower);
+                std::transform(lowerKey.begin(), lowerKey.end(), lowerKey.begin(), ::tolower);
+                
+                while ((pos = lowerValue.find(lowerKey, pos)) != std::string::npos) {
+                    // 在原始字符串中插入高亮标记
+                    value.insert(pos + key.length(), "</highlight>");
+                    value.insert(pos, "<highlight>");
+                    
+                    // 更新搜索位置和lowerValue
+                    pos += key.length() + 22; // 22是高亮标记的长度
+                    lowerValue = value;
+                    std::transform(lowerValue.begin(), lowerValue.end(), lowerValue.begin(), ::tolower);
+                }
+            }
+        }
+    }
+    
+    allResults = searchUserInfos;
+    return allResults;
 }
 
 std::vector<std::map<std::string,std::string>> RWDb::searchAuditTrailLogAcrossTablesWithPaginationOptimized(

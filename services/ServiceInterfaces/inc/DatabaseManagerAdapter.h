@@ -7,6 +7,8 @@
 
 class SERVICEINTERFACES_EXPORT DatabaseManagerAdapter : public IDatabaseManager {
 public:
+    static DatabaseManagerAdapter& instance();
+    
     DatabaseManagerAdapter();
     virtual ~DatabaseManagerAdapter();
 
@@ -26,6 +28,9 @@ public:
     bool Rollback() override;
 
 private:
+    DatabaseManagerAdapter(const DatabaseManagerAdapter&) = delete;
+    DatabaseManagerAdapter& operator=(const DatabaseManagerAdapter&) = delete;
+    
     class Impl;
     Impl* m_impl;
 };

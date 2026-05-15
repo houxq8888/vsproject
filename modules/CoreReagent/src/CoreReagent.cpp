@@ -1,15 +1,20 @@
 #include "CoreReagent.h"
-#include "rwDb.h"
+#include "rwReagentDb.h"
+#include "DatabaseManagerAdapter.h"
 
 using namespace HGMACHINE;
 
 class CoreReagent::Impl {
 public:
     Impl() {
+        m_dbManager = &DatabaseManagerAdapter::instance();
     }
     
     ~Impl() {
     }
+    
+    DatabaseManagerAdapter* m_dbManager;
+    RWReagentDb m_rwReagentDb;
 };
 
 CoreReagent::CoreReagent() : m_impl(new Impl()) {
@@ -20,6 +25,10 @@ CoreReagent::~CoreReagent() {
 }
 
 bool CoreReagent::initialize() {
+    if (m_impl->m_dbManager && !m_impl->m_dbManager->IsConnected()) {
+        std::string basePath = RWDb::readCurDirPath();
+        RWDb::openDB(basePath);
+    }
     return true;
 }
 
@@ -27,7 +36,7 @@ void CoreReagent::shutdown() {
 }
 
 std::vector<std::map<std::string, std::string>> CoreReagent::readReagentInfo(const std::string& dbName) {
-    return RWDb::readReagentInfo(dbName);
+    return m_impl->m_rwReagentDb.readReagentInfo(dbName);
 }
 
 std::map<std::string, std::string> CoreReagent::getMapFromReagent(int index,
@@ -63,7 +72,7 @@ std::map<std::string, std::string> CoreReagent::getMapFromReagent(int index,
         linkDevice.choice = devicePair.second.at("choice");
         reagent.linkDevices[devicePair.first] = linkDevice;
     }
-    return RWDb::getMapFromReagent(reagent);
+    return m_impl->m_rwReagentDb.getMapFromReagent(reagent);
 }
 
 std::map<std::string, std::string> CoreReagent::getMapFromDevices(const std::map<std::string, std::string>& device) {
@@ -74,7 +83,7 @@ std::map<std::string, std::string> CoreReagent::getMapFromDevices(const std::map
     linkDevice.linkState = device.at("linkState");
     linkDevice.channel = device.at("channel");
     linkDevice.choice = device.at("choice");
-    return RWDb::getMapFromDevices(linkDevice);
+    return m_impl->m_rwReagentDb.getMapFromDevices(linkDevice);
 }
 
 std::vector<std::string> CoreReagent::getAllTables(const std::string& dbName) {
@@ -82,14 +91,14 @@ std::vector<std::string> CoreReagent::getAllTables(const std::string& dbName) {
 }
 
 std::vector<std::string> CoreReagent::getReagentNoEditName() {
-    return RWDb::getReagentNoEditName();
+    return m_impl->m_rwReagentDb.getReagentNoEditName();
 }
 
 std::vector<std::string> CoreReagent::getReagentLinkDeviceNoEditName() {
-    return RWDb::getReagentLinkDeviceNoEditName();
+    return m_impl->m_rwReagentDb.getReagentLinkDeviceNoEditName();
 }
 
 void CoreReagent::writeReagentRecord(bool coverFlag, const std::string& dbName, 
                                      const std::vector<std::map<std::string, std::string>>& reagentS) {
-    RWDb::writeReagentRecord(coverFlag, dbName, reagentS);
+    m_impl->m_rwReagentDb.writeReagentRecord(coverFlag, dbName, reagentS);
 }

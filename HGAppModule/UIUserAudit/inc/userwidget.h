@@ -13,6 +13,8 @@
 #include <QComboBox>
 #include <QTabWidget>
 #include "userinfoeditwidget.h"
+#include <QHeaderView>
+#include <QTextCharFormat>
 
 
 
@@ -39,6 +41,8 @@ private slots:
     void slotHasUserNo(std::string);
     void returnToList();
     void slotUpdateAuthority();
+    void onSearchTextChanged(const QString &text);
+    void highlightSearchResults(const QString &text);
 
 protected:
     // 重载closeEvent函数
@@ -53,6 +57,9 @@ private:
     int  findUserAuthorityIndex(const std::string &userNo);
     void fnRemoveUsrsGroupUser(const std::string& authorityName, const std::string &text);
     void fnAddUsrsGroupUser(const std::string& authorityName, const std::string &text);
+    void fnSetupSearchWidget();
+    void clearHighlights();
+    void filterTable(const QString &text);
 
 private:
     QGridLayout *m_userLayout;
@@ -68,6 +75,14 @@ private:
     std::string m_lang;
 
     UserInfoEditWidget* m_userInfoEditWidget;
+    
+    // Search functionality
+    QLineEdit* m_searchLineEdit;
+    QLabel* m_searchLabel;
+    QWidget* m_searchWidget;
+    QGridLayout* m_searchLayout;
+    QString m_currentSearchText;
+    QList<QColor> m_highlightColors;
 
 };
 

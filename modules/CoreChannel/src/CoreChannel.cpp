@@ -1,5 +1,6 @@
 #include "CoreChannel.h"
-#include "rwDb.h"
+#include "rwChannelDb.h"
+#include "DatabaseManagerAdapter.h"
 #include "hgjson.h"
 
 using namespace HGMACHINE;
@@ -7,10 +8,14 @@ using namespace HGMACHINE;
 class CoreChannel::Impl {
 public:
     Impl() {
+        m_dbManager = &DatabaseManagerAdapter::instance();
     }
     
     ~Impl() {
     }
+    
+    DatabaseManagerAdapter* m_dbManager;
+    RWChannelDb m_rwChannelDb;
 };
 
 CoreChannel::CoreChannel() : m_impl(new Impl()) {
@@ -21,6 +26,10 @@ CoreChannel::~CoreChannel() {
 }
 
 bool CoreChannel::initialize() {
+    if (m_impl->m_dbManager && !m_impl->m_dbManager->IsConnected()) {
+        std::string basePath = RWDb::readCurDirPath();
+        RWDb::openDB(basePath);
+    }
     return true;
 }
 
@@ -28,11 +37,11 @@ void CoreChannel::shutdown() {
 }
 
 std::vector<std::map<std::string, std::string>> CoreChannel::readChannelInfo() {
-    return RWDb::readChannelInfo();
+    return m_impl->m_rwChannelDb.readChannelInfo();
 }
 
 std::string CoreChannel::readModulesParam(const std::string& dbName) {
-    std::vector<ModuleOfChannel> modules = RWDb::readModulesParam(dbName);
+    std::vector<ModuleOfChannel> modules = m_impl->m_rwChannelDb.readModulesParam(dbName);
     return HGJson::serialize(modules);
 }
 
@@ -46,20 +55,20 @@ void CoreChannel::deleteDB(const std::string& dbName) {
 }
 
 void CoreChannel::clearChannelManageRecord() {
-    RWDb::clearChannelManageRecord();
+    m_impl->m_rwChannelDb.clearChannelManageRecord();
 }
 
 void CoreChannel::deleteAllChannelModuleDB() {
-    RWDb::deleteAllChannelModuleDB();
+    m_impl->m_rwChannelDb.deleteAllChannelModuleDB();
 }
 
 void CoreChannel::writeChannelManageRecord(const std::map<std::string, std::string>& info) {
-    RWDb::writeChannelManageRecord(info);
+    m_impl->m_rwChannelDb.writeChannelManageRecord(info);
 }
 
 void CoreChannel::writeModulesRecord(const std::string& dbName, bool coverFlag, 
                                      const std::vector<std::map<std::string, std::string>>& info) {
-    RWDb::writeModulesRecord(dbName, coverFlag, info);
+    m_impl->m_rwChannelDb.writeModulesRecord(dbName, coverFlag, info);
 }
 
 std::map<std::string, std::string> CoreChannel::getChannelMap(int index,
@@ -80,7 +89,7 @@ std::map<std::string, std::string> CoreChannel::getChannelMap(int index,
         module.typeName = moduleMap.at("typeName");
         channelInfo.modules.push_back(module);
     }
-    return RWDb::getChannelMap(index, channelInfo);
+    return m_impl->m_rwChannelDb.getChannelMap(index, channelInfo);
 }
 
 std::vector<std::map<std::string, std::string>> CoreChannel::getModulesMap(int channel,
@@ -100,5 +109,5 @@ std::vector<std::map<std::string, std::string>> CoreChannel::getModulesMap(int c
         module.typeName = moduleMap.at("typeName");
         channelInfo.modules.push_back(module);
     }
-    return RWDb::getModulesMap(channelInfo);
+    return m_impl->m_rwChannelDb.getModulesMap(channelInfo);
 }

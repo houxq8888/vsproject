@@ -12,6 +12,11 @@ public:
     Impl() : connected(false), connectCount(0) {}
 };
 
+DatabaseManagerAdapter& DatabaseManagerAdapter::instance() {
+    static DatabaseManagerAdapter instance;
+    return instance;
+}
+
 DatabaseManagerAdapter::DatabaseManagerAdapter() : m_impl(new Impl()) {
 }
 

@@ -13,8 +13,6 @@ int main(int argc, char *argv[]){
         auto frameService = SvcFactory::CreateFrameService();
         frameService->loadConfig(basePath.toStdString());
         frameService->saveConfig();
-
-        // RWDb::openDB(basePath.toStdString());
         HGCameraRecognizeWidget w("zh");
         w.show();
         return app.exec();

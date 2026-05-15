@@ -474,7 +474,6 @@ void HGCameraRecognizeWidget::outEnableDb(){
     QString basePath=qApp->applicationDirPath();
     SvcFactory::CreateFrameService()->loadConfig(basePath.toStdString());
     SvcFactory::CreateFrameService()->saveConfig();
-    // RWDb::openDB(basePath.toStdString());
 }
 void HGCameraRecognizeWidget::fnReadDB(){
     m_currentCameraType=SystemDataManager::instance().get().getSystemInfo("CameraType");
