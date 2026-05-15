@@ -1,0 +1,50 @@
+set(LIBRARY_VERSION_MAJOR 1)
+set(LIBRARY_VERSION_MINOR 0)
+set(LIBRARY_VERSION_PATCH 0)
+
+HG_CMAKE_ADD_MODULE(BaseCommon inc src ../../../)
+
+HG_CMAKE_MODULE_DEPEND_PUB( 
+    ${LOG4CPLUS_LIBRARIES}  
+    # ALSA::ALSA
+    ${LIBPINYIN_LIBRARIES}
+    ${ZXING_LIBRARY}
+    ${USB_LIBRARY}
+    ${X11_LIBRARIES}
+    ${OpenCV_LIBRARIES}
+    Xrandr
+)
+
+if (PLATFORM STREQUAL "x64")
+HG_CMAKE_ADD_SHARED(HGBaseCommon inc src ../../../)
+HG_CMAKE_MODULE_DEPEND( 
+    ${LOG4CPLUS_LIBRARIES}  
+    ALSA::ALSA
+    ${LIBPINYIN_LIBRARIES}
+    ${ZXING_LIBRARY}
+    ${USB_LIBRARY}
+    ${X11_LIBRARIES}
+    ${OpenCV_LIBRARIES}
+    Xrandr
+)
+
+include_directories(${X11_INCLUDE_DIR})
+# target_link_libraries(HGBaseCommon ${X11_LIBRARIES} Xrandr)
+
+elseif (PLATFORM STREQUAL "win32")
+message("create Static common CMAKE_FIND_ROOT_PATH_MODE_LIBRARY: ${CMAKE_FIND_ROOT_PATH_MODE_LIBRARY}")
+HG_CMAKE_ADD_STATIC(HGBaseCommon inc src)
+# 设置导出符号
+target_compile_definitions(HGBaseCommon PRIVATE HGCOMMON_LIBRARY)
+
+target_link_libraries(HGBaseCommon  
+    ${USB_LIBRARY}
+    #${HG_PROJECT_ROOT_FS}/lib/liblog4cplusU.dll.a
+    ws2_32 iphlpapi)
+endif()
+
+
+set_target_properties(HGBaseCommon PROPERTIES 
+    VERSION ${LIBRARY_VERSION_MAJOR}.${LIBRARY_VERSION_MINOR}.${LIBRARY_VERSION_PATCH}
+    SOVERSION ${LIBRARY_VERSION_MAJOR}
+)

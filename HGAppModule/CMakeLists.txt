@@ -29,7 +29,8 @@ include_directories(
     ${HG_PROJECT_ROOT_FS}/services/HGAtomService/HGFrameService/inc
     ${HG_PROJECT_ROOT_FS}/services/HGAtomService/HGSecurityService/inc
     ${HG_PROJECT_ROOT_FS}/services/HGAtomService/HGCommunicateService/inc
-    ${HG_PROJECT_ROOT_FS}/services/HGAtomService/HGAuthorityService/inc 
+    ${HG_PROJECT_ROOT_FS}/services/HGAtomService/HGAuthorityService/inc
+    ${HG_PROJECT_ROOT_FS}/services/HGAtomService/HGLogService/inc
     ${HG_PROJECT_ROOT_FS}/HGAppModule/HGBaseAppModule/inc 
     ${HG_PROJECT_ROOT_FS}/HGAppModule/pluginInterface/inc 
     ${HG_PROJECT_ROOT_FS}/HGAppModule/HGSearchModule/inc
@@ -40,6 +41,8 @@ include_directories(
     ${HG_PROJECT_ROOT_FS}/services/HGCommon/inc
     ${HG_PROJECT_ROOT_FS}/services/HGConfig/inc
     ${HG_PROJECT_ROOT_FS}/interfaces/CameraRecognizeInterface/inc
+    ${HG_PROJECT_ROOT_FS}/interfaces/LogInterface/inc
+    ${HG_PROJECT_ROOT_FS}/modules/LogModule/inc
 )
 
 # 链接3rdparty目录
@@ -106,6 +109,9 @@ set(BUILD_HGBASEAPP_EXECUTABLE OFF)
 option(MODULAR_BUILD_ENABLED "启用模块化编译" OFF)
 set(BUILD_MODULES "" CACHE STRING "要编译的模块列表（空格分隔）")
 
+# 单独编译选项
+option(BUILD_HGLOGMODULE_ONLY "仅编译HGLogModule" OFF)
+
 # 模块化编译逻辑
 if(MODULAR_BUILD_ENABLED AND BUILD_MODULES)
     message(STATUS "模块化编译已启用")
@@ -123,19 +129,25 @@ if(MODULAR_BUILD_ENABLED AND BUILD_MODULES)
             message(WARNING "模块 ${MODULE} 不存在或没有CMakeLists.txt")
         endif()
     endforeach()
+elseif(BUILD_HGLOGMODULE_ONLY)
+    message(STATUS "仅编译HGLogModule")
+    add_subdirectory(HGBaseAppModule)
+    add_subdirectory(pluginInterface)
+    add_subdirectory(HGSearchModule)
+    add_subdirectory(HGLogModule)
 else()
     # 传统编译模式 - 添加所有HGAppModule子模块
     add_subdirectory(HGBaseAppModule)
     
     # 添加PluginInterface模块
-    add_subdirectory(pluginInterface)
+ #   add_subdirectory(pluginInterface)
     # 传统编译模式 - 编译所有模块
     message(STATUS "使用传统编译模式 - 编译所有模块")
     
     # 添加所有模块
   #  add_subdirectory(HGCurveModule)
   #  add_subdirectory(HGSearchModule)
-  #  add_subdirectory(HGLogModule)
+    add_subdirectory(UILog)
   #  add_subdirectory(HGUserAuditModule)
   #  add_subdirectory(HGUartModule)
  #   add_subdirectory(HGLoginModule)
@@ -147,8 +159,8 @@ else()
  #   add_subdirectory(HGFlowModule)
   #  add_subdirectory(HGChannelModule)
   #  add_subdirectory(HGReagentModule)
-  #  add_subdirectory(HGAnalysisRecordModule)
+  #  add_subdirectory(UIAnalysisRecord)
   #  add_subdirectory(HGPrintModule)
-    add_subdirectory(HGCameraRecognizeModule)
+  #  add_subdirectory(HGCameraRecognizeModule)
   #  add_subdirectory(HGExceptionHandleModule)
 endif()

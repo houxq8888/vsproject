@@ -1,0 +1,111 @@
+模块分层视图:
+
+第 0 层 基础设施层 (Base前缀):
+  - BaseCommon
+  - BaseConfig
+
+第 1 层 原子服务层 (Svc前缀):
+  - SvcLog
+  - SvcAuthority
+  - SvcInteractive
+  - SvcImageAlgorithm
+  - SvcDataPostProcess
+  - SvcSave
+  - SvcFrame
+  - SvcCommunicate
+  - SvcError
+  - SvcOTA
+  - SvcSecurity
+  - SvcCommonProtocol
+
+第 2 层 硬件抽象层 (Hw前缀):
+  - HwRobot
+  - HwSensor
+  - HwLowerPC
+
+第 3 层 模块层 (Core前缀):
+  - CoreCupDet
+  - CoreDashboard
+  - CoreOnlinePlatform
+  - CoreV6
+  - CoreLog
+  - CoreDetectDimentionVux
+
+第 4 层 接口层 (If前缀):
+  - IfCameraControl
+  - IfCameraRecognize
+  - IfCupDet
+  - IfOnlinePlatform
+  - IfV6
+  - IfLog
+  - IfPackFunc
+  - IfDetectDimentionVux
+
+第 5 层 UI应用模块层 (UI前缀):
+  - UIAnalysisRecord
+  - UIBaseApp
+  - UICameraRecognize
+  - UIChannel
+  - UICurve
+  - UISharedFile
+  - UIReagent
+  - UIScanner
+  - UISearch
+  - UIUart
+  - UILog
+  - UILogin
+  - UIMethod
+  - UIUserAudit
+  - UITask
+  - UIFlow
+  - UIPrint
+  - UIEBalance
+  - UIExceptionHandle
+  - UIPluginInterface
+
+第 6 层 应用层 (App前缀):
+  - AppDashboard
+  - AppOnlinePlatform
+  - AppComDebug
+  - AppCloud
+  - AppCupDet
+  - AppSpectrometer
+
+第 6 层 应用层 (Cmd前缀):
+  - CmdCommonProtocol
+  - CmdDetectDimentionVux
+  - CmdDFP
+
+第 7 层 测试层 (Test前缀):
+  - TestPlugin
+  - TestCommonCommunicationDemo
+  - TestCommonCommunicationDemoC
+  - TestTCPPushClient
+  - TestYModem
+
+依赖规则:
+1. 基础服务层（第0层和第1层）可以被所有上层直接依赖
+   - 第0层提供最基础的功能（Common, Config）
+   - 第1层提供原子服务（Log, Save, Frame等）
+
+2. 第2层及以上需要遵守严格的分层依赖
+   - 第2层依赖第1层和第0层
+   - 第3层依赖第2层、第1层和第0层
+   - 第4层依赖第3层、第2层、第1层和第0层
+   - 第5层只依赖第4层和第3.5层，不直接依赖第3层、第2层、第1层、第0层
+   - 第6层依赖第5层、第4层、第3层、第2层、第1层和第0层
+   - 第7层依赖第6层、第5层、第4层、第3层、第2层、第1层和第0层
+
+3. 禁止循环依赖
+   - 任何情况下都不能形成循环依赖
+
+4. 跨层依赖限制
+   - 第2层及以上不能跳过相邻层直接依赖更下层的模块（除了第0层和第1层）
+   - 例如：第4层不能跳过第3层直接依赖第2层的模块
+   - 例如：第5层不能跳过第4层直接依赖第3层的模块
+
+5. 第5层特殊规则
+   - 第5层（UI应用模块层）负责UI交互，不涉及业务逻辑
+   - 第5层绝对不能直接依赖第3层、第2层、第1层、第0层
+   - 第5层只通过第4层（接口层）和第3.5层（UI服务接口层）访问底层功能
+   - 第4层作为桥梁，确保第3层的修改不会影响第5层（不需要重新编译）
