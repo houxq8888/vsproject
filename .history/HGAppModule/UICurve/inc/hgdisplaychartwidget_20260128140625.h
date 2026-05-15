@@ -16,11 +16,6 @@
 using namespace QtCharts;
 #endif
 
-enum AXISTYPE{
-    X_AXIS,
-    Y_AXIS
-};
-
 struct recordLabelWithSeries{
     recordLabel label;
     QLineSeries* seriesLine;
